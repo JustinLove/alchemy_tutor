@@ -1,4 +1,4 @@
-<Entity>
+<Entity tags="caulderon_checker">
 	<MaterialAreaCheckerComponent
 		area_aabb.min_x="-4" 
 		area_aabb.max_x="4" 

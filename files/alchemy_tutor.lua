@@ -20,13 +20,14 @@ function spawn_lab( x, y, skip_biome_checks )
 	local material1 = "magic_liquid_movement_faster"
 	local material2 = "magic_liquid_faster_levitation"
 	local output = "magic_liquid_faster_levitation_and_movement"
+	--local output = material1
 
 	--spawn_potion( "air", x+59, y+37 )
 	spawn_potion( material1, x+67, y+37 )
 	spawn_potion( material2, x+76, y+37 )
 
-	cauldron( output, x+128, y+88 )
-	cauldron( output, x+187, y+88 )
+	cauldron( output, x+128, y+93 )
+	cauldron( output, x+187, y+93 )
 end
 
 function spawn_lab_anywhere( x, y )
