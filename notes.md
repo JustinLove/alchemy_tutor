@@ -18,6 +18,8 @@ entities/items/pickup/potion.xml
 - x way to garanteed spawn a scene for testing
 - x append to biome file pixel scenes
 - x define material trigger and script
+- x powders
+- background box materials?
 - setup spawn lists
 - select recepies
 
