@@ -16,8 +16,7 @@ entities/items/pickup/potion.xml
 ```
 
 - x way to garanteed spawn a scene for testing
-
-- append to biome file pixel scenes
+- x append to biome file pixel scenes
 - define material trigger and script
 - setup spawn lists
 - select recepies

@@ -20,7 +20,7 @@ end
 function OnPlayerSpawned( player_entity ) -- This runs when player entity has been created
 	GamePrint( "OnPlayerSpawned() - Player entity id: " .. tostring(player_entity) )
 
-	spawn_lab( -100, -200 )
+	spawn_lab_anywhere( -100, -200 )
 end
 
 --[[
@@ -46,5 +46,6 @@ end
 
 
 -- This code runs when all mods' filesystems are registered
+ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/alchemy_tutor/files/coalmine.lua" ) -- Basically dofile("mods/example/files/actions.lua") will appear at the end of gun_actions.lua
 ModMagicNumbersFileAdd( "mods/alchemy_tutor/files/magic_numbers.xml" ) -- Will override some magic numbers using the specified file
 print("Example mod init done")
