@@ -1,4 +1,4 @@
-dofile_once("data/scripts/director_helpers.lua")
+dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 -- all functions below are optional and can be left out
 
 --[[
@@ -20,30 +20,7 @@ end
 function OnPlayerSpawned( player_entity ) -- This runs when player entity has been created
 	GamePrint( "OnPlayerSpawned() - Player entity id: " .. tostring(player_entity) )
 
-	-- 59, 37
-	-- 67, 37
-	-- 76, 37
-
-	local x = -100
-	local y = -200
-
-	LoadPixelScene(
-		"mods/alchemy_tutor/files/coalmine_lab.png",
-		"mods/alchemy_tutor/files/coalmine_lab_visual.png",
-		--"data/biome_impl/coalmine/laboratory.png",
-		--"data/biome_impl/coalmine/laboratory_visual.png",
-		x, y,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{ ["fff0bbee"] = "air" }, -- color_to_matieral_table
-		50 -- z index
-	)
-
-
-	EntityLoad( "data/entities/items/pickup/potion_empty.xml", x+59, y+37 )
-	EntityLoad( "mods/alchemy_tutor/files/entities/potion_faster.xml", x+67, y+37 )
-	EntityLoad( "data/entities/items/pickup/potion_slime.xml", x+76, y+37 )
+	spawn_lab( -100, -200 )
 end
 
 --[[

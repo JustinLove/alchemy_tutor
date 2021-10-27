@@ -25,3 +25,42 @@ entities/items/pickup/potion.xml
 - portrait version?
 - other biome versions?
 - background?
+
+
+- toxic + water
+- mana + water
+- mana + steel
+- invis + water = water
+- slime + faster
+- slime + water/alcohol
+- toxic/wormblood/fungi = void liquid
+- toxic/sand/fungusblood = fungus creeping
+- brass + diamond = purifying
+- levi + accel = haste
+- flum + berserk = charm
+- worm pher + worm blood = flum
+- flum + blood + oil = unstable poly
+- unstele + stable + water = unstable
+- tele + alcholo = unstable
+- unstabletele + slime = stable
+- *tele + mana = fire
+- poly + toxic = random
+- flum + metal powder = levi
+- alchol + frog meat = berserk
+- honey + diamond = ambrosia + poison
+- flum + unst tele = guiding
+- diamond + random = silver
+- gold + random = silver
+- silver + poly = copper
+- copper + tele = brass
+- brass + unstable tele = metal powder
+- blood + poison = slime
+- copper + brass + water = sliver
+- silver + copper + blood = diamond
+- diamond + silver + wormblood = purifying
+- diamond + random + toxic = void
+- void + toxic = void
+- brass + liquid fire = shock powder
+- purifying + lava = gunpowder
+- cooking meat
+
