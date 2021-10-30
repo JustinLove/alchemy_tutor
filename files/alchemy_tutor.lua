@@ -1,3 +1,4 @@
+local at_mod_path = "mods/alchemy_tutor/files"
 
 function spawn_lab( x, y, skip_biome_checks )
 	local hastium = {
@@ -15,9 +16,23 @@ function spawn_lab( x, y, skip_biome_checks )
 		material2 = "material_confusion",
 		output = "magic_liquid_faster_levitation",
 	}
+	local creep = {
+		material1 = "radioactive_liquid",
+		material2 = "radioactive_liquid",
+		cauldron_contents = "sand",
+		cauldron_material = "air",
+		output = "fungi_creeping",
+	}
+	local fungi = {
+		material1 = "blood",
+		material2 = "mushroom_seed",
+		output = "fungi_creeping",
+	}
 	--spawn_lab_set( x, y, skip_biome_checks, hastium )
 	--spawn_lab_set( x, y, skip_biome_checks, purify )
-	spawn_lab_set( x, y, skip_biome_checks, levi )
+	--spawn_lab_set( x, y, skip_biome_checks, levi )
+	spawn_lab_set( x, y, skip_biome_checks, creep )
+	--spawn_lab_set( x, y, skip_biome_checks, fungi )
 end
 
 function spawn_lab_set( x, y, skip_biome_checks, set )
@@ -26,6 +41,8 @@ function spawn_lab_set( x, y, skip_biome_checks, set )
 	-- 76, 37
 
 	LoadPixelScene(
+		--"mods/alchemy_tutor/files/fungi.png",
+		--"mods/alchemy_tutor/files/fungi_visual.png",
 		"mods/alchemy_tutor/files/coalmine_lab.png",
 		"mods/alchemy_tutor/files/coalmine_lab_visual.png",
 		--"data/biome_impl/coalmine/laboratory.png",
@@ -34,7 +51,9 @@ function spawn_lab_set( x, y, skip_biome_checks, set )
 		"", -- background
 		not not skip_biome_checks, -- skip_biome_checks
 		false, -- skip_edge_textures
-		{ ["fff0bbee"] = "air" }, -- color_to_matieral_table
+		{ ["fff0bbee"] = set.cauldron_contents or "air",
+			["ff786c42"] = set.cauldron_material or "templebrick_static",
+		}, -- color_to_matieral_table
 		50 -- z index
 	)
 
@@ -44,6 +63,9 @@ function spawn_lab_set( x, y, skip_biome_checks, set )
 
 	cauldron( set.output, x+128, y+93 )
 	cauldron( set.output, x+187, y+93 )
+
+	mushroom( x+30, y+112)
+	mushroom( x+76, y+112)
 end
 
 function spawn_lab_anywhere( x, y )
@@ -62,6 +84,7 @@ function spawn_container( material_name, x, y )
 	AddMaterialInventoryMaterial(entity, material_name, 1000)
 end
 
+-- from cheatgui
 function empty_container_of_materials(idx)
   for _ = 1, 1000 do -- avoid infinite loop
     local material = GetMaterialInventoryMainMaterial(idx)
@@ -100,4 +123,10 @@ function cauldron( material, x, y )
 		ComponentSetValue( comp_mat, "material", tostring(material1) )
 		ComponentSetValue( comp_mat, "material2", tostring(material2) )
 	end
+end
+
+function mushroom( x, y )
+	SetRandomSeed( x, y )
+	local mush = Random( 1, 5 )
+	EntityLoad( at_mod_path .. "/entities/mushroom_big_" .. mush .. ".xml", x, y )
 end
