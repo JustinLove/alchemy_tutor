@@ -4,6 +4,7 @@
 - x powders
 - x background box materials?
 - x empty container of type
+- setup fungus spawn
 - setup spawn lists
 - select recepies
 

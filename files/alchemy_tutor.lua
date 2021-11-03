@@ -23,10 +23,24 @@ function spawn_lab( x, y, skip_biome_checks )
 		cauldron_material = "air",
 		output = "fungi_creeping",
 	}
+	local void = {
+		material1 = "radioactive_liquid",
+		material2 = "blood_worm",
+		cauldron_contents = "fungi",
+		output = "void_liquid",
+	}
+	local void2 = {
+		material1 = "diamond",
+		material2 = "magic_liquid_random_polymorph",
+		cauldron_contents = "radioactive_liquid",
+		output = "void_liquid",
+	}
 	--spawn_lab_set( x, y, skip_biome_checks, hastium )
 	--spawn_lab_set( x, y, skip_biome_checks, purify )
 	--spawn_lab_set( x, y, skip_biome_checks, levi )
-	spawn_lab_set( x, y, skip_biome_checks, creep )
+	--spawn_lab_set( x, y, skip_biome_checks, creep )
+	--spawn_lab_set( x, y, skip_biome_checks, void )
+	spawn_lab_set( x, y, skip_biome_checks, void2 )
 end
 
 function spawn_lab_set( x, y, skip_biome_checks, set )
