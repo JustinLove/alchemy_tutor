@@ -1,6 +1,6 @@
 local at_mod_path = "mods/alchemy_tutor/files"
 
-function spawn_lab( x, y, skip_biome_checks )
+function pick_lab_set()
 	local hastium = {
 		material1 = "magic_liquid_movement_faster",
 		material2 = "magic_liquid_faster_levitation",
@@ -35,19 +35,14 @@ function spawn_lab( x, y, skip_biome_checks )
 		cauldron_contents = "radioactive_liquid",
 		output = "void_liquid",
 	}
-	--spawn_lab_set( x, y, skip_biome_checks, hastium )
-	--spawn_lab_set( x, y, skip_biome_checks, purify )
-	--spawn_lab_set( x, y, skip_biome_checks, levi )
-	--spawn_lab_set( x, y, skip_biome_checks, creep )
-	--spawn_lab_set( x, y, skip_biome_checks, void )
-	spawn_lab_set( x, y, skip_biome_checks, void2 )
+	return void2;
 end
 
-function spawn_lab_set( x, y, skip_biome_checks, set )
-	-- 59, 37
-	-- 67, 37
-	-- 76, 37
+function spawn_lab( x, y, skip_biome_checks )
+	spawn_lab_set( x, y, skip_biome_checks )
+end
 
+function spawn_lab_set( x, y, skip_biome_checks )
 	LoadPixelScene(
 		--"mods/alchemy_tutor/files/fungi.png",
 		--"mods/alchemy_tutor/files/fungi_visual.png",
@@ -59,19 +54,22 @@ function spawn_lab_set( x, y, skip_biome_checks, set )
 		"", -- background
 		not not skip_biome_checks, -- skip_biome_checks
 		false, -- skip_edge_textures
-		{ ["fff0bbee"] = set.cauldron_contents or "air",
-			["ff786c42"] = set.cauldron_material or "templebrick_static",
-		}, -- color_to_matieral_table
+		{ }, -- color_to_matieral_table
 		50 -- z index
 	)
+end
 
+function decorate_lab_set( x, y, skip_biome_checks, set )
 	--spawn_potion( "air", x+59, y+37 )
+	--"ffc80010"
 	spawn_container( set.material1, x+67, y+37 )
 	spawn_container( set.material2, x+76, y+37 )
 
-	cauldron( set.output, x+128, y+93 )
-	cauldron( set.output, x+187, y+93 )
+	--"ffc80030"
+	cauldron( set, x+128, y+93 )
+	cauldron( set, x+187, y+93 )
 
+	--"ffc80020"
 	mushroom( x+30, y+112)
 	mushroom( x+76, y+112)
 end
@@ -135,9 +133,22 @@ function get_material_type( material_name )
 	return "liquid" -- punt, use a flask
 end
 
-function cauldron( material, x, y )
+function cauldron( set, x, y )
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/cauldron.png",
+		"", -- visual
+		x-25, y-21,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{ ["fff0bbee"] = set.cauldron_contents or "air",
+			["ff786c42"] = set.cauldron_material or "templebrick_static",
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
+
 	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/caulderon_checker.xml", x, y )
-	local material1 = CellFactory_GetType( material )
+	local material1 = CellFactory_GetType( set.output )
 	local material2 = -1
 
 	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )

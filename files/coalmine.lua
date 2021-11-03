@@ -1,4 +1,4 @@
-dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
+dofile_once("mods/alchemy_tutor/files/spawns.lua")
 
 local at_load_pixel_scene2 = load_pixel_scene2
 function load_pixel_scene2( x, y )

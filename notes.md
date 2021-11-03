@@ -7,6 +7,7 @@
 - setup fungus spawn
 - setup spawn lists
 - select recepies
+- append to biome spawns
 
 - portrait version?
 - other biome versions?
