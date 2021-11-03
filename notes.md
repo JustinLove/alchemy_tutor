@@ -3,7 +3,7 @@
 - x define material trigger and script
 - x powders
 - x background box materials?
-- empty container of type
+- x empty container of type
 - setup spawn lists
 - select recepies
 

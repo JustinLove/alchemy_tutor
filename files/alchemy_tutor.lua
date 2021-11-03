@@ -18,21 +18,15 @@ function spawn_lab( x, y, skip_biome_checks )
 	}
 	local creep = {
 		material1 = "radioactive_liquid",
-		material2 = "radioactive_liquid",
+		material2 = "powder_stash",
 		cauldron_contents = "sand",
 		cauldron_material = "air",
-		output = "fungi_creeping",
-	}
-	local fungi = {
-		material1 = "blood",
-		material2 = "mushroom_seed",
 		output = "fungi_creeping",
 	}
 	--spawn_lab_set( x, y, skip_biome_checks, hastium )
 	--spawn_lab_set( x, y, skip_biome_checks, purify )
 	--spawn_lab_set( x, y, skip_biome_checks, levi )
 	spawn_lab_set( x, y, skip_biome_checks, creep )
-	--spawn_lab_set( x, y, skip_biome_checks, fungi )
 end
 
 function spawn_lab_set( x, y, skip_biome_checks, set )
@@ -74,24 +68,38 @@ end
 
 function spawn_container( material_name, x, y )
 	local entity
-	if get_material_type( material_name) == "powder" then
-    entity = EntityLoad("data/entities/items/pickup/powder_stash.xml", x, y)
-		empty_container_of_materials( entity )
+	if material_name == "powder_stash" then
+		entity = powder_stash( x, y )
+	elseif material_name == "potion_empty" then
+		entity = potion_empty( x, y )
+	elseif get_material_type( material_name) == "powder" then
+		entity = powder_stash( x, y )
+		AddMaterialInventoryMaterial(entity, material_name, 1500)
 	else
-		entity = EntityLoad( "data/entities/items/pickup/potion_empty.xml", x, y )
+		entity = potion_empty( x, y )
+		AddMaterialInventoryMaterial(entity, material_name, 1000)
 	end
+end
 
-	AddMaterialInventoryMaterial(entity, material_name, 1000)
+function powder_stash( x, y )
+	entity = EntityLoad("data/entities/items/pickup/powder_stash.xml", x, y)
+	empty_container_of_materials( entity )
+	return entity
+end
+
+function potion_empty( x, y )
+	entity = EntityLoad( "data/entities/items/pickup/potion_empty.xml", x, y )
+	return entity
 end
 
 -- from cheatgui
 function empty_container_of_materials(idx)
-  for _ = 1, 1000 do -- avoid infinite loop
-    local material = GetMaterialInventoryMainMaterial(idx)
-    if material <= 0 then break end
-    local matname = CellFactory_GetName(material)
-    AddMaterialInventoryMaterial(idx, matname, 0)
-  end
+	for _ = 1, 1000 do -- avoid infinite loop
+		local material = GetMaterialInventoryMainMaterial(idx)
+		if material <= 0 then break end
+		local matname = CellFactory_GetName(material)
+		AddMaterialInventoryMaterial(idx, matname, 0)
+	end
 end
 
 function get_material_type( material_name )
