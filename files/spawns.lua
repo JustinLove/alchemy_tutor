@@ -12,7 +12,7 @@ local at_other = {}
 local at_shrooms = {}
 
 function at_init_scene( x, y )
-	local set = at_pick_lab_set()
+	local set = at_pick_lab_set( x, y )
 	SetRandomSeed( x, y )
 	at_materials = {set.material1, set.material2, "", ""}
 	shuffleTable( at_materials )

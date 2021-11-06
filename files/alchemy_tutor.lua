@@ -29,43 +29,59 @@ local function empty_container_of_materials(idx)
 	end
 end
 
-function at_pick_lab_set()
-	local hastium = {
-		material1 = "magic_liquid_movement_faster",
-		material2 = "magic_liquid_faster_levitation",
-		output = "magic_liquid_faster_levitation_and_movement",
+function at_pick_lab_set( x, y )
+	local formula_list = {
+		{
+			name = "hastium",
+			material1 = "magic_liquid_movement_faster",
+			material2 = "magic_liquid_faster_levitation",
+			output = "magic_liquid_faster_levitation_and_movement",
+		},
+		{
+			material1 = "radioactive_liquid",
+			material2 = "powder_stash",
+			cauldron_contents = "sand",
+			cauldron_material = "air",
+			other = at_planterbox,
+			output = "fungi_creeping",
+		},
+		{
+			name = "levi",
+			material1 = "brass",
+			material2 = "material_confusion",
+			output = "magic_liquid_faster_levitation",
+		},
+		{
+			material1 = "brass",
+			material2 = "diamond",
+			output = "purifying_powder",
+		},
+		{
+			name = "void1",
+			material1 = "radioactive_liquid",
+			material2 = "blood_worm",
+			cauldron_contents = "fungi",
+			output = "void_liquid",
+		},
+		{
+			name = "void2",
+			material1 = "diamond",
+			material2 = "magic_liquid_random_polymorph",
+			cauldron_contents = "radioactive_liquid",
+			output = "void_liquid",
+		},
 	}
-	local purify = {
-		material1 = "brass",
-		material2 = "diamond",
-		output = "purifying_powder",
-	}
-	local levi = {
-		material1 = "brass",
-		material2 = "material_confusion",
-		output = "magic_liquid_faster_levitation",
-	}
-	local creep = {
-		material1 = "radioactive_liquid",
-		material2 = "powder_stash",
-		cauldron_contents = "sand",
-		cauldron_material = "air",
-		other = at_planterbox,
-		output = "fungi_creeping",
-	}
-	local void = {
-		material1 = "radioactive_liquid",
-		material2 = "blood_worm",
-		cauldron_contents = "fungi",
-		output = "void_liquid",
-	}
-	local void2 = {
-		material1 = "diamond",
-		material2 = "magic_liquid_random_polymorph",
-		cauldron_contents = "radioactive_liquid",
-		output = "void_liquid",
-	}
-	return creep;
+	local formulas = {}
+	for i,v in ipairs(formula_list) do
+		formulas[v.name or v.output] = v
+	end
+	SetRandomSeed( x, y )
+	local d = math.sqrt(x*x + y*y)
+	local r = Random()
+	local f = r ^ (12000 / d)
+	local i = math.floor( f * #formula_list + 1 )
+	return formula_list[i]
+	--return formulas.hastium
 end
 
 function at_spawn_lab( x, y, skip_biome_checks )

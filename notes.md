@@ -5,7 +5,7 @@
 - x background box materials?
 - x empty container of type
 - x setup fungus spawn
-- setup spawn lists
+- x setup spawn lists
 - select recepies
 - append to biome spawns
 
