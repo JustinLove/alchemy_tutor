@@ -21,6 +21,7 @@ function pick_lab_set()
 		material2 = "powder_stash",
 		cauldron_contents = "sand",
 		cauldron_material = "air",
+		other = planterbox,
 		output = "fungi_creeping",
 	}
 	local void = {
@@ -35,7 +36,7 @@ function pick_lab_set()
 		cauldron_contents = "radioactive_liquid",
 		output = "void_liquid",
 	}
-	return void;
+	return creep;
 end
 
 function spawn_lab( x, y, skip_biome_checks )
@@ -54,7 +55,8 @@ function spawn_lab_set( x, y, skip_biome_checks )
 		"", -- background
 		not not skip_biome_checks, -- skip_biome_checks
 		false, -- skip_edge_textures
-		{ }, -- color_to_matieral_table
+		{ ["ffffffff"] = "soil",
+		}, -- color_to_matieral_table
 		50 -- z index
 	)
 end
@@ -143,6 +145,20 @@ function cauldron( set, x, y )
 		ComponentSetValue( comp_mat, "material", tostring(material1) )
 		ComponentSetValue( comp_mat, "material2", tostring(material2) )
 	end
+end
+
+function planterbox( x, y )
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/planterbox.png",
+		"", -- visual
+		x-25, y-13,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
 end
 
 function mushroom( mush, x, y )
