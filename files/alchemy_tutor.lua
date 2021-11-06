@@ -59,28 +59,15 @@ function spawn_lab_set( x, y, skip_biome_checks )
 	)
 end
 
-function decorate_lab_set( x, y, skip_biome_checks, set )
-	--spawn_potion( "air", x+59, y+37 )
-	--"ffc80010"
-	spawn_container( set.material1, x+67, y+37 )
-	spawn_container( set.material2, x+76, y+37 )
-
-	--"ffc80030"
-	cauldron( set, x+128, y+93 )
-	cauldron( set, x+187, y+93 )
-
-	--"ffc80020"
-	mushroom( x+30, y+112)
-	mushroom( x+76, y+112)
-end
-
 function spawn_lab_anywhere( x, y )
 	spawn_lab( x, y, true )
 end
 
 function spawn_container( material_name, x, y )
 	local entity
-	if material_name == "powder_stash" then
+	if material_name == nil or material_name == "" then
+		return
+	elseif material_name == "powder_stash" then
 		entity = powder_stash( x, y )
 	elseif material_name == "potion_empty" then
 		entity = potion_empty( x, y )
@@ -158,8 +145,22 @@ function cauldron( set, x, y )
 	end
 end
 
-function mushroom( x, y )
-	SetRandomSeed( x, y )
-	local mush = Random( 1, 5 )
+function mushroom( mush, x, y )
+	if not mush then
+		SetRandomSeed( x, y )
+		mush = Random( 1, 5 )
+	end
 	EntityLoad( at_mod_path .. "/entities/mushroom_big_" .. mush .. ".xml", x, y )
+end
+
+
+function shuffleTable( t )
+	assert( t, "shuffleTable() expected a table, got nil" )
+	local iterations = #t
+	local j
+	
+	for i = iterations, 2, -1 do
+		j = Random(1,i)
+		t[i], t[j] = t[j], t[i]
+	end
 end
