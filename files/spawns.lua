@@ -1,14 +1,9 @@
 dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 
-RegisterSpawnFunction( 0xffc80010, "spawn_material")
-RegisterSpawnFunction( 0xffc80011, "spawn_material")
-RegisterSpawnFunction( 0xffc80012, "spawn_material")
-RegisterSpawnFunction( 0xffc80013, "spawn_material")
-RegisterSpawnFunction( 0xffc80020, "spawn_shroom")
-RegisterSpawnFunction( 0xffc80021, "spawn_shroom")
-RegisterSpawnFunction( 0xffc80030, "spawn_cauldron")
-RegisterSpawnFunction( 0xffc80031, "spawn_cauldron")
-RegisterSpawnFunction( 0xffc80053, "init_scene")
+RegisterSpawnFunction( 0xfff1a545, "spawn_material")
+RegisterSpawnFunction( 0xff528003, "spawn_shroom")
+RegisterSpawnFunction( 0xffca1d80, "spawn_cauldron")
+RegisterSpawnFunction( 0xff5ce4e5, "init_scene")
 
 local at_materials = {}
 local at_cauldrons = {}

@@ -35,7 +35,7 @@ function pick_lab_set()
 		cauldron_contents = "radioactive_liquid",
 		output = "void_liquid",
 	}
-	return void2;
+	return void;
 end
 
 function spawn_lab( x, y, skip_biome_checks )
@@ -124,7 +124,7 @@ function cauldron( set, x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/cauldron.png",
 		"", -- visual
-		x-25, y-21,
+		x-25, y-39,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -134,7 +134,7 @@ function cauldron( set, x, y )
 		50 -- z index
 	)
 
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/caulderon_checker.xml", x, y )
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/caulderon_checker.xml", x, y-18 )
 	local material1 = CellFactory_GetType( set.output )
 	local material2 = -1
 
