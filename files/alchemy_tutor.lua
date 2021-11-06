@@ -84,7 +84,7 @@ function at_spawn_lab_set( x, y, skip_biome_checks )
 		"", -- background
 		not not skip_biome_checks, -- skip_biome_checks
 		false, -- skip_edge_textures
-		{ ["ffffffff"] = "soil",
+		{
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
