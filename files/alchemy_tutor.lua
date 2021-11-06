@@ -1,6 +1,35 @@
 local at_mod_path = "mods/alchemy_tutor/files"
 
-function pick_lab_set()
+local function at_get_material_type( material_name )
+	local material_id = CellFactory_GetType( material_name )
+	local tags = CellFactory_GetTags( material_id )
+
+	for i,v in ipairs( tags ) do
+		if v == "[sand_ground]" then
+			return "powder"
+		elseif v == "[sand_metal]" then
+			return "powder"
+		elseif v == "[sand_other]" then
+			return "powder"
+		elseif v == "[liquid]" then
+			return "liquid"
+		end
+	end
+
+	return "liquid" -- punt, use a flask
+end
+
+-- from cheatgui
+local function empty_container_of_materials(idx)
+	for _ = 1, 1000 do -- avoid infinite loop
+		local material = GetMaterialInventoryMainMaterial(idx)
+		if material <= 0 then break end
+		local matname = CellFactory_GetName(material)
+		AddMaterialInventoryMaterial(idx, matname, 0)
+	end
+end
+
+function at_pick_lab_set()
 	local hastium = {
 		material1 = "magic_liquid_movement_faster",
 		material2 = "magic_liquid_faster_levitation",
@@ -21,7 +50,7 @@ function pick_lab_set()
 		material2 = "powder_stash",
 		cauldron_contents = "sand",
 		cauldron_material = "air",
-		other = planterbox,
+		other = at_planterbox,
 		output = "fungi_creeping",
 	}
 	local void = {
@@ -39,11 +68,11 @@ function pick_lab_set()
 	return creep;
 end
 
-function spawn_lab( x, y, skip_biome_checks )
-	spawn_lab_set( x, y, skip_biome_checks )
+function at_spawn_lab( x, y, skip_biome_checks )
+	at_spawn_lab_set( x, y, skip_biome_checks )
 end
 
-function spawn_lab_set( x, y, skip_biome_checks )
+function at_spawn_lab_set( x, y, skip_biome_checks )
 	LoadPixelScene(
 		--"mods/alchemy_tutor/files/fungi.png",
 		--"mods/alchemy_tutor/files/fungi_visual.png",
@@ -61,68 +90,39 @@ function spawn_lab_set( x, y, skip_biome_checks )
 	)
 end
 
-function spawn_lab_anywhere( x, y )
-	spawn_lab( x, y, true )
+function at_spawn_lab_anywhere( x, y )
+	at_spawn_lab( x, y, true )
 end
 
-function spawn_container( material_name, x, y )
+function at_container( material_name, x, y )
 	local entity
 	if material_name == nil or material_name == "" then
 		return
 	elseif material_name == "powder_stash" then
-		entity = powder_stash( x, y )
+		entity = at_powder_stash( x, y )
 	elseif material_name == "potion_empty" then
-		entity = potion_empty( x, y )
-	elseif get_material_type( material_name) == "powder" then
-		entity = powder_stash( x, y )
+		entity = at_potion_empty( x, y )
+	elseif at_get_material_type( material_name) == "powder" then
+		entity = at_powder_stash( x, y )
 		AddMaterialInventoryMaterial(entity, material_name, 1500)
 	else
-		entity = potion_empty( x, y )
+		entity = at_potion_empty( x, y )
 		AddMaterialInventoryMaterial(entity, material_name, 1000)
 	end
 end
 
-function powder_stash( x, y )
+function at_powder_stash( x, y )
 	entity = EntityLoad("data/entities/items/pickup/powder_stash.xml", x, y)
 	empty_container_of_materials( entity )
 	return entity
 end
 
-function potion_empty( x, y )
+function at_potion_empty( x, y )
 	entity = EntityLoad( "data/entities/items/pickup/potion_empty.xml", x, y )
 	return entity
 end
 
--- from cheatgui
-function empty_container_of_materials(idx)
-	for _ = 1, 1000 do -- avoid infinite loop
-		local material = GetMaterialInventoryMainMaterial(idx)
-		if material <= 0 then break end
-		local matname = CellFactory_GetName(material)
-		AddMaterialInventoryMaterial(idx, matname, 0)
-	end
-end
-
-function get_material_type( material_name )
-	local material_id = CellFactory_GetType( material_name )
-	local tags = CellFactory_GetTags( material_id )
-
-	for i,v in ipairs( tags ) do
-		if v == "[sand_ground]" then
-			return "powder"
-		elseif v == "[sand_metal]" then
-			return "powder"
-		elseif v == "[sand_other]" then
-			return "powder"
-		elseif v == "[liquid]" then
-			return "liquid"
-		end
-	end
-
-	return "liquid" -- punt, use a flask
-end
-
-function cauldron( set, x, y )
+function at_cauldron( set, x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/cauldron.png",
 		"", -- visual
@@ -147,7 +147,7 @@ function cauldron( set, x, y )
 	end
 end
 
-function planterbox( x, y )
+function at_planterbox( x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/planterbox.png",
 		"", -- visual
@@ -161,7 +161,7 @@ function planterbox( x, y )
 	)
 end
 
-function mushroom( mush, x, y )
+function at_mushroom( mush, x, y )
 	if not mush then
 		SetRandomSeed( x, y )
 		mush = Random( 1, 5 )

@@ -20,7 +20,7 @@ end
 function OnPlayerSpawned( player_entity ) -- This runs when player entity has been created
 	GamePrint( "OnPlayerSpawned() - Player entity id: " .. tostring(player_entity) )
 
-	spawn_lab_anywhere( -100, -200 )
+	at_spawn_lab_anywhere( -100, -200 )
 end
 
 --[[
