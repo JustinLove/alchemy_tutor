@@ -6,7 +6,7 @@
 - x empty container of type
 - x setup fungus spawn
 - x setup spawn lists
-- false ingredients
+- x false ingredients
 - select recepies
 - append to biome spawns
 

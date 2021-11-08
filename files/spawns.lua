@@ -27,6 +27,10 @@ function at_decorate_scene( x, y )
 	if loc then
 		at_container( set.material2, loc.x, loc.y )
 	end
+	loc = table.remove( at_materials )
+	if loc then
+		at_container( "red_herring", loc.x, loc.y )
+	end
 
 	loc = table.remove( at_cauldrons )
 	if loc then

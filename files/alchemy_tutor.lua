@@ -39,7 +39,7 @@ function at_pick_lab_set( x, y )
 		},
 		{
 			material1 = "radioactive_liquid",
-			material2 = "powder_stash",
+			material2 = "powder_empty",
 			cauldron_contents = "sand",
 			cauldron_material = "air",
 			other = at_planterbox,
@@ -114,12 +114,18 @@ function at_container( material_name, x, y )
 	local entity
 	if material_name == nil or material_name == "" then
 		return
-	elseif material_name == "powder_stash" then
-		entity = at_powder_stash( x, y )
+	elseif material_name == "red_herring" then
+		if Random(0, 100) < 33 then
+			entity = at_powder_stash( x, y )
+		else
+			entity = at_potion( x, y )
+		end
+	elseif material_name == "powder_empty" then
+		entity = at_powder_empty( x, y )
 	elseif material_name == "potion_empty" then
 		entity = at_potion_empty( x, y )
 	elseif at_get_material_type( material_name) == "powder" then
-		entity = at_powder_stash( x, y )
+		entity = at_powder_empty( x, y )
 		AddMaterialInventoryMaterial(entity, material_name, 1500)
 	else
 		entity = at_potion_empty( x, y )
@@ -128,13 +134,23 @@ function at_container( material_name, x, y )
 end
 
 function at_powder_stash( x, y )
-	entity = EntityLoad("data/entities/items/pickup/powder_stash.xml", x, y)
+	local entity = EntityLoad("data/entities/items/pickup/powder_stash.xml", x, y)
+	return entity
+end
+
+function at_powder_empty( x, y )
+	local entity = at_powder_stash( x, y )	
 	empty_container_of_materials( entity )
 	return entity
 end
 
+function at_potion( x, y )
+	local entity = EntityLoad( "data/entities/items/pickup/potion.xml", x, y )
+	return entity
+end
+
 function at_potion_empty( x, y )
-	entity = EntityLoad( "data/entities/items/pickup/potion_empty.xml", x, y )
+	local entity = EntityLoad( "data/entities/items/pickup/potion_empty.xml", x, y )
 	return entity
 end
 
