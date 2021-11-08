@@ -91,10 +91,12 @@ end
 
 function at_spawn_lab_set( x, y, skip_biome_checks )
 	LoadPixelScene(
-		--"mods/alchemy_tutor/files/coalmine_lab.png",
-		--"mods/alchemy_tutor/files/coalmine_lab_visual.png",
-		"mods/alchemy_tutor/files/coalmine_lab_tall.png",
-		"",
+		"mods/alchemy_tutor/files/coalmine_lab.png",
+		--"mods/alchemy_tutor/files/coalmine_lab_alt.png",
+		"mods/alchemy_tutor/files/coalmine_lab_visual.png",
+
+		--"mods/alchemy_tutor/files/coalmine_lab_tall.png",
+		--"",
 		x, y,
 		"", -- background
 		not not skip_biome_checks, -- skip_biome_checks
