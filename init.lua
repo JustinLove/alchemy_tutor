@@ -20,7 +20,7 @@ end
 function OnPlayerSpawned( player_entity ) -- This runs when player entity has been created
 	GamePrint( "OnPlayerSpawned() - Player entity id: " .. tostring(player_entity) )
 
-	at_spawn_lab_anywhere( -100, -200 )
+	at_spawn_lab_anywhere( -100, -300 )
 end
 
 --[[
@@ -51,5 +51,7 @@ ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left.lua", "mods/alchem
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_entrance.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_stub.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/spawns.lua" )
+ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/stubs.lua" )
+
 ModMagicNumbersFileAdd( "mods/alchemy_tutor/files/magic_numbers.xml" ) -- Will override some magic numbers using the specified file
 print("Example mod init done")

@@ -82,6 +82,7 @@ function at_pick_lab_set( x, y )
 	local i = math.floor( f * #formula_list + 1 )
 	return formula_list[i]
 	--return formulas.hastium
+	--return formulas.fungi_creeping
 end
 
 function at_spawn_lab( x, y, skip_biome_checks )
@@ -90,12 +91,10 @@ end
 
 function at_spawn_lab_set( x, y, skip_biome_checks )
 	LoadPixelScene(
-		--"mods/alchemy_tutor/files/fungi.png",
-		--"mods/alchemy_tutor/files/fungi_visual.png",
-		"mods/alchemy_tutor/files/coalmine_lab.png",
-		"mods/alchemy_tutor/files/coalmine_lab_visual.png",
-		--"data/biome_impl/coalmine/laboratory.png",
-		--"data/biome_impl/coalmine/laboratory_visual.png",
+		--"mods/alchemy_tutor/files/coalmine_lab.png",
+		--"mods/alchemy_tutor/files/coalmine_lab_visual.png",
+		"mods/alchemy_tutor/files/coalmine_lab_tall.png",
+		"",
 		x, y,
 		"", -- background
 		not not skip_biome_checks, -- skip_biome_checks
@@ -158,7 +157,7 @@ function at_cauldron( set, x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/cauldron.png",
 		"", -- visual
-		x-25, y-39,
+		x-16, y-39,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures

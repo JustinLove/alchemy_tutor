@@ -6,6 +6,9 @@ RegisterSpawnFunction( 0xff012e85, "at_spawn_other")
 RegisterSpawnFunction( 0xffca1d80, "at_spawn_cauldron")
 RegisterSpawnFunction( 0xff5ce4e5, "at_decorate_scene")
 
+at_lab_chance = 1.0
+--at_lab_chance = 9999999
+
 local at_materials = {}
 local at_cauldrons = {}
 local at_other = {}
