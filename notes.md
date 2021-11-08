@@ -6,6 +6,7 @@
 - x empty container of type
 - x setup fungus spawn
 - x setup spawn lists
+- false ingredients
 - select recepies
 - append to biome spawns
 
@@ -42,7 +43,7 @@
 - copper + tele = brass
 - brass + unstable tele = metal powder
 - blood + poison = slime
-- copper + brass + water = sliver
+- copper + brass + water = silver
 - silver + copper + blood = diamond
 - diamond + silver + wormblood = purifying
 - diamond + random + toxic = void
