@@ -7,6 +7,7 @@
 - x setup fungus spawn
 - x setup spawn lists
 - x false ingredients
+- green fungus
 - select recepies
 - append to biome spawns
 
