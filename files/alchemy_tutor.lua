@@ -46,6 +46,25 @@ function at_pick_lab_set( x, y )
 			output = "fungi_creeping",
 		},
 		{
+			name = "silver1",
+			material1 = "magic_liquid_random_polymorph",
+			material2 = "diamond",
+			output = "silver",
+		},
+		{
+			name = "silver2",
+			material1 = "magic_liquid_random_polymorph",
+			material2 = "gold",
+			output = "silver",
+		},
+		{
+			name = "silver3",
+			material1 = "copper",
+			material2 = "brass",
+			cauldron_contents = "water",
+			output = "silver",
+		},
+		{
 			name = "levi",
 			material1 = "brass",
 			material2 = "material_confusion",
@@ -83,6 +102,7 @@ function at_pick_lab_set( x, y )
 	return formula_list[i]
 	--return formulas.hastium
 	--return formulas.fungi_creeping
+	--return formulas.silver3
 end
 
 function at_spawn_lab( x, y, skip_biome_checks )
@@ -91,8 +111,8 @@ end
 
 function at_spawn_lab_set( x, y, skip_biome_checks )
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/excavation_lab_h.png",
-		--"mods/alchemy_tutor/files/coalmine_lab.png",
+		--"mods/alchemy_tutor/files/excavation_lab_h.png",
+		"mods/alchemy_tutor/files/coalmine_lab.png",
 		--"mods/alchemy_tutor/files/coalmine_lab_alt.png",
 		--"mods/alchemy_tutor/files/coalmine_lab_visual.png",
 
