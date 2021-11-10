@@ -20,7 +20,7 @@ end
 function OnPlayerSpawned( player_entity ) -- This runs when player entity has been created
 	GamePrint( "OnPlayerSpawned() - Player entity id: " .. tostring(player_entity) )
 
-	at_spawn_lab_anywhere( -100, -200 )
+	at_spawn_lab_anywhere( -300, -400 )
 end
 
 --[[
@@ -49,6 +49,7 @@ end
 ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/alchemy_tutor/files/coalmine.lua" )
 ModLuaFileAppend( "data/scripts/biomes/coalmine_alt.lua", "mods/alchemy_tutor/files/coalmine_alt.lua" )
 ModLuaFileAppend( "data/scripts/biomes/excavationsite.lua", "mods/alchemy_tutor/files/excavationsite.lua" )
+ModLuaFileAppend( "data/scripts/biomes/snowcave.lua", "mods/alchemy_tutor/files/snowcave.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_entrance.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_stub.lua", "mods/alchemy_tutor/files/spawns.lua" )
