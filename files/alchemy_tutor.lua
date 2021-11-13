@@ -111,7 +111,8 @@ end
 
 function at_spawn_lab_set( x, y, skip_biome_checks )
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/snowcave_lab_h.png",
+		"mods/alchemy_tutor/files/snowcave_lab_v.png",
+		--"mods/alchemy_tutor/files/snowcave_lab_h.png",
 		--"mods/alchemy_tutor/files/excavation_lab_h.png",
 		--"mods/alchemy_tutor/files/coalmine_lab.png",
 		--"mods/alchemy_tutor/files/coalmine_lab_alt.png",
