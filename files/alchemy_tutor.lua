@@ -105,35 +105,6 @@ function at_pick_lab_set( x, y )
 	--return formulas.silver3
 end
 
-function at_spawn_lab( x, y, skip_biome_checks )
-	at_spawn_lab_set( x, y, skip_biome_checks )
-end
-
-function at_spawn_lab_set( x, y, skip_biome_checks )
-	LoadPixelScene(
-		"mods/alchemy_tutor/files/snowcave_lab_v.png",
-		--"mods/alchemy_tutor/files/snowcave_lab_h.png",
-		--"mods/alchemy_tutor/files/excavation_lab_h.png",
-		--"mods/alchemy_tutor/files/coalmine_lab.png",
-		--"mods/alchemy_tutor/files/coalmine_lab_alt.png",
-		--"mods/alchemy_tutor/files/coalmine_lab_visual.png",
-
-		--"mods/alchemy_tutor/files/coalmine_lab_tall.png",
-		"",
-		x, y,
-		"", -- background
-		not not skip_biome_checks, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{
-		}, -- color_to_matieral_table
-		50 -- z index
-	)
-end
-
-function at_spawn_lab_anywhere( x, y )
-	at_spawn_lab( x, y, true )
-end
-
 function at_container( material_name, x, y )
 	local entity
 	if material_name == nil or material_name == "" then

@@ -1,0 +1,20 @@
+<Entity >
+  <MagicConvertMaterialComponent
+    kill_when_finished="1"
+    from_any_material="1"
+    steps_per_frame="5"
+    to_material="air"
+    clean_stains="1"
+    is_circle="0"
+    radius="256" 
+    loop="0"
+    >
+  </MagicConvertMaterialComponent>
+
+  <LuaComponent
+    script_source_file="mods/alchemy_tutor/files/entities/spawn_lab.lua"
+    execute_every_n_frame="-1"
+    execute_on_removed="1"
+    >
+  </LuaComponent>
+</Entity>
