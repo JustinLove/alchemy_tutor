@@ -5,6 +5,7 @@ RegisterSpawnFunction( 0xff528003, "at_spawn_shroom")
 RegisterSpawnFunction( 0xff012e85, "at_spawn_other")
 RegisterSpawnFunction( 0xffca1d80, "at_spawn_cauldron")
 RegisterSpawnFunction( 0xff5ce4e5, "at_decorate_scene")
+RegisterSpawnFunction( 0xff91a4e2, "at_look_here")
 
 at_lab_chance = 1.0
 --at_lab_chance = 9999999
@@ -52,6 +53,16 @@ function at_decorate_scene( x, y )
 	at_materials = {}
 	at_cauldrons = {}
 	at_other = {}
+end
+
+function at_look_here( x, y )
+	local cx, cy = GameGetCameraPos()
+	local player_entity = EntityGetClosestWithTag( cx, cy, "player_unit")
+	if( player_entity ~= 0 ) then
+		EntitySetTransform( player_entity, x, y )
+	else
+		GameSetCameraPos( x, y )
+	end
 end
 
 function at_spawn_material( x, y )

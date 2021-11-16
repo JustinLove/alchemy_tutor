@@ -2,10 +2,11 @@ local entity_id    = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform( entity_id )
 
 function at_spawn_lab( x, y )
-	local width = 260
-	local height = 520
-	LoadPixelScene(
-		"mods/alchemy_tutor/files/snowcave_lab_v.png",
+	local width = 400
+	local height = 200
+	local s = LoadPixelScene(
+		"mods/alchemy_tutor/files/rainforest_lab_h.png",
+		--"mods/alchemy_tutor/files/snowcave_lab_v.png",
 		--"mods/alchemy_tutor/files/snowcave_lab_h.png",
 		--"mods/alchemy_tutor/files/excavation_lab_h.png",
 		--"mods/alchemy_tutor/files/coalmine_lab.png",
@@ -14,7 +15,7 @@ function at_spawn_lab( x, y )
 
 		--"mods/alchemy_tutor/files/coalmine_lab_tall.png",
 		"",
-		x - width/2, y - height/2,
+		x - width/2, y,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -22,6 +23,8 @@ function at_spawn_lab( x, y )
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
+	GamePrint( tostring( s ) )
+
 end
 
 at_spawn_lab( pos_x, pos_y )
