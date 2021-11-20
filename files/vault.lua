@@ -1,14 +1,12 @@
 dofile_once("mods/alchemy_tutor/files/spawns.lua")
 
---[[
-table.insert( g_pixel_scene_01, {
+table.insert( g_pixel_scene_tall, {
 		prob   			= at_lab_chance,
-		material_file 	= "mods/alchemy_tutor/files/rainforest_lab_v.png",
+		material_file 	= "mods/alchemy_tutor/files/vault_lab_v.png",
 		visual_file		= "",--"mods/alchemy_tutor/files/coalmine_lab_visual.png",
 		background_file	= "",
 		is_unique		= 0
 	})
-	]]--
 
 table.insert( g_pixel_scene_wide, {
 		prob   			= at_lab_chance,
