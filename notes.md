@@ -7,6 +7,11 @@
 - x setup fungus spawn
 - x setup spawn lists
 - x false ingredients
+- vault
+  - v 01 x1 acid tank
+  - v tall x2 electric tunnel *
+  - h 02 x2 labs
+  - h wide x2 brain/shop *
 - green fungus
 - select recepies
 - append to biome spawns
