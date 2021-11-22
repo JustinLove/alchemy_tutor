@@ -12,6 +12,11 @@
   - v tall x2 electric tunnel *
   - h 02 x2 labs
   - h wide x2 brain/shop *
+- crypt
+  - v 03 x2
+  - h 01 x2, 3 things *
+  - h 05 x1, 3 things
+  - h 05b x1, 3 things
 - green fungus
 - select recepies
 - append to biome spawns

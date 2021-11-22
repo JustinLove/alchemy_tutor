@@ -2,10 +2,11 @@ local entity_id    = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform( entity_id )
 
 function at_spawn_lab( x, y )
-	local width = 200
-	local height = 400
+	local width = 400
+	local height = 200
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/vault_lab_v.png",
+		"mods/alchemy_tutor/files/crypt_lab_h.png",
+		--"mods/alchemy_tutor/files/vault_lab_v.png",
 		--"mods/alchemy_tutor/files/vault_lab_h.png",
 		--"mods/alchemy_tutor/files/rainforest_lab_v.png",
 		--"mods/alchemy_tutor/files/rainforest_lab_h.png",

@@ -20,8 +20,9 @@ end
 function OnPlayerSpawned( player_entity ) -- This runs when player entity has been created
 	GamePrint( "OnPlayerSpawned() - Player entity id: " .. tostring(player_entity) )
 
-	local x = 0
-	local y = 9000
+	--1439153766
+	local x = 400
+	local y = 12103
 	--EntitySetTransform( player_entity, x, y )
 	--local entity = EntityLoad( "mods/alchemy_tutor/files/entities/spawn_lab.xml", x, y )
 end
@@ -56,6 +57,7 @@ ModLuaFileAppend( "data/scripts/biomes/snowcave.lua", "mods/alchemy_tutor/files/
 ModLuaFileAppend( "data/scripts/biomes/snowcastle.lua", "mods/alchemy_tutor/files/snowcastle.lua" )
 ModLuaFileAppend( "data/scripts/biomes/vault.lua", "mods/alchemy_tutor/files/vault.lua" )
 ModLuaFileAppend( "data/scripts/biomes/rainforest.lua", "mods/alchemy_tutor/files/rainforest.lua" )
+ModLuaFileAppend( "data/scripts/biomes/crypt.lua", "mods/alchemy_tutor/files/crypt.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_entrance.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_stub.lua", "mods/alchemy_tutor/files/spawns.lua" )
