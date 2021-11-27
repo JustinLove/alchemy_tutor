@@ -7,24 +7,26 @@
 - x setup fungus spawn
 - x setup spawn lists
 - x false ingredients
-- vault
+- x vault
   - v 01 x1 acid tank
   - v tall x2 electric tunnel *
   - h 02 x2 labs
   - h wide x2 brain/shop *
-- crypt
+- x crypt
   - v 03 x2
   - h 01 x2, 3 things *
   - h 05 x1, 3 things
   - h 05b x1, 3 things
 - green fungus
 - select recepies
-- append to biome spawns
+- remote biomes
+- grand alchemy influence
+- grand alchemy labs
 
-- portrait version?
-- other biome versions?
 - background?
 
+- snow is awkward with powders - maybe okay as puzzle element?
+- vault potions may be too exposed from above
 
 - toxic + water
 - mana + water

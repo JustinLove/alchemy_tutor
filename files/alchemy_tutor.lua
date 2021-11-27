@@ -153,7 +153,7 @@ function at_cauldron( set, x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/cauldron.png",
 		"", -- visual
-		x-16, y-39,
+		x-18, y-39,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
