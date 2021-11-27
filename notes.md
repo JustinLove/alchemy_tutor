@@ -17,8 +17,13 @@
   - h 01 x2, 3 things *
   - h 05 x1, 3 things
   - h 05b x1, 3 things
-- green fungus
 - select recepies
+- caldron naming
+- small amounts of ingredient
+- multie ingredient possibilies - green fungus
+- multiple results/material absent - air or water
+- split caldrons?
+- could be in caldron?
 - remote biomes
 - grand alchemy influence
 - grand alchemy labs
@@ -28,41 +33,45 @@
 - snow is awkward with powders - maybe okay as puzzle element?
 - vault potions may be too exposed from above
 
-- toxic + water
-- mana + water
-- mana + steel
-- invis + water = water
-- slime + faster
-- slime + water/alcohol
-- toxic/wormblood/fungi = void liquid
-- toxic/sand/fungusblood = fungus creeping
-- brass + diamond = purifying
-- levi + accel = haste
-- flum + berserk = charm
-- worm pher + worm blood = flum
-- flum + blood + oil = unstable poly
+- x toxic + water
+- x mana + water
+- x mana + steel
+- x invis + water = water
+- x slime + faster
+- x slime + water/alcohol
+- x toxic/wormblood/fungi = void liquid
+- x toxic/sand/fungusblood = fungus creeping
+- x brass + diamond = purifying
+- x levi + accel = haste
+- x flum + berserk = charm
+- x worm pher + worm blood = flum
+- x flum + blood + oil = unstable poly
 - unstele + stable + water = unstable
-- tele + alcholo = unstable
-- unstabletele + slime = stable
-- *tele + mana = fire
+- x stable + alcohol = unstable
+- x unstabletele + slime = stable
+- x *tele + mana = fire
 - poly + toxic = random
-- flum + metal powder = levi
+- x flum + metal powder = levi
 - alchol + frog meat = berserk
 - honey + diamond = ambrosia + poison
 - flum + unst tele = guiding
-- diamond + random = silver
-- gold + random = silver
+- x diamond + random = silver
+- x gold + random = silver
 - silver + poly = copper
 - copper + tele = brass
 - brass + unstable tele = metal powder
 - blood + poison = slime
-- copper + brass + water = silver
+- x copper + brass + water = silver
 - silver + copper + blood = diamond
 - diamond + silver + wormblood = purifying
-- diamond + random + toxic = void
-- void + toxic = void
+- x diamond + random + toxic = void
+- x void + toxic = void
 - brass + liquid fire = shock powder
 - purifying + lava = gunpowder
+- x wizardstone + water = teleportion
+- x wizardstone + mana = acid
+- x wizardstone + fire = lava
+- x wizardstone + amb = steam
 - cooking meat
 
 ```

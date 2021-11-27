@@ -22,8 +22,8 @@ function OnPlayerSpawned( player_entity ) -- This runs when player entity has be
 
 	--1439153766
 	--1496269479
-	local x = -700
-	local y = 12180
+	local x = -200 ---700
+	local y = -100 --12180
 	--EntitySetTransform( player_entity, x, y )
 	--local entity = EntityLoad( "mods/alchemy_tutor/files/entities/spawn_lab.xml", x, y )
 end

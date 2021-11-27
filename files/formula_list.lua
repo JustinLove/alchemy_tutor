@@ -1,9 +1,56 @@
 at_formula_list = {
 	{
+		name = "toxicclean",
+		material1 = "water",
+		material2 = "red_herring",
+		cauldron_contents = "radioactive_liquid",
+		output = "water",
+	},
+	{
+		name = "melt_steel",
+		material1 = "magic_liquid_mana_regeneration",
+		material2 = "red_herring",
+		cauldron_contents = "oil",
+		cauldron_material = "steel_static",
+		output = "air",
+	},
+	{
 		name = "hastium",
 		material1 = "magic_liquid_movement_faster",
 		material2 = "magic_liquid_faster_levitation",
 		output = "magic_liquid_faster_levitation_and_movement",
+	},
+	{
+		name = "washinvis",
+		material1 = "water",
+		material2 = "red_herring",
+		cauldron_contents = "magic_liquid_invisibility",
+		output = "water",
+	},
+	{
+		material1 = "magic_liquid_mana_regeneration",
+		material2 = "red_herring",
+		cauldron_contents = "water",
+		output = "magic_liquid_mana_regeneration",
+	},
+	{
+		name = "slimeclean",
+		material1 = "water",
+		material2 = "red_herring",
+		cauldron_contents = "slime",
+		output = "air",
+	},
+	{
+		name = "disinfect",
+		material1 = "alcohol",
+		material2 = "red_herring",
+		cauldron_contents = "slime",
+		output = "air",
+	},
+	{
+		material1 = "material_confusion",
+		material2 = "magic_liquid_berserk",
+		output = "magic_liquid_charm",
 	},
 	{
 		material1 = "radioactive_liquid",
@@ -12,6 +59,21 @@ at_formula_list = {
 		cauldron_material = "air",
 		other = at_planterbox,
 		output = "fungi_creeping",
+	},
+	{
+		name = "slimeboom",
+		material1 = "magic_liquid_movement_faster",
+		material2 = "magic_liquid_faster_levitation",
+		cauldron_contents = "slime",
+		cauldron_material = "rock_static",
+		output = "air",
+	},
+	{
+		name = "manatele",
+		material1 = "magic_liquid_mana_regeneration",
+		material2 = "red_herring",
+		cauldron_contents = "magic_liquid_unstable_teleportation",
+		output = "air",
 	},
 	{
 		name = "silver1",
@@ -33,16 +95,79 @@ at_formula_list = {
 		output = "silver",
 	},
 	{
+		material1 = "brass",
+		material2 = "diamond",
+		output = "purifying_powder",
+	},
+	{
 		name = "levi",
 		material1 = "brass",
 		material2 = "material_confusion",
 		output = "magic_liquid_faster_levitation",
 	},
 	{
-		material1 = "brass",
-		material2 = "diamond",
-		output = "purifying_powder",
+		material1 = "slime",
+		material2 = "red_herring",
+		cauldron_contents = "magic_liquid_unstable_teleportation",
+		output = "magic_liquid_teleportation",
 	},
+	--[[
+	{
+		name = "unstablespread",
+		material1 = "magic_liquid_unstable_teleportation",
+		material2 = "water",
+		cauldron_contents = "magic_liquid_teleportation",
+		output = "magic_liquid_unstable_teleportation",
+	},
+	]]
+	{
+		name = "drunktele",
+		material1 = "red_herring",
+		material2 = "alcohol",
+		cauldron_contents = "magic_liquid_teleportation",
+		output = "magic_liquid_unstable_teleportation",
+	},
+	{
+		material1 = "blood_worm",
+		material2 = "magic_liquid_worm_attractor",
+		output = "material_confusion",
+	},
+	{
+		material1 = "material_confusion",
+		material2 = "oil",
+		cauldron_contents = "blood",
+		output = "magic_liquid_unstable_polymorph",
+	},
+	{
+		name = "oddwater",
+		material1 = "water",
+		material2 = "red_herring",
+		cauldron_contents = "wizardstone",
+		output = "magic_liquid_teleportation",
+	},
+	{
+		name = "oddmana",
+		material1 = "magic_liquid_mana_regeneration",
+		material2 = "red_herring",
+		cauldron_contents = "wizardstone",
+		output = "air",
+	},
+	{
+		name = "oddamb",
+		material1 = "magic_liquid_protection_all",
+		material2 = "red_herring",
+		cauldron_contents = "wizardstone",
+		output = "air",
+	},
+	--[[
+	{
+		name = "oddfire",
+		material1 = "fire",
+		material2 = "red_herring",
+		cauldron_contents = "wizardstone",
+		output = "lava",
+	},
+	]]
 	{
 		name = "void1",
 		material1 = "radioactive_liquid",
