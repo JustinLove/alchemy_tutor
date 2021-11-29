@@ -19,11 +19,16 @@
   - h 05b x1, 3 things
 - select recepies
 - caldron naming
+- alternate caldron (odd brick)
+- shock detector
+- frog meat
+- cooking meat
 - small amounts of ingredient
 - multie ingredient possibilies - green fungus
 - multiple results/material absent - air or water
 - split caldrons?
 - could be in caldron?
+- specify chest location
 - remote biomes
 - grand alchemy influence
 - grand alchemy labs
@@ -50,24 +55,24 @@
 - x stable + alcohol = unstable
 - x unstabletele + slime = stable
 - x *tele + mana = fire
-- poly + toxic = random
+- x poly + toxic = random
 - x flum + metal powder = levi
 - alchol + frog meat = berserk
-- honey + diamond = ambrosia + poison
-- flum + unst tele = guiding
+- x honey + diamond = ambrosia + poison
+- x flum + unst tele = guiding
 - x diamond + random = silver
 - x gold + random = silver
-- silver + poly = copper
-- copper + tele = brass
-- brass + unstable tele = metal powder
-- blood + poison = slime
+- x silver + poly = copper
+- x copper + tele = brass
+- x brass + unstable tele = metal powder
+- x blood + poison = slime
 - x copper + brass + water = silver
-- silver + copper + blood = diamond
-- diamond + silver + wormblood = purifying
+- x silver + copper + blood = diamond
+- x diamond + silver + wormblood = purifying
 - x diamond + random + toxic = void
 - x void + toxic = void
-- brass + liquid fire = shock powder
-- purifying + lava = gunpowder
+- x brass + liquid fire = shock powder
+- x purifying + lava = gunpowder
 - x wizardstone + water = teleportion
 - x wizardstone + mana = acid
 - x wizardstone + fire = lava

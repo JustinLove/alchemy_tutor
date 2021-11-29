@@ -39,10 +39,11 @@ function at_pick_lab_set( x, y )
 	local r = Random()
 	local f = r ^ (12000 / d)
 	local i = math.floor( f * #at_formula_list + 1 )
-	return at_formula_list[i]
+	--return at_formula_list[i]
 	--return formulas.hastium
 	--return formulas.fungi_creeping
 	--return formulas.silver3
+	return formulas.meat_done
 end
 
 function at_container( material_name, x, y )

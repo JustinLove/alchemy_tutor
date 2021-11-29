@@ -69,11 +69,21 @@ at_formula_list = {
 		output = "air",
 	},
 	{
+		material1 = "brass",
+		material2 = "liquid_fire",
+		output = "shock_powder", -- undetectable
+	},
+	{
 		name = "manatele",
 		material1 = "magic_liquid_mana_regeneration",
 		material2 = "red_herring",
 		cauldron_contents = "magic_liquid_unstable_teleportation",
 		output = "air",
+	},
+	{
+		material1 = "magic_liquid_unstable_teleportation",
+		material2 = "material_confusion",
+		output = "orb_powder",
 	},
 	{
 		name = "silver1",
@@ -95,9 +105,30 @@ at_formula_list = {
 		output = "silver",
 	},
 	{
+		name = "purebrass",
 		material1 = "brass",
 		material2 = "diamond",
 		output = "purifying_powder",
+	},
+	{
+		name = "purelava",
+		material1 = "purifying_powder",
+		material2 = "red_herring",
+		cauldron_contents = "lava",
+		output = "air",
+	},
+	--[[
+	{
+		material1 = "oil",
+		material2 = "fire",
+		cauldron_contents = "meat",
+		output = "meat_done",
+	},
+	]]
+	{
+		material1 = "honey",
+		material2 = "diamond",
+		output = "magic_liquid_protection_all",
 	},
 	{
 		name = "levi",
@@ -137,6 +168,45 @@ at_formula_list = {
 		material2 = "oil",
 		cauldron_contents = "blood",
 		output = "magic_liquid_unstable_polymorph",
+	},
+	{
+		material1 = "magic_liquid_polymorph",
+		material2 = "radioactive_liquid",
+		output = "magic_liquid_random_polymorph",
+	},
+	{
+		material1 = "blood",
+		material2 = "poison",
+		output = "slime",
+	},
+	{
+		material1 = "silver",
+		material2 = "copper",
+		cauldron_contents = "blood",
+		output = "diamond",
+	},
+	{
+		material1 = "silver",
+		material2 = "magic_liquid_polymorph",
+		output = "copper",
+	},
+	{
+		material1 = "copper",
+		material2 = "red_herring",
+		cauldron_contents = "magic_liquid_teleportation",
+		output = "brass",
+	},
+	{
+		material1 = "brass",
+		material2 = "magic_liquid_unstable_teleportation",
+		output = "metal_sand",
+	},
+	{
+		name = "pureworm",
+		material1 = "silver",
+		material2 = "diamond",
+		cauldron_contents = "blood_worm",
+		output = "water", -- purifying_powder purifies the worm blood
 	},
 	{
 		name = "oddwater",
