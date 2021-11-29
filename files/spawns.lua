@@ -2,6 +2,7 @@ dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 
 RegisterSpawnFunction( 0xfff1a545, "at_spawn_material")
 RegisterSpawnFunction( 0xff528003, "at_spawn_shroom")
+RegisterSpawnFunction( 0xff00f809, "at_spawn_frog")
 RegisterSpawnFunction( 0xff012e85, "at_spawn_other")
 RegisterSpawnFunction( 0xffca1d80, "at_spawn_cauldron")
 RegisterSpawnFunction( 0xff5ce4e5, "at_decorate_scene")
@@ -91,4 +92,21 @@ function at_spawn_shroom( x, y )
 	end
 	local shroom = table.remove( at_shrooms )
 	at_mushroom( shroom, x, y )
+end
+
+local at_frogs = {}
+
+function at_spawn_frog( x, y )
+	if #at_frogs < 1 then
+		SetRandomSeed( x, y )
+		at_frogs = {
+			"data/entities/animals/frog.xml",
+			"data/entities/animals/frog.xml",
+			"data/entities/animals/frog.xml",
+			"data/entities/animals/frog_big.xml",
+		}
+		shuffleTable( at_frogs )
+	end
+	local frog = table.remove( at_frogs )
+	EntityLoad( frog, x, y )
 end

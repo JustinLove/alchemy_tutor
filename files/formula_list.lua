@@ -61,6 +61,13 @@ at_formula_list = {
 		output = "fungi_creeping",
 	},
 	{
+		material1 = "alcohol",
+		material2 = "red_herring",
+		cauldron_contents = "air",
+		other = at_frogs,
+		output = "magic_liquid_berserk",
+	},
+	{
 		name = "slimeboom",
 		material1 = "magic_liquid_movement_faster",
 		material2 = "magic_liquid_faster_levitation",

@@ -39,11 +39,11 @@ function at_pick_lab_set( x, y )
 	local r = Random()
 	local f = r ^ (12000 / d)
 	local i = math.floor( f * #at_formula_list + 1 )
-	--return at_formula_list[i]
+	return at_formula_list[i]
 	--return formulas.hastium
 	--return formulas.fungi_creeping
 	--return formulas.silver3
-	return formulas.meat_done
+	--return formulas.magic_liquid_berserk
 end
 
 function at_container( material_name, x, y )
@@ -120,6 +120,20 @@ function at_planterbox( x, y )
 		"mods/alchemy_tutor/files/planterbox.png",
 		"", -- visual
 		x-25, y-13,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
+end
+
+function at_frogs( x, y )
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/frogs.png",
+		"", -- visual
+		x-25, y-29,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures

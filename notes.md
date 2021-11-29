@@ -17,17 +17,17 @@
   - h 01 x2, 3 things *
   - h 05 x1, 3 things
   - h 05b x1, 3 things
-- select recepies
-- caldron naming
-- alternate caldron (odd brick)
-- shock detector
-- frog meat
+- x select recepies
+- x cauldron naming
+- x frog meat
+- alternate cauldron (odd brick)
 - cooking meat
+- shock detector
 - small amounts of ingredient
 - multie ingredient possibilies - green fungus
 - multiple results/material absent - air or water
-- split caldrons?
-- could be in caldron?
+- split cauldrons?
+- could be in cauldron?
 - specify chest location
 - remote biomes
 - grand alchemy influence
@@ -57,7 +57,7 @@
 - x *tele + mana = fire
 - x poly + toxic = random
 - x flum + metal powder = levi
-- alchol + frog meat = berserk
+- x alchol + frog meat = berserk
 - x honey + diamond = ambrosia + poison
 - x flum + unst tele = guiding
 - x diamond + random = silver
