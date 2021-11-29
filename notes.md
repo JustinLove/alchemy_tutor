@@ -20,7 +20,7 @@
 - x select recepies
 - x cauldron naming
 - x frog meat
-- alternate cauldron (odd brick)
+- x alternate cauldron (odd brick)
 - cooking meat
 - shock detector
 - small amounts of ingredient

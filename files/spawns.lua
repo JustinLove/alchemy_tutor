@@ -42,12 +42,13 @@ function at_decorate_scene( x, y )
 	end
 
 	loc = table.remove( at_cauldrons )
+	local cauldron = set.cauldron or at_cauldron
 	if loc then
-		at_cauldron( set, loc.x, loc.y )
+		cauldron( set, loc.x, loc.y )
 	end
 	loc = table.remove( at_cauldrons )
 	if loc then
-		at_cauldron( set, loc.x, loc.y )
+		cauldron( set, loc.x, loc.y )
 	end
 
 	loc = table.remove( at_other )

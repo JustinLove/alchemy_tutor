@@ -40,10 +40,7 @@ function at_pick_lab_set( x, y )
 	local f = r ^ (12000 / d)
 	local i = math.floor( f * #at_formula_list + 1 )
 	return at_formula_list[i]
-	--return formulas.hastium
-	--return formulas.fungi_creeping
-	--return formulas.silver3
-	--return formulas.magic_liquid_berserk
+	--return formulas.melt_steel
 end
 
 function at_container( material_name, x, y )
@@ -114,6 +111,32 @@ function at_cauldron( set, x, y )
 		ComponentSetValue( comp_mat, "material2", tostring(material2) )
 	end
 end
+
+function at_block( set, x, y )
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/block.png",
+		"", -- visual
+		x-18, y-39,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{ ["fff0bbee"] = set.cauldron_contents or "air",
+			["ff4c4356"] = set.cauldron_material or "wizardstone",
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
+
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/caulderon_checker.xml", x, y-18 )
+	local material1 = CellFactory_GetType( set.output )
+	local material2 = -1
+
+	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
+	if comp_mat ~= nil then
+		ComponentSetValue( comp_mat, "material", tostring(material1) )
+		ComponentSetValue( comp_mat, "material2", tostring(material2) )
+	end
+end
+
 
 function at_planterbox( x, y )
 	LoadPixelScene(
