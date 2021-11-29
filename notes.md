@@ -21,9 +21,9 @@
 - x cauldron naming
 - x frog meat
 - x alternate cauldron (odd brick)
-- cooking meat
+- x cooking meat
 - shock detector
-- small amounts of ingredient
+- ? small amounts of ingredient
 - multie ingredient possibilies - green fungus
 - multiple results/material absent - air or water
 - split cauldrons?
@@ -77,7 +77,7 @@
 - x wizardstone + mana = acid
 - x wizardstone + fire = lava
 - x wizardstone + amb = steam
-- cooking meat
+- x cooking meat
 
 ```
 biome_impl/biome_map.png (etc) - color map of biomes

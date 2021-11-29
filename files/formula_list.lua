@@ -124,14 +124,15 @@ at_formula_list = {
 		cauldron_contents = "lava",
 		output = "air",
 	},
-	--[[
 	{
 		material1 = "oil",
 		material2 = "fire",
-		cauldron_contents = "meat",
+		cauldron_contents = "air",
+		cauldron_minor = "meat",
+		cauldron_check_y = 10,
+		other = at_meat,
 		output = "meat_done",
 	},
-	]]
 	{
 		material1 = "honey",
 		material2 = "diamond",
