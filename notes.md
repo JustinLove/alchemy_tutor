@@ -26,7 +26,8 @@
 - x shock detector
 - x small amounts of ingredient
 - x multie ingredient possibilies - green fungus
-- multiple results/material absent - air or water
+- x material absent
+- multiple results - air or water
 - split cauldrons?
 - could be in cauldron?
 - specify chest location

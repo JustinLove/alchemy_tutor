@@ -1,13 +1,12 @@
 --dofile_once("data/scripts/lib/utilities.lua")
 
-function material_area_checker_success( pos_x, pos_y )
+function material_area_checker_failed( pos_x, pos_y )
 	local entity_id = GetUpdatedEntityID()
 	local x,y = EntityGetTransform(entity_id)
 
-	local caulderons = EntityGetInRadiusWithTag( x, y, 130, "caulderon_checker" )
-	--local caulderons = EntityGetInRadius( x, y, 130 )
+	local cauldrons = EntityGetInRadiusWithTag( x, y, 130, "cauldron_checker" )
 
-	for i,v in ipairs( caulderons ) do
+	for i,v in ipairs( cauldrons ) do
 		EntityKill( v )
 	end
 
@@ -17,4 +16,5 @@ function material_area_checker_success( pos_x, pos_y )
 	GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", x, y)
 end
 
-electricity_receiver_switched = material_area_checker_success
+--material_area_checker_failed = material_area_checker_success
+--electricity_receiver_switched = material_area_checker_success

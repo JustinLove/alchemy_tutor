@@ -2,7 +2,7 @@ local at_mod_path = "mods/alchemy_tutor/files"
 
 --1439153766
 --1496269479
-at_test_formula = 'magic_liquid_teleportation'
+at_test_formula = 'melt_steel'
 at_test_x = -200
 at_test_y = -100
 --at_test_player = true
@@ -120,7 +120,7 @@ function at_cauldron( set, x, y )
 		50 -- z index
 	)
 
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/caulderon_checker.xml", x, y-(set.cauldron_check_y or 18) )
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 18) )
 	local mat1 = CellFactory_GetType( set.output )
 	local mat2 = -1
 
@@ -149,6 +149,7 @@ function at_electrode( set, x, y )
 end
 
 function at_block( set, x, y )
+	local material = at_material( set.cauldron_material, "wizardstone" )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/block.png",
 		"", -- visual
@@ -157,13 +158,13 @@ function at_block( set, x, y )
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{ ["fff0bbee"] = at_material( set.cauldron_contents, "air" ),
-			["ff4c4356"] = at_material( set.cauldron_material, "wizardstone" ),
+			["ff4c4356"] = material,
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
 
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/caulderon_checker.xml", x, y-18 )
-	local mat1 = CellFactory_GetType( set.output )
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/block_checker.xml", x, y-18 )
+	local mat1 = CellFactory_GetType( material )
 	local mat2 = -1
 
 	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )

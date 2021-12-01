@@ -1,9 +1,9 @@
-<Entity tags="caulderon_checker">
+<Entity tags="cauldron_checker">
 	<ElectricityReceiverComponent
 		radius="6"
 	></ElectricityReceiverComponent>
 
 	<LuaComponent
-    script_electricity_receiver_switched="mods/alchemy_tutor/files/entities/caulderon_checker.lua" >
+    script_electricity_receiver_switched="mods/alchemy_tutor/files/entities/cauldron_checker.lua" >
 	</LuaComponent>
 </Entity>

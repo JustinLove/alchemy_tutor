@@ -12,7 +12,6 @@ at_formula_list = {
 		material2 = "red_herring",
 		cauldron = at_block,
 		cauldron_material = "steel_static",
-		output = "air",
 	},
 	{
 		name = "hastium",
@@ -226,21 +225,18 @@ at_formula_list = {
 		material1 = "water",
 		material2 = "red_herring",
 		cauldron = at_block,
-		output = "magic_liquid_teleportation",
 	},
 	{
 		name = "oddmana",
 		material1 = "magic_liquid_mana_regeneration",
 		material2 = "red_herring",
 		cauldron = at_block,
-		output = "air",
 	},
 	{
 		name = "oddamb",
 		material1 = "magic_liquid_protection_all",
 		material2 = "red_herring",
 		cauldron = at_block,
-		output = "air",
 	},
 	--[[
 	{
@@ -248,7 +244,6 @@ at_formula_list = {
 		material1 = "fire",
 		material2 = "red_herring",
 		cauldron = at_block,
-		output = "lava",
 	},
 	]]
 	{
