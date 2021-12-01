@@ -2,7 +2,7 @@ local at_mod_path = "mods/alchemy_tutor/files"
 
 --1439153766
 --1496269479
-at_test_formula = 'shock_powder'
+at_test_formula = 'unstablespread'
 at_test_x = -200
 at_test_y = -100
 --at_test_player = true

@@ -24,7 +24,7 @@
 - x cooking meat
 - x too much gold
 - x shock detector
-- ? small amounts of ingredient
+- x small amounts of ingredient
 - multie ingredient possibilies - green fungus
 - multiple results/material absent - air or water
 - split cauldrons?
@@ -52,7 +52,7 @@
 - x flum + berserk = charm
 - x worm pher + worm blood = flum
 - x flum + blood + oil = unstable poly
-- unstele + stable + water = unstable
+- xx unstele + stable + water = unstable
 - x stable + alcohol = unstable
 - x unstabletele + slime = stable
 - x *tele + mana = fire

@@ -153,15 +153,17 @@ at_formula_list = {
 		cauldron_contents = "magic_liquid_unstable_teleportation",
 		output = "magic_liquid_teleportation",
 	},
-	--[[
+	--[[ awkward layering, super slow, can't find a good method
 	{
 		name = "unstablespread",
 		material1 = "magic_liquid_unstable_teleportation",
-		material2 = "water",
-		cauldron_contents = "magic_liquid_teleportation",
+		material1_amount = 0.22,
+		material2 = "red_herring",
+		cauldron_contents = "water",
+		cauldron_minor = "magic_liquid_teleportation",
 		output = "magic_liquid_unstable_teleportation",
 	},
-	]]
+	--]]
 	{
 		name = "drunktele",
 		material1 = "red_herring",
