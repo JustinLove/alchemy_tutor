@@ -22,6 +22,7 @@
 - x frog meat
 - x alternate cauldron (odd brick)
 - x cooking meat
+- x too much gold
 - shock detector
 - ? small amounts of ingredient
 - multie ingredient possibilies - green fungus

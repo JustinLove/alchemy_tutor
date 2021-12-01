@@ -31,15 +31,15 @@ function at_decorate_scene( x, y )
 
 	loc = table.remove( at_materials )
 	if loc then
-		at_container( set.material1, loc.x, loc.y )
+		at_container( set.material1, set.material1_amount or 1.0, loc.x, loc.y )
 	end
 	loc = table.remove( at_materials )
 	if loc then
-		at_container( set.material2, loc.x, loc.y )
+		at_container( set.material2, set.material2_amount or 1.0, loc.x, loc.y )
 	end
 	loc = table.remove( at_materials )
 	if loc then
-		at_container( "red_herring", loc.x, loc.y )
+		at_container( "red_herring", 1.0, loc.x, loc.y )
 	end
 
 	loc = table.remove( at_cauldrons )

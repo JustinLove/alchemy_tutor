@@ -40,10 +40,10 @@ function at_pick_lab_set( x, y )
 	local f = r ^ (12000 / d)
 	local i = math.floor( f * #at_formula_list + 1 )
 	return at_formula_list[i]
-	--return formulas.meat_done
+	--return formulas.silver2
 end
 
-function at_container( material_name, x, y )
+function at_container( material_name, amount, x, y )
 	local entity
 	if material_name == nil or material_name == "" then
 		return
@@ -59,10 +59,10 @@ function at_container( material_name, x, y )
 		entity = at_potion_empty( x, y )
 	elseif at_get_material_type( material_name) == "powder" then
 		entity = at_powder_empty( x, y )
-		AddMaterialInventoryMaterial(entity, material_name, 1500)
+		AddMaterialInventoryMaterial(entity, material_name, 1500 * amount)
 	else
 		entity = at_potion_empty( x, y )
-		AddMaterialInventoryMaterial(entity, material_name, 1000)
+		AddMaterialInventoryMaterial(entity, material_name, 1000 * amount)
 	end
 end
 

@@ -102,6 +102,7 @@ at_formula_list = {
 		name = "silver2",
 		material1 = "magic_liquid_random_polymorph",
 		material2 = "gold",
+		material2_amount = 0.4,
 		output = "silver",
 	},
 	{
