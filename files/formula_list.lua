@@ -37,14 +37,14 @@ at_formula_list = {
 		name = "slimeclean",
 		material1 = "water",
 		material2 = "red_herring",
-		cauldron_contents = "slime",
+		cauldron_contents = {"slime", "slime", "slime", "slime_green", "slime_yellow"},
 		output = "air",
 	},
 	{
 		name = "disinfect",
 		material1 = "alcohol",
 		material2 = "red_herring",
-		cauldron_contents = "slime",
+		cauldron_contents = {"slime", "slime", "slime", "slime_green", "slime_yellow"},
 		output = "air",
 	},
 	{
@@ -69,9 +69,9 @@ at_formula_list = {
 	},
 	{
 		name = "slimeboom",
-		material1 = "magic_liquid_movement_faster",
-		material2 = "magic_liquid_faster_levitation",
-		cauldron_contents = "slime",
+		material1 = {"magic_liquid_movement_faster", "magic_liquid_faster_levitation"},
+		material2 = "red_herring",
+		cauldron_contents = {"slime", "slime", "slime", "slime_green", "slime_yellow"},
 		cauldron_material = "rock_static",
 		output = "air",
 	},
@@ -148,7 +148,7 @@ at_formula_list = {
 		output = "magic_liquid_faster_levitation",
 	},
 	{
-		material1 = "slime",
+		material1 = {"slime", "slime", "slime", "slime_green", "slime_yellow"},
 		material2 = "red_herring",
 		cauldron_contents = "magic_liquid_unstable_teleportation",
 		output = "magic_liquid_teleportation",
@@ -255,7 +255,7 @@ at_formula_list = {
 		name = "void1",
 		material1 = "radioactive_liquid",
 		material2 = "blood_worm",
-		cauldron_contents = "fungi",
+		cauldron_contents = {"fungi", "fungi", "fungi", "fungi_creeping", "fungi_green"},
 		output = "void_liquid",
 	},
 	{

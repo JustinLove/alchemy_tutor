@@ -25,7 +25,7 @@
 - x too much gold
 - x shock detector
 - x small amounts of ingredient
-- multie ingredient possibilies - green fungus
+- x multie ingredient possibilies - green fungus
 - multiple results/material absent - air or water
 - split cauldrons?
 - could be in cauldron?

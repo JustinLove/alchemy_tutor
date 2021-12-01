@@ -2,7 +2,7 @@ local at_mod_path = "mods/alchemy_tutor/files"
 
 --1439153766
 --1496269479
-at_test_formula = 'unstablespread'
+at_test_formula = 'magic_liquid_teleportation'
 at_test_x = -200
 at_test_y = -100
 --at_test_player = true
@@ -53,6 +53,13 @@ function at_pick_lab_set( x, y )
 	return at_formula_list[i]
 end
 
+function at_material( material, default )
+	if type( material ) == 'table' then
+		return material[Random(1, #material)]
+	end
+	return material or default
+end
+
 function at_container( material_name, amount, x, y )
 	local entity
 	if material_name == nil or material_name == "" then
@@ -98,6 +105,7 @@ function at_potion_empty( x, y )
 end
 
 function at_cauldron( set, x, y )
+	local contents = at_material( set.cauldron_contents, "air" )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/cauldron.png",
 		"", -- visual
@@ -105,21 +113,21 @@ function at_cauldron( set, x, y )
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
-		{ ["fff0bbee"] = set.cauldron_contents or "air",
-			["fff2ddb2"] = set.cauldron_minor or set.cauldron_contents or "air",
-			["ff786c42"] = set.cauldron_material or "templebrick_static",
+		{ ["fff0bbee"] = contents,
+			["fff2ddb2"] = set.cauldron_minor or contents,
+			["ff786c42"] = at_material( set.cauldron_material, "templebrick_static" ),
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
 
 	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/caulderon_checker.xml", x, y-(set.cauldron_check_y or 18) )
-	local material1 = CellFactory_GetType( set.output )
-	local material2 = -1
+	local mat1 = CellFactory_GetType( set.output )
+	local mat2 = -1
 
 	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
 	if comp_mat ~= nil then
-		ComponentSetValue( comp_mat, "material", tostring(material1) )
-		ComponentSetValue( comp_mat, "material2", tostring(material2) )
+		ComponentSetValue( comp_mat, "material", tostring(mat1) )
+		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
 	end
 end
 
@@ -131,8 +139,8 @@ function at_electrode( set, x, y )
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
-		{ ["fff0bbee"] = set.cauldron_contents or "air",
-			["ff404041"] = set.cauldron_material or "steel_static",
+		{ ["fff0bbee"] = at_material( set.cauldron_contents, "air" ),
+			["ff404041"] = at_material( set.cauldron_material, "steel_static" ),
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
@@ -148,20 +156,20 @@ function at_block( set, x, y )
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
-		{ ["fff0bbee"] = set.cauldron_contents or "air",
-			["ff4c4356"] = set.cauldron_material or "wizardstone",
+		{ ["fff0bbee"] = at_material( set.cauldron_contents, "air" ),
+			["ff4c4356"] = at_material( set.cauldron_material, "wizardstone" ),
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
 
 	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/caulderon_checker.xml", x, y-18 )
-	local material1 = CellFactory_GetType( set.output )
-	local material2 = -1
+	local mat1 = CellFactory_GetType( set.output )
+	local mat2 = -1
 
 	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
 	if comp_mat ~= nil then
-		ComponentSetValue( comp_mat, "material", tostring(material1) )
-		ComponentSetValue( comp_mat, "material2", tostring(material2) )
+		ComponentSetValue( comp_mat, "material", tostring(mat1) )
+		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
 	end
 end
 
