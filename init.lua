@@ -20,12 +20,12 @@ end
 function OnPlayerSpawned( player_entity ) -- This runs when player entity has been created
 	GamePrint( "OnPlayerSpawned() - Player entity id: " .. tostring(player_entity) )
 
-	--1439153766
-	--1496269479
-	local x = -200 ---700
-	local y = -100 --12180
-	--EntitySetTransform( player_entity, x, y )
-	--local entity = EntityLoad( "mods/alchemy_tutor/files/entities/spawn_lab.xml", x, y )
+	if _G['at_test_player'] then
+		EntitySetTransform( player_entity, at_test_x, at_test_y )
+	end
+	if _G['at_test_lab'] then
+	  EntityLoad( "mods/alchemy_tutor/files/entities/spawn_lab.xml", at_test_x, at_test_y )
+	end
 end
 
 --[[

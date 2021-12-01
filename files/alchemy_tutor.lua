@@ -1,5 +1,13 @@
 local at_mod_path = "mods/alchemy_tutor/files"
 
+--1439153766
+--1496269479
+at_test_formula = 'shock_powder'
+at_test_x = -200
+at_test_y = -100
+--at_test_player = true
+--at_test_lab = true
+
 local function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
 	local tags = CellFactory_GetTags( material_id )
@@ -34,13 +42,15 @@ function at_pick_lab_set( x, y )
 	for i,v in ipairs(at_formula_list) do
 		formulas[v.name or v.output] = v
 	end
+	if _G['at_test_formula'] then
+		return formulas[at_test_formula]
+	end
 	SetRandomSeed( x, y )
 	local d = math.sqrt(x*x + y*y)
 	local r = Random()
 	local f = r ^ (12000 / d)
 	local i = math.floor( f * #at_formula_list + 1 )
 	return at_formula_list[i]
-	--return formulas.silver2
 end
 
 function at_container( material_name, amount, x, y )
