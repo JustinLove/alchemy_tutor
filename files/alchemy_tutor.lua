@@ -123,6 +123,23 @@ function at_cauldron( set, x, y )
 	end
 end
 
+function at_electrode( set, x, y )
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/electrode.png",
+		"mods/alchemy_tutor/files/electrode_visual.png",
+		x-18, y-18,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{ ["fff0bbee"] = set.cauldron_contents or "air",
+			["ff404041"] = set.cauldron_material or "steel_static",
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
+
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/shock_checker.xml", x, y-(set.cauldron_check_y or 18) )
+end
+
 function at_block( set, x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/block.png",

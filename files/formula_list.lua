@@ -78,7 +78,9 @@ at_formula_list = {
 	{
 		material1 = "brass",
 		material2 = "liquid_fire",
-		output = "shock_powder", -- undetectable
+		cauldron = at_electrode,
+		cauldron_material = "steel_static_unmeltable",
+		output = "shock_powder",
 	},
 	{
 		name = "manatele",

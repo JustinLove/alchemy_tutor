@@ -23,7 +23,7 @@
 - x alternate cauldron (odd brick)
 - x cooking meat
 - x too much gold
-- shock detector
+- x shock detector
 - ? small amounts of ingredient
 - multie ingredient possibilies - green fungus
 - multiple results/material absent - air or water

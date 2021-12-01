@@ -16,3 +16,5 @@ function material_area_checker_success( pos_x, pos_y )
 	EntityLoad("data/entities/particles/image_emitters/magical_symbol.xml", x, y)
 	GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", x, y)
 end
+
+electricity_receiver_switched = material_area_checker_success
