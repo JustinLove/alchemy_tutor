@@ -14,7 +14,7 @@ at_formula_list = {
 		cauldron = at_block,
 		cauldron_material = "steel_static",
 	},
-	{
+	{ -- xxx
 		name = "hastium",
 		material1 = "magic_liquid_movement_faster",
 		material2 = "magic_liquid_faster_levitation",
@@ -27,7 +27,7 @@ at_formula_list = {
 		cauldron_contents = "magic_liquid_invisibility",
 		output = "water",
 	},
-	{
+	{ --- xxx
 		material1 = "magic_liquid_mana_regeneration",
 		material2 = "red_herring",
 		cauldron_contents = "water",
@@ -49,12 +49,12 @@ at_formula_list = {
 		output = "air",
 		output2 = "alcohol",
 	},
-	{
+	{ -- xxx
 		material1 = "material_confusion",
 		material2 = "magic_liquid_berserk",
 		output = "magic_liquid_charm",
 	},
-	{
+	{ -- xxx
 		material1 = "radioactive_liquid",
 		material2 = "powder_empty",
 		cauldron_contents = "sand",
@@ -62,20 +62,18 @@ at_formula_list = {
 		other = at_planterbox,
 		output = "fungi_creeping",
 	},
-	{
+	{ -- xxx
 		material1 = "alcohol",
 		material2 = "red_herring",
-		cauldron_contents = "air",
 		other = at_frogs,
 		output = "magic_liquid_berserk",
 	},
 	{
 		name = "slimeboom",
 		material1 = {"magic_liquid_movement_faster", "magic_liquid_faster_levitation"},
-		material2 = "red_herring",
-		cauldron_contents = {"slime", "slime", "slime", "slime_green", "slime_yellow"},
-		cauldron_material = "rock_static",
-		output = "air",
+		material2 = "slime",
+		cauldron = at_block,
+		cauldron_material = "templerock_soft",
 	},
 	{
 		material1 = "brass",

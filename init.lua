@@ -18,9 +18,8 @@ end
 ]]--
 
 function OnPlayerSpawned( player_entity ) -- This runs when player entity has been created
-	GamePrint( "OnPlayerSpawned() - Player entity id: " .. tostring(player_entity) )
-
 	if _G['at_test_player'] then
+		GamePrint( "OnPlayerSpawned() - Player entity id: " .. tostring(player_entity) )
 		EntitySetTransform( player_entity, at_test_x, at_test_y )
 	end
 	if _G['at_test_lab'] then
@@ -28,12 +27,16 @@ function OnPlayerSpawned( player_entity ) -- This runs when player entity has be
 	end
 end
 
---[[
 
 function OnWorldInitialized() -- This is called once the game world is initialized. Doesn't ensure any world chunks actually exist. Use OnPlayerSpawned to ensure the chunks around player have been loaded or created.
-	GamePrint( "OnWorldInitialized() " .. tostring(GameGetFrameNum()) )
+	if _G['at_test_lab'] then
+		local world = GameGetWorldStateEntity()
+		local world_state = EntityGetFirstComponent( world, "WorldStateComponent" )
+		ComponentSetValue( world_state, "time", 0 )
+	end
 end
 
+--[[
 function OnWorldPreUpdate() -- This is called every time the game is about to start updating the world
 	GamePrint( "Pre-update hook " .. tostring(GameGetFrameNum()) )
 end

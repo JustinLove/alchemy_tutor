@@ -5,8 +5,8 @@ local at_mod_path = "mods/alchemy_tutor/files"
 at_test_x = -200
 at_test_y = -100
 --at_test_formula = 'toxicclean'
-at_test_player = true
-at_test_lab = true
+--at_test_player = true
+--at_test_lab = true
 
 local function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
