@@ -27,7 +27,8 @@
 - x small amounts of ingredient
 - x multie ingredient possibilies - green fungus
 - x material absent
-- multiple results - air or water
+- x multiple results - air or water
+- custom red herings
 - split cauldrons?
 - could be in cauldron?
 - specify chest location
@@ -36,6 +37,7 @@
 - grand alchemy labs
 
 - background?
+- cauldron fires
 
 - snow is awkward with powders - maybe okay as puzzle element?
 - vault potions may be too exposed from above

@@ -4,7 +4,7 @@ local at_mod_path = "mods/alchemy_tutor/files"
 --1496269479
 at_test_x = -200
 at_test_y = -100
---at_test_formula = 'shock_powder'
+--at_test_formula = 'pureworm'
 --at_test_player = true
 --at_test_lab = true
 
@@ -123,6 +123,9 @@ function at_cauldron( set, x, y )
 	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 18) )
 	local mat1 = CellFactory_GetType( set.output )
 	local mat2 = -1
+	if set.output2 then
+		mat2 = CellFactory_GetType( set.output2 )
+	end
 
 	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
 	if comp_mat ~= nil then

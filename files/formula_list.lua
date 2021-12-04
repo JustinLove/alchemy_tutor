@@ -38,6 +38,7 @@ at_formula_list = {
 		material2 = "red_herring",
 		cauldron_contents = {"slime", "slime", "slime", "slime_green", "slime_yellow"},
 		output = "air",
+		output2 = "water",
 	},
 	{
 		name = "disinfect",
@@ -45,6 +46,7 @@ at_formula_list = {
 		material2 = "red_herring",
 		cauldron_contents = {"slime", "slime", "slime", "slime_green", "slime_yellow"},
 		output = "air",
+		output2 = "alcohol",
 	},
 	{
 		material1 = "material_confusion",
@@ -139,6 +141,7 @@ at_formula_list = {
 		material1 = "honey",
 		material2 = "diamond",
 		output = "magic_liquid_protection_all",
+		output2 = "poison",
 	},
 	{
 		name = "levi",
@@ -218,7 +221,8 @@ at_formula_list = {
 		material1 = "silver",
 		material2 = "diamond",
 		cauldron_contents = "blood_worm",
-		output = "water", -- purifying_powder purifies the worm blood
+		output = "purifying_powder",
+		output2 = "water", -- purifying_powder purifies the worm blood
 	},
 	{
 		name = "oddwater",
