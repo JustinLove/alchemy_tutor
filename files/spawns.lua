@@ -28,18 +28,20 @@ function at_decorate_scene( x, y )
 	shuffleTable( at_other )
 
 	local loc
+	local red_herrings = RandomDistribution( 0, #at_materials-#set.materials, 3 )
 
-	loc = table.remove( at_materials )
-	if loc then
-		at_container( at_material( set.material1, 'potion_empty' ), set.material1_amount or 1.0, loc.x, loc.y )
+	for i,mat in ipairs( set.materials ) do
+		loc = table.remove( at_materials )
+		if loc then
+			at_container( at_material( mat, 'potion_empty' ), set.amounts[i] or 1.0, loc.x, loc.y )
+		end
 	end
-	loc = table.remove( at_materials )
-	if loc then
-		at_container( at_material( set.material2, 'potion_empty' ), set.material2_amount or 1.0, loc.x, loc.y )
-	end
-	loc = table.remove( at_materials )
-	if loc then
-		at_container( "red_herring", 1.0, loc.x, loc.y )
+
+	for i = 1, red_herrings do
+		loc = table.remove( at_materials )
+		if loc then
+			at_container( "red_herring", 1.0, loc.x, loc.y )
+		end
 	end
 
 	loc = table.remove( at_cauldrons )
