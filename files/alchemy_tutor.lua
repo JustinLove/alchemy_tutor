@@ -4,7 +4,7 @@ local at_mod_path = "mods/alchemy_tutor/files"
 --1496269479
 at_test_x = -200
 at_test_y = -100
---at_test_formula = 'pureworm'
+--at_test_formula = 'toxicclean'
 --at_test_player = true
 --at_test_lab = true
 
@@ -37,13 +37,15 @@ local function empty_container_of_materials(idx)
 	end
 end
 
+at_formulas = {}
+at_materials = {}
+
 function at_pick_lab_set( x, y )
-	local formulas = {}
-	for i,v in ipairs(at_formula_list) do
-		formulas[v.name or v.output] = v
+	if at_formulas['toxicclean'] == nil then
+		at_setup()
 	end
 	if _G['at_test_formula'] then
-		return formulas[at_test_formula]
+		return at_formulas[at_test_formula]
 	end
 	SetRandomSeed( x, y )
 	local d = math.sqrt(x*x + y*y)
@@ -51,6 +53,22 @@ function at_pick_lab_set( x, y )
 	local f = r ^ (12000 / d)
 	local i = math.floor( f * #at_formula_list + 1 )
 	return at_formula_list[i]
+end
+
+function at_setup()
+	for i,v in ipairs(at_formula_list) do
+		at_formulas[v.name or v.output] = v
+		if type( v.material1 ) == 'table' then
+			table.insert(at_materials, v.material1[1])
+		elseif v.material1 ~= 'red_herring' then
+			table.insert(at_materials, v.material1)
+		end
+		if type( v.material2 ) == 'table' then
+			table.insert(at_materials, v.material2[1])
+		elseif v.material2 ~= 'red_herring' then
+			table.insert(at_materials, v.material2)
+		end
+	end
 end
 
 function at_material( material, default )
@@ -65,11 +83,7 @@ function at_container( material_name, amount, x, y )
 	if material_name == nil or material_name == "" then
 		return
 	elseif material_name == "red_herring" then
-		if Random(0, 100) < 33 then
-			entity = at_powder_stash( x, y )
-		else
-			entity = at_potion( x, y )
-		end
+		at_red_herring( x, y )
 	elseif material_name == "powder_empty" then
 		entity = at_powder_empty( x, y )
 	elseif material_name == "potion_empty" then
@@ -102,6 +116,17 @@ end
 function at_potion_empty( x, y )
 	local entity = EntityLoad( "data/entities/items/pickup/potion_empty.xml", x, y )
 	return entity
+end
+
+function at_red_herring( x, y )
+	local r = Random(1, #at_materials + 10)
+	if r <= #at_materials then
+		at_container( at_materials[r], 1.0, x, y )
+	elseif r <= #at_materials + 3 then
+		entity = at_powder_stash( x, y )
+	else
+		entity = at_potion( x, y )
+	end
 end
 
 function at_cauldron( set, x, y )

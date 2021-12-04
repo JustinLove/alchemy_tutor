@@ -28,7 +28,9 @@
 - x multie ingredient possibilies - green fungus
 - x material absent
 - x multiple results - air or water
-- custom red herings
+- x custom red herings
+- x water or swamp?
+- optional distance dependance
 - split cauldrons?
 - could be in cauldron?
 - specify chest location

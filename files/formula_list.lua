@@ -1,10 +1,11 @@
 at_formula_list = {
 	{
 		name = "toxicclean",
-		material1 = "water",
+		material1 = {"water", "water", "water", "water", "water", "water_salt", "water_swamp", "swamp"},
 		material2 = "red_herring",
 		cauldron_contents = "radioactive_liquid",
 		output = "water",
+		output2 = "water_swamp",
 	},
 	{
 		name = "melt_steel",
