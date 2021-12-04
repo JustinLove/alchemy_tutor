@@ -33,6 +33,8 @@
 - x optional distance dependance
 - split cauldrons?
 - could be in cauldron?
+- gold amount?
+- honey in pouch??
 - specify chest location
 - remote biomes
 - grand alchemy influence

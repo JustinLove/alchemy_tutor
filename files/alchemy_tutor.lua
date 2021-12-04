@@ -4,9 +4,9 @@ local at_mod_path = "mods/alchemy_tutor/files"
 --1496269479
 at_test_x = -200
 at_test_y = -100
-at_test_formula = 'silver2'
-at_test_player = true
-at_test_lab = true
+--at_test_formula = 'toxicclean'
+--at_test_player = true
+--at_test_lab = true
 
 local function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
@@ -60,17 +60,8 @@ end
 function at_setup()
 	for i,v in ipairs(at_formula_list) do
 		at_formulas[v.name or v.output] = v
-		if v.materials == nil then
-			v.materials = {}
+		if v.amounts == nil then
 			v.amounts = {}
-			if v.material1 ~= 'red_herring' then
-				table.insert(v.materials, v.material1)
-				v.amounts[#v.materials] = v.material1_amount
-			end
-			if v.material2 ~= 'red_herring' then
-				table.insert(v.materials, v.material2)
-				v.amounts[#v.materials] = v.material2_amount
-			end
 		end
 		for i,mat in ipairs( v.materials ) do
 			if type( mat ) == 'table' then
@@ -90,8 +81,8 @@ function at_material( material, default )
 end
 
 function at_container( material_name, amount, x, y )
-	GamePrint( type(material_name) )
-	GamePrint( material_name )
+	print( type(material_name) )
+	print( material_name )
 	local entity
 	if material_name == nil or material_name == "" then
 		return

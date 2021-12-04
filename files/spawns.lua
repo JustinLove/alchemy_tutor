@@ -28,7 +28,7 @@ function at_decorate_scene( x, y )
 	shuffleTable( at_other )
 
 	local loc
-	local red_herrings = RandomDistribution( 0, #at_materials-#set.materials, 3 )
+	local red_herrings = RandomDistribution( 0, #at_materials-#set.materials, 1, 2 )
 
 	for i,mat in ipairs( set.materials ) do
 		loc = table.remove( at_materials )
