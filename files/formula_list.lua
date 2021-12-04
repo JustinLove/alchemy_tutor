@@ -14,11 +14,18 @@ at_formula_list = {
 		cauldron = at_block,
 		cauldron_material = "steel_static",
 	},
-	{ -- xxx
+	{
 		name = "hastium",
 		materials = {
 			"magic_liquid_movement_faster",
-			"magic_liquid_faster_levitation"
+			"magic_liquid_faster_levitation",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"air",
+			"magic_liquid_movement_faster",
+			"magic_liquid_faster_levitation",
 		},
 		output = "magic_liquid_faster_levitation_and_movement",
 	},
@@ -28,7 +35,7 @@ at_formula_list = {
 		cauldron_contents = "magic_liquid_invisibility",
 		output = "water",
 	},
-	{ --- xxx
+	{
 		materials = {"magic_liquid_mana_regeneration"},
 		cauldron_contents = "water",
 		output = "magic_liquid_mana_regeneration",
@@ -47,8 +54,15 @@ at_formula_list = {
 		output = "air",
 		output2 = "alcohol",
 	},
-	{ -- xxx
+	{
 		materials = {
+			"material_confusion",
+			"magic_liquid_berserk",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"air",
 			"material_confusion",
 			"magic_liquid_berserk",
 		},
@@ -64,8 +78,9 @@ at_formula_list = {
 		other = at_planterbox,
 		output = "fungi_creeping",
 	},
-	{ -- xxx
+	{
 		materials = {"alcohol"},
+		cauldron_contents = {"air", "air", "alcohol"},
 		other = at_frogs,
 		output = "magic_liquid_berserk",
 	},
@@ -89,16 +104,19 @@ at_formula_list = {
 	},
 	{
 		name = "manatele",
-		materials = {
-			"magic_liquid_mana_regeneration",
-			"red_herring",
-		},
+		materials = { "magic_liquid_mana_regeneration" },
 		cauldron_contents = "magic_liquid_unstable_teleportation",
 		output = "air",
 	},
 	{
 		materials = {
 			"magic_liquid_unstable_teleportation",
+			"material_confusion",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"air",
 			"material_confusion",
 		},
 		output = "orb_powder",
@@ -109,6 +127,11 @@ at_formula_list = {
 			"magic_liquid_random_polymorph",
 			"diamond",
 		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"magic_liquid_random_polymorph",
+		},
 		output = "silver",
 	},
 	{
@@ -118,6 +141,11 @@ at_formula_list = {
 			"magic_liquid_random_polymorph",
 		},
 		amounts = {0.4},
+		cauldron_contents = {
+			"air",
+			"air",
+			"magic_liquid_random_polymorph",
+		},
 		output = "silver",
 	},
 	{
@@ -125,8 +153,12 @@ at_formula_list = {
 		materials = {
 			"copper",
 			"brass",
+			"water",
 		},
-		cauldron_contents = "water",
+		cauldron_contents = {
+			"air",
+			"water",
+		},
 		output = "silver",
 	},
 	{
@@ -171,11 +203,25 @@ at_formula_list = {
 			"brass",
 			"material_confusion",
 		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"material_confusion",
+		},
 		output = "magic_liquid_faster_levitation",
 	},
 	{
-		materials = { "slime" },
-		cauldron_contents = "magic_liquid_unstable_teleportation",
+		materials = {
+			"slime",
+			"magic_liquid_unstable_teleportation"
+		},
+		cauldron_contents = {
+			"magic_liquid_unstable_teleportation",
+			"magic_liquid_unstable_teleportation",
+			"magic_liquid_unstable_teleportation",
+			"air",
+			"slime",
+		},
 		output = "magic_liquid_teleportation",
 	},
 	--[[ awkward layering, super slow, can't find a good method
@@ -201,20 +247,44 @@ at_formula_list = {
 			"blood_worm",
 			"magic_liquid_worm_attractor",
 		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"air",
+			"blood_worm",
+			"magic_liquid_worm_attractor",
+		},
 		output = "material_confusion",
 	},
 	{
 		materials = {
 			"material_confusion",
 			"oil",
+			"blood",
 		},
-		cauldron_contents = "blood",
+		cauldron_contents = {
+			"material_confusion",
+			"oil",
+			"blood",
+			"blood",
+			"blood",
+			"air",
+			"air",
+		},
 		output = "magic_liquid_unstable_polymorph",
 	},
 	{
 		materials = {
 			"magic_liquid_polymorph",
 			"radioactive_liquid",
+		},
+		cauldron_contents = {
+			"magic_liquid_polymorph",
+			"radioactive_liquid",
+			"radioactive_liquid",
+			"air",
+			"air",
+			"air",
 		},
 		output = "magic_liquid_random_polymorph",
 	},
@@ -223,14 +293,22 @@ at_formula_list = {
 			"blood",
 			"poison", -- evaporating
 		},
+		cauldron_contents = {
+			"air",
+			"blood",
+		},
 		output = "slime",
 	},
 	{
 		materials = {
 			"silver",
 			"copper",
+			"blood",
 		},
-		cauldron_contents = "blood",
+		cauldron_contents = {
+			"blood",
+			"air",
+		},
 		output = "diamond",
 	},
 	{
@@ -248,6 +326,11 @@ at_formula_list = {
 	{
 		materials = {
 			"brass",
+			"magic_liquid_unstable_teleportation",
+		},
+		cauldron_contents = {
+			"air",
+			"magic_liquid_unstable_teleportation",
 			"magic_liquid_unstable_teleportation",
 		},
 		output = "metal_sand",
@@ -298,8 +381,15 @@ at_formula_list = {
 		materials = {
 			"diamond",
 			"magic_liquid_random_polymorph",
+			"radioactive_liquid",
 		},
-		cauldron_contents = "radioactive_liquid",
+		cauldron_contents = {
+			"magic_liquid_random_polymorph",
+			"radioactive_liquid",
+			"radioactive_liquid",
+			"air",
+			"air",
+		},
 		output = "void_liquid",
 	},
 }

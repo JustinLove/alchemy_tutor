@@ -29,11 +29,34 @@ function at_decorate_scene( x, y )
 
 	local loc
 	local red_herrings = RandomDistribution( 0, #at_materials-#set.materials, 1, 2 )
+	local in_cauldron = {}
+	local what
+
+	loc = table.remove( at_cauldrons )
+	local cauldron = set.cauldron or at_cauldron
+	if loc then
+		what = cauldron( set, loc.x, loc.y )
+		if what ~= nil then
+			in_cauldron[what] = true
+		end
+	end
+	loc = table.remove( at_cauldrons )
+	if loc then
+		what = cauldron( set, loc.x, loc.y )
+		if what ~= nil then
+			in_cauldron[what] = true
+		end
+	end
 
 	for i,mat in ipairs( set.materials ) do
+		what = at_material( mat, 'potion_empty' )
 		loc = table.remove( at_materials )
 		if loc then
-			at_container( at_material( mat, 'potion_empty' ), set.amounts[i] or 1.0, loc.x, loc.y )
+			if in_cauldron[what] then
+				at_container( what, 0.0, loc.x, loc.y )
+			else
+				at_container( what, set.amounts[i] or 1.0, loc.x, loc.y )
+			end
 		end
 	end
 
@@ -42,16 +65,6 @@ function at_decorate_scene( x, y )
 		if loc then
 			at_container( "red_herring", 1.0, loc.x, loc.y )
 		end
-	end
-
-	loc = table.remove( at_cauldrons )
-	local cauldron = set.cauldron or at_cauldron
-	if loc then
-		cauldron( set, loc.x, loc.y )
-	end
-	loc = table.remove( at_cauldrons )
-	if loc then
-		cauldron( set, loc.x, loc.y )
 	end
 
 	loc = table.remove( at_other )

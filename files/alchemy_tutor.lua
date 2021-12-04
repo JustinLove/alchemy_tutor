@@ -75,6 +75,9 @@ end
 
 function at_material( material, default )
 	if type( material ) == 'table' then
+		if #material == 0 then
+			return default
+		end
 		return material[Random(1, #material)]
 	end
 	return material or default
@@ -161,6 +164,8 @@ function at_cauldron( set, x, y )
 		ComponentSetValue( comp_mat, "material", tostring(mat1) )
 		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
 	end
+
+	return contents
 end
 
 function at_electrode( set, x, y )

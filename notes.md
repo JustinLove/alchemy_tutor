@@ -31,8 +31,9 @@
 - x custom red herings
 - x water or swamp?
 - x optional distance dependance
-- split cauldrons?
-- could be in cauldron?
+- x split cauldrons?
+- x could be in cauldron?
+- solids in cauldron - whether to remove cauldron material
 - gold amount?
 - honey in pouch??
 - specify chest location
