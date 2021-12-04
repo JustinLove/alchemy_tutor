@@ -5,8 +5,8 @@ local at_mod_path = "mods/alchemy_tutor/files"
 at_test_x = -200
 at_test_y = -100
 --at_test_formula = 'toxicclean'
---at_test_player = true
---at_test_lab = true
+at_test_player = true
+at_test_lab = true
 
 local function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
@@ -48,10 +48,12 @@ function at_pick_lab_set( x, y )
 		return at_formulas[at_test_formula]
 	end
 	SetRandomSeed( x, y )
-	local d = math.sqrt(x*x + y*y)
 	local r = Random()
-	local f = r ^ (12000 / d)
-	local i = math.floor( f * #at_formula_list + 1 )
+	if ModSettingGet("alchemy_tutor.formula_distance") then
+		local d = math.sqrt(x*x + y*y)
+		r = r ^ (12000 / d)
+	end
+	local i = math.floor( r * #at_formula_list + 1 )
 	return at_formula_list[i]
 end
 

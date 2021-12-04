@@ -30,7 +30,7 @@
 - x multiple results - air or water
 - x custom red herings
 - x water or swamp?
-- optional distance dependance
+- x optional distance dependance
 - split cauldrons?
 - could be in cauldron?
 - specify chest location

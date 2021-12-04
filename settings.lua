@@ -42,6 +42,13 @@ mod_settings =
 		value_display_formatting = " $0",
 		scope = MOD_SETTING_SCOPE_NEW_GAME,
 	},
+	{
+		id = "formula_distance",
+		ui_name = "Distance Dependant",
+		ui_description = "Favor basic formulas near start, and obscure formula farther away",
+		value_default = true,
+		scope = MOD_SETTING_SCOPE_RUNTIME,
+	},
 }
 
 -- This function is called to ensure the correct setting values are visible to the game via ModSettingGet(). your mod's settings don't work if you don't have a function like this defined in settings.lua.
