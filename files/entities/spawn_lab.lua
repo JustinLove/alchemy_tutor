@@ -16,7 +16,7 @@ function at_spawn_lab( x, y )
 		--"mods/alchemy_tutor/files/snowcave_lab_v.png",
 		--"mods/alchemy_tutor/files/snowcave_lab_h.png",
 		--"mods/alchemy_tutor/files/excavation_lab_h.png",
-		---"mods/alchemy_tutor/files/coalmine_lab.png",
+		--"mods/alchemy_tutor/files/coalmine_lab.png",
 		"mods/alchemy_tutor/files/coalmine_lab_alt.png",
 		--"mods/alchemy_tutor/files/coalmine_lab_tall.png",
 		"",

@@ -6,6 +6,7 @@ RegisterSpawnFunction( 0xff591de8, "at_spawn_meat")
 RegisterSpawnFunction( 0xff00f809, "at_spawn_frog")
 RegisterSpawnFunction( 0xff012e85, "at_spawn_other")
 RegisterSpawnFunction( 0xffca1d80, "at_spawn_cauldron")
+RegisterSpawnFunction( 0xff2e3a2d, "at_spawn_reward")
 RegisterSpawnFunction( 0xff5ce4e5, "at_decorate_scene")
 RegisterSpawnFunction( 0xff91a4e2, "at_look_here")
 
@@ -111,6 +112,10 @@ end
 
 function at_spawn_other( x, y )
 	table.insert( at_other, {x = x, y = y} )
+end
+
+function at_spawn_reward( x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/reward_marker.xml", x + 1, y - 6 )
 end
 
 local at_shrooms = {}
