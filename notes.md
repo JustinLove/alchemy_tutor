@@ -33,9 +33,10 @@
 - x optional distance dependance
 - x split cauldrons?
 - x could be in cauldron?
-- solids in cauldron - whether to remove cauldron material
+- x honey in pouch??
 - gold amount?
-- honey in pouch??
+- avoid dupliate red herrings
+- solids in cauldron - whether to remove cauldron material
 - specify chest location
 - remote biomes
 - grand alchemy influence

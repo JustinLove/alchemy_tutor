@@ -1,4 +1,5 @@
 local at_mod_path = "mods/alchemy_tutor/files"
+dofile_once( "data/scripts/lib/utilities.lua" )
 
 --1439153766
 --1496269479
@@ -21,6 +22,13 @@ local function at_get_material_type( material_name )
 			return "powder"
 		elseif v == "[liquid]" then
 			return "liquid"
+		end
+	end
+
+	local sands = CellFactory_GetAllSands()
+	for i,v in ipairs( sands ) do
+		if v == material_name then
+			return "powder"
 		end
 	end
 
