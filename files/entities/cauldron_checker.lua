@@ -16,7 +16,7 @@ function material_area_checker_success( pos_x, pos_y )
 		EntityKill( v )
 	end
 
-	local rewards = EntityGetInRadiusWithTag( x, y, 130, "at_reward" )
+	local rewards = EntityGetInRadiusWithTag( x, y, 500, "at_reward" )
 	if #rewards == 0 then
 		spawn_reward( x, y - 40 )
 	end

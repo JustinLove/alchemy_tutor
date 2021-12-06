@@ -36,7 +36,7 @@
 - x honey in pouch??
 - x gold amount?
 - x avoid dupliate red herrings
-- specify chest location
+- x specify chest location
 - solids in cauldron - whether to remove cauldron material
 - remote biomes
 - grand alchemy influence

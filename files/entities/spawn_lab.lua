@@ -2,10 +2,11 @@ local entity_id    = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform( entity_id )
 
 function at_spawn_lab( x, y )
-	local width = 130
-	local height = 260
-	--local width = 200
-	--local height = 400
+	local width, height = 130, 260
+	--local width, height = 400, 200
+	--local width, height = 200, 400
+	--local width, height = 520, 260
+	--local width, height = 260, 520
 	LoadPixelScene(
 		--"mods/alchemy_tutor/files/crypt_lab_v.png",
 		--"mods/alchemy_tutor/files/crypt_lab_h.png",
@@ -14,8 +15,10 @@ function at_spawn_lab( x, y )
 		--"mods/alchemy_tutor/files/rainforest_lab_v.png",
 		--"mods/alchemy_tutor/files/rainforest_lab_h.png",
 		--"mods/alchemy_tutor/files/snowcave_lab_v.png",
+		--"mods/alchemy_tutor/files/snowcave_lab_v_alt.png",
 		--"mods/alchemy_tutor/files/snowcave_lab_h.png",
 		--"mods/alchemy_tutor/files/excavation_lab_h.png",
+		--"mods/alchemy_tutor/files/excavation_lab_h_alt.png",
 		--"mods/alchemy_tutor/files/coalmine_lab.png",
 		"mods/alchemy_tutor/files/coalmine_lab_alt.png",
 		--"mods/alchemy_tutor/files/coalmine_lab_tall.png",
