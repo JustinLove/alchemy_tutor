@@ -93,23 +93,25 @@ function at_material( material, default )
 end
 
 function at_container( material_name, amount, x, y )
-	print( type(material_name) )
-	print( material_name )
+	--print( type(material_name) )
+	--print( material_name )
 	local entity
 	if material_name == nil or material_name == "" then
 		return
 	elseif material_name == "red_herring" then
-		at_red_herring( x, y )
+		return at_red_herring( x, y )
 	elseif material_name == "powder_empty" then
-		entity = at_powder_empty( x, y )
+		return at_powder_empty( x, y )
 	elseif material_name == "potion_empty" then
-		entity = at_potion_empty( x, y )
+		return at_potion_empty( x, y )
 	elseif at_get_material_type( material_name) == "powder" then
 		entity = at_powder_empty( x, y )
 		AddMaterialInventoryMaterial(entity, material_name, 1500 * amount)
+		return entity
 	else
 		entity = at_potion_empty( x, y )
 		AddMaterialInventoryMaterial(entity, material_name, 1000 * amount)
+		return entity
 	end
 end
 
@@ -134,14 +136,21 @@ function at_potion_empty( x, y )
 	return entity
 end
 
-function at_red_herring( x, y )
-	local r = Random(1, #at_materials + 10)
-	if r <= #at_materials then
-		at_container( at_materials[r], at_amounts[r] or 1.0, x, y )
-	elseif r <= #at_materials + 3 then
-		at_powder_stash( x, y )
-	else
-		at_potion( x, y )
+function at_red_herring( x, y, present_materials )
+	local crazy = 0
+	while true do
+		local r = Random(1, #at_materials + 10)
+		if r <= #at_materials then
+			if (not present_materials[at_materials[r]]) or crazy > 10 then
+				return at_container( at_materials[r], at_amounts[r] or 1.0, x, y )
+			end
+		elseif r <= #at_materials + 3 then
+			return at_powder_stash( x, y )
+		else
+			return at_potion( x, y )
+		end
+
+		crazy = crazy + 1
 	end
 end
 

@@ -28,8 +28,10 @@ function at_decorate_scene( x, y )
 	shuffleTable( at_other )
 
 	local loc
-	local red_herrings = RandomDistribution( 0, #at_materials-#set.materials, 1, 2 )
+	local max = #at_materials-#set.materials
+	local red_herrings = RandomDistribution( 0, max, 1, 2 )
 	local in_cauldron = {}
+	local present_materials = {}
 	local what
 
 	loc = table.remove( at_cauldrons )
@@ -38,6 +40,8 @@ function at_decorate_scene( x, y )
 		what = cauldron( set, loc.x, loc.y )
 		if what ~= nil then
 			in_cauldron[what] = true
+			present_materials[what] = true
+			--print( "cauldron " .. what )
 		end
 	end
 	loc = table.remove( at_cauldrons )
@@ -45,6 +49,8 @@ function at_decorate_scene( x, y )
 		what = cauldron( set, loc.x, loc.y )
 		if what ~= nil then
 			in_cauldron[what] = true
+			present_materials[what] = true
+			--print( "cauldron " .. what )
 		end
 	end
 
@@ -57,13 +63,21 @@ function at_decorate_scene( x, y )
 			else
 				at_container( what, set.amounts[i] or 1.0, loc.x, loc.y )
 			end
+			present_materials[what] = true
+			--print( "formula " .. what )
 		end
 	end
 
+	local entity
 	for i = 1, red_herrings do
 		loc = table.remove( at_materials )
 		if loc then
-			at_container( "red_herring", 1.0, loc.x, loc.y )
+			entity = at_red_herring( loc.x, loc.y, present_materials )
+			if entity ~= nil then
+				what = CellFactory_GetName(GetMaterialInventoryMainMaterial( entity ))
+				present_materials[what] = true
+				--print( "red " .. what )
+			end
 		end
 	end
 

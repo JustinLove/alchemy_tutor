@@ -35,7 +35,7 @@
 - x could be in cauldron?
 - x honey in pouch??
 - x gold amount?
-- avoid dupliate red herrings
+- x avoid dupliate red herrings
 - solids in cauldron - whether to remove cauldron material
 - specify chest location
 - remote biomes
