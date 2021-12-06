@@ -68,7 +68,7 @@ at_formula_list = {
 		},
 		output = "magic_liquid_charm",
 	},
-	{ -- xxx
+	{
 		materials = {
 			"radioactive_liquid",
 			"powder_empty",
