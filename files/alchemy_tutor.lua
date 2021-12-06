@@ -1,5 +1,4 @@
 local at_mod_path = "mods/alchemy_tutor/files"
-dofile_once( "data/scripts/lib/utilities.lua" )
 
 --1439153766
 --1496269479
@@ -47,6 +46,7 @@ end
 
 at_formulas = {}
 at_materials = {}
+at_amounts = {}
 
 function at_pick_lab_set( x, y )
 	if at_formulas['toxicclean'] == nil then
@@ -77,6 +77,7 @@ function at_setup()
 			else
 				table.insert(at_materials, mat)
 			end
+			at_amounts[#at_materials] = v.amounts[i]
 		end
 	end
 end
@@ -136,11 +137,11 @@ end
 function at_red_herring( x, y )
 	local r = Random(1, #at_materials + 10)
 	if r <= #at_materials then
-		at_container( at_materials[r], 1.0, x, y )
+		at_container( at_materials[r], at_amounts[r] or 1.0, x, y )
 	elseif r <= #at_materials + 3 then
-		entity = at_powder_stash( x, y )
+		at_powder_stash( x, y )
 	else
-		entity = at_potion( x, y )
+		at_potion( x, y )
 	end
 end
 
@@ -280,6 +281,11 @@ function shuffleTable( t )
 		j = Random(1,i)
 		t[i], t[j] = t[j], t[i]
 	end
+end
+
+local function at_print_table( t )
+	dofile_once( "data/scripts/lib/utilities.lua" )
+	debug_print_table( t )
 end
 
 dofile_once(at_mod_path .. "/formula_list.lua")
