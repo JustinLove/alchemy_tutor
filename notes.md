@@ -41,7 +41,6 @@
 - x reward trigger color shows up in crypt v
 - x reward range too big
 - remote biomes
-  - return portal
   - trigger on key
   - clear on return/use
 - grand alchemy labs
