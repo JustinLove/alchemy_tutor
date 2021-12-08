@@ -37,7 +37,8 @@
 - x gold amount?
 - x avoid dupliate red herrings
 - x specify chest location
-- grand alchemy influence
+- x grand alchemy influence
+- reward trigger color shows up in crypt v
 - repeat resitance
 - remote biomes
 - grand alchemy labs

@@ -193,12 +193,17 @@ end
 function at_red_herring( x, y, present_materials )
 	local crazy = 0
 	while true do
-		local r = Random(1, #at_materials + 10)
+		local r = Random(1, #at_materials + #at_grand_materials + 10)
 		if r <= #at_materials then
 			if (not present_materials[at_materials[r]]) or crazy > 10 then
 				return at_container( at_materials[r], at_amounts[r] or 1.0, x, y )
 			end
-		elseif r <= #at_materials + 3 then
+		elseif r <= #at_materials + #at_grand_materials then
+			r = r - #at_materials
+			if (not present_materials[at_grand_materials[r]]) or crazy > 10 then
+				return at_container( at_grand_materials[r], 1.0, x, y )
+			end
+		elseif r <= #at_materials + #at_grand_materials + 3 then
 			return at_powder_stash( x, y )
 		else
 			return at_potion( x, y )
