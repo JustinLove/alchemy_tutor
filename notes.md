@@ -37,13 +37,14 @@
 - x gold amount?
 - x avoid dupliate red herrings
 - x specify chest location
-- solids in cauldron - whether to remove cauldron material
-- remote biomes
 - grand alchemy influence
+- remote biomes
 - grand alchemy labs
 
+- solids in cauldron - whether to remove cauldron material/ which formula???
 - background?
 - cauldron fires
+- Alchemical Reactions Expansion
 
 - snow is awkward with powders - maybe okay as puzzle element?
 - vault potions may be too exposed from above

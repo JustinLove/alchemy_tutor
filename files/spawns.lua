@@ -10,11 +10,10 @@ RegisterSpawnFunction( 0xff2e3a2d, "at_spawn_reward")
 RegisterSpawnFunction( 0xff5ce4e5, "at_decorate_scene")
 RegisterSpawnFunction( 0xff91a4e2, "at_look_here")
 
-local at_setting_lab_chance = ModSettingGet("alchemy_tutor.lab_chance")
-if at_setting_lab_chance == nil then
-	at_setting_lab_chance = 0.5
+at_lab_chance = ModSettingGet("alchemy_tutor.lab_chance")
+if at_lab_chance == nil then
+	at_lab_chance = 1
 end
-at_lab_chance = 10 * (at_setting_lab_chance ^ 3.3)
 --at_lab_chance = 9999999
 
 local at_materials = {}
