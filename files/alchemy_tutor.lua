@@ -1,4 +1,5 @@
 local at_mod_path = "mods/alchemy_tutor/files"
+dofile_once(at_mod_path .. "/grand_alchemy.lua")
 
 --1439153766
 --1496269479
@@ -47,6 +48,7 @@ end
 at_formulas = {}
 at_materials = {}
 at_amounts = {}
+at_grand_materials = {}
 
 function at_pick_lab_set( x, y )
 	if at_formulas['toxicclean'] == nil then
@@ -61,13 +63,64 @@ function at_pick_lab_set( x, y )
 		local d = math.sqrt(x*x + y*y)
 		r = r ^ (12000 / d)
 	end
-	local i = math.floor( r * #at_formula_list + 1 )
-	return at_formula_list[i]
+	local grand = {}
+	for i,v in ipairs(at_formula_list) do
+		if v.grand_alchemy then
+			table.insert(grand, v)
+		end
+	end
+	if Random(0, #grand + 5) < #grand then
+		local i = math.floor( r * #grand + 1 )
+		return grand[i]
+	else
+		local i = math.floor( r * #at_formula_list + 1 )
+		return at_formula_list[i]
+	end
+end
+
+function at_setup_grand_alchemy()
+	local lc_combo, ap_combo = at_grand_alchemy()
+	local grand = {}
+
+	local function mark_grand(formula, mat)
+		if type( mat ) == 'table' then
+			if grand[mat[1]] then
+				formula.grand_alchemy = true
+			end
+		else
+			if grand[mat] then
+				formula.grand_alchemy = true
+			end
+		end
+	end
+
+	for i,v in ipairs(lc_combo) do
+		grand[v] = true
+		table.insert(at_grand_materials, v)
+	end
+	for i,v in ipairs(ap_combo) do
+		grand[v] = true
+		table.insert(at_grand_materials, v)
+	end
+
+	--at_print_table(at_grand_materials)
+
+	for i,v in ipairs(at_formula_list) do
+		for i,mat in ipairs( v.materials ) do
+			mark_grand(v, mat)
+			at_amounts[#at_materials] = v.amounts[i]
+		end
+		mark_grand(v, v.output)
+		mark_grand(v, v.cauldron_contents)
+	end
 end
 
 function at_setup()
 	for i,v in ipairs(at_formula_list) do
-		at_formulas[v.name or v.output] = v
+		if v.name == nil then
+			v.name = v.output
+		end
+		at_formulas[v.name] = v
 		if v.amounts == nil then
 			v.amounts = {}
 		end
@@ -80,6 +133,7 @@ function at_setup()
 			at_amounts[#at_materials] = v.amounts[i]
 		end
 	end
+	at_setup_grand_alchemy()
 end
 
 function at_material( material, default )
@@ -292,7 +346,7 @@ function shuffleTable( t )
 	end
 end
 
-local function at_print_table( t )
+function at_print_table( t )
 	dofile_once( "data/scripts/lib/utilities.lua" )
 	debug_print_table( t )
 end

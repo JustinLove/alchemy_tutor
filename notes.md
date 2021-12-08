@@ -38,6 +38,7 @@
 - x avoid dupliate red herrings
 - x specify chest location
 - grand alchemy influence
+- repeat resitance
 - remote biomes
 - grand alchemy labs
 

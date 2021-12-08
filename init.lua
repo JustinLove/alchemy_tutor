@@ -29,6 +29,7 @@ end
 
 
 function OnWorldInitialized() -- This is called once the game world is initialized. Doesn't ensure any world chunks actually exist. Use OnPlayerSpawned to ensure the chunks around player have been loaded or created.
+
 	if _G['at_test_lab'] then
 		local world = GameGetWorldStateEntity()
 		local world_state = EntityGetFirstComponent( world, "WorldStateComponent" )
