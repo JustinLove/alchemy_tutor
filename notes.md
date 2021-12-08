@@ -41,8 +41,13 @@
 - x reward trigger color shows up in crypt v
 - x reward range too big
 - remote biomes
-  - trigger on key
+  - spawn key
   - clear on return/use
+  - remote lab design
+  - exit sequence
+  - key design
+- hisii labs
+- redesigns
 - grand alchemy labs
 
 - solids in cauldron - whether to remove cauldron material/ which formula???

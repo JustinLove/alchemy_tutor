@@ -80,6 +80,7 @@
       explosion_radius="3" 
       explosion_sprite="" 
       explosion_sprite_lifetime="10" 
+      load_this_entity="mods/alchemy_tutor/files/entities/remote_lab_portal.xml"
       hole_destroy_liquid="0" 
       hole_enabled="0" 
       ray_energy="100000"
