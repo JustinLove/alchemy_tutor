@@ -25,6 +25,10 @@ function OnPlayerSpawned( player_entity ) -- This runs when player entity has be
 	if _G['at_test_lab'] then
 	  EntityLoad( "mods/alchemy_tutor/files/entities/spawn_lab.xml", at_test_x, at_test_y )
 	end
+	if _G['at_test_portal'] then
+		local x,y = EntityGetTransform(player_entity)
+		EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_portal.xml", x, y - 50 )
+	end
 end
 
 

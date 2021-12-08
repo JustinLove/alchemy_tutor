@@ -8,6 +8,7 @@ at_test_y = -100
 --at_test_formula = 'toxicclean'
 --at_test_player = true
 --at_test_lab = true
+--at_test_portal = true
 
 local function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
