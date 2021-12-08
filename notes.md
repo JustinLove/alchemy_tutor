@@ -39,13 +39,14 @@
 - x specify chest location
 - x grand alchemy influence
 - x reward trigger color shows up in crypt v
-- repeat resitance
+- x reward range too big
 - remote biomes
 - grand alchemy labs
 
 - solids in cauldron - whether to remove cauldron material/ which formula???
 - background?
 - cauldron fires
+- repeat resitance??
 - Alchemical Reactions Expansion
 
 - snow is awkward with powders - maybe okay as puzzle element?

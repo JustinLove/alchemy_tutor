@@ -1,4 +1,4 @@
---dofile_once("data/scripts/lib/utilities.lua")
+dofile_once("data/scripts/lib/utilities.lua")
 
 local function spawn_reward( x, y )
 	EntityLoad( "data/entities/items/pickup/chest_random.xml", x, y)
@@ -19,13 +19,22 @@ function material_area_checker_success( pos_x, pos_y )
 	local rewards = EntityGetInRadiusWithTag( x, y, 500, "at_reward" )
 	if #rewards == 0 then
 		spawn_reward( x, y - 40 )
+		return
 	end
 
+	local best_distance = 250000
+	local best_reward = rewards[1]
 	for i,v in ipairs( rewards ) do
-		x,y = EntityGetTransform(v)
-		EntityKill( v )
-		spawn_reward( x, y )
+		local rx,ry = EntityGetTransform(v)
+		local d = get_distance2( x, y, rx, ry )
+		if d < best_distance then
+			best_distance = d
+			best_reward = v
+		end
 	end
+	EntityKill( best_reward )
+	local rx,ry = EntityGetTransform( best_reward )
+	spawn_reward( rx, ry )
 end
 
 material_area_checker_failed = material_area_checker_success
