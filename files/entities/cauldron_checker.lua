@@ -10,7 +10,7 @@ function material_area_checker_success( pos_x, pos_y )
 	local entity_id = GetUpdatedEntityID()
 	local x,y = EntityGetTransform(entity_id)
 
-	local cauldrons = EntityGetInRadiusWithTag( x, y, 130, "cauldron_checker" )
+	local cauldrons = EntityGetInRadiusWithTag( x, y, 200, "cauldron_checker" )
 
 	for i,v in ipairs( cauldrons ) do
 		EntityKill( v )
