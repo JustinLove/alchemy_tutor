@@ -14,6 +14,7 @@ function at_spawn_lab( x, y )
 		--"mods/alchemy_tutor/files/vault_lab_h.png",
 		--"mods/alchemy_tutor/files/rainforest_lab_v.png",
 		--"mods/alchemy_tutor/files/rainforest_lab_h.png",
+		--"mods/alchemy_tutor/files/snowcastle_lab_v.png",
 		--"mods/alchemy_tutor/files/snowcastle_lab_h.png",
 		--"mods/alchemy_tutor/files/snowcave_lab_v.png",
 		--"mods/alchemy_tutor/files/snowcave_lab_v_alt.png",
@@ -26,6 +27,7 @@ function at_spawn_lab( x, y )
 		"",
 		--"mods/alchemy_tutor/files/coalmine_lab_visual.png",
 		x - width/2, y,
+		--"data/biome_impl/snowcastle/greenhouse_background.png",
 		--"data/biome_impl/snowcastle/bedroom_background.png",
 		"", -- background
 		true, -- skip_biome_checks
