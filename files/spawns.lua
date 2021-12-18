@@ -4,6 +4,7 @@ RegisterSpawnFunction( 0xfff1a545, "at_spawn_material")
 RegisterSpawnFunction( 0xff528003, "at_spawn_shroom")
 RegisterSpawnFunction( 0xff591de8, "at_spawn_meat")
 RegisterSpawnFunction( 0xff00f809, "at_spawn_frog")
+RegisterSpawnFunction( 0xff05702e, "at_spawn_rock")
 RegisterSpawnFunction( 0xff012e85, "at_spawn_other")
 RegisterSpawnFunction( 0xffca1d80, "at_spawn_cauldron")
 RegisterSpawnFunction( 0xff2e3a2d, "at_spawn_reward")
@@ -149,3 +150,24 @@ end
 function at_spawn_meat( x, y )
 	EntityLoad( "data/entities/animals/wolf.xml", x, y )
 end
+
+function at_spawn_rock(x, y)
+	spawn(at_rock,x,y)
+end
+
+at_rock =
+{
+	total_prob = 0,
+	{
+		prob   		= 0.2,
+		min_count	= 1,
+		max_count	= 1, 
+		entity 	= "data/entities/props/physics_stone_02.xml",
+	},
+	{
+		prob   		= 0.2,
+		min_count	= 1,
+		max_count	= 1, 
+		entity 	= "data/entities/props/physics_stone_03.xml",
+	},
+}

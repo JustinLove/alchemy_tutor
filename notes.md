@@ -40,7 +40,7 @@
 - x grand alchemy influence
 - x reward trigger color shows up in crypt v
 - x reward range too big
-- excavation site wrong wood
+- blank reward frame
 - jungle rock awol
 - remote biomes
   - spawn key
