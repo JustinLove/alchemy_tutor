@@ -36,7 +36,7 @@ function at_decorate_scene( x, y )
 	local what
 
 	loc = table.remove( at_cauldrons )
-	local cauldron = set.cauldron or at_cauldron
+	local cauldron = set.cauldron or at_default_cauldron
 	if loc then
 		what = cauldron( set, loc.x, loc.y )
 		if what ~= nil then

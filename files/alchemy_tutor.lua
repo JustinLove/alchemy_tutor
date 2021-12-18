@@ -246,6 +246,33 @@ function at_cauldron( set, x, y )
 	return contents
 end
 
+function at_suspended_container( set, x, y )
+	local contents = at_material( set.cauldron_contents, "air" )
+	local cauld = EntityLoad( at_mod_path .."/entities/suspended_container.xml", x, y - 18 )
+	if contents ~= "air" then
+		local filler = EntityLoad( at_mod_path .."/entities/fill_cauldron.xml", x, y - 30 )
+		local comp_mat = EntityGetFirstComponent( filler, "ParticleEmitterComponent" )
+		if comp_mat ~= nil then
+			ComponentSetValue( comp_mat, "emitted_material_name", contents )
+		end
+	end
+
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y+7-(set.cauldron_check_y or 18) )
+	local mat1 = CellFactory_GetType( set.output )
+	local mat2 = -1
+	if set.output2 then
+		mat2 = CellFactory_GetType( set.output2 )
+	end
+
+	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
+	if comp_mat ~= nil then
+		ComponentSetValue( comp_mat, "material", tostring(mat1) )
+		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
+	end
+
+	return contents
+end
+
 function at_electrode( set, x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/electrode.png",
@@ -356,5 +383,8 @@ function at_print_table( t )
 	dofile_once( "data/scripts/lib/utilities.lua" )
 	debug_print_table( t )
 end
+
+--at_default_cauldron = at_suspended_container
+at_default_cauldron = at_cauldron
 
 dofile_once(at_mod_path .. "/formula_list.lua")

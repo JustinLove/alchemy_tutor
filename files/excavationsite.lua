@@ -1,5 +1,7 @@
 dofile_once("mods/alchemy_tutor/files/spawns.lua")
 
+at_default_cauldron = at_suspended_container
+
 table.insert( g_pixel_scene_04, {
 		prob   			= at_lab_chance,
 		material_file 	= "mods/alchemy_tutor/files/excavation_lab_h.png",
