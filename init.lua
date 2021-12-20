@@ -59,19 +59,19 @@ end
 
 
 -- This code runs when all mods' filesystems are registered
-ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/alchemy_tutor/files/coalmine.lua" )
-ModLuaFileAppend( "data/scripts/biomes/coalmine_alt.lua", "mods/alchemy_tutor/files/coalmine_alt.lua" )
-ModLuaFileAppend( "data/scripts/biomes/excavationsite.lua", "mods/alchemy_tutor/files/excavationsite.lua" )
-ModLuaFileAppend( "data/scripts/biomes/snowcave.lua", "mods/alchemy_tutor/files/snowcave.lua" )
-ModLuaFileAppend( "data/scripts/biomes/snowcastle.lua", "mods/alchemy_tutor/files/snowcastle.lua" )
-ModLuaFileAppend( "data/scripts/biomes/vault.lua", "mods/alchemy_tutor/files/vault.lua" )
-ModLuaFileAppend( "data/scripts/biomes/rainforest.lua", "mods/alchemy_tutor/files/rainforest.lua" )
-ModLuaFileAppend( "data/scripts/biomes/crypt.lua", "mods/alchemy_tutor/files/crypt.lua" )
+ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/alchemy_tutor/files/biomes/coalmine.lua" )
+ModLuaFileAppend( "data/scripts/biomes/coalmine_alt.lua", "mods/alchemy_tutor/files/biomes/coalmine_alt.lua" )
+ModLuaFileAppend( "data/scripts/biomes/excavationsite.lua", "mods/alchemy_tutor/files/biomes/excavationsite.lua" )
+ModLuaFileAppend( "data/scripts/biomes/snowcave.lua", "mods/alchemy_tutor/files/biomes/snowcave.lua" )
+ModLuaFileAppend( "data/scripts/biomes/snowcastle.lua", "mods/alchemy_tutor/files/biomes/snowcastle.lua" )
+ModLuaFileAppend( "data/scripts/biomes/vault.lua", "mods/alchemy_tutor/files/biomes/vault.lua" )
+ModLuaFileAppend( "data/scripts/biomes/rainforest.lua", "mods/alchemy_tutor/files/biomes/rainforest.lua" )
+ModLuaFileAppend( "data/scripts/biomes/crypt.lua", "mods/alchemy_tutor/files/biomes/crypt.lua" )
+
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_entrance.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_stub.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/spawns.lua" )
-ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/stubs.lua" )
+ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/biomes/hills.lua" )
 
-ModMagicNumbersFileAdd( "mods/alchemy_tutor/files/magic_numbers.xml" ) -- Will override some magic numbers using the specified file
 print("Example mod init done")

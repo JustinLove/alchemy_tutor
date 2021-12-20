@@ -217,7 +217,7 @@ end
 function at_cauldron( set, x, y )
 	local contents = at_material( set.cauldron_contents, "air" )
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/cauldron.png",
+		"mods/alchemy_tutor/files/props/cauldron.png",
 		"", -- visual
 		x-18, y-39,
 		"", -- background
@@ -275,8 +275,8 @@ end
 
 function at_electrode( set, x, y )
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/electrode.png",
-		"mods/alchemy_tutor/files/electrode_visual.png",
+		"mods/alchemy_tutor/files/props/electrode.png",
+		"mods/alchemy_tutor/files/props/electrode_visual.png",
 		x-18, y-18,
 		"", -- background
 		true, -- skip_biome_checks
@@ -293,7 +293,7 @@ end
 function at_block( set, x, y )
 	local material = at_material( set.cauldron_material, "wizardstone" )
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/block.png",
+		"mods/alchemy_tutor/files/props/block.png",
 		"", -- visual
 		x-18, y-39,
 		"", -- background
@@ -318,7 +318,7 @@ end
 
 function at_planterbox( x, y )
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/planterbox.png",
+		"mods/alchemy_tutor/files/props/planterbox.png",
 		"", -- visual
 		x-25, y-13,
 		"", -- background
@@ -332,9 +332,9 @@ end
 
 function at_frogs( x, y )
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/frogs.png",
+		"mods/alchemy_tutor/files/props/frogs.png",
 		"", -- visual
-		x-25, y-29,
+		x-25, y-28,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -346,7 +346,7 @@ end
 
 function at_meat( x, y )
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/meat.png",
+		"mods/alchemy_tutor/files/props/meat.png",
 		"", -- visual
 		x-25, y-29,
 		"", -- background

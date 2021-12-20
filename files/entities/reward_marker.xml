@@ -1,7 +1,7 @@
 <Entity tags="at_reward">
   <PixelSceneComponent
     pixel_scene="data/biome_impl/empty.png"
-    pixel_scene_background="mods/alchemy_tutor/files/reward_marker.png"
+    pixel_scene_background="mods/alchemy_tutor/files/entities/reward_marker.png"
     offset_x="-14"
     offset_y="-10"
     skip_biome_checks="1"
