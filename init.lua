@@ -17,10 +17,28 @@ end
 
 ]]--
 
+local function clear_entities( player_entity )
+	EntityAddComponent( player_entity, "LuaComponent", 
+	{
+		script_source_file = "mods/alchemy_tutor/files/entities/clear_entities.lua",
+		execute_every_n_frame = "20",
+	} )
+	EntityAddComponent2( player_entity, "UIIconComponent",
+	{
+		name = "$action_destruction",
+		description = "remove enemies",
+		icon_sprite_file = "data/ui_gfx/gun_actions/destruction.png",
+		display_above_head = false,
+		display_in_hud = true,
+		is_perk = false,
+	})
+end
+
 function OnPlayerSpawned( player_entity ) -- This runs when player entity has been created
 	if _G['at_test_player'] then
 		GamePrint( "OnPlayerSpawned() - Player entity id: " .. tostring(player_entity) )
 		EntitySetTransform( player_entity, at_test_x, at_test_y )
+		clear_entities( player_entity )
 	end
 	if _G['at_test_lab'] then
 	  EntityLoad( "mods/alchemy_tutor/files/entities/spawn_lab.xml", at_test_x, at_test_y )
