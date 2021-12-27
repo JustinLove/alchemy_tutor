@@ -1,56 +1,15 @@
-- x way to garanteed spawn a scene for testing
-- x append to biome file pixel scenes
-- x define material trigger and script
-- x powders
-- x background box materials?
-- x empty container of type
-- x setup fungus spawn
-- x setup spawn lists
-- x false ingredients
-- x vault
-  - v 01 x1 acid tank
-  - v tall x2 electric tunnel *
-  - h 02 x2 labs
-  - h wide x2 brain/shop *
-- x crypt
-  - v 03 x2
-  - h 01 x2, 3 things *
-  - h 05 x1, 3 things
-  - h 05b x1, 3 things
-- x select recepies
-- x cauldron naming
-- x frog meat
-- x alternate cauldron (odd brick)
-- x cooking meat
-- x too much gold
-- x shock detector
-- x small amounts of ingredient
-- x multie ingredient possibilies - green fungus
-- x material absent
-- x multiple results - air or water
-- x custom red herings
-- x water or swamp?
-- x optional distance dependance
-- x split cauldrons?
-- x could be in cauldron?
-- x honey in pouch??
-- x gold amount?
-- x avoid dupliate red herrings
-- x specify chest location
-- x grand alchemy influence
-- x reward trigger color shows up in crypt v
-- x reward range too big
-- test hanging containers
-- blank reward frame
 - jungle rock awol
+- redesigns
+- blank reward frame
+- test hanging containers
+- fungus garden cauldron
+- void spreads through fungus
 - remote biomes
   - spawn key
   - clear on return/use
   - remote lab design
   - exit sequence
   - key design
-- hisii labs
-- redesigns
 - grand alchemy labs
 
 - solids in cauldron - whether to remove cauldron material/ which formula???
@@ -102,6 +61,17 @@
 - x wizardstone + fire = lava
 - x wizardstone + amb = steam
 - x cooking meat
+
+- x vault
+  - v 01 x1 acid tank
+  - v tall x2 electric tunnel *
+  - h 02 x2 labs
+  - h wide x2 brain/shop *
+- x crypt
+  - v 03 x2
+  - h 01 x2, 3 things *
+  - h 05 x1, 3 things
+  - h 05b x1, 3 things
 
 ```
 biome_impl/biome_map.png (etc) - color map of biomes

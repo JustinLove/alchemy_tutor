@@ -257,7 +257,7 @@ function at_suspended_container( set, x, y )
 		end
 	end
 
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y+7-(set.cauldron_check_y or 18) )
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-7-(set.cauldron_check_y or 18) )
 	local mat1 = CellFactory_GetType( set.output )
 	local mat2 = -1
 	if set.output2 then
