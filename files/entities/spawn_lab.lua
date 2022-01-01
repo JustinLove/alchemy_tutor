@@ -27,7 +27,7 @@ function at_spawn_lab( x, y )
 		--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_tall.png",
 		"",
 		--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_h_visual.png",
-		x - width, y,
+		x - width/2, y,
 		--"data/biome_impl/snowcastle/greenhouse_background.png",
 		--"data/biome_impl/snowcastle/bedroom_background.png",
 		"", -- background
@@ -39,4 +39,15 @@ function at_spawn_lab( x, y )
 	)
 end
 
+local function at_reset_player( x, y )
+	local players = EntityGetWithTag( "player_unit" )
+	for _,player_id in ipairs(players) do
+		EntitySetTransform( player_id, x, y )
+	end
+end
+
 at_spawn_lab( pos_x, pos_y )
+at_reset_player( pos_x, pos_y )
+
+--print("---------------------------------Spawn Lab")
+--EntityLoad( "mods/alchemy_tutor/files/entities/clear_entities.xml", pos_x, pos_y )

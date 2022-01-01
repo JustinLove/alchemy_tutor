@@ -2,7 +2,7 @@
   <MagicConvertMaterialComponent
     kill_when_finished="1"
     from_any_material="1"
-    steps_per_frame="50"
+    steps_per_frame="10"
     to_material="air"
     clean_stains="1"
     is_circle="0"
