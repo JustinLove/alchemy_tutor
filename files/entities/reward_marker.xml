@@ -1,10 +1,17 @@
 <Entity tags="at_reward">
   <PixelSceneComponent
     pixel_scene="data/biome_impl/empty.png"
-    pixel_scene_background="mods/alchemy_tutor/files/entities/reward_marker.png"
+    pixel_scene_background="mods/alchemy_tutor/files/entities/reward_marker_frame.png"
     offset_x="-14"
     offset_y="-10"
     skip_biome_checks="1"
     >
   </PixelSceneComponent>
+
+  <SpriteComponent 
+    z_index="10"
+    image_file="mods/alchemy_tutor/files/entities/reward_marker.png"
+    offset_x="14"
+    offset_y="10" >
+  </SpriteComponent>
 </Entity>

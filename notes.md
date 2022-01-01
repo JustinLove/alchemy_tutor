@@ -1,6 +1,6 @@
 - ?? jungle rock awol
 - redesigns
-- blank reward frame
+- x blank reward frame
 - test hanging containers
 - fungus garden cauldron
 - material exclusions for cauldrons
