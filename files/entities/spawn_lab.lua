@@ -24,7 +24,7 @@ function at_spawn_lab( x, y )
 		--"mods/alchemy_tutor/files/biome_impl/excavation_lab_h_alt.png",
 		"mods/alchemy_tutor/files/biome_impl/coalmine_lab_h.png",
 		--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_h_alt.png",
-		--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_tall.png",
+		--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_v.png",
 		"",
 		--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_h_visual.png",
 		x - width/2, y,
