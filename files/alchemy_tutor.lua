@@ -5,6 +5,7 @@ dofile_once(at_mod_path .. "/grand_alchemy.lua")
 --1496269479
 at_test_x = -200
 at_test_y = -100 -- hills
+--at_test_y = 3500 -- snowcave
 --at_test_y = 7000 -- rainforest
 --at_test_formula = 'toxicclean'
 --at_test_player = true
