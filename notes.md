@@ -1,6 +1,6 @@
 - ?? jungle rock awol
 - redesigns
-  - mystery fungus not detected in hisii h
+  - x mystery fungus not detected in hisii h
   - right potions broken in jungle h
   - hanging slime - chest solved and chest in bin
   - vault h

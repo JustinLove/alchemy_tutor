@@ -75,6 +75,7 @@ at_formula_list = {
 		},
 		cauldron_contents = "sand",
 		cauldron_material = "air",
+		cauldron_check_y = 10,
 		other = at_planterbox,
 		output = "fungi_creeping",
 	},
