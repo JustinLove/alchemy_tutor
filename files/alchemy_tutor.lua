@@ -7,6 +7,7 @@ at_test_x = -200
 at_test_y = -100 -- hills
 --at_test_y = 3500 -- snowcave
 --at_test_y = 7000 -- rainforest
+--at_test_y = 11000 -- crypt
 --at_test_formula = 'toxicclean'
 --at_test_player = true
 --at_test_lab = true

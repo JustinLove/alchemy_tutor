@@ -54,6 +54,15 @@ function at_decorate_scene( x, y )
 			--print( "cauldron " .. what )
 		end
 	end
+	loc = table.remove( at_cauldrons )
+	if loc then
+		what = cauldron( set, loc.x, loc.y )
+		if what ~= nil then
+			in_cauldron[what] = true
+			present_materials[what] = true
+			--print( "cauldron " .. what )
+		end
+	end
 
 	for i,mat in ipairs( set.materials ) do
 		what = at_material( mat, 'potion_empty' )

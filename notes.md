@@ -1,5 +1,13 @@
 - ?? jungle rock awol
 - redesigns
+  - mystery fungus not detected in hisii h
+  - right potions broken in jungle h
+  - hanging slime - chest solved and chest in bin
+  - vault h
+    - only one broken potion
+    - no potions
+  - vault v
+    - pool drained, no potions
 - x blank reward frame
 - test hanging containers
 - fungus garden cauldron
