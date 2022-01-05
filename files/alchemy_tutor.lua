@@ -4,7 +4,8 @@ dofile_once(at_mod_path .. "/grand_alchemy.lua")
 --1439153766
 --1496269479
 at_test_x = -200
---at_test_y = -100 -- hills
+at_test_y = -100 -- hills
+--at_test_y = 2000 -- excavation
 --at_test_y = 3500 -- snowcave
 --at_test_y = 5500 -- snowcastle
 --at_test_y = 7000 -- rainforest
@@ -255,21 +256,19 @@ function at_suspended_container( set, x, y )
 	local contents = at_material( set.cauldron_contents, "air" )
 	local cauld = EntityLoad( at_mod_path .."/entities/suspended_container.xml", x, y - 18 )
 	if contents ~= "air" then
-		local filler = EntityLoad( at_mod_path .."/entities/fill_cauldron.xml", x, y - 30 )
-		local comp_mat = EntityGetFirstComponent( filler, "ParticleEmitterComponent" )
+		local comp_mat = EntityGetFirstComponent( cauld, "ParticleEmitterComponent" )
 		if comp_mat ~= nil then
 			ComponentSetValue( comp_mat, "emitted_material_name", contents )
 		end
 	end
 
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-7-(set.cauldron_check_y or 18) )
 	local mat1 = CellFactory_GetType( set.output )
 	local mat2 = -1
 	if set.output2 then
 		mat2 = CellFactory_GetType( set.output2 )
 	end
 
-	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
+	local comp_mat = EntityGetFirstComponent( cauld, "MaterialAreaCheckerComponent" )
 	if comp_mat ~= nil then
 		ComponentSetValue( comp_mat, "material", tostring(mat1) )
 		ComponentSetValue( comp_mat, "material2", tostring(mat2) )

@@ -1,9 +1,9 @@
 <Entity tags="cauldron_checker">
 	<MaterialAreaCheckerComponent
-		area_aabb.min_x="-4" 
-		area_aabb.max_x="4" 
-		area_aabb.min_y="-1"   
-		area_aabb.max_y="0" 
+		area_aabb.min_x="-4"
+		area_aabb.max_x="4"
+		area_aabb.min_y="-1"
+		area_aabb.max_y="0"
 		update_every_x_frame="10"
 		material="oil"
 		material2="oil"

@@ -2,7 +2,7 @@
 - redesigns
   - x mystery fungus not detected in hisii h
   - right potions broken in jungle h
-  - hanging slime - chest solved and chest in bin
+  - x hanging slime - chest solved and chest in bin
   - vault h
     - only one broken potion
     - no potions
