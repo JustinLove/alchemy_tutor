@@ -38,6 +38,7 @@ at_formula_list = {
 	{
 		materials = {"magic_liquid_mana_regeneration"},
 		cauldron_contents = "water",
+		cauldron_material = "templebrick_static",
 		output = "magic_liquid_mana_regeneration",
 	},
 	{
@@ -82,6 +83,7 @@ at_formula_list = {
 	{
 		materials = {"alcohol"},
 		cauldron_contents = {"air", "air", "alcohol"},
+		cauldron_material = "templebrick_static",
 		other = at_frogs,
 		output = "magic_liquid_berserk",
 	},
@@ -176,6 +178,7 @@ at_formula_list = {
 			"purifying_powder",
 		},
 		cauldron_contents = "lava",
+		cauldron_material = "templebrick_static",
 		output = "air",
 	},
 	{
@@ -186,6 +189,7 @@ at_formula_list = {
 		amounts = {0.1},
 		cauldron_contents = "air",
 		cauldron_minor = "meat",
+		cauldron_material = "templebrick_static",
 		cauldron_check_y = 10,
 		other = at_meat,
 		output = "meat_done",

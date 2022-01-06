@@ -259,6 +259,7 @@ function at_suspended_container( set, x, y )
 		local comp_mat = EntityGetFirstComponent( cauld, "ParticleEmitterComponent" )
 		if comp_mat ~= nil then
 			ComponentSetValue( comp_mat, "emitted_material_name", contents )
+			ComponentSetValue( comp_mat, "is_emitting", 1 )
 		end
 	end
 

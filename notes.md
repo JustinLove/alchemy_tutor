@@ -1,5 +1,6 @@
 - ?? jungle rock awol
 - redesigns
+  - coalmine: double trigger on regular cauldron (both clearing toxic)
   - x mystery fungus not detected in hisii h
   - right potions broken in jungle h
   - x hanging slime - chest solved and chest in bin
@@ -10,8 +11,15 @@
     - pool drained, no potions
 - x blank reward frame
 - test hanging containers
-- fungus garden cauldron
-- material exclusions for cauldrons
+  - fungus garden cauldron
+  - x concentrated mana
+  - x purelava
+  - x frogs awkward
+  - x meat_done can't spawn
+- x material exclusions for cauldrons
+- custom cauldrons
+  - jungle h
+  - crypt v
 - void spreads through fungus
 - remote biomes
   - spawn key

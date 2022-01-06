@@ -35,27 +35,11 @@ function at_decorate_scene( x, y )
 	local present_materials = {}
 	local what
 
-	loc = table.remove( at_cauldrons )
 	local cauldron = set.cauldron or at_default_cauldron
-	if loc then
-		what = cauldron( set, loc.x, loc.y )
-		if what ~= nil then
-			in_cauldron[what] = true
-			present_materials[what] = true
-			--print( "cauldron " .. what )
-		end
+	if cauldron == at_suspended_container and set.cauldron_material then
+		cauldron = at_cauldron
 	end
-	loc = table.remove( at_cauldrons )
-	if loc then
-		what = cauldron( set, loc.x, loc.y )
-		if what ~= nil then
-			in_cauldron[what] = true
-			present_materials[what] = true
-			--print( "cauldron " .. what )
-		end
-	end
-	loc = table.remove( at_cauldrons )
-	if loc then
+	for i,loc in ipairs( at_cauldrons ) do
 		what = cauldron( set, loc.x, loc.y )
 		if what ~= nil then
 			in_cauldron[what] = true
