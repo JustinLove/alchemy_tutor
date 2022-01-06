@@ -378,6 +378,7 @@ at_formula_list = {
 			"radioactive_liquid",
 			"blood_worm",
 		},
+		cauldron = at_fungus,
 		cauldron_contents = {"fungi", "fungi", "fungi", "fungi_creeping", "fungi_green"},
 		output = "void_liquid",
 	},

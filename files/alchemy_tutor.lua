@@ -11,7 +11,7 @@ at_test_y = -100 -- hills
 --at_test_y = 7000 -- rainforest
 --at_test_y = 9000 -- vault
 --at_test_y = 11000 -- crypt
-at_test_formula = 'toxicclean'
+--at_test_formula = 'toxicclean'
 --at_test_player = true
 --at_test_lab = true
 --at_test_portal = true
@@ -232,11 +232,41 @@ function at_cauldron( set, x, y )
 		{ ["fff0bbee"] = contents,
 			["fff2ddb2"] = set.cauldron_minor or contents,
 			["ff786c42"] = at_material( set.cauldron_material, "templebrick_static" ),
-		}, -- color_to_matieral_table
-		50 -- z index
+		} -- color_to_matieral_table
 	)
 
 	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 18) )
+	local mat1 = CellFactory_GetType( set.output )
+	local mat2 = -1
+	if set.output2 then
+		mat2 = CellFactory_GetType( set.output2 )
+	end
+
+	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
+	if comp_mat ~= nil then
+		ComponentSetValue( comp_mat, "material", tostring(mat1) )
+		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
+	end
+
+	return contents
+end
+
+function at_fungus( set, x, y )
+	local contents = at_material( set.cauldron_contents, "fungi" )
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/props/fungus.png",
+		"", -- visual
+		x-18, y-25,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{ ["ff32bb32"] = contents,
+			["ff36312e"] = set.cauldron_minor or "fungisoil",
+			["ff613e02"] = at_material( set.cauldron_material, "wood_player_b2" ),
+		} -- color_to_matieral_table
+	)
+
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
 	local mat1 = CellFactory_GetType( set.output )
 	local mat2 = -1
 	if set.output2 then
@@ -288,8 +318,7 @@ function at_electrode( set, x, y )
 		false, -- skip_edge_textures
 		{ ["fff0bbee"] = at_material( set.cauldron_contents, "air" ),
 			["ff404041"] = at_material( set.cauldron_material, "steel_static" ),
-		}, -- color_to_matieral_table
-		50 -- z index
+		} -- color_to_matieral_table
 	)
 
 	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/shock_checker.xml", x, y-(set.cauldron_check_y or 18) )
@@ -306,8 +335,7 @@ function at_block( set, x, y )
 		false, -- skip_edge_textures
 		{ ["fff0bbee"] = at_material( set.cauldron_contents, "air" ),
 			["ff4c4356"] = material,
-		}, -- color_to_matieral_table
-		50 -- z index
+		} -- color_to_matieral_table
 	)
 
 	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/block_checker.xml", x, y-18 )
@@ -330,8 +358,7 @@ function at_planterbox( x, y )
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{
-		}, -- color_to_matieral_table
-		50 -- z index
+		} -- color_to_matieral_table
 	)
 end
 
@@ -344,8 +371,7 @@ function at_frogs( x, y )
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{
-		}, -- color_to_matieral_table
-		50 -- z index
+		} -- color_to_matieral_table
 	)
 end
 
@@ -358,8 +384,7 @@ function at_meat( x, y )
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{
-		}, -- color_to_matieral_table
-		50 -- z index
+		} -- color_to_matieral_table
 	)
 end
 

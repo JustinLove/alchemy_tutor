@@ -11,7 +11,7 @@
     - pool drained, no potions
 - x blank reward frame
 - test hanging containers
-  - fungus garden cauldron
+  - x fungus garden cauldron
   - x concentrated mana
   - x purelava
   - x frogs awkward
