@@ -17,7 +17,7 @@
   - x frogs awkward
   - x meat_done can't spawn
 - x material exclusions for cauldrons
-- custom cauldrons
+- x custom cauldrons
   - jungle h
   - crypt v
 - void spreads through fungus

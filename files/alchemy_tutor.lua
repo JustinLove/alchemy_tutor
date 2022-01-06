@@ -251,6 +251,66 @@ function at_cauldron( set, x, y )
 	return contents
 end
 
+function at_steel_pit( set, x, y, prop )
+	local contents = at_material( set.cauldron_contents, "air" )
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/props/steel_pit.png",
+		"", -- visual
+		x-18, y-22,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{ ["fff0bbee"] = contents,
+			["fff2ddb2"] = set.cauldron_minor or contents,
+		} -- color_to_matieral_table
+	)
+
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
+	local mat1 = CellFactory_GetType( set.output )
+	local mat2 = -1
+	if set.output2 then
+		mat2 = CellFactory_GetType( set.output2 )
+	end
+
+	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
+	if comp_mat ~= nil then
+		ComponentSetValue( comp_mat, "material", tostring(mat1) )
+		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
+	end
+
+	return contents
+end
+
+function at_brick_pit( set, x, y, prop )
+	local contents = at_material( set.cauldron_contents, "air" )
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/props/brick_pit.png",
+		"", -- visual
+		x-26, y-39,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{ ["fff0bbee"] = contents,
+			["fff2ddb2"] = set.cauldron_minor or contents,
+		} -- color_to_matieral_table
+	)
+
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 12) )
+	local mat1 = CellFactory_GetType( set.output )
+	local mat2 = -1
+	if set.output2 then
+		mat2 = CellFactory_GetType( set.output2 )
+	end
+
+	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
+	if comp_mat ~= nil then
+		ComponentSetValue( comp_mat, "material", tostring(mat1) )
+		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
+	end
+
+	return contents
+end
+
 function at_fungus( set, x, y )
 	local contents = at_material( set.cauldron_contents, "fungi" )
 	LoadPixelScene(

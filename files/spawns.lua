@@ -8,6 +8,8 @@ RegisterSpawnFunction( 0xff05702e, "at_spawn_rock")
 RegisterSpawnFunction( 0xff012e85, "at_spawn_other")
 RegisterSpawnFunction( 0xffca1d80, "at_spawn_cauldron")
 RegisterSpawnFunction( 0xff2e3a2d, "at_spawn_reward")
+RegisterSpawnFunction( 0xff057ee1, "at_spawn_steel_pit")
+RegisterSpawnFunction( 0xff0691c4, "at_spawn_brick_pit")
 RegisterSpawnFunction( 0xff5ce4e5, "at_decorate_scene")
 RegisterSpawnFunction( 0xff91a4e2, "at_look_here")
 
@@ -17,6 +19,7 @@ if at_lab_chance == nil then
 end
 --at_lab_chance = 9999999
 
+local at_scene_cauldron = at_default_cauldron
 local at_materials = {}
 local at_cauldrons = {}
 local at_other = {}
@@ -35,8 +38,11 @@ function at_decorate_scene( x, y )
 	local present_materials = {}
 	local what
 
-	local cauldron = set.cauldron or at_default_cauldron
+	local cauldron = set.cauldron or at_scene_cauldron
 	if cauldron == at_suspended_container and set.cauldron_material then
+		cauldron = at_cauldron
+	end
+	if cauldron == at_steel_pit and set.cauldron_material == "templebrick_static" then
 		cauldron = at_cauldron
 	end
 	for i,loc in ipairs( at_cauldrons ) do
@@ -80,6 +86,7 @@ function at_decorate_scene( x, y )
 		set.other( loc.x, loc.y )
 	end
 
+	at_scene_cauldron = at_default_cauldron
 	at_materials = {}
 	at_cauldrons = {}
 	at_other = {}
@@ -109,6 +116,14 @@ end
 
 function at_spawn_reward( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/reward_marker.xml", x + 1, y - 6 )
+end
+
+function at_spawn_steel_pit( x, y )
+	at_scene_cauldron = at_steel_pit
+end
+
+function at_spawn_brick_pit( x, y )
+	at_scene_cauldron = at_brick_pit
 end
 
 local at_shrooms = {}
