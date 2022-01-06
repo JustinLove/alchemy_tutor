@@ -20,7 +20,7 @@
 - x custom cauldrons
   - jungle h
   - crypt v
-- void spreads through fungus
+- x void spreads through fungus
 - remote biomes
   - spawn key
   - clear on return/use

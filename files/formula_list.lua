@@ -11,7 +11,7 @@ at_formula_list = {
 	{
 		name = "melt_steel",
 		materials = {"magic_liquid_mana_regeneration"},
-		cauldron = at_block,
+		cauldron = at_block_steel,
 		cauldron_material = "steel_static",
 	},
 	{
@@ -93,7 +93,7 @@ at_formula_list = {
 			{"magic_liquid_movement_faster", "magic_liquid_faster_levitation"},
 			"slime",
 		},
-		cauldron = at_block,
+		cauldron = at_block_brick,
 		cauldron_material = "templerock_soft",
 	},
 	{
@@ -353,25 +353,32 @@ at_formula_list = {
 	{
 		name = "oddwater",
 		materials = {"water"},
-		cauldron = at_block,
+		cauldron = at_block_brick,
 	},
 	{
 		name = "oddmana",
 		materials = {"magic_liquid_mana_regeneration"},
-		cauldron = at_block,
+		cauldron = at_block_brick,
 	},
 	{
 		name = "oddamb",
 		materials = {"magic_liquid_protection_all"},
-		cauldron = at_block,
+		cauldron = at_block_brick,
 	},
 	--[[
 	{
 		name = "oddfire",
 		materials = {"fire"},
-		cauldron = at_block,
+		cauldron = at_block_brick,
 	},
 	--]]
+	{
+		name = "voidfungus",
+		materials = { "void_liquid" },
+		amounts = {0.1},
+		cauldron = at_block_rock,
+		cauldron_material = "rock_static_fungal",
+	},
 	{
 		name = "void1",
 		materials = {

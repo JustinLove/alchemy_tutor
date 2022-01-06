@@ -384,10 +384,10 @@ function at_electrode( set, x, y )
 	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/shock_checker.xml", x, y-(set.cauldron_check_y or 18) )
 end
 
-function at_block( set, x, y )
+function at_block( set, x, y, file )
 	local material = at_material( set.cauldron_material, "wizardstone" )
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/props/block.png",
+		file,
 		"", -- visual
 		x-18, y-39,
 		"", -- background
@@ -407,6 +407,18 @@ function at_block( set, x, y )
 		ComponentSetValue( comp_mat, "material", tostring(mat1) )
 		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
 	end
+end
+
+function at_block_brick( set, x, y )
+	return at_block( set, x, y, "mods/alchemy_tutor/files/props/block_brick.png" )
+end
+
+function at_block_rock( set, x, y )
+	return at_block( set, x, y, "mods/alchemy_tutor/files/props/block_rock.png" )
+end
+
+function at_block_steel( set, x, y )
+	return at_block( set, x, y, "mods/alchemy_tutor/files/props/block_steel.png" )
 end
 
 function at_planterbox( x, y )
