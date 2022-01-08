@@ -12,6 +12,7 @@ at_test_y = -100 -- hills
 --at_test_y = 9000 -- vault
 --at_test_y = 11000 -- crypt
 --at_test_formula = 'toxicclean'
+--at_test_formula = 'magic_liquid_mana_regeneration'
 --at_test_clear = true
 --at_test_player = true
 --at_test_lab = true
@@ -223,171 +224,190 @@ function at_red_herring( x, y, present_materials )
 	end
 end
 
-function at_cauldron( set, x, y )
-	local contents = at_material( set.cauldron_contents, "air" )
-	LoadPixelScene(
-		"mods/alchemy_tutor/files/props/cauldron.png",
-		"", -- visual
-		x-18, y-39,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{ ["fff0bbee"] = contents,
-			["fff2ddb2"] = set.cauldron_minor or contents,
-			["ff786c42"] = at_material( set.cauldron_material, "templebrick_static" ),
-		} -- color_to_matieral_table
-	)
+at_cauldron = {
+	default_material = "templebrick_static",
+	spawn = function( set, x, y )
+		local contents = at_material( set.cauldron_contents, "air" )
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/props/cauldron.png",
+			"", -- visual
+			x-18, y-39,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{ ["fff0bbee"] = contents,
+				["fff2ddb2"] = set.cauldron_minor or contents,
+				["ff786c42"] = at_material( set.cauldron_material, "templebrick_static" ),
+			} -- color_to_matieral_table
+		)
 
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 18) )
-	local mat1 = CellFactory_GetType( set.output )
-	local mat2 = -1
-	if set.output2 then
-		mat2 = CellFactory_GetType( set.output2 )
-	end
-
-	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
-	if comp_mat ~= nil then
-		ComponentSetValue( comp_mat, "material", tostring(mat1) )
-		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
-	end
-
-	return contents
-end
-
-function at_steel_pit( set, x, y, prop )
-	local contents = at_material( set.cauldron_contents, "air" )
-	LoadPixelScene(
-		"mods/alchemy_tutor/files/props/steel_pit.png",
-		"", -- visual
-		x-18, y-22,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{ ["fff0bbee"] = contents,
-			["fff2ddb2"] = set.cauldron_minor or contents,
-		} -- color_to_matieral_table
-	)
-
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
-	local mat1 = CellFactory_GetType( set.output )
-	local mat2 = -1
-	if set.output2 then
-		mat2 = CellFactory_GetType( set.output2 )
-	end
-
-	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
-	if comp_mat ~= nil then
-		ComponentSetValue( comp_mat, "material", tostring(mat1) )
-		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
-	end
-
-	return contents
-end
-
-function at_brick_pit( set, x, y, prop )
-	local contents = at_material( set.cauldron_contents, "air" )
-	LoadPixelScene(
-		"mods/alchemy_tutor/files/props/brick_pit.png",
-		"", -- visual
-		x-26, y-39,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{ ["fff0bbee"] = contents,
-			["fff2ddb2"] = set.cauldron_minor or contents,
-		} -- color_to_matieral_table
-	)
-
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 12) )
-	local mat1 = CellFactory_GetType( set.output )
-	local mat2 = -1
-	if set.output2 then
-		mat2 = CellFactory_GetType( set.output2 )
-	end
-
-	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
-	if comp_mat ~= nil then
-		ComponentSetValue( comp_mat, "material", tostring(mat1) )
-		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
-	end
-
-	return contents
-end
-
-function at_fungus( set, x, y )
-	local contents = at_material( set.cauldron_contents, "fungi" )
-	LoadPixelScene(
-		"mods/alchemy_tutor/files/props/fungus.png",
-		"", -- visual
-		x-18, y-25,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{ ["ff32bb32"] = contents,
-			["ff36312e"] = set.cauldron_minor or "fungisoil",
-			["ff613e02"] = at_material( set.cauldron_material, "wood_player_b2" ),
-		} -- color_to_matieral_table
-	)
-
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
-	local mat1 = CellFactory_GetType( set.output )
-	local mat2 = -1
-	if set.output2 then
-		mat2 = CellFactory_GetType( set.output2 )
-	end
-
-	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
-	if comp_mat ~= nil then
-		ComponentSetValue( comp_mat, "material", tostring(mat1) )
-		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
-	end
-
-	return contents
-end
-
-function at_suspended_container( set, x, y )
-	local contents = at_material( set.cauldron_contents, "air" )
-	local cauld = EntityLoad( at_mod_path .."/entities/suspended_container.xml", x, y - 18 )
-	if contents ~= "air" then
-		local comp_mat = EntityGetFirstComponent( cauld, "ParticleEmitterComponent" )
-		if comp_mat ~= nil then
-			ComponentSetValue( comp_mat, "emitted_material_name", contents )
-			ComponentSetValue( comp_mat, "is_emitting", 1 )
+		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 18) )
+		local mat1 = CellFactory_GetType( set.output )
+		local mat2 = -1
+		if set.output2 then
+			mat2 = CellFactory_GetType( set.output2 )
 		end
+
+		local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
+		if comp_mat ~= nil then
+			ComponentSetValue( comp_mat, "material", tostring(mat1) )
+			ComponentSetValue( comp_mat, "material2", tostring(mat2) )
+		end
+
+		return contents
 	end
+}
 
-	local mat1 = CellFactory_GetType( set.output )
-	local mat2 = -1
-	if set.output2 then
-		mat2 = CellFactory_GetType( set.output2 )
+at_steel_pit = {
+	default_material = "steel",
+	spawn = function( set, x, y, prop )
+		local contents = at_material( set.cauldron_contents, "air" )
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/props/steel_pit.png",
+			"", -- visual
+			x-18, y-22,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{ ["fff0bbee"] = contents,
+				["fff2ddb2"] = set.cauldron_minor or contents,
+			} -- color_to_matieral_table
+		)
+
+		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
+		local mat1 = CellFactory_GetType( set.output )
+		local mat2 = -1
+		if set.output2 then
+			mat2 = CellFactory_GetType( set.output2 )
+		end
+
+		local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
+		if comp_mat ~= nil then
+			ComponentSetValue( comp_mat, "material", tostring(mat1) )
+			ComponentSetValue( comp_mat, "material2", tostring(mat2) )
+		end
+
+		return contents
 	end
+}
 
-	local comp_mat = EntityGetFirstComponent( cauld, "MaterialAreaCheckerComponent" )
-	if comp_mat ~= nil then
-		ComponentSetValue( comp_mat, "material", tostring(mat1) )
-		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
+at_brick_pit = {
+	default_material = "templebrick_static",
+	spawn = function( set, x, y, prop )
+		local contents = at_material( set.cauldron_contents, "air" )
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/props/brick_pit.png",
+			"", -- visual
+			x-26, y-39,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{ ["fff0bbee"] = contents,
+				["fff2ddb2"] = set.cauldron_minor or contents,
+			} -- color_to_matieral_table
+		)
+
+		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 12) )
+		local mat1 = CellFactory_GetType( set.output )
+		local mat2 = -1
+		if set.output2 then
+			mat2 = CellFactory_GetType( set.output2 )
+		end
+
+		local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
+		if comp_mat ~= nil then
+			ComponentSetValue( comp_mat, "material", tostring(mat1) )
+			ComponentSetValue( comp_mat, "material2", tostring(mat2) )
+		end
+
+		return contents
 	end
+}
 
-	return contents
-end
+at_fungus = {
+	default_material = "wood_player_b2",
+	spawn = function( set, x, y )
+		local contents = at_material( set.cauldron_contents, "fungi" )
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/props/fungus.png",
+			"", -- visual
+			x-18, y-25,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{ ["ff32bb32"] = contents,
+				["ff36312e"] = set.cauldron_minor or "fungisoil",
+				["ff613e02"] = at_material( set.cauldron_material, "wood_player_b2" ),
+			} -- color_to_matieral_table
+		)
 
-function at_electrode( set, x, y )
-	LoadPixelScene(
-		"mods/alchemy_tutor/files/props/electrode.png",
-		"mods/alchemy_tutor/files/props/electrode_visual.png",
-		x-18, y-18,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{ ["fff0bbee"] = at_material( set.cauldron_contents, "air" ),
-			["ff404041"] = at_material( set.cauldron_material, "steel_static" ),
-		} -- color_to_matieral_table
-	)
+		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
+		local mat1 = CellFactory_GetType( set.output )
+		local mat2 = -1
+		if set.output2 then
+			mat2 = CellFactory_GetType( set.output2 )
+		end
 
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/shock_checker.xml", x, y-(set.cauldron_check_y or 18) )
-end
+		local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
+		if comp_mat ~= nil then
+			ComponentSetValue( comp_mat, "material", tostring(mat1) )
+			ComponentSetValue( comp_mat, "material2", tostring(mat2) )
+		end
 
-function at_block( set, x, y, file )
+		return contents
+	end
+}
+
+at_suspended_container = {
+	default_material = "steel",
+	is_physics = true,
+	spawn = function( set, x, y )
+		local contents = at_material( set.cauldron_contents, "air" )
+		local cauld = EntityLoad( at_mod_path .."/entities/suspended_container.xml", x, y - 18 )
+		if contents ~= "air" then
+			local comp_mat = EntityGetFirstComponent( cauld, "ParticleEmitterComponent" )
+			if comp_mat ~= nil then
+				ComponentSetValue( comp_mat, "emitted_material_name", contents )
+				ComponentSetValue( comp_mat, "is_emitting", 1 )
+			end
+		end
+
+		local mat1 = CellFactory_GetType( set.output )
+		local mat2 = -1
+		if set.output2 then
+			mat2 = CellFactory_GetType( set.output2 )
+		end
+
+		local comp_mat = EntityGetFirstComponent( cauld, "MaterialAreaCheckerComponent" )
+		if comp_mat ~= nil then
+			ComponentSetValue( comp_mat, "material", tostring(mat1) )
+			ComponentSetValue( comp_mat, "material2", tostring(mat2) )
+		end
+
+		return contents
+	end
+}
+
+at_electrode = {
+	default_material = "steel",
+	spawn = function( set, x, y )
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/props/electrode.png",
+			"mods/alchemy_tutor/files/props/electrode_visual.png",
+			x-18, y-18,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{ ["fff0bbee"] = at_material( set.cauldron_contents, "air" ),
+				["ff404041"] = at_material( set.cauldron_material, "steel_static" ),
+			} -- color_to_matieral_table
+		)
+
+		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/shock_checker.xml", x, y-(set.cauldron_check_y or 18) )
+	end
+}
+
+function at_spawn_block( set, x, y, file )
 	local material = at_material( set.cauldron_material, "wizardstone" )
 	LoadPixelScene(
 		file,
@@ -412,17 +432,26 @@ function at_block( set, x, y, file )
 	end
 end
 
-function at_block_brick( set, x, y )
-	return at_block( set, x, y, "mods/alchemy_tutor/files/props/block_brick.png" )
-end
+at_block_brick = {
+	default_material = "wizardstone",
+	spawn = function( set, x, y )
+		return at_block( set, x, y, "mods/alchemy_tutor/files/props/block_brick.png" )
+	end
+}
 
-function at_block_rock( set, x, y )
-	return at_block( set, x, y, "mods/alchemy_tutor/files/props/block_rock.png" )
-end
+at_block_rock = {
+	default_material = "wizardstone",
+	spawn = function( set, x, y )
+		return at_block( set, x, y, "mods/alchemy_tutor/files/props/block_rock.png" )
+	end
+}
 
-function at_block_steel( set, x, y )
-	return at_block( set, x, y, "mods/alchemy_tutor/files/props/block_steel.png" )
-end
+at_block_steel = {
+	default_material = "wizardstone",
+	spawn = function( set, x, y )
+		return at_block( set, x, y, "mods/alchemy_tutor/files/props/block_steel.png" )
+	end
+}
 
 function at_planterbox( x, y )
 	LoadPixelScene(

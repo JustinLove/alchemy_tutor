@@ -39,14 +39,13 @@ function at_decorate_scene( x, y )
 	local what
 
 	local cauldron = set.cauldron or at_scene_cauldron
-	if cauldron == at_suspended_container and set.cauldron_material then
+	if cauldron.is_physics and set.cauldron_material and set.cauldron_material ~= cauldron.default_material then
 		cauldron = at_cauldron
-	end
-	if cauldron == at_steel_pit and set.cauldron_material == "templebrick_static" then
+	elseif cauldron.default_material == "steel" and set.cauldron_material == "templebrick_static" then
 		cauldron = at_cauldron
 	end
 	for i,loc in ipairs( at_cauldrons ) do
-		what = cauldron( set, loc.x, loc.y )
+		what = cauldron.spawn( set, loc.x, loc.y )
 		if what ~= nil then
 			in_cauldron[what] = true
 			present_materials[what] = true
