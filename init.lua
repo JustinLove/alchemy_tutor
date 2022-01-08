@@ -30,17 +30,42 @@ local function clear_entities( player_entity )
 		icon_sprite_file = "data/ui_gfx/gun_actions/destruction.png",
 		display_above_head = false,
 		display_in_hud = true,
-		is_perk = false,
+		is_perk = true,
 	})
+end
+
+local function hesitate( player_entity )
+	local x,y = EntityGetTransform(player_entity)
+	local models = EntityGetComponent( player_entity, "CharacterPlatformingComponent" )
+	if( models ~= nil ) then
+		for i,model in ipairs(models) do
+			ComponentSetValue( model, "pixel_gravity", 0 )
+		end
+	end
+	local effect = EntityCreateNew()
+	EntityAddComponent( effect, "GameEffectComponent", 
+	{
+		custom_effect_id = "hesitation",
+		disable_movement = 1,
+		frames = "60",
+	} )
+	EntityAddComponent( effect, "LuaComponent", 
+	{
+		script_source_file = "mods/alchemy_tutor/files/entities/reset_gravity.lua",
+		execute_every_n_frame = -1,
+		execute_on_removed = 1,
+	} )
+	EntityAddChild( player_entity, effect )
 end
 
 function OnPlayerSpawned( player_entity ) -- This runs when player entity has been created
 	if _G['at_test_player'] then
 		GamePrint( "OnPlayerSpawned() - Player entity id: " .. tostring(player_entity) )
-		EntitySetTransform( player_entity, at_test_x, at_test_y )
 		clear_entities( player_entity )
+		EntitySetTransform( player_entity, at_test_x, at_test_y )
 	end
 	if _G['at_test_lab'] then
+		hesitate( player_entity )
 	  EntityLoad( "mods/alchemy_tutor/files/entities/spawn_lab.xml", at_test_x, at_test_y )
 	end
 	if _G['at_test_portal'] then

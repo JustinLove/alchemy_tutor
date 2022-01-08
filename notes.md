@@ -1,5 +1,5 @@
-- ?? jungle rock awol
-- redesigns
+- watchlist
+  - ?? jungle rock awol
   - coalmine: double trigger on regular cauldron (both clearing toxic)
   - x mystery fungus not detected in hisii h
   - right potions broken in jungle h
@@ -7,20 +7,17 @@
   - vault h
     - only one broken potion
     - no potions
+    - missing water potion, had red herrings
   - vault v
     - pool drained, no potions
-- x blank reward frame
-- test hanging containers
-  - x fungus garden cauldron
-  - x concentrated mana
-  - x purelava
-  - x frogs awkward
-  - x meat_done can't spawn
-- x material exclusions for cauldrons
-- x custom cauldrons
-  - jungle h
-  - crypt v
-- x void spreads through fungus
+    - diamond, water, nothing in pot
+    - breaks common
+  - hisi h diamond and water
+- use random distribution function
+- cauldron objects
+- meat no reward
+- crypt h: cauldron ambiguity
+- mod description
 - remote biomes
   - spawn key
   - clear on return/use
@@ -33,10 +30,10 @@
 - background?
 - cauldron fires
 - repeat resitance??
+- progression tracking
 - Alchemical Reactions Expansion
 
 - snow is awkward with powders - maybe okay as puzzle element?
-- vault potions may be too exposed from above
 
 - x toxic + water
 - x mana + water
@@ -78,6 +75,46 @@
 - x wizardstone + fire = lava
 - x wizardstone + amb = steam
 - x cooking meat
+
+### Alchemical Reactions Extended
+Breaks void detection
+
+- vomit + toxic = urine
+- charm + [blood] + [magic_polymorph] = regen
+- flum + gunpowder = accel
+- ambrosia + gold = regen
+- mana + alcholo = ambrosia
+- plasma + toxic = magic_liquid
+- unstale tele + blood = plasma
+- slime + toxic = pea soup
+- lava + slime = endslime
+- urine + soil = poo
+- salt + snow = water
+- fire + urine = salt
+- worm pher + any poly = worm pher
+- worm blood + brine = cheese
+- blood + worm phere = berserk
+- unstable poly + slime = poly
+- flum + coal = stable tele
+- inivs + fire = invis
+- slime + bluefungi = invis
+- fungi blood + bluefungi = flum
+- blood cold + oil = wax
+- oil + fire + berserk = red plastic
+- worm blood + water ice = purifying powder
+- diamond + sand = blue sand
+- blue sand + sand = sand
+- blue sand + lava = diamond
+- diamond + lava = diamond brick
+- bone + lava = coal
+- bone + sand = sodium
+- fungus blood + sand = fungi
+- fungus blood + blue sand = green fungi
+- braass + toxic = oil
+- poison + swamp = poisen
+- poison + dead soil = poisen
+- slime + dead soil = poisen
+- plasma + water = mana
 
 - x vault
   - v 01 x1 acid tank
