@@ -13,7 +13,6 @@
     - diamond, water, nothing in pot
     - breaks common
   - hisi h diamond and water
-- meat no reward
 - crypt h: cauldron ambiguity
 - mod description
 - remote biomes

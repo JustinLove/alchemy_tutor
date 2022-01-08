@@ -23,6 +23,7 @@ local at_scene_cauldron = at_default_cauldron
 local at_materials = {}
 local at_cauldrons = {}
 local at_other = {}
+local at_reward = {}
 
 function at_decorate_scene( x, y )
 	local set = at_pick_lab_set( x, y )
@@ -85,10 +86,16 @@ function at_decorate_scene( x, y )
 		set.other( loc.x, loc.y )
 	end
 
+	loc = table.remove( at_reward )
+	if loc and not set.hide_reward then
+		EntityLoad( "mods/alchemy_tutor/files/entities/reward_marker.xml", loc.x + 1, loc.y - 6 )
+	end
+
 	at_scene_cauldron = at_default_cauldron
 	at_materials = {}
 	at_cauldrons = {}
 	at_other = {}
+	at_reward = {}
 end
 
 function at_look_here( x, y )
@@ -114,7 +121,7 @@ function at_spawn_other( x, y )
 end
 
 function at_spawn_reward( x, y )
-	EntityLoad( "mods/alchemy_tutor/files/entities/reward_marker.xml", x + 1, y - 6 )
+	table.insert( at_reward, {x = x, y = y} )
 end
 
 function at_spawn_steel_pit( x, y )

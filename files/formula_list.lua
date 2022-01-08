@@ -193,6 +193,7 @@ at_formula_list = {
 		cauldron_check_y = 10,
 		other = at_meat,
 		output = "meat_done",
+		hide_reward = true,
 	},
 	{
 		materials = {
