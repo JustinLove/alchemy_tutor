@@ -12,6 +12,7 @@ at_test_y = -100 -- hills
 --at_test_y = 9000 -- vault
 --at_test_y = 11000 -- crypt
 --at_test_formula = 'toxicclean'
+--at_test_clear = true
 --at_test_player = true
 --at_test_lab = true
 --at_test_portal = true
@@ -65,11 +66,6 @@ function at_pick_lab_set( x, y )
 		return at_formulas[at_test_formula]
 	end
 	SetRandomSeed( x, y )
-	local r = Random()
-	if ModSettingGet("alchemy_tutor.formula_distance") then
-		local d = math.sqrt(x*x + y*y)
-		r = r ^ (12000 / d)
-	end
 	local grand = {}
 	for i,v in ipairs(at_formula_list) do
 		if v.grand_alchemy then
@@ -77,10 +73,17 @@ function at_pick_lab_set( x, y )
 		end
 	end
 	if Random(0, #grand + 5) < #grand then
-		local i = math.floor( r * #grand + 1 )
+		local i = Random(1, #grand)
 		return grand[i]
 	else
-		local i = math.floor( r * #at_formula_list + 1 )
+		local i
+		if ModSettingGet("alchemy_tutor.formula_distance") then
+			local d = math.sqrt(x*x + y*y)
+			local target = math.floor(#at_formula_list * (d/12000))
+			i = RandomDistribution(1, #at_formula_list, target)
+		else
+			i = Random(1, #at_formula_list)
+		end
 		return at_formula_list[i]
 	end
 end

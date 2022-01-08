@@ -59,9 +59,10 @@ local function hesitate( player_entity )
 end
 
 function OnPlayerSpawned( player_entity ) -- This runs when player entity has been created
-	if _G['at_test_player'] then
-		GamePrint( "OnPlayerSpawned() - Player entity id: " .. tostring(player_entity) )
+	if _G['at_test_player'] or _G['at_test_clear'] then
 		clear_entities( player_entity )
+	end
+	if _G['at_test_player'] then
 		EntitySetTransform( player_entity, at_test_x, at_test_y )
 	end
 	if _G['at_test_lab'] then

@@ -13,7 +13,6 @@
     - diamond, water, nothing in pot
     - breaks common
   - hisi h diamond and water
-- use random distribution function
 - cauldron objects
 - meat no reward
 - crypt h: cauldron ambiguity
