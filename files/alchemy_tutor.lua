@@ -13,10 +13,9 @@ at_test_y = -100 -- hills
 --at_test_y = 11000 -- crypt
 --at_test_formula = 'toxicclean'
 --at_test_formula = 'magic_liquid_mana_regeneration'
-at_test_formula = 'melt_steel'
 --at_test_clear = true
-at_test_player = true
-at_test_lab = true
+--at_test_player = true
+--at_test_lab = true
 --at_test_portal = true
 
 local function at_get_material_type( material_name )
