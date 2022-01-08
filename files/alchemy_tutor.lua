@@ -13,9 +13,10 @@ at_test_y = -100 -- hills
 --at_test_y = 11000 -- crypt
 --at_test_formula = 'toxicclean'
 --at_test_formula = 'magic_liquid_mana_regeneration'
+at_test_formula = 'melt_steel'
 --at_test_clear = true
---at_test_player = true
---at_test_lab = true
+at_test_player = true
+at_test_lab = true
 --at_test_portal = true
 
 local function at_get_material_type( material_name )
@@ -435,21 +436,21 @@ end
 at_block_brick = {
 	default_material = "wizardstone",
 	spawn = function( set, x, y )
-		return at_block( set, x, y, "mods/alchemy_tutor/files/props/block_brick.png" )
+		return at_spawn_block( set, x, y, "mods/alchemy_tutor/files/props/block_brick.png" )
 	end
 }
 
 at_block_rock = {
 	default_material = "wizardstone",
 	spawn = function( set, x, y )
-		return at_block( set, x, y, "mods/alchemy_tutor/files/props/block_rock.png" )
+		return at_spawn_block( set, x, y, "mods/alchemy_tutor/files/props/block_rock.png" )
 	end
 }
 
 at_block_steel = {
 	default_material = "wizardstone",
 	spawn = function( set, x, y )
-		return at_block( set, x, y, "mods/alchemy_tutor/files/props/block_steel.png" )
+		return at_spawn_block( set, x, y, "mods/alchemy_tutor/files/props/block_steel.png" )
 	end
 }
 
