@@ -13,12 +13,15 @@
     - breaks common
   - hisi h diamond and water
 - mod description
+- disjoint wood in coalmine h
+- whole edge jungle v
 - remote biomes
   - spawn key
   - clear on return/use
   - remote lab design
   - exit sequence
   - key design
+- multi-step challenges?
 - grand alchemy labs
 
 - solids in cauldron - whether to remove cauldron material/ which formula???
