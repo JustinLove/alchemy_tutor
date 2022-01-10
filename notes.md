@@ -1,19 +1,21 @@
 - watchlist
   - ?? jungle rock awol
   - coalmine: double trigger on regular cauldron (both clearing toxic)
-  - x mystery fungus not detected in hisii h
   - right potions broken in jungle h
-  - x hanging slime - chest solved and chest in bin
   - vault h
     - only one broken potion
     - no potions
     - missing water potion, had red herrings
+    - potions fell
   - vault v
     - pool drained, no potions
     - diamond, water, nothing in pot
     - breaks common
   - hisi h diamond and water
-- crypt h: cauldron ambiguity
+- alt biomes for pixels scenes
+  - pyramid
+  - dark rainforest
+  - open rainforest
 - mod description
 - remote biomes
   - spawn key

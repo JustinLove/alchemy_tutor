@@ -225,6 +225,7 @@ function at_red_herring( x, y, present_materials )
 end
 
 at_cauldron = {
+	name = "cauldron",
 	default_material = "templebrick_static",
 	spawn = function( set, x, y )
 		local contents = at_material( set.cauldron_contents, "air" )
@@ -259,6 +260,7 @@ at_cauldron = {
 }
 
 at_steel_pit = {
+	name = "steel pit",
 	default_material = "steel",
 	spawn = function( set, x, y, prop )
 		local contents = at_material( set.cauldron_contents, "air" )
@@ -292,13 +294,14 @@ at_steel_pit = {
 }
 
 at_brick_pit = {
+	name = "brick pit",
 	default_material = "templebrick_static",
 	spawn = function( set, x, y, prop )
 		local contents = at_material( set.cauldron_contents, "air" )
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/props/brick_pit.png",
 			"", -- visual
-			x-26, y-39,
+			x-26, y-29,
 			"", -- background
 			true, -- skip_biome_checks
 			false, -- skip_edge_textures
@@ -307,7 +310,7 @@ at_brick_pit = {
 			} -- color_to_matieral_table
 		)
 
-		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 12) )
+		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 8) )
 		local mat1 = CellFactory_GetType( set.output )
 		local mat2 = -1
 		if set.output2 then
@@ -325,6 +328,7 @@ at_brick_pit = {
 }
 
 at_fungus = {
+	name = "fungus",
 	default_material = "wood_player_b2",
 	spawn = function( set, x, y )
 		local contents = at_material( set.cauldron_contents, "fungi" )
@@ -359,6 +363,7 @@ at_fungus = {
 }
 
 at_suspended_container = {
+	name = "suspended container",
 	default_material = "steel",
 	is_physics = true,
 	spawn = function( set, x, y )
@@ -389,6 +394,7 @@ at_suspended_container = {
 }
 
 at_electrode = {
+	name = "electrode",
 	default_material = "steel",
 	spawn = function( set, x, y )
 		LoadPixelScene(
@@ -433,6 +439,7 @@ function at_spawn_block( set, x, y, file )
 end
 
 at_block_brick = {
+	name = "block brick",
 	default_material = "wizardstone",
 	spawn = function( set, x, y )
 		return at_spawn_block( set, x, y, "mods/alchemy_tutor/files/props/block_brick.png" )
@@ -440,6 +447,7 @@ at_block_brick = {
 }
 
 at_block_rock = {
+	name = "block rock",
 	default_material = "wizardstone",
 	spawn = function( set, x, y )
 		return at_spawn_block( set, x, y, "mods/alchemy_tutor/files/props/block_rock.png" )
@@ -447,6 +455,7 @@ at_block_rock = {
 }
 
 at_block_steel = {
+	name = "block steel",
 	default_material = "wizardstone",
 	spawn = function( set, x, y )
 		return at_spawn_block( set, x, y, "mods/alchemy_tutor/files/props/block_steel.png" )

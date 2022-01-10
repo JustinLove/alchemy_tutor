@@ -19,7 +19,7 @@ if at_lab_chance == nil then
 end
 --at_lab_chance = 9999999
 
-local at_scene_cauldron = at_default_cauldron
+local at_scene_cauldron = nil
 local at_materials = {}
 local at_cauldrons = {}
 local at_other = {}
@@ -39,7 +39,7 @@ function at_decorate_scene( x, y )
 	local present_materials = {}
 	local what
 
-	local cauldron = set.cauldron or at_scene_cauldron
+	local cauldron = set.cauldron or at_scene_cauldron or at_default_cauldron
 	if cauldron.is_physics and set.cauldron_material and set.cauldron_material ~= cauldron.default_material then
 		cauldron = at_cauldron
 	elseif cauldron.default_material == "steel" and set.cauldron_material == "templebrick_static" then
@@ -91,7 +91,7 @@ function at_decorate_scene( x, y )
 		EntityLoad( "mods/alchemy_tutor/files/entities/reward_marker.xml", loc.x + 1, loc.y - 6 )
 	end
 
-	at_scene_cauldron = at_default_cauldron
+	at_scene_cauldron = nil
 	at_materials = {}
 	at_cauldrons = {}
 	at_other = {}
