@@ -12,10 +12,7 @@
     - diamond, water, nothing in pot
     - breaks common
   - hisi h diamond and water
-- alt biomes for pixels scenes
-  - pyramid
-  - dark rainforest
-  - open rainforest
+- rainforest cauldron v
 - mod description
 - remote biomes
   - spawn key
