@@ -12,7 +12,6 @@
     - diamond, water, nothing in pot
     - breaks common
   - hisi h diamond and water
-- rainforest cauldron v
 - mod description
 - remote biomes
   - spawn key
