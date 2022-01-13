@@ -1,6 +1,5 @@
 - watchlist
   - ?? jungle rock awol
-  - coalmine: double trigger on regular cauldron (both clearing toxic)
   - right potions broken in jungle h
   - vault h
     - only one broken potion
@@ -12,9 +11,12 @@
     - diamond, water, nothing in pot
     - breaks common
   - hisi h diamond and water
-- mod description
+  - crypt v, polymorphine and toxic, maybe slime
+- vault h - lots of breakage with soil
 - disjoint wood in coalmine h
+- hardended steel
 - whole edge jungle v
+- double trigger on regular cauldron (both clearing toxic)
 - remote biomes
   - spawn key
   - clear on return/use

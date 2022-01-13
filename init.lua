@@ -58,7 +58,12 @@ local function hesitate( player_entity )
 	EntityAddChild( player_entity, effect )
 end
 
+local first_run = true
+
 function OnPlayerSpawned( player_entity ) -- This runs when player entity has been created
+	if not first_run then
+		return
+	end
 	if _G['at_test_player'] or _G['at_test_clear'] then
 		clear_entities( player_entity )
 	end
@@ -73,6 +78,7 @@ function OnPlayerSpawned( player_entity ) -- This runs when player entity has be
 		local x,y = EntityGetTransform(player_entity)
 		EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_key.xml", x, y )
 	end
+	first_run = false;
 end
 
 

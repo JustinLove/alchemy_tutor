@@ -13,7 +13,14 @@ function material_area_checker_success( pos_x, pos_y )
 	local cauldrons = EntityGetInRadiusWithTag( x, y, 200, "cauldron_checker" )
 
 	for i,v in ipairs( cauldrons ) do
-		EntityKill( v )
+		if EntityGetFirstComponent( v, "PhysicsBody2Component" ) then
+			local mat = EntityGetFirstComponent( v, "MaterialAreaCheckerComponent" )
+			if mat then
+				EntityRemoveComponent( v, mat )
+			end
+		else
+			EntityKill( v )
+		end
 	end
 
 	local rewards = EntityGetInRadiusWithTag( x, y, 500, "at_reward" )

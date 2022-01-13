@@ -62,7 +62,7 @@
     material="oil"
     material2="oil"
     look_for_failure="0"
-    kill_after_message="1">
+    kill_after_message="0">
   </MaterialAreaCheckerComponent>
 
   <LuaComponent
