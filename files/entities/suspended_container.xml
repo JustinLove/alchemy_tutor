@@ -58,7 +58,7 @@
     area_aabb.max_x="4"
     area_aabb.min_y="-3"
     area_aabb.max_y="-2"
-    update_every_x_frame="600"
+    update_every_x_frame="1030"
     material="oil"
     material2="oil"
     look_for_failure="0"

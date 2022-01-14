@@ -229,7 +229,7 @@ function at_red_herring( x, y, present_materials )
 end
 
 
-local function setup_material_checker( entity, material1, material2 )
+local function setup_material_checker( entity, material1, material2, index )
 	local mat1 = CellFactory_GetType( material1 )
 	local mat2 = -1
 	if material2 then
@@ -238,15 +238,16 @@ local function setup_material_checker( entity, material1, material2 )
 
 	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
 	if comp_mat ~= nil then
-		ComponentSetValue( comp_mat, "material", tostring(mat1) )
-		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
+		ComponentSetValue2( comp_mat, "material", mat1 )
+		ComponentSetValue2( comp_mat, "material2", mat2 )
+		ComponentSetValue2( comp_mat, "update_every_x_frame", ComponentGetValue2( comp_mat, "update_every_x_frame" ) + index )
 	end
 end
 
 at_cauldron = {
 	name = "cauldron",
 	default_material = "templebrick_static",
-	spawn = function( set, x, y )
+	spawn = function( set, x, y, index )
 		local contents = at_material( set.cauldron_contents, "air" )
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/props/cauldron.png",
@@ -262,7 +263,7 @@ at_cauldron = {
 		)
 
 		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 18) )
-		setup_material_checker( entity, set.output, set.output2 )
+		setup_material_checker( entity, set.output, set.output2, index )
 
 		return contents
 	end
@@ -271,7 +272,7 @@ at_cauldron = {
 at_steel_pit = {
 	name = "steel pit",
 	default_material = "steel_static_unmeltable",
-	spawn = function( set, x, y, prop )
+	spawn = function( set, x, y, index )
 		local contents = at_material( set.cauldron_contents, "air" )
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/props/steel_pit.png",
@@ -286,7 +287,7 @@ at_steel_pit = {
 		)
 
 		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
-		setup_material_checker( entity, set.output, set.output2 )
+		setup_material_checker( entity, set.output, set.output2, index)
 
 		return contents
 	end
@@ -295,7 +296,7 @@ at_steel_pit = {
 at_brick_pit = {
 	name = "brick pit",
 	default_material = "templebrick_static",
-	spawn = function( set, x, y, prop )
+	spawn = function( set, x, y, index )
 		local contents = at_material( set.cauldron_contents, "air" )
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/props/brick_pit.png",
@@ -310,7 +311,7 @@ at_brick_pit = {
 		)
 
 		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 8) )
-		setup_material_checker( entity, set.output, set.output2 )
+		setup_material_checker( entity, set.output, set.output2, index)
 
 		return contents
 	end
@@ -319,7 +320,7 @@ at_brick_pit = {
 at_fungus = {
 	name = "fungus",
 	default_material = "wood_player_b2",
-	spawn = function( set, x, y )
+	spawn = function( set, x, y, index )
 		local contents = at_material( set.cauldron_contents, "fungi" )
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/props/fungus.png",
@@ -335,7 +336,7 @@ at_fungus = {
 		)
 
 		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
-		setup_material_checker( entity, set.output, set.output2 )
+		setup_material_checker( entity, set.output, set.output2, index )
 
 		return contents
 	end
@@ -345,18 +346,18 @@ at_suspended_container = {
 	name = "suspended container",
 	default_material = "steel",
 	is_physics = true,
-	spawn = function( set, x, y )
+	spawn = function( set, x, y, index )
 		local contents = at_material( set.cauldron_contents, "air" )
 		local cauld = EntityLoad( at_mod_path .."/entities/suspended_container.xml", x, y - 18 )
 		if contents ~= "air" then
 			local comp_mat = EntityGetFirstComponent( cauld, "ParticleEmitterComponent" )
 			if comp_mat ~= nil then
-				ComponentSetValue( comp_mat, "emitted_material_name", contents )
-				ComponentSetValue( comp_mat, "is_emitting", 1 )
+				ComponentSetValue2( comp_mat, "emitted_material_name", contents )
+				ComponentSetValue2( comp_mat, "is_emitting", true )
 			end
 		end
 
-		setup_material_checker( cauld, set.output, set.output2 )
+		setup_material_checker( cauld, set.output, set.output2, index )
 
 		return contents
 	end
@@ -365,7 +366,7 @@ at_suspended_container = {
 at_electrode = {
 	name = "electrode",
 	default_material = "steel_static",
-	spawn = function( set, x, y )
+	spawn = function( set, x, y, index )
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/props/electrode.png",
 			"mods/alchemy_tutor/files/props/electrode_visual.png",
@@ -382,7 +383,7 @@ at_electrode = {
 	end
 }
 
-function at_spawn_block( set, x, y, file )
+function at_spawn_block( set, x, y, index, file )
 	local material = at_material( set.cauldron_material, "wizardstone" )
 	LoadPixelScene(
 		file,
@@ -397,30 +398,30 @@ function at_spawn_block( set, x, y, file )
 	)
 
 	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/block_checker.xml", x, y-18 )
-	setup_material_checker( entity, material, '' )
+	setup_material_checker( entity, material, '', index )
 end
 
 at_block_brick = {
 	name = "block brick",
 	default_material = "wizardstone",
-	spawn = function( set, x, y )
-		return at_spawn_block( set, x, y, "mods/alchemy_tutor/files/props/block_brick.png" )
+	spawn = function( set, x, y, index )
+		return at_spawn_block( set, x, y, index, "mods/alchemy_tutor/files/props/block_brick.png" )
 	end
 }
 
 at_block_rock = {
 	name = "block rock",
 	default_material = "wizardstone",
-	spawn = function( set, x, y )
-		return at_spawn_block( set, x, y, "mods/alchemy_tutor/files/props/block_rock.png" )
+	spawn = function( set, x, y, index )
+		return at_spawn_block( set, x, y, index, "mods/alchemy_tutor/files/props/block_rock.png" )
 	end
 }
 
 at_block_steel = {
 	name = "block steel",
 	default_material = "wizardstone",
-	spawn = function( set, x, y )
-		return at_spawn_block( set, x, y, "mods/alchemy_tutor/files/props/block_steel.png" )
+	spawn = function( set, x, y, index )
+		return at_spawn_block( set, x, y, index, "mods/alchemy_tutor/files/props/block_steel.png" )
 	end
 }
 

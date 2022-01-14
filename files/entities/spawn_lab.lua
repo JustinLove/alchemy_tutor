@@ -27,7 +27,7 @@ function at_spawn_lab( x, y )
 		--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_v.png",
 		"",
 		--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_h_visual.png",
-		x - width/2, y,
+		x - width/2, y - height/2,
 		--"data/biome_impl/snowcastle/greenhouse_background.png",
 		--"data/biome_impl/snowcastle/bedroom_background.png",
 		"", -- background

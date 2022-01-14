@@ -9,7 +9,7 @@ function suspended_container_filled()
 	end
 	local comp_mat = EntityGetFirstComponent( entity_id, "MaterialAreaCheckerComponent" )
 	if comp_mat ~= nil then
-		ComponentSetValue( comp_mat, "update_every_x_frame", 30 )
+		ComponentSetValue2( comp_mat, "update_every_x_frame", ComponentGetValue2( comp_mat, "update_every_x_frame" ) - 1000 )
 	end
 end
 

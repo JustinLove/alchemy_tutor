@@ -46,7 +46,7 @@ function at_decorate_scene( x, y )
 		cauldron = at_cauldron
 	end
 	for i,loc in ipairs( at_cauldrons ) do
-		what = cauldron.spawn( set, loc.x, loc.y )
+		what = cauldron.spawn( set, loc.x, loc.y, i )
 		if what ~= nil then
 			in_cauldron[what] = true
 			present_materials[what] = true
