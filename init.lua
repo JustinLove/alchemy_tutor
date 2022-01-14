@@ -1,4 +1,3 @@
-dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 -- all functions below are optional and can be left out
 
 --[[
@@ -103,12 +102,14 @@ end
 ]]--
 
 function OnMagicNumbersAndWorldSeedInitialized() -- this is the last point where the Mod* API is available. after this materials.xml will be loaded.
+	dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 	local x = ProceduralRandom(0,0)
 	print( "===================================== random " .. tostring(x) )
 end
 
 
 -- This code runs when all mods' filesystems are registered
+
 ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/alchemy_tutor/files/biomes/coalmine.lua" )
 ModLuaFileAppend( "data/scripts/biomes/coalmine_alt.lua", "mods/alchemy_tutor/files/biomes/coalmine_alt.lua" )
 ModLuaFileAppend( "data/scripts/biomes/excavationsite.lua", "mods/alchemy_tutor/files/biomes/excavationsite.lua" )
@@ -126,4 +127,9 @@ ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_stub.lua", "mods/a
 ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/biomes/hills.lua" )
 
-print("Example mod init done")
+local mods = ModGetActiveModIDs()
+for i = 1,#mods do
+	if mods[i] == 'alchemical_reactions_expansion' then
+		ModLuaFileAppend( "mods/alchemy_tutor/files/formula_list.lua", "mods/alchemy_tutor/files/alchemical_reactions_expansion.lua" )
+	end
+end

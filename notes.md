@@ -12,6 +12,7 @@
     - breaks common
   - hisi h diamond and water
   - crypt v, polymorphine and toxic, maybe slime
+- consider secondary materials for grand alchemy
 - remote biomes
   - spawn key
   - clear on return/use
@@ -74,8 +75,8 @@
 ### Alchemical Reactions Extended
 Breaks void detection
 
-- vomit + toxic = urine
-- charm + [blood] + [magic_polymorph] = regen
+- x vomit + toxic = urine
+- x charm + [blood] + [magic_polymorph] = regen
 - flum + gunpowder = accel
 - ambrosia + gold = regen
 - mana + alcholo = ambrosia
