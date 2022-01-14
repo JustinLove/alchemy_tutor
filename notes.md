@@ -12,7 +12,6 @@
     - breaks common
   - hisi h diamond and water
   - crypt v, polymorphine and toxic, maybe slime
-- vault h - lots of breakage with soil
 - disjoint wood in coalmine h
 - hardended steel
 - whole edge jungle v
