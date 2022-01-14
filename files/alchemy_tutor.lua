@@ -265,7 +265,7 @@ at_cauldron = {
 
 at_steel_pit = {
 	name = "steel pit",
-	default_material = "steel",
+	default_material = "steel_static_unmeltable",
 	spawn = function( set, x, y, prop )
 		local contents = at_material( set.cauldron_contents, "air" )
 		LoadPixelScene(
@@ -399,7 +399,7 @@ at_suspended_container = {
 
 at_electrode = {
 	name = "electrode",
-	default_material = "steel",
+	default_material = "steel_static",
 	spawn = function( set, x, y )
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/props/electrode.png",
