@@ -12,7 +12,6 @@
     - breaks common
   - hisi h diamond and water
   - crypt v, polymorphine and toxic, maybe slime
-- disjoint wood in coalmine h
 - hardended steel
 - whole edge jungle v
 - double trigger on regular cauldron (both clearing toxic)
