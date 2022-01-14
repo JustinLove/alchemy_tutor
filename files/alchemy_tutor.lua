@@ -228,6 +228,21 @@ function at_red_herring( x, y, present_materials )
 	end
 end
 
+
+local function setup_material_checker( entity, material1, material2 )
+	local mat1 = CellFactory_GetType( material1 )
+	local mat2 = -1
+	if material2 then
+		mat2 = CellFactory_GetType( material2 )
+	end
+
+	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
+	if comp_mat ~= nil then
+		ComponentSetValue( comp_mat, "material", tostring(mat1) )
+		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
+	end
+end
+
 at_cauldron = {
 	name = "cauldron",
 	default_material = "templebrick_static",
@@ -247,17 +262,7 @@ at_cauldron = {
 		)
 
 		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 18) )
-		local mat1 = CellFactory_GetType( set.output )
-		local mat2 = -1
-		if set.output2 then
-			mat2 = CellFactory_GetType( set.output2 )
-		end
-
-		local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
-		if comp_mat ~= nil then
-			ComponentSetValue( comp_mat, "material", tostring(mat1) )
-			ComponentSetValue( comp_mat, "material2", tostring(mat2) )
-		end
+		setup_material_checker( entity, set.output, set.output2 )
 
 		return contents
 	end
@@ -281,17 +286,7 @@ at_steel_pit = {
 		)
 
 		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
-		local mat1 = CellFactory_GetType( set.output )
-		local mat2 = -1
-		if set.output2 then
-			mat2 = CellFactory_GetType( set.output2 )
-		end
-
-		local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
-		if comp_mat ~= nil then
-			ComponentSetValue( comp_mat, "material", tostring(mat1) )
-			ComponentSetValue( comp_mat, "material2", tostring(mat2) )
-		end
+		setup_material_checker( entity, set.output, set.output2 )
 
 		return contents
 	end
@@ -315,17 +310,7 @@ at_brick_pit = {
 		)
 
 		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 8) )
-		local mat1 = CellFactory_GetType( set.output )
-		local mat2 = -1
-		if set.output2 then
-			mat2 = CellFactory_GetType( set.output2 )
-		end
-
-		local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
-		if comp_mat ~= nil then
-			ComponentSetValue( comp_mat, "material", tostring(mat1) )
-			ComponentSetValue( comp_mat, "material2", tostring(mat2) )
-		end
+		setup_material_checker( entity, set.output, set.output2 )
 
 		return contents
 	end
@@ -350,17 +335,7 @@ at_fungus = {
 		)
 
 		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
-		local mat1 = CellFactory_GetType( set.output )
-		local mat2 = -1
-		if set.output2 then
-			mat2 = CellFactory_GetType( set.output2 )
-		end
-
-		local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
-		if comp_mat ~= nil then
-			ComponentSetValue( comp_mat, "material", tostring(mat1) )
-			ComponentSetValue( comp_mat, "material2", tostring(mat2) )
-		end
+		setup_material_checker( entity, set.output, set.output2 )
 
 		return contents
 	end
@@ -381,17 +356,7 @@ at_suspended_container = {
 			end
 		end
 
-		local mat1 = CellFactory_GetType( set.output )
-		local mat2 = -1
-		if set.output2 then
-			mat2 = CellFactory_GetType( set.output2 )
-		end
-
-		local comp_mat = EntityGetFirstComponent( cauld, "MaterialAreaCheckerComponent" )
-		if comp_mat ~= nil then
-			ComponentSetValue( comp_mat, "material", tostring(mat1) )
-			ComponentSetValue( comp_mat, "material2", tostring(mat2) )
-		end
+		setup_material_checker( cauld, set.output, set.output2 )
 
 		return contents
 	end
@@ -432,14 +397,7 @@ function at_spawn_block( set, x, y, file )
 	)
 
 	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/block_checker.xml", x, y-18 )
-	local mat1 = CellFactory_GetType( material )
-	local mat2 = -1
-
-	local comp_mat = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
-	if comp_mat ~= nil then
-		ComponentSetValue( comp_mat, "material", tostring(mat1) )
-		ComponentSetValue( comp_mat, "material2", tostring(mat2) )
-	end
+	setup_material_checker( entity, material, '' )
 end
 
 at_block_brick = {

@@ -12,8 +12,6 @@
     - breaks common
   - hisi h diamond and water
   - crypt v, polymorphine and toxic, maybe slime
-- hardended steel
-- whole edge jungle v
 - double trigger on regular cauldron (both clearing toxic)
 - remote biomes
   - spawn key
