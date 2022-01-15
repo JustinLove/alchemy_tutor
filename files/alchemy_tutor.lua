@@ -130,7 +130,12 @@ function at_setup_grand_alchemy()
 	end
 end
 
+local function formula_sort(a, b)
+	return (a.rating or 9) < (b.rating or 9)
+end
+
 function at_setup()
+	table.sort(at_formula_list, formula_sort)
 	for i,v in ipairs(at_formula_list) do
 		if v.name == nil then
 			v.name = v.output

@@ -493,24 +493,12 @@ at_formula_list = {
 	},
 }
 
-function at_formula_list_before( existing_name, new_formula )
-	for i = 1, #at_formula_list do
-		local f = at_formula_list[i]
-		if (f.name or f.output) == existing_name then
-			table.insert( at_formula_list, i, new_formula )
-			return
-		end
-	end
-end
-
-function at_formula_list_after( existing_name, new_formula )
-	for i = 1, #at_formula_list do
-		local f = at_formula_list[i]
-		if (f.name or f.output) == existing_name then
-			print( 'after', existing_name, i )
-			table.insert( at_formula_list, i+1, new_formula )
-			return
-		end
+function at_formula_list_append( new_formulas )
+	local start_length = #at_formula_list
+	at_formula_list[start_length + #new_formulas] = {}
+	for i = 1, #new_formulas do
+		at_formula_list[start_length + i] = new_formulas[i]
+		print(tostring(start_length + i), tostring(i))
 	end
 end
 
