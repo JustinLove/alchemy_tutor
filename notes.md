@@ -12,6 +12,7 @@
     - breaks common
   - hisi h diamond and water
   - crypt v, polymorphine and toxic, maybe slime
+- consider gunpowder bin
 - consider secondary materials for grand alchemy
 - remote biomes
   - spawn key
@@ -77,11 +78,11 @@ Breaks void detection
 
 - x vomit + toxic = urine
 - x charm + [blood] + [magic_polymorph] = regen
-- flum + gunpowder = accel
-- ambrosia + gold = regen
-- mana + alcholo = ambrosia
+- x flum + gunpowder = accel
+- xx ambrosia + gold = regen
+- x mana + alcohol = ambrosia
 - plasma + toxic = magic_liquid
-- unstale tele + blood = plasma
+- check detection unstale tele + blood = plasma
 - slime + toxic = pea soup
 - lava + slime = endslime
 - urine + soil = poo

@@ -498,7 +498,6 @@ function at_formula_list_append( new_formulas )
 	at_formula_list[start_length + #new_formulas] = {}
 	for i = 1, #new_formulas do
 		at_formula_list[start_length + i] = new_formulas[i]
-		print(tostring(start_length + i), tostring(i))
 	end
 end
 

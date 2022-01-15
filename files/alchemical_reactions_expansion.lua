@@ -16,6 +16,7 @@ at_formula_list_append({
 		rating = 9,
 	},
 	{
+		name = "polyhp",
 		materials = {
 			"magic_liquid_charm",
 			{ "blood", "blood", "blood", "blood_worm", "blood_cold" },
@@ -23,5 +24,66 @@ at_formula_list_append({
 		},
 		output = "magic_liquid_hp_regeneration",
 		rating = 8,
+	},
+	{
+		name = "accel",
+		materials = {
+			"gunpowder",
+			"material_confusion",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"material_confusion",
+		},
+		output = "magic_liquid_movement_faster",
+		rating = 9,
+	},
+	--[[ unfishished; does not actually heal
+	{
+		name = "goldhp",
+		materials = {
+			"gold",
+			"magic_liquid_protection_all",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"magic_liquid_protection_all",
+		},
+		output = "magic_gas_hp_regeneration",
+		rating = 7,
+	},
+	]]
+	{
+		name = "are_ambrosia",
+		materials = {
+			"magic_liquid_mana_regeneration",
+			"alcohol",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"air",
+			"magic_liquid_mana_regeneration",
+			"alcohol",
+		},
+		output = "magic_liquid_protection_all",
+		rating = 7,
+	},
+	{
+		materials = {
+			"magic_liquid_unstable_teleportation",
+			"blood",
+		},
+		cauldron_contents = {
+			"air",
+			"magic_liquid_unstable_teleportation",
+			"blood",
+			"blood",
+			"blood",
+		},
+		output = "plasma_fading",
+		rating = 5,
 	},
 })
