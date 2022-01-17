@@ -144,9 +144,6 @@ ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_stub.lua", "mods/a
 ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/biomes/hills.lua" )
 
-local mods = ModGetActiveModIDs()
-for i = 1,#mods do
-	if mods[i] == 'alchemical_reactions_expansion' then
-		ModLuaFileAppend( "mods/alchemy_tutor/files/formula_list.lua", "mods/alchemy_tutor/files/alchemical_reactions_expansion.lua" )
-	end
+if ModIsEnabled( 'alchemical_reactions_expansion' ) then
+	ModLuaFileAppend( "mods/alchemy_tutor/files/formula_list.lua", "mods/alchemy_tutor/files/alchemical_reactions_expansion.lua" )
 end

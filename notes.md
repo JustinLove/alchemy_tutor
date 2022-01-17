@@ -12,7 +12,6 @@
     - breaks common
   - hisi h diamond and water
   - crypt v, polymorphine and toxic, maybe slime
-- ModIsEnabled?
 - suspended container tele+mana, self solved
 - custom detector for hp gas
 - consider gunpowder bin
