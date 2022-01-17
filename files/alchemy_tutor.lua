@@ -18,6 +18,7 @@ at_test_y = -100 -- hills
 --at_test_formula = 'toxicclean'
 --at_test_formula = 'magic_liquid_mana_regeneration'
 --at_test_clear = true
+--at_test_healing = true
 --at_test_player = true
 --at_test_lab = true
 --at_test_portal = true
@@ -234,7 +235,7 @@ function at_red_herring( x, y, present_materials )
 end
 
 
-local function setup_material_checker( entity, material1, material2, index )
+local function setup_material_checker( entity, material1, material2, fast_checking, index )
 	local mat1 = CellFactory_GetType( material1 )
 	local mat2 = -1
 	if material2 then
@@ -245,7 +246,11 @@ local function setup_material_checker( entity, material1, material2, index )
 	if comp_mat ~= nil then
 		ComponentSetValue2( comp_mat, "material", mat1 )
 		ComponentSetValue2( comp_mat, "material2", mat2 )
-		ComponentSetValue2( comp_mat, "update_every_x_frame", ComponentGetValue2( comp_mat, "update_every_x_frame" ) + index )
+		local frames = ComponentGetValue2( comp_mat, "update_every_x_frame" ) + index
+		if fast_checking then
+			frames = 1
+		end
+		ComponentSetValue2( comp_mat, "update_every_x_frame", frames )
 	end
 end
 
@@ -268,7 +273,7 @@ at_cauldron = {
 		)
 
 		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 18) )
-		setup_material_checker( entity, set.output, set.output2, index )
+		setup_material_checker( entity, set.output, set.output2, set.fast_checking, index )
 
 		return contents
 	end
@@ -292,7 +297,7 @@ at_steel_pit = {
 		)
 
 		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
-		setup_material_checker( entity, set.output, set.output2, index)
+		setup_material_checker( entity, set.output, set.output2, set.fast_checking, index)
 
 		return contents
 	end
@@ -316,7 +321,7 @@ at_brick_pit = {
 		)
 
 		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 8) )
-		setup_material_checker( entity, set.output, set.output2, index)
+		setup_material_checker( entity, set.output, set.output2, set.fast_checking, index)
 
 		return contents
 	end
@@ -341,7 +346,7 @@ at_fungus = {
 		)
 
 		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
-		setup_material_checker( entity, set.output, set.output2, index )
+		setup_material_checker( entity, set.output, set.output2, set.fast_checking, index )
 
 		return contents
 	end
@@ -362,7 +367,7 @@ at_suspended_container = {
 			end
 		end
 
-		setup_material_checker( cauld, set.output, set.output2, index )
+		setup_material_checker( cauld, set.output, set.output2, set.fast_checking, index )
 
 		return contents
 	end
@@ -403,7 +408,7 @@ function at_spawn_block( set, x, y, index, file )
 	)
 
 	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/block_checker.xml", x, y-18 )
-	setup_material_checker( entity, material, '', index )
+	setup_material_checker( entity, material, '', false, index )
 end
 
 at_block_brick = {

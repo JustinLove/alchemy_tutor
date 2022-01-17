@@ -33,6 +33,20 @@ local function clear_entities( player_entity )
 	})
 end
 
+local function damage_player( player_entity )
+	local damagemodels = EntityGetComponent( player_entity, "DamageModelComponent" )
+
+	if( damagemodels ~= nil ) then
+		for _,damagemodel in ipairs(damagemodels) do
+			local hp = ComponentGetValue2( damagemodel, "hp" )
+
+			hp = math.max( 0.04, hp - math.max( hp * 0.1, 0.8 ) )
+
+			ComponentSetValue2( damagemodel, "hp", hp )
+		end
+	end
+end
+
 local function hesitate( player_entity )
 	local x,y = EntityGetTransform(player_entity)
 	local models = EntityGetComponent( player_entity, "CharacterPlatformingComponent" )
@@ -65,6 +79,9 @@ function OnPlayerSpawned( player_entity ) -- This runs when player entity has be
 	end
 	if _G['at_test_player'] or _G['at_test_clear'] then
 		clear_entities( player_entity )
+	end
+	if _G['at_test_healing'] then
+		damage_player( player_entity )
 	end
 	if _G['at_test_player'] then
 		EntitySetTransform( player_entity, at_test_x, at_test_y )

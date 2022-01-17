@@ -12,6 +12,9 @@
     - breaks common
   - hisi h diamond and water
   - crypt v, polymorphine and toxic, maybe slime
+- ModIsEnabled?
+- suspended container tele+mana, self solved
+- custom detector for hp gas
 - consider gunpowder bin
 - consider secondary materials for grand alchemy
 - remote biomes
@@ -79,10 +82,10 @@ Breaks void detection
 - x vomit + toxic = urine
 - x charm + [blood] + [magic_polymorph] = regen
 - x flum + gunpowder = accel
-- xx ambrosia + gold = regen
+- x ambrosia + gold = regen - custom detector
 - x mana + alcohol = ambrosia
 - plasma + toxic = magic_liquid
-- check detection unstale tele + blood = plasma
+- x tele + blood = plasma
 - slime + toxic = pea soup
 - lava + slime = endslime
 - urine + soil = poo

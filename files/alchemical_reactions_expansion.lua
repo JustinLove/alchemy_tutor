@@ -39,22 +39,31 @@ at_formula_list_append({
 		output = "magic_liquid_movement_faster",
 		rating = 9,
 	},
-	--[[ unfishished; does not actually heal
 	{
 		name = "goldhp",
 		materials = {
 			"gold",
 			"magic_liquid_protection_all",
 		},
+		amounts = {0.1},
+		cauldron = at_block_rock,
 		cauldron_contents = {
+			"gold",
+			"gold",
 			"air",
-			"air",
-			"magic_liquid_protection_all",
 		},
+		-- grass_ice
+		-- fungi_creeping
+		-- plant_material
+		-- ceiling_plant_material
+		-- fuse
+		-- cloth_box2d
+		-- rock_box2d (chain?)
+		-- blood_thick
+		cauldron_material = "rock_static",
 		output = "magic_gas_hp_regeneration",
 		rating = 7,
 	},
-	]]
 	{
 		name = "are_ambrosia",
 		materials = {
@@ -84,6 +93,7 @@ at_formula_list_append({
 			"blood",
 		},
 		output = "plasma_fading",
+		fast_checking = true,
 		rating = 5,
 	},
 })

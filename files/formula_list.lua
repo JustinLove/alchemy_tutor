@@ -322,6 +322,7 @@ at_formula_list = {
 		cauldron_contents = {"fungi", "fungi", "fungi", "fungi_creeping", "fungi_green"},
 		output = "void_liquid",
 		output2 = "corruption_static",
+		fast_checking = true,
 		rating = 10,
 	},
 	{
@@ -340,6 +341,7 @@ at_formula_list = {
 		},
 		output = "void_liquid",
 		output2 = "corruption_static",
+		fast_checking = true,
 		rating = 12,
 	},
 	{
