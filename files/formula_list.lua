@@ -5,10 +5,11 @@
 ## material accessibility
 0 - water/toxic/slime/blood
 1 - common potions
-2 - environmental liquids
+2 - environmental liquids/common environmental powders
 3 - environmental powders/pouch spawns
 4 - enviornmental powders/solids
 5 - previous alchemy required
+6 - rare potions spawns (brine)
 + 1 dangerous/inconvenet material
 
 ## inventory swaps
@@ -492,6 +493,34 @@ at_formula_list = {
 		output = "purifying_powder",
 		output2 = "water", -- purifying_powder purifies the worm blood
 		rating = 15,
+	},
+	{
+		materials = {
+			"fire",
+			"water_salt",
+			"oil",
+		},
+		amounts = {0.1},
+		cauldron_contents = {
+			"water_salt",
+			"oil",
+			"air",
+		},
+		output = "salt",
+		rating = 18,
+	},
+	{
+		materials = {
+			"salt",
+			"water",
+		},
+		cauldron_contents = {
+			"water",
+			"water",
+			"air",
+		},
+		output = "water_salt",
+		rating = 14,
 	},
 }
 

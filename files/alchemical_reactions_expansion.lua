@@ -62,7 +62,7 @@ at_formula_list_append({
 		-- blood_thick
 		cauldron_material = "rock_static",
 		output = "magic_gas_hp_regeneration",
-		rating = 7,
+		rating = 4,
 	},
 	{
 		name = "are_ambrosia",
@@ -95,5 +95,110 @@ at_formula_list_append({
 		output = "plasma_fading",
 		fast_checking = true,
 		rating = 5,
+	},
+	{
+		name = "magic_liquid",
+		materials = {
+			"radioactive_liquid",
+			"blood",
+			"magic_liquid_unstable_teleportation",
+		},
+		cauldron_contents = {
+			"air",
+			"radioactive_liquid",
+			"blood",
+			"magic_liquid_unstable_teleportation",
+		},
+		cauldron = at_block_brick,
+		cauldron_material = "templebrick_static",
+		rating = 9,
+	},
+	{
+		name = "plasmamana",
+		materials = {
+			"magic_liquid_unstable_teleportation",
+			"blood",
+			"water",
+		},
+		cauldron_contents = {
+			"blood",
+			"blood",
+			"water",
+			"water",
+			"air",
+		},
+		output = "magic_liquid_mana_regeneration",
+		rating = 7,
+	},
+	{
+		materials = {
+			"slime",
+			"radioactive_liquid",
+		},
+		cauldron_contents = {
+			"radioactive_liquid",
+			"slime",
+			"air",
+		},
+		output = "pea_soup",
+		rating = 4,
+	},
+	{
+		materials = {
+			"lava",
+			"slime",
+		},
+		cauldron_contents = {
+			"air",
+		},
+		cauldron_minor = "lava",
+		output = "endslime",
+		cauldron_check_y = 10,
+		rating = 5,
+	},
+	{
+		materials = {
+			"urine",
+			"soil",
+		},
+		cauldron_contents = {
+			"air",
+			"urine",
+		},
+		output = "poo",
+		rating = 15,
+	},
+	{
+		name = "are_melt_snow",
+		materials = {
+			"salt",
+			"snow",
+		},
+		cauldron_contents = {
+			"snow",
+			"snow",
+			"snow",
+			"salt",
+			"air",
+		},
+		output = "water",
+		output2 = "water_salt",
+		rating = 12,
+	},
+	{
+		name = "are_salt",
+		materials = {
+			"fire",
+			"urine",
+			"oil",
+		},
+		amounts = {0.1},
+		cauldron_contents = {
+			"urine",
+			"oil",
+			"air",
+		},
+		output = "salt",
+		rating = 18,
 	},
 })

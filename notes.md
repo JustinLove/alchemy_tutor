@@ -15,6 +15,7 @@
 - suspended container tele+mana, self solved
 - custom detector for hp gas
 - consider gunpowder bin
+- consider torch wand
 - consider secondary materials for grand alchemy
 - remote biomes
   - spawn key
@@ -83,13 +84,14 @@ Breaks void detection
 - x flum + gunpowder = accel
 - x ambrosia + gold = regen - custom detector
 - x mana + alcohol = ambrosia
-- plasma + toxic = magic_liquid
+- x plasma + toxic = magic_liquid
 - x tele + blood = plasma
-- slime + toxic = pea soup
-- lava + slime = endslime
-- urine + soil = poo
-- salt + snow = water
-- fire + urine = salt
+- x plasma + water = mana
+- x slime + toxic = pea soup
+- x lava + slime = endslime
+- x urine + soil = poo
+- x salt + snow = water
+- x fire + urine = salt
 - worm pher + any poly = worm pher
 - worm blood + brine = cheese
 - blood + worm phere = berserk
@@ -113,7 +115,6 @@ Breaks void detection
 - poison + swamp = poisen
 - poison + dead soil = poisen
 - slime + dead soil = poisen
-- plasma + water = mana
 
 - x vault
   - v 01 x1 acid tank
