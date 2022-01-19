@@ -31,7 +31,7 @@
 0 - toxic/water
 1 - mana/environemental reactions
 2 - practical alchemy (charm)
-3 - undesirable reactions
+3 - undesirable reactions / precursor to practical alchemy
 4 - practical transmustation of metals
 5 - impractial
 

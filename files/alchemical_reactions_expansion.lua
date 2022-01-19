@@ -201,4 +201,273 @@ at_formula_list_append({
 		output = "salt",
 		rating = 18,
 	},
+	{
+		name = 'polyclean',
+		materials = {
+			"magic_liquid_worm_attractor",
+		},
+		cauldron_contents = {
+			"magic_liquid_polymorph",
+			"magic_liquid_unstable_polymorph",
+			"magic_liquid_random_polymorph",
+		},
+		output = "magic_liquid_worm_attractor",
+		rating = 5,
+	},
+	{
+		materials = {
+			"water_salt",
+			"blood_worm",
+		},
+		cauldron_check_y = 10,
+		cauldron_contents = {
+			"air",
+			"air",
+			"air",
+			"air",
+			"blood_worm",
+			"blood_worm",
+			"water_salt",
+		},
+		output = "cheese_static",
+		hide_reward = true,
+		rating = 21,
+	},
+	{
+		name = "are_berserk",
+		materials = {
+			"magic_liquid_worm_attractor",
+			"blood",
+		},
+		cauldron_contents = {
+			"air",
+			"magic_liquid_worm_attractor",
+			"blood",
+		},
+		output = "magic_liquid_berserk",
+		rating = 5,
+	},
+	{
+		materials = {
+			"slime",
+			"magic_liquid_unstable_polymorph"
+		},
+		cauldron_contents = {
+			"magic_liquid_unstable_polymorph",
+			"magic_liquid_unstable_polymorph",
+			"magic_liquid_unstable_polymorph",
+			"air",
+			"slime",
+		},
+		output = "magic_liquid_polymorph",
+		rating = 9,
+	},
+	{
+		name = "are_tele",
+		materials = {
+			"coal",
+			"material_confusion"
+		},
+		cauldron_contents = {
+			"material_confusion",
+			"air",
+		},
+		output = "magic_liquid_teleportation",
+		rating = 9,
+	},
+	{
+		name = 'are_invisburn',
+		materials = {
+			"magic_liquid_invisibility",
+			"fire",
+			"oil",
+		},
+		amounts = {0.1, 0.1},
+		cauldron_contents = {
+			"air",
+			"air",
+			"oil",
+		},
+		output = "magic_liquid_invisibility",
+		rating = 8,
+	},
+	{
+		name = 'are_invisfungi',
+		materials = {
+			"slime",
+		},
+		cauldron_material = "bluefungi_static",
+		output = "magic_liquid_invisibility",
+		rating = 9,
+	},
+	{
+		name = 'are_flum',
+		materials = {
+			"blood_fungi",
+		},
+		cauldron_material = "bluefungi_static",
+		output = "material_confusion",
+		rating = 18,
+	},
+	{
+		materials = {
+			"blood_cold",
+			"oil",
+		},
+		cauldron_contents = {
+			"oil",
+			"oil",
+			"air",
+		},
+		output = "wax",
+		rating = 10,
+	},
+	{
+		materials = {
+			"fire",
+			"magic_liquid_berserk",
+			"oil",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"magic_liquid_berserk",
+			"oil",
+		},
+		cauldron_check_y = 10,
+		output = "plastic_red",
+		output2 = "plastic_red_molten",
+		rating = 13,
+	},
+	{
+		name = "are_pure",
+		materials = {
+			"blood_worm",
+			"water_ice",
+		},
+		cauldron_contents = {
+			"water_ice",
+			"water_ice",
+			"worm_blood",
+			"air",
+			"air",
+		},
+		output = "purifying_powder",
+		rating = 12,
+	},
+	{
+		materials = {
+			"diamond",
+			"sand",
+		},
+		output = "sand_blue",
+		hide_reward = true,
+		rating = 13,
+	},
+	{
+		materials = {
+			"sand",
+		},
+		cauldron_contents = "sand_blue",
+		cauldron_material = "air",
+		output = "sand",
+		rating = 9,
+	},
+	{
+		name = "are_bluelava",
+		materials = {
+			"sand_blue",
+			"lava",
+		},
+		output = "diamond",
+		output2 = "templebrick_diamond_static",
+		rating = 17,
+	},
+	{
+		name = "are_burnbone",
+		materials = { "lava" },
+		cauldron_contents = "bone",
+		output = "air",
+		rating = 9,
+	},
+	{
+		materials = {
+			"bone",
+			"sand",
+		},
+		cauldron_contents = {
+			"bone",
+			"bone",
+			"sand",
+			"air",
+			"air",
+		},
+		output = "sodium",
+		rating = 15,
+	},
+	{
+		materials = {
+			"sand",
+		},
+		cauldron_contents = {
+			"sand"
+		},
+		cauldron_material = "air",
+		other = at_planterbox,
+		output = "fungi",
+		hide_reward = true,
+		rating = 16,
+	},
+	{
+		materials = {
+			"sand_blue",
+		},
+		cauldron_contents = {
+			"sand_blue"
+		},
+		cauldron_material = "air",
+		other = at_planterbox,
+		output = "fungi_green",
+		hide_reward = true,
+		rating = 17,
+	},
+	{
+		materials = {
+			"brass",
+			"radioactive_liquid",
+		},
+		cauldron_contents = {
+			"radioactive_liquid",
+			"radioactive_liquid",
+			"air",
+		},
+		output = "oil",
+		rating = 7,
+	},
+	{
+		name = "are_poison1",
+		materials = {
+			"poison",
+			"swamp",
+		},
+		amounts = {0.3},
+		cauldron_contents = {
+			"swamp",
+			"swamp",
+			"air",
+		},
+		output = "poison",
+		rating = 9,
+	},
+	{
+		name = "are_poison2",
+		materials = {
+			"slime",
+		},
+		cauldron = at_block_rock,
+		cauldron_material = "soil_dead",
+		output = "poison",
+		hide_reward = true,
+		rating = 9,
+	},
 })

@@ -13,8 +13,13 @@
   - hisi h diamond and water
   - crypt v, polymorphine and toxic, maybe slime
 - suspended container tele+mana, self solved
-- custom detector for hp gas
+- brass + unstable tele burned
+- natural fire (burning oil?) does not make shock powder
+- hisi vines
+- custom detector for hp gas - maybe cheese?
 - consider gunpowder bin
+- consider bluefungi hollow
+- consider blocks switching to detection when output specified
 - consider torch wand
 - consider secondary materials for grand alchemy
 - remote biomes
@@ -82,7 +87,7 @@ Breaks void detection
 - x vomit + toxic = urine
 - x charm + [blood] + [magic_polymorph] = regen
 - x flum + gunpowder = accel
-- x ambrosia + gold = regen - custom detector
+- x? ambrosia + gold = regen - custom detector
 - x mana + alcohol = ambrosia
 - x plasma + toxic = magic_liquid
 - x tele + blood = plasma
@@ -92,29 +97,28 @@ Breaks void detection
 - x urine + soil = poo
 - x salt + snow = water
 - x fire + urine = salt
-- worm pher + any poly = worm pher
-- worm blood + brine = cheese
-- blood + worm phere = berserk
-- unstable poly + slime = poly
-- flum + coal = stable tele
-- inivs + fire = invis
-- slime + bluefungi = invis
-- fungi blood + bluefungi = flum
-- blood cold + oil = wax
-- oil + fire + berserk = red plastic
-- worm blood + water ice = purifying powder
-- diamond + sand = blue sand
-- blue sand + sand = sand
-- blue sand + lava = diamond
-- diamond + lava = diamond brick
-- bone + lava = coal
-- bone + sand = sodium
-- fungus blood + sand = fungi
-- fungus blood + blue sand = green fungi
-- braass + toxic = oil
-- poison + swamp = poisen
-- poison + dead soil = poisen
-- slime + dead soil = poisen
+- x worm pher + any poly = worm pher
+- x? worm blood + brine = cheese - custom detector
+- x blood + worm phere = berserk
+- x unstable poly + slime = poly
+- x flum + coal = stable tele
+- x inivs + fire = invis
+- x? slime + bluefungi = invis - custom cauldron
+- x? fungi blood + bluefungi = flum - custom cauldron
+- x blood cold + oil = wax
+- x oil + fire + berserk = red plastic
+- x worm blood + water ice = purifying powder
+- x? diamond + sand = blue sand - custom checker
+- x blue sand + sand = sand
+- x blue sand + lava = diamond - transient
+- x? diamond + lava = diamond brick - custom checker
+- x bone + lava = coal
+- x bone + sand = sodium
+- x? fungus blood + sand = fungi - custom checker
+- x? fungus blood + blue sand = green fungi
+- x brass + toxic = oil
+- x poison + swamp = poison
+- x? slime + dead soil = poison - custom cauldron
 
 - x vault
   - v 01 x1 acid tank
