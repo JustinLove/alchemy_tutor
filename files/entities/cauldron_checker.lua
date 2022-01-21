@@ -44,5 +44,10 @@ function material_area_checker_success( pos_x, pos_y )
 	spawn_reward( rx, ry )
 end
 
+function damage_received( damage, message, entity_thats_responsible, is_fatal, projectile_thats_responsible )
+	--print( damage, message, tostring(is_fatal) )
+	material_area_checker_success()
+end
+
 material_area_checker_failed = material_area_checker_success
 electricity_receiver_switched = material_area_checker_success

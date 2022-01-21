@@ -1,17 +1,27 @@
 <Entity tags="cauldron_checker">
-	<MaterialAreaCheckerComponent
-		area_aabb.min_x="-4"
-		area_aabb.max_x="4"
-		area_aabb.min_y="-1"
-		area_aabb.max_y="0"
-		update_every_x_frame="30"
-		material="oil"
-		material2="oil"
-		look_for_failure="0"
-		kill_after_message="1">
-	</MaterialAreaCheckerComponent>
+  <MaterialAreaCheckerComponent
+    area_aabb.min_x="-1"
+    area_aabb.max_x="0"
+    area_aabb.min_y="-1"
+    area_aabb.max_y="0"
+    update_every_x_frame="1"
+    material="oil"
+    material2="oil"
+    look_for_failure="0"
+    kill_after_message="1">
+  </MaterialAreaCheckerComponent>
 
-	<LuaComponent
+  <HitboxComponent 
+    _enabled="1"
+    aabb_max_x="0"
+    aabb_max_y="0"
+    aabb_min_x="-1"
+    aabb_min_y="-1"
+    is_enemy="0"
+    >
+  </HitboxComponent>
+
+  <LuaComponent
     script_material_area_checker_success="mods/alchemy_tutor/files/entities/cauldron_checker.lua" >
-	</LuaComponent>
+  </LuaComponent>
 </Entity>

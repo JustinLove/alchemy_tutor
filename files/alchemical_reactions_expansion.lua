@@ -1,6 +1,3 @@
-at_formula_list_hide_reward( 'void1' )
-at_formula_list_hide_reward( 'void2' )
-
 at_formula_list_append({
 	{
 		materials = {
@@ -46,21 +43,8 @@ at_formula_list_append({
 			"magic_liquid_protection_all",
 		},
 		amounts = {0.1},
-		cauldron = at_block_rock,
-		cauldron_contents = {
-			"gold",
-			"gold",
-			"air",
-		},
-		-- grass_ice
-		-- fungi_creeping
-		-- plant_material
-		-- ceiling_plant_material
-		-- fuse
-		-- cloth_box2d
-		-- rock_box2d (chain?)
-		-- blood_thick
-		cauldron_material = "rock_static",
+		cauldron_check_y = 30,
+		fast_checking = true,
 		output = "magic_gas_hp_regeneration",
 		rating = 4,
 	},

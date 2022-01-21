@@ -1,0 +1,44 @@
+<Entity tags="cauldron_checker">
+  <DamageModelComponent 
+    _enabled="1" 
+    hp="0.1" 
+    material_damage_min_cell_count="4" 
+    materials_create_messages="1" 
+    materials_damage="1" 
+    materials_how_much_damage="1" 
+    materials_that_damage="" 
+    ragdoll_filenames_file=""
+    air_needed="0"
+    drop_items_on_death="0"
+    fire_probability_of_ignition="0"
+    ui_report_damage="0"
+    wait_for_kill_flag_on_death="0"
+    >
+    <damage_multipliers 
+      drill="0" 
+      electricity="0" 
+      explosion="0" 
+      fire="0" 
+      melee="0" 
+      projectile="0"
+      ice="0"
+      slice="0"
+      curse="0"
+      >
+    </damage_multipliers>
+  </DamageModelComponent>
+
+  <HitboxComponent
+    _enabled="1"
+    aabb_max_x="6.5"
+    aabb_max_y="4"
+    aabb_min_x="-6.5"
+    aabb_min_y="-10"
+    is_enemy="0"
+    >
+  </HitboxComponent>
+
+  <LuaComponent
+    script_damage_received="mods/alchemy_tutor/files/entities/cauldron_checker.lua" >
+  </LuaComponent>
+</Entity>

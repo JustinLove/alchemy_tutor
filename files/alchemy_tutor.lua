@@ -254,6 +254,25 @@ local function setup_material_checker( entity, material1, material2, fast_checki
 	end
 end
 
+local function setup_damage_checker( entity, material1, material2 )
+	EntitySetDamageFromMaterial( entity, material1, 1 )
+	if material2 then
+		EntitySetDamageFromMaterial( entity, material2, 1 )
+	end
+end
+
+local function add_checker( entity, x, y, offset, set, index )
+	y = y - (set.cauldron_check_y or offset)
+	local entity
+	if set.fast_checking then
+		entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_checker.xml", x, y )
+		setup_damage_checker( entity, set.output, set.output2 )
+	else
+		entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y )
+		setup_material_checker( entity, set.output, set.output2, set.fast_checking, index )
+	end
+end
+
 at_cauldron = {
 	name = "cauldron",
 	default_material = "templebrick_static",
@@ -272,8 +291,7 @@ at_cauldron = {
 			} -- color_to_matieral_table
 		)
 
-		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 18) )
-		setup_material_checker( entity, set.output, set.output2, set.fast_checking, index )
+		add_checker( entity, x, y, 18, set, index )
 
 		return contents
 	end
@@ -296,8 +314,7 @@ at_steel_pit = {
 			} -- color_to_matieral_table
 		)
 
-		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
-		setup_material_checker( entity, set.output, set.output2, set.fast_checking, index)
+		add_checker( entity, x, y, 6, set, index )
 
 		return contents
 	end
@@ -320,8 +337,7 @@ at_brick_pit = {
 			} -- color_to_matieral_table
 		)
 
-		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 8) )
-		setup_material_checker( entity, set.output, set.output2, set.fast_checking, index)
+		add_checker( entity, x, y, 8, set, index )
 
 		return contents
 	end
@@ -345,8 +361,7 @@ at_fungus = {
 			} -- color_to_matieral_table
 		)
 
-		local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y-(set.cauldron_check_y or 6) )
-		setup_material_checker( entity, set.output, set.output2, set.fast_checking, index )
+		add_checker( entity, x, y, 6, set, index )
 
 		return contents
 	end
