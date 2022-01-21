@@ -17,7 +17,6 @@
 - natural fire (burning oil?) does not make shock powder
 - hisi vines
 - custom detector for hp gas - maybe cheese?
-  - suspended container with checkers
   - mod updates void to corruption
   - checker file renames?
     Thatrius — Today at 16:46

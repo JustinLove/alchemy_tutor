@@ -259,6 +259,7 @@ local function setup_presence_checker( entity, material1, material2 )
 	if material2 then
 		EntitySetDamageFromMaterial( entity, material2, 1 )
 	end
+	-- can't keep component disabled the rest of the time; EntitySetComponentIsEnabled doesn't seem to work
 end
 
 local function setup_explosion_checker( entity )
@@ -270,31 +271,39 @@ local function setup_explosion_checker( entity )
 	end
 end
 
-function at_full_cauldron( x, y, set, index )
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y )
+function at_full_cauldron( entity, x, y, set, index )
+	if not entity then
+		entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y )
+	end
 	setup_material_checker( entity, set.output, set.output2, set.fast_checking, index )
 end
 
-function at_material_presence( x, y, set, index )
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_checker.xml", x, y )
+function at_material_presence( entity, x, y, set, index )
+	if not entity then
+		entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_checker.xml", x, y )
+	end
 	setup_presence_checker( entity, set.output, set.output2 )
 end
 
-function at_explosion( x, y, set, index )
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_checker.xml", x, y )
+function at_explosion( entity, x, y, set, index )
+	if not entity then
+		entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_checker.xml", x, y )
+	end
 	setup_explosion_checker( entity )
 end
 
-function at_material_destruction( x, y, set, index )
+function at_material_destruction( entity, x, y, set, index )
 	local material = at_material( set.cauldron_material, "wizardstone" )
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/block_checker.xml", x, y )
+	if not entity then
+		entity = EntityLoad( "mods/alchemy_tutor/files/entities/block_checker.xml", x, y )
+	end
 	setup_material_checker( entity, material, '', false, index )
 end
 
-local function add_checker( x, y, offset, set, index )
+local function add_checker( entity, x, y, offset, set, index )
 	y = y - (set.cauldron_check_y or offset)
 	local checker = (set.check_for or at_full_cauldron)
-	checker( x, y, set, index )
+	checker( entity, x, y, set, index )
 end
 
 at_cauldron = {
@@ -315,7 +324,7 @@ at_cauldron = {
 			} -- color_to_matieral_table
 		)
 
-		add_checker( x, y, 18, set, index )
+		add_checker( nil, x, y, 18, set, index )
 
 		return contents
 	end
@@ -338,7 +347,7 @@ at_steel_pit = {
 			} -- color_to_matieral_table
 		)
 
-		add_checker( x, y, 6, set, index )
+		add_checker( nil, x, y, 6, set, index )
 
 		return contents
 	end
@@ -361,7 +370,7 @@ at_brick_pit = {
 			} -- color_to_matieral_table
 		)
 
-		add_checker( x, y, 8, set, index )
+		add_checker( nil, x, y, 8, set, index )
 
 		return contents
 	end
@@ -385,7 +394,7 @@ at_fungus = {
 			} -- color_to_matieral_table
 		)
 
-		add_checker( x, y, 6, set, index )
+		add_checker( nil, x, y, 6, set, index )
 
 		return contents
 	end
@@ -406,7 +415,7 @@ at_suspended_container = {
 			end
 		end
 
-		setup_material_checker( cauld, set.output, set.output2, set.fast_checking, index )
+		add_checker( cauld, x, y, 0, set, index )
 
 		return contents
 	end
@@ -446,7 +455,7 @@ function at_spawn_block( set, x, y, index, file )
 		} -- color_to_matieral_table
 	)
 
-	add_checker( x, y, 18, set, index )
+	add_checker( nil, x, y, 18, set, index )
 end
 
 at_block_brick = {

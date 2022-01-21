@@ -510,7 +510,8 @@ at_formula_list = {
 			"diamond",
 		},
 		cauldron_contents = "blood_worm",
-		output = "purifying_powder",		check_for = at_material_presence,
+		output = "purifying_powder",
+		check_for = at_material_presence,
 		rating = 15,
 	},
 	{
