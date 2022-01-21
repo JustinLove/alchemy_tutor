@@ -254,7 +254,7 @@ local function setup_material_checker( entity, material1, material2, fast_checki
 	end
 end
 
-local function setup_presence_checker( entity )
+local function setup_presence_checker( entity, material1, material2 )
 	EntitySetDamageFromMaterial( entity, material1, 1 )
 	if material2 then
 		EntitySetDamageFromMaterial( entity, material2, 1 )

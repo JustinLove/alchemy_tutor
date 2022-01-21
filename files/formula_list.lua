@@ -64,7 +64,8 @@ at_formula_list = {
 		materials = {"magic_liquid_mana_regeneration"},
 		cauldron = at_block_steel,
 		cauldron_material = "steel_static",
-		check_for = at_material_destruction,
+		output = "magic_liquid_mana_regeneration",
+		check_for = at_material_presence,
 		rating = 3,
 	},
 	{
