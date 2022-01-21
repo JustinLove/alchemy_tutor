@@ -44,7 +44,7 @@ at_formula_list_append({
 		},
 		amounts = {0.1},
 		cauldron_check_y = 30,
-		fast_checking = true,
+		check_for = at_material_presence,
 		output = "magic_gas_hp_regeneration",
 		rating = 4,
 	},
@@ -77,7 +77,7 @@ at_formula_list_append({
 			"blood",
 		},
 		output = "plasma_fading",
-		fast_checking = true,
+		check_for = at_material_presence,
 		rating = 5,
 	},
 	{
@@ -95,6 +95,9 @@ at_formula_list_append({
 		},
 		cauldron = at_block_brick,
 		cauldron_material = "templebrick_static",
+		cauldron_check_y = 30,
+		output = "magic_liquid",
+		check_for = at_material_presence,
 		rating = 9,
 	},
 	{
@@ -345,7 +348,7 @@ at_formula_list_append({
 			"sand",
 		},
 		output = "sand_blue",
-		fast_checking = true,
+		check_for = at_material_presence,
 		rating = 13,
 	},
 	{
@@ -365,7 +368,7 @@ at_formula_list_append({
 		},
 		output = "diamond",
 		output2 = "templebrick_diamond_static",
-		fast_checking = true,
+		check_for = at_material_presence,
 		rating = 12,
 	},
 	{
@@ -396,7 +399,7 @@ at_formula_list_append({
 		cauldron_check_y = 10,
 		other = at_planterbox,
 		output = "fungi",
-		fast_checking = true,
+		check_for = at_material_presence,
 		rating = 15,
 	},
 	{
@@ -405,7 +408,7 @@ at_formula_list_append({
 		cauldron_check_y = 10,
 		other = at_planterbox,
 		output = "fungi_green",
-		fast_checking = true,
+		check_for = at_material_presence,
 		rating = 16,
 	},
 	{
@@ -444,7 +447,8 @@ at_formula_list_append({
 		cauldron = at_block_rock,
 		cauldron_material = "soil_dead",
 		output = "poison",
-		hide_reward = true,
+		check_for = at_material_presence,
+		cauldron_check_y = 30,
 		rating = 9,
 	},
 })

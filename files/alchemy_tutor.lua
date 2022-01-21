@@ -261,16 +261,26 @@ local function setup_damage_checker( entity, material1, material2 )
 	end
 end
 
-local function add_checker( entity, x, y, offset, set, index )
+function at_full_cauldron( x, y, set, index )
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y )
+	setup_material_checker( entity, set.output, set.output2, set.fast_checking, index )
+end
+
+function at_material_presence( x, y, set, index )
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_checker.xml", x, y )
+	setup_damage_checker( entity, set.output, set.output2 )
+end
+
+function at_material_destruction( x, y, set, index )
+	local material = at_material( set.cauldron_material, "wizardstone" )
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/block_checker.xml", x, y )
+	setup_material_checker( entity, material, '', false, index )
+end
+
+local function add_checker( x, y, offset, set, index )
 	y = y - (set.cauldron_check_y or offset)
-	local entity
-	if set.fast_checking then
-		entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_checker.xml", x, y )
-		setup_damage_checker( entity, set.output, set.output2 )
-	else
-		entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y )
-		setup_material_checker( entity, set.output, set.output2, set.fast_checking, index )
-	end
+	local checker = (set.check_for or at_full_cauldron)
+	checker( x, y, set, index )
 end
 
 at_cauldron = {
@@ -291,7 +301,7 @@ at_cauldron = {
 			} -- color_to_matieral_table
 		)
 
-		add_checker( entity, x, y, 18, set, index )
+		add_checker( x, y, 18, set, index )
 
 		return contents
 	end
@@ -314,7 +324,7 @@ at_steel_pit = {
 			} -- color_to_matieral_table
 		)
 
-		add_checker( entity, x, y, 6, set, index )
+		add_checker( x, y, 6, set, index )
 
 		return contents
 	end
@@ -337,7 +347,7 @@ at_brick_pit = {
 			} -- color_to_matieral_table
 		)
 
-		add_checker( entity, x, y, 8, set, index )
+		add_checker( x, y, 8, set, index )
 
 		return contents
 	end
@@ -361,7 +371,7 @@ at_fungus = {
 			} -- color_to_matieral_table
 		)
 
-		add_checker( entity, x, y, 6, set, index )
+		add_checker( x, y, 6, set, index )
 
 		return contents
 	end
@@ -422,8 +432,7 @@ function at_spawn_block( set, x, y, index, file )
 		} -- color_to_matieral_table
 	)
 
-	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/block_checker.xml", x, y-18 )
-	setup_material_checker( entity, material, '', false, index )
+	add_checker( x, y, 18, set, index )
 end
 
 at_block_brick = {

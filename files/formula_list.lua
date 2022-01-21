@@ -64,6 +64,7 @@ at_formula_list = {
 		materials = {"magic_liquid_mana_regeneration"},
 		cauldron = at_block_steel,
 		cauldron_material = "steel_static",
+		check_for = at_material_destruction,
 		rating = 3,
 	},
 	{
@@ -97,6 +98,7 @@ at_formula_list = {
 		},
 		cauldron = at_block_brick,
 		cauldron_material = "templerock_soft",
+		check_for = at_material_destruction,
 		rating = 7,
 	},
 	{
@@ -265,28 +267,40 @@ at_formula_list = {
 		name = "oddwater",
 		materials = {"water"},
 		cauldron = at_block_brick,
-		rating = 9,
+		cauldron_check_y = 30,
+		output = "magic_liquid_teleportation",
+		check_for = at_material_presence,
+		rating = 7,
 	},
 	{
 		name = "oddmana",
 		materials = {"magic_liquid_mana_regeneration"},
 		cauldron = at_block_brick,
-		rating = 11,
+		cauldron_check_y = 30,
+		output = "acid",
+		check_for = at_material_presence,
+		rating = 9,
 	},
 	{
 		name = "oddamb",
 		materials = {"magic_liquid_protection_all"},
 		cauldron = at_block_brick,
-		rating = 11,
+		cauldron_check_y = 40,
+		output = "steam",
+		check_for = at_material_presence,
+		rating = 9,
 	},
 	--[[
 	{
 		name = "oddfire",
-		materials = {"fire"},
+		materials = {"fire"
 		cauldron = at_block_brick,
-		rating = 14,
+		cauldron_check_y = 30,
+		output = "lava",
+		check_for = at_material_presence,
+		rating = 12,
 	},
-	--]]
+	]]
 	{
 		materials = {"alcohol"},
 		cauldron_contents = {"air", "air", "alcohol"},
@@ -311,6 +325,10 @@ at_formula_list = {
 		amounts = {0.1},
 		cauldron = at_block_rock,
 		cauldron_material = "rock_static_fungal",
+		cauldron_check_y = 10,
+		output = "void_liquid",
+		output2 = "corruption_static",
+		check_for = at_material_presence,
 		rating = 12,
 	},
 	{
@@ -323,7 +341,7 @@ at_formula_list = {
 		cauldron_contents = {"fungi", "fungi", "fungi", "fungi_creeping", "fungi_green"},
 		output = "void_liquid",
 		output2 = "corruption_static",
-		fast_checking = true,
+		check_for = at_material_presence,
 		rating = 10,
 	},
 	{
@@ -342,7 +360,7 @@ at_formula_list = {
 		},
 		output = "void_liquid",
 		output2 = "corruption_static",
-		fast_checking = true,
+		check_for = at_material_presence,
 		rating = 12,
 	},
 	{
@@ -417,7 +435,7 @@ at_formula_list = {
 		cauldron_minor = "meat",
 		cauldron_material = "templebrick_static",
 		cauldron_check_y = 10,
-		fast_checking = true,
+		check_for = at_material_presence,
 		other = at_meat,
 		output = "meat_done",
 		rating = 15,
@@ -490,8 +508,7 @@ at_formula_list = {
 			"diamond",
 		},
 		cauldron_contents = "blood_worm",
-		output = "purifying_powder",
-		fast_checking = true,
+		output = "purifying_powder",		check_for = at_material_presence,
 		rating = 15,
 	},
 	{

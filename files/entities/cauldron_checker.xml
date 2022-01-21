@@ -1,7 +1,7 @@
 <Entity tags="cauldron_checker">
   <MaterialAreaCheckerComponent
-    area_aabb.min_x="-1"
-    area_aabb.max_x="0"
+    area_aabb.min_x="-4"
+    area_aabb.max_x="4"
     area_aabb.min_y="-1"
     area_aabb.max_y="0"
     update_every_x_frame="1"
@@ -13,9 +13,9 @@
 
   <HitboxComponent 
     _enabled="1"
-    aabb_max_x="0"
+    aabb_max_x="4"
     aabb_max_y="0"
-    aabb_min_x="-1"
+    aabb_min_x="-4"
     aabb_min_y="-1"
     is_enemy="0"
     >

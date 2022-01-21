@@ -17,8 +17,10 @@
 - natural fire (burning oil?) does not make shock powder
 - hisi vines
 - custom detector for hp gas - maybe cheese?
-  - physics and other special damage to detector
-  - multi argumentst to set value to set subfields of objects
+  - slimeboom explosion damage?
+  - suspended container with checkers
+  - mod updates void to corruption
+  - checker file renames?
     Thatrius — Today at 16:46
     Seems like I remember accomplishing this by messing around with materials_that_create_messages from DamageModelComponent
     okay yeah you just add the material to materials_that_create_messages, and then check if mCollisionMessageMaterials[index of material] is > 0 
