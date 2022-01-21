@@ -345,7 +345,7 @@ at_formula_list_append({
 			"sand",
 		},
 		output = "sand_blue",
-		hide_reward = true,
+		fast_checking = true,
 		rating = 13,
 	},
 	{
@@ -365,7 +365,8 @@ at_formula_list_append({
 		},
 		output = "diamond",
 		output2 = "templebrick_diamond_static",
-		rating = 17,
+		fast_checking = true,
+		rating = 12,
 	},
 	{
 		name = "are_burnbone",
@@ -390,30 +391,22 @@ at_formula_list_append({
 		rating = 15,
 	},
 	{
-		materials = {
-			"sand",
-		},
-		cauldron_contents = {
-			"sand"
-		},
-		cauldron_material = "air",
+		materials = {},
+		cauldron_minor = "sand",
+		cauldron_check_y = 10,
 		other = at_planterbox,
 		output = "fungi",
-		hide_reward = true,
-		rating = 16,
+		fast_checking = true,
+		rating = 15,
 	},
 	{
-		materials = {
-			"sand_blue",
-		},
-		cauldron_contents = {
-			"sand_blue"
-		},
-		cauldron_material = "air",
+		materials = {},
+		cauldron_minor = "sand_blue",
+		cauldron_check_y = 10,
 		other = at_planterbox,
 		output = "fungi_green",
-		hide_reward = true,
-		rating = 17,
+		fast_checking = true,
+		rating = 16,
 	},
 	{
 		materials = {

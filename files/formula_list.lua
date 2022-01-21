@@ -25,7 +25,7 @@
 2 - alcohol/slime
 3 - water/invis
 4 - cycling may be required
-5 - meat/impractical detection
+5 - impractical detection
 
 ## obscurity
 0 - toxic/water
@@ -417,10 +417,10 @@ at_formula_list = {
 		cauldron_minor = "meat",
 		cauldron_material = "templebrick_static",
 		cauldron_check_y = 10,
+		fast_checking = true,
 		other = at_meat,
 		output = "meat_done",
-		hide_reward = true,
-		rating = 17,
+		rating = 15,
 	},
 	{
 		materials = {
@@ -491,7 +491,7 @@ at_formula_list = {
 		},
 		cauldron_contents = "blood_worm",
 		output = "purifying_powder",
-		output2 = "water", -- purifying_powder purifies the worm blood
+		fast_checking = true,
 		rating = 15,
 	},
 	{
