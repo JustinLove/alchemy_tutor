@@ -98,7 +98,8 @@ at_formula_list = {
 		},
 		cauldron = at_block_brick,
 		cauldron_material = "templerock_soft",
-		check_for = at_material_destruction,
+		check_for = at_explosion,
+		cauldron_check_y = 25,
 		rating = 7,
 	},
 	{

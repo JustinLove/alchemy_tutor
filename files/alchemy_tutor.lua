@@ -254,10 +254,19 @@ local function setup_material_checker( entity, material1, material2, fast_checki
 	end
 end
 
-local function setup_damage_checker( entity, material1, material2 )
+local function setup_presence_checker( entity )
 	EntitySetDamageFromMaterial( entity, material1, 1 )
 	if material2 then
 		EntitySetDamageFromMaterial( entity, material2, 1 )
+	end
+end
+
+local function setup_explosion_checker( entity )
+	local comp = EntityGetFirstComponent( entity, "DamageModelComponent" )
+	if comp ~= nil then
+		ComponentSetValue2( comp, "materials_create_messages", false )
+		ComponentSetValue2( comp, "materials_damage", false )
+		ComponentObjectSetValue2( comp, "damage_multipliers", "explosion", 1 )
 	end
 end
 
@@ -268,7 +277,12 @@ end
 
 function at_material_presence( x, y, set, index )
 	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_checker.xml", x, y )
-	setup_damage_checker( entity, set.output, set.output2 )
+	setup_presence_checker( entity, set.output, set.output2 )
+end
+
+function at_explosion( x, y, set, index )
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_checker.xml", x, y )
+	setup_explosion_checker( entity )
 end
 
 function at_material_destruction( x, y, set, index )
