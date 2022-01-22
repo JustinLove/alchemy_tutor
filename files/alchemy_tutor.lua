@@ -486,6 +486,30 @@ at_suspended_container = {
 	end
 }
 
+at_gold_statue = {
+	name = "gold_statue",
+	default_material = "gold_box2d",
+	is_physics = true,
+	spawn = function( set, x, y, index )
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/props/table.png",
+			"",
+			x-18, y-18,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{ ["fff0bbee"] = at_material( set.cauldron_contents, "air" ),
+				["ff613e00"] = at_material( set.cauldron_material, "wood" ),
+			} -- color_to_matieral_table
+		)
+
+		local cauld = EntityLoad( at_mod_path .."/entities/gold_statue.xml", x, y - 18 )
+		add_checker( cauld, x, y, 0, set, index )
+
+		return "gold"
+	end
+}
+
 at_electrode = {
 	name = "electrode",
 	default_material = "steel_static",

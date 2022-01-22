@@ -14,7 +14,6 @@
   - crypt v, polymorphine and toxic, maybe slime
   - suspended container tele+mana, self solved
   - brass + unstable tele burned
-- consider gold statue
 - mod updates void to corruption
 - implement mod customs in mod
 - hisi vines
@@ -86,7 +85,7 @@ Breaks void detection
 - x vomit + toxic = urine
 - x charm + [blood] + [magic_polymorph] = regen
 - x flum + gunpowder = accel
-- x? ambrosia + gold = regen - custom detector
+- x ambrosia + gold = regen - custom detector
 - x mana + alcohol = ambrosia
 - x plasma + toxic = magic_liquid
 - x tele + blood = plasma

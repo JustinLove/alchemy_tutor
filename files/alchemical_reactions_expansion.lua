@@ -45,7 +45,7 @@ at_formula_list_append({
 			"magic_liquid_protection_all",
 		},
 		amounts = {0.1},
-		cauldron_check_y = 30,
+		cauldron = at_gold_statue,
 		check_for = at_material_presence,
 		output = "magic_gas_hp_regeneration",
 		rating = 4,
