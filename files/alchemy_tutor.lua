@@ -15,7 +15,7 @@ at_test_y = -100 -- hills
 --at_test_y = 0 -- pyramid
 --at_test_x = -4000 -- rainforest dark
 --at_test_y = 7500 -- rainforest dark
---at_test_formula = 'are_poison2'
+--at_test_formula = 'toxicclean'
 --at_test_formula = 'magic_liquid_mana_regeneration'
 --at_test_clear = true
 --at_test_healing = true
@@ -371,6 +371,30 @@ at_hollow = {
 	end
 }
 
+at_bin = {
+	name = "bin",
+	default_material = "wood_player_b2",
+	spawn = function( set, x, y, index )
+		local contents = at_material( set.cauldron_contents, "air" )
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/props/bin.png",
+			"", -- visual
+			x-18, y-39,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{ ["fff0bbee"] = contents,
+				["ff613e02"] = at_material( set.cauldron_material, "wood_player_b2" ),
+			} -- color_to_matieral_table
+		)
+
+		add_checker( nil, x-8, y, 18, set, index )
+		add_checker( nil, x+8, y, 18, set, index )
+
+		return contents
+	end
+}
+
 at_steel_pit = {
 	name = "steel pit",
 	default_material = "steel_static_unmeltable",
@@ -429,7 +453,7 @@ at_fungus = {
 			"", -- background
 			true, -- skip_biome_checks
 			false, -- skip_edge_textures
-			{ ["ff32bb32"] = contents,
+			{ ["ff3abb32"] = contents,
 				["ff36312e"] = set.cauldron_minor or "fungisoil",
 				["ff613e02"] = at_material( set.cauldron_material, "wood_player_b2" ),
 			} -- color_to_matieral_table

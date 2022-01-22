@@ -14,7 +14,6 @@
   - crypt v, polymorphine and toxic, maybe slime
   - suspended container tele+mana, self solved
   - brass + unstable tele burned
-- consider gunpowder bin
 - consider gold statue
 - mod updates void to corruption
 - implement mod customs in mod
@@ -98,7 +97,7 @@ Breaks void detection
 - x salt + snow = water
 - x fire + urine = salt
 - x worm pher + any poly = worm pher
-- x? worm blood + brine = cheese - custom detector
+- x worm blood + brine = cheese - custom detector
 - x blood + worm phere = berserk
 - x unstable poly + slime = poly
 - x flum + coal = stable tele
@@ -118,7 +117,7 @@ Breaks void detection
 - x fungus blood + blue sand = green fungi
 - x brass + toxic = oil
 - x poison + swamp = poison
-- x? slime + dead soil = poison - custom cauldron
+- x slime + dead soil = poison - custom cauldron
 
 - x vault
   - v 01 x1 acid tank
