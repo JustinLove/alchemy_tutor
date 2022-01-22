@@ -12,9 +12,8 @@
     - breaks common
   - hisi h diamond and water
   - crypt v, polymorphine and toxic, maybe slime
-- suspended container tele+mana, self solved
-- brass + unstable tele burned
-- natural fire (burning oil?) does not make shock powder
+  - suspended container tele+mana, self solved
+  - brass + unstable tele burned
 - consider gunpowder bin
 - consider bluefungi hollow
 - mod updates void to corruption

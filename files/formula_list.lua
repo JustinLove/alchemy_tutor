@@ -309,7 +309,7 @@ at_formula_list = {
 	{
 		materials = {
 			"brass",
-			"liquid_fire",
+			"liquid_fire", -- standard fire does not work, has to be [fire_strong]
 		},
 		cauldron = at_electrode,
 		cauldron_material = "steel_static_unmeltable",
