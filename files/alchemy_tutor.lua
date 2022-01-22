@@ -234,6 +234,19 @@ function at_red_herring( x, y, present_materials )
 	end
 end
 
+local function remove_material_checker( entity )
+	local comp = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
+	if comp ~= nil then
+		EntityRemoveComponent( entity, comp )
+	end
+end
+
+local function remove_damage_checker( entity )
+	local comp = EntityGetFirstComponent( entity, "DamageModelComponent" )
+	if comp ~= nil then
+		EntityRemoveComponent( entity, comp )
+	end
+end
 
 local function setup_material_checker( entity, material1, material2, fast_checking, index )
 	local mat1 = CellFactory_GetType( material1 )
@@ -252,6 +265,8 @@ local function setup_material_checker( entity, material1, material2, fast_checki
 		end
 		ComponentSetValue2( comp_mat, "update_every_x_frame", frames )
 	end
+
+	remove_damage_checker( entity )
 end
 
 local function setup_presence_checker( entity, material1, material2 )
@@ -259,7 +274,8 @@ local function setup_presence_checker( entity, material1, material2 )
 	if material2 then
 		EntitySetDamageFromMaterial( entity, material2, 1 )
 	end
-	-- can't keep component disabled the rest of the time; EntitySetComponentIsEnabled doesn't seem to work
+
+	remove_material_checker( entity )
 end
 
 local function setup_explosion_checker( entity )
@@ -269,6 +285,8 @@ local function setup_explosion_checker( entity )
 		ComponentSetValue2( comp, "materials_damage", false )
 		ComponentObjectSetValue2( comp, "damage_multipliers", "explosion", 1 )
 	end
+
+	remove_material_checker( entity )
 end
 
 function at_full_cauldron( entity, x, y, set, index )

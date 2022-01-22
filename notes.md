@@ -12,19 +12,17 @@
     - breaks common
   - hisi h diamond and water
   - crypt v, polymorphine and toxic, maybe slime
+- checker file renames?
+- consider blocks switching to detection when output specified
 - suspended container tele+mana, self solved
 - brass + unstable tele burned
 - natural fire (burning oil?) does not make shock powder
-- hisi vines
-- custom detector for hp gas - maybe cheese?
-  - mod updates void to corruption
-  - checker file renames?
-    Thatrius — Today at 16:46
-    Seems like I remember accomplishing this by messing around with materials_that_create_messages from DamageModelComponent
-    okay yeah you just add the material to materials_that_create_messages, and then check if mCollisionMessageMaterials[index of material] is > 0 
 - consider gunpowder bin
 - consider bluefungi hollow
-- consider blocks switching to detection when output specified
+- mod updates void to corruption
+- implement mod customs in mod
+- hisi vines
+- relace weak soil in dark rainforest
 - consider torch wand
 - consider secondary materials for grand alchemy
 - remote biomes
@@ -152,3 +150,6 @@ entities/items/pickup/potion.xml
 
 ```
 
+    Thatrius — Today at 16:46
+    Seems like I remember accomplishing this by messing around with materials_that_create_messages from DamageModelComponent
+    okay yeah you just add the material to materials_that_create_messages, and then check if mCollisionMessageMaterials[index of material] is > 0 
