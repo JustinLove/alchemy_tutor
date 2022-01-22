@@ -39,6 +39,6 @@
   </HitboxComponent>
 
   <LuaComponent
-    script_damage_received="mods/alchemy_tutor/files/entities/cauldron_checker.lua" >
+    script_damage_received="mods/alchemy_tutor/files/entities/experiment_success.lua" >
   </LuaComponent>
 </Entity>

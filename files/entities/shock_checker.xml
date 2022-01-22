@@ -4,6 +4,6 @@
 	></ElectricityReceiverComponent>
 
 	<LuaComponent
-    script_electricity_receiver_switched="mods/alchemy_tutor/files/entities/cauldron_checker.lua" >
+    script_electricity_receiver_switched="mods/alchemy_tutor/files/entities/experiment_success.lua" >
 	</LuaComponent>
 </Entity>

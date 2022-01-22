@@ -15,7 +15,7 @@ at_test_y = -100 -- hills
 --at_test_y = 0 -- pyramid
 --at_test_x = -4000 -- rainforest dark
 --at_test_y = 7500 -- rainforest dark
---at_test_formula = 'toxicclean'
+--at_test_formula = 'plasma_fading'
 --at_test_formula = 'magic_liquid_mana_regeneration'
 --at_test_clear = true
 --at_test_healing = true
@@ -241,7 +241,7 @@ local function remove_material_checker( entity )
 	end
 end
 
-local function remove_damage_checker( entity )
+local function remove_damage_model( entity )
 	local comp = EntityGetFirstComponent( entity, "DamageModelComponent" )
 	if comp ~= nil then
 		EntityRemoveComponent( entity, comp )
@@ -266,7 +266,7 @@ local function setup_material_checker( entity, material1, material2, fast_checki
 		ComponentSetValue2( comp_mat, "update_every_x_frame", frames )
 	end
 
-	remove_damage_checker( entity )
+	remove_damage_model( entity )
 end
 
 local function setup_presence_checker( entity, material1, material2 )
@@ -291,21 +291,21 @@ end
 
 function at_full_cauldron( entity, x, y, set, index )
 	if not entity then
-		entity = EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_checker.xml", x, y )
+		entity = EntityLoad( "mods/alchemy_tutor/files/entities/full_cauldron.xml", x, y )
 	end
 	setup_material_checker( entity, set.output, set.output2, set.fast_checking, index )
 end
 
 function at_material_presence( entity, x, y, set, index )
 	if not entity then
-		entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_checker.xml", x, y )
+		entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_model.xml", x, y )
 	end
 	setup_presence_checker( entity, set.output, set.output2 )
 end
 
 function at_explosion( entity, x, y, set, index )
 	if not entity then
-		entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_checker.xml", x, y )
+		entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_model.xml", x, y )
 	end
 	setup_explosion_checker( entity )
 end
@@ -313,7 +313,7 @@ end
 function at_material_destruction( entity, x, y, set, index )
 	local material = at_material( set.cauldron_material, "wizardstone" )
 	if not entity then
-		entity = EntityLoad( "mods/alchemy_tutor/files/entities/block_checker.xml", x, y )
+		entity = EntityLoad( "mods/alchemy_tutor/files/entities/material_destruction.xml", x, y )
 	end
 	setup_material_checker( entity, material, '', false, index )
 end

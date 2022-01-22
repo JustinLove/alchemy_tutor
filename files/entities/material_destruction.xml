@@ -22,6 +22,6 @@
   </HitboxComponent>
 
 	<LuaComponent
-    script_material_area_checker_failed="mods/alchemy_tutor/files/entities/cauldron_checker.lua" >
+    script_material_area_checker_failed="mods/alchemy_tutor/files/entities/experiment_success.lua" >
 	</LuaComponent>
 </Entity>
