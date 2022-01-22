@@ -15,7 +15,7 @@
   - suspended container tele+mana, self solved
   - brass + unstable tele burned
 - consider gunpowder bin
-- consider bluefungi hollow
+- consider gold statue
 - mod updates void to corruption
 - implement mod customs in mod
 - hisi vines
@@ -103,8 +103,8 @@ Breaks void detection
 - x unstable poly + slime = poly
 - x flum + coal = stable tele
 - x inivs + fire = invis
-- x? slime + bluefungi = invis - custom cauldron
-- x? fungi blood + bluefungi = flum - custom cauldron
+- x slime + bluefungi = invis - custom cauldron
+- x fungi blood + bluefungi = flum - custom cauldron
 - x blood cold + oil = wax
 - x oil + fire + berserk = red plastic
 - x worm blood + water ice = purifying powder

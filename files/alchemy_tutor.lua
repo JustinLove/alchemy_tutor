@@ -15,7 +15,7 @@ at_test_y = -100 -- hills
 --at_test_y = 0 -- pyramid
 --at_test_x = -4000 -- rainforest dark
 --at_test_y = 7500 -- rainforest dark
---at_test_formula = 'toxicclean'
+--at_test_formula = 'are_poison2'
 --at_test_formula = 'magic_liquid_mana_regeneration'
 --at_test_clear = true
 --at_test_healing = true
@@ -343,6 +343,29 @@ at_cauldron = {
 		)
 
 		add_checker( nil, x, y, 18, set, index )
+
+		return contents
+	end
+}
+
+at_hollow = {
+	name = "hollow",
+	default_material = "bluefungi_static",
+	spawn = function( set, x, y, index )
+		local contents = at_material( set.cauldron_contents, "air" )
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/props/hollow.png",
+			"", -- visual
+			x-18, y-39,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{ ["fff0bbee"] = contents,
+				["ff786c42"] = at_material( set.cauldron_material, "bluefungi_static" ),
+			} -- color_to_matieral_table
+		)
+
+		add_checker( nil, x, y, 15, set, index )
 
 		return contents
 	end

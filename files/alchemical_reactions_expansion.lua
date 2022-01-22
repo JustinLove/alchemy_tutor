@@ -282,6 +282,7 @@ at_formula_list_append({
 		materials = {
 			"slime",
 		},
+		cauldron = at_hollow,
 		cauldron_material = "bluefungi_static",
 		output = "magic_liquid_invisibility",
 		rating = 9,
@@ -291,6 +292,7 @@ at_formula_list_append({
 		materials = {
 			"blood_fungi",
 		},
+		cauldron = at_hollow,
 		cauldron_material = "bluefungi_static",
 		output = "material_confusion",
 		rating = 18,
@@ -443,10 +445,9 @@ at_formula_list_append({
 		materials = {
 			"slime",
 		},
-		cauldron = at_block_rock,
+		cauldron = at_hollow,
 		cauldron_material = "soil_dead",
 		output = "poison",
-		cauldron_check_y = 30,
 		rating = 9,
 	},
 })
