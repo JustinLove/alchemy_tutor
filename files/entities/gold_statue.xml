@@ -1,0 +1,158 @@
+<Entity name="unknown" tags="item_physics,cauldron_checker" >
+
+  <!-- physical presence -->
+	<UIInfoComponent
+		_tags="enabled_in_world"
+		name="Gold Statue">
+	</UIInfoComponent>
+
+  <PhysicsBodyComponent 
+    _tags="enabled_in_world"
+    uid="1" 
+    allow_sleep="1" 
+    angular_damping="0" 
+    fixed_rotation="0" 
+    is_bullet="0" 
+    linear_damping="0"
+    auto_clean="0"
+    hax_fix_going_through_ground="1"
+    on_death_leave_physics_body="1" >
+  </PhysicsBodyComponent>
+  
+  <!-- Thank you Derek! -->
+  <PhysicsImageShapeComponent
+	_tags="enabled_in_world"
+    body_id="1"
+    centered="1"
+    image_file="data/items_gfx/easter/golden_idol.png"
+    material="gold_box2d" >
+  </PhysicsImageShapeComponent>
+
+  <!-- item -->
+
+  <HitboxComponent 
+    _tags="enabled_in_world"
+    aabb_max_x="6.5"
+    aabb_max_y="4"
+    aabb_min_x="-6.5"
+    aabb_min_y="-10"
+    is_enemy="0"
+    >
+  </HitboxComponent>
+
+  <DamageModelComponent 
+    _enabled="1" 
+    hp="0.1" 
+    material_damage_min_cell_count="4" 
+    materials_create_messages="1" 
+    materials_damage="1" 
+    materials_how_much_damage="1" 
+    materials_that_damage="" 
+    ragdoll_filenames_file=""
+    air_needed="0"
+    drop_items_on_death="0"
+    fire_probability_of_ignition="0"
+    ui_report_damage="0"
+    wait_for_kill_flag_on_death="0"
+    >
+    <damage_multipliers 
+      drill="0" 
+      electricity="0" 
+      explosion="0" 
+      fire="0" 
+      melee="0" 
+      projectile="0"
+      ice="0"
+      slice="0"
+      curse="0"
+      >
+    </damage_multipliers>
+  </DamageModelComponent>
+
+  <LuaComponent
+    remove_after_executed="1"
+    script_damage_received="mods/alchemy_tutor/files/entities/experiment_success.lua" >
+  </LuaComponent>
+
+  <!-- particle glitter -->
+  <SpriteParticleEmitterComponent
+	_tags="enabled_in_world"
+    sprite_file="data/particles/shine_07.xml"
+    lifetime="0.3"
+    emission_interval_min_frames="20"
+    emission_interval_max_frames="250"
+    count_min="1"
+    count_max="1"
+    additive="1"
+    emissive="0"
+    scale.x="1.0"
+    scale.y="1.0"
+    sprite_random_rotation="1"
+    randomize_scale.min_x="-0.1" 
+    randomize_scale.max_x="0.1" 
+    randomize_scale.min_y="-0.1" 
+    randomize_scale.max_y="0.1" 
+    randomize_position.min_y="-6" 
+    randomize_position.max_y="6"
+    randomize_position.min_x="-6"  
+    randomize_position.max_x="6"
+    randomize_animation_speed_coeff.min="0.667"  
+    randomize_animation_speed_coeff.max="1.0" 
+    >
+  </SpriteParticleEmitterComponent>
+
+  <SpriteParticleEmitterComponent
+	_tags="enabled_in_world"
+    sprite_file="data/particles/shine_08.xml"
+    lifetime="0.2"
+    randomize_lifetime.min="0.1"
+    randomize_lifetime.max="0.8"
+    emission_interval_min_frames="20"
+    emission_interval_max_frames="150"
+    count_min="1"
+    count_max="1"
+    additive="1"
+    emissive="0"
+    scale.x="1.0"
+    scale.y="1.0"
+    sprite_random_rotation="1"
+    randomize_scale.min_x="-0.1" 
+    randomize_scale.max_x="0.1" 
+    randomize_scale.min_y="-0.1" 
+    randomize_scale.max_y="0.1" 
+    randomize_position.min_y="-5" 
+    randomize_position.max_y="5"
+    randomize_position.min_x="-5"  
+    randomize_position.max_x="5"
+    randomize_animation_speed_coeff.min="0.667"  
+    randomize_animation_speed_coeff.max="1.0" 
+    >
+  </SpriteParticleEmitterComponent>
+
+  <SpriteParticleEmitterComponent
+	_tags="enabled_in_world"
+    sprite_file="data/particles/shine_06.xml"
+    lifetime="0.56"
+    emission_interval_min_frames="100"
+    emission_interval_max_frames="600"
+    additive="1"
+    emissive="0"
+    scale.x="1.0"
+    scale.y="1.0"
+    count_min="1"
+    count_max="1"
+    sprite_random_rotation="1"
+    randomize_scale.min_x="-0.1" 
+    randomize_scale.max_x="0.1" 
+    randomize_scale.min_y="-0.1" 
+    randomize_scale.max_y="0.1" 
+    randomize_position.min_y="-6" 
+    randomize_position.max_y="6"
+    randomize_position.min_x="-6"  
+    randomize_position.max_x="6"
+    randomize_animation_speed_coeff.min="0.667"  
+    randomize_animation_speed_coeff.max="1.0" 
+    >
+  </SpriteParticleEmitterComponent>
+
+</Entity>
