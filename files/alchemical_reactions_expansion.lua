@@ -97,7 +97,6 @@ at_formula_list_append({
 		cauldron_material = "templebrick_static",
 		cauldron_check_y = 30,
 		output = "magic_liquid",
-		check_for = at_material_presence,
 		rating = 9,
 	},
 	{
@@ -447,7 +446,6 @@ at_formula_list_append({
 		cauldron = at_block_rock,
 		cauldron_material = "soil_dead",
 		output = "poison",
-		check_for = at_material_presence,
 		cauldron_check_y = 30,
 		rating = 9,
 	},

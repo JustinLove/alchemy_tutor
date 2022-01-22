@@ -12,8 +12,6 @@
     - breaks common
   - hisi h diamond and water
   - crypt v, polymorphine and toxic, maybe slime
-- checker file renames?
-- consider blocks switching to detection when output specified
 - suspended container tele+mana, self solved
 - brass + unstable tele burned
 - natural fire (burning oil?) does not make shock powder

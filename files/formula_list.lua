@@ -65,7 +65,6 @@ at_formula_list = {
 		cauldron = at_block_steel,
 		cauldron_material = "steel_static",
 		output = "magic_liquid_mana_regeneration",
-		check_for = at_material_presence,
 		rating = 3,
 	},
 	{
@@ -271,7 +270,6 @@ at_formula_list = {
 		cauldron = at_block_brick,
 		cauldron_check_y = 30,
 		output = "magic_liquid_teleportation",
-		check_for = at_material_presence,
 		rating = 7,
 	},
 	{
@@ -280,7 +278,6 @@ at_formula_list = {
 		cauldron = at_block_brick,
 		cauldron_check_y = 30,
 		output = "acid",
-		check_for = at_material_presence,
 		rating = 9,
 	},
 	{
@@ -289,7 +286,6 @@ at_formula_list = {
 		cauldron = at_block_brick,
 		cauldron_check_y = 40,
 		output = "steam",
-		check_for = at_material_presence,
 		rating = 9,
 	},
 	--[[
@@ -299,7 +295,6 @@ at_formula_list = {
 		cauldron = at_block_brick,
 		cauldron_check_y = 30,
 		output = "lava",
-		check_for = at_material_presence,
 		rating = 12,
 	},
 	]]
@@ -330,7 +325,6 @@ at_formula_list = {
 		cauldron_check_y = 10,
 		output = "void_liquid",
 		output2 = "corruption_static",
-		check_for = at_material_presence,
 		rating = 12,
 	},
 	{

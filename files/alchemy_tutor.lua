@@ -15,7 +15,7 @@ at_test_y = -100 -- hills
 --at_test_y = 0 -- pyramid
 --at_test_x = -4000 -- rainforest dark
 --at_test_y = 7500 -- rainforest dark
---at_test_formula = 'plasma_fading'
+--at_test_formula = 'toxicclean'
 --at_test_formula = 'magic_liquid_mana_regeneration'
 --at_test_clear = true
 --at_test_healing = true
@@ -473,6 +473,9 @@ function at_spawn_block( set, x, y, index, file )
 		} -- color_to_matieral_table
 	)
 
+	if set.output and not set.check_for then
+		set.check_for = at_material_presence
+	end
 	add_checker( nil, x, y, 18, set, index )
 end
 
