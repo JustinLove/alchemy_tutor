@@ -14,7 +14,6 @@
   - crypt v, polymorphine and toxic, maybe slime
   - suspended container tele+mana, self solved
   - brass + unstable tele burned
-- hisi vines
 - relace weak soil in dark rainforest
 - consider torch wand
 - consider secondary materials for grand alchemy
