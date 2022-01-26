@@ -181,6 +181,10 @@ function at_container( material_name, amount, x, y )
 		return at_potion_empty( x, y )
 	elseif material_name == "fire" and amount < 0.5 then
 		return at_torch( x, y )
+	elseif material_name == "urine" then
+		entity = at_jar_empty( x, y )
+		AddMaterialInventoryMaterial(entity, material_name, 1000 * amount)
+		return entity
 	elseif at_get_material_type( material_name) == "powder" then
 		entity = at_powder_empty( x, y )
 		AddMaterialInventoryMaterial(entity, material_name, 1500 * amount)
@@ -210,6 +214,12 @@ end
 
 function at_potion_empty( x, y )
 	local entity = EntityLoad( "data/entities/items/pickup/potion_empty.xml", x, y )
+	return entity
+end
+
+function at_jar_empty( x, y )
+	local entity = EntityLoad( "data/entities/items/pickup/jar.xml", x, y )
+	empty_container_of_materials( entity )
 	return entity
 end
 
