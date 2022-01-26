@@ -14,7 +14,6 @@
   - crypt v, polymorphine and toxic, maybe slime
   - suspended container tele+mana, self solved
   - brass + unstable tele burned
-- mod updates void to corruption
 - implement mod customs in mod
 - hisi vines
 - relace weak soil in dark rainforest

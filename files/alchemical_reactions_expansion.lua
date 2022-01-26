@@ -1,3 +1,10 @@
+for i = 1, #at_formula_list do
+	local f = at_formula_list[i]
+	if f.output == 'void_liquid' then
+		f.output2 = 'corruption_static'
+	end
+end
+
 at_formula_list_append({
 	{
 		materials = {

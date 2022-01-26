@@ -324,7 +324,6 @@ at_formula_list = {
 		cauldron_material = "rock_static_fungal",
 		cauldron_check_y = 10,
 		output = "void_liquid",
-		output2 = "corruption_static",
 		rating = 12,
 	},
 	{
@@ -336,7 +335,6 @@ at_formula_list = {
 		cauldron = at_fungus,
 		cauldron_contents = {"fungi", "fungi", "fungi", "fungi_creeping", "fungi_green"},
 		output = "void_liquid",
-		output2 = "corruption_static",
 		check_for = at_material_presence,
 		rating = 10,
 	},
