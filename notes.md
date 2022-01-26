@@ -14,7 +14,7 @@
   - crypt v, polymorphine and toxic, maybe slime
   - suspended container tele+mana, self solved
   - brass + unstable tele burned
-- consider torch wand
+- urine jar
 - consider secondary materials for grand alchemy
 - remote biomes
   - spawn key

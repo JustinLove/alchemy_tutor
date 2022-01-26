@@ -324,6 +324,7 @@ at_formula_list_append({
 			"magic_liquid_berserk",
 			"oil",
 		},
+		amounts = {0.1},
 		cauldron_contents = {
 			"air",
 			"air",
