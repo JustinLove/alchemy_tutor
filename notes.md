@@ -15,6 +15,7 @@
   - suspended container tele+mana, self solved
   - brass + unstable tele burned
 - consider secondary materials for grand alchemy
+- backwards compatibility files
 - remote biomes
   - spawn key
   - clear on return/use
