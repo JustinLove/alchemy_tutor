@@ -14,8 +14,10 @@
   - crypt v, polymorphine and toxic, maybe slime
   - suspended container tele+mana, self solved
   - brass + unstable tele burned
+- gardening shears
 - consider secondary materials for grand alchemy
 - backwards compatibility files
+- progression tracking
 - remote biomes
   - spawn key
   - clear on return/use
@@ -29,8 +31,6 @@
 - background?
 - cauldron fires
 - repeat resitance??
-- progression tracking
-- Alchemical Reactions Expansion
 
 - snow is awkward with powders - maybe okay as puzzle element?
 

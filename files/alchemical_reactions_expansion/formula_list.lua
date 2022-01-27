@@ -401,6 +401,7 @@ at_formula_list_append({
 			"air",
 		},
 		output = "sodium",
+		check_for = at_material_presence,
 		rating = 15,
 	},
 	{
