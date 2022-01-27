@@ -7,6 +7,7 @@ end
 
 at_formula_list_append({
 	{
+		name = "are_urine",
 		materials = {
 			"vomit",
 			"radioactive_liquid",
@@ -20,7 +21,7 @@ at_formula_list_append({
 		rating = 9,
 	},
 	{
-		name = "polyhp",
+		name = "are_polyhp",
 		materials = {
 			"magic_liquid_charm",
 			{ "blood", "blood", "blood", "blood_worm", "blood_cold" },
@@ -30,7 +31,7 @@ at_formula_list_append({
 		rating = 8,
 	},
 	{
-		name = "accel",
+		name = "are_accel",
 		materials = {
 			"gunpowder",
 			"material_confusion",
@@ -46,7 +47,7 @@ at_formula_list_append({
 		rating = 9,
 	},
 	{
-		name = "goldhp",
+		name = "are_goldhp",
 		materials = {
 			"gold",
 			"magic_liquid_protection_all",
@@ -74,6 +75,7 @@ at_formula_list_append({
 		rating = 7,
 	},
 	{
+		name = "are_plasma_fading",
 		materials = {
 			"magic_liquid_unstable_teleportation",
 			"blood",
@@ -90,7 +92,7 @@ at_formula_list_append({
 		rating = 5,
 	},
 	{
-		name = "magic_liquid",
+		name = "are_magic_liquid",
 		materials = {
 			"radioactive_liquid",
 			"blood",
@@ -109,7 +111,7 @@ at_formula_list_append({
 		rating = 9,
 	},
 	{
-		name = "plasmamana",
+		name = "are_plasmamana",
 		materials = {
 			"magic_liquid_unstable_teleportation",
 			"blood",
@@ -126,6 +128,7 @@ at_formula_list_append({
 		rating = 7,
 	},
 	{
+		name = "are_pea_soup",
 		materials = {
 			"slime",
 			"radioactive_liquid",
@@ -139,6 +142,7 @@ at_formula_list_append({
 		rating = 4,
 	},
 	{
+		name = "are_endslime",
 		materials = {
 			"lava",
 			"slime",
@@ -152,6 +156,7 @@ at_formula_list_append({
 		rating = 5,
 	},
 	{
+		name = "are_poo",
 		materials = {
 			"urine",
 			"soil",
@@ -197,7 +202,7 @@ at_formula_list_append({
 		rating = 18,
 	},
 	{
-		name = 'polyclean',
+		name = 'are_polyclean',
 		materials = {
 			"magic_liquid_worm_attractor",
 		},
@@ -210,6 +215,7 @@ at_formula_list_append({
 		rating = 5,
 	},
 	{
+		name = 'are_cheese',
 		materials = {
 			"water_salt",
 			"blood_worm",
@@ -242,6 +248,7 @@ at_formula_list_append({
 		rating = 5,
 	},
 	{
+		name = 'are_polymorph',
 		materials = {
 			"slime",
 			"magic_liquid_unstable_polymorph"
@@ -306,6 +313,7 @@ at_formula_list_append({
 		rating = 18,
 	},
 	{
+		name = 'are_wax',
 		materials = {
 			"blood_cold",
 			"oil",
@@ -319,6 +327,7 @@ at_formula_list_append({
 		rating = 10,
 	},
 	{
+		name = 'are_plastic_red',
 		materials = {
 			"fire",
 			"magic_liquid_berserk",
@@ -353,6 +362,7 @@ at_formula_list_append({
 		rating = 12,
 	},
 	{
+		name = "are_sand_blue",
 		materials = {
 			"diamond",
 			"sand",
@@ -362,6 +372,7 @@ at_formula_list_append({
 		rating = 13,
 	},
 	{
+		name = "are_sand",
 		materials = {
 			"sand",
 		},
@@ -389,6 +400,7 @@ at_formula_list_append({
 		rating = 9,
 	},
 	{
+		name = "are_sodium",
 		materials = {
 			"bone",
 			"sand",
@@ -405,6 +417,7 @@ at_formula_list_append({
 		rating = 15,
 	},
 	{
+		name = "are_fungi",
 		materials = {},
 		cauldron = at_bin,
 		cauldron_material = "wood",
@@ -416,6 +429,7 @@ at_formula_list_append({
 		rating = 15,
 	},
 	{
+		name = "are_fungi_green",
 		materials = {},
 		cauldron = at_bin,
 		cauldron_material = "wood",
@@ -427,6 +441,7 @@ at_formula_list_append({
 		rating = 16,
 	},
 	{
+		name = "are_oil",
 		materials = {
 			"brass",
 			"radioactive_liquid",
