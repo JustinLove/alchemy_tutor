@@ -7,6 +7,7 @@
 - Also as part of expansion, added a rating system so new recepies cn sort in appropriately; this resulted in many formula being reordered.
 - Added formula for salt and brine, since ARE has a salt formula.
 - Formula that need to start a fire now provide a torch wand instead of a fire potion.
+- The fungi garden provides garden shears in case you don't have a good spell on your wands
 - Attempt to fix occasional disappearance of coal pits containers when activated.
 - Tweak potion height in vault horiz.
 - Remove left barrier in first level horiz.

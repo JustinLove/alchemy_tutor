@@ -190,6 +190,8 @@ function at_planterbox( x, y )
 		{
 		} -- color_to_matieral_table
 	)
+
+	EntityLoad( "mods/alchemy_tutor/files/entities/shears.xml", x, y - 13)
 end
 
 function at_frogs( x, y )
