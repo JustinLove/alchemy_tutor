@@ -398,6 +398,7 @@ at_formula_list = {
 			"water",
 		},
 		output = "silver",
+		check_for = at_majority,
 		rating = 18,
 	},
 	{
@@ -407,6 +408,7 @@ at_formula_list = {
 			"diamond",
 		},
 		output = "purifying_powder",
+		check_for = at_majority,
 		rating = 17,
 	},
 	{
@@ -466,6 +468,7 @@ at_formula_list = {
 			"air",
 		},
 		output = "diamond",
+		check_for = at_majority,
 		rating = 19,
 	},
 	{

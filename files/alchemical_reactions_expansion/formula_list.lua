@@ -368,7 +368,7 @@ at_formula_list_append({
 			"sand",
 		},
 		output = "sand_blue",
-		check_for = at_material_presence,
+		check_for = at_majority,
 		rating = 13,
 	},
 	{

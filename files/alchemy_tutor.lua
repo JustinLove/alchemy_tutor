@@ -295,6 +295,16 @@ local function setup_presence_checker( entity, material1, material2 )
 	remove_material_checker( entity )
 end
 
+local function setup_majority_checker( entity, material1, material2 )
+	setup_presence_checker( entity, material1, material2 )
+
+	local comp = EntityGetFirstComponent( entity, "DamageModelComponent" )
+	if comp ~= nil then
+		-- max seems to be 85
+		ComponentSetValue2( comp, "material_damage_min_cell_count", 42 )
+	end
+end
+
 local function setup_explosion_checker( entity )
 	local comp = EntityGetFirstComponent( entity, "DamageModelComponent" )
 	if comp ~= nil then
@@ -318,6 +328,13 @@ function at_material_presence( entity, x, y, set, index )
 		entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_model.xml", x, y )
 	end
 	setup_presence_checker( entity, set.output, set.output2 )
+end
+
+function at_majority( entity, x, y, set, index )
+	if not entity then
+		entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_model.xml", x, y )
+	end
+	setup_majority_checker( entity, set.output, set.output2 )
 end
 
 function at_explosion( entity, x, y, set, index )
