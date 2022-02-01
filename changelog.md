@@ -2,9 +2,9 @@
 
 ## 0.1.0
 
-- Went ahead and added Alchemical Reactions Expansion recepies, since I wanted to start testing them
-- As part of the above, made some major updates; there are new fast detectory types which should improve several formula; things that were impractical before can now usually trigger a chest - including cooking meat.
-- Also as part of expansion, added a rating system so new recepies cn sort in appropriately; this resulted in many formula being reordered.
+- Went ahead and added Alchemical Reactions Expansion recipes, since I wanted to start testing them
+- As part of the above, made some major updates; there are new fast detector types which should improve several formula; things that were impractical before can now usually trigger a chest - including cooking meat.
+- Also as part of expansion, added a rating system so new recipes can sort in appropriately; this resulted in many formula being reordered.
 - Added formula for salt and brine, since ARE has a salt formula.
 - Formula that need to start a fire now provide a torch wand instead of a fire potion.
 - The fungi garden provides garden shears in case you don't have a good spell on your wands
