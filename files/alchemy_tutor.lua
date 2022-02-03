@@ -74,10 +74,17 @@ function at_pick_lab_set( x, y )
 	end
 	SetRandomSeed( x, y )
 	local grand = {}
+	local in_grade = {}
 	for i,v in ipairs(at_formula_list) do
 		if v.grand_alchemy then
 			table.insert(grand, v)
 		end
+		if v.rating <= at_passed_count + 3 then
+			table.insert(in_grade, v)
+		end
+	end
+	if #in_grade < 1 then
+		in_grade = at_formula_list
 	end
 	if Random(0, #grand + 5) < #grand then
 		local i = Random(1, #grand)
@@ -86,12 +93,12 @@ function at_pick_lab_set( x, y )
 		local i
 		if ModSettingGet("alchemy_tutor.formula_distance") then
 			local d = math.sqrt(x*x + y*y)
-			local target = math.floor(#at_formula_list * (d/12000))
-			i = RandomDistribution(1, #at_formula_list, target)
+			local target = math.floor(#in_grade * (d/12000))
+			i = RandomDistribution(1, #in_grade, target)
 		else
-			i = Random(1, #at_formula_list)
+			i = Random(1, #in_grade)
 		end
-		return at_formula_list[i]
+		return in_grade[i]
 	end
 end
 

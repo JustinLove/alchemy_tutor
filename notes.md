@@ -15,6 +15,12 @@
   - suspended container tele+mana, self solved
   - brass + unstable tele burned
 - progression tracking
+  - x set flags
+  - x reduced herrings on first time
+  - x varied herrings with total
+  - x restricted rating by total
+  - simplify formula first time?
+  - setting option
 - remote biomes
   - spawn key
   - clear on return/use
