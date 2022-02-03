@@ -35,8 +35,9 @@ function at_decorate_scene( x, y )
 	local loc
 	local red_herrings = 0
 	if HasFlagPersistent( "at_formula_" .. set.name ) then
-		local max = #at_materials-#set.materials
-		red_herrings = RandomDistribution( 0, max, 1, 2 )
+		local max = math.min( at_passed_count, #at_materials-#set.materials )
+		local mean = math.log10( at_passed_count )
+		red_herrings = RandomDistribution( 0, max, mean, 2 )
 	end
 	local in_cauldron = {}
 	local present_materials = {}

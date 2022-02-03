@@ -63,6 +63,7 @@ at_formulas = {}
 at_materials = {}
 at_amounts = {}
 at_grand_materials = {}
+at_passed_count = 0
 
 function at_pick_lab_set( x, y )
 	if at_formulas['toxicclean'] == nil then
@@ -136,10 +137,14 @@ local function formula_sort(a, b)
 end
 
 function at_setup()
+	at_passed_count = 0
 	table.sort(at_formula_list, formula_sort)
 	for i,v in ipairs(at_formula_list) do
 		if v.name == nil then
 			v.name = v.output
+		end
+		if HasFlagPersistent( "at_formula_" .. v.name ) then
+			at_passed_count = at_passed_count + 1
 		end
 		at_formulas[v.name] = v
 		if v.amounts == nil then
