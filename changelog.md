@@ -1,5 +1,9 @@
 # Alchemy Tutor Changelog
 
+## 0.1.1
+
+- Tweaked cloth (pouches) to not conduct electricity. An alchemist who takes the Electicity perk will probably still have a bad day, buty at least you can use pouches now.
+
 ## 0.1.0
 
 - Went ahead and added Alchemical Reactions Expansion recipes, since I wanted to start testing them

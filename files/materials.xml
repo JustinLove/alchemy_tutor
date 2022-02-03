@@ -1,0 +1,26 @@
+<Materials>
+  <!-- changes electrical_conductivity -->
+  <CellDataChild
+    _parent="aluminium"
+    _inherit_reactions="1"
+    tags="[box2d],[burnable],[solid]"
+    name="cloth_box2d" 
+    ui_name="OVERRIDE"
+    durability="8"
+    platform_type="0"
+    solid_static_type="0"
+    solid_collide_with_self="1"
+    fire_hp="420"
+    hp="5000"
+    wang_color="ff937f52"
+    electrical_conductivity="0"
+    audio_physics_material_wall="cloth"
+    audio_physics_material_solid="cloth"
+    show_in_creative_mode="0"
+    >
+    <Graphics
+      texture_file="data/materials_gfx/cloth.png"
+      color="ff937f52" >
+    </Graphics>
+  </CellDataChild>
+</Materials>

@@ -93,6 +93,8 @@ end
 
 -- This code runs when all mods' filesystems are registered
 
+ModMaterialsFileAdd("mods/alchemy_tutor/files/materials.xml")
+
 ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/alchemy_tutor/files/biomes/coalmine.lua" )
 ModLuaFileAppend( "data/scripts/biomes/coalmine_alt.lua", "mods/alchemy_tutor/files/biomes/coalmine_alt.lua" )
 ModLuaFileAppend( "data/scripts/biomes/excavationsite.lua", "mods/alchemy_tutor/files/biomes/excavationsite.lua" )

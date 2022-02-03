@@ -14,7 +14,6 @@
   - crypt v, polymorphine and toxic, maybe slime
   - suspended container tele+mana, self solved
   - brass + unstable tele burned
-- backwards compatibility files
 - progression tracking
 - remote biomes
   - spawn key
