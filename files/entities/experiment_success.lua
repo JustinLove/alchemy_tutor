@@ -10,6 +10,22 @@ function material_area_checker_success( pos_x, pos_y )
 	local entity_id = GetUpdatedEntityID()
 	local x,y = EntityGetTransform(entity_id)
 
+	local s = EntityGetComponent( entity_id, "VariableStorageComponent" )
+
+	local formula
+	if ( s ~= nil ) then
+		for i,v in ipairs( s ) do
+			local name = ComponentGetValue2( v, "name" )
+
+			if ( name == "formula" ) then
+				local formula = ComponentGetValue2( v, "value_string" )
+				if formula and formula ~= '' then
+					AddFlagPersistent( "at_formula_" .. formula )
+				end
+			end
+		end
+	end
+
 	local cauldrons = EntityGetInRadiusWithTag( x, y, 200, "cauldron_checker" )
 
 	for i,v in ipairs( cauldrons ) do

@@ -74,6 +74,12 @@
     script_damage_received="mods/alchemy_tutor/files/entities/experiment_success.lua" >
   </LuaComponent>
 
+  <VariableStorageComponent
+    name="formula"
+    value_string=""
+    >
+  </VariableStorageComponent>
+
   <!-- particle glitter -->
   <SpriteParticleEmitterComponent
 	_tags="enabled_in_world"

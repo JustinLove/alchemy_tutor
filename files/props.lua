@@ -132,6 +132,7 @@ at_electrode = {
 		)
 
 		local entity = EntityLoad( at_mod_path .. "/entities/shock_checker.xml", x, y-(set.cauldron_check_y or 18) )
+		at_remember_formula( entity, set.name )
 	end
 }
 

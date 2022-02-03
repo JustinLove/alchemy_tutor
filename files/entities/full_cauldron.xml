@@ -24,4 +24,11 @@
   <LuaComponent
     script_material_area_checker_success="mods/alchemy_tutor/files/entities/experiment_success.lua" >
   </LuaComponent>
+
+  <VariableStorageComponent
+    name="formula"
+    value_string=""
+    >
+  </VariableStorageComponent>
+
 </Entity>

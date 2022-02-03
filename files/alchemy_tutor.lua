@@ -251,6 +251,19 @@ function at_red_herring( x, y, present_materials )
 	end
 end
 
+function at_remember_formula( entity, formula )
+	local s = EntityGetComponent( entity, "VariableStorageComponent" )
+	if ( s ~= nil ) then
+		for i,v in ipairs( s ) do
+			local name = ComponentGetValue2( v, "name" )
+
+			if ( name == "formula" ) then
+				ComponentSetValue2( v, "value_string", formula )
+			end
+		end
+	end
+end
+
 local function remove_material_checker( entity )
 	local comp = EntityGetFirstComponent( entity, "MaterialAreaCheckerComponent" )
 	if comp ~= nil then
@@ -321,6 +334,7 @@ function at_full_cauldron( entity, x, y, set, index )
 		entity = EntityLoad( "mods/alchemy_tutor/files/entities/full_cauldron.xml", x, y )
 	end
 	setup_material_checker( entity, set.output, set.output2, set.fast_checking, index )
+	return entity
 end
 
 function at_material_presence( entity, x, y, set, index )
@@ -328,6 +342,7 @@ function at_material_presence( entity, x, y, set, index )
 		entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_model.xml", x, y )
 	end
 	setup_presence_checker( entity, set.output, set.output2 )
+	return entity
 end
 
 function at_majority( entity, x, y, set, index )
@@ -335,6 +350,7 @@ function at_majority( entity, x, y, set, index )
 		entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_model.xml", x, y )
 	end
 	setup_majority_checker( entity, set.output, set.output2 )
+	return entity
 end
 
 function at_explosion( entity, x, y, set, index )
@@ -342,6 +358,7 @@ function at_explosion( entity, x, y, set, index )
 		entity = EntityLoad( "mods/alchemy_tutor/files/entities/damage_model.xml", x, y )
 	end
 	setup_explosion_checker( entity )
+	return entity
 end
 
 function at_material_destruction( entity, x, y, set, index )
@@ -350,12 +367,14 @@ function at_material_destruction( entity, x, y, set, index )
 		entity = EntityLoad( "mods/alchemy_tutor/files/entities/material_destruction.xml", x, y )
 	end
 	setup_material_checker( entity, material, '', false, index )
+	return entity
 end
 
 function at_add_checker( entity, x, y, offset, set, index )
 	y = y - (set.cauldron_check_y or offset)
 	local checker = (set.check_for or at_full_cauldron)
-	checker( entity, x, y, set, index )
+	local checker_entity = checker( entity, x, y, set, index )
+	at_remember_formula( checker_entity, set.name )
 end
 
 function shuffleTable( t )

@@ -33,8 +33,11 @@ function at_decorate_scene( x, y )
 	shuffleTable( at_other )
 
 	local loc
-	local max = #at_materials-#set.materials
-	local red_herrings = RandomDistribution( 0, max, 1, 2 )
+	local red_herrings = 0
+	if HasFlagPersistent( "at_formula_" .. set.name ) then
+		local max = #at_materials-#set.materials
+		red_herrings = RandomDistribution( 0, max, 1, 2 )
+	end
 	local in_cauldron = {}
 	local present_materials = {}
 	local what

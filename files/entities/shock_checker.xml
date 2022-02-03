@@ -6,4 +6,11 @@
 	<LuaComponent
     script_electricity_receiver_switched="mods/alchemy_tutor/files/entities/experiment_success.lua" >
 	</LuaComponent>
+
+  <VariableStorageComponent
+    name="formula"
+    value_string=""
+    >
+  </VariableStorageComponent>
+
 </Entity>
