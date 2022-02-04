@@ -1,8 +1,13 @@
 local at_mod_path = "mods/alchemy_tutor/files"
 dofile_once(at_mod_path .. "/grand_alchemy.lua")
 
---1439153766
---1496269479
+--at_test_player = true
+--at_test_lab = true
+--at_test_formula = 'toxicclean'
+--at_test_formula = 'magic_liquid_mana_regeneration'
+--at_test_clear = true
+--at_test_healing = true
+--at_test_portal = true
 at_test_x = -200
 at_test_y = -100 -- hills
 --at_test_y = 2000 -- excavation
@@ -15,13 +20,6 @@ at_test_y = -100 -- hills
 --at_test_y = 0 -- pyramid
 --at_test_x = -4000 -- rainforest dark
 --at_test_y = 7500 -- rainforest dark
---at_test_formula = 'toxicclean'
---at_test_formula = 'magic_liquid_mana_regeneration'
---at_test_clear = true
---at_test_healing = true
---at_test_player = true
---at_test_lab = true
---at_test_portal = true
 
 local function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
@@ -76,11 +74,15 @@ function at_pick_lab_set( x, y )
 	SetRandomSeed( x, y )
 	local grand = {}
 	local in_grade = {}
+	local rating_limit = #at_formula_list
+	if ModSettingGet("alchemy_tutor.formula_progression") then
+		rating_limit = at_passed_count + 3
+	end
 	for i,v in ipairs(at_formula_list) do
 		if v.grand_alchemy then
 			table.insert(grand, v)
 		end
-		if v.rating <= at_passed_count + 3 then
+		if v.rating <= rating_limit then
 			table.insert(in_grade, v)
 		end
 	end
@@ -172,7 +174,11 @@ function at_setup()
 end
 
 function at_first_time( set )
-	return not HasFlagPersistent( "at_formula_" .. set.name )
+	if ModSettingGet("alchemy_tutor.formula_progression") then
+		return not HasFlagPersistent( "at_formula_" .. set.name )
+	else
+		return false
+	end
 end
 
 function at_material( material, default, first )

@@ -1,7 +1,8 @@
 # Alchemy Tutor Changelog
 
-## 0.1.1
+## 0.2.0
 
+- Progression tracking. Formulas will be simplified the first time encountered, and the obscurity will be limited by the total number solved. (Master alchemists can disable this in settings.)
 - Tweaked cloth (pouches) to not conduct electricity. An alchemist who takes the Electicity perk will probably still have a bad day, buty at least you can use pouches now.
 
 ## 0.1.0

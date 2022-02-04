@@ -36,8 +36,12 @@ function at_decorate_scene( x, y )
 	local red_herrings = 0
 	local first = at_first_time( set )
 	if not first then
-		local max = math.min( at_passed_count, #at_materials-#set.materials )
-		local mean = math.log10( at_passed_count )
+		local max = #at_materials-#set.materials
+		local mean = 1
+		if ModSettingGet("alchemy_tutor.formula_progression") then
+			max = math.min( at_passed_count, max )
+			mean = math.log10( at_passed_count )
+		end
 		red_herrings = RandomDistribution( 0, max, mean, 2 )
 	end
 	local in_cauldron = {}

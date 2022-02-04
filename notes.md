@@ -5,7 +5,7 @@
   - x restricted rating by total
   - x simplify formula first time?
   - x update count
-  - setting option
+  - x setting option
 - remote biomes
   - spawn key
   - clear on return/use
