@@ -1,3 +1,7 @@
+if at_remove_remote_lab_key then
+	at_remove_remote_lab_key()
+end
+
 dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 
 RegisterSpawnFunction( 0xfff1a545, "at_spawn_material")

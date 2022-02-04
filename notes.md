@@ -7,9 +7,11 @@
   - x update count
   - x setting option
 - remote biomes
-  - spawn key
-  - clear on return/use
+  - x spawn key
+  - regenerate lab
+  - replace return portal
   - remote lab design
+  - clear on return/use
   - exit sequence
   - key design
 - multi-step challenges?

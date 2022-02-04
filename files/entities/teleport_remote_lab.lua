@@ -17,7 +17,7 @@ function portal_teleport_used( entity_teleported, from_x, from_y, to_x, to_y )
 
 	  EntityLoad( "mods/alchemy_tutor/files/entities/spawn_lab.xml", to_x, to_y )
 
-	  local portal = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_return.xml", to_x + 50, to_y - 50 )
+	  local portal = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_return.xml", to_x + 50, to_y - 100 )
 
 		local teleport_comp = EntityGetFirstComponentIncludingDisabled( portal, "TeleportComponent" )
 
