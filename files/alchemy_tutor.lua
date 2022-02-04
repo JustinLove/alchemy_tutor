@@ -72,6 +72,7 @@ function at_pick_lab_set( x, y )
 	if _G['at_test_formula'] then
 		return at_formulas[at_test_formula]
 	end
+	at_passed_count = tonumber( GlobalsGetValue( "at_passed_count" ) )
 	SetRandomSeed( x, y )
 	local grand = {}
 	local in_grade = {}
@@ -166,6 +167,7 @@ function at_setup()
 			at_amounts[#at_materials] = v.amounts[i]
 		end
 	end
+	GlobalsSetValue( "at_passed_count", tostring(at_passed_count) )
 	at_setup_grand_alchemy()
 end
 

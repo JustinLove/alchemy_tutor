@@ -20,7 +20,12 @@ function material_area_checker_success( pos_x, pos_y )
 			if ( name == "formula" ) then
 				local formula = ComponentGetValue2( v, "value_string" )
 				if formula and formula ~= '' then
-					AddFlagPersistent( "at_formula_" .. formula )
+					local key = "at_formula_" .. formula
+					if not HasFlagPersistent( key ) then
+						AddFlagPersistent( key )
+						local at_passed_count = tonumber( GlobalsGetValue( "at_passed_count" ) )
+						GlobalsSetValue( "at_passed_count", tostring(at_passed_count + 1) )
+					end
 				end
 			end
 		end

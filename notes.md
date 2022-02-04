@@ -4,7 +4,7 @@
   - x varied herrings with total
   - x restricted rating by total
   - x simplify formula first time?
-  - update count
+  - x update count
   - setting option
 - remote biomes
   - spawn key
