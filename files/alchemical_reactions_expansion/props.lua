@@ -4,7 +4,8 @@ at_bin = {
 	name = "bin",
 	default_material = "wood_player_b2",
 	spawn = function( set, x, y, index )
-		local contents = at_material( set.cauldron_contents, "air" )
+		local first = HasFlagPersistent( "at_formula_" .. set.name )
+		local contents = at_material( set.cauldron_contents, "air", first )
 		LoadPixelScene(
 			at_are_path .. "/bin.png",
 			"", -- visual
@@ -13,7 +14,7 @@ at_bin = {
 			true, -- skip_biome_checks
 			false, -- skip_edge_textures
 			{ ["fff0bbee"] = contents,
-				["ff613e02"] = at_material( set.cauldron_material, "wood_player_b2" ),
+				["ff613e02"] = at_material( set.cauldron_material, "wood_player_b2", first ),
 			} -- color_to_matieral_table
 		)
 
@@ -29,6 +30,7 @@ at_gold_statue = {
 	default_material = "gold_box2d",
 	is_physics = true,
 	spawn = function( set, x, y, index )
+		local first = HasFlagPersistent( "at_formula_" .. set.name )
 		LoadPixelScene(
 			at_are_path .. "/table.png",
 			"",
@@ -36,8 +38,8 @@ at_gold_statue = {
 			"", -- background
 			true, -- skip_biome_checks
 			false, -- skip_edge_textures
-			{ ["fff0bbee"] = at_material( set.cauldron_contents, "air" ),
-				["ff613e00"] = at_material( set.cauldron_material, "wood" ),
+			{ ["fff0bbee"] = at_material( set.cauldron_contents, "air", first ),
+				["ff613e00"] = at_material( set.cauldron_material, "wood", first ),
 			} -- color_to_matieral_table
 		)
 
@@ -52,7 +54,8 @@ at_hollow = {
 	name = "hollow",
 	default_material = "bluefungi_static",
 	spawn = function( set, x, y, index )
-		local contents = at_material( set.cauldron_contents, "air" )
+		local first = HasFlagPersistent( "at_formula_" .. set.name )
+		local contents = at_material( set.cauldron_contents, "air", first )
 		LoadPixelScene(
 			at_are_path .. "/hollow.png",
 			"", -- visual
@@ -61,7 +64,7 @@ at_hollow = {
 			true, -- skip_biome_checks
 			false, -- skip_edge_textures
 			{ ["fff0bbee"] = contents,
-				["ff786c42"] = at_material( set.cauldron_material, "bluefungi_static" ),
+				["ff786c42"] = at_material( set.cauldron_material, "bluefungi_static", first ),
 			} -- color_to_matieral_table
 		)
 

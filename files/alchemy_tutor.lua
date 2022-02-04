@@ -169,10 +169,13 @@ function at_setup()
 	at_setup_grand_alchemy()
 end
 
-function at_material( material, default )
+function at_material( material, default, first )
 	if type( material ) == 'table' then
 		if #material == 0 then
 			return default
+		end
+		if first then
+			return material[1]
 		end
 		return material[Random(1, #material)]
 	end

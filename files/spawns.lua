@@ -34,7 +34,8 @@ function at_decorate_scene( x, y )
 
 	local loc
 	local red_herrings = 0
-	if HasFlagPersistent( "at_formula_" .. set.name ) then
+	local first = HasFlagPersistent( "at_formula_" .. set.name )
+	if first then
 		local max = math.min( at_passed_count, #at_materials-#set.materials )
 		local mean = math.log10( at_passed_count )
 		red_herrings = RandomDistribution( 0, max, mean, 2 )
@@ -59,7 +60,7 @@ function at_decorate_scene( x, y )
 	end
 
 	for i,mat in ipairs( set.materials ) do
-		what = at_material( mat, 'potion_empty' )
+		what = at_material( mat, 'potion_empty', first )
 		loc = table.remove( at_materials )
 		if loc then
 			if in_cauldron[what] then

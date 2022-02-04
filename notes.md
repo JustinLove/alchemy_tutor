@@ -1,25 +1,10 @@
-- watchlist
-  - ?? jungle rock awol
-  - right potions broken in jungle h
-  - vault h
-    - only one broken potion
-    - no potions
-    - missing water potion, had red herrings
-    - potions fell
-  - vault v
-    - pool drained, no potions
-    - diamond, water, nothing in pot
-    - breaks common
-  - hisi h diamond and water
-  - crypt v, polymorphine and toxic, maybe slime
-  - suspended container tele+mana, self solved
-  - brass + unstable tele burned
 - progression tracking
   - x set flags
   - x reduced herrings on first time
   - x varied herrings with total
   - x restricted rating by total
-  - simplify formula first time?
+  - x simplify formula first time?
+  - update count
   - setting option
 - remote biomes
   - spawn key
@@ -36,6 +21,23 @@
 - repeat resitance??
 
 - snow is awkward with powders - maybe okay as puzzle element?
+
+- watchlist
+  - ?? jungle rock awol
+  - right potions broken in jungle h
+  - vault h
+    - only one broken potion
+    - no potions
+    - missing water potion, had red herrings
+    - potions fell
+  - vault v
+    - pool drained, no potions
+    - diamond, water, nothing in pot
+    - breaks common
+  - hisi h diamond and water
+  - crypt v, polymorphine and toxic, maybe slime
+  - suspended container tele+mana, self solved
+  - brass + unstable tele burned
 
 - x toxic + water
 - x mana + water

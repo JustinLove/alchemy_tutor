@@ -81,11 +81,11 @@ at_formula_list_append({
 			"blood",
 		},
 		cauldron_contents = {
+			"blood",
+			"blood",
+			"blood",
 			"air",
 			"magic_liquid_unstable_teleportation",
-			"blood",
-			"blood",
-			"blood",
 		},
 		output = "plasma_fading",
 		check_for = at_material_presence,
@@ -147,9 +147,7 @@ at_formula_list_append({
 			"lava",
 			"slime",
 		},
-		cauldron_contents = {
-			"air",
-		},
+		cauldron_contents = "air",
 		cauldron_minor = "lava",
 		output = "endslime",
 		cauldron_check_y = 10,
@@ -270,8 +268,8 @@ at_formula_list_append({
 			"material_confusion"
 		},
 		cauldron_contents = {
-			"material_confusion",
 			"air",
+			"material_confusion",
 		},
 		output = "magic_liquid_teleportation",
 		rating = 9,
@@ -408,9 +406,9 @@ at_formula_list_append({
 		cauldron_contents = {
 			"bone",
 			"bone",
+			"air",
+			"air",
 			"sand",
-			"air",
-			"air",
 		},
 		output = "sodium",
 		check_for = at_material_presence,
