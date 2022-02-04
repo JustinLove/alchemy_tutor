@@ -34,8 +34,8 @@ function at_decorate_scene( x, y )
 
 	local loc
 	local red_herrings = 0
-	local first = HasFlagPersistent( "at_formula_" .. set.name )
-	if first then
+	local first = at_first_time( set )
+	if not first then
 		local max = math.min( at_passed_count, #at_materials-#set.materials )
 		local mean = math.log10( at_passed_count )
 		red_herrings = RandomDistribution( 0, max, mean, 2 )

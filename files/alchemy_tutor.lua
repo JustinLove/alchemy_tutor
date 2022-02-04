@@ -171,6 +171,10 @@ function at_setup()
 	at_setup_grand_alchemy()
 end
 
+function at_first_time( set )
+	return not HasFlagPersistent( "at_formula_" .. set.name )
+end
+
 function at_material( material, default, first )
 	if type( material ) == 'table' then
 		if #material == 0 then

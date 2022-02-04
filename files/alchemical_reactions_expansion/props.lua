@@ -4,7 +4,7 @@ at_bin = {
 	name = "bin",
 	default_material = "wood_player_b2",
 	spawn = function( set, x, y, index )
-		local first = HasFlagPersistent( "at_formula_" .. set.name )
+		local first = at_first_time( set )
 		local contents = at_material( set.cauldron_contents, "air", first )
 		LoadPixelScene(
 			at_are_path .. "/bin.png",
@@ -30,7 +30,7 @@ at_gold_statue = {
 	default_material = "gold_box2d",
 	is_physics = true,
 	spawn = function( set, x, y, index )
-		local first = HasFlagPersistent( "at_formula_" .. set.name )
+		local first = at_first_time( set )
 		LoadPixelScene(
 			at_are_path .. "/table.png",
 			"",
@@ -54,7 +54,7 @@ at_hollow = {
 	name = "hollow",
 	default_material = "bluefungi_static",
 	spawn = function( set, x, y, index )
-		local first = HasFlagPersistent( "at_formula_" .. set.name )
+		local first = at_first_time( set )
 		local contents = at_material( set.cauldron_contents, "air", first )
 		LoadPixelScene(
 			at_are_path .. "/hollow.png",
