@@ -48,4 +48,4 @@ function at_remove_remote_lab_key()
 	end
 end
 
-at_remove_remote_lab_key()
+--at_remove_remote_lab_key()
