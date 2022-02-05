@@ -5,8 +5,8 @@
 	<TeleportComponent
 		target_x_is_absolute_position="1"
 		target_y_is_absolute_position="1"
-		target.x="13000" 
-		target.y="-7000" 
+		target.x="-10240"
+		target.y="17408"
 	></TeleportComponent>
 
 	<HitboxComponent 

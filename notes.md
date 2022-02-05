@@ -12,6 +12,10 @@
   - x regenerate lab
   - x replace return portal
   - remote lab design
+  - align with biome
+  - biome simulation
+    - entrace notice
+    - music?
   - clear on return/use
   - exit sequence
   - key design

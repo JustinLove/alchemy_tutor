@@ -85,7 +85,7 @@ end
 
 function OnWorldInitialized() -- This is called once the game world is initialized. Doesn't ensure any world chunks actually exist. Use OnPlayerSpawned to ensure the chunks around player have been loaded or created.
 
-	if _G['at_test_lab'] then
+	if _G['at_test_lab'] or _G['at_test_portal'] then
 		local world = GameGetWorldStateEntity()
 		local world_state = EntityGetFirstComponent( world, "WorldStateComponent" )
 		ComponentSetValue( world_state, "time", 0 )
@@ -110,7 +110,6 @@ ModLuaFileAppend( "data/scripts/biomes/pyramid.lua", "mods/alchemy_tutor/files/b
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_entrance.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_stub.lua", "mods/alchemy_tutor/files/spawns.lua" )
-ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/biomes/hills.lua" )
 
 ModLuaFileAppend( "data/scripts/item_spawnlists.lua", "mods/alchemy_tutor/files/item_spawnlists.lua" )

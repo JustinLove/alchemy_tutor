@@ -12,25 +12,51 @@ local function remember_return_location( teleport_back_x, teleport_back_y )
 	GlobalsSetValue( "AT_TELEPORT_REMOTE_LAB_POS_Y", tostring( teleport_back_y ) )
 end
 
-local function create_return_portal( x, y )
-	remove_portal( x, y )
-	local portal = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_return.xml", x, y )
-
-	local teleport_comp = EntityGetFirstComponentIncludingDisabled( portal, "TeleportComponent" )
-
-	local teleport_back_x = 0
-	local teleport_back_y = 0
-
-	-- get the defaults from teleport_comp(s)
-	if( teleport_comp ~= nil ) then
-		teleport_back_x, teleport_back_y = ComponentGetValue2( teleport_comp, "target" )
-		--print( "teleport std pos:" .. teleport_back_x .. ", " .. teleport_back_y )
-
-		teleport_back_x = tonumber( GlobalsGetValue( "AT_TELEPORT_REMOTE_LAB_POS_X", teleport_back_x ) )
-		teleport_back_y = tonumber( GlobalsGetValue( "AT_TELEPORT_REMOTE_LAB_POS_Y", teleport_back_y ) )
-
-		ComponentSetValue2( teleport_comp, "target", teleport_back_x, teleport_back_y )
+local function clean_lab( pos_x, pos_y, entity_id )
+	local entities = EntityGetInRadius( pos_x, pos_y, 520, "at_remote_lab_portal" )
+	for i = 1,#entities do
+		local id = entities[i]
+		if id ~= entity_id and not EntityHasTag( id, "player_unit" ) then
+			-- potion spill
+			local inv = EntityGetComponentIncludingDisabled( id, "MaterialInventoryComponent" )
+			if inv then
+				for m = 1,#inv do
+					ComponentSetValue2( inv[m], "on_death_spill", false )
+				end
+			end
+			-- glass shards
+			local scripts = EntityGetComponent( id, "LuaComponent" )
+			if scripts then
+				for s = 1,#scripts do
+					EntityRemoveComponent( id, scripts[s] )
+				end
+			end
+			-- collion sound seems to activate on death
+			local audios = EntityGetComponent( id, "AudioComponent" )
+			if audios then
+				for a = 1,#audios do
+					EntityRemoveComponent( id, audios[a] )
+				end
+			end
+			EntityKill( id )
+		end
 	end
+end
+
+local function spawn_lab( x, y )
+	print( DebugBiomeMapGetFilename() )
+	local width, height = 512, 512
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/biome_impl/remote_lab.png",
+		"", -- visual
+		x, y,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
 end
 
 function portal_teleport_used( entity_teleported, from_x, from_y, to_x, to_y )
@@ -45,8 +71,7 @@ function portal_teleport_used( entity_teleported, from_x, from_y, to_x, to_y )
 
 		EntitySetTransform( entity_teleported, to_x, to_y )
 
-	  EntityLoad( "mods/alchemy_tutor/files/entities/spawn_lab.xml", to_x, to_y )
-
-		create_return_portal( to_x + 50, to_y )
+		clean_lab( to_x, to_y, entity_teleported )
+		spawn_lab( to_x, to_y )
 	end
 end
