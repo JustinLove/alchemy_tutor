@@ -48,6 +48,3 @@ end
 
 at_spawn_lab( pos_x, pos_y )
 at_reset_player( pos_x, pos_y )
-
---print("---------------------------------Spawn Lab")
---EntityLoad( "mods/alchemy_tutor/files/entities/clear_entities.xml", pos_x, pos_y )

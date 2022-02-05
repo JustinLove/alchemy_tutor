@@ -6,10 +6,11 @@
   - x simplify formula first time?
   - x update count
   - x setting option
+  - herrings that can vs. can't react
 - remote biomes
   - x spawn key
-  - regenerate lab
-  - replace return portal
+  - x regenerate lab
+  - x replace return portal
   - remote lab design
   - clear on return/use
   - exit sequence
