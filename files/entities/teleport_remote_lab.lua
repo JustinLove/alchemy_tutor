@@ -71,7 +71,7 @@ function portal_teleport_used( entity_teleported, from_x, from_y, to_x, to_y )
 
 		EntitySetTransform( entity_teleported, to_x, to_y )
 
-		clean_lab( to_x + 256, to_yl + 256, entity_teleported )
+		clean_lab( to_x + 256, to_y + 256, entity_teleported )
 		spawn_lab( to_x, to_y )
 	end
 end
