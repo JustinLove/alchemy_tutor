@@ -11,6 +11,8 @@
   - x spawn key
   - x regenerate lab
   - x replace return portal
+  - teleport stuck on first site
+  - portals stacking
   - remote lab design
   - align with biome
   - biome simulation
