@@ -5,7 +5,7 @@ end
 --at_lab_chance = 9999999
 
 local at_key_chance = math.floor(math.sqrt(at_lab_chance) * 10)
-local at_remote_lab_key = "mods/alchemy_tutor/files/entities/remote_lab_key.xml"
+local at_remote_lab_key = "mods/alchemy_tutor/files/entities/remote_lab_meditation.xml"
 if spawnlists then
 	for k,list in pairs(spawnlists) do
 		local chance = at_key_chance
@@ -35,7 +35,6 @@ function at_remove_remote_lab_key()
 		for i = 1,#spawns do
 			if spawns[i].load_entity == at_remote_lab_key then
 				for k = 1,i-1 do
-					print( 'fixing', k )
 					local item = spawns[k]
 					item.value_min = item.value_min - chance
 					item.value_max = item.value_max - chance
