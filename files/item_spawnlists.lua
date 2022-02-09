@@ -16,7 +16,7 @@ if spawnlists then
 			value_min = list.rnd_max + 1,
 			value_max = list.rnd_max + chance,
 			load_entity = at_remote_lab_key,
-			offset_y = -2,
+			offset_y = -5,
 		})
 		list.rnd_max = list.rnd_max + chance
 	end

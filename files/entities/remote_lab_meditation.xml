@@ -112,9 +112,9 @@
 
   <SpriteComponent 
     _enabled="1"
-    image_file="mods/alchemy_tutor/files/entities/meditation.png" 
+    image_file="mods/alchemy_tutor/files/entities/meditation_marker.png" 
     offset_x="8"
-    offset_y="11"
+    offset_y="8"
     z_index="1"
     >
   </SpriteComponent>
@@ -153,6 +153,7 @@
   <!-- anticipation FX -->
   <ParticleEmitterComponent 
     _tags="enabled_by_meditation_early"
+    _enabled="0"
     emitted_material_name="spark_purple"
     gravity.y="0.0"
     lifetime_min="3"
@@ -182,6 +183,7 @@
 
   <ParticleEmitterComponent 
     _tags="enabled_by_meditation_early"
+    _enabled="0"
     emitted_material_name="spark_purple"
     gravity.y="0.0"
     lifetime_min="3"
@@ -211,6 +213,7 @@
 
   <AudioLoopComponent
     _tags="enabled_by_meditation_early"
+    _enabled="0"
     file="data/audio/Desktop/misc.snd"
     event_name="misc/teleport_loop"
     calculate_material_lowpass="0"
@@ -220,6 +223,7 @@
 
   <AudioLoopComponent
     _tags="enabled_by_meditation_early"
+    _enabled="0"
     file="data/audio/Desktop/misc.snd"
     event_name="misc/teleport_emitter_loop"
     calculate_material_lowpass="0"

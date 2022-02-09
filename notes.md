@@ -11,6 +11,9 @@
   - x spawn key
   - x regenerate lab
   - x replace return portal
+  - key design
+    - no sprite version for altars
+    - cauldron symbol?
   - remote lab design
     - powder mixing space
   - biome simulation
@@ -18,7 +21,6 @@
     - music?
   - clear on return/use
   - exit sequence
-  - key design
 - multi-step challenges?
 - grand alchemy labs
 
