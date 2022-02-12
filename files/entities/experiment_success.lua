@@ -23,7 +23,7 @@ function material_area_checker_success( pos_x, pos_y )
 					local key = "at_formula_" .. formula
 					if not HasFlagPersistent( key ) then
 						AddFlagPersistent( key )
-						local at_passed_count = tonumber( GlobalsGetValue( "at_passed_count" ) )
+						local at_passed_count = tonumber( GlobalsGetValue( "at_passed_count", 0 ) )
 						GlobalsSetValue( "at_passed_count", tostring(at_passed_count + 1) )
 					end
 				end

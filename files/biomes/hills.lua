@@ -1,6 +1,8 @@
 dofile_once("mods/alchemy_tutor/files/spawns.lua")
+dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 
 RegisterSpawnFunction( 0xff03DEAD, "spawn_areachecks" )
+RegisterSpawnFunction( 0xff03deaf, "spawn_fish" )
 RegisterSpawnFunction( 0xffa9d024, "spawn_return_portal" )
 RegisterSpawnFunction( 0xffc128ff, "spawn_rubble" )
 RegisterSpawnFunction( 0xffa7a707, "spawn_lamp_long" )
@@ -145,7 +147,25 @@ function spawn_return_portal( x, y )
 end
 
 function spawn_areachecks( x, y )
+	GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
+	--GameTriggerMusicEvent( "music/temple/enter", true, pos_x, pos_y )
+	GamePlaySound("data/audio/Desktop/event_cues.bank", "event_cues/new_biome/create", x, y)
+
+	GamePrintImportant( GameTextGet( "$log_entered", tostring( "Hall of Masters" ) ), "" )
+end
+
+function spawn_fish(x, y)
+	--EntityLoad( "data/entities/buildings/music_trigger_temple.xml", x, y )
+
+	local f = tonumber( GlobalsGetValue( "at_passed_count", 0 ) )
+
+	for i=1,f do
+		local id = EntityLoad( "data/entities/animals/fish.xml", x, y )
+	end
 end
 
 function spawn_unique_enemy2()
+end
+
+function spawn_shopitem( x, y )
 end

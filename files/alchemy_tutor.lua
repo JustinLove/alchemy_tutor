@@ -70,7 +70,7 @@ function at_pick_lab_set( x, y )
 	if _G['at_test_formula'] then
 		return at_formulas[at_test_formula]
 	end
-	at_passed_count = tonumber( GlobalsGetValue( "at_passed_count" ) )
+	at_passed_count = tonumber( GlobalsGetValue( "at_passed_count", 0 ) )
 	SetRandomSeed( x, y )
 	local grand = {}
 	local in_grade = {}
