@@ -17,7 +17,8 @@
   - key design
     - no sprite version for altars
     - cauldron symbol?
-    - shimmer
+    - x shimmer
+    - spawn rates
   - remote lab design
     - powder mixing space
   - biome simulation
