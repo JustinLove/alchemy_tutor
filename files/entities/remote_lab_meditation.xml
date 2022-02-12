@@ -1,6 +1,7 @@
 <Entity tags="at_remote_lab_portal">
   <!-- teleport logic -->
 
+  <!-- -20,24; ~ 15,48 on biome map -->
   <TeleportComponent
     _tags="enabled_by_meditation"
     _enabled="0"
@@ -218,7 +219,7 @@
     event_name="misc/teleport_loop"
     calculate_material_lowpass="0"
     play_on_component_enable="1"
-    auto_play="1" >
+    auto_play="0" >
   </AudioLoopComponent>
 
   <AudioLoopComponent
@@ -228,7 +229,7 @@
     event_name="misc/teleport_emitter_loop"
     calculate_material_lowpass="0"
     play_on_component_enable="1"
-    auto_play="1" >
+    auto_play="0" >
   </AudioLoopComponent>
 
   <LightComponent 

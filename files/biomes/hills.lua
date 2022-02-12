@@ -138,15 +138,13 @@ function spawn_return_portal( x, y )
 		teleport_back_x = tonumber( GlobalsGetValue( "AT_TELEPORT_REMOTE_LAB_POS_X", teleport_back_x ) )
 		teleport_back_y = tonumber( GlobalsGetValue( "AT_TELEPORT_REMOTE_LAB_POS_Y", teleport_back_y ) )
 
+		--print( "teleport stored pos:" .. teleport_back_x .. ", " .. teleport_back_y )
+
 		ComponentSetValue2( teleport_comp, "target", teleport_back_x, teleport_back_y )
 	end
 end
 
 function spawn_areachecks( x, y )
-	local players = EntityGetWithTag( "player_unit" )
-	for _,player_id in ipairs(players) do
-		EntitySetTransform( player_id, x, y )
-	end
 end
 
 function spawn_unique_enemy2()
