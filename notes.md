@@ -7,6 +7,9 @@
   - x update count
   - x setting option
   - herrings that can vs. can't react
+- concentrated mana/wizardbrik didn't activate
+- lava/pure explosion?
+- alchemy spawn log
 - remote biomes
   - x spawn key
   - x regenerate lab
@@ -14,6 +17,7 @@
   - key design
     - no sprite version for altars
     - cauldron symbol?
+    - shimmer
   - remote lab design
     - powder mixing space
   - biome simulation

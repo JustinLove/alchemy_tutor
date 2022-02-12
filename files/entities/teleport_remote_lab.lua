@@ -13,7 +13,7 @@ local function remember_return_location( teleport_back_x, teleport_back_y )
 end
 
 local function clean_lab( pos_x, pos_y, entity_id )
-	local entities = EntityGetInRadius( pos_x, pos_y, 520, "at_remote_lab_portal" )
+	local entities = EntityGetInRadius( pos_x, pos_y, 520 )
 	for i = 1,#entities do
 		local id = entities[i]
 		if id ~= entity_id and not EntityHasTag( id, "player_unit" ) then
@@ -31,7 +31,7 @@ local function clean_lab( pos_x, pos_y, entity_id )
 					EntityRemoveComponent( id, scripts[s] )
 				end
 			end
-			-- collion sound seems to activate on death
+			-- collision sound seems to activate on death
 			local audios = EntityGetComponent( id, "AudioComponent" )
 			if audios then
 				for a = 1,#audios do
@@ -68,11 +68,11 @@ function portal_teleport_used( entity_teleported, from_x, from_y, to_x, to_y )
 		local iteration = tonumber( GlobalsGetValue( "AT_REMOTE_LAB_COUNT", "0" ) )
 		GlobalsSetValue( "AT_REMOTE_LAB_COUNT", tostring( iteration+1 ) )
 
-		to_y = to_y + iteration
+		to_y = to_y + ( iteration * 1024 )
 
 		EntitySetTransform( entity_teleported, to_x, to_y )
 
-		clean_lab( to_x + 256, to_y + 256, entity_teleported )
+		--clean_lab( to_x + 256, to_y + 256, entity_teleported )
 		spawn_lab( to_x, to_y )
 	end
 end
