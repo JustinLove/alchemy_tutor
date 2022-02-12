@@ -352,7 +352,7 @@ at_formula_list_append({
 		cauldron_contents = {
 			"water_ice",
 			"water_ice",
-			"worm_blood",
+			"blood_worm",
 			"air",
 			"air",
 		},
