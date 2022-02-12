@@ -61,13 +61,14 @@ end
 
 function portal_teleport_used( entity_teleported, from_x, from_y, to_x, to_y )
 	if( IsPlayer( entity_teleported ) ) then
-		remove_portal( from_x, from_y )
+		--remove_portal( from_x, from_y )
 		EntityLoad("mods/alchemy_tutor/files/entities/meditation_altar_effect.xml", from_x, from_y-8)
 		remember_return_location( from_x, from_y )
 
 		local iteration = tonumber( GlobalsGetValue( "AT_REMOTE_LAB_COUNT", "0" ) )
 		GlobalsSetValue( "AT_REMOTE_LAB_COUNT", tostring( iteration+1 ) )
 
+		to_x = to_x + ( ( iteration % 6 ) * 512 )
 		to_y = to_y + ( iteration * 1024 )
 
 		EntitySetTransform( entity_teleported, to_x, to_y )

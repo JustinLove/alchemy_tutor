@@ -2,6 +2,7 @@
 
 	<!-- teleport logic -->
 
+  <!-- -20,24; ~ 15,48 on biome map -->
 	<TeleportComponent
 		target_x_is_absolute_position="1"
 		target_y_is_absolute_position="1"
