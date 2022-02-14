@@ -104,12 +104,13 @@ function at_decorate_scene( x, y )
 		EntityLoad( "mods/alchemy_tutor/files/entities/reward_marker.xml", loc.x + 1, loc.y - 6 )
 	end
 
+	at_log_book( x, y )
+
 	at_scene_cauldron = nil
 	at_materials = {}
 	at_cauldrons = {}
 	at_other = {}
 	at_reward = {}
-	at_log_reset()
 end
 
 function at_look_here( x, y )

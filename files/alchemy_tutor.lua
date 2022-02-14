@@ -439,6 +439,21 @@ function at_log_reset()
 	at_spawn_logs = {}
 end
 
+function at_log_book( x, y )
+	if not at_keep_logs then
+		return
+	end
+
+	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/log_book.xml", x, y )
+
+	local item = EntityGetFirstComponent( entity, "ItemComponent" )
+	if item then
+		ComponentSetValue2( item, "ui_description", table.concat( at_spawn_logs, "\n" ) )
+	end
+
+	at_log_reset()
+end
+
 dofile_once(at_mod_path .. "/props.lua")
 
 --at_default_cauldron = at_suspended_container
