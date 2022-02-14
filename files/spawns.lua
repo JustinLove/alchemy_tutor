@@ -63,7 +63,7 @@ function at_decorate_scene( x, y )
 		if what ~= nil then
 			in_cauldron[what] = true
 			present_materials[what] = true
-			--print( "cauldron " .. what )
+			at_log( 'cauldron', what, loc.x, loc.y )
 		end
 	end
 
@@ -77,7 +77,7 @@ function at_decorate_scene( x, y )
 				at_container( what, set.amounts[i] or 1.0, loc.x, loc.y )
 			end
 			present_materials[what] = true
-			--print( "formula " .. what )
+			at_log( 'material', what, loc.x, loc.y )
 		end
 	end
 
@@ -89,7 +89,7 @@ function at_decorate_scene( x, y )
 			if entity ~= nil then
 				what = CellFactory_GetName(GetMaterialInventoryMainMaterial( entity ))
 				present_materials[what] = true
-				--print( "red " .. what )
+				at_log( 'red', what, loc.x, loc.y )
 			end
 		end
 	end
@@ -109,6 +109,7 @@ function at_decorate_scene( x, y )
 	at_cauldrons = {}
 	at_other = {}
 	at_reward = {}
+	at_log_reset()
 end
 
 function at_look_here( x, y )

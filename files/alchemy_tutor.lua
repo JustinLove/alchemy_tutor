@@ -68,6 +68,7 @@ function at_pick_lab_set( x, y )
 		at_setup()
 	end
 	if _G['at_test_formula'] then
+		at_log( 'test formula', at_test_formula )
 		return at_formulas[at_test_formula]
 	end
 	at_passed_count = tonumber( GlobalsGetValue( "at_passed_count", 0 ) )
@@ -89,8 +90,10 @@ function at_pick_lab_set( x, y )
 	if #in_grade < 1 then
 		in_grade = at_formula_list
 	end
+	at_log( 'in grade', #in_grade, 'grand', #grand )
 	if Random(0, #grand + 5) < #grand then
 		local i = Random(1, #grand)
+		at_log( 'selection by grand', i, grand[i].name )
 		return grand[i]
 	else
 		local i
@@ -98,8 +101,10 @@ function at_pick_lab_set( x, y )
 			local d = math.sqrt(x*x + y*y)
 			local target = math.floor(#in_grade * (d/12000))
 			i = RandomDistribution(1, #in_grade, target)
+			at_log( 'selection by distanace', i, in_grade[i].name )
 		else
 			i = Random(1, #in_grade)
+			at_log( 'selection by random', i, in_grade[i].name )
 		end
 		return in_grade[i]
 	end
@@ -418,6 +423,20 @@ end
 function at_print_table( t )
 	dofile_once( "data/scripts/lib/utilities.lua" )
 	debug_print_table( t )
+end
+
+at_spawn_logs = {}
+local at_keep_logs = ModIsEnabled('EnableLogger')
+
+function at_log( ... )
+	if at_keep_logs then
+		print( ... )
+		table.insert( at_spawn_logs, table.concat( {...}, ' ' ) )
+	end
+end
+
+function at_log_reset()
+	at_spawn_logs = {}
 end
 
 dofile_once(at_mod_path .. "/props.lua")
