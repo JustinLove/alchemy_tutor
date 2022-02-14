@@ -8,7 +8,6 @@
   - x setting option
   - herrings that can vs. can't react
 - concentrated mana/wizardbrik didn't activate
-- alchemy spawn log
 - remote biomes
   - x spawn key
   - x regenerate lab

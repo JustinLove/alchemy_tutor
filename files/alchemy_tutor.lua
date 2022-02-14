@@ -91,7 +91,8 @@ function at_pick_lab_set( x, y )
 		in_grade = at_formula_list
 	end
 	at_log( 'in grade', #in_grade, 'grand', #grand )
-	if Random(0, #grand + 5) < #grand then
+	local grand_chance = math.min( #grand, 5 )
+	if Random(0, 10) < grand_chance then
 		local i = Random(1, #grand)
 		at_log( 'selection by grand', i, grand[i].name )
 		return grand[i]
