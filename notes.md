@@ -8,12 +8,12 @@
   - x setting option
   - herrings that can vs. can't react
 - concentrated mana/wizardbrik didn't activate
-- lava/pure explosion?
 - alchemy spawn log
 - remote biomes
   - x spawn key
   - x regenerate lab
   - x replace return portal
+  - position based seeds?
   - key design
     - no sprite version for altars
     - cauldron symbol?

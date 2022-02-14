@@ -418,7 +418,7 @@ at_formula_list = {
 		},
 		cauldron_contents = "lava",
 		cauldron_material = "templebrick_static",
-		output = "air",
+		check_for = at_explosion,
 		rating = 10,
 	},
 	{
