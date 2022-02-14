@@ -427,12 +427,14 @@ function at_print_table( t )
 end
 
 at_spawn_logs = {}
-local at_keep_logs = ModIsEnabled('EnableLogger')
+local at_print_logs = ModIsEnabled('EnableLogger')
 
 function at_log( ... )
-	if at_keep_logs then
+	if at_print_logs then
 		print( ... )
-		table.insert( at_spawn_logs, table.concat( {...}, ' ' ) )
+		if ModSettingGet("alchemy_tutor.spawn_log_book") then
+			table.insert( at_spawn_logs, table.concat( {...}, ' ' ) )
+		end
 	end
 end
 
@@ -441,7 +443,7 @@ function at_log_reset()
 end
 
 function at_log_book( x, y )
-	if not at_keep_logs then
+	if #at_spawn_logs < 1 then
 		return
 	end
 

@@ -58,6 +58,16 @@ mod_settings =
 	},
 }
 
+if ModIsEnabled('EnableLogger') then
+	table.insert( mod_settings, {
+		id = "spawn_log_book",
+		ui_name = "Spawn Log Book",
+		ui_description = "Spawn a book with debug log of lab setup.",
+		value_default = false,
+		scope = MOD_SETTING_SCOPE_RUNTIME,
+	})
+end
+
 -- This function is called to ensure the correct setting values are visible to the game via ModSettingGet(). your mod's settings don't work if you don't have a function like this defined in settings.lua.
 -- This function is called:
 --		- when entering the mod settings menu (init_scope will be MOD_SETTINGS_SCOPE_ONLY_SET_DEFAULT)

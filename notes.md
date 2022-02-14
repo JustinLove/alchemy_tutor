@@ -1,22 +1,8 @@
-- progression tracking
-  - x set flags
-  - x reduced herrings on first time
-  - x varied herrings with total
-  - x restricted rating by total
-  - x simplify formula first time?
-  - x update count
-  - x setting option
-  - herrings that can vs. can't react
-- concentrated mana/wizardbrik didn't activate
 - remote biomes
-  - x spawn key
-  - x regenerate lab
-  - x replace return portal
   - position based seeds?
   - key design
     - no sprite version for altars
     - cauldron symbol?
-    - x shimmer
     - spawn rates
   - remote lab design
     - powder mixing space
@@ -26,6 +12,7 @@
   - clear on return/use
   - exit sequence
 - multi-step challenges?
+- progression tracking - herrings that can vs. can't react
 - grand alchemy labs
 
 - solids in cauldron - whether to remove cauldron material/ which formula???
@@ -51,6 +38,7 @@
   - crypt v, polymorphine and toxic, maybe slime
   - suspended container tele+mana, self solved
   - brass + unstable tele burned
+  - concentrated mana/wizardbrik didn't activate
 
 - x toxic + water
 - x mana + water
