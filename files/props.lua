@@ -1,7 +1,7 @@
 local at_mod_path = "mods/alchemy_tutor/files"
 
 at_cauldron = {
-	name = "cauldron",
+	name = "at_cauldron",
 	default_material = "templebrick_static",
 	spawn = function( set, x, y, index )
 		local first = at_first_time( set )
@@ -26,7 +26,7 @@ at_cauldron = {
 }
 
 at_steel_pit = {
-	name = "steel pit",
+	name = "at_steel_pit",
 	default_material = "steel_static_unmeltable",
 	spawn = function( set, x, y, index )
 		local first = at_first_time( set )
@@ -50,7 +50,7 @@ at_steel_pit = {
 }
 
 at_brick_pit = {
-	name = "brick pit",
+	name = "at_brick_pit",
 	default_material = "templebrick_static",
 	spawn = function( set, x, y, index )
 		local first = at_first_time( set )
@@ -74,7 +74,7 @@ at_brick_pit = {
 }
 
 at_fungus = {
-	name = "fungus",
+	name = "at_fungus",
 	default_material = "wood_player_b2",
 	spawn = function( set, x, y, index )
 		local first = at_first_time( set )
@@ -99,7 +99,7 @@ at_fungus = {
 }
 
 at_suspended_container = {
-	name = "suspended container",
+	name = "at_suspended_container",
 	default_material = "steel",
 	is_physics = true,
 	spawn = function( set, x, y, index )
@@ -121,7 +121,7 @@ at_suspended_container = {
 }
 
 at_electrode = {
-	name = "electrode",
+	name = "at_electrode",
 	default_material = "steel_static",
 	spawn = function( set, x, y, index )
 		local first = at_first_time( set )
@@ -164,7 +164,7 @@ function at_spawn_block( set, x, y, index, file )
 end
 
 at_block_brick = {
-	name = "block brick",
+	name = "at_block_brick",
 	default_material = "wizardstone",
 	spawn = function( set, x, y, index )
 		return at_spawn_block( set, x, y, index, at_mod_path .. "/props/block_brick.png" )
@@ -172,7 +172,7 @@ at_block_brick = {
 }
 
 at_block_rock = {
-	name = "block rock",
+	name = "at_block_rock",
 	default_material = "wizardstone",
 	spawn = function( set, x, y, index )
 		return at_spawn_block( set, x, y, index, at_mod_path .. "/props/block_rock.png" )
@@ -180,7 +180,7 @@ at_block_rock = {
 }
 
 at_block_steel = {
-	name = "block steel",
+	name = "at_block_steel",
 	default_material = "wizardstone",
 	spawn = function( set, x, y, index )
 		return at_spawn_block( set, x, y, index, at_mod_path .. "/props/block_steel.png" )

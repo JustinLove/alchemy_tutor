@@ -1,7 +1,7 @@
 local at_are_path = "mods/alchemy_tutor/files/alchemical_reactions_expansion"
 
 at_bin = {
-	name = "bin",
+	name = "at_bin",
 	default_material = "wood_player_b2",
 	spawn = function( set, x, y, index )
 		local first = at_first_time( set )
@@ -26,7 +26,7 @@ at_bin = {
 }
 
 at_gold_statue = {
-	name = "gold_statue",
+	name = "at_gold_statue",
 	default_material = "gold_box2d",
 	is_physics = true,
 	spawn = function( set, x, y, index )
@@ -51,7 +51,7 @@ at_gold_statue = {
 }
 
 at_hollow = {
-	name = "hollow",
+	name = "at_hollow",
 	default_material = "bluefungi_static",
 	spawn = function( set, x, y, index )
 		local first = at_first_time( set )

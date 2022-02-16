@@ -457,6 +457,93 @@ function at_log_book( x, y )
 	at_log_reset()
 end
 
+function at_decorate_scene( x, y, scene_description )
+	local scene_cauldron = scene_description.sc and _G[scene_description.sc]
+	local materials = scene_description.m
+	local cauldrons = scene_description.c
+	local other = scene_description.o
+	local reward = scene_description.r
+
+	local set = at_pick_lab_set( x, y )
+	SetRandomSeed( x, y )
+
+	shuffleTable( materials )
+	shuffleTable( cauldrons )
+	shuffleTable( other )
+	shuffleTable( reward )
+
+	local loc
+	local red_herrings = 0
+	local first = at_first_time( set )
+	if not first then
+		local max = #materials-#set.materials
+		local mean = 1
+		if ModSettingGet("alchemy_tutor.formula_progression") then
+			max = math.min( at_passed_count, max )
+			mean = math.log10( at_passed_count )
+		end
+		red_herrings = RandomDistribution( 0, max, mean, 2 )
+	end
+	local in_cauldron = {}
+	local present_materials = {}
+	local what
+
+	local cauldron = set.cauldron or scene_cauldron or at_default_cauldron
+	if cauldron.is_physics and set.cauldron_material and set.cauldron_material ~= cauldron.default_material then
+		cauldron = at_cauldron
+	elseif cauldron.default_material == "steel" and set.cauldron_material == "templebrick_static" then
+		cauldron = at_cauldron
+	end
+	for i,loc in ipairs( cauldrons ) do
+		what = cauldron.spawn( set, loc.x, loc.y, i )
+		if what ~= nil then
+			in_cauldron[what] = true
+			present_materials[what] = true
+			at_log( 'cauldron', what, loc.x, loc.y )
+		end
+	end
+
+	for i,mat in ipairs( set.materials ) do
+		what = at_material( mat, 'potion_empty', first )
+		loc = table.remove( materials )
+		if loc then
+			if in_cauldron[what] then
+				at_container( what, 0.0, loc.x, loc.y )
+			else
+				at_container( what, set.amounts[i] or 1.0, loc.x, loc.y )
+			end
+			present_materials[what] = true
+			at_log( 'material', what, loc.x, loc.y )
+		end
+	end
+
+	local entity
+	for i = 1, red_herrings do
+		loc = table.remove( materials )
+		if loc then
+			entity = at_red_herring( loc.x, loc.y, present_materials )
+			if entity ~= nil then
+				what = CellFactory_GetName(GetMaterialInventoryMainMaterial( entity ))
+				present_materials[what] = true
+				at_log( 'red', what, loc.x, loc.y )
+			end
+		end
+	end
+
+	loc = table.remove( other )
+	if loc and set.other then
+		set.other( loc.x, loc.y )
+	end
+
+	loc = table.remove( reward )
+	if loc and not set.hide_reward then
+		EntityLoad( "mods/alchemy_tutor/files/entities/reward_marker.xml", loc.x + 1, loc.y - 6 )
+	end
+
+	at_log_book( x, y )
+end
+
+
 dofile_once(at_mod_path .. "/props.lua")
 
 --at_default_cauldron = at_suspended_container

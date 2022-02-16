@@ -3,6 +3,7 @@ if at_remove_remote_lab_key then
 end
 
 dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
+dofile_once("mods/alchemy_tutor/files/smallfolk.lua")
 
 RegisterSpawnFunction( 0xfff1a545, "at_spawn_material")
 RegisterSpawnFunction( 0xff528003, "at_spawn_shroom")
@@ -14,7 +15,7 @@ RegisterSpawnFunction( 0xffca1d80, "at_spawn_cauldron")
 RegisterSpawnFunction( 0xff2e3a2d, "at_spawn_reward")
 RegisterSpawnFunction( 0xff057ee1, "at_spawn_steel_pit")
 RegisterSpawnFunction( 0xff0691c4, "at_spawn_brick_pit")
-RegisterSpawnFunction( 0xff5ce4e5, "at_decorate_scene")
+RegisterSpawnFunction( 0xff5ce4e5, "at_spawn_scene")
 RegisterSpawnFunction( 0xff91a4e2, "at_look_here")
 
 at_lab_chance = ModSettingGet("alchemy_tutor.lab_chance")
@@ -29,82 +30,23 @@ local at_cauldrons = {}
 local at_other = {}
 local at_reward = {}
 
-function at_decorate_scene( x, y )
-	local set = at_pick_lab_set( x, y )
-	SetRandomSeed( x, y )
-	shuffleTable( at_materials )
-	shuffleTable( at_cauldrons )
-	shuffleTable( at_other )
+function at_spawn_scene( x, y )
+	local cauldron = at_scene_cauldron or at_default_cauldron
+	local text = smallfolk.dumps({
+		sc = cauldron and cauldron.name,
+		m = at_materials,
+		c = at_cauldrons,
+		o = at_other,
+		r = at_reward,
+	})
 
-	local loc
-	local red_herrings = 0
-	local first = at_first_time( set )
-	if not first then
-		local max = #at_materials-#set.materials
-		local mean = 1
-		if ModSettingGet("alchemy_tutor.formula_progression") then
-			max = math.min( at_passed_count, max )
-			mean = math.log10( at_passed_count )
-		end
-		red_herrings = RandomDistribution( 0, max, mean, 2 )
-	end
-	local in_cauldron = {}
-	local present_materials = {}
-	local what
-
-	local cauldron = set.cauldron or at_scene_cauldron or at_default_cauldron
-	if cauldron.is_physics and set.cauldron_material and set.cauldron_material ~= cauldron.default_material then
-		cauldron = at_cauldron
-	elseif cauldron.default_material == "steel" and set.cauldron_material == "templebrick_static" then
-		cauldron = at_cauldron
-	end
-	for i,loc in ipairs( at_cauldrons ) do
-		what = cauldron.spawn( set, loc.x, loc.y, i )
-		if what ~= nil then
-			in_cauldron[what] = true
-			present_materials[what] = true
-			at_log( 'cauldron', what, loc.x, loc.y )
+	local dc = EntityLoad( "mods/alchemy_tutor/files/entities/decorate_scene.xml", x, y )
+	if dc then
+		local var = EntityGetFirstComponent( dc, "VariableStorageComponent" )
+		if var then
+			ComponentSetValue2( var, "value_string", text )
 		end
 	end
-
-	for i,mat in ipairs( set.materials ) do
-		what = at_material( mat, 'potion_empty', first )
-		loc = table.remove( at_materials )
-		if loc then
-			if in_cauldron[what] then
-				at_container( what, 0.0, loc.x, loc.y )
-			else
-				at_container( what, set.amounts[i] or 1.0, loc.x, loc.y )
-			end
-			present_materials[what] = true
-			at_log( 'material', what, loc.x, loc.y )
-		end
-	end
-
-	local entity
-	for i = 1, red_herrings do
-		loc = table.remove( at_materials )
-		if loc then
-			entity = at_red_herring( loc.x, loc.y, present_materials )
-			if entity ~= nil then
-				what = CellFactory_GetName(GetMaterialInventoryMainMaterial( entity ))
-				present_materials[what] = true
-				at_log( 'red', what, loc.x, loc.y )
-			end
-		end
-	end
-
-	loc = table.remove( at_other )
-	if loc and set.other then
-		set.other( loc.x, loc.y )
-	end
-
-	loc = table.remove( at_reward )
-	if loc and not set.hide_reward then
-		EntityLoad( "mods/alchemy_tutor/files/entities/reward_marker.xml", loc.x + 1, loc.y - 6 )
-	end
-
-	at_log_book( x, y )
 
 	at_scene_cauldron = nil
 	at_materials = {}

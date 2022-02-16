@@ -1,4 +1,5 @@
 - remote biomes
+  - breakage problems
   - position based seeds?
   - key design
     - no sprite version for altars

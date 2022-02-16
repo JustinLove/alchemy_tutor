@@ -1,0 +1,19 @@
+<Entity >
+  <LifetimeComponent
+    lifetime="30" >
+  </LifetimeComponent>
+
+  <LuaComponent
+    script_source_file="mods/alchemy_tutor/files/entities/decorate_scene.lua"
+    execute_every_n_frame="-1"
+    execute_on_removed="1"
+    >
+  </LuaComponent>
+
+  <VariableStorageComponent
+    name="set"
+    value_string=""
+    >
+  </VariableStorageComponent>
+</Entity>
+

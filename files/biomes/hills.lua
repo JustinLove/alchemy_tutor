@@ -148,8 +148,10 @@ end
 
 function spawn_areachecks( x, y )
 	GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
-	--GameTriggerMusicEvent( "music/temple/enter", true, pos_x, pos_y )
-	GamePlaySound("data/audio/Desktop/event_cues.bank", "event_cues/new_biome/create", x, y)
+	--GameTriggerMusicEvent( "music/temple/enter", false, x, y )
+	--GameTriggerMusicEvent( "music/mountain/enter", false, x, y )
+	--GamePlaySound( "data/audio/Desktop/music.bank", "music/temple/enter", x, y)
+	GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/new_biome/create", x, y)
 
 	GamePrintImportant( GameTextGet( "$log_entered", tostring( "Hall of Masters" ) ), "" )
 end
