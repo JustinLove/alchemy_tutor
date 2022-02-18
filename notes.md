@@ -40,6 +40,7 @@
   - suspended container tele+mana, self solved
   - brass + unstable tele burned
   - concentrated mana/wizardbrik didn't activate
+  - green fungi did not activate for void1
 
 - x toxic + water
 - x mana + water

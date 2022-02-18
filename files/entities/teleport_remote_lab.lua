@@ -7,41 +7,6 @@ local function remove_portal( from_x, from_y )
 	end
 end
 
-local function spawn_lab( x, y )
-	local width, height = 512, 512
-	LoadPixelScene(
-		"mods/alchemy_tutor/files/biome_impl/remote_lab.png",
-		"", -- visual
-		x, y,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{
-		}, -- color_to_matieral_table
-		50 -- z index
-	)
-end
-
--- -20,24; ~ 15,48 on biome map
-local remote_lab_x = -10240
-local remote_lab_y = 17408
-local entrance_x = 116
-local entrance_y = 77
-local function get_lab_location()
-	local iteration = tonumber( GlobalsGetValue( "AT_REMOTE_LAB_COUNT", "0" ) )
-
-	local x = remote_lab_x + ( ( iteration % 6 ) * 512 )
-	local y = remote_lab_y + ( iteration * 1024 )
-	return x, y
-end
-
-local function get_entrance_location()
-	local x, y = get_lab_location()
-	x = x + entrance_x
-	y = y + entrance_y
-	return x, y
-end
-
 function portal_teleport_used( entity_teleported, from_x, from_y, to_x, to_y )
 	if( IsPlayer( entity_teleported ) ) then
 		remove_portal( from_x, from_y )

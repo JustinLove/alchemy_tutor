@@ -13,9 +13,9 @@ function at_spawn_remote_lab( x, y )
 	)
 end
 
--- -20,24; ~ 15,48 on biome map
-local remote_lab_x = -10240
-local remote_lab_y = 17408
+-- 19,64; ~ 53,79 off bottom of biome map
+local remote_lab_x = 9728
+local remote_lab_y = 32768
 local entrance_x = 116
 local entrance_y = 77
 
