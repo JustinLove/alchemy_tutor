@@ -1,0 +1,7 @@
+<Entity>
+	<LuaComponent
+    script_source_file="mods/alchemy_tutor/files/entities/remote_lab_exit.lua"
+		execute_every_n_frame="20"
+		>
+	</LuaComponent>
+</Entity>

@@ -2,7 +2,9 @@ dofile_once("mods/alchemy_tutor/files/spawns.lua")
 dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 
 RegisterSpawnFunction( 0xff03DEAD, "spawn_areachecks" )
+RegisterSpawnFunction( 0xffff5a0a, "spawn_music_trigger" )
 RegisterSpawnFunction( 0xff03deaf, "spawn_fish" )
+RegisterSpawnFunction( 0xff357320, "spawn_enter_trigger" )
 RegisterSpawnFunction( 0xffa9d024, "spawn_return_portal" )
 RegisterSpawnFunction( 0xffc128ff, "spawn_rubble" )
 RegisterSpawnFunction( 0xffa7a707, "spawn_lamp_long" )
@@ -124,6 +126,10 @@ function spawn_lamp_long(x, y)
 	spawn(g_lamp,x,y,0,15)
 end
 
+function spawn_enter_trigger( x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_enter.xml", x, y )
+end
+
 function spawn_return_portal( x, y )
 	local portal = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_return.xml", x, y )
 
@@ -147,18 +153,13 @@ function spawn_return_portal( x, y )
 end
 
 function spawn_areachecks( x, y )
-	GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
-	--GameTriggerMusicEvent( "music/temple/enter", false, x, y )
-	--GameTriggerMusicEvent( "music/mountain/enter", false, x, y )
-	--GamePlaySound( "data/audio/Desktop/music.bank", "music/temple/enter", x, y)
-	GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/new_biome/create", x, y)
+end
 
-	GamePrintImportant( GameTextGet( "$log_entered", tostring( "Hall of Masters" ) ), "" )
+function spawn_music_trigger( x, y )
+	GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
 end
 
 function spawn_fish(x, y)
-	--EntityLoad( "data/entities/buildings/music_trigger_temple.xml", x, y )
-
 	local f = tonumber( GlobalsGetValue( "at_passed_count", 0 ) )
 
 	for i=1,f do

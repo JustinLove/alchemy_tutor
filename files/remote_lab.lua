@@ -1,9 +1,20 @@
 function at_spawn_remote_lab( x, y )
 	local width, height = 512, 512
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/biome_impl/remote_lab.png",
+		"mods/alchemy_tutor/files/biome_impl/remote_lab_entrance.png",
 		"", -- visual
 		x, y,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/biome_impl/remote_lab_lab.png",
+		"", -- visual
+		x + width, y,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -16,7 +27,7 @@ end
 -- 19,64; ~ 53,79 off bottom of biome map
 local remote_lab_x = 9728
 local remote_lab_y = 32768
-local entrance_x = 116
+local entrance_x = 330
 local entrance_y = 77
 
 function at_get_lab_location()

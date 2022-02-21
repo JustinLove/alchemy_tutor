@@ -369,6 +369,7 @@ at_formula_list = {
 			"magic_liquid_random_polymorph",
 		},
 		output = "silver",
+		check_for = at_majority,
 		rating = 11,
 	},
 	{

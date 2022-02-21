@@ -4,7 +4,6 @@ dofile_once(at_mod_path .. "/grand_alchemy.lua")
 --at_test_player = true
 --at_test_lab = true
 --at_test_formula = 'toxicclean'
---at_test_formula = 'magic_liquid_mana_regeneration'
 --at_test_clear = true
 --at_test_healing = true
 --at_test_portal = true
