@@ -1,3 +1,4 @@
+- double lab spawn - added logging
 - remote biomes
   - breakage problems
   - position based seeds?
@@ -41,6 +42,7 @@
   - brass + unstable tele burned
   - concentrated mana/wizardbrik didn't activate
   - green fungi did not activate for void1
+  - double spawn of mystery fungus on level 1
 
 - x toxic + water
 - x mana + water

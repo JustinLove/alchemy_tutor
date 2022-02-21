@@ -42,6 +42,7 @@ function at_spawn_scene( x, y )
 
 	local dc = EntityLoad( "mods/alchemy_tutor/files/entities/decorate_scene.xml", x, y )
 	if dc then
+		at_log( 'scene pixel', tostring(dc), x, y )
 		local var = EntityGetFirstComponent( dc, "VariableStorageComponent" )
 		if var then
 			ComponentSetValue2( var, "value_string", text )

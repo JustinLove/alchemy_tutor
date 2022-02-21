@@ -458,6 +458,7 @@ function at_log_book( x, y )
 end
 
 function at_decorate_scene( x, y, scene_description )
+	at_log( 'decorate', x, y )
 	local scene_cauldron = scene_description.sc and _G[scene_description.sc]
 	local materials = scene_description.m
 	local cauldrons = scene_description.c
