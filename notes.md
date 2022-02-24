@@ -1,5 +1,6 @@
 - double lab spawn - added logging
 - remote biomes
+  - item spawns break over 50000 down
   - breakage problems
   - position based seeds?
   - key design
@@ -8,6 +9,7 @@
     - spawn rates
   - remote lab design
     - powder mixing space
+    - wood shelves
   - biome simulation
     - entrace notice
     - music?
