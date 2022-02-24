@@ -5,7 +5,7 @@ end
 --at_lab_chance = 9999999
 
 local at_key_chance = math.floor(math.sqrt(at_lab_chance) * 10)
-local at_remote_lab_key = "mods/alchemy_tutor/files/entities/remote_lab_meditation.xml"
+local at_remote_lab_key = "mods/alchemy_tutor/files/entities/remote_lab_chest.xml"
 
 function at_spawn_remote_lab_key( x, y )
 end

@@ -30,9 +30,12 @@ component_readwrite(get_variable_storage_component(entity_id, "meditation_count"
 			EntitySetComponentsWithTagEnabled( entity_id, "enabled_by_meditation_early", true )
 			-- particle ring radius
 			local ring = EntityGetFirstComponent(entity_id, "ParticleEmitterComponent", "enabled_by_meditation_early")
-			local radius = comp.value_int * 15 / max_time
+			local radius = comp.value_int * 10 / max_time
+			local lifetime = comp.value_int * 4 / max_time
 			if ring then
 				ComponentSetValue2(ring, "area_circle_radius", radius, radius)
+				ComponentSetValue2(ring, "lifetime_min", 0 )
+				ComponentSetValue2(ring, "lifetime_max", lifetime )
 			end
 		end
 	else
