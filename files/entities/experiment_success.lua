@@ -65,8 +65,8 @@ function material_area_checker_success( pos_x, pos_y )
 			best_reward = v
 		end
 	end
-	EntityKill( best_reward )
 	local rx,ry = EntityGetTransform( best_reward )
+	EntityKill( best_reward )
 	spawn_reward( rx, ry )
 end
 

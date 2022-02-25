@@ -52,3 +52,57 @@ function at_remember_return_location( teleport_back_x, teleport_back_y )
 	GlobalsSetValue( "AT_TELEPORT_REMOTE_LAB_POS_Y", tostring( teleport_back_y ) )
 end
 
+function at_stop_music( x, y )
+	GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
+end
+
+function at_collapse_lab( x, y )
+	at_cleanup_actors( x, y )
+
+	GamePrintImportant( "Exit" )
+
+	EntityLoad("data/entities/misc/workshop_collapse.xml", x, y )
+
+	GameTriggerMusicFadeOutAndDequeueAll( 2.0 )
+	GamePlaySound( "data/audio/Desktop/misc.bank", "misc/temple_collapse", x, y )
+end
+
+function at_cleanup_backstage( x, y )
+	local backstage = EntityGetInRadiusWithTag( x, y, 400, "at_backstage" )
+	print('cleanup backstage #', tostring(x), tostring(y), #backstage )
+	for i,v in ipairs( backstage ) do
+		print('cleanup backstage', tostring(v))
+		EntityKill( v )
+	end
+end
+
+function at_cleanup_actors( x, y )
+	local cauldrons = EntityGetInRadiusWithTag( x, y, 200, "cauldron_checker" )
+
+	for i,v in ipairs( cauldrons ) do
+		if EntityGetFirstComponent( v, "PhysicsBody2Component" ) or EntityGetFirstComponent( v, "PhysicsBodyComponent" ) then
+			local mat = EntityGetFirstComponent( v, "MaterialAreaCheckerComponent" )
+			if mat then
+				EntityRemoveComponent( v, mat )
+			end
+
+			local dam = EntityGetFirstComponent( v, "DamageModelComponent" )
+			if dam then
+				EntityRemoveComponent( v, dam )
+			end
+		else
+			EntityKill( v )
+		end
+	end
+
+	local rewards = EntityGetInRadiusWithTag( x, y, 500, "at_reward" )
+	for i,v in ipairs( rewards ) do
+		EntityKill( v )
+	end
+end
+
+function at_remote_lab_exit( x, y )
+	print('at_remote_lab_exit')
+	at_cleanup_backstage( x, y )
+	--at_stop_music( x, y )
+end

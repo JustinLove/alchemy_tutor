@@ -1,21 +1,15 @@
 <Entity tags="at_backstage">
-  <CollisionTriggerComponent
-    width="300"
-    height="240"
-    radius="150"
-    destroy_this_entity_when_triggered="1"
-    required_tag="player_unit" >
-  </CollisionTriggerComponent>
-
   <LuaComponent
-    script_collision_trigger_hit="mods/alchemy_tutor/files/entities/remote_lab_enter.lua"
-    execute_every_n_frame="-1" >
+    script_source_file="mods/alchemy_tutor/files/entities/remote_lab_demolition.lua"
+    execute_every_n_frame="-1"
+    execute_on_removed="1"
+    >
   </LuaComponent>
 
-  <ParticleEmitterComponent
+  <ParticleEmitterComponent 
     _tags="enabled_by_script"
     _enabled="0"
-    emitted_material_name="spark_green"
+    emitted_material_name="spark_red"
     gravity.y="0.0"
     lifetime_min="3"
     lifetime_max="4"
@@ -23,12 +17,8 @@
     x_vel_max="0"
     y_vel_min="0"
     y_vel_max="0"
-    x_pos_offset_min="-150"
-    x_pos_offset_max="150"
-    y_pos_offset_min="-120"
-    y_pos_offset_max="120"
-    count_min="115"
-    count_max="115"
+    count_min="5"
+    count_max="5"
     render_on_grid="1"
     fade_based_on_lifetime="0"
     area_circle_radius.min="0"
@@ -41,9 +31,8 @@
     emission_interval_min_frames="12"
     emission_interval_max_frames="12"
     emit_cosmetic_particles="1"
-    velocity_always_away_from_center="0"
+    velocity_always_away_from_center="1"
     render_back="1"
     is_emitting="1" >
   </ParticleEmitterComponent>
 </Entity>
-

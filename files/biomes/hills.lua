@@ -5,6 +5,7 @@ RegisterSpawnFunction( 0xff03DEAD, "spawn_areachecks" )
 RegisterSpawnFunction( 0xffff5a0a, "spawn_music_trigger" )
 RegisterSpawnFunction( 0xff03deaf, "spawn_fish" )
 RegisterSpawnFunction( 0xff357320, "spawn_enter_trigger" )
+RegisterSpawnFunction( 0xffd35720, "spawn_demolition" )
 RegisterSpawnFunction( 0xffa9d024, "spawn_return_portal" )
 RegisterSpawnFunction( 0xffc128ff, "spawn_rubble" )
 RegisterSpawnFunction( 0xffa7a707, "spawn_lamp_long" )
@@ -128,9 +129,17 @@ end
 
 function spawn_enter_trigger( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_enter.xml", x, y )
+
+	GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/new_biome/create", x, y)
+	GamePrintImportant( GameTextGet( "$log_entered", tostring( "Hall of Apprentices" ) ), "" )
+end
+
+function spawn_demolition( x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_demolition.xml", x, y )
 end
 
 function spawn_return_portal( x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_exitway.xml", x, y )
 	local portal = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_return.xml", x, y )
 
 	local teleport_comp = EntityGetFirstComponentIncludingDisabled( portal, "TeleportComponent" )
@@ -153,6 +162,7 @@ function spawn_return_portal( x, y )
 end
 
 function spawn_areachecks( x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_exit.xml", x, y )
 end
 
 function spawn_music_trigger( x, y )
