@@ -37,6 +37,13 @@ component_readwrite(get_variable_storage_component(entity_id, "meditation_count"
 				ComponentSetValue2(ring, "lifetime_min", 0 )
 				ComponentSetValue2(ring, "lifetime_max", lifetime )
 			end
+			local volume = math.pow( comp.value_int / max_time, 2 )
+			local audios = EntityGetComponent(entity_id, "AudioLoopComponent", "enabled_by_meditation_early" )
+			if audios then
+				for i,audio in ipairs(audios) do
+					ComponentSetValue2( audio, "m_volume", volume )
+				end
+			end
 		end
 	else
 		-- reset

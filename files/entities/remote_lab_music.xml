@@ -1,0 +1,10 @@
+<Entity tags="at_backstage,music_energy_000">
+  <AudioLoopComponent 
+    _enabled="1" 
+    auto_play="1" 
+    calculate_material_lowpass="0" 
+    file="data/audio/Desktop/music.bank" 
+    event_name="music/temple/enter" >
+  </AudioLoopComponent>
+
+</Entity>

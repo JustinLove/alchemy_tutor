@@ -53,7 +53,7 @@ function at_remember_return_location( teleport_back_x, teleport_back_y )
 end
 
 function at_stop_music( x, y )
-	GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
+	GameTriggerMusicFadeOutAndDequeueAll( 1.0 )
 end
 
 function at_collapse_lab( x, y )
@@ -69,10 +69,21 @@ end
 
 function at_cleanup_backstage( x, y )
 	local backstage = EntityGetInRadiusWithTag( x, y, 400, "at_backstage" )
-	print('cleanup backstage #', tostring(x), tostring(y), #backstage )
 	for i,v in ipairs( backstage ) do
-		print('cleanup backstage', tostring(v))
-		EntityKill( v )
+		if EntityHasTag( v, "music_energy_000" ) then
+			local audio = EntityGetFirstComponent( v, "AudioLoopComponent" )
+			EntityAddComponent( v, "LifetimeComponent", 
+			{
+				lifetime = 180,
+			} )
+			EntityAddComponent( v, "LuaComponent", 
+			{
+				script_source_file = "mods/alchemy_tutor/files/entities/music_fade.lua",
+				execute_every_n_frame = 10
+			} )
+		else
+			EntityKill( v )
+		end
 	end
 end
 
