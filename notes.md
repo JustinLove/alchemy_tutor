@@ -1,6 +1,5 @@
 - double lab spawn - added logging
 - remote biomes
-  - item spawns break over 50000 down
   - breakage problems
   - position based seeds?
   - key design
@@ -27,6 +26,7 @@
 - snow is awkward with powders - maybe okay as puzzle element?
 
 - watchlist
+  - item spawns break over 50000 down
   - ?? jungle rock awol
   - right potions broken in jungle h
   - vault h
