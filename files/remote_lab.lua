@@ -59,7 +59,7 @@ end
 function at_collapse_lab( x, y )
 	at_cleanup_actors( x, y )
 
-	GamePrintImportant( "Exit" )
+	--GamePrintImportant( "Exit" )
 
 	EntityLoad("data/entities/misc/workshop_collapse.xml", x, y )
 

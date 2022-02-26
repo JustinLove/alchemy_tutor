@@ -1,7 +1,8 @@
 dofile_once("mods/alchemy_tutor/files/spawns.lua")
 dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 
-RegisterSpawnFunction( 0xff03DEAD, "spawn_areachecks" )
+RegisterSpawnFunction( 0xff01DEAD, "spawn_areacheck1" )
+RegisterSpawnFunction( 0xff02DEAD, "spawn_areacheck2" )
 RegisterSpawnFunction( 0xffff5a0a, "spawn_music_trigger" )
 RegisterSpawnFunction( 0xff03deaf, "spawn_fish" )
 RegisterSpawnFunction( 0xff357320, "spawn_enter_trigger" )
@@ -161,8 +162,28 @@ function spawn_return_portal( x, y )
 	end
 end
 
-function spawn_areachecks( x, y )
-	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_exit.xml", x, y )
+function spawn_areacheck( x, y, id, radius )
+	local entity_id = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_exit.xml", x, y )
+
+	local var = EntityGetFirstComponentIncludingDisabled( entity_id, "VariableStorageComponent" )
+
+	if ( var ~= nil ) then
+		ComponentSetValue2( var, "value_string", id )
+	end
+
+	local range = EntityGetFirstComponentIncludingDisabled( entity_id, "ParticleEmitterComponent" )
+
+	if ( range ~= nil ) then
+		ComponentSetValue2( range, "area_circle_radius", radius, radius )
+	end
+end
+
+function spawn_areacheck1( x, y )
+	spawn_areacheck( x, y, '1', 175 )
+end
+
+function spawn_areacheck2( x, y )
+	spawn_areacheck( x, y, '2', 250 )
 end
 
 function spawn_music_trigger( x, y )

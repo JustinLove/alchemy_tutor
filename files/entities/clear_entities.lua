@@ -13,7 +13,7 @@ local function at_visualize_backstage( x, y )
 	local backstage = EntityGetInRadiusWithTag( x, y, 300, "at_backstage" )
 
 	for _,entity_id in ipairs(backstage) do
-		print("backstage", entity_id)
+		--print("backstage", entity_id)
 		EntitySetComponentsWithTagEnabled(entity_id, "enabled_by_script", true)
 	end
 end

@@ -1,14 +1,12 @@
 - double lab spawn - added logging
 - remote biomes
   - breakage problems
-  - position based seeds?
   - key design
-    - no sprite version for altars
-    - cauldron symbol?
-    - spawn rates
   - remote lab design
-    - powder mixing space
-    - wood shelves
+    - x powder mixing space - testing
+    - x wood shelves
+    - fish tank?
+- smoking torch
 - multi-step challenges?
 - progression tracking - herrings that can vs. can't react
 - grand alchemy labs
