@@ -163,6 +163,8 @@ function spawn_return_portal( x, y )
 end
 
 function spawn_areacheck( x, y, id, radius )
+	GlobalsSetValue( "AT_REMOTE_LAB_PLAYERS_" .. id, "7" )
+
 	local entity_id = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_exit.xml", x, y )
 
 	local var = EntityGetFirstComponentIncludingDisabled( entity_id, "VariableStorageComponent" )
