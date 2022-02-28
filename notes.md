@@ -1,8 +1,10 @@
 - double lab spawn - added logging
 - remote biomes
+  - disable distance
+  - cleanup other keys
   - x breakage problems - extended delay
   - x exit detection?
-  - key design
+  - changlog update
   - remote lab design
     - x powder mixing space - testing
     - x wood shelves
