@@ -9,6 +9,7 @@
     target_y_is_absolute_position="1"
     target.x="-10240"
     target.y="17408"
+    load_collapse_entity="0"
   ></TeleportComponent>
 
   <HitboxComponent 
