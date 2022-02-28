@@ -1,11 +1,13 @@
 - double lab spawn - added logging
 - remote biomes
-  - breakage problems
+  - breakage problems - maybe more delay
+  - x exit detection?
   - key design
   - remote lab design
     - x powder mixing space - testing
     - x wood shelves
     - fish tank?
+  - ng+
 - smoking torch
 - multi-step challenges?
 - progression tracking - herrings that can vs. can't react

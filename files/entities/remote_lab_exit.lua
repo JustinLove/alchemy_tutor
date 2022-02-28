@@ -20,7 +20,14 @@ end
 
 local p = EntityGetInRadiusWithTag( x, y, radius, "player_unit" )
 
-GlobalsSetValue( "AT_REMOTE_LAB_PLAYERS_" .. id, tostring( #p ) )
+if #p > 0 then
+	GlobalsSetValue( "AT_REMOTE_LAB_PLAYERS_" .. id, "10" )
+else
+	local t = tonumber( GlobalsGetValue( "AT_REMOTE_LAB_PLAYERS_" .. id ) )
+	if t > 0 then
+		GlobalsSetValue( "AT_REMOTE_LAB_PLAYERS_" .. id, tostring( t - 1) )
+	end
+end
 
 --print( 'here', id, #p )
 
