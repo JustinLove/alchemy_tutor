@@ -68,4 +68,27 @@
     _tags="enabled_in_world,enabled_in_hand,enabled_in_inventory" >
   </ManaReloaderComponent>
 
+  <ParticleEmitterComponent 
+    _tags="enabled_in_world"
+    emitted_material_name="smoke"
+    offset.x="10"
+    offset.y="0"
+    x_pos_offset_min="-3"
+    x_pos_offset_max="3"
+    y_pos_offset_min="1"
+    y_pos_offset_max="-1"
+    x_vel_min="-2"
+    x_vel_max="2"
+    y_vel_min="-20"
+    y_vel_max="-10"
+    count_min="1"
+    count_max="1"
+    lifetime_min="0.2"
+    lifetime_max="0.3"
+    create_real_particles="1"
+    emit_cosmetic_particles="1"
+    emission_interval_min_frames="5"
+    emission_interval_max_frames="12"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
 </Entity>

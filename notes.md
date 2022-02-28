@@ -7,7 +7,6 @@
     - x powder mixing space - testing
     - x wood shelves
     - fish tank?
-- smoking torch
 - common breakage
   - hisii v
   - vault h
