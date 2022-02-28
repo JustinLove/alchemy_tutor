@@ -1,6 +1,6 @@
 <Entity >
   <LifetimeComponent
-    lifetime="30" >
+    lifetime="60" >
   </LifetimeComponent>
 
   <LuaComponent

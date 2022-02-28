@@ -1,6 +1,6 @@
 - double lab spawn - added logging
 - remote biomes
-  - breakage problems - maybe more delay
+  - x breakage problems - extended delay
   - x exit detection?
   - key design
   - remote lab design
@@ -8,6 +8,9 @@
     - x wood shelves
     - fish tank?
 - smoking torch
+- common breakage
+  - hisii v
+  - vault h
 - multi-step challenges?
 - progression tracking - herrings that can vs. can't react
 - grand alchemy labs
