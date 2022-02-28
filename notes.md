@@ -7,7 +7,6 @@
     - x powder mixing space - testing
     - x wood shelves
     - fish tank?
-  - ng+
 - smoking torch
 - multi-step challenges?
 - progression tracking - herrings that can vs. can't react
