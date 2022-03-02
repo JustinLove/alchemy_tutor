@@ -3,7 +3,6 @@
   - x breakage problems - extended delay
   - x exit detection?
 - common breakage
-  - hisii v
   - vault h
   - snowcave hand spots?
 - changlog update
