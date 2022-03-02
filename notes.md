@@ -1,9 +1,7 @@
 - double lab spawn - added logging
 - remote biomes
-  - rename for possible other labs?
   - x breakage problems - extended delay
   - x exit detection?
-  - changlog update
   - remote lab design
     - x powder mixing space - testing
     - x wood shelves
@@ -13,6 +11,7 @@
   - hisii v
   - vault h
   - snowcave hand spots?
+- changlog update
 - steel cauldrons?
 - minilabs?
 - multi-step challenges?
