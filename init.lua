@@ -110,22 +110,12 @@ ModLuaFileAppend( "data/scripts/biomes/pyramid.lua", "mods/alchemy_tutor/files/b
 
 -- liquidcave doesn't seem to have heart/chest spawns
 ModLuaFileAppend( "data/scripts/biomes/liquidcave.lua", "mods/alchemy_tutor/files/biomes/liquidcave.lua" )
---[[
-ModLuaFileAppend( "data/scripts/biomes/tower.lua", "mods/alchemy_tutor/files/biomes/remote_lab_spawns.lua" )
-ModLuaFileAppend( "data/scripts/biomes/wandcave.lua", "mods/alchemy_tutor/files/biomes/remote_lab_spawns.lua" )
-ModLuaFileAppend( "data/scripts/biomes/wizardcave.lua", "mods/alchemy_tutor/files/biomes/remote_lab_spawns.lua" )
-ModLuaFileAppend( "data/scripts/biomes/fungicave.lua", "mods/alchemy_tutor/files/biomes/remote_lab_spawns_common.lua" )
-ModLuaFileAppend( "data/scripts/biomes/fungiforest.lua", "mods/alchemy_tutor/files/biomes/remote_lab_spawns_common.lua" )
-ModLuaFileAppend( "data/scripts/biomes/robobase.lua", "mods/alchemy_tutor/files/biomes/remote_lab_spawns_vault.lua" )
-ModLuaFileAppend( "data/scripts/biomes/vault_frozen.lua", "mods/alchemy_tutor/files/biomes/remote_lab_spawns_vault.lua" )
-]]
 
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_entrance.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_stub.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/biomes/hills.lua" )
 
---ModLuaFileAppend( "data/scripts/item_spawnlists.lua", "mods/alchemy_tutor/files/item_spawnlists.lua" )
 ModLuaFileAppend( "data/scripts/biome_scripts.lua", "mods/alchemy_tutor/files/biome_scripts.lua" )
 
 if ModIsEnabled( 'alchemical_reactions_expansion' ) then

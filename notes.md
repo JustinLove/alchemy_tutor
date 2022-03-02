@@ -1,6 +1,5 @@
 - double lab spawn - added logging
 - remote biomes
-  - cleanup other keys
   - subdir?
   - rename for possible other labs?
   - x breakage problems - extended delay
