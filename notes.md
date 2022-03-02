@@ -1,6 +1,5 @@
 - double lab spawn - added logging
 - remote biomes
-  - subdir?
   - rename for possible other labs?
   - x breakage problems - extended delay
   - x exit detection?

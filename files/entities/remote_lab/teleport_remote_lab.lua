@@ -1,4 +1,4 @@
-dofile_once( "mods/alchemy_tutor/files/remote_lab.lua" )
+dofile_once( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab.lua" )
 
 local function remove_portal( from_x, from_y )
 	local portals = EntityGetInRadiusWithTag( from_x, from_y, 10, "at_remote_lab_portal" )

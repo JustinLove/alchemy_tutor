@@ -78,7 +78,7 @@ function at_cleanup_backstage( x, y )
 			} )
 			EntityAddComponent( v, "LuaComponent", 
 			{
-				script_source_file = "mods/alchemy_tutor/files/entities/music_fade.lua",
+				script_source_file = "mods/alchemy_tutor/files/entities/remote_lab/music_fade.lua",
 				execute_every_n_frame = 10
 			} )
 		else

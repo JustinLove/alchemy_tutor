@@ -129,19 +129,19 @@ function spawn_lamp_long(x, y)
 end
 
 function spawn_enter_trigger( x, y )
-	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_enter.xml", x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_enter.xml", x, y )
 
 	GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/new_biome/create", x, y)
 	GamePrintImportant( GameTextGet( "$log_entered", tostring( "Hall of Apprentices" ) ), "" )
 end
 
 function spawn_demolition( x, y )
-	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_demolition.xml", x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_demolition.xml", x, y )
 end
 
 function spawn_return_portal( x, y )
-	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_exitway.xml", x, y )
-	local portal = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_return.xml", x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_exitway.xml", x, y )
+	local portal = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_return.xml", x, y )
 
 	local teleport_comp = EntityGetFirstComponentIncludingDisabled( portal, "TeleportComponent" )
 
@@ -165,7 +165,7 @@ end
 function spawn_areacheck( x, y, id, radius )
 	GlobalsSetValue( "AT_REMOTE_LAB_PLAYERS_" .. id, "7" )
 
-	local entity_id = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_exit.xml", x, y )
+	local entity_id = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_exit.xml", x, y )
 
 	local var = EntityGetFirstComponentIncludingDisabled( entity_id, "VariableStorageComponent" )
 

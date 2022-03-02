@@ -1,5 +1,5 @@
 function start_music( x, y )
-	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab_music.xml", x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_music.xml", x, y )
 end
 
 function collision_trigger()

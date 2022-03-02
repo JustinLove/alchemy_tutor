@@ -1,6 +1,6 @@
 <Entity tags="at_backstage">
   <LuaComponent
-    script_source_file="mods/alchemy_tutor/files/entities/remote_lab_demolition.lua"
+    script_source_file="mods/alchemy_tutor/files/entities/remote_lab/remote_lab_demolition.lua"
     execute_every_n_frame="-1"
     execute_on_removed="1"
     >

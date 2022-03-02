@@ -298,7 +298,7 @@
   </LuaComponent>
 
   <LuaComponent
-    script_portal_teleport_used="mods/alchemy_tutor/files/entities/teleport_remote_lab.lua"
+    script_portal_teleport_used="mods/alchemy_tutor/files/entities/remote_lab/teleport_remote_lab.lua"
     >
   </LuaComponent>
 </Entity>

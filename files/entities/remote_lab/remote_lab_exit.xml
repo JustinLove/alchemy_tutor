@@ -1,18 +1,17 @@
 <Entity tags="at_backstage">
-  <CollisionTriggerComponent
-    width="240"
-    height="200" 
-    radius="120"
-    destroy_this_entity_when_triggered="1"
-    required_tag="player_unit" >
-  </CollisionTriggerComponent>
-
   <LuaComponent
-    script_collision_trigger_hit="mods/alchemy_tutor/files/entities/remote_lab_exitway.lua"
-    execute_every_n_frame="-1" >
+    script_source_file="mods/alchemy_tutor/files/entities/remote_lab/remote_lab_exit.lua"
+    execute_every_n_frame="20"
+    >
   </LuaComponent>
 
-  <ParticleEmitterComponent 
+  <VariableStorageComponent
+    name="id"
+    value_string=""
+    >
+  </VariableStorageComponent>
+
+  <ParticleEmitterComponent
     _tags="enabled_by_script"
     _enabled="0"
     emitted_material_name="spark_red"
@@ -23,16 +22,12 @@
     x_vel_max="0"
     y_vel_min="0"
     y_vel_max="0"
-    x_pos_offset_min="-120"
-    x_pos_offset_max="120"
-    y_pos_offset_min="-100"
-    y_pos_offset_max="100"
     count_min="115"
     count_max="115"
     render_on_grid="1"
     fade_based_on_lifetime="0"
-    area_circle_radius.min="0"
-    area_circle_radius.max="0"
+    area_circle_radius.min="350"
+    area_circle_radius.max="350"
     cosmetic_force_create="1"
     collide_with_grid="0"
     airflow_force="0.051"
@@ -46,4 +41,3 @@
     is_emitting="1" >
   </ParticleEmitterComponent>
 </Entity>
-
