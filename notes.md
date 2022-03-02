@@ -2,9 +2,6 @@
 - remote biomes
   - x breakage problems - extended delay
   - x exit detection?
-- common breakage
-  - snowcave hand spots?
-- changlog update
 - steel cauldrons?
 - minilabs?
 - multi-step challenges?
