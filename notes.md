@@ -2,11 +2,6 @@
 - remote biomes
   - x breakage problems - extended delay
   - x exit detection?
-  - remote lab design
-    - x powder mixing space - testing
-    - x wood shelves
-    - uneven entrance seam
-    - fish tank?
 - common breakage
   - hisii v
   - vault h
@@ -16,6 +11,7 @@
 - minilabs?
 - multi-step challenges?
 - progression tracking - herrings that can vs. can't react
+  - fish tank?
 - grand alchemy labs
 
 - solids in cauldron - whether to remove cauldron material/ which formula???
