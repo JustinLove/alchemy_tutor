@@ -90,18 +90,18 @@ function at_pick_lab_set( x, y )
 		in_grade = at_formula_list
 	end
 	at_log( 'in grade', #in_grade, 'grand', #grand )
-	local grand_chance = math.min( #grand, 5 )
+	local grand_chance = 0 --math.min( #grand, 5 )
 	if Random(0, 10) < grand_chance then
 		local i = Random(1, #grand)
 		at_log( 'selection by grand', i, grand[i].name )
 		return grand[i]
 	else
 		local i
-		if ModSettingGet("alchemy_tutor.formula_distance") then
-			local d = math.sqrt(x*x + y*y)
+		local d = math.sqrt(x*x + y*y)
+		if d < 15000 and ModSettingGet("alchemy_tutor.formula_distance") then
 			local target = math.floor(#in_grade * (d/12000))
 			i = RandomDistribution(1, #in_grade, target)
-			at_log( 'selection by distanace', i, in_grade[i].name )
+			at_log( 'selection by distanace', i, in_grade[i].name, d )
 		else
 			i = Random(1, #in_grade)
 			at_log( 'selection by random', i, in_grade[i].name )

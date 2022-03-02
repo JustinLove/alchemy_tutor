@@ -1,17 +1,22 @@
 - double lab spawn - added logging
 - remote biomes
-  - disable distance
   - cleanup other keys
+  - subdir?
+  - rename for possible other labs?
   - x breakage problems - extended delay
   - x exit detection?
   - changlog update
   - remote lab design
     - x powder mixing space - testing
     - x wood shelves
+    - uneven entrance seam
     - fish tank?
 - common breakage
   - hisii v
   - vault h
+  - snowcave hand spots?
+- steel cauldrons?
+- minilabs?
 - multi-step challenges?
 - progression tracking - herrings that can vs. can't react
 - grand alchemy labs
@@ -24,6 +29,7 @@
 - snow is awkward with powders - maybe okay as puzzle element?
 
 - watchlist
+  - scene lab chance overage?
   - item spawns break over 50000 down
   - ?? jungle rock awol
   - right potions broken in jungle h
