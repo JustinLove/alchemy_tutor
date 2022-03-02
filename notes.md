@@ -3,7 +3,6 @@
   - x breakage problems - extended delay
   - x exit detection?
 - common breakage
-  - vault h
   - snowcave hand spots?
 - changlog update
 - steel cauldrons?
