@@ -535,9 +535,13 @@ function at_decorate_scene( x, y, scene_description )
 		set.other( loc.x, loc.y )
 	end
 
-	loc = table.remove( reward )
-	if loc and not set.hide_reward then
-		EntityLoad( "mods/alchemy_tutor/files/entities/reward_marker.xml", loc.x + 1, loc.y - 6 )
+	if set.hide_reward then
+		for r,spot in ipairs( rewards ) do
+			local rewards = EntityGetInRadiusWithTag( spot.x + 1, spot.y - 6, 5, "at_reward" )
+			for i,v in ipairs( rewards ) do
+				EntityKill( v )
+			end
+		end
 	end
 
 	at_log_book( x, y )

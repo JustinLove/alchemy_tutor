@@ -79,6 +79,7 @@ function at_spawn_other( x, y )
 end
 
 function at_spawn_reward( x, y )
+	local id = EntityLoad( "mods/alchemy_tutor/files/entities/reward_marker.xml", x + 1, y - 6 )
 	table.insert( at_reward, {x = x, y = y} )
 end
 
