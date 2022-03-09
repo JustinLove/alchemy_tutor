@@ -7,6 +7,7 @@ Adds alchemy labs throughout the world. Each lab is set up the materials to perf
 ### Whats in the alpha?
 
 - 13 alchemy labs in all the main track biomes
+- Remote lab teleports findable in many other biomes
 - 41 experiments, from very basic (cleaning toxic) to very obscure (conversion of metals)
 - +35 experiments if Alchemical Reactions Expansions is loaded.
 
@@ -29,11 +30,8 @@ Adds alchemy labs throughout the world. Each lab is set up the materials to perf
 
 Things I want to try - which may not be successful:
 
-- Remote lab portals to cover the remaining biomes, which don't have places for pixel scenes
-- Progression tracking to offer easier versions first, and more red-herrings later.
 - Perhaps something like the treechievements to track said progression
 - Perhaps multi-step challenges
-- Detection and experiments for Alchemical Reactions Expansion mod.
 
 ### What is planned for final?
 
@@ -46,6 +44,7 @@ Enemies, explosions, and physics glitches can and will break all your potions an
 
 ## In-game Options
 
-- Lab spawn chance - weight vs the game's built-in pixel scenes (and perhaps other mods, if they use the same system) Most vanilla scenes are 5 or 10 on this scale, but the number of scene slots, number of possible scenes, and default weight vary per biome. Feedback on a good default level appreciated.
-- Distance Dependant - uses distance from the start to influence experiment choice - this should tend to give more basic recipes in early levels, more appropriate for people only reaching that level. However, there is still randomness and some other factors at involved.
-
+- Lab Spawn Chance - Main Areas: weight vs the game's built-in pixel scenes (and perhaps other mods, if they use the same system) Most vanilla scenes are 5 or 10 on this scale, but the number of scene slots, number of possible scenes, and default weight vary per biome. Feedback on a good default level appreciated.
+- Lab Spawn Chance - Remote Areas: chance for a chest spawn location to contain a remote lab teleport in a non-main area without pixel scenes. This partially reduces chest spawns, but every lab can have a chest in it.
+- Distance Dependent: uses distance from the start to influence experiment choice - this should tend to give more basic recipes in early levels, more appropriate for people only reaching that level. However, there is still randomness and some other factors at involved.
+- Progression Dependent: Formulas will be simplified the first time encountered, and the obscurity will be limited by the total number solved.

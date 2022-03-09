@@ -1,12 +1,12 @@
 # Alchemy Tutor Changelog
 
-## 0.2.0
+## 0.2.0 Remote Labs Updates
 
 - Remote Alchemy Labs for areas outside the main descent, which do not have pixel scenes, look for the entryways where chests might spawn. Frequency of appearance has a separate setting.
 - Progression tracking. Formulas will be simplified the first time encountered, and the obscurity will be limited by the total number solved. (Master alchemists can disable this in settings.)
 - Rework on Hisii vertical; removed a cauldron to make space for sheltered potion storage.
-- Change vault horizontal potion platfrom from catwalk to solid to try and reduce breakage.
-- Tweaked cloth (pouches) to not conduct electricity. An alchemist who takes the Electicity perk will probably still have a bad day, buty at least you can use pouches now.
+- Change vault horizontal potion platform from catwalk to solid to try and reduce breakage.
+- Tweaked cloth (pouches) to not conduct electricity. An alchemist who takes the Electicity perk will probably still have a bad day, but at least you can use pouches now.
 - Put lab decoration on a delay to try and give terrain a chance to spawn in.
 - Added smoke to make torches more visible
 
