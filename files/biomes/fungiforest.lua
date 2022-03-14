@@ -1,6 +1,6 @@
 dofile_once("mods/alchemy_tutor/files/spawns.lua")
 
-at_biome_materials = { "void_liquid", "blood_worm" }
+at_biome_banned_materials = { "void_liquid", "blood_worm" }
 
 spawn_heart = at_spawn_heart
 
