@@ -34,6 +34,7 @@ function at_spawn_scene( x, y )
 	local cauldron = at_scene_cauldron or at_default_cauldron
 	local text = smallfolk.dumps({
 		sc = cauldron and cauldron.name,
+		sb = at_biome_materials,
 		m = at_materials,
 		c = at_cauldrons,
 		o = at_other,

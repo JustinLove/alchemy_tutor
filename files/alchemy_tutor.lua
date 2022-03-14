@@ -19,6 +19,8 @@ at_test_y = -100 -- hills
 --at_test_y = 0 -- pyramid
 --at_test_x = -4000 -- rainforest dark
 --at_test_y = 7500 -- rainforest dark
+--at_test_x = 12300 -- fungiforest
+--at_test_y = 2000 -- fungiforest
 
 local function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
@@ -60,9 +62,10 @@ at_formulas = {}
 at_materials = {}
 at_amounts = {}
 at_grand_materials = {}
+at_biome_banned_materials = {}
 at_passed_count = 0
 
-function at_pick_lab_set( x, y )
+function at_pick_lab_set( x, y, scene_description )
 	if at_formulas['toxicclean'] == nil then
 		at_setup()
 	end
@@ -72,18 +75,45 @@ function at_pick_lab_set( x, y )
 	end
 	at_passed_count = tonumber( GlobalsGetValue( "at_passed_count", 0 ) )
 	SetRandomSeed( x, y )
+	local has_other = #(scene_description.o) > 0
+	local banned_materials = {}
+	for i,b in ipairs(scene_description.sb) do
+		banned_materials[b] = true
+	end
 	local grand = {}
 	local in_grade = {}
 	local rating_limit = #at_formula_list
+	local banned = false
 	if ModSettingGet("alchemy_tutor.formula_progression") then
 		rating_limit = at_passed_count + 3
 	end
-	for i,v in ipairs(at_formula_list) do
-		if v.grand_alchemy then
-			table.insert(grand, v)
+	local function mark_banned(mat)
+		if type( mat ) == 'table' then
+			if banned_materials[mat[1]] then
+				banned = true
+			end
+		else
+			if banned_materials[mat] then
+				banned = true
+			end
 		end
-		if v.rating <= rating_limit then
-			table.insert(in_grade, v)
+	end
+	for i,v in ipairs(at_formula_list) do
+		if has_other or not v.other then
+			banned = false
+			mark_banned(v.output)
+			mark_banned(v.cauldron_contents)
+			for j,m in ipairs(v.materials) do
+				mark_banned(m)
+			end
+			if not banned then
+				if v.grand_alchemy then
+					table.insert(grand, v)
+				end
+				if v.rating <= rating_limit then
+					table.insert(in_grade, v)
+				end
+			end
 		end
 	end
 	if #in_grade < 1 then
@@ -464,7 +494,7 @@ function at_decorate_scene( x, y, scene_description )
 	local other = scene_description.o
 	local reward = scene_description.r
 
-	local set = at_pick_lab_set( x, y )
+	local set = at_pick_lab_set( x, y, scene_description )
 	SetRandomSeed( x, y )
 
 	shuffleTable( materials )

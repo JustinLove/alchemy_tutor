@@ -46,7 +46,7 @@ function at_get_entrance_location()
 end
 
 function at_remember_return_location( teleport_back_x, teleport_back_y )
-	print( "teleported from: " .. tostring(teleport_back_x) .. ", " .. tostring(teleport_back_y) )
+	--print( "teleported from: " .. tostring(teleport_back_x) .. ", " .. tostring(teleport_back_y) )
 	-- - 50
 	GlobalsSetValue( "AT_TELEPORT_REMOTE_LAB_POS_X", tostring( teleport_back_x ) )
 	GlobalsSetValue( "AT_TELEPORT_REMOTE_LAB_POS_Y", tostring( teleport_back_y ) )
@@ -113,7 +113,6 @@ function at_cleanup_actors( x, y )
 end
 
 function at_remote_lab_exit( x, y )
-	print('at_remote_lab_exit')
 	at_cleanup_backstage( x, y )
 	--at_stop_music( x, y )
 end

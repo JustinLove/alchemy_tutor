@@ -24,7 +24,7 @@ function mod_setting_bool_custom( mod_id, gui, in_main_menu, im_id, setting )
 end
 
 function mod_setting_change_callback( mod_id, gui, in_main_menu, setting, old_value, new_value  )
-	print( tostring(new_value) )
+	--print( tostring(new_value) )
 end
 
 local mod_id = "alchemy_tutor" -- This should match the name of your mod's folder.
