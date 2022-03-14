@@ -491,7 +491,7 @@ function at_decorate_scene( x, y, scene_description )
 	local cauldron = set.cauldron or scene_cauldron or at_default_cauldron
 	if cauldron.is_physics and set.cauldron_material and set.cauldron_material ~= cauldron.default_material then
 		cauldron = at_cauldron
-	elseif cauldron.default_material == "steel" and set.cauldron_material == "templebrick_static" then
+	elseif cauldron.default_material == "steel" and set.cauldron_material == "steel_static_strong" then
 		cauldron = at_cauldron
 	end
 	for i,loc in ipairs( cauldrons ) do

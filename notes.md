@@ -1,8 +1,3 @@
-- double lab spawn - added logging
-- remote biomes
-  - x breakage problems - extended delay
-  - x exit detection?
-- steel cauldrons?
 - minilabs?
 - multi-step challenges?
 - progression tracking - herrings that can vs. can't react
@@ -17,6 +12,11 @@
 - snow is awkward with powders - maybe okay as puzzle element?
 
 - watchlist
+  - steel cauldrons - `steel_static_strong`
+  - double lab spawn - added logging
+  - remote biomes
+    - x breakage problems - extended delay
+    - x exit detection?
   - scene lab chance overage?
   - item spawns break over 50000 down
   - ?? jungle rock awol

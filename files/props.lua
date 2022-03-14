@@ -2,7 +2,7 @@ local at_mod_path = "mods/alchemy_tutor/files"
 
 at_cauldron = {
 	name = "at_cauldron",
-	default_material = "templebrick_static",
+	default_material = "steel_static_strong",
 	spawn = function( set, x, y, index )
 		local first = at_first_time( set )
 		local contents = at_material( set.cauldron_contents, "air", first )
@@ -15,7 +15,7 @@ at_cauldron = {
 			false, -- skip_edge_textures
 			{ ["fff0bbee"] = contents,
 				["fff2ddb2"] = set.cauldron_minor or contents,
-				["ff786c42"] = at_material( set.cauldron_material, "templebrick_static", first ),
+				["ff786c42"] = at_material( set.cauldron_material, "steel_static_strong", first ),
 			} -- color_to_matieral_table
 		)
 
