@@ -146,14 +146,14 @@ at_rock =
 	},
 }
 
-function at_preclear_for_mini( x, y )
-	local entities = EntityGetInRadius( x, y, 80 )
+function at_preclear_for_mini( x, y, radius )
+	local entities = EntityGetInRadius( x, y, radius )
 	PhysicsRemoveJoints( x - 70, y - 70, x + 70, y + 20 )
 	for i = 1,#entities do
 		local id = entities[i]
-		print( id, tostring( EntityGetParent( id ) ), EntityGetFilename( id ), EntityGetTags( id ) )
+		--print( id, tostring( EntityGetParent( id ) ), EntityGetFilename( id ), EntityGetTags( id ) )
 		if EntityGetParent( id ) ~= 0 then
-		elseif EntityHasTag( id, "prop" ) or EntityHasTag( id, "enemy" ) then
+		elseif EntityHasTag( id, "prop" ) or EntityHasTag( id, "enemy" ) or EntityHasTag( id, "homing_target" ) then
 			EntityKill( id )
 		end
 	end

@@ -1,6 +1,11 @@
 # Alchemy Tutor Changelog
 
-## 0.2.0 Remote Labs Updates
+## 0.3.0 Field Labs Update
+
+- Added mini field labs to Overgrowth and Ancient Laboratory
+- Testing Dense Steel as the default cauldron material
+
+## 0.2.0 Remote Labs Update
 
 - Remote Alchemy Labs for areas outside the main descent, which do not have pixel scenes, look for the entryways where chests might spawn. Frequency of appearance has a separate setting.
 - Progression tracking. Formulas will be simplified the first time encountered, and the obscurity will be limited by the total number solved. (Master alchemists can disable this in settings.)
