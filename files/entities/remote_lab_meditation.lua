@@ -11,6 +11,21 @@ component_readwrite(get_variable_storage_component(entity_id, "meditation_count"
 	if player ~= nil then
 		-- player is near, proceed with countdown...
 		comp.value_int = comp.value_int + 1
+
+		-- shortcut: holding the alchemist's key
+		local children = EntityGetAllChildren( player )
+		if ( children ~= nil ) then
+			-- Inventory2Component
+			-- mActiveItem
+			local inventory2_comp = EntityGetFirstComponentIncludingDisabled( player, "Inventory2Component" )
+			if ( inventory2_comp ~= nil ) then
+				local active_item = ComponentGetValue( inventory2_comp, "mActiveItem" )
+				if ( EntityHasTag( active_item, "alchemist_key" ) ) then
+					comp.value_int = max_time
+				end
+			end
+		end
+
 		if comp.value_int == max_time then
 			EntitySetComponentsWithTagEnabled( entity_id, "enabled_by_meditation", true )
 			EntitySetComponentsWithTagEnabled( entity_id, "enabled_by_meditation_early", false )
