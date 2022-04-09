@@ -1,4 +1,5 @@
 - minilabs?
+- steel in fungal gets blown up
 - check hanging with special detectors
 - multi-step challenges?
 - progression tracking - herrings that can vs. can't react

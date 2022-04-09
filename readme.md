@@ -8,6 +8,7 @@ Adds alchemy labs throughout the world. Each lab is set up the materials to perf
 
 - 13 alchemy labs in all the main track biomes
 - Remote lab teleports findable in many other biomes
+- Field labs in Overgrowth and Ancient Laboratory
 - 41 experiments, from very basic (cleaning toxic) to very obscure (conversion of metals)
 - +35 experiments if Alchemical Reactions Expansions is loaded.
 
