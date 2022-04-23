@@ -235,3 +235,16 @@ function at_mushroom( mush, x, y )
 	end
 	EntityLoad( at_mod_path .. "/entities/mushroom_big_" .. mush .. ".xml", x, y )
 end
+
+function at_record_pedestals( x, y )
+	LoadPixelScene(
+		at_mod_path .. "/props/record_pedestals.png",
+		"", -- visual
+		x, y-48,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		} -- color_to_matieral_table
+	)
+end

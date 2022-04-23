@@ -18,6 +18,11 @@ RegisterSpawnFunction( 0xff0691c4, "at_spawn_brick_pit")
 RegisterSpawnFunction( 0xff5ce4e5, "at_spawn_scene")
 RegisterSpawnFunction( 0xff91a4e2, "at_look_here")
 
+RegisterSpawnFunction( 0xfff10025, "at_mark_floor" )
+RegisterSpawnFunction( 0xffac41e7, "at_spawn_records" )
+RegisterSpawnFunction( 0xff1ef700, "at_record_left" )
+RegisterSpawnFunction( 0xff218470, "at_record_right" )
+
 at_lab_chance = ModSettingGet("alchemy_tutor.lab_chance")
 if at_lab_chance == nil then
 	at_lab_chance = 1
@@ -145,6 +150,40 @@ at_rock =
 		entity 	= "data/entities/props/physics_stone_03.xml",
 	},
 }
+
+function at_record_left( x, y )
+end
+
+function at_record_right( x, y )
+end
+
+function at_mark_floor( x, y )
+	if x % 48 == 0 then
+		at_record_pedestals( x, y )
+	end
+end
+
+local at_record = 1
+
+function at_spawn_records( x, y )
+	if at_formulas['toxicclean'] == nil then
+		at_setup()
+	end
+	local formula = at_formula_list[at_record]
+	at_record = at_record + 1
+	if not formula then
+		return
+	end
+	if not HasFlagPersistent( "at_formula_" .. formula.name ) then
+		at_log( 'not achieved', tostring(formula.name), tostring(formula.output) )
+		return
+	end
+	local what = formula.output or 'air'
+	local loc = at_materials[2]
+	at_log( 'record', tostring(formula.name), tostring(formula.output))
+	at_container( what, 1.0, loc.x, loc.y )
+	at_materials = {}
+end
 
 function at_preclear_for_mini( x, y, radius )
 	local entities = EntityGetInRadius( x, y, radius )

@@ -1,14 +1,14 @@
 local at_mod_path = "mods/alchemy_tutor/files"
 dofile_once(at_mod_path .. "/grand_alchemy.lua")
 
---at_test_player = true
+at_test_player = true
 --at_test_lab = true
 --at_test_formula = 'toxicclean'
 --at_test_clear = true
 --at_test_healing = true
 --at_test_portal = true
-at_test_x = -200
-at_test_y = -100 -- hills
+--at_test_x = -200
+--at_test_y = -100 -- hills
 --at_test_y = 2000 -- excavation
 --at_test_y = 3500 -- snowcave
 --at_test_y = 5500 -- snowcastle
@@ -21,6 +21,8 @@ at_test_y = -100 -- hills
 --at_test_y = 7500 -- rainforest dark
 --at_test_x = 12300 -- fungiforest
 --at_test_y = 2000 -- fungiforest
+at_test_x = -5632 -- hall of records
+at_test_y = 1000 -- hall of records
 
 local function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )

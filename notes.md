@@ -1,10 +1,10 @@
-- minilabs?
+- progression tracking
+  - started left/right, not placed or implemented
+  - fish tank?
+- multi-step challenges?
+- herrings that can vs. can't react
 - steel in fungal gets blown up
 - check hanging with special detectors
-- multi-step challenges?
-- progression tracking - herrings that can vs. can't react
-  - fish tank?
-- grand alchemy labs
 
 - solids in cauldron - whether to remove cauldron material/ which formula???
 - background?

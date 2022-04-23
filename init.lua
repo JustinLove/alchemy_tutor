@@ -90,6 +90,25 @@ function OnWorldInitialized() -- This is called once the game world is initializ
 		local world_state = EntityGetFirstComponent( world, "WorldStateComponent" )
 		ComponentSetValue( world_state, "time", 0 )
 	end
+
+end
+
+local function edit_file(path, f, arg)
+	local text = ModTextFileGetContent( path )
+	if text then
+		ModTextFileSetContent( path, f( text, arg ) )
+	end
+end
+
+local function add_hall_of_records( text )
+	text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records.xml</File>\r\n  </PixelSceneFiles>" )
+	--text = string.gsub( text, '</PixelSceneFiles>', "<File>data/biome_impl/spliced/hall_of_records.xml</File>\r\n  </PixelSceneFiles>" )
+	--print(text)
+	return text
+end
+
+function OnMagicNumbersAndWorldSeedInitialized() -- this is the last point where the Mod* API is available. after this materials.xml will be loaded.
+	edit_file( "data/biome/_pixel_scenes.xml", add_hall_of_records )
 end
 
 -- This code runs when all mods' filesystems are registered
