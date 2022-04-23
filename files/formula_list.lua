@@ -57,6 +57,7 @@ at_formula_list = {
 		cauldron_contents = "water",
 		cauldron_material = "steel_static_strong",
 		output = "magic_liquid_mana_regeneration",
+		record = "magic_liquid_mana_regeneration",
 		rating = 3,
 	},
 	{
@@ -72,6 +73,7 @@ at_formula_list = {
 		materials = { "magic_liquid_mana_regeneration" },
 		cauldron_contents = "magic_liquid_unstable_teleportation",
 		output = "air",
+		record = "fire",
 		rating = 5,
 	},
 	{
@@ -80,6 +82,7 @@ at_formula_list = {
 		cauldron_contents = {"slime", "slime", "slime", "slime_green", "slime_yellow"},
 		output = "air",
 		output2 = "water",
+		record = "slime",
 		rating = 5,
 	},
 	{
@@ -88,6 +91,7 @@ at_formula_list = {
 		cauldron_contents = {"slime", "slime", "slime", "slime_green", "slime_yellow"},
 		output = "air",
 		output2 = "alcohol",
+		record = "alcohol",
 		rating = 5,
 	},
 	{
@@ -100,6 +104,7 @@ at_formula_list = {
 		cauldron_material = "templerock_soft",
 		check_for = at_explosion,
 		cauldron_check_y = 25,
+		record = "gunpowder_unstable",
 		rating = 7,
 	},
 	{
@@ -420,6 +425,7 @@ at_formula_list = {
 		cauldron_contents = "lava",
 		cauldron_material = "steel_static_strong",
 		check_for = at_explosion,
+		record = "lava",
 		rating = 10,
 	},
 	{
@@ -456,6 +462,7 @@ at_formula_list = {
 			"air",
 		},
 		output = "slime",
+		record = "poison",
 		rating = 14,
 	},
 	{

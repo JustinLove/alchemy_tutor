@@ -21,8 +21,8 @@ at_test_player = true
 --at_test_y = 7500 -- rainforest dark
 --at_test_x = 12300 -- fungiforest
 --at_test_y = 2000 -- fungiforest
-at_test_x = -5632 -- hall of records
-at_test_y = 1000 -- hall of records
+at_test_x = -5850 -- hall of records
+at_test_y = 720 -- hall of records
 
 local function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
@@ -140,6 +140,36 @@ function at_pick_lab_set( x, y, scene_description )
 		end
 		return in_grade[i]
 	end
+end
+
+function at_pick_record_exemplar( formula )
+	print( formula.name, type(formula.cauldron_contents) )
+	if formula.record then
+		return formula.record
+	end
+	if formula.cauldron_contents ~= nil and formula.cauldron_contents ~= 'air' then
+		local contents
+		if type( formula.cauldron_contents ) == 'table' then
+			contents = formula.cauldron_contents[1]
+		else
+			contents = formula.cauldron_contents
+		end
+		print( tostring(contents) )
+		--if formula.output == 'air' then
+			--return contents
+		--end
+		for i,mat in ipairs( formula.materials ) do
+			if type( mat ) == 'table' and mat[1] == formula.output then
+				return contents
+			elseif mat == formula.output then
+				return contents
+			end
+		end
+		print( 'cauldron default', formula.output )
+		return formula.output
+	end
+	print( 'output', formula.output )
+	return formula.output
 end
 
 function at_setup_grand_alchemy()

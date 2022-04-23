@@ -18,8 +18,11 @@ RegisterSpawnFunction( 0xff0691c4, "at_spawn_brick_pit")
 RegisterSpawnFunction( 0xff5ce4e5, "at_spawn_scene")
 RegisterSpawnFunction( 0xff91a4e2, "at_look_here")
 
-RegisterSpawnFunction( 0xfff10025, "at_mark_floor" )
 RegisterSpawnFunction( 0xffac41e7, "at_spawn_records" )
+RegisterSpawnFunction( 0xff1f1002, "at_mark_floor1" )
+RegisterSpawnFunction( 0xff2f1002, "at_mark_floor2" )
+RegisterSpawnFunction( 0xff3f1002, "at_mark_floor3" )
+RegisterSpawnFunction( 0xff4f1002, "at_mark_floor4" )
 RegisterSpawnFunction( 0xff1ef700, "at_record_left" )
 RegisterSpawnFunction( 0xff218470, "at_record_right" )
 
@@ -151,37 +154,89 @@ at_rock =
 	},
 }
 
+local at_left
+local at_right
+local at_floor = 0
+
 function at_record_left( x, y )
+	print('left')
+	at_left = math.floor(x/48)
 end
 
 function at_record_right( x, y )
+	print('right')
+	at_right = math.floor(x/48)
 end
 
-function at_mark_floor( x, y )
+function at_mark_floor1( x, y )
+	at_mark_floor( x, y, 1 )
+end
+
+function at_mark_floor2( x, y )
+	at_mark_floor( x, y, 2 )
+end
+
+function at_mark_floor3( x, y )
+	at_mark_floor( x, y, 3 )
+end
+
+function at_mark_floor4( x, y )
+	at_mark_floor( x, y, 4 )
+end
+
+at_rendevous = {}
+local at_hall_of_records_width = 12
+
+function at_mark_floor( x, y, floor )
 	if x % 48 == 0 then
-		at_record_pedestals( x, y )
+		local col = 0
+		if at_left then
+			col = x/48 - at_left
+		elseif at_right then
+			col = x/48 + 12 - at_right
+		end
+		local record = col + (floor - 1)*at_hall_of_records_width
+		at_rendevous[tostring(x)..','..tostring(y-48)] = record
+		if record <= #at_formula_list then
+			at_record_pedestals( x, y )
+		end
 	end
 end
 
-local at_record = 1
-
 function at_spawn_records( x, y )
+	local record = at_rendevous[tostring(x)..','..tostring(y)]
+	print('spawn', x, y, record )
 	if at_formulas['toxicclean'] == nil then
 		at_setup()
 	end
-	local formula = at_formula_list[at_record]
-	at_record = at_record + 1
+	local formula = at_formula_list[record]
 	if not formula then
 		return
 	end
-	if not HasFlagPersistent( "at_formula_" .. formula.name ) then
-		at_log( 'not achieved', tostring(formula.name), tostring(formula.output) )
-		return
-	end
-	local what = formula.output or 'air'
+	--if not HasFlagPersistent( "at_formula_" .. formula.name ) then
+		--at_log( 'not achieved', tostring(formula.name), tostring(formula.output) )
+		--return
+	--end
+	local what = at_pick_record_exemplar( formula ) or 'air'
 	local loc = at_materials[2]
-	at_log( 'record', tostring(formula.name), tostring(formula.output))
-	at_container( what, 1.0, loc.x, loc.y )
+	at_log( 'record', tostring(formula.name), tostring(what))
+	if what == nil or what == "" then
+		what = potion_empty
+	end
+	local eid = at_container( what, 1.0, loc.x, loc.y )
+	EntityAddComponent( eid, "SpriteComponent", { 
+		_tags="shop_cost,enabled_in_world",
+		image_file="data/fonts/font_pixel_white.xml", 
+		is_text_sprite="1", 
+		offset_x="16",
+		offset_y="32", 
+		has_special_scale="1",
+		special_scale_x="0.5",
+		special_scale_y="0.5",
+		update_transform="1" ,
+		update_transform_rotation="0",
+		text=tostring(formula.name),
+		} )
 	at_materials = {}
 end
 

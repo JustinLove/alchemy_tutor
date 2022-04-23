@@ -1,5 +1,8 @@
 - progression tracking
-  - started left/right, not placed or implemented
+  - custom pedestals
+  - custom entities - containers?
+  - mod recepies
+  - ghost crystal
   - fish tank?
 - multi-step challenges?
 - herrings that can vs. can't react
@@ -131,6 +134,53 @@ Breaks void detection
   - h 05 x1, 3 things
   - h 05b x1, 3 things
 
+## Records
+
+1  toxic + water = water -> toxic (cauldron)
+2  mana + steel = mana steel platform?
+3  mana + water = mana  xx cauldron
+4  slime + water = empty -> slime (cauldron)  xxx not cauldron only, good with cauldron empty  check
+5  *tele + mana = empty -> fire? xxx filled by empty cauldron
+6  slime/alcohol = empty -> alcohol? xxx slime by empty
+7  x levi + accel = haste
+8  slime + faster -> empty -> gunpowder??
+9  wizardstone + water = teleportion -> brick pillar?
+10  invis + water = water -> inivis (cauldron)
+11 x flum + berserk = charm
+12 x worm pher + worm blood = flum
+13 wizardstone + mana = acid -> brick pillar?
+14 x unstabletele + slime = stable
+15 x wizardstone + amb = steam -> brick pillar?
+16 x flum + metal powder = levi
+17 x flum + unst tele = guiding
+18 x toxic/sand/fungusblood = fungus creeping -> fungus patch?
+19 toxic/wormblood/fungi = void liquid 1 -> smaller?
+20 purifying + lava = empty -> lava?  xx cauldron air
+21 x flum + blood + oil = unstable poly
+22 x diamond + random = silver
+23 x stable + alcohol = unstable
+24 x gold + random = silver
+25 x poly + toxic = random
+26 brass + liquid fire = shock powder -> sparking block?
+27 voidfungus = void -> fungal block
+28 x diamond + random + toxic = void
+29 x brass + unstable tele = metal powder
+30 x alchol + frog meat = berserk
+31 x silver + poly = copper
+32 x copper + tele = brass
+33 blood + poison = slime -> poison?
+34 x salt + water -> brine
+35 x honey + diamond = ambrosia + poison
+36 x diamond + silver + wormblood = purifying
+37 cooking meat = meat potion -> sausage pan?
+38 x brass + diamond = purifying
+39 x burn brine = salt
+40 x copper + brass + water = silver
+41 x silver + copper + blood = diamond
+
+-  wizardstone + fire = lava
+-  void + toxic = void
+
 ```
 biome_impl/biome_map.png (etc) - color map of biomes
 biomes/_biomes_all.xml - color to biome map
@@ -144,8 +194,14 @@ biome_impl/coalmine/receptacle_oil(_background, _visual).png
 entities/buildings/receptacle_oil.xml - material area checker, runs script on success
 entities/buildings/receptacle_oil.lua - material_area_checker_success function
 entities/items/pickup/potion.xml
-
 ```
+
+## Pixel Scenes
+
+- can be processed concurrently, starting one before another is finished.
+- pixel scenes triggered within a pixel scene are (can be?) processed immediately, before the next pixel in the parent scene
+- there can be significant delay in drawing child pixel scenes
+
 
     Thatrius — Today at 16:46
     Seems like I remember accomplishing this by messing around with materials_that_create_messages from DamageModelComponent
