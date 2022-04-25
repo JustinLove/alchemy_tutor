@@ -207,14 +207,14 @@ function at_mark_floor( x, y, floor )
 				return
 			end
 			local material = 'templebrick_static'
-			if set.cauldron then
+			if set.cauldron and not set.cauldron.is_physics then
 			  material = set.cauldron.default_material
 			end
 			if set.cauldron_material and set.cauldron_material ~= 'air' then
 				material = set.cauldron_material
 			end
 			local what = 'air'
-			if HasFlagPersistent( "at_formula_" .. set.name ) then
+			if HasFlagPersistent( "at_formula_" .. set.name ) and not _G['at_test_records'] then
 				what = at_pick_record_exemplar( set ) or 'air'
 			end
 			at_record_pedestals( x, y, material, what )
@@ -236,30 +236,38 @@ function at_spawn_records( x, y )
 	if not formula then
 		return
 	end
-	if not HasFlagPersistent( "at_formula_" .. formula.name ) then
+	if not HasFlagPersistent( "at_formula_" .. formula.name ) and not _G['at_test_records'] then
 		at_log( 'not achieved', tostring(formula.name), tostring(formula.output) )
 		return
 	end
-	local what = at_pick_record_exemplar( formula ) or 'air'
 	local loc = at_materials[1]
-	at_log( 'record', tostring(formula.name), tostring(what))
-	if what == nil or what == "" then
-		what = potion_empty
+	local eid
+	if formula.record_spawn then
+		at_log( 'record', tostring(formula.name), 'spawn' )
+		eid = formula.record_spawn( loc.x, loc.y )
+	else
+		local what = at_pick_record_exemplar( formula ) or 'air'
+		at_log( 'record', tostring(formula.name), tostring(what))
+		if what == nil or what == "" then
+			what = potion_empty
+		end
+		eid = at_container( what, 1.0, loc.x, loc.y )
 	end
-	local eid = at_container( what, 1.0, loc.x, loc.y )
-	EntityAddComponent( eid, "SpriteComponent", { 
-		_tags="shop_cost,enabled_in_world",
-		image_file="data/fonts/font_pixel_white.xml", 
-		is_text_sprite="1", 
-		offset_x="16",
-		offset_y="32", 
-		has_special_scale="1",
-		special_scale_x="0.5",
-		special_scale_y="0.5",
-		update_transform="1" ,
-		update_transform_rotation="0",
-		text=tostring(formula.name),
-		} )
+	if eid then
+		EntityAddComponent( eid, "SpriteComponent", { 
+			_tags="shop_cost,enabled_in_world",
+			image_file="data/fonts/font_pixel_white.xml", 
+			is_text_sprite="1", 
+			offset_x="16",
+			offset_y=16 + (record%2)*16, 
+			has_special_scale="1",
+			special_scale_x="0.5",
+			special_scale_y="0.5",
+			update_transform="1" ,
+			update_transform_rotation="0",
+			text=tostring(formula.name),
+			} )
+	end
 	at_materials = {}
 end
 

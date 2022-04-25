@@ -50,6 +50,10 @@ at_gold_statue = {
 	end
 }
 
+function at_record_gold_statue( x, y )
+	return EntityLoad( at_are_path .."/gold_statue.xml", x, y )
+end
+
 at_hollow = {
 	name = "at_hollow",
 	default_material = "bluefungi_static",
@@ -74,3 +78,46 @@ at_hollow = {
 	end
 }
 
+function at_candle( x, y )
+	local entity = EntityLoad( "data/entities/props/physics_candle_1.xml", x + 3, y )
+	return entity
+end
+
+function at_cheese( x, y )
+	LoadPixelScene(
+		at_are_path .. "/record_cheese.png",
+		"", -- visual
+		x-4, y-6,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		} -- color_to_matieral_table
+	)
+end
+
+function at_plastic( x, y )
+	LoadPixelScene(
+		at_are_path .. "/record_plastic.png",
+		"", -- visual
+		x-4, y-6,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		} -- color_to_matieral_table
+	)
+end
+
+function at_endslime( x, y )
+	LoadPixelScene(
+		at_are_path .. "/record_endslime.png",
+		"", -- visual
+		x-4, y-6,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		} -- color_to_matieral_table
+	)
+end

@@ -28,6 +28,7 @@ at_formula_list_append({
 			{ "magic_liquid_polymorph", "magic_liquid_unstable_polymorph", "magic_liquid_random_polymorph" },
 		},
 		output = "magic_liquid_hp_regeneration",
+		record_material = "blood",
 		rating = 8,
 	},
 	{
@@ -56,6 +57,7 @@ at_formula_list_append({
 		cauldron = at_gold_statue,
 		check_for = at_material_presence,
 		output = "magic_gas_hp_regeneration",
+		record_spawn = at_record_gold_statue,
 		rating = 4,
 	},
 	{
@@ -151,6 +153,7 @@ at_formula_list_append({
 		cauldron_minor = "lava",
 		output = "endslime",
 		cauldron_check_y = 10,
+		record_spawn = at_endslime,
 		rating = 5,
 	},
 	{
@@ -210,6 +213,7 @@ at_formula_list_append({
 			"magic_liquid_random_polymorph",
 		},
 		output = "magic_liquid_worm_attractor",
+		record_material = "magic_liquid_worm_attractor",
 		rating = 5,
 	},
 	{
@@ -229,6 +233,7 @@ at_formula_list_append({
 		},
 		output = "cheese_static",
 		check_for = at_material_presence,
+		record_spawn = at_cheese,
 		rating = 17,
 	},
 	{
@@ -288,6 +293,7 @@ at_formula_list_append({
 			"oil",
 		},
 		output = "magic_liquid_invisibility",
+		record_material = "magic_liquid_invisibility",
 		rating = 8,
 	},
 	{
@@ -322,6 +328,7 @@ at_formula_list_append({
 			"air",
 		},
 		output = "wax",
+		record_spawn = at_candle,
 		rating = 10,
 	},
 	{
@@ -395,6 +402,7 @@ at_formula_list_append({
 		materials = { "lava" },
 		cauldron_contents = "bone",
 		output = "air",
+		record_material = "bone",
 		rating = 9,
 	},
 	{

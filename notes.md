@@ -1,7 +1,6 @@
 - progression tracking
-  - custom pedestals - custom materials
+  - slimeboom?
   - no containers??
-  - mod recepies
   - ghost crystal
   - fish tank?
 - multi-step challenges?

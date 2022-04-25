@@ -241,6 +241,11 @@ function at_meat_done( x, y )
 	)
 end
 
+function at_thunderstone( x, y )
+	local entity = EntityLoad( "data/entities/items/pickup/thunderstone.xml", x, y )
+	return entity
+end
+
 function at_mushroom( mush, x, y )
 	if not mush then
 		SetRandomSeed( x, y )
