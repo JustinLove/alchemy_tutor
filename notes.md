@@ -1,6 +1,6 @@
 - progression tracking
-  - custom pedestals
-  - custom entities - containers?
+  - custom pedestals - custom materials
+  - no containers??
   - mod recepies
   - ghost crystal
   - fish tank?
@@ -136,16 +136,16 @@ Breaks void detection
 
 ## Records
 
-1  toxic + water = water -> toxic (cauldron)
-2  mana + steel = mana steel platform?
-3  mana + water = mana  xx cauldron
-4  slime + water = empty -> slime (cauldron)  xxx not cauldron only, good with cauldron empty  check
-5  *tele + mana = empty -> fire? xxx filled by empty cauldron
-6  slime/alcohol = empty -> alcohol? xxx slime by empty
+1  x toxic + water = water -> toxic (cauldron)
+2  mana + steel = mana steel platform? mat if cust cauld yes
+3  mana + water = mana  xx cauldron matif cust cauld yes; both NO
+4  x slime + water = empty -> slime (cauldron)  xxx not cauldron only, good with cauldron empty  check
+5  x *tele + mana = empty -> fire? xxx filled by empty cauldron
+6  x slime/alcohol = empty -> alcohol? xxx slime by empty
 7  x levi + accel = haste
-8  slime + faster -> empty -> gunpowder??
-9  wizardstone + water = teleportion -> brick pillar?
-10  invis + water = water -> inivis (cauldron)
+8  slime + faster -> empty -> gunpowder??, half potion? matif cust cauld yes
+9  wizardstone + water = teleportion -> brick pillar? mat if cust cauld NO
+10 x invis + water = water -> inivis (cauldron)
 11 x flum + berserk = charm
 12 x worm pher + worm blood = flum
 13 wizardstone + mana = acid -> brick pillar?
@@ -155,20 +155,20 @@ Breaks void detection
 17 x flum + unst tele = guiding
 18 x toxic/sand/fungusblood = fungus creeping -> fungus patch?
 19 toxic/wormblood/fungi = void liquid 1 -> smaller?
-20 purifying + lava = empty -> lava?  xx cauldron air
+20 x purifying + lava = empty -> lava?  xx cauldron air
 21 x flum + blood + oil = unstable poly
 22 x diamond + random = silver
 23 x stable + alcohol = unstable
 24 x gold + random = silver
 25 x poly + toxic = random
 26 brass + liquid fire = shock powder -> sparking block?
-27 voidfungus = void -> fungal block
+27 voidfungus = void -> fungal block mat if cust cauld yes
 28 x diamond + random + toxic = void
 29 x brass + unstable tele = metal powder
 30 x alchol + frog meat = berserk
 31 x silver + poly = copper
 32 x copper + tele = brass
-33 blood + poison = slime -> poison?
+33 x blood + poison = slime -> poison?
 34 x salt + water -> brine
 35 x honey + diamond = ambrosia + poison
 36 x diamond + silver + wormblood = purifying
@@ -180,6 +180,21 @@ Breaks void detection
 
 -  wizardstone + fire = lava
 -  void + toxic = void
+
+## Pedestal materials
+
+### mat
+- wizardstone assumed
+
+### mat if cust cauldon
+- wizardstone assumed
+
+### both
+- wood, air
+
+### cauldron
+- steel is wizardstone
+
 
 ```
 biome_impl/biome_map.png (etc) - color map of biomes

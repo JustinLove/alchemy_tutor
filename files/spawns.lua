@@ -198,7 +198,21 @@ function at_mark_floor( x, y, floor )
 		local record = col + (floor - 1)*at_hall_of_records_width
 		at_rendevous[tostring(x)..','..tostring(y-48)] = record
 		if record <= #at_formula_list then
-			at_record_pedestals( x, y )
+			if at_formulas['toxicclean'] == nil then
+				at_setup()
+			end
+			local set = at_formula_list[record]
+			if not set then
+				return
+			end
+			local material = 'templebrick_static'
+			if set.cauldron then
+			  material = set.cauldron.default_material
+			end
+			if set.cauldron_material and set.cauldron_material ~= 'air' then
+				material = set.cauldron_material
+			end
+			at_record_pedestals( x, y, material )
 		end
 	end
 end
@@ -213,10 +227,10 @@ function at_spawn_records( x, y )
 	if not formula then
 		return
 	end
-	--if not HasFlagPersistent( "at_formula_" .. formula.name ) then
-		--at_log( 'not achieved', tostring(formula.name), tostring(formula.output) )
-		--return
-	--end
+	if not HasFlagPersistent( "at_formula_" .. formula.name ) then
+		at_log( 'not achieved', tostring(formula.name), tostring(formula.output) )
+		return
+	end
 	local what = at_pick_record_exemplar( formula ) or 'air'
 	local loc = at_materials[2]
 	at_log( 'record', tostring(formula.name), tostring(what))

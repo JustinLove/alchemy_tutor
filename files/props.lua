@@ -228,6 +228,19 @@ function at_meat( x, y )
 	)
 end
 
+function at_meat_done( x, y )
+	LoadPixelScene(
+		at_mod_path .. "/props/meat_done.png",
+		"", -- visual
+		x-6, y-9,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		} -- color_to_matieral_table
+	)
+end
+
 function at_mushroom( mush, x, y )
 	if not mush then
 		SetRandomSeed( x, y )
@@ -236,7 +249,7 @@ function at_mushroom( mush, x, y )
 	EntityLoad( at_mod_path .. "/entities/mushroom_big_" .. mush .. ".xml", x, y )
 end
 
-function at_record_pedestals( x, y )
+function at_record_pedestals( x, y, material )
 	LoadPixelScene(
 		at_mod_path .. "/props/record_pedestals.png",
 		"", -- visual
@@ -244,7 +257,7 @@ function at_record_pedestals( x, y )
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
-		{
+		{ ["ff786c44"] = at_material( material, "templebrick_static", true ),
 		} -- color_to_matieral_table
 	)
 end

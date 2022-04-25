@@ -55,7 +55,6 @@ at_formula_list = {
 	{
 		materials = {"magic_liquid_mana_regeneration"},
 		cauldron_contents = "water",
-		cauldron_material = "steel_static_strong",
 		output = "magic_liquid_mana_regeneration",
 		record = "magic_liquid_mana_regeneration",
 		rating = 3,
@@ -306,7 +305,6 @@ at_formula_list = {
 	{
 		materials = {"alcohol"},
 		cauldron_contents = {"air", "air", "alcohol"},
-		cauldron_material = "steel_static_strong",
 		other = at_frogs,
 		output = "magic_liquid_berserk",
 		rating = 13,
@@ -423,7 +421,6 @@ at_formula_list = {
 			"purifying_powder",
 		},
 		cauldron_contents = "lava",
-		cauldron_material = "steel_static_strong",
 		check_for = at_explosion,
 		record = "lava",
 		rating = 10,
@@ -436,7 +433,6 @@ at_formula_list = {
 		amounts = {0.1},
 		cauldron_contents = "air",
 		cauldron_minor = "meat",
-		cauldron_material = "steel_static_strong",
 		cauldron_check_y = 10,
 		check_for = at_material_presence,
 		other = at_meat,

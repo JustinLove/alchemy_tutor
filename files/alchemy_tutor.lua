@@ -1,7 +1,7 @@
 local at_mod_path = "mods/alchemy_tutor/files"
 dofile_once(at_mod_path .. "/grand_alchemy.lua")
 
-at_test_player = true
+--at_test_player = true
 --at_test_lab = true
 --at_test_formula = 'toxicclean'
 --at_test_clear = true
@@ -155,9 +155,33 @@ function at_pick_record_exemplar( formula )
 			contents = formula.cauldron_contents
 		end
 		print( tostring(contents) )
-		--if formula.output == 'air' then
-			--return contents
-		--end
+		for i,mat in ipairs( formula.materials ) do
+			if type( mat ) == 'table' and mat[1] == formula.output then
+				return contents
+			elseif mat == formula.output then
+				return contents
+			end
+		end
+		print( 'cauldron default', formula.output )
+		return formula.output
+	end
+	print( 'output', formula.output )
+	return formula.output
+end
+
+function at_pick_record_pedestal( formula )
+	print( formula.name, type(formula.cauldron_contents) )
+	if formula.record then
+		return formula.record
+	end
+	if formula.cauldron_contents ~= nil and formula.cauldron_contents ~= 'air' then
+		local contents
+		if type( formula.cauldron_contents ) == 'table' then
+			contents = formula.cauldron_contents[1]
+		else
+			contents = formula.cauldron_contents
+		end
+		print( tostring(contents) )
 		for i,mat in ipairs( formula.materials ) do
 			if type( mat ) == 'table' and mat[1] == formula.output then
 				return contents
@@ -275,6 +299,10 @@ function at_container( material_name, amount, x, y )
 		return at_potion_empty( x, y )
 	elseif material_name == "fire" and amount < 0.5 then
 		return at_torch( x, y )
+	elseif material_name == "shock_powder" then
+		return at_thunderstone( x, y )
+	elseif material_name == "meat_done" then
+		return at_meat_done( x, y )
 	elseif material_name == "urine" then
 		entity = at_jar_empty( x, y )
 		AddMaterialInventoryMaterial(entity, material_name, 1000 * amount)
@@ -319,6 +347,11 @@ end
 
 function at_torch( x, y )
 	local entity = EntityLoad( "mods/alchemy_tutor/files/entities/torch.xml", x, y )
+	return entity
+end
+
+function at_thunderstone( x, y )
+	local entity = EntityLoad( "data/entities/items/pickup/thunderstone.xml", x, y )
 	return entity
 end
 
