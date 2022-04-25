@@ -83,6 +83,14 @@ function at_candle( x, y )
 	return entity
 end
 
+function at_potion_polyhp( x, y )
+	local entity = EntityLoad( "data/entities/items/pickup/potion_empty.xml", x, y )
+	AddMaterialInventoryMaterial(entity, "blood", 500)
+	AddMaterialInventoryMaterial(entity, "magic_liquid_random_polymorph", 250)
+	AddMaterialInventoryMaterial(entity, "magic_liquid_charm", 250)
+	return entity
+end
+
 function at_cheese( x, y )
 	LoadPixelScene(
 		at_are_path .. "/record_cheese.png",

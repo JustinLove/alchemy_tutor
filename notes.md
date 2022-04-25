@@ -1,5 +1,5 @@
 - progression tracking
-  - slimeboom?
+  - custom pedestals on each cauldron?
   - no containers??
   - ghost crystal
   - fish tank?

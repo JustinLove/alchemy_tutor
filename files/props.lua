@@ -246,6 +246,13 @@ function at_thunderstone( x, y )
 	return entity
 end
 
+function at_potion_slimeboom( x, y )
+	local entity = EntityLoad( "data/entities/items/pickup/potion_empty.xml", x, y )
+	AddMaterialInventoryMaterial(entity, "slime", 500)
+	AddMaterialInventoryMaterial(entity, "magic_liquid_faster_levitation", 500)
+	return entity
+end
+
 function at_mushroom( mush, x, y )
 	if not mush then
 		SetRandomSeed( x, y )

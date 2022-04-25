@@ -28,7 +28,7 @@ at_formula_list_append({
 			{ "magic_liquid_polymorph", "magic_liquid_unstable_polymorph", "magic_liquid_random_polymorph" },
 		},
 		output = "magic_liquid_hp_regeneration",
-		record_material = "blood",
+		record_spawn = at_potion_polyhp,
 		rating = 8,
 	},
 	{

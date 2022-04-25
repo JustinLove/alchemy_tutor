@@ -103,7 +103,7 @@ at_formula_list = {
 		cauldron_material = "templerock_soft",
 		check_for = at_explosion,
 		cauldron_check_y = 25,
-		record_material = "gunpowder_unstable",
+		record_spawn = at_potion_slimeboom,
 		rating = 7,
 	},
 	{
