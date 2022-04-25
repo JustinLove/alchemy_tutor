@@ -249,7 +249,7 @@ function at_mushroom( mush, x, y )
 	EntityLoad( at_mod_path .. "/entities/mushroom_big_" .. mush .. ".xml", x, y )
 end
 
-function at_record_pedestals( x, y, material )
+function at_record_pedestals( x, y, material, contents )
 	LoadPixelScene(
 		at_mod_path .. "/props/record_pedestals.png",
 		"", -- visual
@@ -257,7 +257,8 @@ function at_record_pedestals( x, y, material )
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
-		{ ["ff786c44"] = at_material( material, "templebrick_static", true ),
+		{ ["fff0bbee"] = contents,
+			["ff786c44"] = at_material( material, "templebrick_static", true ),
 		} -- color_to_matieral_table
 	)
 end

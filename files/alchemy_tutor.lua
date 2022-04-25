@@ -143,7 +143,7 @@ function at_pick_lab_set( x, y, scene_description )
 end
 
 function at_pick_record_exemplar( formula )
-	print( formula.name, type(formula.cauldron_contents) )
+	--print( formula.name, type(formula.cauldron_contents) )
 	if formula.record then
 		return formula.record
 	end
@@ -154,7 +154,7 @@ function at_pick_record_exemplar( formula )
 		else
 			contents = formula.cauldron_contents
 		end
-		print( tostring(contents) )
+		--print( tostring(contents) )
 		for i,mat in ipairs( formula.materials ) do
 			if type( mat ) == 'table' and mat[1] == formula.output then
 				return contents
@@ -162,10 +162,10 @@ function at_pick_record_exemplar( formula )
 				return contents
 			end
 		end
-		print( 'cauldron default', formula.output )
+		--print( 'cauldron default', formula.output )
 		return formula.output
 	end
-	print( 'output', formula.output )
+	--print( 'output', formula.output )
 	return formula.output
 end
 

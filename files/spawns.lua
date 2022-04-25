@@ -156,16 +156,16 @@ at_rock =
 
 local at_left
 local at_right
-local at_floor = 0
+local at_pedestal_spacing = 28
 
 function at_record_left( x, y )
-	print('left')
-	at_left = math.floor(x/48)
+	--print('left')
+	at_left = math.floor(x/at_pedestal_spacing)
 end
 
 function at_record_right( x, y )
-	print('right')
-	at_right = math.floor(x/48)
+	--print('right')
+	at_right = math.floor(x/at_pedestal_spacing)
 end
 
 function at_mark_floor1( x, y )
@@ -185,17 +185,18 @@ function at_mark_floor4( x, y )
 end
 
 at_rendevous = {}
-local at_hall_of_records_width = 12
+local at_hall_of_records_width = 21
 
 function at_mark_floor( x, y, floor )
-	if x % 48 == 0 then
+	if x % at_pedestal_spacing == 0 then
 		local col = 0
 		if at_left then
-			col = x/48 - at_left
+			col = x/at_pedestal_spacing - at_left
 		elseif at_right then
-			col = x/48 + 12 - at_right
+			col = x/at_pedestal_spacing + at_hall_of_records_width - at_right
 		end
 		local record = col + (floor - 1)*at_hall_of_records_width
+		--print( col, floor, x, y-48, record )
 		at_rendevous[tostring(x)..','..tostring(y-48)] = record
 		if record <= #at_formula_list then
 			if at_formulas['toxicclean'] == nil then
@@ -212,13 +213,21 @@ function at_mark_floor( x, y, floor )
 			if set.cauldron_material and set.cauldron_material ~= 'air' then
 				material = set.cauldron_material
 			end
-			at_record_pedestals( x, y, material )
+			local what = 'air'
+			if HasFlagPersistent( "at_formula_" .. set.name ) then
+				what = at_pick_record_exemplar( set ) or 'air'
+			end
+			at_record_pedestals( x, y, material, what )
 		end
 	end
 end
 
 function at_spawn_records( x, y )
 	local record = at_rendevous[tostring(x)..','..tostring(y)]
+	if not record then
+		print('rendevous failed', x, y )
+		return
+	end
 	print('spawn', x, y, record )
 	if at_formulas['toxicclean'] == nil then
 		at_setup()
@@ -232,7 +241,7 @@ function at_spawn_records( x, y )
 		return
 	end
 	local what = at_pick_record_exemplar( formula ) or 'air'
-	local loc = at_materials[2]
+	local loc = at_materials[1]
 	at_log( 'record', tostring(formula.name), tostring(what))
 	if what == nil or what == "" then
 		what = potion_empty
