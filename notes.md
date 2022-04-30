@@ -1,8 +1,9 @@
 - progression tracking
   - custom pedestals on each cauldron?
   - no containers??
-  - ghost crystal
+  - x ghost crystal
   - x fish tank?
+  - entry announcements
 - multi-step challenges?
 - herrings that can vs. can't react
 - steel in fungal gets blown up
@@ -12,6 +13,7 @@
 - background?
 - cauldron fires
 - repeat resitance??
+- translations
 
 - snow is awkward with powders - maybe okay as puzzle element?
 

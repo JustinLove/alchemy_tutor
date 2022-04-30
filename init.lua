@@ -107,8 +107,15 @@ local function add_hall_of_records( text )
 	return text
 end
 
+local function intercept_ghosts( text )
+	text = string.gsub( text, 'if %( #p > 0 %) then', 'local g = EntityGetInRadiusWithTag( x, y, 1000, "at_ghost_crystal" )\r\nif (#p > 0 and #g < 1) then' )
+	print(text)
+	return text
+end
+
 function OnMagicNumbersAndWorldSeedInitialized() -- this is the last point where the Mod* API is available. after this materials.xml will be loaded.
 	edit_file( "data/biome/_pixel_scenes.xml", add_hall_of_records )
+	edit_file( "data/scripts/buildings/snowcrystal.lua", intercept_ghosts )
 end
 
 -- This code runs when all mods' filesystems are registered
