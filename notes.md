@@ -2,7 +2,7 @@
   - custom pedestals on each cauldron?
   - no containers??
   - ghost crystal
-  - fish tank?
+  - x fish tank?
 - multi-step challenges?
 - herrings that can vs. can't react
 - steel in fungal gets blown up
