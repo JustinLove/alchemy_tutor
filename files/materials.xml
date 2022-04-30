@@ -23,4 +23,22 @@
       color="ff937f52" >
     </Graphics>
   </CellDataChild>
+  <CellDataChild
+    name="magic_crystal_purple" 
+    ui_name="$mat_magic_crystal"
+    _parent="magic_crystal"
+    _inherit_reactions="1"
+    wang_color="ffb43c1f" 
+    show_in_creative_mode="0"
+    >
+    <Graphics
+      normal_mapped="1"
+      texture_file="data/materials_gfx/crystal.png"
+      color="ffb43cff"
+      >
+    </Graphics>
+  </CellDataChild>
 </Materials>
+
+
+

@@ -27,6 +27,8 @@ RegisterSpawnFunction( 0xff5f1002, "at_mark_floor5" )
 RegisterSpawnFunction( 0xff6f1002, "at_mark_floor6" )
 RegisterSpawnFunction( 0xff1ef700, "at_record_left" )
 RegisterSpawnFunction( 0xff218470, "at_record_right" )
+RegisterSpawnFunction( 0xff840270, "at_spawn_ghost_crystal" )
+
 
 at_lab_chance = ModSettingGet("alchemy_tutor.lab_chance")
 if at_lab_chance == nil then
@@ -284,6 +286,13 @@ function at_spawn_records( x, y )
 		at_add_label( eid, 16, 16 + (record%2)*16, formula.name )
 	end
 	at_materials = {}
+end
+
+function at_spawn_ghost_crystal( x, y )
+
+	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/ghost_deflector_crystal.xml", x, y + 5 )
+	EntityLoad( "data/entities/buildings/physics_worm_deflector_base.xml", x, y + 5 )
+	--EntityLoad( "data/entities/buildings/snowcrystal.xml", x + 30, y + 5 )
 end
 
 function at_preclear_for_mini( x, y, radius )
