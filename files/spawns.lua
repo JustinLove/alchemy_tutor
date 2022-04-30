@@ -23,6 +23,8 @@ RegisterSpawnFunction( 0xff1f1002, "at_mark_floor1" )
 RegisterSpawnFunction( 0xff2f1002, "at_mark_floor2" )
 RegisterSpawnFunction( 0xff3f1002, "at_mark_floor3" )
 RegisterSpawnFunction( 0xff4f1002, "at_mark_floor4" )
+RegisterSpawnFunction( 0xff5f1002, "at_mark_floor5" )
+RegisterSpawnFunction( 0xff6f1002, "at_mark_floor6" )
 RegisterSpawnFunction( 0xff1ef700, "at_record_left" )
 RegisterSpawnFunction( 0xff218470, "at_record_right" )
 
@@ -156,16 +158,17 @@ at_rock =
 
 local at_left
 local at_right
-local at_pedestal_spacing = 28
+local at_pedestal_offset = 18
+local at_pedestal_spacing = 36
 
 function at_record_left( x, y )
 	--print('left')
-	at_left = math.floor(x/at_pedestal_spacing)
+	at_left = math.floor((x - at_pedestal_offset)/at_pedestal_spacing)
 end
 
 function at_record_right( x, y )
 	--print('right')
-	at_right = math.floor(x/at_pedestal_spacing)
+	at_right = math.floor((x - at_pedestal_offset)/at_pedestal_spacing)
 end
 
 function at_mark_floor1( x, y )
@@ -184,18 +187,26 @@ function at_mark_floor4( x, y )
 	at_mark_floor( x, y, 4 )
 end
 
+function at_mark_floor5( x, y )
+	at_mark_floor( x, y, 5 )
+end
+
+function at_mark_floor6( x, y )
+	at_mark_floor( x, y, 6 )
+end
+
 at_rendevous = {}
-local at_hall_of_records_width = 21
+local at_hall_of_records_width = 16
 
 function at_mark_floor( x, y, floor )
-	if x % at_pedestal_spacing == 0 then
+	if x % at_pedestal_spacing == at_pedestal_offset then
 		local col = 0
 		if at_left then
-			col = x/at_pedestal_spacing - at_left
+			col = (x - at_pedestal_offset)/at_pedestal_spacing - at_left
 		elseif at_right then
-			col = x/at_pedestal_spacing + at_hall_of_records_width - at_right
+			col = (x - at_pedestal_offset)/at_pedestal_spacing + at_hall_of_records_width - at_right
 		end
-		local record = col + (floor - 1)*at_hall_of_records_width
+		local record = (at_hall_of_records_width - col + 1) + (floor - 1)*at_hall_of_records_width
 		--print( col, floor, x, y-48, record )
 		at_rendevous[tostring(x)..','..tostring(y-48)] = record
 		if record <= #at_formula_list then
@@ -220,6 +231,22 @@ function at_mark_floor( x, y, floor )
 			at_record_pedestals( x, y, material, what )
 		end
 	end
+end
+
+function at_add_label( eid, x, y, label )
+	EntityAddComponent( eid, "SpriteComponent", { 
+		_tags="shop_cost,enabled_in_world",
+		image_file="data/fonts/font_pixel_white.xml", 
+		is_text_sprite="1", 
+		offset_x=x,
+		offset_y=y,
+		has_special_scale="1",
+		special_scale_x="0.5",
+		special_scale_y="0.5",
+		update_transform="1" ,
+		update_transform_rotation="0",
+		text=tostring(label),
+		} )
 end
 
 function at_spawn_records( x, y )
@@ -253,20 +280,8 @@ function at_spawn_records( x, y )
 		end
 		eid = at_container( what, 1.0, loc.x, loc.y )
 	end
-	if eid then
-		EntityAddComponent( eid, "SpriteComponent", { 
-			_tags="shop_cost,enabled_in_world",
-			image_file="data/fonts/font_pixel_white.xml", 
-			is_text_sprite="1", 
-			offset_x="16",
-			offset_y=16 + (record%2)*16, 
-			has_special_scale="1",
-			special_scale_x="0.5",
-			special_scale_y="0.5",
-			update_transform="1" ,
-			update_transform_rotation="0",
-			text=tostring(formula.name),
-			} )
+	if eid and _G['at_test_records'] then
+		at_add_label( eid, 16, 16 + (record%2)*16, formula.name )
 	end
 	at_materials = {}
 end

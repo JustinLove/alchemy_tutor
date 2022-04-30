@@ -22,8 +22,10 @@ dofile_once(at_mod_path .. "/grand_alchemy.lua")
 --at_test_y = 7500 -- rainforest dark
 --at_test_x = 12300 -- fungiforest
 --at_test_y = 2000 -- fungiforest
-at_test_x = -5850 -- hall of records
+at_test_x = -5317 -- hall of records
 at_test_y = 720 -- hall of records
+--at_test_x = -5000 -- hall of records entrance
+--at_test_y = 700 -- hall of records entrace
 
 local function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
@@ -331,12 +333,12 @@ function at_powder_empty( x, y )
 end
 
 function at_potion( x, y )
-	local entity = EntityLoad( "data/entities/items/pickup/potion.xml", x, y )
+	local entity = EntityLoad( "data/entities/items/pickup/potion.xml", x+1, y )
 	return entity
 end
 
 function at_potion_empty( x, y )
-	local entity = EntityLoad( "data/entities/items/pickup/potion_empty.xml", x, y )
+	local entity = EntityLoad( "data/entities/items/pickup/potion_empty.xml", x+1, y )
 	return entity
 end
 
