@@ -293,6 +293,8 @@ function at_spawn_ghost_crystal( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/ghost_deflector_crystal.xml", x, y + 5 )
 	EntityLoad( "data/entities/buildings/physics_worm_deflector_base.xml", x, y + 5 )
 	--EntityLoad( "data/entities/buildings/snowcrystal.xml", x + 30, y + 5 )
+
+	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/hall_of_records_enter.xml", x, y + 5 )
 end
 
 function at_preclear_for_mini( x, y, radius )

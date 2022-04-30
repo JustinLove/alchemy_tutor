@@ -124,7 +124,6 @@
   </UIInfoComponent>
 
   <ParticleEmitterComponent
-    _tags="enabled_by_script"
     _enabled="0"
     emitted_material_name="spark_purple_bright"
     gravity.y="0.0"

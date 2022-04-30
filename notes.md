@@ -3,7 +3,7 @@
   - no containers??
   - x ghost crystal
   - x fish tank?
-  - entry announcements
+  - x entry announcements
 - multi-step challenges?
 - herrings that can vs. can't react
 - steel in fungal gets blown up
