@@ -22,10 +22,10 @@ dofile_once(at_mod_path .. "/grand_alchemy.lua")
 --at_test_y = 7500 -- rainforest dark
 --at_test_x = 12300 -- fungiforest
 --at_test_y = 2000 -- fungiforest
---at_test_x = -5317 -- hall of records
---at_test_y = 720 -- hall of records
-at_test_x = -5000 -- hall of records entrance
-at_test_y = 700 -- hall of records entrace
+at_test_x = -5317 -- hall of records
+at_test_y = 720 -- hall of records
+--at_test_x = -5000 -- hall of records entrance
+--at_test_y = 700 -- hall of records entrace
 
 local function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
