@@ -109,7 +109,7 @@ end
 
 local function intercept_ghosts( text )
 	text = string.gsub( text, 'if %( #p > 0 %) then', 'local g = EntityGetInRadiusWithTag( x, y, 1000, "at_ghost_crystal" )\r\nif (#p > 0 and #g < 1) then' )
-	print(text)
+	--print(text)
 	return text
 end
 

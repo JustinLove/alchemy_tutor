@@ -1,4 +1,7 @@
 - progression tracking
+  - strong fire for shock powder
+  - dias for ghost crystal
+  - exhibit sculpting?
   - custom pedestals on each cauldron?
   - no containers??
   - x ghost crystal
