@@ -317,7 +317,7 @@ at_formula_list = {
 		cauldron = at_electrode,
 		cauldron_material = "steel_static_unmeltable",
 		output = "shock_powder",
-		record_spawn = at_thunderstone,
+		record_material = "liquid_fire",
 		rating = 12,
 	},
 	{
