@@ -1,4 +1,3 @@
-- got mana with hanging containers
 - progression tracking
   - exhibit sculpting?
   - custom pedestals on each cauldron?

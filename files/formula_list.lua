@@ -55,6 +55,7 @@ at_formula_list = {
 	{
 		materials = {"magic_liquid_mana_regeneration"},
 		cauldron_contents = "water",
+		cauldron_material = "steel_static_strong",
 		output = "magic_liquid_mana_regeneration",
 		record_material = "magic_liquid_mana_regeneration",
 		rating = 3,
