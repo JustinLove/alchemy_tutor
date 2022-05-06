@@ -1,6 +1,5 @@
 - got mana with hanging containers
 - progression tracking
-  - dias for ghost crystal
   - exhibit sculpting?
   - custom pedestals on each cauldron?
   - no containers??
