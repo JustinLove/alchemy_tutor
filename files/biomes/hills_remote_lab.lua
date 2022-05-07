@@ -132,7 +132,7 @@ function spawn_enter_trigger( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_enter.xml", x, y )
 
 	GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/new_biome/create", x, y)
-	GamePrintImportant( GameTextGet( "$log_entered", tostring( "Hall of Apprentices" ) ), "" )
+	GamePrintImportant( GameTextGet( "$log_entered", GameTextGet( "$at_remote_lab" ) ), "" )
 end
 
 function spawn_demolition( x, y )

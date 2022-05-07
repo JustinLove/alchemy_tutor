@@ -2,6 +2,7 @@
   - exhibit sculpting?
   - custom pedestals on each cauldron?
   - no containers??
+  - drainage
   - x ghost crystal
   - x fish tank?
   - x entry announcements
@@ -14,7 +15,7 @@
 - background?
 - cauldron fires
 - repeat resitance??
-- translations
+- translations - partly done
 
 - snow is awkward with powders - maybe okay as puzzle element?
 

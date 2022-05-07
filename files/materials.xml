@@ -23,6 +23,7 @@
       color="ff937f52" >
     </Graphics>
   </CellDataChild>
+  <!-- ghost crystal material, different color -->
   <CellDataChild
     name="magic_crystal_purple" 
     ui_name="$mat_magic_crystal"

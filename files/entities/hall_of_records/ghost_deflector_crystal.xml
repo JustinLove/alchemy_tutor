@@ -119,7 +119,7 @@
   </Entity>
 
   <UIInfoComponent
-    name="$building_worm_deflector"
+    name="$at_building_ghost_deflector"
     >
   </UIInfoComponent>
 
@@ -154,7 +154,7 @@
 
   <LuaComponent
     execute_every_n_frame="-1"
-    script_death="data/scripts/buildings/worm_deflector_death.lua"
+    script_death="mods/alchemy_tutor/files/entities/hall_of_records/ghost_deflector_death.lua"
     remove_after_executed="0">
   </LuaComponent>
 

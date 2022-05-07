@@ -113,9 +113,20 @@ local function intercept_ghosts( text )
 	return text
 end
 
+
+local translations = [[
+at_remote_lab,Hall of Apprentices,,,,,,,,,,,,,
+at_hall_of_records,Hall of Records,,,,,,,,,,,,,
+at_building_ghost_deflector,Ghost Crystal,,,,,,,,,,,,,
+at_log_ghost_deflector_death,Ghost Crystal Shattered,,,,,,,,,,,,,
+at_logdesc_ghost_deflector_death,A chill runs up your spine,,,,,,,,,,,,,
+]]
+
 function OnMagicNumbersAndWorldSeedInitialized() -- this is the last point where the Mod* API is available. after this materials.xml will be loaded.
 	edit_file( "data/biome/_pixel_scenes.xml", add_hall_of_records )
 	edit_file( "data/scripts/buildings/snowcrystal.lua", intercept_ghosts )
+
+	edit_file( "data/translations/common.csv", function(content) return content .. translations end)
 end
 
 -- This code runs when all mods' filesystems are registered
