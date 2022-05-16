@@ -1,8 +1,8 @@
 - progression tracking
   - exhibit sculpting?
   - custom pedestals on each cauldron?
-  - no containers??
-  - drainage
+  - x no containers??
+  - xx drainage
   - x ghost crystal
   - x fish tank?
   - x entry announcements

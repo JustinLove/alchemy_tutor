@@ -91,6 +91,7 @@ at_formula_list_append({
 		},
 		output = "plasma_fading",
 		check_for = at_material_presence,
+		record_spawn = at_potion_plasma,
 		rating = 5,
 	},
 	{
@@ -110,6 +111,7 @@ at_formula_list_append({
 		cauldron_material = "templebrick_static",
 		cauldron_check_y = 30,
 		output = "magic_liquid",
+		record_spawn = at_potion_magic_liquid,
 		rating = 9,
 	},
 	{
@@ -153,7 +155,6 @@ at_formula_list_append({
 		cauldron_minor = "lava",
 		output = "endslime",
 		cauldron_check_y = 10,
-		record_spawn = at_endslime,
 		rating = 5,
 	},
 	{
@@ -233,7 +234,6 @@ at_formula_list_append({
 		},
 		output = "cheese_static",
 		check_for = at_material_presence,
-		record_spawn = at_cheese,
 		rating = 17,
 	},
 	{

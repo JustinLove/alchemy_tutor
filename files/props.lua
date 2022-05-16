@@ -232,7 +232,7 @@ function at_meat_done( x, y )
 	LoadPixelScene(
 		at_mod_path .. "/props/meat_done.png",
 		"", -- visual
-		x-6, y-9,
+		x-8, y-9,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -253,6 +253,10 @@ function at_potion_slimeboom( x, y )
 	return entity
 end
 
+function at_potion_void( x, y )
+	return at_container( "void_liquid", 0.1, x, y )
+end
+
 function at_mushroom( mush, x, y )
 	if not mush then
 		SetRandomSeed( x, y )
@@ -262,8 +266,9 @@ function at_mushroom( mush, x, y )
 end
 
 function at_record_pedestals( x, y, material, contents )
+	print( 'ped', contents )
 	LoadPixelScene(
-		at_mod_path .. "/props/record_pedestals.png",
+		at_mod_path .. "/props/record_basin.png",
 		"", -- visual
 		x, y-48,
 		"", -- background

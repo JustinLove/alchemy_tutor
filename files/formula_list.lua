@@ -73,7 +73,7 @@ at_formula_list = {
 		materials = { "magic_liquid_mana_regeneration" },
 		cauldron_contents = "magic_liquid_unstable_teleportation",
 		output = "air",
-		record_material = "fire",
+		record_material = "liquid_fire",
 		rating = 5,
 	},
 	{
@@ -104,7 +104,8 @@ at_formula_list = {
 		cauldron_material = "templerock_soft",
 		check_for = at_explosion,
 		cauldron_check_y = 25,
-		record_spawn = at_potion_slimeboom,
+		record_material = "gunpowder",
+		--record_spawn = at_potion_slimeboom,
 		rating = 7,
 	},
 	{
@@ -291,6 +292,7 @@ at_formula_list = {
 		cauldron = at_block_brick,
 		cauldron_check_y = 40,
 		output = "steam",
+		record_material = "magic_liquid_protection_all",
 		rating = 9,
 	},
 	--[[
@@ -329,6 +331,7 @@ at_formula_list = {
 		cauldron_material = "rock_static_fungal",
 		cauldron_check_y = 10,
 		output = "void_liquid",
+		record_spawn = at_potion_void,
 		rating = 12,
 	},
 	{
@@ -341,6 +344,7 @@ at_formula_list = {
 		cauldron_contents = {"fungi", "fungi", "fungi", "fungi_creeping", "fungi_green"},
 		output = "void_liquid",
 		check_for = at_material_presence,
+		record_spawn = at_potion_void,
 		rating = 10,
 	},
 	{
@@ -360,6 +364,7 @@ at_formula_list = {
 		output = "void_liquid",
 		output2 = "corruption_static",
 		check_for = at_material_presence,
+		record_spawn = at_potion_void,
 		rating = 12,
 	},
 	{

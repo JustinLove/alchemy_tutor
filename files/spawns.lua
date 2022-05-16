@@ -160,17 +160,17 @@ at_rock =
 
 local at_left
 local at_right
-local at_pedestal_offset = 18
+local at_pedestal_offset = 20 
 local at_pedestal_spacing = 36
 
 function at_record_left( x, y )
-	--print('left')
 	at_left = math.floor((x - at_pedestal_offset)/at_pedestal_spacing)
+	print('left', at_left)
 end
 
 function at_record_right( x, y )
-	--print('right')
 	at_right = math.floor((x - at_pedestal_offset)/at_pedestal_spacing)
+	print('right', at_right)
 end
 
 function at_mark_floor1( x, y )
@@ -198,7 +198,7 @@ function at_mark_floor6( x, y )
 end
 
 at_rendevous = {}
-local at_hall_of_records_width = 16
+local at_hall_of_records_width = 14
 
 function at_mark_floor( x, y, floor )
 	if x % at_pedestal_spacing == at_pedestal_offset then
@@ -209,7 +209,7 @@ function at_mark_floor( x, y, floor )
 			col = (x - at_pedestal_offset)/at_pedestal_spacing + at_hall_of_records_width - at_right
 		end
 		local record = (at_hall_of_records_width - col + 1) + (floor - 1)*at_hall_of_records_width
-		--print( col, floor, x, y-48, record )
+		print( col, floor, x, y-48, record )
 		at_rendevous[tostring(x)..','..tostring(y-48)] = record
 		if record <= #at_formula_list then
 			if at_formulas['toxicclean'] == nil then
@@ -227,10 +227,20 @@ function at_mark_floor( x, y, floor )
 				material = set.cauldron_material
 			end
 			local what = 'air'
-			if HasFlagPersistent( "at_formula_" .. set.name ) and not _G['at_test_records'] then
-				what = at_pick_record_exemplar( set ) or 'air'
+			if HasFlagPersistent( "at_formula_" .. set.name ) or _G['at_test_records'] then
+				if set.record_spawn then
+					at_log( 'record', tostring(set.name), 'spawn' )
+					set.record_spawn( x + 8, y - 48 )
+				else
+					what = at_pick_record_exemplar( set ) or 'air'
+				end
 			end
 			at_record_pedestals( x, y, material, what )
+			if _G['at_test_records'] then
+				local eid = EntityCreateNew()
+				EntitySetTransform( eid, x, y )
+				at_add_label( eid, 16, 16 + (record%2)*16, tostring(record) .. " " .. set.name )
+			end
 		end
 	end
 end

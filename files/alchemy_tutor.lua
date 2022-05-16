@@ -26,6 +26,8 @@ at_test_x = -5317 -- hall of records
 at_test_y = 720 -- hall of records
 --at_test_x = -5000 -- hall of records entrance
 --at_test_y = 700 -- hall of records entrace
+--at_test_x = -5640 -- hall of records ghost
+--at_test_y = 1024 -- hall of records ghost
 
 local function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )

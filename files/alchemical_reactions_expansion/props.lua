@@ -91,41 +91,10 @@ function at_potion_polyhp( x, y )
 	return entity
 end
 
-function at_cheese( x, y )
-	LoadPixelScene(
-		at_are_path .. "/record_cheese.png",
-		"", -- visual
-		x-4, y-6,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{
-		} -- color_to_matieral_table
-	)
+function at_potion_plasma( x, y )
+	return at_container( "plasma_fading", 0.1, x, y )
 end
 
-function at_plastic( x, y )
-	LoadPixelScene(
-		at_are_path .. "/record_plastic.png",
-		"", -- visual
-		x-4, y-6,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{
-		} -- color_to_matieral_table
-	)
-end
-
-function at_endslime( x, y )
-	LoadPixelScene(
-		at_are_path .. "/record_endslime.png",
-		"", -- visual
-		x-4, y-6,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{
-		} -- color_to_matieral_table
-	)
+function at_potion_magic_liquid( x, y )
+	return at_container( "magic_liquid", 0.1, x, y )
 end
