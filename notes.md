@@ -1,5 +1,4 @@
 - progression tracking
-  - still need hall in spawns?
   - exhibit sculpting?
   - custom pedestals on each cauldron?
   - x no containers??
