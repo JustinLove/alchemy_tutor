@@ -266,7 +266,7 @@ function at_mushroom( mush, x, y )
 end
 
 function at_record_pedestals( x, y, material, contents )
-	print( 'ped', contents )
+	--print( 'ped', contents )
 	LoadPixelScene(
 		at_mod_path .. "/props/record_basin.png",
 		"", -- visual
@@ -277,5 +277,17 @@ function at_record_pedestals( x, y, material, contents )
 		{ ["fff0bbee"] = contents,
 			["ff786c44"] = at_material( material, "templebrick_static", true ),
 		} -- color_to_matieral_table
+	)
+end
+
+function at_ghost_deflector_base( x, y )
+	LoadPixelScene(
+		at_mod_path .. "/props/ghost_deflector_base.png",
+		at_mod_path .. "/props/ghost_deflector_base_visual.png",
+		x - 16, y - 12,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{} -- color_to_matieral_table
 	)
 end
