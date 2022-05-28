@@ -9,6 +9,7 @@ Adds alchemy labs throughout the world. Each lab is set up the materials to perf
 - 13 alchemy labs in all the main track biomes
 - Remote lab teleports findable in many other biomes
 - Field labs in Overgrowth and Ancient Laboratory
+- Hall of Records, a treecheivment like area that can be found in the world
 - 41 experiments, from very basic (cleaning toxic) to very obscure (conversion of metals)
 - +35 experiments if Alchemical Reactions Expansions is loaded.
 
@@ -31,7 +32,6 @@ Adds alchemy labs throughout the world. Each lab is set up the materials to perf
 
 Things I want to try - which may not be successful:
 
-- Perhaps something like the treechievements to track said progression
 - Perhaps multi-step challenges
 
 ### What is planned for final?

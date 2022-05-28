@@ -1,5 +1,9 @@
 # Alchemy Tutor Changelog
 
+## 0.4.0 Hall of Records Update
+
+- Added the Hall of Records, a treecheivment like area that can be found in the world
+
 ## 0.3.0 Field Labs Update
 
 - Added mini field labs to Overgrowth and Ancient Laboratory
