@@ -1,0 +1,304 @@
+<Entity tags="at_remote_lab_portal,teleportable_NOT,item_physics,item_pickup,effectable_prop">
+  <!-- teleport logic -->
+
+  <!-- -20,24; ~ 15,48 on biome map -->
+  <TeleportComponent
+    _tags="enabled_by_meditation"
+    _enabled="0"
+    target_x_is_absolute_position="1"
+    target_y_is_absolute_position="1"
+    target.x="-10240"
+    target.y="17408"
+    load_collapse_entity="0"
+  ></TeleportComponent>
+
+  <HitboxComponent 
+    _tags="enabled_by_meditation"
+    _enabled="0"
+    aabb_min_x="-15" 
+    aabb_min_y="-15"
+    aabb_max_x="15" 
+    aabb_max_y="15" 
+  ></HitboxComponent>
+
+    <!-- gfx -->
+
+  <UIInfoComponent
+    _tags="enabled_by_meditation"
+    _enabled="0"
+    name="$teleport_generic"
+    >
+  </UIInfoComponent>
+
+  <LightComponent 
+    _tags="enabled_by_meditation"
+    _enabled="0"
+    radius="255"
+    fade_out_time="1.5" 
+    r="64"
+    g="100"
+    b="255"
+    offset_y="-16"
+  ></LightComponent>
+
+  <LightComponent 
+    _tags="enabled_by_meditation"
+    _enabled="0" 
+    radius="64"
+    fade_out_time="1.5" 
+    r="64"
+    g="100"
+    b="255"
+    offset_y="-16"
+  ></LightComponent>
+
+  <ParticleEmitterComponent 
+    _tags="enabled_by_meditation"
+    _enabled="0"
+    emitted_material_name="spark_purple"
+    gravity.y="0.0"
+    lifetime_min="3"
+    lifetime_max="4"
+    x_vel_min="0"
+    x_vel_max="0"
+    y_vel_min="0"
+    y_vel_max="0"
+    count_min="115"
+    count_max="115"
+    render_on_grid="1"
+    fade_based_on_lifetime="0"
+    area_circle_radius.min="15"
+    area_circle_radius.max="15"
+    cosmetic_force_create="1"
+    collide_with_grid="0"
+    airflow_force="0.051"
+    airflow_time="1.01"
+    airflow_scale="0.03"
+    emission_interval_min_frames="12"
+    emission_interval_max_frames="12"
+    emit_cosmetic_particles="1"
+    velocity_always_away_from_center="11"
+    render_back="1"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
+
+  <ParticleEmitterComponent 
+    _tags="enabled_by_meditation"
+    _enabled="0"
+    emitted_material_name="spark_purple"
+    gravity.y="0.0"
+    lifetime_min="3"
+    lifetime_max="4"
+    x_vel_min="0"
+    x_vel_max="0"
+    y_vel_min="0"
+    y_vel_max="0"
+    count_min="1"
+    count_max="1"
+    render_on_grid="1"
+    fade_based_on_lifetime="1"
+    area_circle_radius.min="0"
+    area_circle_radius.max="15"
+    cosmetic_force_create="1"
+    collide_with_grid="0"
+    airflow_force="0.051"
+    airflow_time="1.01"
+    airflow_scale="0.03"
+    emission_interval_min_frames="12"
+    emission_interval_max_frames="12"
+    emit_cosmetic_particles="1"
+    velocity_always_away_from_center="0"
+    render_back="1"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
+
+  <PhysicsBodyComponent 
+    _tags="enabled_in_world"
+    uid="1" 
+    allow_sleep="1" 
+    angular_damping="0" 
+    fixed_rotation="0" 
+    is_bullet="1" 
+    linear_damping="0"
+    auto_clean="1"
+    hax_fix_going_through_ground="1"
+    on_death_leave_physics_body="0"
+    on_death_really_leave_body="0"
+  ></PhysicsBodyComponent>
+
+  <PhysicsImageShapeComponent 
+    body_id="1"
+    centered="1"
+    image_file="mods/alchemy_tutor/files/entities/meditation_chest.png" 
+    material="metal_prop"
+  ></PhysicsImageShapeComponent>
+
+  <ParticleEmitterComponent 
+    emitted_material_name="spark_purple"
+    gravity.y="0.0"
+    offset.x="0"
+    offset.y="0"
+    lifetime_min="10"
+    lifetime_max="20"
+    count_min="1"
+    count_max="1"
+    create_real_particles="0"
+    emit_cosmetic_particles="1"
+    cosmetic_force_create="1"
+    render_on_grid="1"
+    collide_with_grid="0"
+    collide_with_gas_and_fire="0"
+    fade_based_on_lifetime="1"
+    velocity_always_away_from_center="1"
+    airflow_force="0.0"
+    airflow_time="1.01"
+    airflow_scale="0.05"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="1"
+    image_animation_file="mods/alchemy_tutor/files/entities/meditation_chest_emitter.png"
+    image_animation_speed="1"
+    image_animation_loop="1"
+    image_animation_use_entity_rotation="1"
+    image_animation_raytrace_from_center="0" >
+  </ParticleEmitterComponent>
+
+  <SpriteComponent 
+    _tags="enabled_by_meditation"
+    _enabled="0"
+    image_file="data/buildings_gfx/teleport_center.xml" 
+    offset_x="0"
+    offset_y="0"
+    z_index="1"
+    additive="1"
+    >
+  </SpriteComponent>
+
+  <AudioLoopComponent
+    _tags="enabled_by_meditation"
+    _enabled="0"
+    file="data/audio/Desktop/misc.bank"
+    event_name="misc/teleport_loop"
+    calculate_material_lowpass="0"
+    play_on_component_enable="1"
+    auto_play="0" >
+  </AudioLoopComponent>
+
+  <AudioLoopComponent
+    _tags="enabled_by_meditation"
+    _enabled="0"
+    file="data/audio/Desktop/misc.bank"
+    event_name="misc/teleport_emitter_loop"
+    calculate_material_lowpass="0"
+    play_on_component_enable="1"
+    auto_play="0" >
+  </AudioLoopComponent>
+
+  <!-- anticipation FX -->
+  <ParticleEmitterComponent 
+    _tags="enabled_by_meditation_early"
+    _enabled="0"
+    emitted_material_name="spark_purple"
+    gravity.y="0.0"
+    lifetime_min="3"
+    lifetime_max="4"
+    x_vel_min="0"
+    x_vel_max="0"
+    y_vel_min="0"
+    y_vel_max="0"
+    count_min="10"
+    count_max="80"
+    render_on_grid="1"
+    fade_based_on_lifetime="0"
+    area_circle_radius.min="1"
+    area_circle_radius.max="1"
+    cosmetic_force_create="1"
+    collide_with_grid="0"
+    airflow_force="0.081"
+    airflow_time="1.01"
+    airflow_scale="0.03"
+    emission_interval_min_frames="12"
+    emission_interval_max_frames="12"
+    emit_cosmetic_particles="1"
+    velocity_always_away_from_center="11"
+    render_back="1"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
+
+  <ParticleEmitterComponent 
+    _tags="enabled_by_meditation_early"
+    _enabled="0"
+    emitted_material_name="spark_purple"
+    gravity.y="0.0"
+    lifetime_min="3"
+    lifetime_max="4"
+    x_vel_min="-20"
+    x_vel_max="20"
+    y_vel_min="-20"
+    y_vel_max="20"
+    count_min="1"
+    count_max="1"
+    render_on_grid="1"
+    fade_based_on_lifetime="1"
+    area_circle_radius.min="0"
+    area_circle_radius.max="6"
+    cosmetic_force_create="1"
+    collide_with_grid="0"
+    airflow_force="0.051"
+    airflow_time="1.01"
+    airflow_scale="0.03"
+    emission_interval_min_frames="1"
+    emission_interval_max_frames="1"
+    emit_cosmetic_particles="1"
+    velocity_always_away_from_center="0"
+    render_back="1"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
+
+  <AudioLoopComponent
+    _tags="enabled_by_meditation_early"
+    _enabled="0"
+    file="data/audio/Desktop/misc.snd"
+    event_name="misc/teleport_loop"
+    calculate_material_lowpass="0"
+    play_on_component_enable="1"
+    auto_play="0" >
+  </AudioLoopComponent>
+
+  <AudioLoopComponent
+    _tags="enabled_by_meditation_early"
+    _enabled="0"
+    file="data/audio/Desktop/misc.snd"
+    event_name="misc/teleport_emitter_loop"
+    calculate_material_lowpass="0"
+    play_on_component_enable="1"
+    auto_play="0" >
+  </AudioLoopComponent>
+
+  <LightComponent 
+    _tags="enabled_by_meditation_early"
+    _enabled="0"
+    radius="60"
+    fade_out_time="1.5" 
+    r="64"
+    g="100"
+    b="255"
+    offset_y="-16"
+  ></LightComponent>
+
+  <!-- teleporter started by waiting -->
+  <VariableStorageComponent
+    name="meditation_count"
+    value_int="0"
+  >	
+  </VariableStorageComponent>
+
+  <LuaComponent
+    script_source_file="mods/alchemy_tutor/files/entities/hall_of_masters_meditation.lua"
+    execute_every_n_frame="60" >
+  </LuaComponent>
+
+  <LuaComponent
+    script_portal_teleport_used="mods/alchemy_tutor/files/entities/hall_of_masters/teleport_hall_of_masters.lua"
+    >
+  </LuaComponent>
+</Entity>

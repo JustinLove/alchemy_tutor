@@ -8,6 +8,7 @@ dofile_once(at_mod_path .. "/grand_alchemy.lua")
 --at_test_records = true
 --at_test_healing = true
 --at_test_portal = true
+--at_test_masters = true
 --at_test_x = -200
 --at_test_y = -100 -- hills
 --at_test_y = 2000 -- excavation
