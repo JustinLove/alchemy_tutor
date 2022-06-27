@@ -1,10 +1,10 @@
 - multi-step challenges?
   - crafting depth of targets
   - raw materials
-    - salt can use water_salt which uses salt
   - detect void?
   - spawn a different scene
   - new scene design
+  - drops in records
 
 - check hanging with special detectors
 

@@ -171,6 +171,48 @@ local function keys( from )
 	return new
 end
 
+function at_raw_materials()
+	if at_formulas['toxicclean'] == nil then
+		at_setup()
+	end
+	local materials = {}
+
+	local function base_material( mat )
+		if mat == nil or mat == 'air' then
+			return
+		end
+		if type( mat ) == 'table' then
+			mat = mat[1]
+		end
+		if mat == 'air' then
+			return
+		end
+		materials[mat] = true
+	end
+
+	for i,formula in ipairs(at_formula_list) do
+		if not formula.exclude_from_chains then
+			for i,mat in ipairs( formula.materials ) do
+				base_material( mat )
+			end
+			base_material( formula.cauldron_contents )
+		end
+	end
+
+	for i,formula in ipairs(at_formula_list) do
+		if not formula.exclude_from_chains then
+			materials[formula.output] = nil
+		end
+	end
+
+	--print( '--------------------------------------' )
+	--print(#keys(materials))
+	--for k,v in pairs(materials) do
+		--print(k)
+	--end
+	return keys( materials )
+end
+
 function at_master_sets()
 	if at_formulas['toxicclean'] == nil then
 		at_setup()
