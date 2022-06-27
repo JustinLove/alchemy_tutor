@@ -147,6 +147,150 @@ function at_pick_lab_set( x, y, scene_description )
 	end
 end
 
+local function copy_array( from )
+	local new = {}
+	for i = 1,#from do
+		new[i] = from[i]
+	end
+	return new
+end
+
+local function copy_map( from )
+	local new = {}
+	for k,v in pairs(from) do
+		new[k] = v
+	end
+	return new
+end
+
+local function keys( from )
+	local new = {}
+	for k,v in pairs(from) do
+		table.insert( new, k )
+	end
+	return new
+end
+
+function at_master_sets()
+	if at_formulas['toxicclean'] == nil then
+		at_setup()
+	end
+	local at_ingredients = {}
+	local function base_material( mat,test)
+		if mat == nil or mat == 'air' then
+			return
+		end
+		if type( mat ) == 'table' then
+			mat = mat[1]
+		end
+		if mat == 'air' or mat == test.target then
+			return
+		end
+		test.ingredients[mat] = true
+	end
+
+	local empty_test = {
+		target = '',
+		formulas = {'xxxx'},
+		created_materials = {},
+		ingredients = {},
+	}
+
+	local function copy_test( from )
+		return {
+			target = from.target,
+			formulas = copy_array( from.formulas ),
+			created_materials = copy_map( from.created_materials ),
+			ingredients = copy_map( from.ingredients ),
+		}
+	end
+
+	local function add_ingredients( test, formula )
+		for i,mat in ipairs( formula.materials ) do
+			base_material( mat, test )
+		end
+		base_material( formula.cauldron_contents, test )
+	end
+
+	local function mat_used( mat, set )
+		if type( mat ) == 'table' then
+			mat = mat[1]
+		end
+		local result = set[mat]
+		--print('comparing ', tostring(mat), tostring(result) )
+		return result
+	end
+
+	local function formula_includes( formula, set )
+		for i,mat in ipairs( formula.materials ) do
+			if mat_used( mat, set ) then
+				return true
+			end
+		end
+		if mat_used( formula.cauldron_contents, set ) then
+			return true
+		end
+		return false
+	end
+
+	for i,formula in ipairs(at_formula_list) do
+		if not formula.exclude_from_chains then
+			local test = copy_test( empty_test )
+			test.target = formula.output
+			test.formulas = {formula.name}
+			test.created_materials[formula.output] = true
+			add_ingredients( test, formula )
+			table.insert( at_ingredients, test )
+		end
+	end
+
+	local old
+	local new
+	for i = 1,4 do
+		old = at_ingredients
+		new = {}
+		unique_set = {}
+		for t,original_test in ipairs(old) do
+			local expansions = 0
+			for ing,b in pairs(original_test.ingredients) do
+				for f,formula in ipairs(at_formula_list) do
+					if ing == formula.output and ing ~= 'water' and not formula.exclude_from_chains and not formula_includes( formula, original_test.created_materials ) then
+						local new_test = copy_test( original_test )
+						table.insert( new_test.formulas, formula.name )
+						new_test.created_materials[formula.output] = true
+						new_test.ingredients[ing] = nil
+						add_ingredients( new_test, formula )
+						local list = keys( new_test.ingredients )
+						table.sort( list )
+						ingredient_key = new_test.target .. table.concat( list )
+						if not unique_set[ingredient_key] then
+							unique_set[ingredient_key] = true
+							table.insert( new, new_test )
+						end
+						expansions = expansions + 1
+					end
+				end
+			end
+			if expansions < 1 then
+				table.insert( new, original_test )
+			end
+		end
+		print( #old, #new )
+		at_ingredients = new
+	end
+
+	print( '--------------------------------------' )
+	for i,v in ipairs(at_ingredients) do
+		print(v.target, table.concat( v.formulas, ',' ))
+		--for ing,b in pairs(v.created_materials) do
+			--print('--' .. ing)
+		--end
+		for ing,b in pairs(v.ingredients) do
+			print('  ' .. ing)
+		end
+	end
+end
+
 function at_pick_record_exemplar( formula )
 	--print( '-------------------------------', formula.name, type(formula.record) )
 	if formula.record_material then
@@ -263,6 +407,9 @@ function at_setup()
 				table.insert(at_materials, mat)
 			end
 			at_amounts[#at_materials] = v.amounts[i]
+		end
+		if v.output == 'nil' or v.output == 'air' or v.output == 'water' or v.check_for == at_explosion or (v.cauldron and v.cauldron.exclude_from_chains) then
+			v.exclude_from_chains = true
 		end
 	end
 	GlobalsSetValue( "at_passed_count", tostring(at_passed_count) )

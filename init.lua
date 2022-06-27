@@ -61,6 +61,7 @@ function OnPlayerSpawned( player_entity ) -- This runs when player entity has be
 	if not first_run then
 		return
 	end
+	at_master_sets()
 	if _G['at_test_player'] or _G['at_test_clear'] then
 		clear_entities( player_entity )
 	end

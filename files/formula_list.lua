@@ -321,6 +321,7 @@ at_formula_list = {
 		cauldron_material = "steel_static_unmeltable",
 		output = "shock_powder",
 		record_material = "liquid_fire",
+		exclude_from_chains = true,
 		rating = 12,
 	},
 	{
@@ -332,6 +333,7 @@ at_formula_list = {
 		cauldron_check_y = 10,
 		output = "void_liquid",
 		record_spawn = at_potion_void,
+		exclude_from_chains = true,
 		rating = 12,
 	},
 	{
@@ -345,6 +347,7 @@ at_formula_list = {
 		output = "void_liquid",
 		check_for = at_material_presence,
 		record_spawn = at_potion_void,
+		exclude_from_chains = true,
 		rating = 10,
 	},
 	{
@@ -365,6 +368,7 @@ at_formula_list = {
 		output2 = "corruption_static",
 		check_for = at_material_presence,
 		record_spawn = at_potion_void,
+		exclude_from_chains = true,
 		rating = 12,
 	},
 	{

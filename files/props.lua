@@ -166,6 +166,7 @@ end
 at_block_brick = {
 	name = "at_block_brick",
 	default_material = "wizardstone",
+	exclude_from_chains = true,
 	spawn = function( set, x, y, index )
 		return at_spawn_block( set, x, y, index, at_mod_path .. "/props/block_brick.png" )
 	end
@@ -174,6 +175,7 @@ at_block_brick = {
 at_block_rock = {
 	name = "at_block_rock",
 	default_material = "wizardstone",
+	exclude_from_chains = true,
 	spawn = function( set, x, y, index )
 		return at_spawn_block( set, x, y, index, at_mod_path .. "/props/block_rock.png" )
 	end
@@ -182,6 +184,7 @@ at_block_rock = {
 at_block_steel = {
 	name = "at_block_steel",
 	default_material = "wizardstone",
+	exclude_from_chains = true,
 	spawn = function( set, x, y, index )
 		return at_spawn_block( set, x, y, index, at_mod_path .. "/props/block_steel.png" )
 	end

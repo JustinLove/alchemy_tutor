@@ -1,15 +1,17 @@
 - multi-step challenges?
-- herrings that can vs. can't react
-- steel in fungal gets blown up
+  - crafting depth of targets
+  - raw materials
+    - salt can use water_salt which uses salt
+  - detect void?
+  - spawn a different scene
+  - new scene design
+
 - check hanging with special detectors
 
-- solids in cauldron - whether to remove cauldron material/ which formula???
 - background?
 - cauldron fires
-- repeat resitance??
 - translations - partly done
 
-- snow is awkward with powders - maybe okay as puzzle element?
 
 - watchlist
   - steel cauldrons - `steel_static_strong`
