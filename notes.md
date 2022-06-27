@@ -1,10 +1,10 @@
 - multi-step challenges?
-  - crafting depth of targets
-  - raw materials
-  - detect void?
+  - x crafting depth of targets
+  - x raw materials
   - spawn a different scene
   - new scene design
   - drops in records
+  - detect void?
 
 - check hanging with special detectors
 

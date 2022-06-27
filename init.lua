@@ -1,5 +1,3 @@
-dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
-
 local function clear_entities( player_entity )
 	EntityAddComponent( player_entity, "LuaComponent", 
 	{
@@ -61,7 +59,11 @@ function OnPlayerSpawned( player_entity ) -- This runs when player entity has be
 	if not first_run then
 		return
 	end
-	at_master_sets()
+
+	dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
+
+	--at_master_sets()
+	--at_raw_materials()
 	if _G['at_test_player'] or _G['at_test_clear'] then
 		clear_entities( player_entity )
 	end
@@ -85,6 +87,8 @@ end
 
 
 function OnWorldInitialized() -- This is called once the game world is initialized. Doesn't ensure any world chunks actually exist. Use OnPlayerSpawned to ensure the chunks around player have been loaded or created.
+
+	dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 
 	if _G['at_test_lab'] or _G['at_test_portal'] then
 		local world = GameGetWorldStateEntity()

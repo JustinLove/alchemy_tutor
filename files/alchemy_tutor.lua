@@ -296,7 +296,7 @@ function at_master_sets()
 			local expansions = 0
 			for ing,b in pairs(original_test.ingredients) do
 				for f,formula in ipairs(at_formula_list) do
-					if ing == formula.output and ing ~= 'water' and not formula.exclude_from_chains and not formula_includes( formula, original_test.created_materials ) then
+					if ing == formula.output and not formula.exclude_from_chains and not formula_includes( formula, original_test.created_materials ) then
 						local new_test = copy_test( original_test )
 						table.insert( new_test.formulas, formula.name )
 						new_test.created_materials[formula.output] = true
@@ -445,12 +445,18 @@ function at_setup()
 		for i,mat in ipairs( v.materials ) do
 			if type( mat ) == 'table' then
 				table.insert(at_materials, mat[1])
+				if mat[1] == v.output then
+					v.exclude_from_chains = true
+				end
 			else
 				table.insert(at_materials, mat)
+				if mat == v.output then
+					v.exclude_from_chains = true
+				end
 			end
 			at_amounts[#at_materials] = v.amounts[i]
 		end
-		if v.output == 'nil' or v.output == 'air' or v.output == 'water' or v.check_for == at_explosion or (v.cauldron and v.cauldron.exclude_from_chains) then
+		if v.output == 'nil' or v.output == 'air' or v.check_for == at_explosion or (v.cauldron and v.cauldron.exclude_from_chains) then
 			v.exclude_from_chains = true
 		end
 	end

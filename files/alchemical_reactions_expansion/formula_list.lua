@@ -58,6 +58,7 @@ at_formula_list_append({
 		check_for = at_material_presence,
 		output = "magic_gas_hp_regeneration",
 		record_spawn = at_record_gold_statue,
+		exclude_from_chains = true,
 		rating = 4,
 	},
 	{
