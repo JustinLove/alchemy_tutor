@@ -10,7 +10,6 @@ end
 function portal_teleport_used( entity_teleported, from_x, from_y, to_x, to_y )
 	if( IsPlayer( entity_teleported ) ) then
 		remove_portal( from_x, from_y )
-		EntityLoad("mods/alchemy_tutor/files/entities/meditation_altar_effect.xml", from_x, from_y-8)
 
 		-- portal should already be spawned if coming via remote_lab_meditation, but just in case
 		at_remember_return_location( from_x, from_y )
