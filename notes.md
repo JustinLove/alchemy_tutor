@@ -1,8 +1,17 @@
 - multi-step challenges?
   - x crafting depth of targets
   - x raw materials
-  - spawn a different scene
+  - gold is root of all solids
+    - needs lots of poly
+    - dispensers?
+  - no brine or salt in raw?
+  - no tele?
+  - no fire wand?
+  - touch of water?
+  - target selection criteria?
+  - grand alchemy?
   - new scene design
+  - scene spawning rework
   - drops in records
   - detect void?
 

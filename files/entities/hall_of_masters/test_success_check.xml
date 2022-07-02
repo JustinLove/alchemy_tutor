@@ -1,0 +1,43 @@
+<Entity tags="at_backstage">
+  <LuaComponent
+    script_source_file="mods/alchemy_tutor/files/entities/hall_of_masters/test_success_check.lua"
+    execute_every_n_frame="36"
+    >
+  </LuaComponent>
+
+  <VariableStorageComponent
+    name="target"
+    value_string=""
+    >
+  </VariableStorageComponent>
+
+  <ParticleEmitterComponent
+    _tags="enabled_by_script"
+    _enabled="0"
+    emitted_material_name="spark_yellow"
+    gravity.y="0.0"
+    lifetime_min="3"
+    lifetime_max="4"
+    x_vel_min="0"
+    x_vel_max="0"
+    y_vel_min="0"
+    y_vel_max="0"
+    count_min="15"
+    count_max="15"
+    render_on_grid="1"
+    fade_based_on_lifetime="0"
+    area_circle_radius.min="40"
+    area_circle_radius.max="40"
+    cosmetic_force_create="1"
+    collide_with_grid="0"
+    airflow_force="0.051"
+    airflow_time="1.01"
+    airflow_scale="0.03"
+    emission_interval_min_frames="12"
+    emission_interval_max_frames="12"
+    emit_cosmetic_particles="1"
+    velocity_always_away_from_center="0"
+    render_back="1"
+    is_emitting="1" >
+  </ParticleEmitterComponent>
+</Entity>

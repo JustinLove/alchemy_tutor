@@ -449,6 +449,7 @@ at_formula_list = {
 		other = at_meat,
 		output = "meat_done",
 		record_spawn = at_meat_done,
+		exclude_from_chains = true,
 		rating = 15,
 	},
 	{

@@ -30,7 +30,7 @@ at_test_y = 720 -- hall of records
 --at_test_x = -5640 -- hall of records ghost
 --at_test_y = 1024 -- hall of records ghost
 
-local function at_get_material_type( material_name )
+function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
 	local tags = CellFactory_GetTags( material_id )
 
@@ -206,6 +206,8 @@ function at_raw_materials()
 		end
 	end
 
+	materials['powder_empty'] = nil
+
 	--print( '--------------------------------------' )
 	--print(#keys(materials))
 	--for k,v in pairs(materials) do
@@ -214,11 +216,34 @@ function at_raw_materials()
 	return keys( materials )
 end
 
+function at_all_others()
+	local others = {}
+	if at_formulas['toxicclean'] == nil then
+		at_setup()
+	end
+	for i,formula in ipairs(at_formula_list) do
+		if not formula.exclude_from_chains then
+			if formula.other then
+				local found = false
+				for o,x in ipairs(others) do
+					if x == formula.other then
+						found = true
+					end
+				end
+				if not found then
+					others[#others+1] = formula.other
+				end
+			end
+		end
+	end
+	return others
+end
+
 function at_master_sets()
 	if at_formulas['toxicclean'] == nil then
 		at_setup()
 	end
-	local at_ingredients = {}
+	local master_tests = {}
 	local function base_material( mat,test)
 		if mat == nil or mat == 'air' then
 			return
@@ -283,14 +308,14 @@ function at_master_sets()
 			test.formulas = {formula.name}
 			test.created_materials[formula.output] = true
 			add_ingredients( test, formula )
-			table.insert( at_ingredients, test )
+			table.insert( master_tests, test )
 		end
 	end
 
 	local old
 	local new
 	for i = 1,4 do
-		old = at_ingredients
+		old = master_tests
 		new = {}
 		unique_set = {}
 		for t,original_test in ipairs(old) do
@@ -319,11 +344,12 @@ function at_master_sets()
 			end
 		end
 		print( #old, #new )
-		at_ingredients = new
+		master_tests = new
 	end
 
+	--[[
 	print( '--------------------------------------' )
-	for i,v in ipairs(at_ingredients) do
+	for i,v in ipairs(master_tests) do
 		print(v.target, table.concat( v.formulas, ',' ))
 		--for ing,b in pairs(v.created_materials) do
 			--print('--' .. ing)
@@ -332,6 +358,9 @@ function at_master_sets()
 			print('  ' .. ing)
 		end
 	end
+	]]
+
+	return master_tests
 end
 
 function at_pick_record_exemplar( formula )
@@ -832,6 +861,73 @@ function at_decorate_scene( x, y, scene_description )
 			for i,v in ipairs( rewards ) do
 				EntityKill( v )
 			end
+		end
+	end
+
+	at_log_book( x, y )
+end
+
+function at_decorate_hall_of_masters( x, y, scene_description )
+	at_log( 'decorate masters', x, y )
+	local materials = scene_description.m
+	local other = scene_description.o
+	local reward = scene_description.r
+
+	local set = at_pick_lab_set( x, y, scene_description )
+	SetRandomSeed( x, y )
+
+	shuffleTable( materials )
+	shuffleTable( other )
+	shuffleTable( reward )
+
+	local raw_materials = at_raw_materials()
+	local material_list = {}
+	local loc
+	local what
+
+	local tests = at_master_sets()
+	local test = tests[ Random(1, #tests) ]
+	loc = table.remove( reward )
+	if loc then
+		at_container( test.target, 0.01, loc.x, loc.y )
+
+		local id = EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/test_success_check.xml", loc.x, loc.y )
+		local var = EntityGetFirstComponent( id, "VariableStorageComponent" )
+		if var then
+			ComponentSetValue2( var, "value_string", test.target )
+		end
+
+		at_log( 'target', test.target, #test.formulas, loc.x, loc.y )
+	end
+
+	for i,mat in ipairs( raw_materials ) do
+		material_list[#material_list+1] = mat
+	end
+	for i = 1,3 do
+		material_list[#material_list+1] = 'potion_empty'
+		material_list[#material_list+1] = 'powder_empty'
+	end
+	for i,mat in ipairs( raw_materials ) do
+		material_list[#material_list+1] = mat
+	end
+
+	for i,mat in ipairs( material_list ) do
+		what = at_material( mat, 'potion_empty', first )
+		loc = table.remove( materials )
+		if loc then
+			-- look up amount
+			at_container( what, 1.0, loc.x, loc.y )
+			--present_materials[what] = true
+			--at_log( 'material', what, loc.x, loc.y )
+		end
+	end
+
+	local others = at_all_others()
+
+	for i,extra in ipairs( others ) do
+		loc = table.remove( other )
+		if loc then
+			extra( loc.x, loc.y )
 		end
 	end
 

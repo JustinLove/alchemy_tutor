@@ -16,6 +16,9 @@ RegisterSpawnFunction( 0xff2e3a2d, "at_spawn_reward")
 RegisterSpawnFunction( 0xff057ee1, "at_spawn_steel_pit")
 RegisterSpawnFunction( 0xff0691c4, "at_spawn_brick_pit")
 RegisterSpawnFunction( 0xff5ce4e5, "at_spawn_scene")
+RegisterSpawnFunction( 0xff3a57e2, "at_spawn_master")
+RegisterSpawnFunction( 0xff0c79c7, "at_spawn_output")
+RegisterSpawnFunction( 0xffe411e9, "at_spawn_eye")
 RegisterSpawnFunction( 0xff91a4e2, "at_look_here")
 
 at_lab_chance = ModSettingGet("alchemy_tutor.lab_chance")
@@ -55,6 +58,45 @@ function at_spawn_scene( x, y )
 	at_cauldrons = {}
 	at_other = {}
 	at_reward = {}
+end
+
+function at_spawn_master( x, y )
+	local cauldron = at_scene_cauldron or at_default_cauldron
+	local text = smallfolk.dumps({
+		sc = cauldron and cauldron.name,
+		sb = at_biome_banned_materials,
+		m = at_materials,
+		c = at_cauldrons,
+		o = at_other,
+		r = at_reward,
+	})
+
+	local dc = EntityLoad( "mods/alchemy_tutor/files/entities/decorate_scene.xml", x, y )
+	if dc then
+		at_log( 'master pixel', tostring(dc), x, y )
+		local lua = EntityGetFirstComponent( dc, "LuaComponent" )
+		if lua then
+			ComponentSetValue2( lua, "script_source_file", "mods/alchemy_tutor/files/entities/decorate_hall_of_masters.lua" )
+		end
+		local var = EntityGetFirstComponent( dc, "VariableStorageComponent" )
+		if var then
+			ComponentSetValue2( var, "value_string", text )
+		end
+	end
+
+	at_scene_cauldron = nil
+	at_materials = {}
+	at_cauldrons = {}
+	at_other = {}
+	at_reward = {}
+end
+
+function at_spawn_output( x, y )
+	table.insert( at_reward, {x = x, y = y} )
+end
+
+function at_spawn_eye( x, y )
+	EntityLoad( "data/entities/items/pickup/evil_eye.xml", x, y )
 end
 
 function at_look_here( x, y )

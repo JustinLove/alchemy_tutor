@@ -21,7 +21,7 @@ function portal_teleport_used( entity_teleported, from_x, from_y, to_x, to_y )
 
 		-- again, lab should already be down via meditation, but game ignores duplicate pixel scenes, so might as well be safe
 		local lx, ly = at_get_lab_location()
-		at_spawn_remote_lab( lx, ly )
+		at_spawn_hall_of_masters( lx, ly )
 
 		local iteration = tonumber( GlobalsGetValue( "AT_REMOTE_LAB_COUNT", "0" ) )
 		GlobalsSetValue( "AT_REMOTE_LAB_COUNT", tostring( iteration+1 ) )

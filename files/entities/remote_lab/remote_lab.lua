@@ -24,6 +24,32 @@ function at_spawn_remote_lab( x, y )
 	)
 end
 
+function at_spawn_hall_of_masters( x, y )
+	local width, height = 512, 512
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/biome_impl/remote_lab_entrance.png",
+		"", -- visual
+		x, y,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/biome_impl/hall_of_masters.png",
+		"", -- visual
+		x + width, y,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
+end
+
 -- 19,45; off bottom of biome map
 local remote_lab_x = 8704
 local remote_lab_y = 23040
