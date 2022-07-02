@@ -17,12 +17,12 @@ local at_pedestal_spacing = 36
 
 function at_record_left( x, y )
 	at_left = math.floor((x - at_pedestal_offset)/at_pedestal_spacing)
-	print('left', at_left)
+	--print('left', at_left)
 end
 
 function at_record_right( x, y )
 	at_right = math.floor((x - at_pedestal_offset)/at_pedestal_spacing)
-	print('right', at_right)
+	--print('right', at_right)
 end
 
 function at_mark_floor1( x, y )
@@ -53,6 +53,7 @@ at_rendevous = {}
 local at_hall_of_records_width = 14
 
 function at_mark_floor( x, y, floor )
+	SetRandomSeed( x, y )
 	if x % at_pedestal_spacing == at_pedestal_offset then
 		local col = 0
 		if at_left then
@@ -61,7 +62,7 @@ function at_mark_floor( x, y, floor )
 			col = (x - at_pedestal_offset)/at_pedestal_spacing + at_hall_of_records_width - at_right
 		end
 		local record = (at_hall_of_records_width - col + 1) + (floor - 1)*at_hall_of_records_width
-		print( col, floor, x, y-48, record )
+		--print( col, floor, x, y-48, record )
 		at_rendevous[tostring(x)..','..tostring(y-48)] = record
 		if record <= #at_formula_list then
 			if at_formulas['toxicclean'] == nil then
@@ -94,6 +95,8 @@ function at_mark_floor( x, y, floor )
 				at_add_label( eid, 16, 16 + (record%2)*16, tostring(record) .. " " .. set.name )
 			end
 		end
+	elseif Random(1, 200) == 1 then
+		at_random_raw( x, y - 4)
 	end
 end
 

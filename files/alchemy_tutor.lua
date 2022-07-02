@@ -71,6 +71,7 @@ at_materials = {}
 at_amounts = {}
 at_grand_materials = {}
 at_biome_banned_materials = {}
+at_raw_materials = {}
 at_passed_count = 0
 
 function at_pick_lab_set( x, y, scene_description )
@@ -172,7 +173,7 @@ local function keys( from )
 	return new
 end
 
-function at_raw_materials()
+function at_setup_raw_materials()
 	if at_formulas['toxicclean'] == nil then
 		at_setup()
 	end
@@ -213,7 +214,8 @@ function at_raw_materials()
 	--for k,v in pairs(materials) do
 		--print(k)
 	--end
-	return keys( materials )
+	at_raw_materials = keys( materials )
+	return at_raw_materials
 end
 
 function at_all_others()
@@ -603,6 +605,35 @@ function at_red_herring( x, y, present_materials )
 	end
 end
 
+function at_random_raw( x, y )
+	if #at_raw_materials < 1 then
+		at_setup_raw_materials()
+	end
+	local crazy = 0
+	while true do
+		local r = Random(1, #at_raw_materials + #at_grand_materials + 5)
+		if r <= #at_raw_materials then
+			local amount = 1.0
+			for i,mat in ipairs(at_materials) do
+				if mat == at_raw_materials[r] then
+					amount = at_amounts[i] or 1.0
+					break
+				end
+			end
+			return at_container( at_raw_materials[r], amount, x, y )
+		elseif r <= #at_raw_materials + #at_grand_materials then
+			r = r - #at_raw_materials
+			return at_container( at_grand_materials[r], 1.0, x, y )
+		elseif r <= #at_raw_materials + #at_grand_materials + 3 then
+			return at_powder_stash( x, y )
+		else
+			return at_potion( x, y )
+		end
+
+		crazy = crazy + 1
+	end
+end
+
 function at_remember_formula( entity, formula )
 	local s = EntityGetComponent( entity, "VariableStorageComponent" )
 	if ( s ~= nil ) then
@@ -880,7 +911,9 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	shuffleTable( other )
 	shuffleTable( reward )
 
-	local raw_materials = at_raw_materials()
+	if #at_raw_materials < 1 then
+		at_setup_raw_materials()
+	end
 	local material_list = {}
 	local loc
 	local what
@@ -900,14 +933,14 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 		at_log( 'target', test.target, #test.formulas, loc.x, loc.y )
 	end
 
-	for i,mat in ipairs( raw_materials ) do
+	for i,mat in ipairs( at_raw_materials ) do
 		material_list[#material_list+1] = mat
 	end
 	for i = 1,3 do
 		material_list[#material_list+1] = 'potion_empty'
 		material_list[#material_list+1] = 'powder_empty'
 	end
-	for i,mat in ipairs( raw_materials ) do
+	for i,mat in ipairs( at_raw_materials ) do
 		material_list[#material_list+1] = mat
 	end
 

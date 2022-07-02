@@ -12,7 +12,6 @@
   - grand alchemy?
   - new scene design
   - scene spawning rework
-  - drops in records
   - detect void?
 
 - check hanging with special detectors

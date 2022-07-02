@@ -63,7 +63,7 @@ function OnPlayerSpawned( player_entity ) -- This runs when player entity has be
 	dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 
 	--at_master_sets()
-	--at_raw_materials()
+	--at_setup_raw_materials()
 	if _G['at_test_player'] or _G['at_test_clear'] then
 		clear_entities( player_entity )
 	end
