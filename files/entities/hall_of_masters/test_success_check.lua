@@ -28,7 +28,6 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 40, "item_pickup")) do
 		if matid == targetid then
 			local inv = EntityGetFirstComponentIncludingDisabled( id, "MaterialInventoryComponent" )
 			if inv then
-				print( "got inventory" )
 				local counts = ComponentGetValue2( inv, "count_per_material_type" )
 				--print( tostring( counts ) )
 				if counts then
@@ -47,6 +46,5 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 40, "item_pickup")) do
 				end
 			end
 		end
-		return
 	end
 end

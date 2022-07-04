@@ -1,13 +1,28 @@
 - multi-step challenges?
   - x crafting depth of targets
   - x raw materials
+  - bulk storage areas
+    - 4 big (5-6 units)
+    - 21 (3 units)
   - gold is root of all solids
+    - next to gold?
     - needs lots of poly
-    - dispensers?
+  - evaporting liquids
+    - just flasks?
+    - magical creation?
+    - poisen - flask
+    - ex freezing liquid - flask
+    - ex fungus blood - flask?
+  - dangerous liquids
+    - poly - bulk
+    - toxic? - flask
+    - ex lava - flask
   - no brine or salt in raw?
   - no tele?
   - no fire wand?
-  - touch of water?
+  - touch of water
+  - convert all of multi-use material the same way
+  - levi is any metal sand
   - target selection criteria?
   - grand alchemy?
   - new scene design

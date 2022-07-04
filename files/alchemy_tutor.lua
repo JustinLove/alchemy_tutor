@@ -173,6 +173,15 @@ local function keys( from )
 	return new
 end
 
+local function remove_one_from_array( array, value )
+	for i = 1,#array do
+		if array[i] == value then
+			table.remove( array, i )
+			return
+		end
+	end
+end
+
 function at_setup_raw_materials()
 	if at_formulas['toxicclean'] == nil then
 		at_setup()
@@ -246,17 +255,18 @@ function at_master_sets()
 		at_setup()
 	end
 	local master_tests = {}
-	local function base_material( mat,test)
+	local function base_material( mat, test, added )
 		if mat == nil or mat == 'air' then
 			return
 		end
 		if type( mat ) == 'table' then
 			mat = mat[1]
 		end
-		if mat == 'air' or mat == test.target then
+		if mat == 'air' or mat == test.target or added[mat] then
 			return
 		end
-		test.ingredients[mat] = true
+		added[mat] = true
+		table.insert( test.ingredients, mat )
 	end
 
 	local empty_test = {
@@ -271,15 +281,16 @@ function at_master_sets()
 			target = from.target,
 			formulas = copy_array( from.formulas ),
 			created_materials = copy_map( from.created_materials ),
-			ingredients = copy_map( from.ingredients ),
+			ingredients = copy_array( from.ingredients ),
 		}
 	end
 
 	local function add_ingredients( test, formula )
+		local added = {}
 		for i,mat in ipairs( formula.materials ) do
-			base_material( mat, test )
+			base_material( mat, test, added )
 		end
-		base_material( formula.cauldron_contents, test )
+		base_material( formula.cauldron_contents, test, added )
 	end
 
 	local function mat_used( mat, set )
@@ -303,6 +314,16 @@ function at_master_sets()
 		return false
 	end
 
+	local function print_test( test )
+		print(test.target, table.concat( test.formulas, ',' ))
+		--for ing,b in pairs(test.created_materials) do
+			--print('--' .. ing)
+		--end
+		for j,ing in pairs(test.ingredients) do
+			print('  ' .. ing)
+		end
+	end
+
 	for i,formula in ipairs(at_formula_list) do
 		if not formula.exclude_from_chains then
 			local test = copy_test( empty_test )
@@ -314,23 +335,21 @@ function at_master_sets()
 		end
 	end
 
-	local old
-	local new
-	for i = 1,4 do
-		old = master_tests
-		new = {}
-		unique_set = {}
+	local function expand_tests()
+		local old = master_tests
+		local new = {}
+		local unique_set = {}
 		for t,original_test in ipairs(old) do
 			local expansions = 0
-			for ing,b in pairs(original_test.ingredients) do
+			for i,ing in ipairs(original_test.ingredients) do
 				for f,formula in ipairs(at_formula_list) do
 					if ing == formula.output and not formula.exclude_from_chains and not formula_includes( formula, original_test.created_materials ) then
 						local new_test = copy_test( original_test )
 						table.insert( new_test.formulas, formula.name )
 						new_test.created_materials[formula.output] = true
-						new_test.ingredients[ing] = nil
+						remove_one_from_array( new_test.ingredients, ing )
 						add_ingredients( new_test, formula )
-						local list = keys( new_test.ingredients )
+						local list = copy_array( new_test.ingredients )
 						table.sort( list )
 						ingredient_key = new_test.target .. table.concat( list )
 						if not unique_set[ingredient_key] then
@@ -338,6 +357,10 @@ function at_master_sets()
 							table.insert( new, new_test )
 						end
 						expansions = expansions + 1
+						--print('old')
+						--print_test( original_test )
+						--print('new')
+						--print_test( new_test )
 					end
 				end
 			end
@@ -349,20 +372,47 @@ function at_master_sets()
 		master_tests = new
 	end
 
-	--[[
-	print( '--------------------------------------' )
-	for i,v in ipairs(master_tests) do
-		print(v.target, table.concat( v.formulas, ',' ))
-		--for ing,b in pairs(v.created_materials) do
-			--print('--' .. ing)
-		--end
-		for ing,b in pairs(v.ingredients) do
-			print('  ' .. ing)
+	---[[
+	for i = 1,4 do
+		expand_tests()
+	end
+	--]]
+
+	local bulk_amounts = {}
+	for t = 1,#master_tests do
+		local ingredients = master_tests[t].ingredients
+		local bulk_test = {}
+		for i = 1,#ingredients do
+			local ing = ingredients[i]
+			bulk_test[ing] = (bulk_test[ing] or 0) + 1
+		end
+		for ing,count in pairs(bulk_test) do
+			if not bulk_amounts[ing] or bulk_amounts[ing] < count then
+				bulk_amounts[ing] = count
+			end
 		end
 	end
-	]]
 
-	return master_tests
+	for ing,count in pairs(bulk_amounts) do
+		bulk_amounts[ing] = math.ceil(count * 1.5)
+	end
+
+	print( '--------------------------------------' )
+	---[[
+	for ing,count in pairs(bulk_amounts) do
+		print( ing, count )
+	end
+	--]]
+	--[[
+	for i,v in ipairs(master_tests) do
+		print_test( v )
+	end
+	--]]
+
+	return {
+		master_tests = master_tests,
+		bulk_amounts = bulk_amounts,
+	}
 end
 
 function at_pick_record_exemplar( formula )
@@ -918,7 +968,8 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	local loc
 	local what
 
-	local tests = at_master_sets()
+	local facts = at_master_sets()
+	local tests = facts.master_tests
 	local test = tests[ Random(1, #tests) ]
 	loc = table.remove( reward )
 	if loc then
@@ -933,16 +984,18 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 		at_log( 'target', test.target, #test.formulas, loc.x, loc.y )
 	end
 
-	for i,mat in ipairs( at_raw_materials ) do
-		material_list[#material_list+1] = mat
+	for mat,count in pairs( facts.bulk_amounts ) do
+		if not test.created_materials[mat] then
+			for i = 1,count do
+				material_list[#material_list+1] = mat
+			end
+		end
 	end
 	for i = 1,3 do
 		material_list[#material_list+1] = 'potion_empty'
 		material_list[#material_list+1] = 'powder_empty'
 	end
-	for i,mat in ipairs( at_raw_materials ) do
-		material_list[#material_list+1] = mat
-	end
+	print(#material_list)
 
 	for i,mat in ipairs( material_list ) do
 		what = at_material( mat, 'potion_empty', first )
