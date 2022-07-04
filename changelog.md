@@ -1,5 +1,9 @@
 # Alchemy Tutor Changelog
 
+## 0.5.0 Hall of Masters Update
+
+- Added several metal sand alternates to Levitatium recipe
+
 ## 0.4.0 Hall of Records Update
 
 - Added the Hall of Records, a treecheivment like area that can be found in the world
