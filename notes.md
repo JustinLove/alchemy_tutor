@@ -2,11 +2,14 @@
   - x crafting depth of targets
   - x raw materials
   - bulk storage areas
-    - 4 big (5-6 units)
-    - 21 (3 units)
+    - x 4 big (5-6 units)
+    - x 21 (3 units) (don't seem to need 21 in practice)
+    - move random things into bulk?
+    - move a few flasks out of bulk?
   - gold is root of all solids
     - next to gold?
     - needs lots of poly
+    - built into scene?
   - evaporting liquids
     - just flasks?
     - magical creation?
@@ -14,6 +17,7 @@
     - ex freezing liquid - flask
     - ex fungus blood - flask?
   - dangerous liquids
+    - thin bottom?
     - poly - bulk
     - toxic? - flask
     - ex lava - flask

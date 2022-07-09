@@ -951,6 +951,8 @@ end
 function at_decorate_hall_of_masters( x, y, scene_description )
 	at_log( 'decorate masters', x, y )
 	local materials = scene_description.m
+	local medium_bins = scene_description.c
+	local large_bins = scene_description.l
 	local other = scene_description.o
 	local reward = scene_description.r
 
@@ -958,13 +960,14 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	SetRandomSeed( x, y )
 
 	shuffleTable( materials )
+	shuffleTable( medium_bins )
+	shuffleTable( large_bins )
 	shuffleTable( other )
 	shuffleTable( reward )
 
 	if #at_raw_materials < 1 then
 		at_setup_raw_materials()
 	end
-	local material_list = {}
 	local loc
 	local what
 
@@ -984,10 +987,20 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 		at_log( 'target', test.target, #test.formulas, loc.x, loc.y )
 	end
 
+	local material_list = {}
+	local medium_list = {}
+	local large_list = {}
+
 	for mat,count in pairs( facts.bulk_amounts ) do
 		if not test.created_materials[mat] then
-			for i = 1,count do
-				material_list[#material_list+1] = mat
+			if count > 3 then
+				large_list[#large_list+1] = mat
+			elseif count > 2 then
+				medium_list[#medium_list+1] = mat
+			else
+				for i = 1,count do
+					material_list[#material_list+1] = mat
+				end
 			end
 		end
 	end
@@ -997,8 +1010,36 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	end
 	print(#material_list)
 
+	print(#large_list, #large_bins)
+	for i,mat in ipairs( large_list ) do
+		what = at_material( mat, 'air', first )
+
+		loc = table.remove( large_bins )
+		if loc then
+			-- look up amount
+			at_large_bin( loc.x, loc.y, what )
+			--present_materials[what] = true
+			at_log( 'large bin', what, loc.x, loc.y )
+		end
+	end
+
+
+	for i,mat in ipairs( medium_list ) do
+		what = at_material( mat, 'air', first )
+
+		loc = table.remove( medium_bins )
+		if loc then
+			-- look up amount
+			at_medium_bin( loc.x, loc.y, what )
+			--present_materials[what] = true
+			at_log( 'medium bin', what, loc.x, loc.y )
+		end
+	end
+
 	for i,mat in ipairs( material_list ) do
 		what = at_material( mat, 'potion_empty', first )
+
+		loc = table.remove( medium_bins )
 		loc = table.remove( materials )
 		if loc then
 			-- look up amount

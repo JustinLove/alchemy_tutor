@@ -15,6 +15,8 @@ RegisterSpawnFunction( 0xffca1d80, "at_spawn_cauldron")
 RegisterSpawnFunction( 0xff2e3a2d, "at_spawn_reward")
 RegisterSpawnFunction( 0xff057ee1, "at_spawn_steel_pit")
 RegisterSpawnFunction( 0xff0691c4, "at_spawn_brick_pit")
+RegisterSpawnFunction( 0xffb18b12, "at_spawn_big_bin")
+RegisterSpawnFunction( 0xff3edb12, "at_spawn_med_bin")
 RegisterSpawnFunction( 0xff5ce4e5, "at_spawn_scene")
 RegisterSpawnFunction( 0xff3a57e2, "at_spawn_master")
 RegisterSpawnFunction( 0xff0c79c7, "at_spawn_output")
@@ -30,6 +32,7 @@ end
 local at_scene_cauldron = nil
 local at_materials = {}
 local at_cauldrons = {}
+local at_large_bins = {}
 local at_other = {}
 local at_reward = {}
 
@@ -56,6 +59,7 @@ function at_spawn_scene( x, y )
 	at_scene_cauldron = nil
 	at_materials = {}
 	at_cauldrons = {}
+	at_large_bins = {}
 	at_other = {}
 	at_reward = {}
 end
@@ -67,6 +71,7 @@ function at_spawn_master( x, y )
 		sb = at_biome_banned_materials,
 		m = at_materials,
 		c = at_cauldrons,
+		l = at_large_bins,
 		o = at_other,
 		r = at_reward,
 	})
@@ -87,6 +92,7 @@ function at_spawn_master( x, y )
 	at_scene_cauldron = nil
 	at_materials = {}
 	at_cauldrons = {}
+	at_large_bins = {}
 	at_other = {}
 	at_reward = {}
 end
@@ -114,6 +120,14 @@ function at_spawn_material( x, y )
 end
 
 function at_spawn_cauldron( x, y )
+	table.insert( at_cauldrons, {x = x, y = y} )
+end
+
+function at_spawn_big_bin( x, y )
+	table.insert( at_large_bins, {x = x, y = y} )
+end
+
+function at_spawn_med_bin( x, y )
 	table.insert( at_cauldrons, {x = x, y = y} )
 end
 

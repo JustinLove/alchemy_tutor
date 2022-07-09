@@ -294,3 +294,29 @@ function at_ghost_deflector_base( x, y )
 		{} -- color_to_matieral_table
 	)
 end
+
+function at_medium_bin( x, y, contents )
+	LoadPixelScene(
+		at_mod_path .. "/props/medium_bin.png",
+		"", -- visual
+		x, y,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{ ["fff0bbee"] = contents,
+		} -- color_to_matieral_table
+	)
+end
+
+function at_large_bin( x, y, contents )
+	LoadPixelScene(
+		at_mod_path .. "/props/large_bin.png",
+		"", -- visual
+		x, y,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{ ["fff0bbee"] = contents,
+		} -- color_to_matieral_table
+	)
+end
