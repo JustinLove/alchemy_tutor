@@ -10,6 +10,7 @@ RegisterSpawnFunction( 0xff528003, "at_spawn_shroom")
 RegisterSpawnFunction( 0xff591de8, "at_spawn_meat")
 RegisterSpawnFunction( 0xff00f809, "at_spawn_frog")
 RegisterSpawnFunction( 0xff05702e, "at_spawn_rock")
+RegisterSpawnFunction( 0xffe3974c, "at_spawn_empty")
 RegisterSpawnFunction( 0xff012e85, "at_spawn_other")
 RegisterSpawnFunction( 0xffca1d80, "at_spawn_cauldron")
 RegisterSpawnFunction( 0xff2e3a2d, "at_spawn_reward")
@@ -183,6 +184,15 @@ end
 
 function at_spawn_rock(x, y)
 	spawn(at_rock,x,y)
+end
+
+function at_spawn_empty(x, y)
+	SetRandomSeed( x, y )
+	if Random(1,100) < 50 then
+		at_powder_empty(x, y)
+	else
+		at_potion_empty(x, y)
+	end
 end
 
 at_rock =

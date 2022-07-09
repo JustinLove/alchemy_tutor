@@ -1004,10 +1004,6 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 			end
 		end
 	end
-	for i = 1,3 do
-		material_list[#material_list+1] = 'potion_empty'
-		material_list[#material_list+1] = 'powder_empty'
-	end
 	print(#material_list)
 
 	print(#large_list, #large_bins)
