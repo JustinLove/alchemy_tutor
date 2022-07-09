@@ -4,9 +4,7 @@
   - bulk storage areas
     - x 4 big (5-6 units)
     - x 21 (3 units) (don't seem to need 21 in practice)
-    - overflow if preferred storage unavailable
-    - move random things into bulk?
-    - move a few flasks out of bulk?
+    - x overflow if preferred storage unavailable
   - evaporting liquids
     - just flasks?
     - magical creation?
@@ -30,6 +28,8 @@
       - next to gold?
       - needs lots of poly
       - built into scene?
+    - move random things into bulk?
+    - move a few flasks out of bulk?
   - scene spawning rework
   - detect void?
 

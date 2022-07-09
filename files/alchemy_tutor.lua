@@ -1020,9 +1020,12 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 			at_large_bin( loc.x, loc.y, what )
 			--present_materials[what] = true
 			at_log( 'large bin', what, loc.x, loc.y )
+		else
+			at_log( 'large overflow', what )
+			medium_list[#medium_list+1] = mat
+			medium_list[#medium_list+1] = mat
 		end
 	end
-
 
 	for i,mat in ipairs( medium_list ) do
 		what = at_material( mat, 'air', first )
@@ -1033,6 +1036,11 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 			at_medium_bin( loc.x, loc.y, what )
 			--present_materials[what] = true
 			at_log( 'medium bin', what, loc.x, loc.y )
+		else
+			at_log( 'medium overflow', what )
+			for i = 1,3 do
+				material_list[#material_list+1] = mat
+			end
 		end
 	end
 
