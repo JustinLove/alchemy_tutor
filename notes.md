@@ -4,12 +4,9 @@
   - bulk storage areas
     - x 4 big (5-6 units)
     - x 21 (3 units) (don't seem to need 21 in practice)
+    - overflow if preferred storage unavailable
     - move random things into bulk?
     - move a few flasks out of bulk?
-  - gold is root of all solids
-    - next to gold?
-    - needs lots of poly
-    - built into scene?
   - evaporting liquids
     - just flasks?
     - magical creation?
@@ -17,7 +14,6 @@
     - ex freezing liquid - flask
     - ex fungus blood - flask?
   - dangerous liquids
-    - thin bottom?
     - poly - bulk
     - toxic? - flask
     - ex lava - flask
@@ -30,6 +26,10 @@
   - target selection criteria?
   - grand alchemy?
   - new scene design
+    - gold is root of all solids
+      - next to gold?
+      - needs lots of poly
+      - built into scene?
   - scene spawning rework
   - detect void?
 

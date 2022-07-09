@@ -297,26 +297,28 @@ end
 
 function at_medium_bin( x, y, contents )
 	LoadPixelScene(
-		at_mod_path .. "/props/medium_bin.png",
+		at_mod_path .. "/props/medium_tank.png",
 		"", -- visual
-		x, y,
+		x-8, y,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{ ["fff0bbee"] = contents,
+			["ff786c42"] = "steel_static_strong",
 		} -- color_to_matieral_table
 	)
 end
 
 function at_large_bin( x, y, contents )
 	LoadPixelScene(
-		at_mod_path .. "/props/large_bin.png",
+		at_mod_path .. "/props/large_tank.png",
 		"", -- visual
-		x, y,
+		x-13, y-32,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{ ["fff0bbee"] = contents,
+			["ff786c42"] = "steel_static_strong",
 		} -- color_to_matieral_table
 	)
 end
