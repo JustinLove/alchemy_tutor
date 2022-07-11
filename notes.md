@@ -5,24 +5,15 @@
     - x 4 big (5-6 units)
     - x 21 (3 units) (don't seem to need 21 in practice)
     - x overflow if preferred storage unavailable
-  - evaporting liquids
-    - just flasks?
-    - magical creation?
-    - poisen - flask
-    - ex freezing liquid - flask
-    - ex fungus blood - flask?
-  - dangerous liquids
-    - poly - bulk
-    - toxic? - flask
-    - ex lava - flask
   - no brine or salt in raw?
   - no tele?
   - no fire wand?
+  - output water? (ex)
   - touch of water
-  - convert all of multi-use material the same way
   - levi is any metal sand
   - target selection criteria?
   - grand alchemy?
+  - multi scene breakup
   - new scene design
     - gold is root of all solids
       - next to gold?

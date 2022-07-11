@@ -556,6 +556,27 @@ at_formula_list = {
 	},
 }
 
+-- evaporating or impractical to bottle; never placed in an open bulk container
+at_volatile_material_list = {
+	"poison",
+	"acid",
+	"blood_cold",
+	"blood_fungi",
+	"fire",
+	"lava",
+}
+
+-- may be placed in bulk, but some flasks available
+at_awkward_material_list = {
+	"magic_liquid_unstable_teleportation",
+	"magic_liquid_teleportation",
+	"magic_liquid_unstable_polymorph",
+	"magic_liquid_polymorph",
+	"magic_liquid_random_polymorph",
+	"radioactive_liquid",
+	"fire_strong",
+}
+
 function at_formula_list_append( new_formulas )
 	local start_length = #at_formula_list
 	at_formula_list[start_length + #new_formulas] = {}

@@ -72,6 +72,8 @@ at_amounts = {}
 at_grand_materials = {}
 at_biome_banned_materials = {}
 at_raw_materials = {}
+at_volatile_materials = {}
+at_awkward_materials = {}
 at_passed_count = 0
 
 function at_pick_lab_set( x, y, scene_description )
@@ -225,6 +227,17 @@ function at_setup_raw_materials()
 	--end
 	at_raw_materials = keys( materials )
 	return at_raw_materials
+end
+
+function at_setup_special_materials()
+	at_volatile_materials = {}
+	for i = 1,#at_volatile_material_list do
+		at_volatile_materials[at_volatile_material_list[i]] = true
+	end
+	at_awkward_materials = {}
+	for i = 1,#at_awkward_material_list do
+		at_awkward_materials[at_awkward_material_list[i]] = true
+	end
 end
 
 function at_all_others()
@@ -950,13 +963,13 @@ end
 
 function at_decorate_hall_of_masters( x, y, scene_description )
 	at_log( 'decorate masters', x, y )
+
 	local materials = scene_description.m
 	local medium_bins = scene_description.c
 	local large_bins = scene_description.l
 	local other = scene_description.o
 	local reward = scene_description.r
 
-	local set = at_pick_lab_set( x, y, scene_description )
 	SetRandomSeed( x, y )
 
 	shuffleTable( materials )
@@ -965,12 +978,10 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	shuffleTable( other )
 	shuffleTable( reward )
 
-	if #at_raw_materials < 1 then
-		at_setup_raw_materials()
-	end
 	local loc
 	local what
 
+	at_setup_special_materials()
 	local facts = at_master_sets()
 	local tests = facts.master_tests
 	local test = tests[ Random(1, #tests) ]
@@ -984,28 +995,34 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 			ComponentSetValue2( var, "value_string", test.target )
 		end
 
-		at_log( 'target', test.target, #test.formulas, loc.x, loc.y )
+		at_log( 'target', test.target, table.concat(test.formulas, ','), loc.x, loc.y )
 	end
 
-	local material_list = {}
+	local container_list = {}
 	local medium_list = {}
 	local large_list = {}
 
 	for mat,count in pairs( facts.bulk_amounts ) do
 		if not test.created_materials[mat] then
-			if count > 3 then
-				large_list[#large_list+1] = mat
-			elseif count > 2 then
-				medium_list[#medium_list+1] = mat
+			if count > 2 and not at_volatile_materials[mat] then
+				if count > 3 then
+					large_list[#large_list+1] = mat
+				else
+					medium_list[#medium_list+1] = mat
+				end
+				if at_awkward_materials[mat] then
+					container_list[#container_list+1] = mat
+				end
 			else
 				for i = 1,count do
-					material_list[#material_list+1] = mat
+					container_list[#container_list+1] = mat
 				end
 			end
 		end
 	end
-	print(#material_list)
+	print(#container_list)
 
+	shuffleTable( large_list )
 	print(#large_list, #large_bins)
 	for i,mat in ipairs( large_list ) do
 		what = at_material( mat, 'air', first )
@@ -1023,6 +1040,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 		end
 	end
 
+	shuffleTable( medium_list )
 	for i,mat in ipairs( medium_list ) do
 		what = at_material( mat, 'air', first )
 
@@ -1035,12 +1053,13 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 		else
 			at_log( 'medium overflow', what )
 			for i = 1,3 do
-				material_list[#material_list+1] = mat
+				container_list[#container_list+1] = mat
 			end
 		end
 	end
 
-	for i,mat in ipairs( material_list ) do
+	shuffleTable( container_list )
+	for i,mat in ipairs( container_list ) do
 		what = at_material( mat, 'potion_empty', first )
 
 		loc = table.remove( medium_bins )
@@ -1050,6 +1069,8 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 			at_container( what, 1.0, loc.x, loc.y )
 			--present_materials[what] = true
 			--at_log( 'material', what, loc.x, loc.y )
+		else
+			at_log( 'unable to place', what )
 		end
 	end
 

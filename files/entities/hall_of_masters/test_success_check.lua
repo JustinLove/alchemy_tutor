@@ -14,10 +14,10 @@ local targetid = 0
 local var = EntityGetFirstComponent( entity_id, "VariableStorageComponent" )
 if var then
 	target = ComponentGetValue2( var, "value_string" )
-	print( tostring(target) )
+	--print( tostring(target) )
 	if target then
 		targetid = CellFactory_GetType( target )
-		print( targetid )
+		--print( targetid )
 	end
 end
 
@@ -33,7 +33,7 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 40, "item_pickup")) do
 				if counts then
 					--at_print_table( counts )
 					local amount = counts[ matid+1 ]
-					print( matid, amount )
+					--print( matid, amount )
 					local bar = 500
 					if at_get_material_type( target) == "powder" then
 						bar = 750
