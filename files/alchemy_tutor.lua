@@ -353,7 +353,7 @@ function at_master_sets()
 			local expansions = 0
 			for i,ing in ipairs(original_test.ingredients) do
 				for f,formula in ipairs(at_formula_list) do
-					if ing == formula.output and not formula.exclude_from_chains and not formula_includes( formula, original_test.created_materials ) then
+					if ing == formula.output and not formula.exclude_from_chains and not at_first_time( formula ) and not formula_includes( formula, original_test.created_materials ) then
 						local new_test = copy_test( original_test )
 						table.insert( new_test.formulas, formula.name )
 						new_test.created_materials[formula.output] = true
@@ -995,7 +995,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	local tests = facts.master_tests
 	local test = tests[ Random(1, #tests) ]
 	loc = table.remove( reward )
-	if loc then
+	if test and loc then
 		at_container( test.target, 0.01, loc.x, loc.y )
 
 		local id = EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/test_success_check.xml", loc.x, loc.y )
@@ -1012,7 +1012,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	local large_list = {}
 
 	for mat,count in pairs( facts.bulk_amounts ) do
-		if not test.created_materials[mat] then
+		if not test or not test.created_materials[mat] then
 			if count > 2 and not at_volatile_materials[mat] then
 				if count > 3 then
 					large_list[#large_list+1] = mat
