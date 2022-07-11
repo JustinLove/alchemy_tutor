@@ -226,11 +226,13 @@ function at_setup_raw_materials()
 
 	materials['powder_empty'] = nil
 
+	--[[
 	print( '--------------------------------------' )
 	print(#keys(materials))
 	for k,v in pairs(materials) do
 	  print(k)
 	end
+	]]
 	at_raw_materials = keys( materials )
 	return at_raw_materials
 end
@@ -407,8 +409,8 @@ function at_master_sets()
 		end
 	end
 
-	print( '--------------------------------------' )
-	---[[
+	--print( '--------------------------------------' )
+	--[[
 	for ing,count in pairs(bulk_amounts) do
 		print( ing, count )
 	end
