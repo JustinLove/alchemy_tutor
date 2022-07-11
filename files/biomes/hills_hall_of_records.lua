@@ -124,5 +124,7 @@ function at_spawn_ghost_crystal( x, y )
 	--EntityLoad( "data/entities/buildings/snowcrystal.xml", x + 30, y + 5 )
 
 	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/hall_of_records_enter.xml", x, y + 5 )
+
+	at_spawn_hall_of_masters_chest( x + 60, y )
 end
 

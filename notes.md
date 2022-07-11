@@ -6,7 +6,8 @@
     - x 21 (3 units) (don't seem to need 21 in practice)
     - x overflow if preferred storage unavailable
   - item spawning
-    - hall of records
+    - hall of records - roughed in
+    - customize item - temp
   - multi scene breakup
   - new scene design
     - gold is root of all solids

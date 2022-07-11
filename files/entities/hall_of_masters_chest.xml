@@ -129,7 +129,7 @@
   <PhysicsImageShapeComponent 
     body_id="1"
     centered="1"
-    image_file="mods/alchemy_tutor/files/entities/meditation_chest.png" 
+    image_file="mods/alchemy_tutor/files/entities/hall_of_masters_chest.png" 
     material="metal_prop"
   ></PhysicsImageShapeComponent>
 

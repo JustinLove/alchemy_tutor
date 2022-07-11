@@ -4,7 +4,7 @@ dofile_once( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab.lua" )
 local entity_id = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform(entity_id)
 
-local max_time = 1
+local max_time = 8
 
 component_readwrite(get_variable_storage_component(entity_id, "meditation_count"), { value_int = 0}, function(comp)
 	local player = EntityGetInRadiusWithTag( pos_x, pos_y, 25, "player_unit" )[1]
