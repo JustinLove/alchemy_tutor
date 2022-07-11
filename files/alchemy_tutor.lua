@@ -403,6 +403,14 @@ function at_master_sets()
 		end
 	end
 
+	local grand = copy_array( at_grand_materials )
+	shuffleTable( grand )
+	local count = math.min( 2, #grand )
+	for g = 1,count do
+		local ing = grand[g]
+		bulk_amounts[ing] = (bulk_amounts[ing] or 0) + 1
+	end
+
 	for ing,count in pairs(bulk_amounts) do
 		if ing ~= 'torch' then
 			bulk_amounts[ing] = math.ceil(count * 1.5)
