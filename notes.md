@@ -5,8 +5,6 @@
     - x 4 big (5-6 units)
     - x 21 (3 units) (don't seem to need 21 in practice)
     - x overflow if preferred storage unavailable
-  - no brine or salt in raw?
-  - no tele?
   - no fire wand?
   - output water? (ex)
   - touch of water

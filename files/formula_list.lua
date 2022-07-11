@@ -333,7 +333,6 @@ at_formula_list = {
 		cauldron_check_y = 10,
 		output = "void_liquid",
 		record_spawn = at_potion_void,
-		exclude_from_chains = true,
 		rating = 12,
 	},
 	{
@@ -347,7 +346,6 @@ at_formula_list = {
 		output = "void_liquid",
 		check_for = at_material_presence,
 		record_spawn = at_potion_void,
-		exclude_from_chains = true,
 		rating = 10,
 	},
 	{
@@ -368,7 +366,6 @@ at_formula_list = {
 		output2 = "corruption_static",
 		check_for = at_material_presence,
 		record_spawn = at_potion_void,
-		exclude_from_chains = true,
 		rating = 12,
 	},
 	{
@@ -556,27 +553,6 @@ at_formula_list = {
 	},
 }
 
--- evaporating or impractical to bottle; never placed in an open bulk container
-at_volatile_material_list = {
-	"poison",
-	"acid",
-	"blood_cold",
-	"blood_fungi",
-	"fire",
-	"lava",
-}
-
--- may be placed in bulk, but some flasks available
-at_awkward_material_list = {
-	"magic_liquid_unstable_teleportation",
-	"magic_liquid_teleportation",
-	"magic_liquid_unstable_polymorph",
-	"magic_liquid_polymorph",
-	"magic_liquid_random_polymorph",
-	"radioactive_liquid",
-	"fire_strong",
-}
-
 function at_formula_list_append( new_formulas )
 	local start_length = #at_formula_list
 	at_formula_list[start_length + #new_formulas] = {}
@@ -605,3 +581,44 @@ function at_formula_list_hide_reward( existing_name )
 	end
 end
 
+
+-- evaporating or impractical to bottle; never placed in an open bulk container or used in a master chain
+at_volatile_material_list = {
+	"poison",
+	"acid",
+	"blood_cold",
+	"blood_fungi",
+	"fire",
+	"lava",
+	"void_liquid",
+}
+
+-- may be placed in bulk, but some flasks available
+at_awkward_material_list = {
+	"magic_liquid_unstable_teleportation",
+	"magic_liquid_teleportation",
+	"magic_liquid_unstable_polymorph",
+	"magic_liquid_polymorph",
+	"magic_liquid_random_polymorph",
+	"radioactive_liquid",
+	"fire_strong",
+}
+
+-- cyclical, needs something in the loop to get started
+at_extra_raw_materials = {
+	{ "salt", "water_salt" },
+	{ "magic_liquid_teleportation", "magic_liquid_unstable_teleportation" },
+}
+
+-- an expansion mod makes one of those loops have an entrance point
+function at_extra_creatable( mat )
+	for i = 1,#at_extra_raw_materials do
+		local set = at_extra_raw_materials[i]
+		for m = 1,#set do
+			if set[m] == mat then
+				table.remove( at_extra_creatable, i )
+				return
+			end
+		end
+	end
+end

@@ -487,3 +487,6 @@ at_formula_list_append({
 		rating = 9,
 	},
 })
+
+at_extra_creatable( "salt" )
+at_extra_creatable( "magic_liquid_teleportation" )

@@ -218,26 +218,21 @@ function at_setup_raw_materials()
 		end
 	end
 
+	for i = 1,#at_extra_raw_materials do
+		local set = at_extra_raw_materials[i]
+		local m = Random(1,#set)
+		materials[set[m]] = true
+	end
+
 	materials['powder_empty'] = nil
 
-	--print( '--------------------------------------' )
-	--print(#keys(materials))
-	--for k,v in pairs(materials) do
-		--print(k)
-	--end
+	print( '--------------------------------------' )
+	print(#keys(materials))
+	for k,v in pairs(materials) do
+	  print(k)
+	end
 	at_raw_materials = keys( materials )
 	return at_raw_materials
-end
-
-function at_setup_special_materials()
-	at_volatile_materials = {}
-	for i = 1,#at_volatile_material_list do
-		at_volatile_materials[at_volatile_material_list[i]] = true
-	end
-	at_awkward_materials = {}
-	for i = 1,#at_awkward_material_list do
-		at_awkward_materials[at_awkward_material_list[i]] = true
-	end
 end
 
 function at_all_others()
@@ -524,6 +519,15 @@ local function formula_sort(a, b)
 end
 
 function at_setup()
+	at_volatile_materials = {}
+	for i = 1,#at_volatile_material_list do
+		at_volatile_materials[at_volatile_material_list[i]] = true
+	end
+	at_awkward_materials = {}
+	for i = 1,#at_awkward_material_list do
+		at_awkward_materials[at_awkward_material_list[i]] = true
+	end
+
 	at_passed_count = 0
 	table.sort(at_formula_list, formula_sort)
 	for i,v in ipairs(at_formula_list) do
@@ -551,7 +555,7 @@ function at_setup()
 			end
 			at_amounts[#at_materials] = v.amounts[i]
 		end
-		if v.output == 'nil' or v.output == 'air' or v.check_for == at_explosion or (v.cauldron and v.cauldron.exclude_from_chains) then
+		if v.output == 'nil' or v.output == 'air' or v.check_for == at_explosion or (v.cauldron and v.cauldron.exclude_from_chains) or (v.output and at_volatile_materials[v.output]) then
 			v.exclude_from_chains = true
 		end
 	end
@@ -981,7 +985,6 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	local loc
 	local what
 
-	at_setup_special_materials()
 	local facts = at_master_sets()
 	local tests = facts.master_tests
 	local test = tests[ Random(1, #tests) ]
