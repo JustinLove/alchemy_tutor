@@ -191,11 +191,10 @@ at_formula_list_append({
 	{
 		name = "are_salt",
 		materials = {
-			"fire",
+			"torch",
 			"urine",
 			"oil",
 		},
-		amounts = {0.1},
 		cauldron_contents = {
 			"urine",
 			"oil",
@@ -284,10 +283,10 @@ at_formula_list_append({
 		name = 'are_invisburn',
 		materials = {
 			"magic_liquid_invisibility",
-			"fire",
+			"torch",
 			"oil",
 		},
-		amounts = {0.1, 0.1},
+		amounts = {0.1},
 		cauldron_contents = {
 			"air",
 			"air",
@@ -335,11 +334,10 @@ at_formula_list_append({
 	{
 		name = 'are_plastic_red',
 		materials = {
-			"fire",
+			"torch",
 			"magic_liquid_berserk",
 			"oil",
 		},
-		amounts = {0.1},
 		cauldron_contents = {
 			"air",
 			"air",

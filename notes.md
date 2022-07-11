@@ -5,7 +5,6 @@
     - x 4 big (5-6 units)
     - x 21 (3 units) (don't seem to need 21 in practice)
     - x overflow if preferred storage unavailable
-  - no fire wand?
   - output water? (ex)
   - touch of water
   - levi is any metal sand
@@ -19,6 +18,7 @@
       - built into scene?
     - move random things into bulk?
     - move a few flasks out of bulk?
+    - reward room
   - scene spawning rework
   - detect void?
 

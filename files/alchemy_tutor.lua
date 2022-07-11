@@ -402,7 +402,9 @@ function at_master_sets()
 	end
 
 	for ing,count in pairs(bulk_amounts) do
-		bulk_amounts[ing] = math.ceil(count * 1.5)
+		if ing ~= 'torch' then
+			bulk_amounts[ing] = math.ceil(count * 1.5)
+		end
 	end
 
 	print( '--------------------------------------' )
@@ -596,6 +598,8 @@ function at_container( material_name, amount, x, y )
 		return at_powder_empty( x, y )
 	elseif material_name == "potion_empty" then
 		return at_potion_empty( x, y )
+	elseif material_name == "torch" then
+		return at_torch( x, y )
 	elseif material_name == "fire" and amount < 0.5 then
 		return at_torch( x, y )
 	--elseif material_name == "shock_powder" then

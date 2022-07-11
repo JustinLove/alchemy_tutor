@@ -435,10 +435,9 @@ at_formula_list = {
 	},
 	{
 		materials = {
-			"fire",
+			"torch",
 			"oil",
 		},
-		amounts = {0.1},
 		cauldron_contents = "air",
 		cauldron_minor = "meat",
 		cauldron_check_y = 10,
@@ -525,11 +524,10 @@ at_formula_list = {
 	},
 	{
 		materials = {
-			"fire",
+			"torch",
 			"water_salt",
 			"oil",
 		},
-		amounts = {0.1},
 		cauldron_contents = {
 			"water_salt",
 			"oil",
