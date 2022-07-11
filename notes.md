@@ -5,9 +5,7 @@
     - x 4 big (5-6 units)
     - x 21 (3 units) (don't seem to need 21 in practice)
     - x overflow if preferred storage unavailable
-  - output water? (ex)
   - touch of water
-  - levi is any metal sand
   - target selection criteria?
   - grand alchemy?
   - multi scene breakup
@@ -21,6 +19,7 @@
     - reward room
   - scene spawning rework
   - detect void?
+  - output water? (ex) why is this a problem?
 
 - check hanging with special detectors
 

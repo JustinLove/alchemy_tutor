@@ -178,7 +178,7 @@ at_formula_list = {
 	{
 		name = "levi",
 		materials = {
-			{"brass", "copper", "silver", "gold", "diamond", "metal_sand"},
+			{"gold", "diamond", "silver", "copper", "brass", "metal_sand"},
 			"material_confusion",
 		},
 		cauldron_contents = {
