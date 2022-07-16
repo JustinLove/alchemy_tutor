@@ -13,6 +13,7 @@
       - built into scene?
     - move random things into bulk?
     - move a few flasks out of bulk?
+    - special rewards?
     - reward room
   - scene spawning rework
   - detect void?
