@@ -5,9 +5,6 @@
     - x 4 big (5-6 units)
     - x 21 (3 units) (don't seem to need 21 in practice)
     - x overflow if preferred storage unavailable
-  - item spawning
-    - hall of records - roughed in
-    - customize item - temp
   - multi scene breakup
   - new scene design
     - gold is root of all solids
@@ -22,6 +19,9 @@
   - output water? (ex) why is this a problem?
   - touch of water
   - target selection criteria?
+  - item spawning
+    - hall of records - roughed in
+    - customize item - temp
 
 - check hanging with special detectors
 
