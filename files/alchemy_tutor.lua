@@ -983,16 +983,99 @@ function at_decorate_scene( x, y, scene_description )
 	at_log_book( x, y )
 end
 
+at_base_SetRandomSeed = SetRandomSeed
+
+function at_SetRandomSeed( x, y )
+	print( '--------------------------------- SetRandomSeed', x, y )
+	at_base_SetRandomSeed( x, y )
+end
+
+at_master_blocks = {
+	{ -- 1
+		container = 0,
+		medium = 0,
+		large = 0,
+		other = 0,
+	},
+	{ -- 2
+		container = 0,
+		medium = 0,
+		large = 0,
+		other = 0,
+	},
+	{ -- 3
+		container = 28,
+		medium = 3,
+		large = 2,
+		other = 2,
+	},
+	{ -- 4
+		container = 35,
+		medium = 3,
+		large = 2,
+		other = 2,
+	},
+	{ -- 5
+		container = 0,
+		medium = 12,
+		large = 0,
+		other = 0,
+	},
+	{ -- 6
+		container = 0,
+		medium = 12,
+		large = 0,
+		other = 0,
+	},
+}
+
+local total_container = 0
+local total_medium = 0
+local total_large = 0
+local total_other = 0
+
+for i = 1,6 do
+	at_master_blocks[i].skip_container = total_container
+	at_master_blocks[i].skip_medium = total_medium
+	at_master_blocks[i].skip_large = total_large
+	at_master_blocks[i].skip_other = total_other
+	total_container = total_container + at_master_blocks[i].container
+	total_medium = total_medium + at_master_blocks[i].medium
+	total_large = total_large + at_master_blocks[i].large
+	total_other = total_large + at_master_blocks[i].large
+end
+
 function at_decorate_hall_of_masters( x, y, scene_description )
-	at_log( 'decorate masters', scene_description.n, x, y )
+	at_log( 'decorate masters', x, y )
 
 	local materials = scene_description.m
 	local medium_bins = scene_description.c
 	local large_bins = scene_description.l
 	local other = scene_description.o
 	local reward = scene_description.r
+	local block_number = scene_description.n
 
-	SetRandomSeed( x, y )
+	at_log( 'master block', block_number )
+
+	local block_x = math.floor(x / 512)
+	local block_y = math.floor(y / 512)
+
+	at_log( 'block', block_x, block_y )
+
+	local block_dx = (block_number-1) % 2
+	local block_dy = math.floor((block_number-1) / 2)
+
+	at_log( 'block delta', block_dx, block_dy )
+
+	local lab_x = block_x - block_dx
+	local lab_y = block_y - block_dy
+
+	at_log( 'lab', lab_x, lab_y )
+
+
+	SetRandomSeed( lab_x, lab_y )
+
+	SetRandomSeed = at_SetRandomSeed
 
 	shuffleTable( materials )
 	shuffleTable( medium_bins )
@@ -1044,7 +1127,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	print(#container_list)
 
 	shuffleTable( large_list )
-	print(#large_list, #large_bins)
+	print('large', #large_list, #large_bins)
 	for i,mat in ipairs( large_list ) do
 		what = at_material( mat, 'air', first )
 
@@ -1062,6 +1145,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	end
 
 	shuffleTable( medium_list )
+	print('medium', #medium_list, #medium_bins)
 	for i,mat in ipairs( medium_list ) do
 		what = at_material( mat, 'air', first )
 
@@ -1080,6 +1164,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	end
 
 	shuffleTable( container_list )
+	print('container', #container_list, #materials)
 	for i,mat in ipairs( container_list ) do
 		what = at_material( mat, 'potion_empty', first )
 
@@ -1096,6 +1181,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	end
 
 	local others = at_all_others()
+	print('other', #others, #other)
 
 	for i,extra in ipairs( others ) do
 		loc = table.remove( other )
@@ -1105,6 +1191,8 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	end
 
 	at_log_book( x, y )
+
+	SetRandomSeed = at_base_SetRandomSeed
 end
 
 

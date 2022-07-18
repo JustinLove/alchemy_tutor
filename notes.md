@@ -5,7 +5,7 @@
     - x 4 big (5-6 units)
     - x 21 (3 units) (don't seem to need 21 in practice)
     - x overflow if preferred storage unavailable
-  - multi scene breakup
+  - !! multi-scene crosstalk
   - new scene design
     - gold is root of all solids
       - next to gold?
@@ -15,7 +15,6 @@
     - move a few flasks out of bulk?
     - special rewards?
     - reward room
-  - scene spawning rework
   - detect void?
   - output water? (ex) why is this a problem?
   - touch of water
