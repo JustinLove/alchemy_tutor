@@ -16,13 +16,19 @@ RegisterSpawnFunction( 0xffca1d80, "at_spawn_cauldron")
 RegisterSpawnFunction( 0xff2e3a2d, "at_spawn_reward")
 RegisterSpawnFunction( 0xff057ee1, "at_spawn_steel_pit")
 RegisterSpawnFunction( 0xff0691c4, "at_spawn_brick_pit")
-RegisterSpawnFunction( 0xffb18b12, "at_spawn_big_bin")
-RegisterSpawnFunction( 0xff3edb12, "at_spawn_med_bin")
 RegisterSpawnFunction( 0xff5ce4e5, "at_spawn_scene")
-RegisterSpawnFunction( 0xff3a57e2, "at_spawn_master")
+RegisterSpawnFunction( 0xff91a4e2, "at_look_here")
+
+RegisterSpawnFunction( 0xff3a57e1, "at_spawn_master_1")
+RegisterSpawnFunction( 0xff3a57e2, "at_spawn_master_2")
+RegisterSpawnFunction( 0xff3a57e3, "at_spawn_master_3")
+RegisterSpawnFunction( 0xff3a57e4, "at_spawn_master_4")
+RegisterSpawnFunction( 0xff3a57e5, "at_spawn_master_5")
+RegisterSpawnFunction( 0xff3a57e6, "at_spawn_master_6")
 RegisterSpawnFunction( 0xff0c79c7, "at_spawn_output")
 RegisterSpawnFunction( 0xffe411e9, "at_spawn_eye")
-RegisterSpawnFunction( 0xff91a4e2, "at_look_here")
+RegisterSpawnFunction( 0xffb18b12, "at_spawn_big_bin")
+RegisterSpawnFunction( 0xff3edb12, "at_spawn_med_bin")
 
 at_lab_chance = ModSettingGet("alchemy_tutor.lab_chance")
 if at_lab_chance == nil then
@@ -65,7 +71,31 @@ function at_spawn_scene( x, y )
 	at_reward = {}
 end
 
-function at_spawn_master( x, y )
+function at_spawn_master_1( x, y )
+	at_spawn_master_n( 1, x, y )
+end
+
+function at_spawn_master_2( x, y )
+	at_spawn_master_n( 2, x, y )
+end
+
+function at_spawn_master_3( x, y )
+	at_spawn_master_n( 3, x, y )
+end
+
+function at_spawn_master_4( x, y )
+	at_spawn_master_n( 4, x, y )
+end
+
+function at_spawn_master_5( x, y )
+	at_spawn_master_n( 5, x, y )
+end
+
+function at_spawn_master_6( x, y )
+	at_spawn_master_n( 6, x, y )
+end
+
+function at_spawn_master_n( n, x, y )
 	local cauldron = at_scene_cauldron or at_default_cauldron
 	local text = smallfolk.dumps({
 		sc = cauldron and cauldron.name,
@@ -75,6 +105,7 @@ function at_spawn_master( x, y )
 		l = at_large_bins,
 		o = at_other,
 		r = at_reward,
+		n = n,
 	})
 
 	local dc = EntityLoad( "mods/alchemy_tutor/files/entities/decorate_scene.xml", x, y )

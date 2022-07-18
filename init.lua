@@ -71,6 +71,7 @@ function OnPlayerSpawned( player_entity ) -- This runs when player entity has be
 		damage_player( player_entity )
 	end
 	if _G['at_test_player'] then
+		print('set player pos')
 		EntitySetTransform( player_entity, at_test_x, at_test_y )
 	end
 	if _G['at_test_lab'] then
@@ -112,6 +113,10 @@ end
 local function add_hall_of_records( text )
 	text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records.xml</File>\r\n  </PixelSceneFiles>" )
 	--text = string.gsub( text, '</PixelSceneFiles>', "<File>data/biome_impl/spliced/hall_of_records.xml</File>\r\n  </PixelSceneFiles>" )
+	text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters.xml</File>\r\n  </PixelSceneFiles>" )
+	--text = string.gsub( text, '</PixelSceneFiles>', "<File>data/biome_impl/spliced/hall_of_masters.xml</File>\r\n  </PixelSceneFiles>" )
+	--text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters_sw_gold.xml</File>\r\n  </PixelSceneFiles>" )
+	--text = string.gsub( text, '</PixelSceneFiles>', "<File>data/biome_impl/spliced/hall_of_masters_sw_gold.xml</File>\r\n  </PixelSceneFiles>" )
 	--print(text)
 	return text
 end

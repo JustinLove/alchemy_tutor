@@ -23,6 +23,7 @@
   - item spawning
     - hall of records - roughed in
     - customize item - temp
+  - pixel scenes.xml are not in parallel worlds
 
 - check hanging with special detectors
 

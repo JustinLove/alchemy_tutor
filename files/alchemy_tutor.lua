@@ -23,12 +23,16 @@ dofile_once(at_mod_path .. "/grand_alchemy.lua")
 --at_test_y = 7500 -- rainforest dark
 --at_test_x = 12300 -- fungiforest
 --at_test_y = 2000 -- fungiforest
-at_test_x = -5317 -- hall of records
-at_test_y = 720 -- hall of records
+--at_test_x = -5317 -- hall of records
+--at_test_y = 720 -- hall of records
 --at_test_x = -5000 -- hall of records entrance
 --at_test_y = 700 -- hall of records entrace
 --at_test_x = -5640 -- hall of records ghost
 --at_test_y = 1024 -- hall of records ghost
+at_test_x = 14088 -- hall of masters ne gold
+at_test_y = -3676 -- hall of masters ne gold
+--at_test_x = -15096 -- hall of masters sw gold
+--at_test_y = 16292 -- hall of masters sw gold
 
 function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
@@ -980,7 +984,7 @@ function at_decorate_scene( x, y, scene_description )
 end
 
 function at_decorate_hall_of_masters( x, y, scene_description )
-	at_log( 'decorate masters', x, y )
+	at_log( 'decorate masters', scene_description.n, x, y )
 
 	local materials = scene_description.m
 	local medium_bins = scene_description.c

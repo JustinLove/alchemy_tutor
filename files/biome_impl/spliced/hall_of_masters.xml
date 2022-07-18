@@ -1,0 +1,22 @@
+<PixelScenes>
+  <mBufferedPixelScenes>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/0.plz" pos_x="13824" pos_y="-4069" skip_biome_checks="1" >
+    </PixelScene>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/1.plz" pos_x="13908" pos_y="-3557" skip_biome_checks="1" >
+    </PixelScene>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/2.plz" pos_x="13990" pos_y="-3045" skip_biome_checks="1" >
+    </PixelScene>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/3.plz" pos_x="14336" pos_y="-3747" skip_biome_checks="1" >
+    </PixelScene>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/4.plz" pos_x="14336" pos_y="-3557" skip_biome_checks="1" >
+    </PixelScene>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/5.plz" pos_x="14336" pos_y="-3045" skip_biome_checks="1" >
+    </PixelScene>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/6.plz" pos_x="15360" pos_y="-3557" skip_biome_checks="1" >
+    </PixelScene>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/7.plz" pos_x="15360" pos_y="-3045" skip_biome_checks="1" >
+    </PixelScene>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/8.plz" pos_x="15360" pos_y="-2533" skip_biome_checks="1" >
+    </PixelScene>
+  </mBufferedPixelScenes>
+</PixelScenes>
