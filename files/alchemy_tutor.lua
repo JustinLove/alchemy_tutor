@@ -1019,20 +1019,20 @@ at_master_blocks = {
 		other = 5,
 	},
 	{ -- 4
-		container = 67,
+		container = 63,
 		medium = 3,
 		large = 2,
 		other = 0,
 	},
 	{ -- 5
 		container = 0,
-		medium = 12,
+		medium = 9,
 		large = 0,
 		other = 0,
 	},
 	{ -- 6
 		container = 0,
-		medium = 12,
+		medium = 9,
 		large = 0,
 		other = 0,
 	},
@@ -1050,7 +1050,9 @@ for i = 1,6 do
 	at_master_blocks[i].skip_other = total_other
 	total_container = total_container + at_master_blocks[i].container
 	total_medium = total_medium + at_master_blocks[i].medium
+	print('medium', total_medium)
 	total_large = total_large + at_master_blocks[i].large
+	print('large', total_large)
 	total_other = total_large + at_master_blocks[i].large
 end
 
@@ -1093,6 +1095,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	local medium_list = {}
 	local large_list = {}
 
+	-- initial allocation by volume
 	for mat,count in pairs( facts.bulk_amounts ) do
 		if not test or not test.created_materials[mat] then
 			if count > 2 and not at_volatile_materials[mat] then
@@ -1112,6 +1115,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 		end
 	end
 
+	-- if there are more than that storage location allows, move into next size
 	shuffleTable( large_list )
 	local extra
 	extra = table_slice( large_list, total_large, #large_list )
@@ -1134,6 +1138,41 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 	shuffleTable( container_list )
 
+	-- fill some of the empty spots in bulk containers from smaller containers
+	local upfill
+
+	upfill = math.min( total_large - #large_list, #medium_list )
+	for i = 1,upfill do
+		local mat = table.remove( medium_list )
+		--at_log( 'large upfill', tostring(mat) )
+		large_list[#large_list+1] = mat
+	end
+
+	upfill = math.min( Random(0, total_medium - #medium_list), #container_list )
+	--upfill = math.min( total_medium - #medium_list, #container_list )
+	print( 'medim counts', upfill, total_medium )
+	local skip = 0
+	for i = 1,upfill do
+		local mat = container_list[#container_list - skip]
+		if not at_volatile_materials[mat] and not at_awkward_materials[mat] then
+			--at_log( 'medium upfill', tostring(mat) )
+			medium_list[#medium_list+1] = table.remove( container_list, #container_list - skip )
+		else
+			skip = skip + 1
+			--at_log( 'medium upfill volatile', tostring(mat) )
+		end
+	end
+
+	upfill = total_medium - #medium_list
+	print( 'medim counts', upfill, total_medium )
+	for i = 1,upfill do
+		medium_list[#medium_list+1] = "air"
+	end
+
+	shuffleTable( large_list )
+	shuffleTable( medium_list )
+
+	-- place materials in respective container location in this scene
 	local materials = scene_description.m
 	local medium_bins = scene_description.c
 	local large_bins = scene_description.l

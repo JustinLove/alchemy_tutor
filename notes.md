@@ -4,10 +4,14 @@
       - next to gold?
       - needs lots of poly
       - built into scene?
-    - move random things into bulk?
-    - move a few flasks out of bulk?
+    - large bins kind of out of the way
+    - variable bulk amounts?
+    - moonpool
+    - superbulk removal?
+    - bin accessability/staining - off by one placement?
     - special rewards?
     - reward room
+  - instancing
   - detect void?
   - output water? (ex) why is this a problem?
   - touch of water

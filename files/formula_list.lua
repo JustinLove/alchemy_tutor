@@ -589,6 +589,8 @@ at_volatile_material_list = {
 	"fire",
 	"lava",
 	"void_liquid",
+	"torch",
+	"powder_empty",
 }
 
 -- may be placed in bulk, but some flasks available
