@@ -27,8 +27,12 @@ RegisterSpawnFunction( 0xff3a57e5, "at_spawn_master_5")
 RegisterSpawnFunction( 0xff3a57e6, "at_spawn_master_6")
 RegisterSpawnFunction( 0xff0c79c7, "at_spawn_output")
 RegisterSpawnFunction( 0xffe411e9, "at_spawn_eye")
-RegisterSpawnFunction( 0xffb18b12, "at_spawn_big_bin")
-RegisterSpawnFunction( 0xff3edb12, "at_spawn_med_bin")
+RegisterSpawnFunction( 0xffb18b13, "at_spawn_big_bin_3")
+RegisterSpawnFunction( 0xffb18b14, "at_spawn_big_bin_4")
+RegisterSpawnFunction( 0xff3edb13, "at_spawn_med_bin_3")
+RegisterSpawnFunction( 0xff3edb14, "at_spawn_med_bin_4")
+RegisterSpawnFunction( 0xff3edb15, "at_spawn_med_bin_5")
+RegisterSpawnFunction( 0xff3edb16, "at_spawn_med_bin_6")
 
 at_lab_chance = ModSettingGet("alchemy_tutor.lab_chance")
 if at_lab_chance == nil then
@@ -39,9 +43,27 @@ end
 local at_scene_cauldron = nil
 local at_materials = {}
 local at_cauldrons = {}
-local at_large_bins = {}
 local at_other = {}
 local at_reward = {}
+
+local at_block = {
+	{},
+	{},
+	{
+		large_bins = {},
+		medium_bins = {},
+	},
+	{
+		large_bins = {},
+		medium_bins = {},
+	},
+	{
+		medium_bins = {},
+	},
+	{
+		medium_bins = {},
+	},
+}
 
 function at_spawn_scene( x, y )
 	local cauldron = at_scene_cauldron or at_default_cauldron
@@ -66,7 +88,6 @@ function at_spawn_scene( x, y )
 	at_scene_cauldron = nil
 	at_materials = {}
 	at_cauldrons = {}
-	at_large_bins = {}
 	at_other = {}
 	at_reward = {}
 end
@@ -101,8 +122,8 @@ function at_spawn_master_n( n, x, y )
 		sc = cauldron and cauldron.name,
 		sb = at_biome_banned_materials,
 		m = at_materials,
-		c = at_cauldrons,
-		l = at_large_bins,
+		c = at_block[n].medium_bins or {},
+		l = at_block[n].large_bins or {},
 		o = at_other,
 		r = at_reward,
 		n = n,
@@ -124,9 +145,10 @@ function at_spawn_master_n( n, x, y )
 	at_scene_cauldron = nil
 	at_materials = {}
 	at_cauldrons = {}
-	at_large_bins = {}
 	at_other = {}
 	at_reward = {}
+	at_block[n].large_bins = {}
+	at_block[n].medium_bins = {}
 end
 
 function at_spawn_output( x, y )
@@ -155,12 +177,28 @@ function at_spawn_cauldron( x, y )
 	table.insert( at_cauldrons, {x = x, y = y} )
 end
 
-function at_spawn_big_bin( x, y )
-	table.insert( at_large_bins, {x = x, y = y} )
+function at_spawn_big_bin_3( x, y )
+	table.insert( at_block[3].large_bins, {x = x, y = y} )
 end
 
-function at_spawn_med_bin( x, y )
-	table.insert( at_cauldrons, {x = x, y = y} )
+function at_spawn_big_bin_4( x, y )
+	table.insert( at_block[4].large_bins, {x = x, y = y} )
+end
+
+function at_spawn_med_bin_3( x, y )
+	table.insert( at_block[3].medium_bins, {x = x, y = y} )
+end
+
+function at_spawn_med_bin_4( x, y )
+	table.insert( at_block[4].medium_bins, {x = x, y = y} )
+end
+
+function at_spawn_med_bin_5( x, y )
+	table.insert( at_block[5].medium_bins, {x = x, y = y} )
+end
+
+function at_spawn_med_bin_6( x, y )
+	table.insert( at_block[6].medium_bins, {x = x, y = y} )
 end
 
 function at_spawn_other( x, y )

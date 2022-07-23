@@ -188,6 +188,15 @@ local function remove_one_from_array( array, value )
 	end
 end
 
+local function table_slice( array, skip, count )
+	local t = {}
+	count = math.min( count, #array - skip )
+	for i = 1,count do
+		t[i] = array[skip+i]
+	end
+	return t
+end
+
 function at_setup_raw_materials()
 	if at_formulas['toxicclean'] == nil then
 		at_setup()
@@ -1004,16 +1013,16 @@ at_master_blocks = {
 		other = 0,
 	},
 	{ -- 3
-		container = 28,
+		container = 0,
 		medium = 3,
 		large = 2,
-		other = 2,
+		other = 5,
 	},
 	{ -- 4
-		container = 35,
+		container = 67,
 		medium = 3,
 		large = 2,
-		other = 2,
+		other = 0,
 	},
 	{ -- 5
 		container = 0,
@@ -1048,14 +1057,11 @@ end
 function at_decorate_hall_of_masters( x, y, scene_description )
 	at_log( 'decorate masters', x, y )
 
-	local materials = scene_description.m
-	local medium_bins = scene_description.c
-	local large_bins = scene_description.l
-	local other = scene_description.o
-	local reward = scene_description.r
 	local block_number = scene_description.n
 
 	at_log( 'master block', block_number )
+
+	local block = at_master_blocks[block_number]
 
 	local block_x = math.floor(x / 512)
 	local block_y = math.floor(y / 512)
@@ -1072,34 +1078,15 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 	at_log( 'lab', lab_x, lab_y )
 
-
 	SetRandomSeed( lab_x, lab_y )
 
 	SetRandomSeed = at_SetRandomSeed
 
-	shuffleTable( materials )
-	shuffleTable( medium_bins )
-	shuffleTable( large_bins )
-	shuffleTable( other )
-	shuffleTable( reward )
-
-	local loc
-	local what
-
 	local facts = at_master_sets()
 	local tests = facts.master_tests
 	local test = tests[ Random(1, #tests) ]
-	loc = table.remove( reward )
-	if test and loc then
-		at_container( test.target, 0.01, loc.x, loc.y )
-
-		local id = EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/test_success_check.xml", loc.x, loc.y )
-		local var = EntityGetFirstComponent( id, "VariableStorageComponent" )
-		if var then
-			ComponentSetValue2( var, "value_string", test.target )
-		end
-
-		at_log( 'target', test.target, table.concat(test.formulas, ','), loc.x, loc.y )
+	if test then
+		at_log( 'target', test.target, table.concat(test.formulas, ',') )
 	end
 
 	local container_list = {}
@@ -1124,9 +1111,58 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 			end
 		end
 	end
-	print(#container_list)
 
 	shuffleTable( large_list )
+	local extra
+	extra = table_slice( large_list, total_large, #large_list )
+	large_list = table_slice( large_list, 0, total_large )
+	for i,mat in ipairs( extra ) do
+		at_log( 'large overflow', tostring(mat) )
+		medium_list[#medium_list+1] = mat
+		medium_list[#medium_list+1] = mat
+	end
+
+	shuffleTable( medium_list )
+	extra = table_slice( medium_list, total_medium, #medium_list )
+	medium_list = table_slice( medium_list, 0, total_medium )
+	for i,mat in ipairs( extra ) do
+		at_log( 'medium overflow', tostring(mat) )
+		for i = 1,3 do
+			container_list[#container_list+1] = mat
+		end
+	end
+
+	shuffleTable( container_list )
+
+	local materials = scene_description.m
+	local medium_bins = scene_description.c
+	local large_bins = scene_description.l
+	local other = scene_description.o
+	local reward = scene_description.r
+
+	local loc
+	local what
+
+	shuffleTable( materials )
+	shuffleTable( medium_bins )
+	shuffleTable( large_bins )
+	shuffleTable( other )
+	shuffleTable( reward )
+
+	loc = table.remove( reward )
+	if test and loc then
+		at_container( test.target, 0.01, loc.x, loc.y )
+
+		local id = EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/test_success_check.xml", loc.x, loc.y )
+		local var = EntityGetFirstComponent( id, "VariableStorageComponent" )
+		if var then
+			ComponentSetValue2( var, "value_string", test.target )
+		end
+
+		at_log( 'target detector', test.target, loc.x, loc.y )
+	end
+
+	large_list = table_slice( large_list, block.skip_large, block.large )
 	print('large', #large_list, #large_bins)
 	for i,mat in ipairs( large_list ) do
 		what = at_material( mat, 'air', first )
@@ -1138,13 +1174,12 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 			--present_materials[what] = true
 			at_log( 'large bin', what, loc.x, loc.y )
 		else
-			at_log( 'large overflow', what )
-			medium_list[#medium_list+1] = mat
-			medium_list[#medium_list+1] = mat
+			at_log( 'unable to place', what )
 		end
 	end
 
-	shuffleTable( medium_list )
+	print('medium', #medium_list, #medium_bins)
+	medium_list = table_slice( medium_list, block.skip_medium, block.medium )
 	print('medium', #medium_list, #medium_bins)
 	for i,mat in ipairs( medium_list ) do
 		what = at_material( mat, 'air', first )
@@ -1156,14 +1191,12 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 			--present_materials[what] = true
 			at_log( 'medium bin', what, loc.x, loc.y )
 		else
-			at_log( 'medium overflow', what )
-			for i = 1,3 do
-				container_list[#container_list+1] = mat
-			end
+			at_log( 'unable to place', what )
 		end
 	end
 
-	shuffleTable( container_list )
+	print('container', #container_list, #materials)
+	container_list = table_slice( container_list, block.skip_container, block.container )
 	print('container', #container_list, #materials)
 	for i,mat in ipairs( container_list ) do
 		what = at_material( mat, 'potion_empty', first )

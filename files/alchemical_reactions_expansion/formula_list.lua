@@ -234,6 +234,7 @@ at_formula_list_append({
 		},
 		output = "cheese_static",
 		check_for = at_material_presence,
+		exclude_from_chains = true, -- cheese can't be picked up in sacks
 		rating = 17,
 	},
 	{
@@ -394,6 +395,7 @@ at_formula_list_append({
 		output = "diamond",
 		output2 = "templebrick_diamond_static",
 		check_for = at_material_presence,
+		exclude_from_chains = true,
 		rating = 12,
 	},
 	{

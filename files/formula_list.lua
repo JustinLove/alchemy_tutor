@@ -614,7 +614,7 @@ function at_extra_creatable( mat )
 		local set = at_extra_raw_materials[i]
 		for m = 1,#set do
 			if set[m] == mat then
-				table.remove( at_extra_creatable, i )
+				table.remove( at_extra_raw_materials, i )
 				return
 			end
 		end

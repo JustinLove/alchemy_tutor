@@ -1,11 +1,4 @@
 - multi-step challenges?
-  - x crafting depth of targets
-  - x raw materials
-  - bulk storage areas
-    - x 4 big (5-6 units)
-    - x 21 (3 units) (don't seem to need 21 in practice)
-    - x overflow if preferred storage unavailable
-  - !! multi-scene crosstalk
   - new scene design
     - gold is root of all solids
       - next to gold?
@@ -30,6 +23,9 @@
 - cauldron fires
 - translations - partly done
 
+  - bulk storage areas
+    - x 4 big (5-6 units)
+    - x 21 (3 units) (don't seem to need 21 in practice)
 
 - watchlist
   - steel cauldrons - `steel_static_strong`
