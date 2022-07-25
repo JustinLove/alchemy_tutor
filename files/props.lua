@@ -313,7 +313,7 @@ function at_large_bin( x, y, contents )
 	LoadPixelScene(
 		at_mod_path .. "/props/large_tank.png",
 		"", -- visual
-		x-13, y-32,
+		x-12, y-31,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures

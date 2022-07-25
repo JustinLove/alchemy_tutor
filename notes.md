@@ -8,7 +8,8 @@
     - variable bulk amounts?
     - moonpool
     - superbulk removal?
-    - bin accessability/staining - off by one placement?
+    - bin accessability/staining
+      - above vs below world 0?
     - special rewards?
     - reward room
   - instancing
