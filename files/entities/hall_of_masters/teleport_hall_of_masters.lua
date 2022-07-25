@@ -1,4 +1,4 @@
-dofile_once( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab.lua" )
+dofile_once( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters.lua" )
 
 local function remove_portal( from_x, from_y )
 	local portals = EntityGetInRadiusWithTag( from_x, from_y, 10, "at_remote_lab_portal" )
@@ -23,7 +23,7 @@ function portal_teleport_used( entity_teleported, from_x, from_y, to_x, to_y )
 		local lx, ly = at_get_lab_location()
 		at_spawn_hall_of_masters( lx, ly )
 
-		local iteration = tonumber( GlobalsGetValue( "AT_REMOTE_LAB_COUNT", "0" ) )
-		GlobalsSetValue( "AT_REMOTE_LAB_COUNT", tostring( iteration+1 ) )
+		local iteration = tonumber( GlobalsGetValue( "AT_HALL_OF_MASTERS_COUNT", "0" ) )
+		GlobalsSetValue( "AT_HALL_OF_MASTERS_COUNT", tostring( iteration+1 ) )
 	end
 end

@@ -1050,9 +1050,9 @@ for i = 1,6 do
 	at_master_blocks[i].skip_other = total_other
 	total_container = total_container + at_master_blocks[i].container
 	total_medium = total_medium + at_master_blocks[i].medium
-	print('medium', total_medium)
+	--print('medium', total_medium)
 	total_large = total_large + at_master_blocks[i].large
-	print('large', total_large)
+	--print('large', total_large)
 	total_other = total_large + at_master_blocks[i].large
 end
 

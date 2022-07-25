@@ -1,7 +1,7 @@
-function at_spawn_remote_lab( x, y )
+function at_spawn_hall_of_masters( x, y )
 	local width, height = 512, 512
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/biome_impl/remote_lab_entrance.png",
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/0.plz",
 		"", -- visual
 		x, y,
 		"", -- background
@@ -12,9 +12,53 @@ function at_spawn_remote_lab( x, y )
 		50 -- z index
 	)
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/biome_impl/remote_lab_lab.png",
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/1.plz",
 		"", -- visual
-		x + width, y,
+		x + 84, y + height,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/2.plz",
+		"", -- visual
+		x + 166, y + height*2,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/3.plz",
+		"", -- visual
+		x + width, y + 322,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/4.plz",
+		"", -- visual
+		x + width, y + height,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/5.plz",
+		"", -- visual
+		x + width, y + height*2,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -24,17 +68,25 @@ function at_spawn_remote_lab( x, y )
 	)
 end
 
--- 19,45; off bottom of biome map
-local remote_lab_x = 8704
-local remote_lab_y = 23040
-local entrance_x = 330
-local entrance_y = 77
+local lab_locations = {
+	{ -- ne gold
+		x = 13824,
+		y = -4096,
+	},
+	{ -- sw gold
+		x = -15360,
+		y = 15872,
+	},
+}
+
+local entrance_x = 267
+local entrance_y = 420
 
 function at_get_lab_location()
-	local iteration = tonumber( GlobalsGetValue( "AT_REMOTE_LAB_COUNT", "0" ) )
+	local index = (tonumber( GlobalsGetValue( "AT_HALL_OF_MASTERS_COUNT", "0" ) ) % #lab_locations + 1)
 
-	local x = remote_lab_x + ( ( iteration % 8 ) * 1024 )
-	local y = remote_lab_y + ( math.floor( iteration / 8 ) * 512 )
+	local x = lab_locations[index].x
+	local y = lab_locations[index].y
 	return x, y
 end
 
@@ -54,17 +106,6 @@ end
 
 function at_stop_music( x, y )
 	GameTriggerMusicFadeOutAndDequeueAll( 1.0 )
-end
-
-function at_collapse_lab( x, y )
-	at_cleanup_actors( x, y )
-
-	--GamePrintImportant( "Exit" )
-
-	EntityLoad("data/entities/misc/workshop_collapse.xml", x, y )
-
-	GameTriggerMusicFadeOutAndDequeueAll( 2.0 )
-	GamePlaySound( "data/audio/Desktop/misc.bank", "misc/temple_collapse", x, y )
 end
 
 function at_cleanup_backstage( x, y )

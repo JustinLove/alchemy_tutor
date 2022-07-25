@@ -86,6 +86,9 @@ function OnPlayerSpawned( player_entity ) -- This runs when player entity has be
 	if _G['at_test_masters'] then
 		local x,y = EntityGetTransform(player_entity)
 		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x + 20, y )
+		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x + 60, y )
+		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x + 100, y )
+		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x + 140, y )
 	end
 	first_run = false;
 end
@@ -113,7 +116,7 @@ end
 local function add_hall_of_records( text )
 	text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records.xml</File>\r\n  </PixelSceneFiles>" )
 	--text = string.gsub( text, '</PixelSceneFiles>', "<File>data/biome_impl/spliced/hall_of_records.xml</File>\r\n  </PixelSceneFiles>" )
-	text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters.xml</File>\r\n  </PixelSceneFiles>" )
+	--text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters.xml</File>\r\n  </PixelSceneFiles>" )
 	--text = string.gsub( text, '</PixelSceneFiles>', "<File>data/biome_impl/spliced/hall_of_masters.xml</File>\r\n  </PixelSceneFiles>" )
 	--text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters_sw_gold.xml</File>\r\n  </PixelSceneFiles>" )
 	--text = string.gsub( text, '</PixelSceneFiles>', "<File>data/biome_impl/spliced/hall_of_masters_sw_gold.xml</File>\r\n  </PixelSceneFiles>" )

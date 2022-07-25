@@ -6,11 +6,13 @@ end
 at_chest_chance = at_remote_lab_chance / 2
 at_remote_lab_chest = "mods/alchemy_tutor/files/entities/remote_lab_chest.xml"
 at_hall_of_masters_chest = "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml"
+at_hall_of_masters_location_count = 2
 
 function at_spawn_remote_lab_chest( x, y )
-	local count = tonumber( GlobalsGetValue( "at_passed_count", 0 ) )
+	local master_count = tonumber( GlobalsGetValue( "AT_HALL_OF_MASTERS_COUNT", "0" ) )
+	local passed_count = tonumber( GlobalsGetValue( "at_passed_count", 0 ) )
 	local r = Random( 1, 100 )
-	if r < count then
+	if r < passed_count and master_count < at_hall_of_masters_location_count then
 		EntityLoad( at_hall_of_masters_chest, x, y )
 	else
 		EntityLoad( at_remote_lab_chest, x, y )
