@@ -1,17 +1,19 @@
 - multi-step challenges?
   - new scene design
+    - bin accessability/staining
+      - above vs below world 0?
     - gold is root of all solids
       - next to gold?
       - needs lots of poly
       - built into scene?
-    - large bins kind of out of the way
-    - variable bulk amounts?
     - moonpool
     - superbulk removal?
-    - bin accessability/staining
-      - above vs below world 0?
+    - variable bulk amounts?
+      - emitter filling
     - special rewards?
     - reward room
+    - raise entry area
+  - lava leakage
   - instancing
   - detect void?
   - output water? (ex) why is this a problem?

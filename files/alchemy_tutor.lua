@@ -30,7 +30,7 @@ dofile_once(at_mod_path .. "/grand_alchemy.lua")
 --at_test_x = -5640 -- hall of records ghost
 --at_test_y = 1024 -- hall of records ghost
 at_test_x = 14088 -- hall of masters ne gold
-at_test_y = -3676 -- hall of masters ne gold
+at_test_y = -3726 -- hall of masters ne gold
 --at_test_x = -15096 -- hall of masters sw gold
 --at_test_y = 16292 -- hall of masters sw gold
 
@@ -1015,13 +1015,13 @@ at_master_blocks = {
 	{ -- 3
 		container = 0,
 		medium = 3,
-		large = 2,
+		large = 3,
 		other = 5,
 	},
 	{ -- 4
 		container = 63,
 		medium = 3,
-		large = 2,
+		large = 3,
 		other = 0,
 	},
 	{ -- 5
