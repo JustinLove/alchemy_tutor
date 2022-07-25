@@ -299,7 +299,7 @@ function at_medium_bin( x, y, contents )
 	LoadPixelScene(
 		at_mod_path .. "/props/medium_tank.png",
 		"", -- visual
-		x-8, y,
+		x-7, y,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
