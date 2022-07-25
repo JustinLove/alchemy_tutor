@@ -6,7 +6,8 @@
       - next to gold?
       - needs lots of poly
       - built into scene?
-    - moonpool
+    - lake does not have return portal
+    - conditional side bulk access
     - superbulk removal?
     - variable bulk amounts?
       - emitter filling

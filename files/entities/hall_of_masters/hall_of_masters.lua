@@ -66,6 +66,17 @@ function at_spawn_hall_of_masters( x, y )
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_bulk_access.png",
+		"", -- visual
+		x + 864, y + 725,
+		"", -- background
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
 end
 
 local lab_locations = {
@@ -77,6 +88,12 @@ local lab_locations = {
 		x = -15360,
 		y = 15872,
 	},
+	--[[ does not have return portal
+	{ -- lake
+		x = -16384,
+		y = 4096,
+	},
+	]]
 }
 
 local entrance_x = 267
