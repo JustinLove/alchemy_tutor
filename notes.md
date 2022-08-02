@@ -1,7 +1,5 @@
 - multi-step challenges?
   - new scene design
-    - bin accessability/staining
-      - above vs below world 0?
     - gold is root of all solids
       - next to gold?
       - needs lots of poly
@@ -10,7 +8,6 @@
     - conditional side bulk access
     - superbulk removal?
     - variable bulk amounts?
-      - emitter filling
     - special rewards?
     - reward room
     - raise entry area

@@ -307,6 +307,8 @@ function at_medium_bin( x, y, contents )
 			["ff786c42"] = "steel_static_strong",
 		} -- color_to_matieral_table
 	)
+
+	EntityLoad( at_mod_path .. "/entities/hall_of_masters/bottle_filler_stand.xml", x + 25, y + 85 + 36 )
 end
 
 function at_large_bin( x, y, contents )
@@ -321,4 +323,6 @@ function at_large_bin( x, y, contents )
 			["ff786c42"] = "steel_static_strong",
 		} -- color_to_matieral_table
 	)
+
+	EntityLoad( at_mod_path .. "/entities/hall_of_masters/bottle_filler_stand.xml", x + 45, y + 78 + 21 )
 end

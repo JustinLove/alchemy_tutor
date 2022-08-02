@@ -1,0 +1,13 @@
+<Entity tags="at_backstage">
+  <LuaComponent
+    script_source_file="mods/alchemy_tutor/files/entities/hall_of_masters/bottle_filler_stand.lua"
+    execute_every_n_frame="80"
+    >
+  </LuaComponent>
+
+  <SpriteComponent 
+    image_file="mods/alchemy_tutor/files/entities/hall_of_masters/bottle_filler_stand.png" 
+    offset_x="10"
+    offset_y="10">
+  </SpriteComponent>
+</Entity>
