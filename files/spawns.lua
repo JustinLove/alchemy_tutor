@@ -27,7 +27,8 @@ RegisterSpawnFunction( 0xff3a57e3, "at_spawn_master_3")
 RegisterSpawnFunction( 0xff3a57e4, "at_spawn_master_4")
 RegisterSpawnFunction( 0xff3a57e5, "at_spawn_master_5")
 RegisterSpawnFunction( 0xff3a57e6, "at_spawn_master_6")
-RegisterSpawnFunction( 0xff0c79c7, "at_spawn_output")
+RegisterSpawnFunction( 0xff0c79c1, "at_spawn_output_1")
+RegisterSpawnFunction( 0xff0c79c2, "at_spawn_output_2")
 RegisterSpawnFunction( 0xffe411e9, "at_spawn_eye")
 RegisterSpawnFunction( 0xffb18b13, "at_spawn_big_bin_3")
 RegisterSpawnFunction( 0xffb18b14, "at_spawn_big_bin_4")
@@ -49,8 +50,12 @@ local at_other = {}
 local at_reward = {}
 
 local at_block = {
-	{},
-	{},
+	{
+		reward = {}
+	},
+	{
+		reward = {}
+	},
 	{
 		large_bins = {},
 		medium_bins = {},
@@ -149,7 +154,7 @@ function at_spawn_master_n( n, x, y )
 		c = at_block[n].medium_bins or {},
 		l = at_block[n].large_bins or {},
 		o = at_other,
-		r = at_reward,
+		r = at_block[n].reward or {},
 		n = n,
 	})
 
@@ -173,10 +178,15 @@ function at_spawn_master_n( n, x, y )
 	at_reward = {}
 	at_block[n].large_bins = {}
 	at_block[n].medium_bins = {}
+	at_block[n].reward = {}
 end
 
-function at_spawn_output( x, y )
-	table.insert( at_reward, {x = x, y = y} )
+function at_spawn_output_1( x, y )
+	table.insert( at_block[1].reward, {x = x, y = y} )
+end
+
+function at_spawn_output_2( x, y )
+	table.insert( at_block[2].reward, {x = x, y = y} )
 end
 
 function at_spawn_eye( x, y )

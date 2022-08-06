@@ -1,4 +1,4 @@
-<Entity tags="at_backstage">
+<Entity tags="at_backstage,at_reward">
   <LuaComponent
     script_source_file="mods/alchemy_tutor/files/entities/hall_of_masters/test_success_check.lua"
     execute_every_n_frame="36"
@@ -7,6 +7,12 @@
 
   <VariableStorageComponent
     name="target"
+    value_string=""
+    >
+  </VariableStorageComponent>
+
+  <VariableStorageComponent
+    name="reward"
     value_string=""
     >
   </VariableStorageComponent>
@@ -26,8 +32,8 @@
     count_max="15"
     render_on_grid="1"
     fade_based_on_lifetime="0"
-    area_circle_radius.min="40"
-    area_circle_radius.max="40"
+    area_circle_radius.min="20"
+    area_circle_radius.max="20"
     cosmetic_force_create="1"
     collide_with_grid="0"
     airflow_force="0.051"

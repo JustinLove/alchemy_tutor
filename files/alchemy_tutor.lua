@@ -528,6 +528,10 @@ function at_setup_grand_alchemy()
 	end
 
 	--at_print_table(at_grand_materials)
+	
+	if #at_materials < 1 then
+		return
+	end
 
 	for i,v in ipairs(at_formula_list) do
 		for i,mat in ipairs( v.materials ) do
@@ -1188,14 +1192,40 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	shuffleTable( other )
 	shuffleTable( reward )
 
+	local master_rewards = {
+		'treasure',
+		'knowledge',
+		'wealth',
+	}
+
+	shuffleTable( master_rewards )
+
 	loc = table.remove( reward )
 	if test and loc then
-		at_container( test.target, 0.01, loc.x, loc.y )
+		if block_number == 1 then
+			at_container( test.target, 0.01, loc.x, loc.y )
+		end
+
+		if master_rewards[block_number] == 'knowledge' then
+			at_reward_knowledge( loc.x - 19, loc.y + 5 )
+		elseif master_rewards[block_number] == 'treasure' then
+			at_reward_treasure( loc.x - 19, loc.y + 5 )
+		elseif master_rewards[block_number] == 'wealth' then
+			at_reward_wealth( loc.x - 19, loc.y + 5 )
+		end
 
 		local id = EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/test_success_check.xml", loc.x, loc.y )
-		local var = EntityGetFirstComponent( id, "VariableStorageComponent" )
-		if var then
-			ComponentSetValue2( var, "value_string", test.target )
+		local vars = EntityGetComponent( id, "VariableStorageComponent" )
+		if vars then
+			for i = 1,#vars do
+				var = vars[i]
+				local name = ComponentGetValue2( var, "name" )
+				if ( name == "target" ) then
+					ComponentSetValue2( var, "value_string", test.target )
+				elseif ( name == "reward" ) then
+					ComponentSetValue2( var, "value_string", master_rewards[block_number] )
+				end
+			end
 		end
 
 		at_log( 'target detector', test.target, loc.x, loc.y )

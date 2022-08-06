@@ -1,7 +1,9 @@
 - multi-step challenges?
   - new scene design
     - special rewards?
-    - reward room
+      - wand?
+      - spells?
+      - should we really have gold?
     - conditional side bulk access
     - superbulk removal?
     - gold is root of all solids
@@ -9,6 +11,8 @@
       - needs lots of poly
       - built into scene?
     - raise entry area
+    - reward room
+    - altar art
   - instancing
   - persistant spawning
     - pixel trigger load timing
