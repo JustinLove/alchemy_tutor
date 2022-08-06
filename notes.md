@@ -1,6 +1,5 @@
 - multi-step challenges?
   - new scene design
-    - variable bulk amounts?
     - special rewards?
     - reward room
     - conditional side bulk access

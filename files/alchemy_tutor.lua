@@ -1150,7 +1150,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 	upfill = math.min( Random(0, total_medium - #medium_list), #container_list )
 	--upfill = math.min( total_medium - #medium_list, #container_list )
-	print( 'medim counts', upfill, total_medium )
+	print( 'medium counts', upfill, total_medium )
 	local skip = 0
 	for i = 1,upfill do
 		local mat = container_list[#container_list - skip]
@@ -1164,7 +1164,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	end
 
 	upfill = total_medium - #medium_list
-	print( 'medim counts', upfill, total_medium )
+	print( 'medium counts', upfill, total_medium )
 	for i = 1,upfill do
 		medium_list[#medium_list+1] = "air"
 	end
@@ -1208,8 +1208,23 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 		loc = table.remove( large_bins )
 		if loc then
-			-- look up amount
-			at_large_bin( loc.x, loc.y, what )
+			local amount = 1.0
+			if what ~= 'air' then
+				local count = facts.bulk_amounts[mat]
+				if count >= 6 then
+					amount = Randomf( 0.85, 1.0 )
+				elseif count == 5 then
+					amount = Randomf( 0.75, 1.0 )
+				elseif count == 4 then
+					amount = Randomf( 0.65, 1.0 )
+				elseif count == 3 then
+					amount = Randomf( 0.55, 0.90 )
+				else
+					amount = Randomf( 0.45, 0.80 )
+				end
+				--print( '--------------------',  what, count, amount )
+			end
+			at_large_bin( loc.x, loc.y, what, amount )
 			--present_materials[what] = true
 			at_log( 'large bin', what, loc.x, loc.y )
 		else
@@ -1225,8 +1240,17 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 		loc = table.remove( medium_bins )
 		if loc then
-			-- look up amount
-			at_medium_bin( loc.x, loc.y, what )
+			local amount = 1.0
+			if what ~= 'air' then
+				local count = facts.bulk_amounts[mat]
+				if count >= 3 then
+					amount = Randomf( 0.75, 1.0 )
+				else
+					amount = Randomf( 0.66, 1.0 )
+				end
+				--print( '--------------------',  what, count, amount )
+			end
+			at_medium_bin( loc.x, loc.y, what, amount )
 			--present_materials[what] = true
 			at_log( 'medium bin', what, loc.x, loc.y )
 		else

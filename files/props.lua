@@ -295,7 +295,8 @@ function at_ghost_deflector_base( x, y )
 	)
 end
 
-function at_medium_bin( x, y, contents )
+function at_medium_bin( x, y, contents, amount )
+	amount = amount or 1.0
 	LoadPixelScene(
 		at_mod_path .. "/props/medium_tank.png",
 		"", -- visual
@@ -303,7 +304,12 @@ function at_medium_bin( x, y, contents )
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
-		{ ["fff0bbee"] = contents,
+		{ ["ffdd00dd"] = (amount >= 0.95 and contents) or 'air',
+			["ffcc00cc"] = (amount >= 0.90 and contents) or 'air',
+			["ffbb00bb"] = (amount >= 0.85 and contents) or 'air',
+			["ffaa00aa"] = (amount >= 0.80 and contents) or 'air',
+			["ff990099"] = (amount >= 0.75 and contents) or 'air',
+			["ff880088"] = contents,
 			["ff786c42"] = "steel_static_strong",
 		} -- color_to_matieral_table
 	)
@@ -311,7 +317,8 @@ function at_medium_bin( x, y, contents )
 	EntityLoad( at_mod_path .. "/entities/hall_of_masters/bottle_filler_stand.xml", x + 25, y + 85 + 36 )
 end
 
-function at_large_bin( x, y, contents )
+function at_large_bin( x, y, contents, amount )
+	amount = amount or 1.0
 	LoadPixelScene(
 		at_mod_path .. "/props/large_tank.png",
 		"", -- visual
@@ -319,7 +326,12 @@ function at_large_bin( x, y, contents )
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
-		{ ["fff0bbee"] = contents,
+		{ ["ffdd00dd"] = (amount >= 0.95 and contents) or 'air',
+			["ffcc00cc"] = (amount >= 0.90 and contents) or 'air',
+			["ffbb00bb"] = (amount >= 0.85 and contents) or 'air',
+			["ffaa00aa"] = (amount >= 0.80 and contents) or 'air',
+			["ff990099"] = (amount >= 0.75 and contents) or 'air',
+			["ff880088"] = contents,
 			["ff786c42"] = "steel_static_strong",
 		} -- color_to_matieral_table
 	)
