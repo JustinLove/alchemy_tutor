@@ -7,10 +7,11 @@ RegisterSpawnFunction( 0xffff5a0a, "spawn_music_trigger" )
 RegisterSpawnFunction( 0xff03deaf, "spawn_fish" )
 RegisterSpawnFunction( 0xff357320, "spawn_enter_trigger" )
 RegisterSpawnFunction( 0xffd35720, "spawn_demolition" )
-RegisterSpawnFunction( 0xffa9d024, "spawn_return_portal" )
+RegisterSpawnFunction( 0xffe4173a, "spawn_exitway" )
 RegisterSpawnFunction( 0xffc128ff, "spawn_rubble" )
 RegisterSpawnFunction( 0xffa7a707, "spawn_lamp_long" )
 RegisterSpawnFunction( 0xff80FF5A, "spawn_vines" )
+
 
 g_rubble =
 {
@@ -139,27 +140,8 @@ function spawn_demolition( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_demolition.xml", x, y )
 end
 
-function spawn_return_portal( x, y )
+function spawn_exitway( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_exitway.xml", x, y )
-	local portal = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_return.xml", x, y )
-
-	local teleport_comp = EntityGetFirstComponentIncludingDisabled( portal, "TeleportComponent" )
-
-	local teleport_back_x = 0
-	local teleport_back_y = 0
-
-	-- get the defaults from teleport_comp(s)
-	if( teleport_comp ~= nil ) then
-		teleport_back_x, teleport_back_y = ComponentGetValue2( teleport_comp, "target" )
-		--print( "teleport std pos:" .. teleport_back_x .. ", " .. teleport_back_y )
-
-		teleport_back_x = tonumber( GlobalsGetValue( "AT_TELEPORT_REMOTE_LAB_POS_X", teleport_back_x ) )
-		teleport_back_y = tonumber( GlobalsGetValue( "AT_TELEPORT_REMOTE_LAB_POS_Y", teleport_back_y ) )
-
-		--print( "teleport stored pos:" .. teleport_back_x .. ", " .. teleport_back_y )
-
-		ComponentSetValue2( teleport_comp, "target", teleport_back_x, teleport_back_y )
-	end
 end
 
 function spawn_areacheck( x, y, id, radius )

@@ -79,6 +79,7 @@ function at_spawn_hall_of_masters( x, y )
 	)
 end
 
+-- see also biome_scripts location count
 local lab_locations = {
 	{ -- ne gold
 		x = 13824,
@@ -88,12 +89,10 @@ local lab_locations = {
 		x = -15360,
 		y = 15872,
 	},
-	--[[ does not have return portal
 	{ -- lake
 		x = -16384,
 		y = 4096,
 	},
-	]]
 }
 
 local entrance_x = 267

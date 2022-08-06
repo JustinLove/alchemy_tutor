@@ -1,18 +1,21 @@
 - multi-step challenges?
   - new scene design
+    - variable bulk amounts?
+    - special rewards?
+    - reward room
+    - conditional side bulk access
+    - superbulk removal?
     - gold is root of all solids
       - next to gold?
       - needs lots of poly
       - built into scene?
-    - lake does not have return portal
-    - conditional side bulk access
-    - superbulk removal?
-    - variable bulk amounts?
-    - special rewards?
-    - reward room
     - raise entry area
-  - lava leakage
   - instancing
+  - persistant spawning
+    - pixel trigger load timing
+    - return portals if loaded normally
+    - pixel scenes.xml are not in parallel worlds
+  - lava leakage
   - detect void?
   - output water? (ex) why is this a problem?
   - touch of water
@@ -20,7 +23,6 @@
   - item spawning
     - hall of records - roughed in
     - customize item - temp
-  - pixel scenes.xml are not in parallel worlds
 
 - check hanging with special detectors
 
