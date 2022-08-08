@@ -593,6 +593,13 @@ at_volatile_material_list = {
 	"powder_empty",
 }
 
+-- slowly evaporates in hot areas, should be in flasks
+at_evaporating_material_list = {
+	"water",
+	"water_salt",
+	"water_ice",
+}
+
 -- may be placed in bulk, but some flasks available
 at_awkward_material_list = {
 	"magic_liquid_unstable_teleportation",
@@ -603,7 +610,6 @@ at_awkward_material_list = {
 	"radioactive_liquid",
 	"fire_strong",
 }
-
 -- cyclical, needs something in the loop to get started
 at_extra_raw_materials = {
 	{ "salt", "water_salt" },

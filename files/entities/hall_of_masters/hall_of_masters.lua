@@ -1,3 +1,39 @@
+-- see also biome_scripts location count
+local lab_locations = {
+	{ -- nw sky, above lake cloudscape
+		x = -14848,
+		y = -9216,
+	},
+	{ -- ne gold
+		x = 13824,
+		y = -4096,
+		biome = 'gold',
+	},
+	{ -- ne sky niche
+		x = 12800,
+		y = -6656,
+	},
+	{ -- lake
+		x = -16384,
+		y = 4096,
+		biome = 'water',
+	},
+	{ -- ne sky between work and chest
+		x = 6656,
+		y = -6656,
+		biome_modifier = 'hot',
+	},
+	{ -- sw gold
+		x = -15360,
+		y = 15872,
+		biome = 'gold',
+	},
+	{ -- ne sky niche
+		x = 14848,
+		y = -6656,
+	},
+}
+
 function at_spawn_hall_of_masters( x, y )
 	local width, height = 512, 512
 	LoadPixelScene(
@@ -66,34 +102,21 @@ function at_spawn_hall_of_masters( x, y )
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
-	LoadPixelScene(
-		"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_bulk_access.png",
-		"", -- visual
-		x + 864, y + 725,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{
-		}, -- color_to_matieral_table
-		50 -- z index
-	)
+	local biome = at_get_lab_biome_bulk( x, y )
+	if biome ~= nil then
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_bulk_access.png",
+			"", -- visual
+			x + 864, y + 725,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{
+			}, -- color_to_matieral_table
+			50 -- z index
+		)
+	end
 end
-
--- see also biome_scripts location count
-local lab_locations = {
-	{ -- ne gold
-		x = 13824,
-		y = -4096,
-	},
-	{ -- sw gold
-		x = -15360,
-		y = 15872,
-	},
-	{ -- lake
-		x = -16384,
-		y = 4096,
-	},
-}
 
 local entrance_x = 267
 local entrance_y = 420
@@ -111,6 +134,22 @@ function at_get_entrance_location()
 	x = x + entrance_x
 	y = y + entrance_y
 	return x, y
+end
+
+function at_get_lab_biome_bulk( x, y )
+	for _,loc in ipairs(lab_locations) do
+		if loc.x == x and loc.y == y then
+			return loc.biome
+		end
+	end
+end
+
+function at_get_lab_biome_modifier( x, y )
+	for _,loc in ipairs(lab_locations) do
+		if loc.x == x and loc.y == y then
+			return loc.biome_modifier
+		end
+	end
 end
 
 function at_remember_return_location( teleport_back_x, teleport_back_y )

@@ -167,7 +167,9 @@ ModLuaFileAppend( "data/scripts/biomes/fungiforest.lua", "mods/alchemy_tutor/fil
 -- liquidcave doesn't seem to have heart/chest spawns
 ModLuaFileAppend( "data/scripts/biomes/liquidcave.lua", "mods/alchemy_tutor/files/biomes/liquidcave.lua" )
 
-ModLuaFileAppend( "data/scripts/biomes/lake_deep.lua", "mods/alchemy_tutor/files/biomes/liquidcave.lua" )
+ModLuaFileAppend( "data/scripts/biomes/lake_deep.lua", "mods/alchemy_tutor/files/spawns.lua" )
+ModLuaFileAppend( "data/scripts/biomes/lake.lua", "mods/alchemy_tutor/files/spawns.lua" )
+ModLuaFileAppend( "data/scripts/biomes/desert.lua", "mods/alchemy_tutor/files/spawns.lua" )
 
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_entrance.lua", "mods/alchemy_tutor/files/spawns.lua" )

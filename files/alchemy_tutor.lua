@@ -1,5 +1,6 @@
 local at_mod_path = "mods/alchemy_tutor/files"
 dofile_once(at_mod_path .. "/grand_alchemy.lua")
+dofile_once(at_mod_path .. "/entities/hall_of_masters/hall_of_masters.lua")
 
 --at_test_player = true
 --at_test_lab = true
@@ -1079,20 +1080,33 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 	at_log( 'block delta', block_dx, block_dy )
 
-	local lab_x = block_x - block_dx
-	local lab_y = block_y - block_dy
+	local lab_block_x = block_x - block_dx
+	local lab_block_y = block_y - block_dy
 
-	at_log( 'lab', lab_x, lab_y )
+	at_log( 'lab', lab_block_x, lab_block_y )
 
-	SetRandomSeed( lab_x, lab_y )
+	local lab_pixel_x = lab_block_x * 512
+	local lab_pixel_y = lab_block_y * 512
+
+	SetRandomSeed( lab_block_x, lab_block_y )
 
 	SetRandomSeed = at_SetRandomSeed
+
+	local biome_bulk = at_get_lab_biome_bulk( lab_pixel_x, lab_pixel_y )
 
 	local facts = at_master_sets()
 	local tests = facts.master_tests
 	local test = tests[ Random(1, #tests) ]
 	if test then
 		at_log( 'target', test.target, table.concat(test.formulas, ',') )
+	end
+	local biome_modifier = at_get_lab_biome_modifier( lab_pixel_x, lab_pixel_y )
+
+	local must_be_bottled = {}
+	if biome_modifier == 'hot' then
+		for _,mat in ipairs(at_evaporating_material_list) do
+			must_be_bottled[mat] = true
+		end
 	end
 
 	local container_list = {}
@@ -1101,19 +1115,21 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 	-- initial allocation by volume
 	for mat,count in pairs( facts.bulk_amounts ) do
-		if not test or not test.created_materials[mat] then
-			if count > 2 and not at_volatile_materials[mat] then
-				if count > 3 then
-					large_list[#large_list+1] = mat
+		if mat ~= biome_bulk then
+			if not test or not test.created_materials[mat] then
+				if count > 2 and not at_volatile_materials[mat] and not must_be_bottled[mat] then
+					if count > 3 then
+						large_list[#large_list+1] = mat
+					else
+						medium_list[#medium_list+1] = mat
+					end
+					if at_awkward_materials[mat] then
+						container_list[#container_list+1] = mat
+					end
 				else
-					medium_list[#medium_list+1] = mat
-				end
-				if at_awkward_materials[mat] then
-					container_list[#container_list+1] = mat
-				end
-			else
-				for i = 1,count do
-					container_list[#container_list+1] = mat
+					for i = 1,count do
+						container_list[#container_list+1] = mat
+					end
 				end
 			end
 		end

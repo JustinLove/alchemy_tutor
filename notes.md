@@ -1,14 +1,10 @@
 - multi-step challenges?
   - new scene design
-    - conditional side bulk access
-    - superbulk removal?
-    - gold is root of all solids
-      - next to gold?
-      - needs lots of poly
-      - built into scene?
     - raise entry area
     - reward room
     - altar art
+    - gold is root of all solids
+      - needs lots of poly
   - instancing
   - persistant spawning
     - pixel trigger load timing
@@ -16,7 +12,7 @@
     - pixel scenes.xml are not in parallel worlds
   - lava leakage
   - detect void?
-  - output water? (ex) why is this a problem?
+  - output water? (ex) readily available
   - touch of water
   - target selection criteria?
   - item spawning
