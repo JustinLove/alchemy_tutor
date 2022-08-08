@@ -1220,12 +1220,14 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 	loc = table.remove( reward )
 	if test and loc then
-		if block_number == 1 then
-			--at_container( test.target, 0.91, loc.x - 60, loc.y + 20 )
+		if block_number == 2 then
+			--at_container( test.target, 0.91, loc.x  + 20, loc.y + 20 )
 			at_container( test.target, 0.01, loc.x, loc.y )
 		end
 
-		at_master_reward_altar( master_rewards[block_number], loc.x - 19, loc.y + 5 )
+		local altar_reward = master_rewards[block_number]
+
+		at_master_reward_altar( altar_reward, loc.x - 19, loc.y + 5 )
 
 		local id = EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/test_success_check.xml", loc.x, loc.y )
 		local vars = EntityGetComponent( id, "VariableStorageComponent" )
@@ -1236,7 +1238,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 				if ( name == "target" ) then
 					ComponentSetValue2( var, "value_string", test.target )
 				elseif ( name == "reward" ) then
-					ComponentSetValue2( var, "value_string", master_rewards[block_number] )
+					ComponentSetValue2( var, "value_string", altar_reward )
 				end
 			end
 		end

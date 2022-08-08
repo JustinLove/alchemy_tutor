@@ -72,7 +72,7 @@ function at_spawn_hall_of_masters( x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/3.plz",
 		"", -- visual
-		x + width, y + 322,
+		x + width, y + 189,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -119,7 +119,7 @@ function at_spawn_hall_of_masters( x, y )
 end
 
 local entrance_x = 267
-local entrance_y = 420
+local entrance_y = 287
 
 function at_get_lab_location()
 	local index = (tonumber( GlobalsGetValue( "AT_HALL_OF_MASTERS_COUNT", "0" ) ) % #lab_locations + 1)

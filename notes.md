@@ -1,10 +1,5 @@
 - multi-step challenges?
-  - new scene design
-    - raise entry area
-    - reward room
-    - altar art
-    - gold is root of all solids
-      - needs lots of poly
+  - central mixing area not needed?
   - instancing
   - persistant spawning
     - pixel trigger load timing
@@ -18,6 +13,9 @@
   - item spawning
     - hall of records - roughed in
     - customize item - temp
+  - altar art
+  - gold is root of all solids
+    - needs lots of poly??
 - pillars??
 
 - check hanging with special detectors
