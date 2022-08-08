@@ -1,9 +1,5 @@
 - multi-step challenges?
   - new scene design
-    - special rewards?
-      - wand?
-      - spells?
-      - should we really have gold?
     - conditional side bulk access
     - superbulk removal?
     - gold is root of all solids
@@ -26,6 +22,7 @@
   - item spawning
     - hall of records - roughed in
     - customize item - temp
+- pillars??
 
 - check hanging with special detectors
 

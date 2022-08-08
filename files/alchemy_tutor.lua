@@ -23,14 +23,14 @@ dofile_once(at_mod_path .. "/grand_alchemy.lua")
 --at_test_y = 7500 -- rainforest dark
 --at_test_x = 12300 -- fungiforest
 --at_test_y = 2000 -- fungiforest
---at_test_x = -5317 -- hall of records
---at_test_y = 720 -- hall of records
+at_test_x = -5317 -- hall of records
+at_test_y = 720 -- hall of records
 --at_test_x = -5000 -- hall of records entrance
 --at_test_y = 700 -- hall of records entrace
 --at_test_x = -5640 -- hall of records ghost
 --at_test_y = 1024 -- hall of records ghost
-at_test_x = 14088 -- hall of masters ne gold
-at_test_y = -3726 -- hall of masters ne gold
+--at_test_x = 14088 -- hall of masters ne gold
+--at_test_y = -3726 -- hall of masters ne gold
 --at_test_x = -15096 -- hall of masters sw gold
 --at_test_y = 16292 -- hall of masters sw gold
 
@@ -1195,7 +1195,9 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	local master_rewards = {
 		'treasure',
 		'knowledge',
-		'wealth',
+		--'wealth',
+		'power',
+		'magic',
 	}
 
 	shuffleTable( master_rewards )
@@ -1203,16 +1205,11 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	loc = table.remove( reward )
 	if test and loc then
 		if block_number == 1 then
+			--at_container( test.target, 0.91, loc.x - 60, loc.y + 20 )
 			at_container( test.target, 0.01, loc.x, loc.y )
 		end
 
-		if master_rewards[block_number] == 'knowledge' then
-			at_reward_knowledge( loc.x - 19, loc.y + 5 )
-		elseif master_rewards[block_number] == 'treasure' then
-			at_reward_treasure( loc.x - 19, loc.y + 5 )
-		elseif master_rewards[block_number] == 'wealth' then
-			at_reward_wealth( loc.x - 19, loc.y + 5 )
-		end
+		at_master_reward_altar( master_rewards[block_number], loc.x - 19, loc.y + 5 )
 
 		local id = EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/test_success_check.xml", loc.x, loc.y )
 		local vars = EntityGetComponent( id, "VariableStorageComponent" )

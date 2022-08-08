@@ -1,4 +1,81 @@
 dofile_once('mods/alchemy_tutor/files/alchemy_tutor.lua')
+dofile_once("data/scripts/director_helpers.lua")
+dofile_once( "data/scripts/gun/gun_actions.lua" )
+
+local wands =
+{
+	total_prob = 0,
+	-- this is air, so nothing spawns at 0.6
+	{
+		prob   		= 0,
+		min_count	= 0,
+		max_count	= 0,
+		entity 	= ""
+	},
+	-- add skullflys after this step
+	{
+		prob   		= 5,
+		min_count	= 1,
+		max_count	= 1,
+		entity 	= "data/entities/items/wand_level_06.xml"
+	},
+	{
+		prob   		= 5,
+		min_count	= 1,
+		max_count	= 1,
+		entity 	= "data/entities/items/wand_level_06_better.xml"
+	},
+	{
+		prob   		= 3,
+		min_count	= 1,
+		max_count	= 1,
+		entity 	= "data/entities/items/wand_unshuffle_05.xml"
+	},
+	{
+		prob   		= 2,
+		min_count	= 1,
+		max_count	= 1,
+		entity 	= "data/entities/items/wand_unshuffle_06.xml"
+	},
+}
+
+local function make_random_card( x, y )
+	-- this does NOT call SetRandomSeed() on purpouse.
+	-- SetRandomSeed( x, y )
+
+	local item = ""
+	local valid = false
+
+	while ( valid == false ) do
+		local itemno = Random( 1, #actions )
+		local thisitem = actions[itemno]
+		item = string.lower(thisitem.id)
+
+		if ( thisitem.spawn_requires_flag ~= nil ) then
+			local flag_name = thisitem.spawn_requires_flag
+			local flag_status = HasFlagPersistent( flag_name )
+
+			if flag_status then
+				valid = true
+			end
+
+			-- 
+			if( thisitem.spawn_probability == "0" ) then 
+				valid = false
+			end
+
+		else
+			valid = true
+		end
+	end
+
+	if ( string.len(item) > 0 ) then
+		local card_entity = CreateItemActionEntity( item, x, y )
+		return card_entity
+	else
+		print( "No valid action entity found!" )
+	end
+end
 
 local function spawn_success( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/success_effect.xml", x, y )
@@ -23,6 +100,20 @@ end
 
 local function spawn_gold( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/wealth.xml", x, y )
+	spawn_success( x, y )
+end
+
+local function spawn_wand( x, y )
+	spawn( wands, x - 5, y - 5, 0, 0 )
+	spawn_success( x, y )
+end
+
+local function spawn_spells( x, y )
+	SetRandomSeed( x, y )
+	local amount = 8
+	for i=1,amount do
+		make_random_card( x + (i - (amount / 2)) * 8, y - 9 + Random(-10,10) )
+	end
 	spawn_success( x, y )
 end
 
@@ -75,6 +166,10 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 20, "item_pickup")) do
 							spawn_grand_material( pos_x, pos_y )
 						elseif reward == 'wealth' then
 							spawn_gold( pos_x, pos_y )
+						elseif reward == 'power' then
+							spawn_wand( pos_x, pos_y )
+						elseif reward == 'magic' then
+							spawn_spells( pos_x, pos_y )
 						else
 							spawn_great_chest( pos_x, pos_y )
 						end

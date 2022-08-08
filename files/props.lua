@@ -339,35 +339,10 @@ function at_large_bin( x, y, contents, amount )
 	EntityLoad( at_mod_path .. "/entities/hall_of_masters/bottle_filler_stand.xml", x + 45, y + 78 + 21 )
 end
 
-function at_reward_treasure( x, y )
-	print( '------------------------- treasure', x, y )
+function at_master_reward_altar( reward, x, y )
 	LoadPixelScene(
-		at_mod_path .. "/props/treasure.png",
-		at_mod_path .. "/props/treasure_visual.png",
-		x, y,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{} -- color_to_matieral_table
-	)
-end
-
-function at_reward_knowledge( x, y )
-	LoadPixelScene(
-		at_mod_path .. "/props/knowledge.png",
-		at_mod_path .. "/props/knowledge_visual.png",
-		x, y,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{} -- color_to_matieral_table
-	)
-end
-
-function at_reward_wealth( x, y )
-	LoadPixelScene(
-		at_mod_path .. "/props/wealth.png",
-		at_mod_path .. "/props/wealth_visual.png",
+		at_mod_path .. "/props/" .. reward .. ".png",
+		at_mod_path .. "/props/" .. reward .. "_visual.png",
 		x, y,
 		"", -- background
 		true, -- skip_biome_checks
