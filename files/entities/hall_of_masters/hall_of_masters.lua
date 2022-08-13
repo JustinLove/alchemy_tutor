@@ -1,5 +1,5 @@
 -- see also biome_scripts location count
-local lab_locations = {
+at_lab_locations = {
 	{ -- nw sky, above lake cloudscape
 		x = -14848,
 		y = -9216,
@@ -72,7 +72,7 @@ function at_spawn_hall_of_masters( x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/3.plz",
 		"", -- visual
-		x + width, y + 189,
+		x + width, y + 125,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -118,14 +118,14 @@ function at_spawn_hall_of_masters( x, y )
 	end
 end
 
-local entrance_x = 267
-local entrance_y = 287
+local entrance_x = 512
+local entrance_y = 213
 
 function at_get_lab_location()
-	local index = (tonumber( GlobalsGetValue( "AT_HALL_OF_MASTERS_COUNT", "0" ) ) % #lab_locations + 1)
+	local index = (tonumber( GlobalsGetValue( "AT_HALL_OF_MASTERS_COUNT", "0" ) ) % #at_lab_locations + 1)
 
-	local x = lab_locations[index].x
-	local y = lab_locations[index].y
+	local x = at_lab_locations[index].x
+	local y = at_lab_locations[index].y
 	return x, y
 end
 
@@ -137,7 +137,7 @@ function at_get_entrance_location()
 end
 
 function at_get_lab_biome_bulk( x, y )
-	for _,loc in ipairs(lab_locations) do
+	for _,loc in ipairs(at_lab_locations) do
 		if loc.x == x and loc.y == y then
 			return loc.biome
 		end
@@ -145,7 +145,7 @@ function at_get_lab_biome_bulk( x, y )
 end
 
 function at_get_lab_biome_modifier( x, y )
-	for _,loc in ipairs(lab_locations) do
+	for _,loc in ipairs(at_lab_locations) do
 		if loc.x == x and loc.y == y then
 			return loc.biome_modifier
 		end
@@ -157,6 +157,35 @@ function at_remember_return_location( teleport_back_x, teleport_back_y )
 	-- - 50
 	GlobalsSetValue( "AT_TELEPORT_REMOTE_LAB_POS_X", tostring( teleport_back_x ) )
 	GlobalsSetValue( "AT_TELEPORT_REMOTE_LAB_POS_Y", tostring( teleport_back_y ) )
+end
+
+function at_spawn_return_portal( x, y )
+	local portal
+	local portals = EntityGetInRadiusWithTag( x, y, 5, "at_remote_lab_portal" )
+
+	if #portals > 0 then
+		portal = portals[1]
+	else
+		portal = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_return.xml", x, y )
+	end
+
+	local teleport_comp = EntityGetFirstComponentIncludingDisabled( portal, "TeleportComponent" )
+
+	local teleport_back_x = 0
+	local teleport_back_y = 0
+
+	-- get the defaults from teleport_comp(s)
+	if( teleport_comp ~= nil ) then
+		teleport_back_x, teleport_back_y = ComponentGetValue2( teleport_comp, "target" )
+		--print( "teleport std pos:" .. teleport_back_x .. ", " .. teleport_back_y )
+
+		teleport_back_x = tonumber( GlobalsGetValue( "AT_TELEPORT_REMOTE_LAB_POS_X", teleport_back_x ) )
+		teleport_back_y = tonumber( GlobalsGetValue( "AT_TELEPORT_REMOTE_LAB_POS_Y", teleport_back_y ) )
+
+		--print( "teleport stored pos:" .. teleport_back_x .. ", " .. teleport_back_y )
+
+		ComponentSetValue2( teleport_comp, "target", teleport_back_x, teleport_back_y )
+	end
 end
 
 function at_stop_music( x, y )

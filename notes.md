@@ -1,8 +1,9 @@
 - multi-step challenges?
-  - persistant spawning
-    - pixel trigger load timing
-    - return portals if loaded normally
-    - pixel scenes.xml are not in parallel worlds
+  - areas
+    - entrance announcement
+    - remove biome announce?
+    - music
+    - ???
   - lava leakage
   - detect void?
   - output water? (ex) readily available
@@ -11,10 +12,10 @@
   - item spawning
     - hall of records - roughed in
     - customize item - temp
+  - parallel worlds?
   - altar art
   - gold is root of all solids
     - needs lots of poly??
-  - instancing???
 - pillars??
 
 - check hanging with special detectors

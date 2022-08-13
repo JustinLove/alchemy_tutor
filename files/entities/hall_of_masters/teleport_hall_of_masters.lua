@@ -11,13 +11,14 @@ function portal_teleport_used( entity_teleported, from_x, from_y, to_x, to_y )
 	if( IsPlayer( entity_teleported ) ) then
 		remove_portal( from_x, from_y )
 
-		-- portal should already be spawned if coming via remote_lab_meditation, but just in case
 		at_remember_return_location( from_x, from_y )
 
 		local ex, ey = at_get_entrance_location()
 		if to_x ~= ex or to_y ~= ey then
 			EntitySetTransform( entity_teleported, ex, ey )
 		end
+
+		at_spawn_return_portal( ex, ey - 35 )
 
 		-- again, lab should already be down via meditation, but game ignores duplicate pixel scenes, so might as well be safe
 		local lx, ly = at_get_lab_location()

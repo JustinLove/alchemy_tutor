@@ -1,6 +1,7 @@
 dofile_once("mods/alchemy_tutor/files/spawns.lua")
 dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 
+RegisterSpawnFunction( 0xffa9d024, "spawn_return_portal" )
 RegisterSpawnFunction( 0xff01DEAD, "spawn_areacheck1" )
 RegisterSpawnFunction( 0xff02DEAD, "spawn_areacheck2" )
 RegisterSpawnFunction( 0xffff5a0a, "spawn_music_trigger" )
@@ -127,6 +128,28 @@ end
 
 function spawn_lamp_long(x, y)
 	spawn(g_lamp,x,y,0,15)
+end
+
+function spawn_return_portal( x, y )
+	local portal = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_return.xml", x, y )
+
+	local teleport_comp = EntityGetFirstComponentIncludingDisabled( portal, "TeleportComponent" )
+
+	local teleport_back_x = 0
+	local teleport_back_y = 0
+
+	-- get the defaults from teleport_comp(s)
+	if( teleport_comp ~= nil ) then
+		teleport_back_x, teleport_back_y = ComponentGetValue2( teleport_comp, "target" )
+		--print( "teleport std pos:" .. teleport_back_x .. ", " .. teleport_back_y )
+
+		teleport_back_x = tonumber( GlobalsGetValue( "AT_TELEPORT_REMOTE_LAB_POS_X", teleport_back_x ) )
+		teleport_back_y = tonumber( GlobalsGetValue( "AT_TELEPORT_REMOTE_LAB_POS_Y", teleport_back_y ) )
+
+		--print( "teleport stored pos:" .. teleport_back_x .. ", " .. teleport_back_y )
+
+		ComponentSetValue2( teleport_comp, "target", teleport_back_x, teleport_back_y )
+	end
 end
 
 function spawn_enter_trigger( x, y )
