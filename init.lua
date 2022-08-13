@@ -137,6 +137,7 @@ end
 
 local translations = [[
 at_remote_lab,Hall of Apprentices,,,,,,,,,,,,,
+at_hall_of_masters,Hall of Masters,,,,,,,,,,,,,
 at_hall_of_records,Hall of Records,,,,,,,,,,,,,
 at_building_ghost_deflector,Ghost Crystal,,,,,,,,,,,,,
 at_log_ghost_deflector_death,Ghost Crystal Shattered,,,,,,,,,,,,,

@@ -1,7 +1,5 @@
 - multi-step challenges?
   - areas
-    - entrance announcement
-    - remove biome announce?
     - music
     - ???
   - lava leakage

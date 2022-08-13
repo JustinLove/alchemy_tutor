@@ -34,6 +34,9 @@ RegisterSpawnFunction( 0xff3edb13, "at_spawn_med_bin_3")
 RegisterSpawnFunction( 0xff3edb14, "at_spawn_med_bin_4")
 RegisterSpawnFunction( 0xff3edb15, "at_spawn_med_bin_5")
 RegisterSpawnFunction( 0xff3edb16, "at_spawn_med_bin_6")
+RegisterSpawnFunction( 0xffe27e21, "at_spawn_enter_entrance")
+RegisterSpawnFunction( 0xffe27e22, "at_spawn_enter_top")
+RegisterSpawnFunction( 0xffe27e23, "at_spawn_enter_bottom")
 
 at_lab_chance = ModSettingGet("alchemy_tutor.lab_chance")
 if at_lab_chance == nil then
@@ -167,6 +170,18 @@ end
 
 function at_spawn_eye( x, y )
 	EntityLoad( "data/entities/items/pickup/evil_eye.xml", x, y )
+end
+
+function at_spawn_enter_entrance( x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_enter_entrance.xml", x, y )
+end
+
+function at_spawn_enter_top( x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_enter_top.xml", x, y )
+end
+
+function at_spawn_enter_bottom( x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_enter_bottom.xml", x, y )
 end
 
 function at_look_here( x, y )

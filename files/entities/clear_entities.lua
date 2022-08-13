@@ -10,7 +10,7 @@ local function at_clear_enemies( x, y )
 end
 
 local function at_visualize_backstage( x, y )
-	local backstage = EntityGetInRadiusWithTag( x, y, 300, "at_backstage" )
+	local backstage = EntityGetInRadiusWithTag( x, y, 600, "at_backstage" )
 
 	for _,entity_id in ipairs(backstage) do
 		--print("backstage", entity_id)
