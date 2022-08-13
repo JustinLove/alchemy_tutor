@@ -107,7 +107,7 @@ function at_spawn_hall_of_masters( x, y )
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_bulk_access.png",
 			"", -- visual
-			x + 864, y + 725,
+			x + 864, y + 702,
 			"", -- background
 			true, -- skip_biome_checks
 			false, -- skip_edge_textures

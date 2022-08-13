@@ -1,6 +1,4 @@
 - multi-step challenges?
-  - central mixing area not needed?
-  - instancing
   - persistant spawning
     - pixel trigger load timing
     - return portals if loaded normally
@@ -16,6 +14,7 @@
   - altar art
   - gold is root of all solids
     - needs lots of poly??
+  - instancing???
 - pillars??
 
 - check hanging with special detectors

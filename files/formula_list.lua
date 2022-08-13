@@ -520,6 +520,7 @@ at_formula_list = {
 		cauldron_contents = "blood_worm",
 		output = "purifying_powder",
 		check_for = at_material_presence,
+		exclude_from_chains = true, -- turns worm blood to water, can't get enough output
 		rating = 15,
 	},
 	{
