@@ -9,7 +9,6 @@ if player ~= nil then
 	local player_x, player_y = EntityGetTransform(player)
 	local distance = get_distance(pos_x, pos_y, player_x, player_y)
 	volume = math.min(1, math.max(0.01, 1 - (distance / 512)) * 1.5 )
-	print(distance, volume)
 end
 
 local audio = EntityGetFirstComponent( entity_id, "AudioLoopComponent" )
