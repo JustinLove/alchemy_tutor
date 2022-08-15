@@ -1,7 +1,4 @@
 - multi-step challenges?
-  - areas
-    - music
-    - ???
   - lava leakage
   - detect void?
   - output water? (ex) readily available
@@ -12,6 +9,8 @@
     - customize item - temp
   - parallel worlds?
   - altar art
+  - clean up material art
+  - temp background
   - gold is root of all solids
     - needs lots of poly??
 - pillars??

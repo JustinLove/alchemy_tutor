@@ -37,6 +37,7 @@ RegisterSpawnFunction( 0xff3edb16, "at_spawn_med_bin_6")
 RegisterSpawnFunction( 0xffe27e21, "at_spawn_enter_entrance")
 RegisterSpawnFunction( 0xffe27e22, "at_spawn_enter_top")
 RegisterSpawnFunction( 0xffe27e23, "at_spawn_enter_bottom")
+RegisterSpawnFunction( 0xff3251c0, "at_spawn_music")
 
 at_lab_chance = ModSettingGet("alchemy_tutor.lab_chance")
 if at_lab_chance == nil then
@@ -182,6 +183,10 @@ end
 
 function at_spawn_enter_bottom( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_enter_bottom.xml", x, y )
+end
+
+function at_spawn_music( x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_music.xml", x, y )
 end
 
 function at_look_here( x, y )
