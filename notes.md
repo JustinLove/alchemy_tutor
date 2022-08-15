@@ -1,5 +1,4 @@
 - multi-step challenges?
-  - detect void?
   - output water? (ex) readily available
   - touch of water
   - target selection criteria?
@@ -23,6 +22,7 @@
   - bulk storage areas
     - x 4 big (5-6 units)
     - x 21 (3 units) (don't seem to need 21 in practice)
+  - detect void? - can get 39% with wood tank and current drains, which arent vanilla anyway
 
 - watchlist
   - steel cauldrons - `steel_static_strong`
