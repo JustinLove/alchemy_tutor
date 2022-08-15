@@ -1,5 +1,4 @@
 - multi-step challenges?
-  - lava leakage
   - detect void?
   - output water? (ex) readily available
   - touch of water

@@ -32,8 +32,8 @@ dofile_once(at_mod_path .. "/entities/hall_of_masters/hall_of_masters.lua")
 --at_test_y = 1024 -- hall of records ghost
 at_test_x = 14334 -- hall of masters ne gold
 at_test_y = -3880 -- hall of masters ne gold
---at_test_x = -15096 -- hall of masters sw gold
---at_test_y = 16292 -- hall of masters sw gold
+--at_test_x = -14848 -- hall of masters sw gold
+--at_test_y = 16078 -- hall of masters sw gold
 
 function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
