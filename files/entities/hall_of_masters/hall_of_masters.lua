@@ -34,6 +34,27 @@ at_lab_locations = {
 	},
 }
 
+at_special_lab_locations = {
+	{ -- hall of records, below alchemist
+		x = -5632,
+		y = 1024,
+		extra = 'records',
+	},
+}
+
+local function get_lab( x, y )
+	for _,loc in ipairs(at_lab_locations) do
+		if loc.x == x and loc.y == y then
+			return loc
+		end
+	end
+	for _,loc in ipairs(at_special_lab_locations) do
+		if loc.x == x and loc.y == y then
+			return loc
+		end
+	end
+end
+
 function at_spawn_hall_of_masters( x, y )
 	local width, height = 512, 512
 	LoadPixelScene(
@@ -102,8 +123,8 @@ function at_spawn_hall_of_masters( x, y )
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
-	local biome = at_get_lab_biome_bulk( x, y )
-	if biome ~= nil then
+	local lab = get_lab( x, y )
+	if lab and lab.biome ~= nil then
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_bulk_access.png",
 			"", -- visual
@@ -116,6 +137,22 @@ function at_spawn_hall_of_masters( x, y )
 			50 -- z index
 		)
 	end
+	if lab and lab.extra == 'records' then
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_records_access.png",
+			"", -- visual
+			x + 336, y + 141,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{
+			}, -- color_to_matieral_table
+			50 -- z index
+		)
+	end
+
+	--at_remember_return_location( -5930, 715 )
+	--at_spawn_return_portal( 14336, -3915 )
 end
 
 local entrance_x = 512
@@ -137,18 +174,16 @@ function at_get_entrance_location()
 end
 
 function at_get_lab_biome_bulk( x, y )
-	for _,loc in ipairs(at_lab_locations) do
-		if loc.x == x and loc.y == y then
-			return loc.biome
-		end
+	local loc = get_lab( x, y )
+	if loc then
+		return loc.biome
 	end
 end
 
 function at_get_lab_biome_modifier( x, y )
-	for _,loc in ipairs(at_lab_locations) do
-		if loc.x == x and loc.y == y then
-			return loc.biome_modifier
-		end
+	local loc = get_lab( x, y )
+	if loc then
+		return loc.biome_modifier
 	end
 end
 

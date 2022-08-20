@@ -1,20 +1,17 @@
 - multi-step challenges?
-  - output water? (ex) readily available
-  - touch of water
-  - target selection criteria?
   - item spawning
-    - hall of records - roughed in
     - customize item - temp
-  - parallel worlds?
   - altar art
   - clean up material art
   - temp background
-  - gold is root of all solids
-    - needs lots of poly??
+  - parallel worlds?
+  - adjust spawn rate
+  - target selection criteria?
 - pillars??
 
 - check hanging with special detectors
 
+- make fixed scenes optional
 - background?
 - cauldron fires
 - translations - partly done
@@ -23,6 +20,10 @@
     - x 4 big (5-6 units)
     - x 21 (3 units) (don't seem to need 21 in practice)
   - detect void? - can get 39% with wood tank and current drains, which arent vanilla anyway
+  - output water? (ex) readily available
+  - touch of water
+  - gold is root of all solids
+    - needs lots of poly??
 
 - watchlist
   - steel cauldrons - `steel_static_strong`
