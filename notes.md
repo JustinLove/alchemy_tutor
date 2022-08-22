@@ -1,5 +1,4 @@
 - multi-step challenges?
-  - polymorphed player in remote lab
   - item spawning
     - customize item - temp
   - altar art
