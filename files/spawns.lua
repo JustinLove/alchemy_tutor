@@ -205,7 +205,6 @@ end
 function at_spawn_records_access( x, y )
 	local block_x = x - x % 512
 	local block_y = y - y % 512
-	print('----------------------------', block_x, block_y)
 	if block_x == -5632 and block_y == 1024 then
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_records_access.png",
