@@ -39,6 +39,7 @@ RegisterSpawnFunction( 0xffe27e22, "at_spawn_enter_top")
 RegisterSpawnFunction( 0xffe27e23, "at_spawn_enter_bottom")
 RegisterSpawnFunction( 0xff3251c0, "at_spawn_music")
 RegisterSpawnFunction( 0xffacce55, "at_spawn_records_access")
+RegisterSpawnFunction( 0xff840270, "at_spawn_ghost_crystal" )
 
 
 at_lab_chance = ModSettingGet("alchemy_tutor.lab_chance")
@@ -217,6 +218,13 @@ function at_spawn_records_access( x, y )
 			}, -- color_to_matieral_table
 			50 -- z index
 		)
+	end
+end
+
+function at_spawn_ghost_crystal( x, y )
+	if -10752 < x and x < -5120 and 512 < y and y < 15360 then
+		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/ghost_deflector_crystal.xml", x, y + 2 )
+		at_ghost_deflector_base( x, y + 5 )
 	end
 end
 

@@ -1,5 +1,4 @@
 - multi-step challenges?
-  - ghosts
   - items shelves
   - empty vats don't have drains
   - polymorphed player in remote lab
