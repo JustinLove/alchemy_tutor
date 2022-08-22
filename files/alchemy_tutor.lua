@@ -24,14 +24,14 @@ dofile_once(at_mod_path .. "/entities/hall_of_masters/hall_of_masters.lua")
 --at_test_y = 7500 -- rainforest dark
 --at_test_x = 12300 -- fungiforest
 --at_test_y = 2000 -- fungiforest
---at_test_x = -5317 -- hall of records
---at_test_y = 720 -- hall of records
+at_test_x = -5317 -- hall of records
+at_test_y = 720 -- hall of records
 --at_test_x = -5000 -- hall of records entrance
 --at_test_y = 700 -- hall of records entrace
 --at_test_x = -5640 -- hall of records ghost
 --at_test_y = 1024 -- hall of records ghost
-at_test_x = 14334 -- hall of masters ne gold
-at_test_y = -3880 -- hall of masters ne gold
+--at_test_x = 14334 -- hall of masters ne gold
+--at_test_y = -3880 -- hall of masters ne gold
 --at_test_x = -14848 -- hall of masters sw gold
 --at_test_y = 16078 -- hall of masters sw gold
 

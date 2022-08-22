@@ -38,7 +38,6 @@ at_special_lab_locations = {
 	{ -- hall of records, below alchemist
 		x = -5632,
 		y = 1024,
-		extra = 'records',
 	},
 }
 
@@ -129,19 +128,6 @@ function at_spawn_hall_of_masters( x, y )
 			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_bulk_access.png",
 			"", -- visual
 			x + 864, y + 702,
-			"", -- background
-			true, -- skip_biome_checks
-			false, -- skip_edge_textures
-			{
-			}, -- color_to_matieral_table
-			50 -- z index
-		)
-	end
-	if lab and lab.extra == 'records' then
-		LoadPixelScene(
-			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_records_access.png",
-			"", -- visual
-			x + 336, y + 141,
 			"", -- background
 			true, -- skip_biome_checks
 			false, -- skip_edge_textures

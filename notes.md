@@ -1,10 +1,16 @@
 - multi-step challenges?
+  - ghosts
+  - items shelves
+  - empty vats don't have drains
+  - polymorphed player in remote lab
   - item spawning
     - customize item - temp
   - altar art
   - clean up material art
   - temp background
+  - remove potions from records if we have a lab
   - parallel worlds?
+  - cut down logging
   - adjust spawn rate
   - target selection criteria?
 - pillars??

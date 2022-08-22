@@ -38,6 +38,8 @@ RegisterSpawnFunction( 0xffe27e21, "at_spawn_enter_entrance")
 RegisterSpawnFunction( 0xffe27e22, "at_spawn_enter_top")
 RegisterSpawnFunction( 0xffe27e23, "at_spawn_enter_bottom")
 RegisterSpawnFunction( 0xff3251c0, "at_spawn_music")
+RegisterSpawnFunction( 0xffacce55, "at_spawn_records_access")
+
 
 at_lab_chance = ModSettingGet("alchemy_tutor.lab_chance")
 if at_lab_chance == nil then
@@ -196,6 +198,25 @@ function at_look_here( x, y )
 		EntitySetTransform( player_entity, x, y )
 	else
 		GameSetCameraPos( x, y )
+	end
+end
+
+function at_spawn_records_access( x, y )
+	local block_x = x - x % 512
+	local block_y = y - y % 512
+	print('----------------------------', block_x, block_y)
+	if block_x == -5632 and block_y == 1024 then
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_records_access.png",
+			"", -- visual
+			x, y,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{
+			}, -- color_to_matieral_table
+			50 -- z index
+		)
 	end
 end
 
