@@ -17,6 +17,8 @@
 - check hanging with special detectors
 
 - make fixed scenes optional
+- edges vs noedge?
+- paintovers
 - background?
 - cauldron fires
 - translations - partly done
