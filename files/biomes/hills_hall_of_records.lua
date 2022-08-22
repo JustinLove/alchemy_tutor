@@ -95,8 +95,9 @@ function at_mark_floor( x, y, floor )
 				at_add_label( eid, 16, 16 + (record%2)*16, tostring(record) .. " " .. set.name )
 			end
 		end
-	elseif Random(1, 200) == 1 then
-		at_random_raw( x, y - 4)
+	-- some extra materials - but we have a hall of masters nearby now
+	--elseif Random(1, 200) == 1 then
+		--at_random_raw( x, y - 4)
 	end
 end
 

@@ -2,7 +2,6 @@
   - altar art
   - clean up material art
   - temp background
-  - remove potions from records if we have a lab
   - parallel worlds?
   - cut down logging
   - adjust spawn rate
