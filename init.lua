@@ -105,7 +105,7 @@ function OnWorldInitialized() -- This is called once the game world is initializ
 		at_spawn_hall_of_masters( lab.x, lab.y )
 	end
 
-	if _G['at_test_lab'] or _G['at_test_portal'] then
+	if _G['at_test_lab'] or _G['at_test_portal'] or _G['at_test_masters'] then
 		local world = GameGetWorldStateEntity()
 		local world_state = EntityGetFirstComponent( world, "WorldStateComponent" )
 		ComponentSetValue( world_state, "time", 0 )

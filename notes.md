@@ -1,6 +1,4 @@
 - multi-step challenges?
-  - item spawning
-    - customize item - temp
   - altar art
   - clean up material art
   - temp background
@@ -18,6 +16,7 @@
 - paintovers
 - background?
 - cauldron fires
+- hall of masters chest art???
 - translations - partly done
 
   - bulk storage areas
