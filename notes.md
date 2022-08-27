@@ -1,5 +1,4 @@
 - multi-step challenges?
-  - wealth separate
   - clean up material art
   - temp background
   - parallel worlds?

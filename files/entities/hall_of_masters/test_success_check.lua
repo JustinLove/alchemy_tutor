@@ -100,7 +100,7 @@ end
 
 local function spawn_gold( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/wealth.xml", x, y )
-	spawn_success( x, y )
+	EntityLoad("data/entities/particles/image_emitters/chest_effect_bad.xml", x, y)
 end
 
 local function spawn_wand( x, y )
@@ -123,6 +123,7 @@ local pos_x, pos_y = EntityGetTransform( entity_id )
 local target = ""
 local reward = ""
 local targetid = 0
+local goldid = 0
 local vars = EntityGetComponent( entity_id, "VariableStorageComponent" )
 if vars then
 	for i = 1,#vars do
@@ -142,11 +143,13 @@ if vars then
 	end
 end
 
+goldid = CellFactory_GetType( 'gold' )
+
 for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 23, "item_pickup")) do
 	-- make sure item is not carried in inventory or wand
 	if EntityGetRootEntity(id) == id and EntityGetComponent( id, "PotionComponent" ) then
 		local matid = GetMaterialInventoryMainMaterial( id )
-		if matid == targetid then
+		if matid == targetid or matid == goldid then
 			local inv = EntityGetFirstComponentIncludingDisabled( id, "MaterialInventoryComponent" )
 			if inv then
 				local counts = ComponentGetValue2( inv, "count_per_material_type" )
@@ -160,12 +163,12 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 23, "item_pickup")) do
 						bar = 750
 					end
 					if amount > bar then
-						if reward == 'treasure' then
+						if matid == goldid then
+							spawn_gold( pos_x, pos_y )
+						elseif reward == 'treasure' then
 							spawn_great_chest( pos_x, pos_y )
 						elseif reward == 'knowledge' then
 							spawn_grand_material( pos_x, pos_y )
-						elseif reward == 'wealth' then
-							spawn_gold( pos_x, pos_y )
 						elseif reward == 'power' then
 							spawn_wand( pos_x, pos_y )
 						elseif reward == 'magic' then
