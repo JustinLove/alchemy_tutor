@@ -1,8 +1,6 @@
 - multi-step challenges?
   - clean up material art
-  - temp background
   - parallel worlds?
-  - cut down logging
   - adjust spawn rate
   - target selection criteria?
 - pillars??

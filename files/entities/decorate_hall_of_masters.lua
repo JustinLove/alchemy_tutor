@@ -1,8 +1,6 @@
 dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 dofile_once("mods/alchemy_tutor/files/smallfolk.lua")
 
-print('decorate hall of masters')
-
 local entity_id    = GetUpdatedEntityID()
 local pos_x, pos_y = EntityGetTransform( entity_id )
 

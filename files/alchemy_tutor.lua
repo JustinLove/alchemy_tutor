@@ -392,7 +392,7 @@ function at_master_sets()
 				table.insert( new, original_test )
 			end
 		end
-		print( #old, #new )
+		--at_log( 'expanded', #old, #new )
 		master_tests = new
 	end
 
@@ -477,7 +477,7 @@ function at_pick_record_exemplar( formula )
 end
 
 function at_pick_record_pedestal( formula )
-	print( formula.name, type(formula.cauldron_contents) )
+	--print( formula.name, type(formula.cauldron_contents) )
 	if formula.record then
 		return formula.record
 	end
@@ -488,7 +488,7 @@ function at_pick_record_pedestal( formula )
 		else
 			contents = formula.cauldron_contents
 		end
-		print( tostring(contents) )
+		--print( tostring(contents) )
 		for i,mat in ipairs( formula.materials ) do
 			if type( mat ) == 'table' and mat[1] == formula.output then
 				return contents
@@ -496,10 +496,10 @@ function at_pick_record_pedestal( formula )
 				return contents
 			end
 		end
-		print( 'cauldron default', formula.output )
+		--print( 'cauldron default', formula.output )
 		return formula.output
 	end
-	print( 'output', formula.output )
+	--print( 'output', formula.output )
 	return formula.output
 end
 
@@ -1170,7 +1170,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 	upfill = math.min( Random(0, total_medium - #medium_list), #container_list )
 	--upfill = math.min( total_medium - #medium_list, #container_list )
-	print( 'medium counts', upfill, total_medium )
+	at_log( 'medium counts', upfill, total_medium )
 	local skip = 0
 	for i = 1,upfill do
 		local mat = container_list[#container_list - skip]
@@ -1184,7 +1184,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	end
 
 	upfill = total_medium - #medium_list
-	print( 'medium counts', upfill, total_medium )
+	at_log( 'medium counts', upfill, total_medium )
 	for i = 1,upfill do
 		medium_list[#medium_list+1] = "air"
 	end
@@ -1246,7 +1246,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	end
 
 	large_list = table_slice( large_list, block.skip_large, block.large )
-	print('large', #large_list, #large_bins)
+	at_log('large', #large_list, #large_bins)
 	for i,mat in ipairs( large_list ) do
 		what = at_material( mat, 'air', first )
 
@@ -1276,9 +1276,9 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 		end
 	end
 
-	print('medium', #medium_list, #medium_bins)
+	at_log('medium', #medium_list, #medium_bins)
 	medium_list = table_slice( medium_list, block.skip_medium, block.medium )
-	print('medium', #medium_list, #medium_bins)
+	at_log('medium', #medium_list, #medium_bins)
 	for i,mat in ipairs( medium_list ) do
 		what = at_material( mat, 'air', first )
 
@@ -1302,9 +1302,9 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 		end
 	end
 
-	print('container', #container_list, #materials)
+	at_log('container', #container_list, #materials)
 	container_list = table_slice( container_list, block.skip_container, block.container )
-	print('container', #container_list, #materials)
+	at_log('container', #container_list, #materials)
 	for i,mat in ipairs( container_list ) do
 		what = at_material( mat, 'potion_empty', first )
 
@@ -1321,7 +1321,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	end
 
 	local others = at_all_others()
-	print('other', #others, #other)
+	at_log('other', #others, #other)
 
 	for i,extra in ipairs( others ) do
 		loc = table.remove( other )
