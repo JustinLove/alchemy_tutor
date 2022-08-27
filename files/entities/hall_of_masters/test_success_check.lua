@@ -86,6 +86,7 @@ end
 local function spawn_great_chest( x, y )
 	EntityLoad( "data/entities/items/pickup/chest_random_super.xml", x, y)
 	spawn_success( x, y )
+	GamePrintImportant( "$at_log_reward_treasure" )
 end
 
 local function spawn_grand_material( x, y )
@@ -96,16 +97,19 @@ local function spawn_grand_material( x, y )
 	local r = Random(1, #at_grand_materials)
 	at_container( at_grand_materials[r], 1.0, x, y )
 	spawn_success( x, y )
+	GamePrintImportant( "$at_log_reward_knowledge" )
 end
 
 local function spawn_gold( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/wealth.xml", x, y )
 	EntityLoad("data/entities/particles/image_emitters/chest_effect_bad.xml", x, y)
+	GamePrintImportant( "$at_log_reward_wealth" )
 end
 
 local function spawn_wand( x, y )
 	spawn( wands, x - 5, y - 5, 0, 0 )
 	spawn_success( x, y )
+	GamePrintImportant( "$at_log_reward_power" )
 end
 
 local function spawn_spells( x, y )
@@ -115,6 +119,7 @@ local function spawn_spells( x, y )
 		make_random_card( x + (i - (amount / 2)) * 8, y - 9 + Random(-10,10) )
 	end
 	spawn_success( x, y )
+	GamePrintImportant( "$at_log_reward_magic" )
 end
 
 local entity_id    = GetUpdatedEntityID()

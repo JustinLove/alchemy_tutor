@@ -1,4 +1,5 @@
 - multi-step challenges?
+  - can't contain orb powder
   - clean up material art
   - temp background
   - parallel worlds?

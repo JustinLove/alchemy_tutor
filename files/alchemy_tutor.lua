@@ -1220,7 +1220,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	loc = table.remove( reward )
 	if test and loc then
 		if block_number == 2 then
-			--at_container( test.target, 0.91, loc.x  + 20, loc.y + 20 )
+			--at_container( test.target, 0.91, loc.x, loc.y )
 			at_container( test.target, 0.01, loc.x, loc.y )
 		end
 

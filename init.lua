@@ -145,6 +145,11 @@ at_hall_of_records,Hall of Records,,,,,,,,,,,,,
 at_building_ghost_deflector,Ghost Crystal,,,,,,,,,,,,,
 at_log_ghost_deflector_death,Ghost Crystal Shattered,,,,,,,,,,,,,
 at_logdesc_ghost_deflector_death,A chill runs up your spine,,,,,,,,,,,,,
+at_log_reward_treasure,Treasure,,,,,,,,,,,,,
+at_log_reward_knowledge,Knowledge,,,,,,,,,,,,,
+at_log_reward_power,Power,,,,,,,,,,,,,
+at_log_reward_magic,Magic,,,,,,,,,,,,,
+at_log_reward_wealth,Wealth,,,,,,,,,,,,,
 ]]
 
 function OnMagicNumbersAndWorldSeedInitialized() -- this is the last point where the Mod* API is available. after this materials.xml will be loaded.
