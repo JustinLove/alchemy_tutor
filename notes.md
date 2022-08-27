@@ -1,5 +1,5 @@
 - multi-step challenges?
-  - altar art
+  - wealth separate
   - clean up material art
   - temp background
   - parallel worlds?

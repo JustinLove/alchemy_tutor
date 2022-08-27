@@ -142,7 +142,7 @@ if vars then
 	end
 end
 
-for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 20, "item_pickup")) do
+for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 23, "item_pickup")) do
 	-- make sure item is not carried in inventory or wand
 	if EntityGetRootEntity(id) == id and EntityGetComponent( id, "PotionComponent" ) then
 		local matid = GetMaterialInventoryMainMaterial( id )

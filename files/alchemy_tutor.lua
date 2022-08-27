@@ -1211,7 +1211,6 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	local master_rewards = {
 		'treasure',
 		'knowledge',
-		--'wealth',
 		'power',
 		'magic',
 	}
@@ -1227,7 +1226,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 		local altar_reward = master_rewards[block_number]
 
-		at_master_reward_altar( altar_reward, loc.x - 19, loc.y + 5 )
+		at_master_reward_altar( altar_reward, loc.x - 22, loc.y + 5 )
 
 		local id = EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/test_success_check.xml", loc.x, loc.y )
 		local vars = EntityGetComponent( id, "VariableStorageComponent" )
