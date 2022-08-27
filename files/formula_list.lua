@@ -590,6 +590,7 @@ at_volatile_material_list = {
 	"fire",
 	"lava",
 	"void_liquid",
+	"orb_powder",
 	"torch",
 	"powder_empty",
 }
