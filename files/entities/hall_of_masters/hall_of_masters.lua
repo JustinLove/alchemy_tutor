@@ -60,7 +60,7 @@ function at_spawn_hall_of_masters( x, y )
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/0.plz",
 		"", -- visual
 		x, y,
-		"", -- background
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/0_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{
@@ -71,7 +71,7 @@ function at_spawn_hall_of_masters( x, y )
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/1.plz",
 		"", -- visual
 		x + 84, y + height,
-		"", -- background
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/1_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{
@@ -82,7 +82,7 @@ function at_spawn_hall_of_masters( x, y )
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/2.plz",
 		"", -- visual
 		x + 166, y + height*2,
-		"", -- background
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/2_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{
@@ -93,7 +93,7 @@ function at_spawn_hall_of_masters( x, y )
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/3.plz",
 		"", -- visual
 		x + width, y + 125,
-		"", -- background
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/3_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{
@@ -104,7 +104,7 @@ function at_spawn_hall_of_masters( x, y )
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/4.plz",
 		"", -- visual
 		x + width, y + height,
-		"", -- background
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/4_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{
@@ -115,7 +115,7 @@ function at_spawn_hall_of_masters( x, y )
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/5.plz",
 		"", -- visual
 		x + width, y + height*2,
-		"", -- background
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/5_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{
