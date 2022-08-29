@@ -602,16 +602,6 @@ at_evaporating_material_list = {
 	"water_ice",
 }
 
--- may be placed in bulk, but some flasks available
-at_awkward_material_list = {
-	"magic_liquid_unstable_teleportation",
-	"magic_liquid_teleportation",
-	"magic_liquid_unstable_polymorph",
-	"magic_liquid_polymorph",
-	"magic_liquid_random_polymorph",
-	"radioactive_liquid",
-	"fire_strong",
-}
 -- cyclical, needs something in the loop to get started
 at_extra_raw_materials = {
 	{ "salt", "water_salt" },

@@ -80,7 +80,6 @@ at_grand_materials = {}
 at_biome_banned_materials = {}
 at_raw_materials = {}
 at_volatile_materials = {}
-at_awkward_materials = {}
 at_passed_count = 0
 
 function at_pick_lab_set( x, y, scene_description )
@@ -568,10 +567,6 @@ function at_setup()
 	at_volatile_materials = {}
 	for i = 1,#at_volatile_material_list do
 		at_volatile_materials[at_volatile_material_list[i]] = true
-	end
-	at_awkward_materials = {}
-	for i = 1,#at_awkward_material_list do
-		at_awkward_materials[at_awkward_material_list[i]] = true
 	end
 
 	at_passed_count = 0
@@ -1147,9 +1142,6 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 					else
 						medium_list[#medium_list+1] = mat
 					end
-					if at_awkward_materials[mat] then
-						container_list[#container_list+1] = mat
-					end
 				else
 					for i = 1,count do
 						container_list[#container_list+1] = mat
@@ -1198,7 +1190,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	local skip = 0
 	for i = 1,upfill do
 		local mat = container_list[#container_list - skip]
-		if not at_volatile_materials[mat] and not at_awkward_materials[mat] then
+		if not at_volatile_materials[mat] then
 			--at_log( 'medium upfill', tostring(mat) )
 			medium_list[#medium_list+1] = table.remove( container_list, #container_list - skip )
 		else

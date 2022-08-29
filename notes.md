@@ -1,9 +1,9 @@
 - multi-step challenges?
-  - volaitle material now that we have drains
   - virtual biome
     - parallel worlds?
     - double spawend , probalby mod update
   - material art
+    - lighting
     - can't fully drain large bins
     - steel redesign
     - clean up material art
