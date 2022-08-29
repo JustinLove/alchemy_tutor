@@ -1,13 +1,12 @@
 - multi-step challenges?
-  - virtual biome
-    - parallel worlds?
-    - double spawend , probalby mod update
-  - material art
-    - lighting
-    - can't fully drain large bins
-    - steel redesign
-    - clean up material art
   - reconsider locations with fixed initial placement
+  - material art
+    - steel redesign
+    - can't fully drain large bins
+    - lighting
+    - clean up material art
+  - virtual biome
+    - hall of records?
   - adjust spawn rate
   - target selection criteria?
 - pillars??

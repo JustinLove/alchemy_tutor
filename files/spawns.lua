@@ -5,6 +5,7 @@ end
 dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 dofile_once("mods/alchemy_tutor/files/smallfolk.lua")
 
+
 RegisterSpawnFunction( 0xfff1a545, "at_spawn_material")
 RegisterSpawnFunction( 0xff528003, "at_spawn_shroom")
 RegisterSpawnFunction( 0xff591de8, "at_spawn_meat")
@@ -41,6 +42,25 @@ RegisterSpawnFunction( 0xff3251c0, "at_spawn_music")
 RegisterSpawnFunction( 0xffacce55, "at_spawn_records_access")
 RegisterSpawnFunction( 0xff840270, "at_spawn_ghost_crystal" )
 
+
+local at_base_init = _G.init
+
+if not at_base_init then
+	RegisterSpawnFunction( 0xffffeedd, "init" )
+end
+
+function init( x, y, w, h )
+	if at_base_init then
+		at_base_init( x, y, w, h )
+	end
+
+	local _,mx = at_check_parallel_pos( x )
+	local bx = mx / 512
+	local by = y / 512
+	if at_biome_map[bx] and at_biome_map[bx][by] then
+		at_biome_map[bx][by]( x, y )
+	end
+end
 
 at_lab_chance = ModSettingGet("alchemy_tutor.lab_chance")
 if at_lab_chance == nil then
@@ -203,7 +223,9 @@ function at_look_here( x, y )
 end
 
 function at_spawn_records_access( x, y )
-	local block_x = x - x % 512
+	--local _,mx = at_check_parallel_pos( x )
+	local mx = x -- not currently putting records in parallel worlds
+	local block_x = mx - mx % 512
 	local block_y = y - y % 512
 	if block_x == -5632 and block_y == 1024 then
 		LoadPixelScene(
@@ -221,7 +243,8 @@ function at_spawn_records_access( x, y )
 end
 
 function at_spawn_ghost_crystal( x, y )
-	if -10752 < x and x < -5120 and 512 < y and y < 15360 then
+	local _,mx = at_check_parallel_pos( x )
+	if -10752 < mx and mx < -5120 and 512 < y and y < 15360 then
 		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/ghost_deflector_crystal.xml", x, y + 2 )
 		at_ghost_deflector_base( x, y + 5 )
 	end

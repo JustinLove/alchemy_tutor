@@ -98,13 +98,6 @@ function OnWorldInitialized() -- This is called once the game world is initializ
 
 	dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 
-	for _,lab in ipairs(at_lab_locations) do
-		at_spawn_hall_of_masters( lab.x, lab.y )
-	end
-	for _,lab in ipairs(at_special_lab_locations) do
-		at_spawn_hall_of_masters( lab.x, lab.y )
-	end
-
 	if _G['at_test_lab'] or _G['at_test_portal'] or _G['at_test_masters'] then
 		local world = GameGetWorldStateEntity()
 		local world_state = EntityGetFirstComponent( world, "WorldStateComponent" )

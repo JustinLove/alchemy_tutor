@@ -42,20 +42,20 @@ at_special_lab_locations = {
 }
 
 local function get_lab( x, y )
+	local _,mx = at_check_parallel_pos( x )
 	for _,loc in ipairs(at_lab_locations) do
-		if loc.x == x and loc.y == y then
+		if loc.x == mx and loc.y == y then
 			return loc
 		end
 	end
 	for _,loc in ipairs(at_special_lab_locations) do
-		if loc.x == x and loc.y == y then
+		if loc.x == mx and loc.y == y then
 			return loc
 		end
 	end
 end
 
-function at_spawn_hall_of_masters( x, y )
-	local width, height = 512, 512
+function at_spawn_hall_of_masters_0( x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/0.plz",
 		"", -- visual
@@ -67,10 +67,13 @@ function at_spawn_hall_of_masters( x, y )
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
+end
+
+function at_spawn_hall_of_masters_1( x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/1.plz",
 		"", -- visual
-		x + 84, y + height,
+		x + 84, y,
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/1_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -78,10 +81,13 @@ function at_spawn_hall_of_masters( x, y )
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
+end
+
+function at_spawn_hall_of_masters_2( x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/2.plz",
 		"", -- visual
-		x + 166, y + height*2,
+		x + 166, y,
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/2_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -89,10 +95,13 @@ function at_spawn_hall_of_masters( x, y )
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
+end
+
+function at_spawn_hall_of_masters_3( x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/3.plz",
 		"", -- visual
-		x + width, y + 125,
+		x, y + 125,
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/3_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -100,10 +109,13 @@ function at_spawn_hall_of_masters( x, y )
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
+end
+
+function at_spawn_hall_of_masters_4( x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/4.plz",
 		"", -- visual
-		x + width, y + height,
+		x, y,
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/4_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -111,23 +123,15 @@ function at_spawn_hall_of_masters( x, y )
 		}, -- color_to_matieral_table
 		50 -- z index
 	)
-	LoadPixelScene(
-		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/5.plz",
-		"", -- visual
-		x + width, y + height*2,
-		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/5_background.png",
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{
-		}, -- color_to_matieral_table
-		50 -- z index
-	)
-	local lab = get_lab( x, y )
+
+	local lx = x - 512
+	local ly = y - 512
+	local lab = get_lab( lx, ly )
 	if lab and lab.biome ~= nil then
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_bulk_access.png",
 			"", -- visual
-			x + 864, y + 702,
+			lx + 864, ly + 702,
 			"", -- background
 			true, -- skip_biome_checks
 			false, -- skip_edge_textures
@@ -136,10 +140,69 @@ function at_spawn_hall_of_masters( x, y )
 			50 -- z index
 		)
 	end
-
-	--at_remember_return_location( -5930, 715 )
-	--at_spawn_return_portal( 14336, -3915 )
 end
+
+function at_spawn_hall_of_masters_5( x, y )
+	LoadPixelScene(
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/5.plz",
+		"", -- visual
+		x, y,
+		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/5_background.png",
+		true, -- skip_biome_checks
+		false, -- skip_edge_textures
+		{
+		}, -- color_to_matieral_table
+		50 -- z index
+	)
+end
+
+function at_spawn_hall_of_masters( x, y )
+	local width, height = 512, 512
+	at_spawn_hall_of_masters_0( x, y )
+	at_spawn_hall_of_masters_1( x, y + height )
+	at_spawn_hall_of_masters_2( x, y + height*2 )
+	at_spawn_hall_of_masters_3( x + width, y )
+	at_spawn_hall_of_masters_4( x + width, y + height)
+	at_spawn_hall_of_masters_5( x + width, y + height*2 )
+end
+
+at_biome_map = {}
+
+-- from noita utilities.lua
+function at_check_parallel_pos( x )
+	local pw = GetParallelWorldPosition( x, 0 )
+
+	local mapwidth = BiomeMapGetSize() * 512
+	local half = mapwidth * 0.5
+
+	local mx = ( ( x + half ) % mapwidth ) - half
+
+	return pw,mx
+end
+
+local function virtual_biome_place( bx, by, f )
+	if not at_biome_map[bx] then
+		at_biome_map[bx] = {}
+	end
+	at_biome_map[bx][by] = f
+end
+
+local function virtual_biome_place_labs( labs )
+	for i = 1,#labs do
+		local lab = labs[i]
+		local bx = lab.x / 512
+		local by = lab.y / 512
+		virtual_biome_place( bx, by, at_spawn_hall_of_masters_0 )
+		virtual_biome_place( bx, by + 1, at_spawn_hall_of_masters_1 )
+		virtual_biome_place( bx, by + 2, at_spawn_hall_of_masters_2 )
+		virtual_biome_place( bx + 1, by, at_spawn_hall_of_masters_3 )
+		virtual_biome_place( bx + 1, by + 1, at_spawn_hall_of_masters_4 )
+		virtual_biome_place( bx + 1, by + 2, at_spawn_hall_of_masters_5 )
+	end
+end
+
+virtual_biome_place_labs( at_lab_locations )
+virtual_biome_place_labs( at_special_lab_locations )
 
 local entrance_x = 512
 local entrance_y = 213
