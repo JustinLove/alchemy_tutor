@@ -1,6 +1,13 @@
 - multi-step challenges?
-  - clean up material art
-  - parallel worlds?
+  - volaitle material now that we have drains
+  - virtual biome
+    - parallel worlds?
+    - double spawend , probalby mod update
+  - material art
+    - can't fully drain large bins
+    - steel redesign
+    - clean up material art
+  - reconsider locations with fixed initial placement
   - adjust spawn rate
   - target selection criteria?
 - pillars??

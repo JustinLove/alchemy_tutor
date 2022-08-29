@@ -164,9 +164,6 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 23, "item_pickup")) do
 					local amount = counts[ matid+1 ]
 					--print( matid, amount )
 					local bar = 500
-					if at_get_material_type( target) == "powder" then
-						bar = 750
-					end
 					if amount > bar then
 						if matid == goldid then
 							spawn_gold( pos_x, pos_y )

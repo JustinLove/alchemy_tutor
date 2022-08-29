@@ -30,10 +30,12 @@ dofile_once(at_mod_path .. "/entities/hall_of_masters/hall_of_masters.lua")
 --at_test_y = 700 -- hall of records entrace
 --at_test_x = -5640 -- hall of records ghost
 --at_test_y = 1024 -- hall of records ghost
-at_test_x = 14334 -- hall of masters ne gold
-at_test_y = -3880 -- hall of masters ne gold
+--at_test_x = 14334 -- hall of masters ne gold
+--at_test_y = -3880 -- hall of masters ne gold
 --at_test_x = -14848 -- hall of masters sw gold
 --at_test_y = 16078 -- hall of masters sw gold
+at_test_x = -14336 -- hall of masters nw sky lake
+at_test_y = -9003 -- hall of masters nw sky lake
 
 function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
@@ -154,6 +156,20 @@ function at_pick_lab_set( x, y, scene_description )
 		end
 		return in_grade[i]
 	end
+end
+
+local function compare_array( a, b )
+	if #a ~= #b then
+		return #b - #a
+	end
+	for i = 1,#a do
+		if a[i] < b[i] then
+			return -1
+		elseif a[i] > b[i] then
+			return 1
+		end
+	end
+	return 0
 end
 
 local function copy_array( from )
@@ -640,7 +656,7 @@ function at_container( material_name, amount, x, y )
 		return entity
 	elseif at_get_material_type( material_name) == "powder" then
 		entity = at_powder_empty( x, y )
-		AddMaterialInventoryMaterial(entity, material_name, 1500 * amount)
+		AddMaterialInventoryMaterial(entity, material_name, 1000 * amount)
 		return entity
 	else
 		entity = at_potion_empty( x, y )
@@ -1097,6 +1113,14 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	local facts = at_master_sets()
 	local tests = facts.master_tests
 	local test = tests[ Random(1, #tests) ]
+	--[[
+	local target = { 'diamond', 'copper', 'silver2', 'magic_liquid_random_polymorph' }
+	for i,t in pairs(tests) do
+		if compare_array( test.ingredients, target ) then
+			test = t
+		end
+	end
+	--]]
 	if test then
 		at_log( 'target', test.target, table.concat(test.formulas, ',') )
 	end

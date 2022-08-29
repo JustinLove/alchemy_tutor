@@ -3,6 +3,7 @@
 ## 0.5.0 Hall of Masters Update
 
 - Added several metal sand alternates to Levitatium recipe
+- Powder sacks are 66% full instead of full, like in vanilla
 
 ## 0.4.0 Hall of Records Update
 
