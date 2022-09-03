@@ -55,7 +55,7 @@ function at_spawn_hall_of_masters_0( x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/0.plz",
 		"", -- visual
-		x, y,
+		x + 105, y + 113,
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/0_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -69,7 +69,7 @@ function at_spawn_hall_of_masters_1( x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/1.plz",
 		"", -- visual
-		x + 84, y,
+		x + 96, y,
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/1_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -83,7 +83,7 @@ function at_spawn_hall_of_masters_2( x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/2.plz",
 		"", -- visual
-		x + 166, y,
+		x + 187, y,
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/2_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -97,7 +97,7 @@ function at_spawn_hall_of_masters_3( x, y )
 	LoadPixelScene(
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/3.plz",
 		"", -- visual
-		x, y + 125,
+		x, y + 113,
 		"mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters/3_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
