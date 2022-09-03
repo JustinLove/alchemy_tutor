@@ -1,11 +1,12 @@
 - multi-step challenges?
-  - reconsider locations with fixed initial placement
   - material art
     - steel redesign
     - can't fully drain large bins
     - lighting
     - clean up material art
+  - doorways to some labs?
   - virtual biome
+    - east/west announcement names?
     - hall of records?
   - adjust spawn rate
   - target selection criteria?
@@ -15,6 +16,7 @@
 
 - make fixed scenes optional
 - edges vs noedge?
+- desert music backdown?
 - paintovers
 - background?
 - cauldron fires

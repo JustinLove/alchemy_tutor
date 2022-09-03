@@ -1,36 +1,32 @@
 -- see also biome_scripts location count
 at_lab_locations = {
-	{ -- nw sky, above lake cloudscape
-		x = -14848,
-		y = -9216,
+	{ -- west wall of desert chasm west of pyramid
+		x = 4096,
+		y = 5632,
 	},
 	{ -- ne gold
 		x = 13824,
 		y = -4096,
 		biome = 'gold',
 	},
-	{ -- ne sky niche
-		x = 12800,
-		y = -6656,
-	},
 	{ -- lake
 		x = -16384,
 		y = 4096,
 		biome = 'water',
 	},
-	{ -- ne sky between work and chest
-		x = 6656,
-		y = -6656,
-		biome_modifier = 'hot',
+	{ -- above tree
+		x = -2048,
+		y = -4608,
 	},
 	{ -- sw gold
 		x = -15360,
 		y = 15872,
 		biome = 'gold',
 	},
-	{ -- ne sky niche
-		x = 14848,
-		y = -6656,
+	{ -- sw corner desert
+		x = 15872,
+		y = 14336,
+		biome_modifier = 'hot',
 	},
 }
 
