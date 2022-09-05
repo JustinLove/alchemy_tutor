@@ -194,7 +194,7 @@ function at_planterbox( x, y )
 	LoadPixelScene(
 		at_mod_path .. "/props/planterbox.png",
 		"", -- visual
-		x-25, y-13,
+		x-25, y-14,
 		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
@@ -336,7 +336,7 @@ function at_large_bin( x, y, contents, amount )
 		} -- color_to_matieral_table
 	)
 
-	EntityLoad( at_mod_path .. "/entities/hall_of_masters/bottle_filler_stand.xml", x + 45, y + 78 + 21 )
+	EntityLoad( at_mod_path .. "/entities/hall_of_masters/bottle_filler_stand.xml", x + 45, y + 78 + 36 )
 end
 
 function at_master_reward_altar( reward, x, y )

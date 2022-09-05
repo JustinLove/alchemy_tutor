@@ -1,11 +1,10 @@
 - multi-step challenges?
   - material art
     - steel redesign
-      - adjust large tanks
       - rework access hallways
       - beam holes etc.
-    - can't fully drain large bins
     - lighting
+    - altars?
   - doorways to some labs?
   - virtual biome
     - east/west announcement names?
