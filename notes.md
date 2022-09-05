@@ -1,11 +1,10 @@
 - multi-step challenges?
   - material art
     - steel redesign
-      - rework access hallways
       - beam holes etc.
     - lighting
-    - altars?
   - doorways to some labs?
+  - altars?
   - virtual biome
     - east/west announcement names?
     - hall of records?
