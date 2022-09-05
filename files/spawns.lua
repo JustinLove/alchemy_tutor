@@ -41,7 +41,7 @@ RegisterSpawnFunction( 0xffe27e23, "at_spawn_enter_bottom")
 RegisterSpawnFunction( 0xff3251c0, "at_spawn_music")
 RegisterSpawnFunction( 0xffacce55, "at_spawn_records_access")
 RegisterSpawnFunction( 0xff840270, "at_spawn_ghost_crystal" )
-
+RegisterSpawnFunction( 0xff118475, "at_spawn_lamp" )
 
 local at_base_init = _G.init
 
@@ -248,6 +248,10 @@ function at_spawn_ghost_crystal( x, y )
 		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/ghost_deflector_crystal.xml", x, y + 2 )
 		at_ghost_deflector_base( x, y + 5 )
 	end
+end
+
+function at_spawn_lamp( x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/lamp.xml", x, y + 2 )
 end
 
 function at_spawn_material( x, y )

@@ -1,0 +1,27 @@
+<Entity tags="teleportable_NOT,prop">
+  <SpriteComponent 
+    image_file="data/props_gfx/tubelamp.png"
+    offset_x="8"
+    offset_y="2" >
+  </SpriteComponent>
+
+  <LightComponent 
+    _enabled="1" 
+    radius="240" 
+    blinking_freq="1"
+    offset_x="-6"
+    r="200"
+    g="230"
+    b="255">
+  </LightComponent>
+
+  <LightComponent 
+    _enabled="1" 
+    radius="240" 
+    blinking_freq="1"
+    offset_x="6"
+    r="200"
+    g="230"
+    b="255">
+  </LightComponent>
+</Entity>

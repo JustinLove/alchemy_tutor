@@ -1,8 +1,4 @@
 - multi-step challenges?
-  - material art
-    - steel redesign
-      - beam holes etc.
-    - lighting
   - doorways to some labs?
   - altars?
   - virtual biome
@@ -18,6 +14,7 @@
 - edges vs noedge?
 - desert music backdown?
 - paintovers
+  - beam holes etc.
 - background?
 - cauldron fires
 - hall of masters chest art???
