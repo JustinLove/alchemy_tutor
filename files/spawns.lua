@@ -40,8 +40,11 @@ RegisterSpawnFunction( 0xffe27e22, "at_spawn_enter_top")
 RegisterSpawnFunction( 0xffe27e23, "at_spawn_enter_bottom")
 RegisterSpawnFunction( 0xff3251c0, "at_spawn_music")
 RegisterSpawnFunction( 0xffacce55, "at_spawn_records_access")
+RegisterSpawnFunction( 0xffacce5e, "at_spawn_east_access")
+RegisterSpawnFunction( 0xffacce53, "at_spawn_west_access")
 RegisterSpawnFunction( 0xff840270, "at_spawn_ghost_crystal" )
 RegisterSpawnFunction( 0xff118475, "at_spawn_lamp" )
+RegisterSpawnFunction( 0xffba2e15, "at_spawn_props" )
 
 local at_base_init = _G.init
 
@@ -242,6 +245,44 @@ function at_spawn_records_access( x, y )
 	end
 end
 
+function at_spawn_east_access( x, y )
+	local _,mx = at_check_parallel_pos( x )
+	local block_x = mx - mx % 512 - 512
+	local block_y = y - y % 512
+	if block_x == 4096 and block_y == 5632 then
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_east_access.png",
+			"", -- visual
+			x, y-23,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{
+			}, -- color_to_matieral_table
+			50 -- z index
+		)
+	end
+end
+
+function at_spawn_west_access( x, y )
+	local _,mx = at_check_parallel_pos( x )
+	local block_x = mx - mx % 512
+	local block_y = y - y % 512
+	if block_x == 15872 and block_y == 14336 then
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_west_access.png",
+			"", -- visual
+			x - 480, y - 200,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{
+			}, -- color_to_matieral_table
+			50 -- z index
+		)
+	end
+end
+
 function at_spawn_ghost_crystal( x, y )
 	local _,mx = at_check_parallel_pos( x )
 	if -10752 < mx and mx < -5120 and 512 < y and y < 15360 then
@@ -252,6 +293,50 @@ end
 
 function at_spawn_lamp( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/lamp.xml", x, y + 2 )
+end
+
+at_barrels =
+{
+	total_prob = 0,
+	{
+		prob   		= 0.2,
+		min_count	= 0,
+		max_count	= 0,
+		offset_y 	= 0,    
+		entity 	= ""
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_box_harmless.xml"
+	},
+	{
+		prob   		= 0.5,
+		min_count	= 1,
+		max_count	= 1,    
+		offset_y 	= 0,
+		entity 	= "data/entities/props/physics_barrel_water.xml"
+	},
+	{
+		prob   		= 0.1,
+		min_count	= 1,
+		max_count	= 1,
+		offset_y 	= 0,    
+		entity 	= "data/entities/props/physics_barrel_radioactive.xml"
+	},
+	{
+		prob   		= 0.3,
+		min_count	= 1,
+		max_count	= 1,
+		offset_y 	= 0,    
+		entity 	= "data/entities/props/physics_barrel_oil.xml"
+	},
+}
+
+function at_spawn_props(x, y)
+	spawn(at_barrels,x,y-3,0,0)
 end
 
 function at_spawn_material( x, y )
