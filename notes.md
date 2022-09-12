@@ -1,6 +1,8 @@
 - multi-step challenges?
   - doorways to some labs?
+  - lab in abandond alchemy has several material abailable
   - altars?
+  - frog tool
   - virtual biome
     - east/west announcement names?
     - hall of records?
