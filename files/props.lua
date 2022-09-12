@@ -216,6 +216,8 @@ function at_frogs( x, y )
 		{
 		} -- color_to_matieral_table
 	)
+
+	EntityLoad( "mods/alchemy_tutor/files/entities/shotgun.xml", x, y - 35)
 end
 
 function at_meat( x, y )

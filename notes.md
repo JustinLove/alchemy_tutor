@@ -1,5 +1,4 @@
 - multi-step challenges?
-  - frog tool
   - lab in abandond alchemy has several material abailable
   - virtual biome
     - east/west announcement names?
