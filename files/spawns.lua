@@ -262,6 +262,19 @@ function at_spawn_east_access( x, y )
 			50 -- z index
 		)
 	end
+	if block_x == -2048 and block_y == -4608 then
+		LoadPixelScene(
+			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_sky_access.png",
+			"", -- visual
+			x, y-23,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{
+			}, -- color_to_matieral_table
+			50 -- z index
+		)
+	end
 end
 
 function at_spawn_west_access( x, y )
