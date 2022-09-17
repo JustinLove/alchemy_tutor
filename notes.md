@@ -1,5 +1,4 @@
 - multi-step challenges?
-  - clean up top inner corner
   - edit for wand drops?
   - virtual biome
     - east/west announcement names?
