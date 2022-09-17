@@ -1,5 +1,4 @@
 - multi-step challenges?
-  - dead fish in lake lab
   - maybe 1% knowledge
   - sw hallway has barrel hanging on edge
   - clean up top inner corner
