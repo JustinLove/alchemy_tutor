@@ -132,7 +132,7 @@ function at_spawn_hall_of_masters_4( x, y )
 	local lab = get_lab( lx, ly )
 	if lab and lab.biome ~= nil then
 		LoadPixelScene(
-			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_bulk_access.png",
+			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_bulk_access.png",
 			"", -- visual
 			lx + 821, ly + 795,
 			"", -- background

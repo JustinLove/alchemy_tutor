@@ -232,7 +232,7 @@ function at_spawn_records_access( x, y )
 	local block_y = y - y % 512
 	if block_x == -5632 and block_y == 1024 then
 		LoadPixelScene(
-			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_records_access.png",
+			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_records_access.png",
 			"", -- visual
 			x, y,
 			"", -- background
@@ -251,7 +251,7 @@ function at_spawn_east_access( x, y )
 	local block_y = y - y % 512
 	if block_x == 4096 and block_y == 5632 then
 		LoadPixelScene(
-			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_east_access.png",
+			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_east_access.png",
 			"", -- visual
 			x, y-23,
 			"", -- background
@@ -264,7 +264,7 @@ function at_spawn_east_access( x, y )
 	end
 	if block_x == -2048 and block_y == -4608 then
 		LoadPixelScene(
-			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_sky_access.png",
+			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_sky_access.png",
 			"", -- visual
 			x, y-23,
 			"", -- background
@@ -283,7 +283,7 @@ function at_spawn_west_access( x, y )
 	local block_y = y - y % 512
 	if block_x == 15872 and block_y == 14336 then
 		LoadPixelScene(
-			"mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_west_access.png",
+			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_west_access.png",
 			"", -- visual
 			x - 480, y - 200,
 			"", -- background

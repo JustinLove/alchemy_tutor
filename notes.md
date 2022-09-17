@@ -1,7 +1,8 @@
 - multi-step challenges?
+  - dead fish in lake lab
   - maybe 1% knowledge
   - sw hallway has barrel hanging on edge
-  - dead fish in lake lab
+  - clean up top inner corner
   - edit for wand drops?
   - virtual biome
     - east/west announcement names?
