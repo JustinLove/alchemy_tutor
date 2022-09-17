@@ -30,16 +30,16 @@ dofile_once(at_mod_path .. "/entities/hall_of_masters/hall_of_masters.lua")
 --at_test_y = 700 -- hall of records entrace
 --at_test_x = -5640 -- hall of records ghost
 --at_test_y = 1024 -- hall of records ghost
---at_test_x = 14334 -- hall of masters ne gold
---at_test_y = -3880 -- hall of masters ne gold
+at_test_x = 14334 --+ 35840 -- hall of masters ne gold
+at_test_y = -3880 -- hall of masters ne gold east
 --at_test_x = -14848 -- hall of masters sw gold
 --at_test_y = 16078 -- hall of masters sw gold
 --at_test_x = -1536 -- hall of masters above tree
 --at_test_y = -4395 -- hall of masters above tree
 --at_test_x = 5117 -- hall of masters west desert chasm
 --at_test_y = 6003 -- hall of masters west desert chasm
-at_test_x = 15852 -- hall of masters se corner
-at_test_y = 14406 -- hall of masters se corner
+--at_test_x = 15852 -- hall of masters se corner
+--at_test_y = 14406 -- hall of masters se corner
 --at_test_x = -15872 -- hall of masters lake
 --at_test_y = 4309 -- hall of masters lake
 

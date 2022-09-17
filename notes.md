@@ -1,15 +1,11 @@
 - multi-step challenges?
-  - edit for wand drops?
-  - virtual biome
-    - east/west announcement names?
-    - hall of records?
   - adjust spawn rate
   - target selection criteria?
-- pillars??
+- make fixed scenes optional
 
 - check hanging with special detectors
 
-- make fixed scenes optional
+- pillars??
 - edges vs noedge?
 - desert music backdown?
 - paintovers
