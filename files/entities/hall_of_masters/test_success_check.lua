@@ -95,7 +95,7 @@ local function spawn_grand_material( x, y )
 	end
 	SetRandomSeed( x, y )
 	local r = Random(1, #at_grand_materials)
-	at_container( at_grand_materials[r], 1.0, x, y )
+	at_container( at_grand_materials[r], 0.05, x, y )
 	spawn_success( x, y )
 	GamePrintImportant( "$at_log_reward_knowledge" )
 end

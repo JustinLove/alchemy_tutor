@@ -1,6 +1,4 @@
 - multi-step challenges?
-  - maybe 1% knowledge
-  - sw hallway has barrel hanging on edge
   - clean up top inner corner
   - edit for wand drops?
   - virtual biome

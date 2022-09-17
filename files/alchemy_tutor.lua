@@ -38,10 +38,10 @@ dofile_once(at_mod_path .. "/entities/hall_of_masters/hall_of_masters.lua")
 --at_test_y = -4395 -- hall of masters above tree
 --at_test_x = 5117 -- hall of masters west desert chasm
 --at_test_y = 6003 -- hall of masters west desert chasm
---at_test_x = 15852 -- hall of masters sw corner
---at_test_y = 14406 -- hall of masters sw corner
-at_test_x = -15872 -- hall of masters lake
-at_test_y = 4309 -- hall of masters lake
+at_test_x = 15852 -- hall of masters se corner
+at_test_y = 14406 -- hall of masters se corner
+--at_test_x = -15872 -- hall of masters lake
+--at_test_y = 4309 -- hall of masters lake
 
 function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
