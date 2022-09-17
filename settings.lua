@@ -39,6 +39,13 @@ mod_settings =
 		scope = MOD_SETTING_SCOPE_NEW_GAME,
 	},
 	{
+		id = "fixed_pixel_scenes",
+		ui_name = "Fixed Position Pixel Scenes",
+		ui_description = "You may want to disable fixed position scenes with biome mods that change the world layout",
+		value_default = true,
+		scope = MOD_SETTING_SCOPE_NEW_GAME,
+	},
+	{
 		id = "formula_distance",
 		ui_name = "Distance Dependant",
 		ui_description = "Favor basic formulas near start, and obscure formula farther away",

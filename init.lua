@@ -146,7 +146,9 @@ at_log_reward_wealth,Wealth,,,,,,,,,,,,,
 ]]
 
 function OnMagicNumbersAndWorldSeedInitialized() -- this is the last point where the Mod* API is available. after this materials.xml will be loaded.
-	edit_file( "data/biome/_pixel_scenes.xml", add_hall_of_records )
+	if ModSettingGet("alchemy_tutor.fixed_pixel_scenes") then
+		edit_file( "data/biome/_pixel_scenes.xml", add_hall_of_records )
+	end
 	edit_file( "data/scripts/buildings/snowcrystal.lua", intercept_ghosts )
 
 	edit_file( "data/translations/common.csv", function(content) return content .. translations end)

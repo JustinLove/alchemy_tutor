@@ -1,7 +1,6 @@
 - multi-step challenges?
   - adjust spawn rate
   - target selection criteria?
-- make fixed scenes optional
 
 - check hanging with special detectors
 

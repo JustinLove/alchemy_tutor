@@ -204,8 +204,10 @@ local function virtual_biome_place_labs( labs )
 	end
 end
 
-virtual_biome_place_labs( at_lab_locations )
-virtual_biome_place_labs( at_special_lab_locations )
+if ModSettingGet("alchemy_tutor.fixed_pixel_scenes") then
+	virtual_biome_place_labs( at_lab_locations )
+	virtual_biome_place_labs( at_special_lab_locations )
+end
 
 local entrance_x = 512
 local entrance_y = 213
