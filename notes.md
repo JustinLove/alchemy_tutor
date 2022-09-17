@@ -1,5 +1,8 @@
 - multi-step challenges?
-  - lab in abandond alchemy has several material abailable
+  - maybe 1% knowledge
+  - sw hallway has barrel hanging on edge
+  - dead fish in lake lab
+  - edit for wand drops?
   - virtual biome
     - east/west announcement names?
     - hall of records?

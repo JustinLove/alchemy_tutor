@@ -34,6 +34,13 @@ at_special_lab_locations = {
 	{ -- hall of records, below alchemist
 		x = -5632,
 		y = 1024,
+		local_materials = {
+			'magic_liquid_berserk',
+			--'magic_liquid_teleportation',
+			--'magic_liquid_unstable_polymorph',
+			'magic_liquid_charm',
+			'magic_liquid_mana_regeneration',
+		}
 	},
 }
 
@@ -223,6 +230,14 @@ function at_get_lab_biome_bulk( x, y )
 	if loc then
 		return loc.biome
 	end
+end
+
+function at_get_lab_local_materials( x, y )
+	local loc = get_lab( x, y )
+	if loc then
+		return loc.local_materials or {}
+	end
+	return {}
 end
 
 function at_get_lab_biome_modifier( x, y )

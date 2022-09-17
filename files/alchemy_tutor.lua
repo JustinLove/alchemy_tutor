@@ -10,8 +10,8 @@ dofile_once(at_mod_path .. "/entities/hall_of_masters/hall_of_masters.lua")
 --at_test_healing = true
 --at_test_portal = true
 --at_test_masters = true
-at_test_x = -200
-at_test_y = -100 -- hills
+--at_test_x = -200
+--at_test_y = -100 -- hills
 --at_test_y = 2000 -- excavation
 --at_test_y = 3500 -- snowcave
 --at_test_y = 5500 -- snowcastle
@@ -24,8 +24,8 @@ at_test_y = -100 -- hills
 --at_test_y = 7500 -- rainforest dark
 --at_test_x = 12300 -- fungiforest
 --at_test_y = 2000 -- fungiforest
---at_test_x = -5317 -- hall of records
---at_test_y = 720 -- hall of records
+at_test_x = -5317 -- hall of records
+at_test_y = 720 -- hall of records
 --at_test_x = -5000 -- hall of records entrance
 --at_test_y = 700 -- hall of records entrace
 --at_test_x = -5640 -- hall of records ghost
@@ -1108,18 +1108,40 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	SetRandomSeed = at_SetRandomSeed
 
 	local biome_bulk = at_get_lab_biome_bulk( lab_pixel_x, lab_pixel_y )
+	local local_materials = at_get_lab_local_materials( lab_pixel_x, lab_pixel_y )
 
 	local facts = at_master_sets()
 	local tests = facts.master_tests
 	local test = tests[ Random(1, #tests) ]
+
+	local function has_materials(t)
+		for _,mat in ipairs(local_materials) do
+			if test.created_materials[mat] then
+				return true
+			end
+		end
+		return false
+	end
+
 	--[[
-	local target = { 'diamond', 'copper', 'silver2', 'magic_liquid_random_polymorph' }
+	--local target = { 'diamond', 'copper', 'silver2', 'magic_liquid_random_polymorph' }
+	local target = { 'magic_liquid_charm' }
 	for i,t in pairs(tests) do
 		if compare_array( test.ingredients, target ) then
 			test = t
 		end
 	end
 	--]]
+
+	local crazy = 0
+	local trial = test
+	while has_materials(trial) and crazy < 5 do
+		crazy = crazy + 1
+		trial = tests[ Random(1, #tests) ]
+	end
+	if not has_materials(trial) then
+		test = trial
+	end
 	if test then
 		at_log( 'target', test.target, table.concat(test.formulas, ',') )
 	end
