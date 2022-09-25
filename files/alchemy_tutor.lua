@@ -440,7 +440,7 @@ function at_master_sets()
 
 	local grand = copy_array( at_grand_materials )
 	shuffleTable( grand )
-	local count = math.min( 2, #grand )
+	local count = math.min( 1, #grand )
 	for g = 1,count do
 		local ing = grand[g]
 		bulk_amounts[ing] = (bulk_amounts[ing] or 0) + 1

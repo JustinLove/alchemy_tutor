@@ -14,13 +14,13 @@ local wands =
 	},
 	-- add skullflys after this step
 	{
-		prob   		= 5,
+		prob   		= 0,
 		min_count	= 1,
 		max_count	= 1,
 		entity 	= "data/entities/items/wand_level_06.xml"
 	},
 	{
-		prob   		= 5,
+		prob   		= 0,
 		min_count	= 1,
 		max_count	= 1,
 		entity 	= "data/entities/items/wand_level_06_better.xml"

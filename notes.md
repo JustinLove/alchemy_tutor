@@ -1,6 +1,9 @@
-- multi-step challenges?
+- x grand material chance maybe too high
+- x wands maybe not good enough.
+- right side top lighting
+- prerelease
   - adjust spawn rate
-  - target selection criteria?
+  - cleanup background
 
 - check hanging with special detectors
 
