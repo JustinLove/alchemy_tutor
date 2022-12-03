@@ -4,7 +4,7 @@
 - x right side top lighting
 - x reduce max steps
 - x bottle filler stops on non empty container in range
-- track finished labs for teleports
+- x track finished labs for teleports
 - prerelease
   - adjust spawn rate
   - cleanup background
@@ -12,8 +12,8 @@
 - detector on sand piles not clear
 Possible mod conflict: new biomes + secrets
 kicked cube onto altar, went to hall of apprentices
-- possible spawn code collision
-- missing location name in "Entered " message
+  - possible spawn code collision
+  - missing location name in "Entered " message
 
 - check hanging with special detectors
 

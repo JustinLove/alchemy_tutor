@@ -89,6 +89,10 @@ function OnPlayerSpawned( player_entity ) -- This runs when player entity has be
 		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x + 60, y )
 		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x + 100, y )
 		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x + 140, y )
+		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x - 20, y )
+		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x - 60, y )
+		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x - 100, y )
+		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x - 140, y )
 	end
 	first_run = false;
 end

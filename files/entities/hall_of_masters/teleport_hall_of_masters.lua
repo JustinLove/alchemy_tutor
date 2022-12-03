@@ -20,6 +20,8 @@ function portal_teleport_used( entity_teleported, from_x, from_y, to_x, to_y )
 
 		at_spawn_return_portal( ex, ey - 35 )
 
+		at_next_lab_visited()
+
 		local iteration = tonumber( GlobalsGetValue( "AT_HALL_OF_MASTERS_COUNT", "0" ) )
 		GlobalsSetValue( "AT_HALL_OF_MASTERS_COUNT", tostring( iteration+1 ) )
 	end

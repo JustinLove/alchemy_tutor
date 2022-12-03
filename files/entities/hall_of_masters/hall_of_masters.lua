@@ -1,29 +1,36 @@
 -- see also biome_scripts location count
 at_lab_locations = {
 	{ -- west wall of desert chasm west of pyramid
+		id = 'DESERT_CHASM',
 		x = 4096,
 		y = 5632,
 	},
 	{ -- ne gold
+		id = 'NE_GOLD',
 		x = 13824,
 		y = -4096,
 		biome = 'gold',
 	},
 	{ -- lake
+		id = 'LAKE',
+		x = 13824,
 		x = -16384,
 		y = 4096,
 		biome = 'water',
 	},
 	{ -- above tree
+		id = 'TREE',
 		x = -2048,
 		y = -4608,
 	},
 	{ -- sw gold
+		id = 'SW_GOLD',
 		x = -15360,
 		y = 15872,
 		biome = 'gold',
 	},
-	{ -- sw corner desert
+	{ -- se corner desert
+		id = 'SE_CORNER',
 		x = 15872,
 		y = 14336,
 		biome_modifier = 'hot',
@@ -32,6 +39,7 @@ at_lab_locations = {
 
 at_special_lab_locations = {
 	{ -- hall of records, below alchemist
+		id = 'RECORDS',
 		x = -5632,
 		y = 1024,
 		local_materials = {
@@ -56,6 +64,17 @@ local function get_lab( x, y )
 			return loc
 		end
 	end
+end
+
+local function next_lab()
+	for _,loc in ipairs(at_lab_locations) do
+		if not GameHasFlagRun( 'AT_MASTER_VISITED_' .. loc.id ) then
+			return loc
+		end
+	end
+
+	local index = (tonumber( GlobalsGetValue( "AT_HALL_OF_MASTERS_COUNT", "0" ) ) % #at_lab_locations + 1)
+	return at_lab_locations[index]
 end
 
 function at_spawn_hall_of_masters_0( x, y )
@@ -213,11 +232,13 @@ local entrance_x = 512
 local entrance_y = 213
 
 function at_get_lab_location()
-	local index = (tonumber( GlobalsGetValue( "AT_HALL_OF_MASTERS_COUNT", "0" ) ) % #at_lab_locations + 1)
+	local lab = next_lab()
+	return lab.x, lab.y
+end
 
-	local x = at_lab_locations[index].x
-	local y = at_lab_locations[index].y
-	return x, y
+function at_next_lab_visited()
+	local lab = next_lab()
+	GameAddFlagRun('AT_MASTER_VISITED_' .. lab.id)
 end
 
 function at_get_entrance_location()
@@ -246,6 +267,13 @@ function at_get_lab_biome_modifier( x, y )
 	local loc = get_lab( x, y )
 	if loc then
 		return loc.biome_modifier
+	end
+end
+
+function at_get_lab_id( x, y )
+	local loc = get_lab( x, y )
+	if loc then
+		return loc.id
 	end
 end
 

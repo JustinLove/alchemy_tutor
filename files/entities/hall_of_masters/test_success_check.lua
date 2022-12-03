@@ -127,6 +127,7 @@ local pos_x, pos_y = EntityGetTransform( entity_id )
 
 local target = ""
 local reward = ""
+local lab_id = ""
 local targetid = 0
 local goldid = 0
 local vars = EntityGetComponent( entity_id, "VariableStorageComponent" )
@@ -144,6 +145,9 @@ if vars then
 		elseif ( name == "reward" ) then
 			reward = ComponentGetValue2( var, "value_string" )
 			--print( tostring(reward) )
+		elseif ( name == "lab_id" ) then
+			lab_id = ComponentGetValue2( var, "value_string" )
+			--print( tostring(lab_id) )
 		end
 	end
 end
@@ -165,6 +169,12 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 23, "item_pickup")) do
 					--print( matid, amount )
 					local bar = 500
 					if amount > bar then
+						EntityKill( entity_id )
+						local rewards = EntityGetInRadiusWithTag( pos_x, pos_y, 500, "at_reward" )
+						for _,checker_id in pairs(rewards) do
+							EntityKill( checker_id )
+						end
+						GameAddFlagRun('AT_MASTER_VISITED_' .. lab_id)
 						if matid == goldid then
 							spawn_gold( pos_x, pos_y )
 						elseif reward == 'treasure' then
@@ -177,11 +187,6 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 23, "item_pickup")) do
 							spawn_spells( pos_x, pos_y )
 						else
 							spawn_great_chest( pos_x, pos_y )
-						end
-						EntityKill( entity_id )
-						local rewards = EntityGetInRadiusWithTag( pos_x, pos_y, 500, "at_reward" )
-						for _,checker_id in pairs(rewards) do
-							EntityKill( checker_id )
 						end
 						return
 					end

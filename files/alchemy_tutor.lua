@@ -1109,6 +1109,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 	SetRandomSeed = at_SetRandomSeed
 
+	local lab_id = at_get_lab_id( lab_pixel_x, lab_pixel_y )
 	local biome_bulk = at_get_lab_biome_bulk( lab_pixel_x, lab_pixel_y )
 	local local_materials = at_get_lab_local_materials( lab_pixel_x, lab_pixel_y )
 
@@ -1282,6 +1283,8 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 					ComponentSetValue2( var, "value_string", test.target )
 				elseif ( name == "reward" ) then
 					ComponentSetValue2( var, "value_string", altar_reward )
+				elseif ( name == "lab_id" ) then
+					ComponentSetValue2( var, "value_string", lab_id )
 				end
 			end
 		end

@@ -17,6 +17,12 @@
     >
   </VariableStorageComponent>
 
+  <VariableStorageComponent
+    name="lab_id"
+    value_string=""
+    >
+  </VariableStorageComponent>
+
   <ParticleEmitterComponent
     _tags="enabled_by_script"
     _enabled="0"
