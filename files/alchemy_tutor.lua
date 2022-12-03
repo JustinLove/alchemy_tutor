@@ -418,7 +418,7 @@ function at_master_sets()
 	end
 
 	---[[
-	for i = 1,4 do
+	for i = 1,3 do
 		expand_tests()
 	end
 	--]]
