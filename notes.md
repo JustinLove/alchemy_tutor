@@ -1,9 +1,19 @@
 - x grand material chance maybe too high
 - x wands maybe not good enough.
-- right side top lighting
+- x right side indent, bottle filler has no platform
+- x right side top lighting
+- reduce max steps?
+- bottle filler stops on non empty container in range
+- track finished labs for teleports
 - prerelease
   - adjust spawn rate
   - cleanup background
+
+- detector on sand piles not clear
+Possible mod conflict: new biomes + secrets
+kicked cube onto altar, went to hall of apprentices
+- possible spawn code collision
+- missing location name in "Entered " message
 
 - check hanging with special detectors
 
