@@ -3,7 +3,7 @@
 - x right side indent, bottle filler has no platform
 - x right side top lighting
 - x reduce max steps
-- bottle filler stops on non empty container in range
+- x bottle filler stops on non empty container in range
 - track finished labs for teleports
 - prerelease
   - adjust spawn rate

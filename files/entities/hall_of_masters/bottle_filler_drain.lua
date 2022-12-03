@@ -41,9 +41,9 @@ for _,container_id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y + 36, 10, "pot
 				container_amount = ComponentGetValue2( container_sucker, "mAmountUsed" )
 				container_space = math.max(0, container_capacity - container_amount)
 				ComponentSetValue2( drain_sucker, "barrel_size", container_space )
+				return
 			end
 		end
-		return
 	end
 end
 
