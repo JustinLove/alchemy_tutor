@@ -69,6 +69,8 @@ kicked cube onto pedistal, went to hall of apprentices
 - update readme
 - merge
 - workshop
+- workshop patch notes
+- workshop description
 - discord
 
 - x toxic + water

@@ -2,8 +2,11 @@
 
 ## 0.5.0 Hall of Masters Update
 
-- Added several metal sand alternates to Levitatium recipe
-- Powder sacks are 66% full instead of full, like in vanilla
+- Added Halls of Masters - the other labs are training, this is the test. Complete multi-step challenges for new prizes. An entryway may sometimes be found in place of a remote lab, or simply go exploring.
+- Added option setting to not spawn fixed-position scenes, for use with mods that alter the biome map (this of course removes several features)
+- Added several metal sand alternates to Levitatium recipe.
+- Powder sacks are 66% full instead of full, like in vanilla.
+- Frog cage includes a shotgun, in case your wands are inappropriate to the task.
 
 ## 0.4.0 Hall of Records Update
 
