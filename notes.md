@@ -5,9 +5,6 @@
 - x reduce max steps
 - x bottle filler stops on non empty container in range
 - x track finished labs for teleports
-- prerelease
-  - reduce debugging
-  - cleanup background
 
 Possible mod conflict: new biomes + secrets
 kicked cube onto pedistal, went to hall of apprentices
@@ -63,6 +60,16 @@ kicked cube onto pedistal, went to hall of apprentices
   - concentrated mana/wizardbrik didn't activate
   - green fungi did not activate for void1
   - double spawn of mystery fungus on level 1
+
+
+## Releases
+
+- preview image
+- changelog/announcement
+- update readme
+- merge
+- workshop
+- discord
 
 - x toxic + water
 - x mana + water
