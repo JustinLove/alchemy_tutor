@@ -6,14 +6,14 @@
 - x bottle filler stops on non empty container in range
 - x track finished labs for teleports
 - prerelease
-  - adjust spawn rate
+  - reduce debugging
   - cleanup background
 
-- detector on sand piles not clear
 Possible mod conflict: new biomes + secrets
-kicked cube onto altar, went to hall of apprentices
-  - possible spawn code collision
-  - missing location name in "Entered " message
+kicked cube onto pedistal, went to hall of apprentices
+  - pedistal triggers meditation chest?
+  - x possible spawn code collision - only on init, spawn vines in custom biome
+  - x missing location name in "Entered " message - not simple two-mod conflict
 
 - check hanging with special detectors
 
@@ -23,6 +23,7 @@ kicked cube onto altar, went to hall of apprentices
 - paintovers
   - beam holes etc.
 - background?
+- detector on sand piles not clear
 - cauldron fires
 - hall of masters chest art???
 - translations - partly done
