@@ -2,7 +2,7 @@
 
 ## 0.5.1
 
-- Precautionary update for teleporters that could be generated into locations that had been previously generated without their intended destitation scenes.
+- Precautionary update for teleporters that could be generated into locations that had been previously generated without their intended destination scenes.
 
 ## 0.5.0 Hall of Masters Update
 
