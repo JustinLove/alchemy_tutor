@@ -1,5 +1,9 @@
 # Alchemy Tutor Changelog
 
+## 0.5.1
+
+- Precautionary update for teleporters that could be generated into locations that had been previously generated without their intended destitation scenes.
+
 ## 0.5.0 Hall of Masters Update
 
 - Added Halls of Masters - the other labs are training, this is the test. Complete multi-step challenges for new prizes. An entryway may sometimes be found in place of a remote lab, or simply go exploring.

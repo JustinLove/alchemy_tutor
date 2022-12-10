@@ -19,6 +19,7 @@ function portal_teleport_used( entity_teleported, from_x, from_y, to_x, to_y )
 		end
 
 		at_spawn_return_portal( ex, ey - 35 )
+		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/teleport_hole.xml", ex, ey - 27 )
 
 		at_next_lab_visited()
 

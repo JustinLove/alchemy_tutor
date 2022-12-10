@@ -1,10 +1,3 @@
-- x grand material chance maybe too high
-- x wands maybe not good enough.
-- x right side indent, bottle filler has no platform
-- x right side top lighting
-- x reduce max steps
-- x bottle filler stops on non empty container in range
-- x track finished labs for teleports
 
 Possible mod conflict: new biomes + secrets
 kicked cube onto pedistal, went to hall of apprentices
