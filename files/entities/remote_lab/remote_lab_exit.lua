@@ -1,6 +1,6 @@
 dofile_once('mods/alchemy_tutor/files/entities/remote_lab/remote_lab.lua')
 
--- Soler91, via https://noita.fandom.com/wiki/Modding:_Utilities#Find_if_the_player_is_polymorphed_-_by_Soler91
+-- Soler91, via https://noita.wiki.gg/wiki/Modding:_Utilities#Find_if_the_player_is_polymorphed_-_by_Soler91
 local function is_player_polymorphed() -- returns bool, entityId/nil
 	local polymorphed_entities = EntityGetWithTag("polymorphed")
 	if (polymorphed_entities ~= nil) then
