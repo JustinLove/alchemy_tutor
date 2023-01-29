@@ -1,0 +1,30 @@
+<Entity>
+  <LightComponent 
+    _tags="fire"
+    radius="96"
+    fade_out_time="1.5" >
+  </LightComponent>
+  
+  <TorchComponent
+    _tags=""
+    fire_audio_weight="0.35"
+    suffocation_check_offset_y="-3"
+    >
+  </TorchComponent>
+
+  <Base file="data/entities/base_torch_particle.xml" >
+    <ParticleEmitterComponent 
+      is_emitting="0" >
+    </ParticleEmitterComponent>
+
+    <ParticleEmitterComponent 
+      x_pos_offset_min="-3"
+      x_pos_offset_max="2" >
+    </ParticleEmitterComponent>
+
+    <ParticleEmitterComponent 
+      x_pos_offset_min="-3"
+      x_pos_offset_max="2" >
+    </ParticleEmitterComponent>
+  </Base>
+</Entity>

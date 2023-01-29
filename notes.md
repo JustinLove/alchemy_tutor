@@ -1,3 +1,14 @@
+- cauldron fires
+- detector on sand piles not clear
+- background?
+- paintovers
+  - beam holes etc.
+- edges vs noedge?
+
+- translations - partly done
+- desert music backdown?
+- pillars??
+- check hanging with special detectors??
 
 Possible mod conflict: new biomes + secrets
 kicked cube onto pedistal, went to hall of apprentices
@@ -5,18 +16,6 @@ kicked cube onto pedistal, went to hall of apprentices
   - x possible spawn code collision - only on init, spawn vines in custom biome
   - x missing location name in "Entered " message - not simple two-mod conflict
 
-- check hanging with special detectors
-
-- pillars??
-- edges vs noedge?
-- desert music backdown?
-- paintovers
-  - beam holes etc.
-- background?
-- detector on sand piles not clear
-- cauldron fires
-- hall of masters chest art???
-- translations - partly done
 
   - bulk storage areas
     - x 4 big (5-6 units)

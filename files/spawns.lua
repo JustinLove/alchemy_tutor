@@ -14,6 +14,7 @@ RegisterSpawnFunction( 0xff05702e, "at_spawn_rock")
 RegisterSpawnFunction( 0xffe3974c, "at_spawn_empty")
 RegisterSpawnFunction( 0xff012e85, "at_spawn_other")
 RegisterSpawnFunction( 0xffca1d80, "at_spawn_cauldron")
+RegisterSpawnFunction( 0xfff12e00, "at_spawn_cauldron_fire")
 RegisterSpawnFunction( 0xff2e3a2d, "at_spawn_reward")
 RegisterSpawnFunction( 0xff057ee1, "at_spawn_steel_pit")
 RegisterSpawnFunction( 0xff0691c4, "at_spawn_brick_pit")
@@ -358,6 +359,10 @@ end
 
 function at_spawn_cauldron( x, y )
 	table.insert( at_cauldrons, {x = x, y = y} )
+end
+
+function at_spawn_cauldron_fire( x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/cauldron_fire.xml", x, y )
 end
 
 function at_spawn_big_bin_3( x, y )
