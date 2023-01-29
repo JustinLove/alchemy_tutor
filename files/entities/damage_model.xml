@@ -48,4 +48,12 @@
     >
   </VariableStorageComponent>
 
+  <PixelSceneComponent
+    pixel_scene="data/biome_impl/empty.png"
+    pixel_scene_background="mods/alchemy_tutor/files/entities/checker_marker.png"
+    offset_x="-5"
+    offset_y="-4"
+    skip_biome_checks="1"
+    >
+  </PixelSceneComponent>
 </Entity>
