@@ -25,6 +25,31 @@ at_cauldron = {
 	end
 }
 
+at_pile = {
+	name = "at_pile",
+	default_material = "air",
+	spawn = function( set, x, y, index )
+		local first = at_first_time( set )
+		local contents = at_material( set.cauldron_contents, "air", first )
+		LoadPixelScene(
+			at_mod_path .. "/props/cauldron.png",
+			"", -- visual
+			x-18, y-39,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{ ["fff0bbee"] = contents,
+				["fff2ddb2"] = set.cauldron_minor or contents,
+				["ff786c42"] = at_material( set.cauldron_material, "air", first ),
+			} -- color_to_matieral_table
+		)
+
+		at_add_checker( nil, x, y, 18, set, index )
+
+		return contents
+	end
+}
+
 at_steel_pit = {
 	name = "at_steel_pit",
 	default_material = "steel_static_unmeltable",

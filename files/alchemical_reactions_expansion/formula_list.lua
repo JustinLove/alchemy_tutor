@@ -381,8 +381,8 @@ at_formula_list_append({
 		materials = {
 			"sand",
 		},
+		cauldron = at_pile,
 		cauldron_contents = "sand_blue",
-		cauldron_material = "air",
 		output = "sand",
 		rating = 9,
 	},
