@@ -37,6 +37,7 @@
     offset_x="-5"
     offset_y="-4"
     skip_biome_checks="1"
+    background_z_index="40"
     >
   </PixelSceneComponent>
 </Entity>

@@ -1,7 +1,8 @@
-- cauldron fires
-- detector on sand piles not clear
-- background?
-- paintovers
+- x cauldron fires
+- draft detector on sand piles not clear
+- cauldron backgrounds
+  - sand pile
+- paintovers/backgrounds
   - beam holes etc.
 - edges vs noedge?
 

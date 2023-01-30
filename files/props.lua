@@ -10,7 +10,7 @@ at_cauldron = {
 			at_mod_path .. "/props/cauldron.png",
 			"", -- visual
 			x-18, y-39,
-			"", -- background
+			at_mod_path .. "/props/cauldron_background.png", -- background
 			true, -- skip_biome_checks
 			false, -- skip_edge_textures
 			{ ["fff0bbee"] = contents,

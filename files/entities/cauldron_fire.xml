@@ -7,7 +7,7 @@
   
   <TorchComponent
     _tags=""
-    fire_audio_weight="0.35"
+    fire_audio_weight="0.25"
     suffocation_check_offset_y="-3"
     >
   </TorchComponent>
