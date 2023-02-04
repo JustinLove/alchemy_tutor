@@ -5,6 +5,7 @@
     offset_x="-14"
     offset_y="-10"
     skip_biome_checks="1"
+    background_z_index="45"
     >
   </PixelSceneComponent>
 
