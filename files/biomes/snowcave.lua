@@ -22,7 +22,7 @@ table.insert( g_pixel_scene_01_alt, {
 table.insert( g_pixel_scene_02, {
 		prob   			= at_lab_chance,
 		material_file 	= "mods/alchemy_tutor/files/biome_impl/snowcave_lab_h.png",
-		visual_file		= "",--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_visual.png",
-		background_file	= "",
+		visual_file		= "mods/alchemy_tutor/files/biome_impl/snowcave_lab_h_visual.png",
+		background_file	= "mods/alchemy_tutor/files/biome_impl/snowcave_lab_h_background.png",
 		is_unique		= 0
 	})

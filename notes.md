@@ -2,6 +2,7 @@
 - draft detector on sand piles not clear
 - x cauldron backgrounds
   - x sand pile
+  - block eye position (ex ambrosia)
 - paintovers/backgrounds
   - beam holes etc.
 - edges vs noedge?
