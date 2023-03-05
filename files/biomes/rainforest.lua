@@ -4,7 +4,7 @@ table.insert( g_pixel_scene_01, {
 		prob   			= at_lab_chance,
 		material_file 	= "mods/alchemy_tutor/files/biome_impl/rainforest_lab_v.png",
 		visual_file		= "",
-		background_file	= "",
+		background_file	= "mods/alchemy_tutor/files/biome_impl/rainforest_lab_v_background.png",
 		is_unique		= 0
 	})
 
