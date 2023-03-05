@@ -9,9 +9,9 @@ function at_spawn_lab( x, y )
 	--local width, height = 520, 260
 	--local width, height = 260, 520
 	LoadPixelScene(
-		--"mods/alchemy_tutor/files/biome_impl/crypt_lab_v.png",
+		"mods/alchemy_tutor/files/biome_impl/crypt_lab_v.png",
 		--"mods/alchemy_tutor/files/biome_impl/crypt_lab_h.png",
-		"mods/alchemy_tutor/files/biome_impl/vault_lab_v.png",
+		--"mods/alchemy_tutor/files/biome_impl/vault_lab_v.png",
 		--"mods/alchemy_tutor/files/biome_impl/vault_lab_h.png",
 		--"mods/alchemy_tutor/files/biome_impl/rainforest_lab_v.png",
 		--"mods/alchemy_tutor/files/biome_impl/rainforest_lab_h.png",
