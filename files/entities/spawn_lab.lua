@@ -11,9 +11,9 @@ function at_spawn_lab( x, y )
 	LoadPixelScene(
 		--"mods/alchemy_tutor/files/biome_impl/crypt_lab_v.png",
 		--"mods/alchemy_tutor/files/biome_impl/crypt_lab_h.png",
-		--"mods/alchemy_tutor/files/biome_impl/vault_lab_v.png",
+		"mods/alchemy_tutor/files/biome_impl/vault_lab_v.png",
 		--"mods/alchemy_tutor/files/biome_impl/vault_lab_h.png",
-		"mods/alchemy_tutor/files/biome_impl/rainforest_lab_v.png",
+		--"mods/alchemy_tutor/files/biome_impl/rainforest_lab_v.png",
 		--"mods/alchemy_tutor/files/biome_impl/rainforest_lab_h.png",
 		--"mods/alchemy_tutor/files/biome_impl/snowcastle_lab_v.png",
 		--"mods/alchemy_tutor/files/biome_impl/snowcastle_lab_h.png",
@@ -26,12 +26,13 @@ function at_spawn_lab( x, y )
 		--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_h_alt.png",
 		--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_v.png",
 		"",
+		--"mods/alchemy_tutor/files/biome_impl/vault_lab_h_visual.png",
 		--"mods/alchemy_tutor/files/biome_impl/snowcave_lab_v_visual.png",
 		--"mods/alchemy_tutor/files/biome_impl/snowcave_lab_h_visual.png",
 		--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_h_visual.png",
 		--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_v_visual.png",
 		x - width/2, y - height/2,
-		"mods/alchemy_tutor/files/biome_impl/rainforest_lab_v_background.png",
+		--"mods/alchemy_tutor/files/biome_impl/rainforest_lab_v_background.png",
 		--"mods/alchemy_tutor/files/biome_impl/rainforest_lab_h_background.png",
 		--"mods/alchemy_tutor/files/biome_impl/snowcastle_lab_v_background.png",
 		--"mods/alchemy_tutor/files/biome_impl/snowcastle_lab_h_background.png",
@@ -39,7 +40,7 @@ function at_spawn_lab( x, y )
 		--"mods/alchemy_tutor/files/biome_impl/snowcave_lab_h_background.png",
 		--"data/biome_impl/snowcastle/greenhouse_background.png",
 		--"data/biome_impl/snowcastle/bedroom_background.png",
-		--"", -- background
+		"", -- background
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{
