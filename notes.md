@@ -6,17 +6,29 @@
 - paintovers/backgrounds
   - beam holes etc.
 - edges vs noedge?
+- ng+
+- nightmare
 
 - translations - partly done
 - desert music backdown?
 - pillars??
 - check hanging with special detectors??
 
-Possible mod conflict: new biomes + secrets
+## Possible mod conflict
+- master location dedicated file
+
+### new biomes + secrets
+- near west lower desert probably bad
 kicked cube onto pedistal, went to hall of apprentices
   - pedistal triggers meditation chest?
   - x possible spawn code collision - only on init, spawn vines in custom biome
   - x missing location name in "Entered " message - not simple two-mod conflict
+  - check for blank translation and sub english
+
+### Fluid Dynamics
+
+"the mod seems incompatible with fluid dynamics. doing the puzzle correctly doesnt spawn the chest. looking for a second perspective on this."
+
 
 
   - bulk storage areas
