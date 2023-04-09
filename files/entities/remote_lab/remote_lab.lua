@@ -1,10 +1,9 @@
 function at_spawn_remote_lab( x, y )
-	local width, height = 512, 512
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/biome_impl/remote_lab_entrance.png",
-		"", -- visual
-		x, y,
-		"", -- background
+		"mods/alchemy_tutor/files/biome_impl/spliced/remote_lab/0.plz",
+		"mods/alchemy_tutor/files/biome_impl/spliced/remote_lab/0_visual.plz",
+		x + 232, y + 1,
+		"mods/alchemy_tutor/files/biome_impl/spliced/remote_lab/0_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{
@@ -12,10 +11,10 @@ function at_spawn_remote_lab( x, y )
 		50 -- z index
 	)
 	LoadPixelScene(
-		"mods/alchemy_tutor/files/biome_impl/remote_lab_lab.png",
-		"", -- visual
-		x + width, y,
-		"", -- background
+		"mods/alchemy_tutor/files/biome_impl/spliced/remote_lab/1.plz",
+		"mods/alchemy_tutor/files/biome_impl/spliced/remote_lab/1_visual.plz",
+		x + 512, y + 80,
+		"mods/alchemy_tutor/files/biome_impl/spliced/remote_lab/1_background.png",
 		true, -- skip_biome_checks
 		false, -- skip_edge_textures
 		{

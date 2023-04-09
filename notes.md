@@ -1,10 +1,19 @@
 - x cauldron fires
+- detector on wizard ambrosia looks too high
+- check number of steps on hall of masters - 4 step
+- lower west desert missing frogs
 - draft detector on sand piles not clear
 - x cauldron backgrounds
   - x sand pile
   - block eye position (ex ambrosia)
 - paintovers/backgrounds
-  - beam holes etc.
+  - x main labs
+  - x remote lab
+  - field labs
+  - hall of records
+  - masters
+    - slight change to nondetector pits
+    - beam holes etc.
 - edges vs noedge?
 - ng+
 - nightmare
@@ -16,6 +25,7 @@
 
 ## Possible mod conflict
 - master location dedicated file
+- remote lab boxes appearing in basic biomes with lots of mods
 
 ### new biomes + secrets
 - near west lower desert probably bad

@@ -35,6 +35,23 @@ The goal at this point is primarly backgrounds, paintovers, and effects. Testing
 
 Enemies, explosions, and physics glitches can and will break all your potions and spill other stuff all over your lab. (But sometimes they also solve it for you.) If you see certain scenes that seem broken more often than not, let me know and I'll see if any adjustments can be made.
 
+## Mod Compatibility
+
+Most mods are untested at this point. I'm hoping to have most world changing mods checked out before leaving beta.
+
+### Integrations
+
+- Alchemical Reactions Expansion
+
+### Reports Pending Investigation - caution advised.
+
+- Noitavania
+
+### No Observed Incompatibility
+
+- More Creep and Weirdos - tested circa 2023-03
+- Volcano Biome
+
 ## In-game Options
 
 - Lab Spawn Chance - Main Areas: weight vs the game's built-in pixel scenes (and perhaps other mods, if they use the same system) Most vanilla scenes are 5 or 10 on this scale, but the number of scene slots, number of possible scenes, and default weight vary per biome. Feedback on a good default level appreciated.
