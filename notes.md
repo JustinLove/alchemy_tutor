@@ -24,16 +24,23 @@
 - check hanging with special detectors??
 
 ## Possible mod conflict
-- master location dedicated file
+- x master location dedicated file
 - remote lab boxes appearing in basic biomes with lots of mods
 
 ### new biomes + secrets
-- near west lower desert probably bad
+- x near west lower desert probably bad - confirmed
+- x + New Creeps
 kicked cube onto pedistal, went to hall of apprentices
   - pedistal triggers meditation chest?
   - x possible spawn code collision - only on init, spawn vines in custom biome
   - x missing location name in "Entered " message - not simple two-mod conflict
   - check for blank translation and sub english
+
+### Noitavania
+
+### Vanilla
+- ng+
+- nightmare
 
 ### Fluid Dynamics
 

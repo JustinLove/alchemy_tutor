@@ -227,11 +227,11 @@ function at_look_here( x, y )
 end
 
 function at_spawn_records_access( x, y )
-	--local _,mx = at_check_parallel_pos( x )
-	local mx = x -- not currently putting records in parallel worlds
-	local block_x = mx - mx % 512
-	local block_y = y - y % 512
-	if block_x == -5632 and block_y == 1024 then
+	local pw,_ = at_check_parallel_pos( x )
+	-- not currently putting records in parallel worlds
+	local lab_x, lab_y = at_lab_origin( x, y, 0, 0 )
+	local loc = at_get_lab( lab_x, lab_y )
+	if pw == 0 and loc and loc.west_access == 'records_access' then
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_records_access.png",
 			"", -- visual
@@ -247,10 +247,9 @@ function at_spawn_records_access( x, y )
 end
 
 function at_spawn_east_access( x, y )
-	local _,mx = at_check_parallel_pos( x )
-	local block_x = mx - mx % 512 - 512
-	local block_y = y - y % 512
-	if block_x == 4096 and block_y == 5632 then
+	local lab_x, lab_y = at_lab_origin( x, y, 1, 0 )
+	local loc = at_get_lab( lab_x, lab_y )
+	if loc and loc.east_access == 'east_access' then
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_east_access.png",
 			"", -- visual
@@ -263,7 +262,7 @@ function at_spawn_east_access( x, y )
 			50 -- z index
 		)
 	end
-	if block_x == -2048 and block_y == -4608 then
+	if loc and loc.east_access == 'sky_access' then
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_sky_access.png",
 			"", -- visual
@@ -279,10 +278,9 @@ function at_spawn_east_access( x, y )
 end
 
 function at_spawn_west_access( x, y )
-	local _,mx = at_check_parallel_pos( x )
-	local block_x = mx - mx % 512
-	local block_y = y - y % 512
-	if block_x == 15872 and block_y == 14336 then
+	local lab_x, lab_y = at_lab_origin( x, y, 0, 0 )
+	local loc = at_get_lab( lab_x, lab_y )
+	if loc and loc.west_access == 'west_access' then
 		LoadPixelScene(
 			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_west_access.png",
 			"", -- visual

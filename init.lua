@@ -192,7 +192,16 @@ ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/bio
 
 ModLuaFileAppend( "data/scripts/biome_scripts.lua", "mods/alchemy_tutor/files/biome_scripts.lua" )
 
+if ModIsEnabled( 'Cheat Menu by Everfades' ) then
+	ModLuaFileAppend( "mods/Cheat Menu by Everfades/files/locations.lua", "mods/alchemy_tutor/files/Cheat Menu by Everfades/locations.lua" )
+end
+
 if ModIsEnabled( 'alchemical_reactions_expansion' ) then
 	ModLuaFileAppend( "mods/alchemy_tutor/files/props.lua", "mods/alchemy_tutor/files/alchemical_reactions_expansion/props.lua" )
 	ModLuaFileAppend( "mods/alchemy_tutor/files/formula_list.lua", "mods/alchemy_tutor/files/alchemical_reactions_expansion/formula_list.lua" )
 end
+
+if ModIsEnabled( 'New Biomes + Secrets' ) then
+	ModLuaFileAppend( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_locations.lua", "mods/alchemy_tutor/files/New Biomes + Secrets/hall_of_masters_locations.lua" )
+end
+

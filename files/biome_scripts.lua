@@ -1,3 +1,5 @@
+dofile_once( 'mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_locations.lua' )
+
 at_remote_lab_chance = ModSettingGet("alchemy_tutor.remote_lab_chance")
 if at_remote_lab_chance == nil then
 	at_remote_lab_chance = 1
@@ -7,7 +9,7 @@ at_chest_chance = at_remote_lab_chance / 2
 at_remote_lab_chest = "mods/alchemy_tutor/files/entities/remote_lab_chest.xml"
 at_hall_of_masters_chest = "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml"
 if ModSettingGet("alchemy_tutor.fixed_pixel_scenes") then
-	at_hall_of_masters_location_count = 6 -- hall_of_masters.lua location list
+	at_hall_of_masters_location_count = #at_lab_locations
 else
 	at_hall_of_masters_location_count = 0
 end

@@ -1,5 +1,12 @@
 # Alchemy Tutor Changelog
 
+## 0.6.0???
+
+- Art update for main biome pixel scenes
+- Art upate for remote labs
+- Adjusted fixed scene positions for New Biomes + Secrets
+- Extracted hall of masters locations to separate file to easy integration by other mods
+
 ## 0.5.1
 
 - Precautionary update for teleporters that could be generated into locations that had been previously generated without their intended destination scenes.
