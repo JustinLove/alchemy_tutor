@@ -118,13 +118,11 @@ local function edit_file(path, f, arg)
 end
 
 local function add_hall_of_records( text )
-	text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records.xml</File>\r\n  </PixelSceneFiles>" )
-	--text = string.gsub( text, '</PixelSceneFiles>', "<File>data/biome_impl/spliced/hall_of_records.xml</File>\r\n  </PixelSceneFiles>" )
-	--text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters.xml</File>\r\n  </PixelSceneFiles>" )
-	--text = string.gsub( text, '</PixelSceneFiles>', "<File>data/biome_impl/spliced/hall_of_masters.xml</File>\r\n  </PixelSceneFiles>" )
-	--text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/biome_impl/spliced/hall_of_masters_sw_gold.xml</File>\r\n  </PixelSceneFiles>" )
-	--text = string.gsub( text, '</PixelSceneFiles>', "<File>data/biome_impl/spliced/hall_of_masters_sw_gold.xml</File>\r\n  </PixelSceneFiles>" )
-	--print(text)
+	if ModIsEnabled( 'noitavania' ) then
+		text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/noitavania/hall_of_records.xml</File>\r\n  </PixelSceneFiles>" )
+	else
+		text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records.xml</File>\r\n  </PixelSceneFiles>" )
+	end
 	return text
 end
 
@@ -203,5 +201,17 @@ end
 
 if ModIsEnabled( 'New Biomes + Secrets' ) then
 	ModLuaFileAppend( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_locations.lua", "mods/alchemy_tutor/files/New Biomes + Secrets/hall_of_masters_locations.lua" )
+end
+
+if ModIsEnabled( 'noitavania' ) then
+	ModLuaFileAppend( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_locations.lua", "mods/alchemy_tutor/files/noitavania/hall_of_masters_locations.lua" )
+	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/left_corner_down.lua", "mods/alchemy_tutor/files/spawns.lua" )
+	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/left_corner_up.lua", "mods/alchemy_tutor/files/spawns.lua" )
+	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/right_corner_down.lua", "mods/alchemy_tutor/files/spawns.lua" )
+	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/right_corner_up.lua", "mods/alchemy_tutor/files/spawns.lua" )
+	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_forest.lua", "mods/alchemy_tutor/files/spawns.lua" )
+	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_hills.lua", "mods/alchemy_tutor/files/biomes/hills_remote_lab.lua" )
+	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_hills.lua", "mods/alchemy_tutor/files/biomes/hills_hall_of_records.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/mountain_lake.lua", "mods/alchemy_tutor/files/spawns.lua" )
 end
 

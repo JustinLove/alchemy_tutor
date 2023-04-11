@@ -50,6 +50,7 @@ at_special_lab_locations = {
 			--'magic_liquid_unstable_polymorph',
 			'magic_liquid_charm',
 			'magic_liquid_mana_regeneration',
+			'copper',
 		}
 	},
 }

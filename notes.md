@@ -37,6 +37,15 @@ kicked cube onto pedistal, went to hall of apprentices
   - check for blank translation and sub english
 
 ### Noitavania
+- x placing more labs
+- teleporter saftey inspection
+- remote labs????
+- x hall of records
+  - add entrance clear
+  - remove ghost crystal?
+- round east access cutout
+- check fish removal
+- update changelog/readme
 
 ### Vanilla
 - ng+

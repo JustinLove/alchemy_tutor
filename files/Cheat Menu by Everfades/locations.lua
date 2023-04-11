@@ -6,6 +6,10 @@ saved_locations[#saved_locations+1] =
 	{ west={ name="Hall of Records",x=-5317-AT_BIOME_WIDTH,y=720},
 		main={ name="Hall of Records",x=-5317,y=720},
 		east={ name="Hall of Records",x=-5317+AT_BIOME_WIDTH,y=720}}
+saved_locations[#saved_locations+1] =
+	{ west={ name="Hall of Records NV",x=-8405-AT_BIOME_WIDTH,y=6345},
+		main={ name="Hall of Records NV",x=-8405,y=6345},
+		east={ name="Hall of Records NV",x=-8405+AT_BIOME_WIDTH,y=6345}}
 
 local function add_loc(loc)
 	saved_locations[#saved_locations+1] = {

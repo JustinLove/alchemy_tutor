@@ -1,0 +1,12 @@
+<PixelScenes>
+  <mBufferedPixelScenes>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/0.plz" pos_x="-9215" pos_y="6144" skip_biome_checks="1" >
+    </PixelScene>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/1.plz" pos_x="-9215" pos_y="6656" skip_biome_checks="1" >
+    </PixelScene>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/2.plz" pos_x="-8703" pos_y="6144" skip_biome_checks="1" >
+    </PixelScene>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/3.plz" pos_x="-8703" pos_y="6656" skip_biome_checks="1" >
+    </PixelScene>
+  </mBufferedPixelScenes>
+</PixelScenes>

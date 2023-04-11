@@ -42,6 +42,8 @@ dofile_once(at_mod_path .. "/entities/hall_of_masters/hall_of_masters.lua")
 --at_test_y = 14406 -- hall of masters se corner
 --at_test_x = -15872 -- hall of masters lake
 --at_test_y = 4309 -- hall of masters lake
+at_test_x = 16151 -- noitvania upper right
+at_test_y = -4629 -- noitvania upper right
 
 function at_get_material_type( material_name )
 	local material_id = CellFactory_GetType( material_name )
