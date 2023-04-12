@@ -1,14 +1,14 @@
 <Entity tags="at_remote_lab_portal,teleportable_NOT,item_physics,item_pickup,effectable_prop">
   <!-- teleport logic -->
 
-  <!-- -20,24; ~ 15,48 on biome map -->
+  <!-- lower left corner was buggy when setting coordinates on component, so we just leave it to the script -->
   <TeleportComponent
     _tags="enabled_by_meditation"
     _enabled="0"
-    target_x_is_absolute_position="1"
-    target_y_is_absolute_position="1"
-    target.x="-10240"
-    target.y="17408"
+    target_x_is_absolute_position="0"
+    target_y_is_absolute_position="0"
+    target.x="20"
+    target.y="0"
     load_collapse_entity="0"
   ></TeleportComponent>
 
@@ -293,12 +293,8 @@
   </VariableStorageComponent>
 
   <LuaComponent
+    script_portal_teleport_used="mods/alchemy_tutor/files/entities/remote_lab/teleport_remote_lab.lua"
     script_source_file="mods/alchemy_tutor/files/entities/remote_lab_meditation.lua"
     execute_every_n_frame="60" >
-  </LuaComponent>
-
-  <LuaComponent
-    script_portal_teleport_used="mods/alchemy_tutor/files/entities/remote_lab/teleport_remote_lab.lua"
-    >
   </LuaComponent>
 </Entity>

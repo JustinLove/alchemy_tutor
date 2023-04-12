@@ -26,12 +26,12 @@ component_readwrite(get_variable_storage_component(entity_id, "meditation_count"
 		end
 
 		if comp.value_int == max_time then
-			EntitySetComponentsWithTagEnabled( entity_id, "enabled_by_meditation", true )
-			EntitySetComponentsWithTagEnabled( entity_id, "enabled_by_meditation_early", false )
-
 			at_remember_return_location( pos_x, pos_y )
 
 			setup_lab_teleport( entity_id )
+
+			EntitySetComponentsWithTagEnabled( entity_id, "enabled_by_meditation", true )
+			EntitySetComponentsWithTagEnabled( entity_id, "enabled_by_meditation_early", false )
 		elseif comp.value_int >= 2 then
 			-- teaser fx
 			EntitySetComponentsWithTagEnabled( entity_id, "enabled_by_meditation_early", true )
