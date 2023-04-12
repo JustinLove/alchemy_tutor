@@ -41,13 +41,15 @@ kicked cube onto pedistal, went to hall of apprentices
 - x teleporter saftey inspection
 - x remote labs????
 - x hall of records
-  - make editable for other people
+  - x make editable for other people
   - add entrance clear
   - remove ghost crystal?
 - round east access cutout
 - check fish removal
-- entrance text missing
 - update changelog/readme
+- entrance text missing
+- default spawns
+- chest overides
 
 ### Vanilla
 - ng+
@@ -58,6 +60,11 @@ kicked cube onto pedistal, went to hall of apprentices
 "the mod seems incompatible with fluid dynamics. doing the puzzle correctly doesnt spawn the chest. looking for a second perspective on this."
 
 
+### Mods with new biomes
+
+- alternate biomes
+- noitavania
+- new biomes and secrets
 
   - bulk storage areas
     - x 4 big (5-6 units)

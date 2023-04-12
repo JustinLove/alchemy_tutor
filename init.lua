@@ -117,15 +117,6 @@ local function edit_file(path, f, arg)
 	end
 end
 
-local function add_hall_of_records( text )
-	if ModIsEnabled( 'noitavania' ) then
-		text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/noitavania/hall_of_records.xml</File>\r\n  </PixelSceneFiles>" )
-	else
-		text = string.gsub( text, '</PixelSceneFiles>', "<File>mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records.xml</File>\r\n  </PixelSceneFiles>" )
-	end
-	return text
-end
-
 local function intercept_ghosts( text )
 	text = string.gsub( text, 'if %( #p > 0 %) then', 'local g = EntityGetInRadiusWithTag( x, y, 1000, "at_ghost_crystal" )\r\nif (#p > 0 and #g < 1) then' )
 	--print(text)
@@ -149,7 +140,8 @@ at_log_reward_wealth,Wealth,,,,,,,,,,,,,
 
 function OnMagicNumbersAndWorldSeedInitialized() -- this is the last point where the Mod* API is available. after this materials.xml will be loaded.
 	if ModSettingGet("alchemy_tutor.fixed_pixel_scenes") then
-		edit_file( "data/biome/_pixel_scenes.xml", add_hall_of_records )
+		dofile( "mods/alchemy_tutor/files/entities/hall_of_records/hall_of_records_pixel_scene.lua" )
+		at_add_hall_of_records( "data/biome/_pixel_scenes.xml" )
 	end
 	edit_file( "data/scripts/buildings/snowcrystal.lua", intercept_ghosts )
 
@@ -205,7 +197,9 @@ end
 
 if ModIsEnabled( 'noitavania' ) then
 	ModLuaFileAppend( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_locations.lua", "mods/alchemy_tutor/files/noitavania/hall_of_masters_locations.lua" )
+	ModLuaFileAppend( "mods/alchemy_tutor/files/entities/hall_of_records/hall_of_records_pixel_scene.lua", "mods/alchemy_tutor/files/noitavania/hall_of_records_pixel_scene.lua" )
 	ModLuaFileAppend( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab.lua", "mods/alchemy_tutor/files/noitavania/remote_lab.lua" )
+
 	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/left_corner_down.lua", "mods/alchemy_tutor/files/spawns.lua" )
 	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/left_corner_up.lua", "mods/alchemy_tutor/files/spawns.lua" )
 	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/right_corner_down.lua", "mods/alchemy_tutor/files/spawns.lua" )
