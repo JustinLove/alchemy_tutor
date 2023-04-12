@@ -5,6 +5,12 @@
     >
   </LuaComponent>
 
+  <LuaComponent
+    script_source_file="mods/alchemy_tutor/files/entities/hall_of_masters/remove_fish.lua"
+    remove_after_executed="1"
+    execute_every_n_frame="60" >
+  </LuaComponent>
+
   <VariableStorageComponent
     name="id"
     value_string=""

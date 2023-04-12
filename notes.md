@@ -39,13 +39,14 @@ kicked cube onto pedistal, went to hall of apprentices
 ### Noitavania
 - x placing more labs
 - x teleporter saftey inspection
-- remote labs????
+- x remote labs????
 - x hall of records
   - make editable for other people
   - add entrance clear
   - remove ghost crystal?
 - round east access cutout
 - check fish removal
+- entrance text missing
 - update changelog/readme
 
 ### Vanilla

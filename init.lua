@@ -205,12 +205,12 @@ end
 
 if ModIsEnabled( 'noitavania' ) then
 	ModLuaFileAppend( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_locations.lua", "mods/alchemy_tutor/files/noitavania/hall_of_masters_locations.lua" )
+	ModLuaFileAppend( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab.lua", "mods/alchemy_tutor/files/noitavania/remote_lab.lua" )
 	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/left_corner_down.lua", "mods/alchemy_tutor/files/spawns.lua" )
 	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/left_corner_up.lua", "mods/alchemy_tutor/files/spawns.lua" )
 	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/right_corner_down.lua", "mods/alchemy_tutor/files/spawns.lua" )
 	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/right_corner_up.lua", "mods/alchemy_tutor/files/spawns.lua" )
-	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_forest.lua", "mods/alchemy_tutor/files/spawns.lua" )
-	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_hills.lua", "mods/alchemy_tutor/files/biomes/hills_remote_lab.lua" )
+	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_forest.lua", "mods/alchemy_tutor/files/biomes/hills_remote_lab.lua" )
 	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_hills.lua", "mods/alchemy_tutor/files/biomes/hills_hall_of_records.lua" )
 	ModLuaFileAppend( "data/scripts/biomes/mountain_lake.lua", "mods/alchemy_tutor/files/spawns.lua" )
 end

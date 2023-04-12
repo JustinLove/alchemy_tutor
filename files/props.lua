@@ -16,7 +16,8 @@ at_cauldron = {
 			{ ["fff0bbee"] = contents,
 				["fff2ddb2"] = set.cauldron_minor or contents,
 				["ff786c42"] = at_material( set.cauldron_material, "steel_static_strong", first ),
-			} -- color_to_matieral_table
+			}, -- color_to_matieral_table
+			45 -- z index
 		)
 
 		at_add_checker( nil, x, y, 18, set, index )
