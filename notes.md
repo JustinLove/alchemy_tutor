@@ -42,7 +42,7 @@ kicked cube onto pedistal, went to hall of apprentices
 - x remote labs????
 - x hall of records
   - x make editable for other people
-  - add entrance clear
+  - x add entrance clear
   - remove ghost crystal?
 - round east access cutout
 - check fish removal

@@ -8,5 +8,7 @@
     </PixelScene>
     <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/3.plz" pos_x="-5632" pos_y="1024" skip_biome_checks="1" >
     </PixelScene>
+    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/4.plz" pos_x="-5120" pos_y="667" skip_biome_checks="1" >
+    </PixelScene>
   </mBufferedPixelScenes>
 </PixelScenes>
