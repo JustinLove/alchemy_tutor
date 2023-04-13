@@ -3,9 +3,13 @@
 ## 0.6.0???
 
 - Art update for main biome pixel scenes
-- Art upate for remote labs
+- Art update for remote labs
 - Adjusted fixed scene positions for New Biomes + Secrets
+- Adjusted fixed scene positions for Noitavania
 - Extracted hall of masters locations to separate file to easy integration by other mods
+- Extracted hall of records pixel scene insert to separate file to easy integration by other mods
+- Changed remote lab location setup for easier overriding
+- Changed ghost crystal spawning for easier overriding
 
 ## 0.5.1
 

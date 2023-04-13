@@ -45,8 +45,8 @@ kicked cube onto pedistal, went to hall of apprentices
   - x add entrance clear
   - x remove ghost crystal?
 - x round east access cutout
-- check fish removal
-- update changelog/readme
+- x check fish removal
+- x update changelog/readme
 - entrance text missing
 - default spawns
 - chest overides

@@ -37,15 +37,13 @@ Enemies, explosions, and physics glitches can and will break all your potions an
 
 ## Mod Compatibility
 
-Most mods are untested at this point. I'm hoping to have most world changing mods checked out before leaving beta.
+Most mods are untested at this point. I'm hoping to have most world changing mods checked out before leaving beta. Mods are tested in isolation, multi-mod combinations could still have issues.
 
 ### Integrations
 
 - Alchemical Reactions Expansion
-
-### Reports Pending Investigation - caution advised.
-
-- Noitavania
+- New Biomes & Secrets - locations adjusted, tested circa 2023-04
+- Noitvania - locations overhauled, tested circa 2023-04
 
 ### No Observed Incompatibility
 
