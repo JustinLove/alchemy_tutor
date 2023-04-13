@@ -9,6 +9,7 @@ RegisterSpawnFunction( 0xff6f1002, "at_mark_floor6" )
 RegisterSpawnFunction( 0xff1ef700, "at_record_left" )
 RegisterSpawnFunction( 0xff218470, "at_record_right" )
 RegisterSpawnFunction( 0xff2ec02d, "at_spawn_record_enter" )
+RegisterSpawnFunction( 0xff840270, "at_spawn_ghost_crystal_records" )
 
 local at_left
 local at_right
@@ -120,3 +121,9 @@ end
 function at_spawn_record_enter( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/hall_of_records_enter.xml", x, y + 5 )
 end
+
+function at_spawn_ghost_crystal_records( x, y )
+	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/ghost_deflector_crystal.xml", x, y + 2 )
+	at_ghost_deflector_base( x, y + 5 )
+end
+

@@ -44,6 +44,7 @@ at_special_lab_locations = {
 		x = -5632,
 		y = 1024,
 		west_access = 'records_access',
+		west_alcove = 'ghost_deflector_crystal',
 		local_materials = {
 			'magic_liquid_berserk',
 			--'magic_liquid_teleportation',

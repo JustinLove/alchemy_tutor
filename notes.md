@@ -43,8 +43,8 @@ kicked cube onto pedistal, went to hall of apprentices
 - x hall of records
   - x make editable for other people
   - x add entrance clear
-  - remove ghost crystal?
-- round east access cutout
+  - x remove ghost crystal?
+- x round east access cutout
 - check fish removal
 - update changelog/readme
 - entrance text missing

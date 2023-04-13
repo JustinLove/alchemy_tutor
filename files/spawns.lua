@@ -43,7 +43,7 @@ RegisterSpawnFunction( 0xff3251c0, "at_spawn_music")
 RegisterSpawnFunction( 0xffacce55, "at_spawn_records_access")
 RegisterSpawnFunction( 0xffacce5e, "at_spawn_east_access")
 RegisterSpawnFunction( 0xffacce53, "at_spawn_west_access")
-RegisterSpawnFunction( 0xff840270, "at_spawn_ghost_crystal" )
+RegisterSpawnFunction( 0xff840271, "at_spawn_ghost_crystal_lab" )
 RegisterSpawnFunction( 0xff118475, "at_spawn_lamp" )
 RegisterSpawnFunction( 0xffba2e15, "at_spawn_props" )
 
@@ -295,9 +295,10 @@ function at_spawn_west_access( x, y )
 	end
 end
 
-function at_spawn_ghost_crystal( x, y )
-	local _,mx = at_check_parallel_pos( x )
-	if -10752 < mx and mx < -5120 and 512 < y and y < 15360 then
+function at_spawn_ghost_crystal_lab( x, y )
+	local lab_x, lab_y = at_lab_origin( x, y, 0, 1 )
+	local loc = at_get_lab( lab_x, lab_y )
+	if loc and loc.west_alcove == 'ghost_deflector_crystal' then
 		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/ghost_deflector_crystal.xml", x, y + 2 )
 		at_ghost_deflector_base( x, y + 5 )
 	end
