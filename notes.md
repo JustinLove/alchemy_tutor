@@ -1,4 +1,5 @@
 - x cauldron fires
+- check for blank translation and sub english
 - detector on wizard ambrosia looks too high
 - check number of steps on hall of masters - 4 step
 - lower west desert missing frogs
@@ -27,45 +28,33 @@
 - x master location dedicated file
 - remote lab boxes appearing in basic biomes with lots of mods
 
-### new biomes + secrets
-- x near west lower desert probably bad - confirmed
-- x + New Creeps
-kicked cube onto pedistal, went to hall of apprentices
-  - pedistal triggers meditation chest?
-  - x possible spawn code collision - only on init, spawn vines in custom biome
-  - x missing location name in "Entered " message - not simple two-mod conflict
-  - check for blank translation and sub english
-
-### Noitavania
-- x placing more labs
-- x teleporter saftey inspection
-- x remote labs????
-- x hall of records
-  - x make editable for other people
-  - x add entrance clear
-  - x remove ghost crystal?
-- x round east access cutout
-- x check fish removal
-- x update changelog/readme
-- x entrance text missing
-- x chests appearing in main biomes
-- default spawns
-  - x chest overides
-
-### Vanilla
-- ng+
-- nightmare
-
 ### Fluid Dynamics
 
 "the mod seems incompatible with fluid dynamics. doing the puzzle correctly doesnt spawn the chest. looking for a second perspective on this."
 
+### Vanilla
+- ng+
+- nightmare
 
 ### Mods with new biomes
 
 - alternate biomes
 - noitavania
 - new biomes and secrets
+
+### Having Spawns in Default
+
+- spawn code collisions (vines, rubble, etc) -> use our own code
+
+#### Virtual Biomes in `biome_scripts`
+
+RegisterSpawnFunction `init` is a special case, it works on the function name not color code. init is defined in many biomes, so it can only be intercepted from an append, not from `biome_scripts` etc. Thuns, **virtual biomes cannot run from `biome_scripts`** afaik.
+
+Theoretical extreme solution:
+- parse `_biomes_all.xml` to get biome files
+- parse every biome file to get lua files
+- append to every biome lua file
+
 
   - bulk storage areas
     - x 4 big (5-6 units)

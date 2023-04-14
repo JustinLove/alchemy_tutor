@@ -157,6 +157,13 @@ function OnMagicNumbersAndWorldSeedInitialized() -- this is the last point where
 	edit_file( "data/scripts/buildings/snowcrystal.lua", intercept_ghosts )
 
 	edit_file( "data/translations/common.csv", append_translations)
+
+	dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
+	if _G['at_test_lab'] then
+		ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left.lua", "mods/alchemy_tutor/files/spawns.lua" )
+		ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_entrance.lua", "mods/alchemy_tutor/files/spawns.lua" )
+		ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_stub.lua", "mods/alchemy_tutor/files/spawns.lua" )
+	end
 end
 
 -- This code runs when all mods' filesystems are registered
@@ -184,9 +191,6 @@ ModLuaFileAppend( "data/scripts/biomes/lake_deep.lua", "mods/alchemy_tutor/files
 ModLuaFileAppend( "data/scripts/biomes/lake.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/desert.lua", "mods/alchemy_tutor/files/spawns.lua" )
 
-ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left.lua", "mods/alchemy_tutor/files/spawns.lua" )
-ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_entrance.lua", "mods/alchemy_tutor/files/spawns.lua" )
-ModLuaFileAppend( "data/scripts/biomes/mountain/mountain_left_stub.lua", "mods/alchemy_tutor/files/spawns.lua" )
 ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/biomes/hills_remote_lab.lua" )
 ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/biomes/hills_hall_of_records.lua" )
 

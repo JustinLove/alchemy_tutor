@@ -10,8 +10,8 @@ dofile_once(at_mod_path .. "/entities/hall_of_masters/hall_of_masters.lua")
 --at_test_healing = true
 --at_test_portal = true
 --at_test_masters = true
---at_test_x = -200
---at_test_x = 200
+at_test_x = -200
+at_test_x = 200
 --at_test_y = -100 -- hills
 --at_test_y = 2000 -- excavation
 --at_test_y = 3500 -- snowcave
@@ -31,8 +31,8 @@ dofile_once(at_mod_path .. "/entities/hall_of_masters/hall_of_masters.lua")
 --at_test_y = 700 -- hall of records entrace
 --at_test_x = -5640 -- hall of records ghost
 --at_test_y = 1024 -- hall of records ghost
-at_test_x = -5433 -- hall of masters ghost
-at_test_y = 1900 -- hall of masters ghost
+--at_test_x = -5433 -- hall of masters ghost
+--at_test_y = 1900 -- hall of masters ghost
 --at_test_x = 14334 --+ 35840 -- hall of masters ne gold
 --at_test_y = -3880 -- hall of masters ne gold east
 --at_test_x = -14848 -- hall of masters sw gold
