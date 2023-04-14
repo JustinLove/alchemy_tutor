@@ -1,7 +1,3 @@
-if at_remove_remote_lab_key then
-	at_remove_remote_lab_key()
-end
-
 dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 dofile_once("mods/alchemy_tutor/files/smallfolk.lua")
 

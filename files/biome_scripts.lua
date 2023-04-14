@@ -33,9 +33,10 @@ function at_spawn_mini_lab( x, y )
 	at_spawn_remote_lab_chest( x, y )
 end
 
+local can_spawn_remote_lab_key = true
 at_base_spawn_heart = spawn_heart
 
-function at_spawn_heart( x, y )
+function at_spawn_heart_or_remote_lab( x, y )
 	-- same seeded call as base spawn heart; we should get the same number
 	local r = ProceduralRandom( x, y )
 
@@ -48,10 +49,18 @@ function at_spawn_heart( x, y )
 	end
 end
 
+function at_spawn_heart( x, y )
+	if can_spawn_remote_lab_key then
+		at_spawn_heart_or_remote_lab( x, y )
+	else
+		at_base_spawn_heart( x, y )
+	end
+end
+
 spawn_heart = at_spawn_heart
 
 function at_remove_remote_lab_key()
-	spawn_heart = at_base_spawn_heart
+	can_spawn_remote_lab_key = false
 end
 
 --at_remove_remote_lab_key()

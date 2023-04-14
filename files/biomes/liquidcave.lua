@@ -1,5 +1,9 @@
 dofile_once("mods/alchemy_tutor/files/spawns.lua")
 
+if at_remove_remote_lab_key then
+	at_remove_remote_lab_key()
+end
+
 at_default_cauldron = at_steel_pit
 
 at_base_spawn_potion_altar = spawn_potion_altar

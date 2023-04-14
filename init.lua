@@ -138,6 +138,17 @@ at_log_reward_magic,Magic,,,,,,,,,,,,,
 at_log_reward_wealth,Wealth,,,,,,,,,,,,,
 ]]
 
+local function append_translations(content)
+	while content:find("\r\n\r\n") do
+		content = content:gsub("\r\n\r\n","\r\n");
+	end
+	if (string.sub(content, -2) ~= "\r\n") then
+		content = content .. "\r\n"
+	end
+	local text =  content .. translations
+	return text
+end
+
 function OnMagicNumbersAndWorldSeedInitialized() -- this is the last point where the Mod* API is available. after this materials.xml will be loaded.
 	if ModSettingGet("alchemy_tutor.fixed_pixel_scenes") then
 		dofile( "mods/alchemy_tutor/files/entities/hall_of_records/hall_of_records_pixel_scene.lua" )
@@ -145,7 +156,7 @@ function OnMagicNumbersAndWorldSeedInitialized() -- this is the last point where
 	end
 	edit_file( "data/scripts/buildings/snowcrystal.lua", intercept_ghosts )
 
-	edit_file( "data/translations/common.csv", function(content) return content .. translations end)
+	edit_file( "data/translations/common.csv", append_translations)
 end
 
 -- This code runs when all mods' filesystems are registered

@@ -1,5 +1,9 @@
 dofile_once("mods/alchemy_tutor/files/spawns.lua")
 
+if at_remove_remote_lab_key then
+	at_remove_remote_lab_key()
+end
+
 --g_pixel_scene_01 = {total_prob = 0}
 --g_oiltank = g_pixel_scene_01
 

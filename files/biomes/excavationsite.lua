@@ -1,5 +1,9 @@
 dofile_once("mods/alchemy_tutor/files/spawns.lua")
 
+if at_remove_remote_lab_key then
+	at_remove_remote_lab_key()
+end
+
 at_default_cauldron = at_suspended_container
 
 table.insert( g_pixel_scene_04, {

@@ -47,9 +47,10 @@ kicked cube onto pedistal, went to hall of apprentices
 - x round east access cutout
 - x check fish removal
 - x update changelog/readme
-- entrance text missing
+- x entrance text missing
+- x chests appearing in main biomes
 - default spawns
-- chest overides
+  - x chest overides
 
 ### Vanilla
 - ng+
