@@ -10,6 +10,7 @@
 - Extracted hall of records pixel scene insert to separate file to easy integration by other mods
 - Changed remote lab location setup for easier overriding
 - Changed ghost crystal spawning for easier overriding
+- Changes to translation setup to deal with changes made by other mods
 
 ## 0.5.1
 

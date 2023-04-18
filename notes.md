@@ -4,6 +4,8 @@
 - check number of steps on hall of masters - 4 step
 - lower west desert missing frogs
 - draft detector on sand piles not clear
+- vault V - bottom with some breakable material
+- remote lab failure safety
 - x cauldron backgrounds
   - x sand pile
   - block eye position (ex ambrosia)
@@ -27,6 +29,18 @@
 ## Possible mod conflict
 - x master location dedicated file
 - remote lab boxes appearing in basic biomes with lots of mods
+
+### More Stuff
+- x hall of masters translation break
+- vault horizontal
+  - no items 2x - once may have seen, gone when revisted
+  - items scattered 2x
+
+### Grams things
+- has load order note in description
+
+### Anvil of Destiny
+- can we add our scenes later so it doesn't go crazy?
 
 ### Fluid Dynamics
 
