@@ -2,15 +2,16 @@
 
 ## 0.6.0???
 
-- Art update for main biome pixel scenes
-- Art update for remote labs
-- Adjusted fixed scene positions for New Biomes + Secrets
-- Adjusted fixed scene positions for Noitavania
-- Extracted hall of masters locations to separate file to easy integration by other mods
-- Extracted hall of records pixel scene insert to separate file to easy integration by other mods
-- Changed remote lab location setup for easier overriding
-- Changed ghost crystal spawning for easier overriding
-- Changes to translation setup to deal with changes made by other mods
+- Art update for main biome pixel scenes.
+- Art update for remote labs.
+- Vault horizontal potions have been sterilized in alcohol to try and improve stability.
+- Adjusted fixed scene positions for New Biomes + Secrets.
+- Adjusted fixed scene positions for Noitavania.
+- Extracted hall of masters locations to separate file to easy integration by other mods.
+- Extracted hall of records pixel scene insert to separate file to easy integration by other mods.
+- Changed remote lab location setup for easier overriding.
+- Changed ghost crystal spawning for easier overriding.
+- Changes to translation setup to deal with changes made by other mods.
 
 ## 0.5.1
 

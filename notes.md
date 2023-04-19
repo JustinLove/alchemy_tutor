@@ -32,15 +32,13 @@
 
 ### More Stuff
 - x hall of masters translation break
-- vault horizontal
-  - no items 2x - once may have seen, gone when revisted
-  - items scattered 2x
+- x vault horizontal
 
 ### Grams things
 - has load order note in description
 
 ### Anvil of Destiny
-- can we add our scenes later so it doesn't go crazy?
+- can we add our scenes later so it doesn't go crazy? Or fake the chances and fixup later?
 
 ### Fluid Dynamics
 
