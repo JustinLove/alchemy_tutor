@@ -11,13 +11,13 @@ dofile_once(at_mod_path .. "/entities/hall_of_masters/hall_of_masters.lua")
 --at_test_portal = true
 --at_test_masters = true
 at_test_x = -200
-at_test_x = 200
+--at_test_x = 200
 --at_test_y = -100 -- hills
 --at_test_y = 2000 -- excavation
 --at_test_y = 3500 -- snowcave
 --at_test_y = 5500 -- snowcastle
 --at_test_y = 7000 -- rainforest
---at_test_y = 9000 -- vault
+at_test_y = 9000 -- vault
 --at_test_y = 11000 -- crypt
 --at_test_x = 10000 -- pyramid
 --at_test_y = 0 -- pyramid

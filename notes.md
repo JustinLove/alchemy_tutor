@@ -1,11 +1,15 @@
 - x cauldron fires
 - check for blank translation and sub english
+- vault h still busted - tanks to contain liquids?
 - detector on wizard ambrosia looks too high
+- detector disappears when deactivated??
 - check number of steps on hall of masters - 4 step
+  - better reward?
 - lower west desert missing frogs
-- draft detector on sand piles not clear
-- vault V - bottom with some breakable material
 - remote lab failure safety
+- check hall of masters chance override remote lab at max settings - or did they get made into field labs
+- default spawns: define init, append when biome has it???
+- Alias, large mod list: HoM large cauldron drains missing
 - x cauldron backgrounds
   - x sand pile
   - block eye position (ex ambrosia)
@@ -20,6 +24,8 @@
 - edges vs noedge?
 - ng+
 - nightmare
+- HoM understanding:
+  - Alias first visit: negative
 
 - translations - partly done
 - desert music backdown?
@@ -53,9 +59,11 @@
 - alternate biomes
 - noitavania
 - new biomes and secrets
+- more stuff
 
 ### Having Spawns in Default
 
+- default spawns: define init, append when biome has it???
 - spawn code collisions (vines, rubble, etc) -> use our own code
 
 #### Virtual Biomes in `biome_scripts`
