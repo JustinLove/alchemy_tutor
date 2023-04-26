@@ -1,12 +1,12 @@
 - x cauldron fires
+- x remote lab failure safety
+- ? fix in trial vault h still busted - tanks to contain liquids?
 - check for blank translation and sub english
-- vault h still busted - tanks to contain liquids?
 - detector on wizard ambrosia looks too high
 - detector disappears when deactivated??
 - check number of steps on hall of masters - 4 step
   - better reward?
 - lower west desert missing frogs
-- remote lab failure safety
 - check hall of masters chance override remote lab at max settings - or did they get made into field labs
 - default spawns: define init, append when biome has it???
 - Alias, large mod list: HoM large cauldron drains missing

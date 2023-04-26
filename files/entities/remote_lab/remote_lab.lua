@@ -52,6 +52,11 @@ function at_remember_return_location( teleport_back_x, teleport_back_y )
 	GlobalsSetValue( "AT_TELEPORT_REMOTE_LAB_POS_Y", tostring( teleport_back_y ) )
 end
 
+function at_spawn_emergency_return( x, y )
+	local portal = EntityLoad("mods/alchemy_tutor/files/entities/remote_lab/remote_lab_emergency_return.xml", x, y - 20 )
+	local hole = EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/teleport_hole.xml", x, y - 20 )
+end
+
 function at_stop_music( x, y )
 	GameTriggerMusicFadeOutAndDequeueAll( 1.0 )
 end
