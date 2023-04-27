@@ -14,7 +14,7 @@
 - Changed remote lab location setup for easier overriding.
 - Changed ghost crystal spawning for easier overriding.
 - Changes to translation setup to deal with changes made by other mods.
-- Notice: further changes that affect mod intregration may be investigated.
+- Notice: further changes that affect mod integration may be investigated.
 
 ## 0.5.1
 
