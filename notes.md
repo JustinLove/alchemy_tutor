@@ -1,10 +1,11 @@
 - x cauldron fires
 - x remote lab failure safety
 - ? fix in trial vault h still busted - tanks to contain liquids?
+- check if cosmetic fire destroys slime
 - check for blank translation and sub english
 - detector on wizard ambrosia looks too high
 - detector disappears when deactivated??
-- check number of steps on hall of masters - 4 step
+- x check number of steps on hall of masters - 4 step
   - better reward?
 - lower west desert missing frogs
 - check hall of masters chance override remote lab at max settings - or did they get made into field labs

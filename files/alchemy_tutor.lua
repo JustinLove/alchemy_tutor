@@ -423,7 +423,8 @@ function at_master_sets()
 	end
 
 	---[[
-	for i = 1,3 do
+	-- two expansions makes up to three steps
+	for i = 1,2 do
 		expand_tests()
 	end
 	--]]

@@ -1,7 +1,8 @@
 # Alchemy Tutor Changelog
 
-## 0.6.0???
+## 0.6.0
 
+- Reduced maxium steps in Hall of Masters
 - Art update for main biome pixel scenes.
 - Art update for remote labs.
 - Vault horizontal potions have been sterilized in alcohol to try and improve stability.
@@ -13,6 +14,7 @@
 - Changed remote lab location setup for easier overriding.
 - Changed ghost crystal spawning for easier overriding.
 - Changes to translation setup to deal with changes made by other mods.
+- Notice: further changes that affect mod intregration may be investigated.
 
 ## 0.5.1
 
