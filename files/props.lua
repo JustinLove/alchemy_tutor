@@ -300,14 +300,15 @@ function at_record_pedestals( x, y, material, contents )
 	--print( 'ped', contents )
 	LoadPixelScene(
 		at_mod_path .. "/props/record_basin.png",
-		"", -- visual
-		x, y-48,
-		"", -- background
+		at_mod_path .. "/props/record_basin_visual.png",
+		x, y-39,
+		at_mod_path .. "/props/record_basin_background.png",
 		true, -- skip_biome_checks
-		false, -- skip_edge_textures
+		true, -- skip_edge_textures
 		{ ["fff0bbee"] = contents,
-			["ff786c44"] = at_material( material, "templebrick_static", true ),
-		} -- color_to_matieral_table
+			["fff2ddb2"] = at_material( material, "templebrick_static", true ),
+		}, -- color_to_matieral_table
+		45 -- z index
 	)
 end
 
