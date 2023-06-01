@@ -1,6 +1,7 @@
 - x cauldron fires
 - x remote lab failure safety
 - x fix in trial vault h still busted - tanks to contain liquids?
+- per biome change modifiers
 - check if cosmetic fire destroys slime
 - check for blank translation and sub english
 - check if wizardstone tele is any liquid
@@ -44,21 +45,18 @@
 - x master location dedicated file
 - remote lab boxes appearing in basic biomes with lots of mods
 
-### Flesh Biome?
-
 ### Grahams things
-- has load order note in description - chests
+- x has load order note in description - chests
 - x nook at alchemist
 - x camp at ne gold?
 - make safe for magic skin?
 
-### Alterante biomes
-- possibly extreme chest chance in fungal magic temple
+### Alternate biomes
+- long term: see if any pixel scenes fit
+- long term: see if mini labs fit
 
 ### Anvil of Destiny
-- can we add our scenes later so it doesn't go crazy? Or fake the chances and fixup later?
-
-"OnModInit is nice of you always want to append after some other mod, and that mod uses the global scope. That way load order doesn't matter" - dextercd
+- x can we add our scenes later so it doesn't go crazy? Or fake the chances and fixup later?
 
 ### Fluid Dynamics
 
@@ -319,6 +317,8 @@ entities/items/pickup/potion.xml
 
 
 "try adding DEBUG_MARK(new_x, new_y, "TARGET_LOCATION") into your code to see where it's targetting" - copi
+
+"OnModInit is nice of you always want to append after some other mod, and that mod uses the global scope. That way load order doesn't matter" - dextercd
 
 Eba (Evaisa)
 appends can be done until the world state is loaded

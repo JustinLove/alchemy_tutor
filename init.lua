@@ -180,58 +180,60 @@ end
 
 ModMaterialsFileAdd("mods/alchemy_tutor/files/materials.xml")
 
-ModLuaFileAppend( "data/scripts/newgame_plus.lua", "mods/alchemy_tutor/files/newgame_plus.lua" )
+function OnModInit()
+	ModLuaFileAppend( "data/scripts/newgame_plus.lua", "mods/alchemy_tutor/files/newgame_plus.lua" )
 
-ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/alchemy_tutor/files/biomes/coalmine.lua" )
-ModLuaFileAppend( "data/scripts/biomes/coalmine_alt.lua", "mods/alchemy_tutor/files/biomes/coalmine_alt.lua" )
-ModLuaFileAppend( "data/scripts/biomes/excavationsite.lua", "mods/alchemy_tutor/files/biomes/excavationsite.lua" )
-ModLuaFileAppend( "data/scripts/biomes/snowcave.lua", "mods/alchemy_tutor/files/biomes/snowcave.lua" )
-ModLuaFileAppend( "data/scripts/biomes/snowcastle.lua", "mods/alchemy_tutor/files/biomes/snowcastle.lua" )
-ModLuaFileAppend( "data/scripts/biomes/vault.lua", "mods/alchemy_tutor/files/biomes/vault.lua" )
-ModLuaFileAppend( "data/scripts/biomes/rainforest.lua", "mods/alchemy_tutor/files/biomes/rainforest.lua" )
-ModLuaFileAppend( "data/scripts/biomes/rainforest_dark.lua", "mods/alchemy_tutor/files/biomes/rainforest_dark.lua" )
-ModLuaFileAppend( "data/scripts/biomes/crypt.lua", "mods/alchemy_tutor/files/biomes/crypt.lua" )
-ModLuaFileAppend( "data/scripts/biomes/pyramid.lua", "mods/alchemy_tutor/files/biomes/crypt.lua" )
-ModLuaFileAppend( "data/scripts/biomes/fungiforest.lua", "mods/alchemy_tutor/files/biomes/fungiforest.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/alchemy_tutor/files/biomes/coalmine.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/coalmine_alt.lua", "mods/alchemy_tutor/files/biomes/coalmine_alt.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/excavationsite.lua", "mods/alchemy_tutor/files/biomes/excavationsite.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/snowcave.lua", "mods/alchemy_tutor/files/biomes/snowcave.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/snowcastle.lua", "mods/alchemy_tutor/files/biomes/snowcastle.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/vault.lua", "mods/alchemy_tutor/files/biomes/vault.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/rainforest.lua", "mods/alchemy_tutor/files/biomes/rainforest.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/rainforest_dark.lua", "mods/alchemy_tutor/files/biomes/rainforest_dark.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/crypt.lua", "mods/alchemy_tutor/files/biomes/crypt.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/pyramid.lua", "mods/alchemy_tutor/files/biomes/crypt.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/fungiforest.lua", "mods/alchemy_tutor/files/biomes/fungiforest.lua" )
 
--- liquidcave doesn't seem to have heart/chest spawns
-ModLuaFileAppend( "data/scripts/biomes/liquidcave.lua", "mods/alchemy_tutor/files/biomes/liquidcave.lua" )
+	-- liquidcave doesn't seem to have heart/chest spawns
+	ModLuaFileAppend( "data/scripts/biomes/liquidcave.lua", "mods/alchemy_tutor/files/biomes/liquidcave.lua" )
 
-ModLuaFileAppend( "data/scripts/biomes/lake_deep.lua", "mods/alchemy_tutor/files/spawns.lua" )
-ModLuaFileAppend( "data/scripts/biomes/lake.lua", "mods/alchemy_tutor/files/spawns.lua" )
-ModLuaFileAppend( "data/scripts/biomes/desert.lua", "mods/alchemy_tutor/files/spawns.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/lake_deep.lua", "mods/alchemy_tutor/files/spawns.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/lake.lua", "mods/alchemy_tutor/files/spawns.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/desert.lua", "mods/alchemy_tutor/files/spawns.lua" )
 
-ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/biomes/hills_remote_lab.lua" )
-ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/biomes/hills_hall_of_records.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/biomes/hills_remote_lab.lua" )
+	ModLuaFileAppend( "data/scripts/biomes/hills.lua", "mods/alchemy_tutor/files/biomes/hills_hall_of_records.lua" )
 
 
-ModLuaFileAppend( "data/scripts/biome_scripts.lua", "mods/alchemy_tutor/files/biome_scripts.lua" )
+	ModLuaFileAppend( "data/scripts/biome_scripts.lua", "mods/alchemy_tutor/files/biome_scripts.lua" )
 
-if ModIsEnabled( 'Cheat Menu by Everfades' ) then
-	ModLuaFileAppend( "mods/Cheat Menu by Everfades/files/locations.lua", "mods/alchemy_tutor/files/Cheat Menu by Everfades/locations.lua" )
-end
+	if ModIsEnabled( 'Cheat Menu by Everfades' ) then
+		ModLuaFileAppend( "mods/Cheat Menu by Everfades/files/locations.lua", "mods/alchemy_tutor/files/Cheat Menu by Everfades/locations.lua" )
+	end
 
-if ModIsEnabled( 'alchemical_reactions_expansion' ) then
-	ModLuaFileAppend( "mods/alchemy_tutor/files/props.lua", "mods/alchemy_tutor/files/alchemical_reactions_expansion/props.lua" )
-	ModLuaFileAppend( "mods/alchemy_tutor/files/formula_list.lua", "mods/alchemy_tutor/files/alchemical_reactions_expansion/formula_list.lua" )
-end
+	if ModIsEnabled( 'alchemical_reactions_expansion' ) then
+		ModLuaFileAppend( "mods/alchemy_tutor/files/props.lua", "mods/alchemy_tutor/files/alchemical_reactions_expansion/props.lua" )
+		ModLuaFileAppend( "mods/alchemy_tutor/files/formula_list.lua", "mods/alchemy_tutor/files/alchemical_reactions_expansion/formula_list.lua" )
+	end
 
-if ModIsEnabled( 'New Biomes + Secrets' ) then
-	ModLuaFileAppend( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_locations.lua", "mods/alchemy_tutor/files/New Biomes + Secrets/hall_of_masters_locations.lua" )
-end
+	if ModIsEnabled( 'New Biomes + Secrets' ) then
+		ModLuaFileAppend( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_locations.lua", "mods/alchemy_tutor/files/New Biomes + Secrets/hall_of_masters_locations.lua" )
+	end
 
-if ModIsEnabled( 'noitavania' ) then
-	ModLuaFileAppend( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_locations.lua", "mods/alchemy_tutor/files/noitavania/hall_of_masters_locations.lua" )
-	ModLuaFileAppend( "mods/alchemy_tutor/files/entities/hall_of_records/hall_of_records_pixel_scene.lua", "mods/alchemy_tutor/files/noitavania/hall_of_records_pixel_scene.lua" )
-	ModLuaFileAppend( "mods/alchemy_tutor/files/biomes/hills_hall_of_records.lua", "mods/alchemy_tutor/files/noitavania/hills_hall_of_records.lua" )
-	ModLuaFileAppend( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab.lua", "mods/alchemy_tutor/files/noitavania/remote_lab.lua" )
+	if ModIsEnabled( 'noitavania' ) then
+		ModLuaFileAppend( "mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_locations.lua", "mods/alchemy_tutor/files/noitavania/hall_of_masters_locations.lua" )
+		ModLuaFileAppend( "mods/alchemy_tutor/files/entities/hall_of_records/hall_of_records_pixel_scene.lua", "mods/alchemy_tutor/files/noitavania/hall_of_records_pixel_scene.lua" )
+		ModLuaFileAppend( "mods/alchemy_tutor/files/biomes/hills_hall_of_records.lua", "mods/alchemy_tutor/files/noitavania/hills_hall_of_records.lua" )
+		ModLuaFileAppend( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab.lua", "mods/alchemy_tutor/files/noitavania/remote_lab.lua" )
 
-	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/left_corner_down.lua", "mods/alchemy_tutor/files/spawns.lua" )
-	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/left_corner_up.lua", "mods/alchemy_tutor/files/spawns.lua" )
-	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/right_corner_down.lua", "mods/alchemy_tutor/files/spawns.lua" )
-	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/right_corner_up.lua", "mods/alchemy_tutor/files/spawns.lua" )
-	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_forest.lua", "mods/alchemy_tutor/files/biomes/hills_remote_lab.lua" )
-	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_hills.lua", "mods/alchemy_tutor/files/spawns.lua" )
-	ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_hills.lua", "mods/alchemy_tutor/files/biomes/hills_hall_of_records.lua" )
-	ModLuaFileAppend( "data/scripts/biomes/mountain_lake.lua", "mods/alchemy_tutor/files/spawns.lua" )
+		ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/left_corner_down.lua", "mods/alchemy_tutor/files/spawns.lua" )
+		ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/left_corner_up.lua", "mods/alchemy_tutor/files/spawns.lua" )
+		ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/right_corner_down.lua", "mods/alchemy_tutor/files/spawns.lua" )
+		ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_caves/right_corner_up.lua", "mods/alchemy_tutor/files/spawns.lua" )
+		ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_forest.lua", "mods/alchemy_tutor/files/biomes/hills_remote_lab.lua" )
+		ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_hills.lua", "mods/alchemy_tutor/files/spawns.lua" )
+		ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_hills.lua", "mods/alchemy_tutor/files/biomes/hills_hall_of_records.lua" )
+		ModLuaFileAppend( "data/scripts/biomes/mountain_lake.lua", "mods/alchemy_tutor/files/spawns.lua" )
+	end
 end
