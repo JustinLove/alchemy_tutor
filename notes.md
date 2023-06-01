@@ -1,6 +1,7 @@
 - x cauldron fires
 - x remote lab failure safety
-- ? fix in trial vault h still busted - tanks to contain liquids?
+- x fix in trial vault h still busted - tanks to contain liquids?
+- per biome change modifiers
 - check if cosmetic fire destroys slime
 - check for blank translation and sub english
 - detector on wizard ambrosia looks too high
@@ -37,15 +38,18 @@
 - x master location dedicated file
 - remote lab boxes appearing in basic biomes with lots of mods
 
-### More Stuff
-- x hall of masters translation break
-- x vault horizontal
+### Grahams things
+- x has load order note in description - chests
+- x nook at alchemist
+- x camp at ne gold?
+- make safe for magic skin?
 
-### Grams things
-- has load order note in description
+### Alternate biomes
+- long term: see if any pixel scenes fit
+- long term: see if mini labs fit
 
 ### Anvil of Destiny
-- can we add our scenes later so it doesn't go crazy? Or fake the chances and fixup later?
+- x can we add our scenes later so it doesn't go crazy? Or fake the chances and fixup later?
 
 ### Fluid Dynamics
 
@@ -303,3 +307,18 @@ entities/items/pickup/potion.xml
     Thatrius — Today at 16:46
     Seems like I remember accomplishing this by messing around with materials_that_create_messages from DamageModelComponent
     okay yeah you just add the material to materials_that_create_messages, and then check if mCollisionMessageMaterials[index of material] is > 0 
+<<<<<<< HEAD
+=======
+
+
+"try adding DEBUG_MARK(new_x, new_y, "TARGET_LOCATION") into your code to see where it's targetting" - copi
+
+"OnModInit is nice of you always want to append after some other mod, and that mod uses the global scope. That way load order doesn't matter" - dextercd
+
+Eba (Evaisa)
+appends can be done until the world state is loaded
+OnMagicNumbersAndWorldSeedInitialized() is the last callback where you can append
+
+Eba (Evaisa)
+ModTextFileGetContent turns every \n in a file into \r\n so every time ModTextFileGetContent -> ModTextFileSetContent is used, another \r is added, so the line endings become something stupid like \r\r\r\r\r\r\r\n in the translations file, if a lot of mods append translations 
+>>>>>>> dd33266... append timing change for mod compatability

@@ -1,5 +1,11 @@
 # Alchemy Tutor Changelog
 
+## 0.7.0?
+
+- Art update for Hall of Records
+- Adjusted appends to remove load order dependency with Graham's Things and Anvil of Destiny
+
+
 ## 0.6.0
 
 - Reduced maxium steps in Hall of Masters

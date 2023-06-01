@@ -47,9 +47,12 @@ Most mods are untested at this point. I'm hoping to have most world changing mod
 
 ### No Observed Incompatibility
 
-- Anvil of Destiny - Competes for pixel scenes slots. I recommend loading Anvil higher in the mod list, if it loads later it nukes the pixel scene chances.
+- Alternate Biomes - tested circa 2023-05
+- Anvil of Destiny - Competes for wang pixel scene slots, tested circa 2023-06
+- Flesh Biome - tested circa 2023-05
+- Graham's Things - tested circa 2023-05
 - More Creep and Weirdos - tested circa 2023-03
-- More Stuff - tested circa 2023-04
+- More Stuff - Competes for wang pixel scene slots, tested circa 2023-04
 - Volcano Biome
 
 ## In-game Options
