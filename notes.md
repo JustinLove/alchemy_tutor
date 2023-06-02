@@ -1,22 +1,18 @@
 - x cauldron fires
 - x remote lab failure safety
 - x fix in trial vault h still busted - tanks to contain liquids?
-- per biome change modifiers
-- check if cosmetic fire destroys slime
-- check for blank translation and sub english
-- check if wizardstone tele is any liquid
-- master rewards: scaled, target steps based on lab accessability
-- translations: readfile translates \n to \r\n
-- version/change notes in hall of records
+- x check if cosmetic fire destroys slime
+- x check if wizardstone tele is any liquid - yes, but worth having?
 - detector on wizard ambrosia looks too high
-- detector disappears when deactivated??
-- odd mana failed to detect
-- add molten metal to levitium
-- fish missing from remote lab
-- x check number of steps on hall of masters - 4 step
-  - better reward?
-- lower west desert missing frogs
+- check for blank translation and sub english
 - check hall of masters chance override remote lab at max settings - or did they get made into field labs
+- lower west desert missing frogs
+- translations: readfile translates \n to \r\n
+- per biome change modifiers
+- fish missing from remote lab
+- detector disappears when deactivated??
+- version/change notes in hall of records
+- master rewards: scaled, target steps based on lab accessability
 - default spawns: define init, append when biome has it???
 - Alias, large mod list: HoM large cauldron drains missing
 - x cauldron backgrounds
@@ -40,6 +36,8 @@
 - desert music backdown?
 - pillars??
 - check hanging with special detectors??
+- odd mana failed to detect - tough to detect since acid reacts with lots of things
+- is solidifying molten metal with [water] useful?
 
 ## Possible mod conflict
 - x master location dedicated file
@@ -49,7 +47,7 @@
 - x has load order note in description - chests
 - x nook at alchemist
 - x camp at ne gold?
-- make safe for magic skin?
+- long term: make safe for magic skin?
 
 ### Alternate biomes
 - long term: see if any pixel scenes fit
@@ -155,6 +153,11 @@ Theoretical extreme solution:
 - x *tele + mana = fire
 - x poly + toxic = random
 - x flum + metal powder = levi
+- x lava+molten can remove poly/water
+- x liquid fire can remove poly/water
+- xx liquidfire+molten can remove poly/water - not easily detectable, could have spilled
+- xx molten conversion????
+- xx flum + molten - just two separate reactions, doesn't work well with lava or something else remelting
 - x alchol + frog meat = berserk
 - x honey + diamond = ambrosia + poison
 - x flum + unst tele = guiding

@@ -6,7 +6,7 @@
 0 - water/toxic/slime/blood
 1 - common potions
 2 - environmental liquids/common environmental powders
-3 - environmental powders/pouch spawns
+3 - environmental powders/pouch spawns/uncommon potion (fire/gunpowder)
 4 - enviornmental powders/solids
 5 - previous alchemy required
 6 - rare potions spawns (brine)
@@ -188,6 +188,38 @@ at_formula_list = {
 		},
 		output = "magic_liquid_faster_levitation",
 		rating = 9,
+	},
+	{
+		name = "liquid_fire_evaporation",
+		materials = {
+			"liquid_fire",
+		},
+		cauldron_contents = {
+			"magic_liquid_random_polymorph",
+			"magic_liquid_polymorph",
+			"magic_liquid_unstable_polymorph",
+			"material_confusion",
+		},
+		output = "air",
+		output2 = "liquid_fire",
+		record_material = "liquid_fire",
+		rating = 10,
+	},
+	{
+		name = "lava_metal_evaporation",
+		materials = {
+			"lava",
+			{"copper", "brass", "metal_sand"},
+		},
+		amounts = {0.1, 0.1},
+		cauldron_contents = {
+			"magic_liquid_random_polymorph",
+			"magic_liquid_polymorph",
+			"magic_liquid_unstable_polymorph",
+		},
+		output = "air",
+		record_material = "metal_sand_molten",
+		rating = 12,
 	},
 	{
 		materials = {

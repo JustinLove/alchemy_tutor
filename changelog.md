@@ -3,6 +3,7 @@
 ## 0.7.0?
 
 - Art update for Hall of Records
+- Two new evaporation reactions
 - Adjusted appends to remove load order dependency with Graham's Things and Anvil of Destiny
 
 
