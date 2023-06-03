@@ -246,7 +246,7 @@ at_formula_list = {
 	{
 		materials = {
 			'water',
-			'fungisoil',
+			{'soil_lush','soil_lush','fungisoil'},
 			'powder_empty',
 		},
 		cauldron_contents = {
