@@ -11,7 +11,7 @@ Adds alchemy labs throughout the world. Each lab is set up the materials to perf
 - Field labs in Overgrowth and Ancient Laboratory
 - Hall of Records, a treecheivment like area that can be found in the world
 - Hall of Masters, vast alchemical playgrounds with multi-step challenges which may be found, or teleported to in place of a remote lab.
-- 44 experiments, from very basic (cleaning toxic) to very obscure (conversion of metals)
+- 45 experiments, from very basic (cleaning toxic) to very obscure (conversion of metals)
 - +35 experiments if Alchemical Reactions Expansions is loaded.
 
 ### What might change during beta?

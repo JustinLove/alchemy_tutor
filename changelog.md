@@ -5,6 +5,7 @@
 - Art update for Hall of Records
 - Two new evaporation reactions
 - One new bloody reaction
+- One new swampy reaction
 - Adjusted appends to remove load order dependency with Graham's Things and Anvil of Destiny
 
 

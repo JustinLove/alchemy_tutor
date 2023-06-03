@@ -6,6 +6,7 @@
 - x detector on wizard ambrosia looks too high - checking for steam
 - x multiple materials in convert component
 - x worm blood + cold blood makes more worm blood
+- dirt + water + water = swamp?
 - check for blank translation and sub english
 - check hall of masters chance override remote lab at max settings - or did they get made into field labs
 - translations: readfile translates \n to \r\n
@@ -138,6 +139,7 @@ Theoretical extreme solution:
 - discord
 
 - x toxic + water
+- xx fungisoil/soil_lush + water = swamp - not much, tends to turn to water_swamp
 - x mana + water
 - x mana + steel
 - x invis + water = water

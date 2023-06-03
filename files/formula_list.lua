@@ -245,6 +245,19 @@ at_formula_list = {
 	},
 	{
 		materials = {
+			'water',
+			'fungisoil',
+			'powder_empty',
+		},
+		cauldron_contents = {
+			"water",
+			"air",
+		},
+		output = "swamp",
+		rating = 11,
+	},
+	{
+		materials = {
 			"slime",
 			"magic_liquid_unstable_teleportation"
 		},
