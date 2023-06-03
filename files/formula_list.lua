@@ -148,6 +148,16 @@ at_formula_list = {
 	},
 	{
 		materials = {
+			"blood_worm",
+			"blood_cold",
+		},
+		amounts = {0.1},
+		cauldron_contents = "air",
+		output = "blood_worm",
+		rating = 8,
+	},
+	{
+		materials = {
 			"material_confusion",
 			"magic_liquid_berserk",
 		},

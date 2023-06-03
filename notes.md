@@ -5,6 +5,7 @@
 - x check if wizardstone tele is any liquid - yes, but worth having?
 - x detector on wizard ambrosia looks too high - checking for steam
 - x multiple materials in convert component
+- x worm blood + cold blood makes more worm blood
 - check for blank translation and sub english
 - check hall of masters chance override remote lab at max settings - or did they get made into field labs
 - translations: readfile translates \n to \r\n
@@ -12,6 +13,7 @@
 - fish missing from remote lab
 - detector disappears when deactivated??
 - version/change notes in hall of records
+- can worm blood expansion appear in masters?
 - master rewards: scaled, target steps based on lab accessability
 - default spawns: define init, append when biome has it???
 - Alias, large mod list: HoM large cauldron drains missing
@@ -147,6 +149,7 @@ Theoretical extreme solution:
 - x levi + accel = haste
 - x flum + berserk = charm
 - x worm pher + worm blood = flum
+- x worm blood + cold blood = worm blood
 - x flum + blood + oil = unstable poly
 - xx unstele + stable + water = unstable
 - x stable + alcohol = unstable
