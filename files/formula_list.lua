@@ -79,7 +79,7 @@ at_formula_list = {
 	{
 		name = "slimeclean",
 		materials = {"water"},
-		cauldron_contents = {"slime", "slime", "slime", "slime_green", "slime_yellow"},
+		cauldron_contents = {"slime", "slime", "slime", "slime_yellow"},
 		output = "air",
 		output2 = "water",
 		record_material = "slime",
@@ -88,7 +88,7 @@ at_formula_list = {
 	{
 		name = "disinfect",
 		materials = {"alcohol"},
-		cauldron_contents = {"slime", "slime", "slime", "slime_green", "slime_yellow"},
+		cauldron_contents = {"slime", "slime", "slime", "slime_yellow"},
 		output = "air",
 		output2 = "alcohol",
 		record_material = "alcohol",
