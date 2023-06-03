@@ -1,28 +1,23 @@
 <Entity >
+  <LifetimeComponent
+    lifetime="30" >
+  </LifetimeComponent>
+
   <MagicConvertMaterialComponent
-    kill_when_finished="1"
+    kill_when_finished="0"
     from_any_material="1"
     steps_per_frame="5"
     to_material="air"
     clean_stains="1"
     is_circle="1"
     radius="30"
-    loop="0"
+    loop="1"
     >
   </MagicConvertMaterialComponent>
 
   <MagicConvertMaterialComponent
-    from_material="lava"
-    to_material="rock_static"
-    steps_per_frame="40"
-    loop="1"
-    is_circle="1"
-    radius="40" >
-  </MagicConvertMaterialComponent>
-
-  <MagicConvertMaterialComponent
-    from_material="water"
-    to_material="ice_static"
+    from_material_array="lava,water"
+    to_material_array="rock_static,ice_static"
     steps_per_frame="40"
     loop="1"
     is_circle="1"

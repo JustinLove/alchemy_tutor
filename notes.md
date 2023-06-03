@@ -3,10 +3,10 @@
 - x fix in trial vault h still busted - tanks to contain liquids?
 - x check if cosmetic fire destroys slime
 - x check if wizardstone tele is any liquid - yes, but worth having?
-- detector on wizard ambrosia looks too high
+- x detector on wizard ambrosia looks too high - checking for steam
+- x multiple materials in convert component
 - check for blank translation and sub english
 - check hall of masters chance override remote lab at max settings - or did they get made into field labs
-- lower west desert missing frogs
 - translations: readfile translates \n to \r\n
 - per biome change modifiers
 - fish missing from remote lab
@@ -38,6 +38,7 @@
 - check hanging with special detectors??
 - odd mana failed to detect - tough to detect since acid reacts with lots of things
 - is solidifying molten metal with [water] useful?
+- lower west desert missing frogs - not consistent, but does happen in testing
 
 ## Possible mod conflict
 - x master location dedicated file
