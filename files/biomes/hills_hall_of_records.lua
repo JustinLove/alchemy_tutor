@@ -16,6 +16,8 @@ local at_right
 local at_pedestal_offset = 20 
 local at_pedestal_spacing = 36
 
+--at_test_records = true
+
 function at_record_left( x, y )
 	at_left = math.floor((x - at_pedestal_offset)/at_pedestal_spacing)
 	--print('left', at_left)

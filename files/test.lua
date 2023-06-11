@@ -1,4 +1,46 @@
-dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
+--at_test_player = true
+--at_test_lab = true
+--at_test_clear = true
+--at_test_healing = true
+--at_test_portal = true
+--at_test_masters = true
+at_test_x = -200
+at_test_x = 200
+--at_test_y = -100 -- hills
+--at_test_y = 2000 -- excavation
+--at_test_y = 3500 -- snowcave
+--at_test_y = 5500 -- snowcastle
+--at_test_y = 7000 -- rainforest
+--at_test_y = 9000 -- vault
+--at_test_y = 11000 -- crypt
+--at_test_x = 10000 -- pyramid
+--at_test_y = 0 -- pyramid
+--at_test_x = -4000 -- rainforest dark
+--at_test_y = 7500 -- rainforest dark
+--at_test_x = 12300 -- fungiforest
+--at_test_y = 2000 -- fungiforest
+--at_test_x = -5317 -- hall of records
+--at_test_y = 720 -- hall of records
+--at_test_x = -5000 -- hall of records entrance
+--at_test_y = 700 -- hall of records entrace
+--at_test_x = -5640 -- hall of records ghost
+--at_test_y = 1024 -- hall of records ghost
+--at_test_x = -5433 -- hall of masters ghost
+--at_test_y = 1900 -- hall of masters ghost
+--at_test_x = 14334 --+ 35840 -- hall of masters ne gold
+--at_test_y = -3880 -- hall of masters ne gold east
+--at_test_x = -14848 -- hall of masters sw gold
+--at_test_y = 16078 -- hall of masters sw gold
+--at_test_x = -1536 -- hall of masters above tree
+--at_test_y = -4395 -- hall of masters above tree
+--at_test_x = 5117 -- hall of masters west desert chasm
+--at_test_y = 6003 -- hall of masters west desert chasm
+--at_test_x = 15852 -- hall of masters se corner
+--at_test_y = 14406 -- hall of masters se corner
+--at_test_x = -15872 -- hall of masters lake
+--at_test_y = 4309 -- hall of masters lake
+--at_test_x = 16151 -- noitvania upper right
+--at_test_y = -4629 -- noitvania upper right
 
 local function clear_entities( player_entity )
 	EntityAddComponent( player_entity, "LuaComponent", 

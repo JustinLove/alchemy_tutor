@@ -1,7 +1,7 @@
 dofile_once("mods/alchemy_tutor/files/test.lua")
 
 function OnPlayerSpawned( player_entity ) -- This runs when player entity has been created
-	if not GameHasFlagRun('AT_RUN_ONCE') then
+	if GameHasFlagRun('AT_RUN_ONCE') then
 		return
 	end
 

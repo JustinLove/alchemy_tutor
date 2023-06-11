@@ -8,7 +8,7 @@
 - x worm blood + cold blood makes more worm blood
 - x dirt + water + water = swamp?
 - x check hall of masters chance override remote lab at max settings - or did they get made into field labs
-- reorganize init
+- x reorganize init
 - translations: readfile translates \n to \r\n
 - per biome change modifiers
 - fish missing from remote lab
