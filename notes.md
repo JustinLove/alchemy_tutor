@@ -6,9 +6,9 @@
 - x detector on wizard ambrosia looks too high - checking for steam
 - x multiple materials in convert component
 - x worm blood + cold blood makes more worm blood
-- dirt + water + water = swamp?
-- check for blank translation and sub english
-- check hall of masters chance override remote lab at max settings - or did they get made into field labs
+- x dirt + water + water = swamp?
+- x check hall of masters chance override remote lab at max settings - or did they get made into field labs
+- reorganize init
 - translations: readfile translates \n to \r\n
 - per biome change modifiers
 - fish missing from remote lab
@@ -16,6 +16,7 @@
 - version/change notes in hall of records
 - can worm blood expansion appear in masters?
 - master rewards: scaled, target steps based on lab accessability
+- check for blank translation and sub english
 - default spawns: define init, append when biome has it???
 - Alias, large mod list: HoM large cauldron drains missing
 - x cauldron backgrounds
