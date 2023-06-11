@@ -7,19 +7,15 @@ end
 --g_pixel_scene_01 = {total_prob = 0}
 --g_oiltank = g_pixel_scene_01
 
-table.insert( g_pixel_scene_01, {
-		prob   			= at_lab_chance,
+at_add_biome_pixel_scene('g_pixel_scene_01', 3, {
 		material_file 	= "mods/alchemy_tutor/files/biome_impl/coalmine_lab_v.png",
 		visual_file		= "mods/alchemy_tutor/files/biome_impl/coalmine_lab_v_visual.png",
 		background_file	= "",
-		is_unique		= 0
 	})
 
 -- 726647958
-table.insert( g_pixel_scene_02, {
-		prob   			= at_lab_chance,
+at_add_biome_pixel_scene('g_pixel_scene_02', 10.5, {
 		material_file 	= "mods/alchemy_tutor/files/biome_impl/coalmine_lab_h.png",
 		visual_file		= "mods/alchemy_tutor/files/biome_impl/coalmine_lab_h_visual.png",
 		background_file	= "",
-		is_unique		= 0
 	})

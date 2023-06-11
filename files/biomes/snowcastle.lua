@@ -4,18 +4,14 @@ if at_remove_remote_lab_key then
 	at_remove_remote_lab_key()
 end
 
-table.insert( g_pixel_scene_01, {
-		prob   			= at_lab_chance,
+at_add_biome_pixel_scene('g_pixel_scene_01', 2, {
 		material_file 	= "mods/alchemy_tutor/files/biome_impl/snowcastle_lab_v.png",
 		visual_file		= "",
 		background_file	= "mods/alchemy_tutor/files/biome_impl/snowcastle_lab_v_background.png",
-		is_unique		= 0
 	})
 
-table.insert( g_pixel_scene_02, {
-		prob   			= at_lab_chance,
+at_add_biome_pixel_scene('g_pixel_scene_02', 3.6, {
 		material_file 	= "mods/alchemy_tutor/files/biome_impl/snowcastle_lab_h.png",
 		visual_file		= "",
 		background_file	= "mods/alchemy_tutor/files/biome_impl/snowcastle_lab_h_background.png",
-		is_unique		= 0
 	})

@@ -68,6 +68,26 @@ if at_lab_chance == nil then
 end
 --at_lab_chance = 9999999
 
+function at_add_biome_pixel_scene(pixel_scene_name, vanilla_weight, scene)
+	if not _G[pixel_scene_name] then
+		print('pixel scenes not found to modify', pixel_scene_name)
+		return
+	end
+	local pixel_scenes = _G[pixel_scene_name]
+	--at_total_prob(pixel_scenes, pixel_scene_name)
+	scene.prob = vanilla_weight * (at_lab_chance / 5)
+	scene.is_unique = 0
+	table.insert(pixel_scenes, scene)
+end
+
+function at_total_prob(tab, label)
+	local sum = 0
+	for _,scene in ipairs(tab) do
+		sum = sum + scene.prob
+	end
+	print(label, sum)
+end
+
 local at_scene_cauldron = nil
 local at_materials = {}
 local at_cauldrons = {}

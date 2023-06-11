@@ -9,8 +9,8 @@
 - x dirt + water + water = swamp?
 - x check hall of masters chance override remote lab at max settings - or did they get made into field labs
 - x reorganize init
-- translations: readfile translates \n to \r\n
-- per biome change modifiers
+- xx translations: readfile translates \n to \r\n - could not reproduce
+- x per biome change modifiers
 - fish missing from remote lab
 - detector disappears when deactivated??
 - version/change notes in hall of records
