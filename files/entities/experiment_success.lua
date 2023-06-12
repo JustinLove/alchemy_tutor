@@ -44,6 +44,11 @@ function material_area_checker_success( pos_x, pos_y )
 			if dam then
 				EntityRemoveComponent( v, dam )
 			end
+
+			local sprite = EntityGetFirstComponent( v, "SpriteComponent" )
+			if sprite then
+				EntityRemoveComponent( v, sprite )
+			end
 		else
 			EntityKill( v )
 		end

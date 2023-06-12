@@ -136,4 +136,11 @@
     value_int="-8"
     >
   </VariableStorageComponent>
+
+  <SpriteComponent
+    z_index="40"
+    image_file="mods/alchemy_tutor/files/entities/checker_marker.png"
+    offset_x="4"
+    offset_y="3" >
+  </SpriteComponent>
 </Entity>

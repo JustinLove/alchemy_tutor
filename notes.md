@@ -12,7 +12,7 @@
 - xx translations: readfile translates \n to \r\n - could not reproduce
 - x per biome change modifiers
 - x fish missing from remote lab
-- detector disappears when deactivated??
+- x detector disappears when deactivated??
 - version/change notes in hall of records
 - can worm blood expansion appear in masters?
 - master rewards: scaled, target steps based on lab accessability
