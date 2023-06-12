@@ -156,7 +156,11 @@ function spawn_enter_trigger( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_enter.xml", x, y )
 
 	GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/new_biome/create", x, y)
-	GamePrintImportant( GameTextGet( "$log_entered", GameTextGet( "$at_remote_lab" ) ), "" )
+	local text = GameTextGet( "$at_remote_lab" )
+	if text == '' then
+		text = 'Alchemy Tutor translations are broken, please report current mod list'
+	end
+	GamePrintImportant( GameTextGet( "$log_entered", text ), "" )
 end
 
 function spawn_demolition( x, y )

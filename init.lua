@@ -5,6 +5,7 @@ function OnPlayerSpawned( player_entity ) -- This runs when player entity has be
 		return
 	end
 
+	at_self_test_translations()
 	at_test_player_spawned( player_entity )
 
 	GameAddFlagRun('AT_RUN_ONCE')

@@ -43,3 +43,9 @@ end
 function at_append_translations()
 	edit_file( "data/translations/common.csv", append_translations)
 end
+
+function at_self_test_translations()
+	if GameTextGet( "$at_remote_lab" ) == '' then
+		GamePrint( 'Alchemy Tutor translations are broken, please report with your current mod list' )
+	end
+end

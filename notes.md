@@ -13,10 +13,9 @@
 - x per biome change modifiers
 - x fish missing from remote lab
 - x detector disappears when deactivated??
+- xx can worm blood expansion appear in masters? - not seem empiracly
 - version/change notes in hall of records
-- can worm blood expansion appear in masters?
 - master rewards: scaled, target steps based on lab accessability
-- check for blank translation and sub english
 - default spawns: define init, append when biome has it???
 - Alias, large mod list: HoM large cauldron drains missing
 - x cauldron backgrounds
@@ -30,6 +29,7 @@
   - masters
     - slight change to nondetector pits
     - beam holes etc.
+- check for blank translation and sub english
 - edges vs noedge?
 - ng+
 - nightmare
