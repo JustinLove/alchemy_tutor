@@ -11,7 +11,7 @@
 - x reorganize init
 - xx translations: readfile translates \n to \r\n - could not reproduce
 - x per biome change modifiers
-- fish missing from remote lab
+- x fish missing from remote lab
 - detector disappears when deactivated??
 - version/change notes in hall of records
 - can worm blood expansion appear in masters?

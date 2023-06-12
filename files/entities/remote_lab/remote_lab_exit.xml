@@ -6,9 +6,15 @@
   </LuaComponent>
 
   <LuaComponent
-    script_source_file="mods/alchemy_tutor/files/entities/hall_of_masters/remove_fish.lua"
+    script_source_file="mods/alchemy_tutor/files/entities/remote_lab/remove_enemies.lua"
     remove_after_executed="1"
     execute_every_n_frame="60" >
+  </LuaComponent>
+
+  <LuaComponent
+    script_source_file="mods/alchemy_tutor/files/entities/remote_lab/remove_enemies.lua"
+    remove_after_executed="1"
+    execute_every_n_frame="10" >
   </LuaComponent>
 
   <VariableStorageComponent
