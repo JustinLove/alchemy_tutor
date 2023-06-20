@@ -16,7 +16,10 @@
 - xx can worm blood expansion appear in masters? - not seem empiracly
 - version/change notes in hall of records
 - master rewards: scaled, target steps based on lab accessability
-  - altar effects proportial
+  - x altar effects proportial
+  - level modifiers and extensions
+    - pw
+    - pacifist
   - reorder teleporter sequence?
 - default spawns: define init, append when biome has it???
 - Alias, large mod list: HoM large cauldron drains missing

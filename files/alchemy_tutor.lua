@@ -841,6 +841,35 @@ function at_add_checker( entity, x, y, offset, set, index )
 	at_remember_formula( checker_entity, set.name )
 end
 
+function at_master_test_success_check( x, y, values )
+	local id = EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/test_success_check.xml", x, y )
+	local vars = EntityGetComponent( id, "VariableStorageComponent" )
+	if vars then
+		for i = 1,#vars do
+			local var = vars[i]
+			local name = ComponentGetValue2( var, "name" )
+			if ( name == "target" ) then
+				ComponentSetValue2( var, "value_string", values.target )
+			elseif ( name == "reward" ) then
+				ComponentSetValue2( var, "value_string", values.reward )
+			elseif ( name == "lab_id" ) then
+				ComponentSetValue2( var, "value_string", values.lab_id )
+			elseif ( name == "level" ) then
+				ComponentSetValue2( var, "value_int", values.level )
+			end
+		end
+	end
+	local lab_level = values.level or 2
+	local spark = EntityGetFirstComponent( id, "ParticleEmitterComponent" )
+	if spark then
+		ComponentSetValue2( spark, "lifetime_max", 0.5 + 0.5 * lab_level )
+		ComponentSetValue2( spark, "y_vel_min", -30 * lab_level )
+		ComponentSetValue2( spark, "y_vel_max", -10 * lab_level )
+		ComponentSetValue2( spark, "count_min", 1 * lab_level )
+		ComponentSetValue2( spark, "count_max", 2 * lab_level )
+	end
+end
+
 function shuffleTable( t )
 	assert( t, "shuffleTable() expected a table, got nil" )
 	local iterations = #t
@@ -1248,31 +1277,20 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	loc = table.remove( reward )
 	if test and loc then
 		if block_number == 2 then
-			--at_container( test.target, 0.91, loc.x, loc.y )
-			at_container( test.target, 0.01, loc.x, loc.y )
+			at_container( test.target, 0.91, loc.x, loc.y )
+			--at_container( test.target, 0.01, loc.x, loc.y )
 		end
 
 		local altar_reward = master_rewards[block_number]
 
 		at_master_reward_altar( altar_reward, loc.x - 22, loc.y + 5 )
 
-		local id = EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/test_success_check.xml", loc.x, loc.y )
-		local vars = EntityGetComponent( id, "VariableStorageComponent" )
-		if vars then
-			for i = 1,#vars do
-				var = vars[i]
-				local name = ComponentGetValue2( var, "name" )
-				if ( name == "target" ) then
-					ComponentSetValue2( var, "value_string", test.target )
-				elseif ( name == "reward" ) then
-					ComponentSetValue2( var, "value_string", altar_reward )
-				elseif ( name == "lab_id" ) then
-					ComponentSetValue2( var, "value_string", lab_id )
-				elseif ( name == "level" ) then
-					ComponentSetValue2( var, "value_int", lab_level )
-				end
-			end
-		end
+		at_master_test_success_check( loc.x, loc.y, {
+			target = test.target,
+			reward = altar_reward,
+			lab_id = lab_id,
+			level = lab_level,
+		})
 
 		at_log( 'target detector', test.target, loc.x, loc.y )
 	end
