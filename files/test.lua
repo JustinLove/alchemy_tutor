@@ -98,7 +98,9 @@ local function hesitate( player_entity )
 end
 
 function at_test_player_spawned( player_entity )
-	--at_master_sets()
+	--dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
+	--SetRandomSeed(1,2)
+	--at_master_sets(1)
 	--at_setup_raw_materials()
 	if _G['at_test_player'] or _G['at_test_clear'] then
 		clear_entities( player_entity )

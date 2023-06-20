@@ -256,9 +256,12 @@ function at_all_others()
 	return others
 end
 
-function at_master_sets()
+function at_master_sets(level)
 	if at_formulas['toxicclean'] == nil then
 		at_setup()
+	end
+	if not level then
+		level = 2
 	end
 	local master_tests = {}
 	local function base_material( mat, test, added )
@@ -321,7 +324,7 @@ function at_master_sets()
 	end
 
 	local function print_test( test )
-		print(test.target, table.concat( test.formulas, ',' ))
+		print(test.target, #test.formulas, table.concat( test.formulas, ',' ))
 		--for ing,b in pairs(test.created_materials) do
 			--print('--' .. ing)
 		--end
@@ -341,7 +344,7 @@ function at_master_sets()
 		end
 	end
 
-	local function expand_tests()
+	local function expand_tests(preserve_lower)
 		local old = master_tests
 		local new = {}
 		local unique_set = {}
@@ -370,7 +373,7 @@ function at_master_sets()
 					end
 				end
 			end
-			if expansions < 1 then
+			if preserve_lower and expansions < 1 then
 				table.insert( new, original_test )
 			end
 		end
@@ -379,9 +382,9 @@ function at_master_sets()
 	end
 
 	---[[
-	-- two expansions makes up to three steps
-	for i = 1,2 do
-		expand_tests()
+	local expansionSteps = level - 1
+	for i = 1,expansionSteps do
+		expand_tests(false)
 	end
 	--]]
 
@@ -1072,16 +1075,17 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	SetRandomSeed = at_SetRandomSeed
 
 	local lab_id = at_get_lab_id( lab_pixel_x, lab_pixel_y )
+	local lab_level = at_get_lab_level( lab_pixel_x, lab_pixel_y )
 	local biome_bulk = at_get_lab_biome_bulk( lab_pixel_x, lab_pixel_y )
 	local local_materials = at_get_lab_local_materials( lab_pixel_x, lab_pixel_y )
 
-	local facts = at_master_sets()
+	local facts = at_master_sets(lab_level)
 	local tests = facts.master_tests
 	local test = tests[ Random(1, #tests) ]
 
-	local function has_materials(t)
+	local function location_has_materials(t)
 		for _,mat in ipairs(local_materials) do
-			if test.created_materials[mat] then
+			if t.created_materials[mat] then
 				return true
 			end
 		end
@@ -1100,11 +1104,11 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 	local crazy = 0
 	local trial = test
-	while has_materials(trial) and crazy < 5 do
+	while location_has_materials(trial) and crazy < 5 do
 		crazy = crazy + 1
 		trial = tests[ Random(1, #tests) ]
 	end
-	if not has_materials(trial) then
+	if not location_has_materials(trial) then
 		test = trial
 	end
 	if test then
@@ -1167,18 +1171,35 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 	-- fill some of the empty spots in bulk containers from smaller containers
 	local upfill
+	local skip = 0
 
 	upfill = math.min( total_large - #large_list, #medium_list )
+	at_log( 'medium->large counts', upfill, total_large )
 	for i = 1,upfill do
 		local mat = table.remove( medium_list )
 		--at_log( 'large upfill', tostring(mat) )
 		large_list[#large_list+1] = mat
 	end
 
-	upfill = math.min( Random(0, total_medium - #medium_list), #container_list )
+	upfill = math.min( total_large - #large_list - 1, #container_list )
+	at_log( 'container->large counts', upfill, total_large )
+	skip = 0
+	for i = 1,upfill do
+		local mat = container_list[#container_list - skip]
+		if not at_volatile_materials[mat] then
+			--at_log( 'large upfill', tostring(mat) )
+			large_list[#large_list+1] = table.remove( container_list, #container_list - skip )
+		else
+			skip = skip + 1
+			--at_log( 'large upfill volatile', tostring(mat) )
+		end
+	end
+
+	upfill = total_medium - #medium_list - 5
+	upfill = math.min( Random(upfill/2, upfill), #container_list )
 	--upfill = math.min( total_medium - #medium_list, #container_list )
-	at_log( 'medium counts', upfill, total_medium )
-	local skip = 0
+	at_log( 'container->medium counts', upfill, total_medium )
+	skip = 0
 	for i = 1,upfill do
 		local mat = container_list[#container_list - skip]
 		if not at_volatile_materials[mat] then
@@ -1191,7 +1212,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	end
 
 	upfill = total_medium - #medium_list
-	at_log( 'medium counts', upfill, total_medium )
+	at_log( 'air->medium counts', upfill, total_medium )
 	for i = 1,upfill do
 		medium_list[#medium_list+1] = "air"
 	end
@@ -1247,6 +1268,8 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 					ComponentSetValue2( var, "value_string", altar_reward )
 				elseif ( name == "lab_id" ) then
 					ComponentSetValue2( var, "value_string", lab_id )
+				elseif ( name == "level" ) then
+					ComponentSetValue2( var, "value_int", lab_level )
 				end
 			end
 		end

@@ -209,6 +209,14 @@ function at_get_lab_id( x, y )
 	end
 end
 
+function at_get_lab_level( x, y )
+	local loc = at_get_lab( x, y )
+	if loc then
+		return loc.level
+	end
+	return 2
+end
+
 function at_remember_return_location( teleport_back_x, teleport_back_y )
 	--print( "teleported from: " .. tostring(teleport_back_x) .. ", " .. tostring(teleport_back_y) )
 	-- - 50

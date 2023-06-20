@@ -4,42 +4,149 @@ dofile_once( "data/scripts/gun/gun_actions.lua" )
 
 local wands =
 {
-	total_prob = 0,
-	-- this is air, so nothing spawns at 0.6
-	{
-		prob   		= 0,
-		min_count	= 0,
-		max_count	= 0,
-		entity 	= ""
+	{ -- 1
+		total_prob = 0,
+		-- this is air, so nothing spawns at 0.6
+		{
+			prob   		= 0,
+			min_count	= 0,
+			max_count	= 0,
+			entity 	= ""
+		},
+		-- add skullflys after this step
+		{
+			prob   		= 4,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_level_03.xml"
+		},
+		{
+			prob   		= 4,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_level_03_better.xml"
+		},
+		{
+			prob   		= 3,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_unshuffle_02.xml"
+		},
+		{
+			prob   		= 2,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_unshuffle_03.xml"
+		},
 	},
-	-- add skullflys after this step
-	{
-		prob   		= 0,
-		min_count	= 1,
-		max_count	= 1,
-		entity 	= "data/entities/items/wand_level_06.xml"
+	{ -- 2
+		total_prob = 0,
+		-- this is air, so nothing spawns at 0.6
+		{
+			prob   		= 0,
+			min_count	= 0,
+			max_count	= 0,
+			entity 	= ""
+		},
+		-- add skullflys after this step
+		{
+			prob   		= 3,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_level_04.xml"
+		},
+		{
+			prob   		= 3,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_level_04_better.xml"
+		},
+		{
+			prob   		= 3,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_unshuffle_03.xml"
+		},
+		{
+			prob   		= 2,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_unshuffle_04.xml"
+		},
 	},
-	{
-		prob   		= 0,
-		min_count	= 1,
-		max_count	= 1,
-		entity 	= "data/entities/items/wand_level_06_better.xml"
+	{ -- 3
+		total_prob = 0,
+		-- this is air, so nothing spawns at 0.6
+		{
+			prob   		= 0,
+			min_count	= 0,
+			max_count	= 0,
+			entity 	= ""
+		},
+		-- add skullflys after this step
+		{
+			prob   		= 2,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_level_05.xml"
+		},
+		{
+			prob   		= 2,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_level_05_better.xml"
+		},
+		{
+			prob   		= 3,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_unshuffle_04.xml"
+		},
+		{
+			prob   		= 2,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_unshuffle_05.xml"
+		},
 	},
-	{
-		prob   		= 3,
-		min_count	= 1,
-		max_count	= 1,
-		entity 	= "data/entities/items/wand_unshuffle_05.xml"
-	},
-	{
-		prob   		= 2,
-		min_count	= 1,
-		max_count	= 1,
-		entity 	= "data/entities/items/wand_unshuffle_06.xml"
+	{ -- 4
+		total_prob = 0,
+		-- this is air, so nothing spawns at 0.6
+		{
+			prob   		= 0,
+			min_count	= 0,
+			max_count	= 0,
+			entity 	= ""
+		},
+		-- add skullflys after this step
+		{
+			prob   		= 1,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_level_06.xml"
+		},
+		{
+			prob   		= 1,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_level_06_better.xml"
+		},
+		{
+			prob   		= 3,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_unshuffle_05.xml"
+		},
+		{
+			prob   		= 2,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_unshuffle_06.xml"
+		},
 	},
 }
 
-local function make_random_card( x, y )
+local function make_random_card( x, y, level )
 	-- this does NOT call SetRandomSeed() on purpouse.
 	-- SetRandomSeed( x, y )
 
@@ -83,19 +190,28 @@ local function spawn_success( x, y )
 	GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", x, y)
 end
 
-local function spawn_great_chest( x, y )
-	EntityLoad( "data/entities/items/pickup/chest_random_super.xml", x, y)
+local function spawn_great_chest( x, y, level )
+	local chests = level
+	while chests > 0 do
+		if chests >= 2 then
+			EntityLoad( "data/entities/items/pickup/chest_random_super.xml", x + chests, y)
+			chests = chests - 2
+		elseif chests >= 1 then
+			EntityLoad( "data/entities/items/pickup/chest_random.xml", x + chests, y)
+			chests = chests - 1
+		end
+	end
 	spawn_success( x, y )
 	GamePrintImportant( "$at_log_reward_treasure" )
 end
 
-local function spawn_grand_material( x, y )
+local function spawn_grand_material( x, y, level )
 	if #at_grand_materials < 1 then
 		at_setup_grand_alchemy()
 	end
 	SetRandomSeed( x, y )
 	local r = Random(1, #at_grand_materials)
-	at_container( at_grand_materials[r], 0.05, x, y )
+	at_container( at_grand_materials[r], 0.05 * level, x, y )
 	spawn_success( x, y )
 	GamePrintImportant( "$at_log_reward_knowledge" )
 end
@@ -106,15 +222,15 @@ local function spawn_gold( x, y )
 	GamePrintImportant( "$at_log_reward_wealth" )
 end
 
-local function spawn_wand( x, y )
-	spawn( wands, x - 5, y - 5, 0, 0 )
+local function spawn_wand( x, y, level )
+	spawn( wands[level], x - 5, y - 5, 0, 0 )
 	spawn_success( x, y )
 	GamePrintImportant( "$at_log_reward_power" )
 end
 
-local function spawn_spells( x, y )
+local function spawn_spells( x, y, level )
 	SetRandomSeed( x, y )
-	local amount = 8
+	local amount = level * 3
 	for i=1,amount do
 		make_random_card( x + (i - (amount / 2)) * 8, y - 9 + Random(-10,10) )
 	end
@@ -128,6 +244,7 @@ local pos_x, pos_y = EntityGetTransform( entity_id )
 local target = ""
 local reward = ""
 local lab_id = ""
+local level = 2
 local targetid = 0
 local goldid = 0
 local vars = EntityGetComponent( entity_id, "VariableStorageComponent" )
@@ -148,6 +265,9 @@ if vars then
 		elseif ( name == "lab_id" ) then
 			lab_id = ComponentGetValue2( var, "value_string" )
 			--print( tostring(lab_id) )
+		elseif ( name == "level" ) then
+			level = ComponentGetValue2( var, "value_int" )
+			--print( type(level) )
 		end
 	end
 end
@@ -158,6 +278,7 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 23, "item_pickup")) do
 	-- make sure item is not carried in inventory or wand
 	if EntityGetRootEntity(id) == id and EntityGetComponent( id, "PotionComponent" ) then
 		local matid = GetMaterialInventoryMainMaterial( id )
+		--print('mat', matid)
 		if matid == targetid or matid == goldid then
 			local inv = EntityGetFirstComponentIncludingDisabled( id, "MaterialInventoryComponent" )
 			if inv then
@@ -178,15 +299,15 @@ for _,id in pairs(EntityGetInRadiusWithTag(pos_x, pos_y, 23, "item_pickup")) do
 						if matid == goldid then
 							spawn_gold( pos_x, pos_y )
 						elseif reward == 'treasure' then
-							spawn_great_chest( pos_x, pos_y )
+							spawn_great_chest( pos_x, pos_y, level )
 						elseif reward == 'knowledge' then
-							spawn_grand_material( pos_x, pos_y )
+							spawn_grand_material( pos_x, pos_y, level )
 						elseif reward == 'power' then
-							spawn_wand( pos_x, pos_y )
+							spawn_wand( pos_x, pos_y, level )
 						elseif reward == 'magic' then
-							spawn_spells( pos_x, pos_y )
+							spawn_spells( pos_x, pos_y, level )
 						else
-							spawn_great_chest( pos_x, pos_y )
+							spawn_great_chest( pos_x, pos_y, level )
 						end
 						return
 					end

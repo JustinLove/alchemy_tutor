@@ -1,36 +1,42 @@
 at_lab_locations = {
 	{ -- west wall of desert chasm west of pyramid
 		id = 'DESERT_CHASM',
+		level = 1,
 		x = 4096,
 		y = 5632,
 		east_access = 'east_access',
 	},
 	{ -- ne gold
 		id = 'NE_GOLD',
+		level = 2,
 		x = 13824,
 		y = -4096,
 		biome = 'gold',
 	},
 	{ -- lake
 		id = 'LAKE',
+		level = 2,
 		x = -16384,
 		y = 4096,
 		biome = 'water',
 	},
 	{ -- above tree
 		id = 'TREE',
+		level = 1,
 		x = -2048,
 		y = -4608,
 		east_access = 'sky_access',
 	},
 	{ -- sw gold
 		id = 'SW_GOLD',
+		level = 4,
 		x = -15360,
 		y = 15872,
 		biome = 'gold',
 	},
 	{ -- se corner desert
 		id = 'SE_CORNER',
+		level = 3,
 		x = 15872,
 		y = 14336,
 		biome_modifier = 'hot',
@@ -41,6 +47,7 @@ at_lab_locations = {
 at_special_lab_locations = {
 	{ -- hall of records, below alchemist
 		id = 'RECORDS',
+		level = 2,
 		x = -5632,
 		y = 1024,
 		west_access = 'records_access',

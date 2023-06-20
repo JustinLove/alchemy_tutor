@@ -3,24 +3,28 @@ dofile_once( 'mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_
 at_lab_locations = {
 	{ -- northwest corner, near space
 		id = 'NW_SPACE',
+		level = 2,
 		x = 15872,
 		y = -5632,
 		west_access = 'west_access',
 	},
 	{ -- lake
 		id = 'LAKE',
+		level = 2,
 		x = -16384,
 		y = 1536,
 		biome = 'water',
 	},
 	{ -- above pond
 		id = 'POND',
+		level = 1,
 		x = 2048,
 		y = -2048,
 		east_access = 'sky_access',
 	},
 	{ -- west side of power plant along tower border
 		id = 'WEST_ROBO',
+		level = 3,
 		x = 11264,
 		y = 8192,
 		east_access = 'east_access',
@@ -31,6 +35,7 @@ at_lab_locations = {
 	},
 	{ -- west side of snowy chasm, east of hive
 		id = 'HIVE_CHASM',
+		level = 3,
 		x = -12288,
 		y = 8192,
 		west_access = 'west_access',
@@ -42,6 +47,7 @@ at_lab_locations = {
 	},
 	{ -- lower left forest
 		id = 'SE_FOREST',
+		level = 4,
 		x = -16384,
 		y = 14848,
 		east_access = 'sky_access',

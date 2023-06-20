@@ -16,6 +16,8 @@
 - xx can worm blood expansion appear in masters? - not seem empiracly
 - version/change notes in hall of records
 - master rewards: scaled, target steps based on lab accessability
+  - altar effects proportial
+  - reorder teleporter sequence?
 - default spawns: define init, append when biome has it???
 - Alias, large mod list: HoM large cauldron drains missing
 - x cauldron backgrounds
@@ -35,6 +37,8 @@
 - nightmare
 - HoM understanding:
   - Alias first visit: negative
+  - steam/someone: initial no
+  - steam/eight golden coins: initial no
 
 - translations - partly done
 - desert music backdown?
