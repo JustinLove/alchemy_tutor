@@ -862,11 +862,12 @@ function at_master_test_success_check( x, y, values )
 	local lab_level = values.level or 2
 	local spark = EntityGetFirstComponent( id, "ParticleEmitterComponent" )
 	if spark then
-		ComponentSetValue2( spark, "lifetime_max", 0.5 + 0.5 * lab_level )
-		ComponentSetValue2( spark, "y_vel_min", -30 * lab_level )
-		ComponentSetValue2( spark, "y_vel_max", -10 * lab_level )
+		ComponentSetValue2( spark, "lifetime_max", 0.5 + 0.2 * lab_level )
+		ComponentSetValue2( spark, "y_vel_min", -50 + -20 * lab_level )
+		ComponentSetValue2( spark, "y_vel_max", -30 + -5 * lab_level )
 		ComponentSetValue2( spark, "count_min", 1 * lab_level )
 		ComponentSetValue2( spark, "count_max", 2 * lab_level )
+		ComponentSetValue2( spark, "emitted_material_name", values.target )
 	end
 end
 
@@ -1277,8 +1278,8 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	loc = table.remove( reward )
 	if test and loc then
 		if block_number == 2 then
-			at_container( test.target, 0.91, loc.x, loc.y )
-			--at_container( test.target, 0.01, loc.x, loc.y )
+			--at_container( test.target, 0.91, loc.x, loc.y )
+			at_container( test.target, 0.01, loc.x, loc.y )
 		end
 
 		local altar_reward = master_rewards[block_number]

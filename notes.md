@@ -17,6 +17,7 @@
 - version/change notes in hall of records
 - master rewards: scaled, target steps based on lab accessability
   - x altar effects proportial
+  - x spark material is target material?
   - level modifiers and extensions
     - pw
     - pacifist

@@ -4,6 +4,7 @@
 --at_test_healing = true
 --at_test_portal = true
 --at_test_masters = true
+--at_test_master_success = true
 at_test_x = -200
 at_test_x = 200
 --at_test_y = -100 -- hills
@@ -131,6 +132,19 @@ function at_test_player_spawned( player_entity )
 		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x - 60, y )
 		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x - 100, y )
 		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters_chest.xml", x - 140, y )
+	end
+	if _G['at_test_master_success'] then
+		dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
+		local x = 420
+		local y = -105
+		for i = 1,6 do
+			at_master_test_success_check( x + i*70, y, {
+				target = 'copper',
+				reward = 'power',
+				lab_id = 'TEST',
+				level = i,
+			})
+		end
 	end
 end
 
