@@ -210,11 +210,14 @@ function at_get_lab_id( x, y )
 end
 
 function at_get_lab_level( x, y )
+	local pw = at_check_parallel_pos( x )
+	pw = math.abs(pw)
 	local loc = at_get_lab( x, y )
+	local level = 2
 	if loc then
-		return loc.level
+		level = loc.level
 	end
-	return 2
+	return math.min(5, level + pw)
 end
 
 function at_remember_return_location( teleport_back_x, teleport_back_y )

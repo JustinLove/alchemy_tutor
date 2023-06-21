@@ -19,11 +19,13 @@
   - x altar effects proportial
   - x spark material is target material?
   - level modifiers and extensions
-    - pw
+    - x pw
     - pacifist
   - reorder teleporter sequence?
 - default spawns: define init, append when biome has it???
+  - check hell shops
 - Alias, large mod list: HoM large cauldron drains missing
+  - background priority - embed?
 - x cauldron backgrounds
   - x sand pile
   - block eye position (ex ambrosia)

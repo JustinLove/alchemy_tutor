@@ -6,14 +6,12 @@ local wands =
 {
 	{ -- 1
 		total_prob = 0,
-		-- this is air, so nothing spawns at 0.6
 		{
 			prob   		= 0,
 			min_count	= 0,
 			max_count	= 0,
 			entity 	= ""
 		},
-		-- add skullflys after this step
 		{
 			prob   		= 4,
 			min_count	= 1,
@@ -41,14 +39,12 @@ local wands =
 	},
 	{ -- 2
 		total_prob = 0,
-		-- this is air, so nothing spawns at 0.6
 		{
 			prob   		= 0,
 			min_count	= 0,
 			max_count	= 0,
 			entity 	= ""
 		},
-		-- add skullflys after this step
 		{
 			prob   		= 3,
 			min_count	= 1,
@@ -76,14 +72,12 @@ local wands =
 	},
 	{ -- 3
 		total_prob = 0,
-		-- this is air, so nothing spawns at 0.6
 		{
 			prob   		= 0,
 			min_count	= 0,
 			max_count	= 0,
 			entity 	= ""
 		},
-		-- add skullflys after this step
 		{
 			prob   		= 2,
 			min_count	= 1,
@@ -111,14 +105,12 @@ local wands =
 	},
 	{ -- 4
 		total_prob = 0,
-		-- this is air, so nothing spawns at 0.6
 		{
 			prob   		= 0,
 			min_count	= 0,
 			max_count	= 0,
 			entity 	= ""
 		},
-		-- add skullflys after this step
 		{
 			prob   		= 1,
 			min_count	= 1,
@@ -142,6 +134,27 @@ local wands =
 			min_count	= 1,
 			max_count	= 1,
 			entity 	= "data/entities/items/wand_unshuffle_06.xml"
+		},
+	},
+	{ -- 5
+		total_prob = 0,
+		{
+			prob   		= 0,
+			min_count	= 0,
+			max_count	= 0,
+			entity 	= ""
+		},
+		{
+			prob   		= 3,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_unshuffle_06.xml"
+		},
+		{
+			prob   		= 2,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_unshuffle_10.xml"
 		},
 	},
 }
@@ -223,7 +236,7 @@ local function spawn_gold( x, y )
 end
 
 local function spawn_wand( x, y, level )
-	spawn( wands[level], x - 5, y - 5, 0, 0 )
+	spawn( wands[math.min(#wands, level)], x - 5, y - 5, 0, 0 )
 	spawn_success( x, y )
 	GamePrintImportant( "$at_log_reward_power" )
 end
