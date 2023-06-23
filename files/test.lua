@@ -1,10 +1,12 @@
 --at_test_player = true
+--
 --at_test_lab = true
 --at_test_clear = true
 --at_test_healing = true
 --at_test_portal = true
 --at_test_masters = true
 --at_test_master_success = true
+--at_test_kill = true
 at_test_x = -200
 at_test_x = 200
 --at_test_y = -100 -- hills
@@ -145,6 +147,10 @@ function at_test_player_spawned( player_entity )
 				level = i,
 			})
 		end
+	end
+	if _G['at_test_kill'] then
+		-- disable pacifist
+		StatsLogPlayerKill( player_entity )
 	end
 end
 

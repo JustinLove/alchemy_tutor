@@ -20,7 +20,7 @@
   - x spark material is target material?
   - level modifiers and extensions
     - x pw
-    - pacifist
+    - x pacifist
   - reorder teleporter sequence?
 - default spawns: define init, append when biome has it???
   - check hell shops

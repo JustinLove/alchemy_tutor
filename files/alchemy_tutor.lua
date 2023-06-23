@@ -860,6 +860,11 @@ function at_master_test_success_check( x, y, values )
 		end
 	end
 	local lab_level = values.level or 2
+	-- judged only for visuals. Reward judgment comes at success time.
+	local enemies_killed = tonumber( StatsGetValue("enemies_killed") )
+	if enemies_killed < 1 then
+		lab_level = lab_level + 1
+	end
 	local spark = EntityGetFirstComponent( id, "ParticleEmitterComponent" )
 	if spark then
 		ComponentSetValue2( spark, "lifetime_max", 0.5 + 0.2 * lab_level )

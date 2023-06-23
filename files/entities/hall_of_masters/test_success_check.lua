@@ -2,6 +2,8 @@ dofile_once('mods/alchemy_tutor/files/alchemy_tutor.lua')
 dofile_once("data/scripts/director_helpers.lua")
 dofile_once( "data/scripts/gun/gun_actions.lua" )
 
+local enemies_killed = tonumber( StatsGetValue("enemies_killed") )
+
 local wands =
 {
 	{ -- 1
@@ -157,6 +159,21 @@ local wands =
 			entity 	= "data/entities/items/wand_unshuffle_10.xml"
 		},
 	},
+	{ -- 6
+		total_prob = 0,
+		{
+			prob   		= 0,
+			min_count	= 0,
+			max_count	= 0,
+			entity 	= ""
+		},
+		{
+			prob   		= 2,
+			min_count	= 1,
+			max_count	= 1,
+			entity 	= "data/entities/items/wand_unshuffle_10.xml"
+		},
+	},
 }
 
 local function make_random_card( x, y, level )
@@ -198,7 +215,14 @@ local function make_random_card( x, y, level )
 end
 
 local function spawn_success( x, y )
-	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/success_effect.xml", x, y )
+	local effect = EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_masters/success_effect.xml", x, y )
+	if enemies_killed < 1 then
+		local conv = EntityGetFirstComponent( effect, "MagicConvertMaterialComponent" )
+		if conv then
+			local water = CellFactory_GetType( 'water' )
+			ComponentSetValue2( conv, "to_material", water )
+		end
+	end
 	EntityLoad("data/entities/particles/image_emitters/magical_symbol.xml", x, y)
 	GamePlaySound( "data/audio/Desktop/projectiles.snd", "player_projectiles/crumbling_earth/create", x, y)
 end
@@ -283,6 +307,10 @@ if vars then
 			--print( type(level) )
 		end
 	end
+end
+
+if enemies_killed < 1 then
+	level = math.min(#wands, level + 1)
 end
 
 goldid = CellFactory_GetType( 'gold' )
