@@ -27,7 +27,7 @@
 - version/change notes in hall of records
 - default spawns: define init, append when biome has it???
   - check hell shops
-- Apotheosis Alias 07-03 : mid right alchemist HoM block did not spawn
+- x Apotheosis Alias 07-03 : mid right alchemist HoM block did not spawn
 - Alias, large mod list: HoM large cauldron drains missing
   - background priority - embed?
 - x cauldron backgrounds
