@@ -10,6 +10,7 @@
 - Hall of Master locations have assigned complexity based on accessability. Feedback appreciated.
 - Main biome lab spawns were perhaps too common in some biomes and have been significnatly rebalanced. Feedback appreciated.
 - Adjusted appends to remove load order dependency with Graham's Things and Anvil of Destiny
+- Adjusted some fixed pixel scenes for Apotheosis map
 
 
 ## 0.6.0

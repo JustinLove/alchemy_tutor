@@ -88,6 +88,10 @@ function OnModInit()
 	if ModIsEnabled( 'noitavania' ) then
 		dofile("mods/alchemy_tutor/files/noitavania/init.lua")
 	end
+
+	if ModIsEnabled( 'Apotheosis' ) then
+		dofile("mods/alchemy_tutor/files/Apotheosis/init.lua")
+	end
 end
 
 -- Noitavania does hard overwrite of pixel scenes in OnModInit
