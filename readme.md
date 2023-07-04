@@ -42,6 +42,7 @@ Most mods are untested at this point. I'm hoping to have most world changing mod
 ### Integrations
 
 - Alchemical Reactions Expansion
+- Apotheosis - locations adjusted, tested circa 2023-07
 - New Biomes & Secrets - locations adjusted, tested circa 2023-04
 - Noitvania - locations overhauled, tested circa 2023-04
 

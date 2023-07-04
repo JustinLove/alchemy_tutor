@@ -236,4 +236,16 @@ function OnModInit()
 		ModLuaFileAppend( "mods/noitavania/data/scripts/biomes/nv_hills.lua", "mods/alchemy_tutor/files/biomes/hills_hall_of_records.lua" )
 		ModLuaFileAppend( "data/scripts/biomes/mountain_lake.lua", "mods/alchemy_tutor/files/spawns.lua" )
 	end
+
+	if ModIsEnabled( 'Apotheosis' ) then
+		dofile("mods/alchemy_tutor/files/Apotheosis/init.lua")
+	end
+end
+
+-- Noitavania does hard overwrite of pixel scenes in OnModInit
+function OnModPostInit()
+	if ModSettingGet("alchemy_tutor.fixed_pixel_scenes") then
+		dofile( "mods/alchemy_tutor/files/entities/hall_of_records/hall_of_records_pixel_scene.lua" )
+		at_add_hall_of_records( "data/biome/_pixel_scenes.xml" )
+	end
 end
