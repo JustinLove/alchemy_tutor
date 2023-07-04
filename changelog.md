@@ -1,11 +1,9 @@
 # Alchemy Tutor Changelog
 
-## 0.7.0?
+## 0.6.1
 
-- Art update for Hall of Records
 - Adjusted appends to remove load order dependency with Graham's Things and Anvil of Destiny
 - Adjusted some fixed pixel scenes for Apotheosis map
-
 
 ## 0.6.0
 
