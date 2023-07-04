@@ -6,8 +6,8 @@
 - Two new evaporation reactions
 - One new bloody reaction
 - One new swampy reaction
-- Hall of Master rewards are proportional to intended complexity
-- Hall of Master locations have assigned complexity based on accessability
+- Hall of Master rewards are proportional to intended complexity. Feedback appreciated.
+- Hall of Master locations have assigned complexity based on accessability. Feedback appreciated.
 - Main biome lab spawns were perhaps too common in some biomes and have been significnatly rebalanced. Feedback appreciated.
 - Adjusted appends to remove load order dependency with Graham's Things and Anvil of Destiny
 

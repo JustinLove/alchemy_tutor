@@ -14,16 +14,20 @@
 - x fish missing from remote lab
 - x detector disappears when deactivated??
 - xx can worm blood expansion appear in masters? - not seem empiracly
-- version/change notes in hall of records
-- master rewards: scaled, target steps based on lab accessability
+- x master rewards: scaled, target steps based on lab accessability
   - x altar effects proportial
   - x spark material is target material?
-  - level modifiers and extensions
+  - x level modifiers and extensions
     - x pw
     - x pacifist
-  - reorder teleporter sequence?
+  - xx reorder teleporter sequence?
+  - remove ~25% of other materials
+- embed mod save version
+- version in settings
+- version/change notes in hall of records
 - default spawns: define init, append when biome has it???
   - check hell shops
+- Apotheosis Alias 07-03 : mid right alchemist HoM block did not spawn
 - Alias, large mod list: HoM large cauldron drains missing
   - background priority - embed?
 - x cauldron backgrounds

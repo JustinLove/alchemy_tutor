@@ -39,6 +39,10 @@ Enemies, explosions, and physics glitches can and will break all your potions an
 
 Most mods are untested at this point. I'm hoping to have most world changing mods checked out before leaving beta. Mods are tested in isolation, multi-mod combinations could still have issues.
 
+### Disable "Fixed Position Pixel Scenes" in mod options.
+
+- Apotheosis
+
 ### Integrations
 
 - Alchemical Reactions Expansion
