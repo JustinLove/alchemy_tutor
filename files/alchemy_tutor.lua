@@ -403,12 +403,14 @@ function at_master_sets(level)
 		end
 	end
 
+	local placed_grand = {}
 	local grand = copy_array( at_grand_materials )
 	shuffleTable( grand )
 	local count = math.min( 1, #grand )
 	for g = 1,count do
 		local ing = grand[g]
 		bulk_amounts[ing] = (bulk_amounts[ing] or 0) + 1
+		placed_grand[g] = ing
 	end
 
 	for ing,count in pairs(bulk_amounts) do
@@ -432,6 +434,7 @@ function at_master_sets(level)
 	return {
 		master_tests = master_tests,
 		bulk_amounts = bulk_amounts,
+		placed_grand = placed_grand,
 	}
 end
 
@@ -1149,8 +1152,37 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	if test then
 		at_log( 'target', test.target, table.concat(test.formulas, ',') )
 	end
-	local biome_modifier = at_get_lab_biome_modifier( lab_pixel_x, lab_pixel_y )
 
+	-- reduce some materials so labs are less likely to have the same materials (e.g. ambrosia materials)
+	local protected = {}
+	if test then
+		for _,mat in ipairs(test.ingredients) do
+			protected[mat] = true
+		end
+	end
+	for _,mat in ipairs(facts.placed_grand) do
+		protected[mat] = true
+	end
+
+	local material_chance = math.min(90, 20 + lab_level * 15 + Random(0,10))
+	local material_accumulator = Random(1, 100)
+
+	for mat,_ in pairs( facts.bulk_amounts ) do
+		if mat == biome_bulk then
+			facts.bulk_amounts[mat] = 0
+		elseif test and test.created_materials[mat] then
+			facts.bulk_amounts[mat] = 0
+		elseif not protected[mat] then
+			material_accumulator = material_accumulator + material_chance
+			if material_accumulator >= 100 then
+				material_accumulator = material_accumulator - 100
+			else
+				facts.bulk_amounts[mat] = 0
+			end
+		end
+	end
+
+	local biome_modifier = at_get_lab_biome_modifier( lab_pixel_x, lab_pixel_y )
 	local must_be_bottled = {}
 	if biome_modifier == 'hot' then
 		for _,mat in ipairs(at_evaporating_material_list) do
@@ -1164,19 +1196,15 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 
 	-- initial allocation by volume
 	for mat,count in pairs( facts.bulk_amounts ) do
-		if mat ~= biome_bulk then
-			if not test or not test.created_materials[mat] then
-				if count > 2 and not at_volatile_materials[mat] and not must_be_bottled[mat] then
-					if count > 3 then
-						large_list[#large_list+1] = mat
-					else
-						medium_list[#medium_list+1] = mat
-					end
-				else
-					for i = 1,count do
-						container_list[#container_list+1] = mat
-					end
-				end
+		if count > 2 and not at_volatile_materials[mat] and not must_be_bottled[mat] then
+			if count > 3 then
+				large_list[#large_list+1] = mat
+			else
+				medium_list[#medium_list+1] = mat
+			end
+		else
+			for i = 1,count do
+				container_list[#container_list+1] = mat
 			end
 		end
 	end

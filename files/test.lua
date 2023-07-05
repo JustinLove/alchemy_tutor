@@ -1,5 +1,4 @@
 --at_test_player = true
---
 --at_test_lab = true
 --at_test_clear = true
 --at_test_healing = true
@@ -7,8 +6,8 @@
 --at_test_masters = true
 --at_test_master_success = true
 --at_test_kill = true
-at_test_x = -200
-at_test_x = 200
+--at_test_x = -200
+--at_test_x = 200
 --at_test_y = -100 -- hills
 --at_test_y = 2000 -- excavation
 --at_test_y = 3500 -- snowcave
@@ -34,8 +33,8 @@ at_test_x = 200
 --at_test_y = -3880 -- hall of masters ne gold east
 --at_test_x = -14848 -- hall of masters sw gold
 --at_test_y = 16078 -- hall of masters sw gold
---at_test_x = -1536 -- hall of masters above tree
---at_test_y = -4395 -- hall of masters above tree
+at_test_x = -1536 -- hall of masters above tree
+at_test_y = -4395 -- hall of masters above tree
 --at_test_x = 5117 -- hall of masters west desert chasm
 --at_test_y = 6003 -- hall of masters west desert chasm
 --at_test_x = 15852 -- hall of masters se corner

@@ -21,7 +21,7 @@
     - x pw
     - x pacifist
   - xx reorder teleporter sequence?
-  - remove ~25% of other materials
+  - x remove ~25% of other materials
 - embed mod save version
 - version in settings
 - version/change notes in hall of records
