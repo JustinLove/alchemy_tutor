@@ -1,4 +1,5 @@
 dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
+dofile_once("mods/alchemy_tutor/files/entities/hall_of_records/record_book.lua")
 
 RegisterSpawnFunction( 0xff1f1002, "at_mark_floor1" )
 RegisterSpawnFunction( 0xff2f1002, "at_mark_floor2" )
@@ -10,6 +11,10 @@ RegisterSpawnFunction( 0xff1ef700, "at_record_left" )
 RegisterSpawnFunction( 0xff218470, "at_record_right" )
 RegisterSpawnFunction( 0xff2ec02d, "at_spawn_record_enter" )
 RegisterSpawnFunction( 0xff840270, "at_spawn_ghost_crystal_records" )
+RegisterSpawnFunction( 0xff1ab00c, "at_spawn_book1" )
+RegisterSpawnFunction( 0xff2ab00c, "at_spawn_book2" )
+RegisterSpawnFunction( 0xff3ab00c, "at_spawn_book3" )
+RegisterSpawnFunction( 0xff4ab00c, "at_spawn_book4" )
 
 local at_left
 local at_right
@@ -127,5 +132,18 @@ end
 function at_spawn_ghost_crystal_records( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/ghost_deflector_crystal.xml", x, y + 2 )
 	at_ghost_deflector_base( x, y + 5 )
+end
+
+function at_spawn_book1( x, y )
+end
+
+function at_spawn_book2( x, y )
+end
+
+function at_spawn_book3( x, y )
+	record_book_changelog( x, y )
+end
+
+function at_spawn_book4( x, y )
 end
 

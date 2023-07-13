@@ -22,9 +22,9 @@
     - x pacifist
   - xx reorder teleporter sequence?
   - x remove ~25% of other materials
-- embed mod save version
-- version in settings
-- version/change notes in hall of records
+- x embed mod save version
+- x version/change notes in hall of records
+- recepie notes on pedistals
 - default spawns: define init, append when biome has it???
   - check hell shops
 - x Apotheosis Alias 07-03 : mid right alchemist HoM block did not spawn

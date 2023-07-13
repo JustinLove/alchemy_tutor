@@ -1,0 +1,37 @@
+<Entity>
+  <SpriteComponent
+    z_index="40"
+    image_file="mods/alchemy_tutor/files/entities/hall_of_records/record_book.png"
+    offset_x="6"
+    offset_y="15"
+    >
+  </SpriteComponent>
+
+  <LightComponent 
+    offset_y="-13"
+    r="255"
+    g="255"
+    b="255"
+    radius="24"
+    fade_out_time="0.75" >
+  </LightComponent>
+
+  <UIInfoComponent
+    name="$at_changelog"
+  ></UIInfoComponent>
+
+  <ItemComponent
+    item_name="$at_title_changelog__0_6_1"
+    ui_description="$at_book_changelog__0_6_1"
+    play_spinning_animation="0"
+    stats_count_as_item_pick_up="0"
+    play_pick_sound="0" >
+  </ItemComponent>
+
+  <BookComponent>
+  </BookComponent>
+
+  <LuaComponent 
+    script_item_picked_up="mods/alchemy_tutor/files/entities/hall_of_records/record_book_pick.lua" >
+  </LuaComponent>
+</Entity>

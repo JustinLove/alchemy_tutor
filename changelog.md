@@ -3,6 +3,7 @@
 ## 0.7.0?
 
 - Art update for Hall of Records
+- Changelog in Hall of Records
 - Two new evaporation reactions
 - One new bloody reaction
 - One new swampy reaction

@@ -13,6 +13,10 @@ end
 
 function OnWorldInitialized() -- This is called once the game world is initialized. Doesn't ensure any world chunks actually exist. Use OnPlayerSpawned to ensure the chunks around player have been loaded or created.
 	at_test_world_initialized()
+
+	if GlobalsGetValue( 'AT_SAVE_VERSION' ) == '' then
+		GlobalsSetValue( 'AT_SAVE_VERSION', '1' )
+	end
 end
 
 local function edit_file(path, f, arg)
