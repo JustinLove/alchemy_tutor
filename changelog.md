@@ -1,6 +1,6 @@
 # Alchemy Tutor Changelog
 
-## 0.7.0?
+## 0.7.0
 
 - Art update for Hall of Records
 - Signs on completed formula in Hall of Records
