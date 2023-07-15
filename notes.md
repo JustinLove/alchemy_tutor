@@ -67,6 +67,7 @@
 - x nook at alchemist
 - x camp at ne gold?
 - long term: make safe for magic skin?
+- long term: support special chests
 
 ### Alternate biomes
 - long term: see if any pixel scenes fit
@@ -97,7 +98,7 @@
 
 #### Virtual Biomes in `biome_scripts`
 
-RegisterSpawnFunction `init` is a special case, it works on the function name not color code. init is defined in many biomes, so it can only be intercepted from an append, not from `biome_scripts` etc. Thuns, **virtual biomes cannot run from `biome_scripts`** afaik.
+RegisterSpawnFunction `init` is a special case, it works on the function name not color code. init is defined in many biomes, so it can only be intercepted from an append, not from `biome_scripts` etc. Thus, **virtual biomes cannot run from `biome_scripts`** afaik.
 
 Theoretical extreme solution:
 - parse `_biomes_all.xml` to get biome files

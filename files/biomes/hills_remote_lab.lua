@@ -1,20 +1,19 @@
 dofile_once("mods/alchemy_tutor/files/spawns.lua")
 dofile_once("mods/alchemy_tutor/files/alchemy_tutor.lua")
 
-RegisterSpawnFunction( 0xffa9d024, "spawn_return_portal" )
-RegisterSpawnFunction( 0xff01DEAD, "spawn_areacheck1" )
-RegisterSpawnFunction( 0xff02DEAD, "spawn_areacheck2" )
-RegisterSpawnFunction( 0xffff5a0a, "spawn_music_trigger" )
-RegisterSpawnFunction( 0xff03deaf, "spawn_fish" )
-RegisterSpawnFunction( 0xff357320, "spawn_enter_trigger" )
-RegisterSpawnFunction( 0xffd35720, "spawn_demolition" )
-RegisterSpawnFunction( 0xffe4173a, "spawn_exitway" )
-RegisterSpawnFunction( 0xffc128ff, "spawn_rubble" )
-RegisterSpawnFunction( 0xffa7a707, "spawn_lamp_long" )
-RegisterSpawnFunction( 0xff80FF5A, "spawn_vines" )
+RegisterSpawnFunction( 0xff2e7c2c, "at_px_spawn_return_portal" )
+RegisterSpawnFunction( 0xff01DEAD, "at_px_spawn_areacheck1" )
+RegisterSpawnFunction( 0xff02DEAD, "at_px_spawn_areacheck2" )
+RegisterSpawnFunction( 0xffff5a00, "at_px_spawn_music_trigger" )
+RegisterSpawnFunction( 0xff04deaf, "at_px_spawn_fish" )
+RegisterSpawnFunction( 0xff357320, "at_px_spawn_enter_trigger" )
+RegisterSpawnFunction( 0xffd35720, "at_px_spawn_demolition" )
+RegisterSpawnFunction( 0xffe4173a, "at_px_spawn_exitway" )
+RegisterSpawnFunction( 0xff5c667e, "at_px_spawn_rubble" )
+RegisterSpawnFunction( 0xffa8a808, "at_px_spawn_lamp_long" )
+RegisterSpawnFunction( 0xff90FF5A, "at_px_spawn_vines" )
 
-
-g_rubble =
+at_rubble =
 {
 	total_prob = 0,
 	-- add skullflys after this step
@@ -62,7 +61,7 @@ g_rubble =
 	},
 }
 
-g_vines =
+at_vines =
 {
 	total_prob = 0,
 	{
@@ -97,7 +96,7 @@ g_vines =
 	},
 }
 
-g_lamp =
+at_lamp =
 {
 	total_prob = 0,
 	{
@@ -114,23 +113,19 @@ g_lamp =
 	},
 }
 
-function spawn_rubble(x, y)
-	spawn(g_rubble,x,y,5,0)
+function at_px_spawn_rubble(x, y)
+	spawn(at_rubble,x,y,5,0)
 end
 
-function spawn_vines(x, y)
-	spawn(g_vines,x+5,y+5)
+function at_px_spawn_vines(x, y)
+	spawn(at_vines,x+5,y+5)
 end
 
-function spawn_lamp(x, y)
-	spawn(g_lamp,x,y,0,10)
+function at_px_spawn_lamp_long(x, y)
+	spawn(at_lamp,x,y,0,15)
 end
 
-function spawn_lamp_long(x, y)
-	spawn(g_lamp,x,y,0,15)
-end
-
-function spawn_return_portal( x, y )
+function at_px_spawn_return_portal( x, y )
 	local portal = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_return.xml", x, y )
 
 	local teleport_comp = EntityGetFirstComponentIncludingDisabled( portal, "TeleportComponent" )
@@ -152,7 +147,7 @@ function spawn_return_portal( x, y )
 	end
 end
 
-function spawn_enter_trigger( x, y )
+function at_px_spawn_enter_trigger( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_enter.xml", x, y )
 
 	GamePlaySound( "data/audio/Desktop/event_cues.bank", "event_cues/new_biome/create", x, y)
@@ -163,15 +158,15 @@ function spawn_enter_trigger( x, y )
 	GamePrintImportant( GameTextGet( "$log_entered", text ), "" )
 end
 
-function spawn_demolition( x, y )
+function at_px_spawn_demolition( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_demolition.xml", x, y )
 end
 
-function spawn_exitway( x, y )
+function at_px_spawn_exitway( x, y )
 	EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_exitway.xml", x, y )
 end
 
-function spawn_areacheck( x, y, id, radius )
+function at_spawn_areacheck( x, y, id, radius )
 	GlobalsSetValue( "AT_REMOTE_LAB_PLAYERS_" .. id, "7" )
 
 	local entity_id = EntityLoad( "mods/alchemy_tutor/files/entities/remote_lab/remote_lab_exit.xml", x, y )
@@ -189,28 +184,24 @@ function spawn_areacheck( x, y, id, radius )
 	end
 end
 
-function spawn_areacheck1( x, y )
-	spawn_areacheck( x, y, '1', 175 )
+function at_px_spawn_areacheck1( x, y )
+	at_spawn_areacheck( x, y, '1', 175 )
 end
 
-function spawn_areacheck2( x, y )
-	spawn_areacheck( x, y, '2', 250 )
+function at_px_spawn_areacheck2( x, y )
+	at_spawn_areacheck( x, y, '2', 250 )
 end
 
-function spawn_music_trigger( x, y )
+function at_px_spawn_music_trigger( x, y )
 	GameTriggerMusicFadeOutAndDequeueAll( 3.0 )
 end
 
-function spawn_fish(x, y)
+function at_px_spawn_fish(x, y)
 	local f = tonumber( GlobalsGetValue( "at_passed_count", 0 ) )
+	print('----------------------------------------', f, x, y)
 
 	for i=1,f do
 		local id = EntityLoad( "data/entities/animals/fish.xml", x, y )
+		print('fish', tostring(id))
 	end
-end
-
-function spawn_unique_enemy2()
-end
-
-function spawn_shopitem( x, y )
 end
