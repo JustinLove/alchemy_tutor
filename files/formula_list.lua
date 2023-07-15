@@ -216,7 +216,7 @@ at_formula_list = {
 		output2 = "liquid_fire",
 		record_material = "liquid_fire",
 		output_sign = "$at_lava_metal_evaporation",
-		materials_sign = { liquid_fire = "$at_liquid_fire", magic_liquid_random_polymorph = "$at_the_liquid"},
+		materials_sign = { magic_liquid_random_polymorph = "$at_the_liquid"},
 		rating = 10,
 	},
 	{
@@ -261,7 +261,6 @@ at_formula_list = {
 			"air",
 		},
 		output = "swamp",
-		materials_sign = { soil_lush = "$at_lush_soil" }, -- game just calls it soil
 		rating = 11,
 	},
 	{
@@ -385,7 +384,6 @@ at_formula_list = {
 		cauldron_material = "steel_static_unmeltable",
 		output = "shock_powder",
 		record_material = "liquid_fire",
-		materials_sign = { shock_powder = "$at_shock_powder", liquid_fire = "$at_liquid_fire" }, -- game has no translation for shock powder
 		exclude_from_chains = true,
 		rating = 12,
 	},
@@ -411,7 +409,6 @@ at_formula_list = {
 		output = "void_liquid",
 		check_for = at_material_presence,
 		record_spawn = at_potion_void,
-		materials_sign = { fungi = "$at_fungal" },
 		rating = 10,
 	},
 	{
@@ -672,6 +669,12 @@ at_evaporating_material_list = {
 at_extra_raw_materials = {
 	{ "salt", "water_salt" },
 	{ "magic_liquid_teleportation", "magic_liquid_unstable_teleportation" },
+}
+
+at_material_alias = {
+	shock_powder = "$at_shock_powder", -- no name at all
+	liquid_fire = "$at_liquid_fire", -- game calls it fire
+	soil_lush = "$at_lush_soil", -- game just calls it soil
 }
 
 -- an expansion mod makes one of those loops have an entrance point

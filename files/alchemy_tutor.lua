@@ -496,8 +496,11 @@ local function matname( mat, materials_sign )
 	if materials_sign and materials_sign[mat] then
 		return GameTextGet(materials_sign[mat])
 	end
+	if at_material_alias[mat] then
+		return GameTextGet(at_material_alias[mat])
+	end
 	if mat == 'air' then
-		return 'Nothing'
+		return GameTextGet('$at_nothing')
 	end
 	local id = CellFactory_GetType( mat )
 	local trans = CellFactory_GetUIName( id )
