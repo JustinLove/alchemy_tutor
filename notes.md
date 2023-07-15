@@ -25,8 +25,7 @@
 - x embed mod save version
 - x version/change notes in hall of records
 - x recipie notes on pedistals
-- default spawns: define init, append when biome has it???
-  - check hell shops
+- xx default spawns: define init, append when biome has it???
 - x Apotheosis Alias 07-03 : mid right alchemist HoM block did not spawn
 - Alias, large mod list: HoM large cauldron drains missing
   - background priority - embed?
@@ -94,7 +93,9 @@
 ### Having Spawns in Default
 
 - default spawns: define init, append when biome has it???
-- spawn code collisions (vines, rubble, etc) -> use our own code
+  - check hell shops
+  - doesn't significantly impact number of file appends in noitavania or any other currently supported mod
+- x spawn code collisions (vines, rubble, etc) -> use our own code
 
 #### Virtual Biomes in `biome_scripts`
 
