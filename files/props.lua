@@ -191,6 +191,7 @@ end
 
 at_block_brick = {
 	name = "at_block_brick",
+	sign = "$at_dissolve_into",
 	default_material = "wizardstone",
 	exclude_from_chains = true,
 	spawn = function( set, x, y, index )
@@ -200,6 +201,7 @@ at_block_brick = {
 
 at_block_rock = {
 	name = "at_block_rock",
+	sign = "$at_dissolve_into",
 	default_material = "wizardstone",
 	exclude_from_chains = true,
 	spawn = function( set, x, y, index )
@@ -209,6 +211,7 @@ at_block_rock = {
 
 at_block_steel = {
 	name = "at_block_steel",
+	sign = "$at_dissolve_metal",
 	default_material = "wizardstone",
 	exclude_from_chains = true,
 	spawn = function( set, x, y, index )

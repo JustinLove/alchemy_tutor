@@ -95,6 +95,7 @@ function at_mark_floor( x, y, floor )
 				else
 					what = at_pick_record_exemplar( set ) or 'air'
 				end
+				at_record_sign( x + 7, y, set )
 			end
 			at_record_pedestals( x, y, material, what )
 			if _G['at_test_records'] then

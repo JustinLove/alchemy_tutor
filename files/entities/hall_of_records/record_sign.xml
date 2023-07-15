@@ -1,0 +1,19 @@
+<Entity>
+  <!--SpriteComponent
+    z_index="40"
+    image_file="mods/alchemy_tutor/files/entities/hall_of_records/record_book.png"
+    offset_x="6"
+    offset_y="15"
+    >
+  </SpriteComponent-->
+
+  <InteractableComponent
+    ui_text="objective"
+    >
+  </InteractableComponent>
+
+  <InteractableComponent
+    ui_text="formula"
+    >
+  </InteractableComponent>
+</Entity>

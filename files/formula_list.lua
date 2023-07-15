@@ -73,6 +73,7 @@ at_formula_list = {
 		materials = { "magic_liquid_mana_regeneration" },
 		cauldron_contents = "magic_liquid_unstable_teleportation",
 		output = "air",
+		output_sign = "$at_burn",
 		record_material = "liquid_fire",
 		rating = 5,
 	},
@@ -197,6 +198,7 @@ at_formula_list = {
 			"material_confusion",
 		},
 		output = "magic_liquid_faster_levitation",
+		materials_sign = { gold = "$at_metal_powders" },
 		rating = 9,
 	},
 	{
@@ -213,6 +215,8 @@ at_formula_list = {
 		output = "air",
 		output2 = "liquid_fire",
 		record_material = "liquid_fire",
+		output_sign = "$at_lava_metal_evaporation",
+		materials_sign = { liquid_fire = "$at_liquid_fire", magic_liquid_random_polymorph = "$at_the_liquid"},
 		rating = 10,
 	},
 	{
@@ -228,6 +232,8 @@ at_formula_list = {
 			"magic_liquid_unstable_polymorph",
 		},
 		output = "air",
+		output_sign = "$at_lava_metal_evaporation",
+		materials_sign = { copper = "$at_metal_powders", magic_liquid_random_polymorph = "$at_the_liquid"},
 		record_material = "metal_sand_molten",
 		rating = 12,
 	},
@@ -240,6 +246,7 @@ at_formula_list = {
 		cauldron_contents = "sand",
 		cauldron_check_y = 10,
 		other = at_planterbox,
+		other_material = "blood_fungi",
 		output = "fungi_creeping",
 		rating = 10,
 	},
@@ -254,6 +261,7 @@ at_formula_list = {
 			"air",
 		},
 		output = "swamp",
+		materials_sign = { soil_lush = "$at_lush_soil" }, -- game just calls it soil
 		rating = 11,
 	},
 	{
@@ -364,6 +372,7 @@ at_formula_list = {
 		materials = {"alcohol"},
 		cauldron_contents = {"air", "air", "alcohol"},
 		other = at_frogs,
+		other_material = "meat_frog",
 		output = "magic_liquid_berserk",
 		rating = 13,
 	},
@@ -376,6 +385,7 @@ at_formula_list = {
 		cauldron_material = "steel_static_unmeltable",
 		output = "shock_powder",
 		record_material = "liquid_fire",
+		materials_sign = { shock_powder = "$at_shock_powder", liquid_fire = "$at_liquid_fire" }, -- game has no translation for shock powder
 		exclude_from_chains = true,
 		rating = 12,
 	},
@@ -401,6 +411,7 @@ at_formula_list = {
 		output = "void_liquid",
 		check_for = at_material_presence,
 		record_spawn = at_potion_void,
+		materials_sign = { fungi = "$at_fungal" },
 		rating = 10,
 	},
 	{

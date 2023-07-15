@@ -492,6 +492,90 @@ function at_pick_record_pedestal( formula )
 	return formula.output
 end
 
+local function matname( mat, materials_sign )
+	if materials_sign and materials_sign[mat] then
+		return GameTextGet(materials_sign[mat])
+	end
+	if mat == 'air' then
+		return 'Nothing'
+	end
+	local id = CellFactory_GetType( mat )
+	local trans = CellFactory_GetUIName( id )
+	return GameTextGet(trans)
+end
+
+function at_record_sign( x, y, formula )
+	local ms = formula.materials_sign
+	local contents
+	if formula.cauldron_contents ~= nil and formula.cauldron_contents ~= 'air' then
+		if type( formula.cauldron_contents ) == 'table' then
+			if formula.cauldron_contents[1] ~= 'air' then
+				contents = formula.cauldron_contents[1]
+			end
+		else
+			contents = formula.cauldron_contents
+		end
+	end
+	local result = ''
+	if formula.check_for == at_explosion then
+		result = GameTextGet( '$at_explosion' )
+	elseif formula.output ~= nil then
+		local output_sign = '$at_create'
+		if formula.output == 'air' then
+			output_sign = '$at_dissolve'
+		end
+		local output_sign = formula.output_sign or (formula.cauldron and formula.cauldron.sign) or output_sign
+		local output = matname(formula.output, ms)
+		local cauld = matname(formula.cauldron_material or (formula.cauldron and formula.cauldron.default_material) or 'air', ms)
+		local cont = matname(contents or 'air', ms)
+		result = GameTextGet( output_sign, output, cauld, cont )
+	end
+	local materials = {}
+	for i,mat in ipairs( formula.materials ) do
+		if type( mat ) == 'table' then
+			materials[#materials+1] = mat[1]
+		elseif mat == 'torch' then
+			materials[#materials+1] = 'fire'
+		elseif mat == 'powder_empty' then
+		else
+			materials[#materials+1] = mat
+		end
+		if materials[#materials] == contents then
+			contents = nil
+		end
+	end
+	if contents then
+		materials[#materials+1] = contents
+	end
+	if formula.cauldron_minor then
+		materials[#materials+1] = formula.cauldron_minor
+	end
+	if formula.other_material then
+		materials[#materials+1] = formula.other_material
+	end
+	local instruction = ''
+	for i = 1,#materials do
+		materials[i] = matname(materials[i], ms)
+	end
+	if #materials == 1 then
+		instruction = GameTextGet( '$at_mix1', materials[1] )
+	elseif #materials == 2 then
+		instruction = GameTextGet( '$at_mix2', materials[1], materials[2] )
+	elseif #materials == 3 then
+		instruction = GameTextGet( '$at_mix3', materials[1], materials[2], materials[3] )
+	else
+		instruction = table.concat( materials, ', ' )
+	end
+	local id = EntityLoad( at_mod_path .. "/entities/hall_of_records/record_sign.xml", x, y )
+	local name = EntityGetComponent( id, 'InteractableComponent')
+	if name[2] then
+		ComponentSetValue2( name[2], 'ui_text', result )
+	end
+	if name[1] then
+		ComponentSetValue2( name[1], 'ui_text', instruction )
+	end
+end
+
 function at_setup_grand_alchemy()
 	local lc_combo, ap_combo = at_grand_alchemy()
 	local grand = {}
