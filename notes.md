@@ -25,6 +25,8 @@
 - x embed mod save version
 - x version/change notes in hall of records
 - x recipie notes on pedistals
+- changelog next page broken
+- x printing fish
 - xx default spawns: define init, append when biome has it???
 - x Apotheosis Alias 07-03 : mid right alchemist HoM block did not spawn
 - Alias, large mod list: HoM large cauldron drains missing
@@ -38,7 +40,9 @@
   - field labs
   - x hall of records
   - masters
+    - level 1 effects - none
     - slight change to nondetector pits
+    - electrically isolate altars
     - beam holes etc.
 - check for blank translation and sub english
 - edges vs noedge?

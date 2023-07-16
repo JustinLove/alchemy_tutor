@@ -202,6 +202,5 @@ function at_px_spawn_fish(x, y)
 
 	for i=1,f do
 		local id = EntityLoad( "data/entities/animals/fish.xml", x, y )
-		print('fish', tostring(id))
 	end
 end
