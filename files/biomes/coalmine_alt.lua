@@ -7,7 +7,7 @@ end
 --g_pixel_scene_01 = {total_prob = 0}
 --g_oiltank = g_pixel_scene_01
 
-at_add_biome_pixel_scene('g_pixel_scene_01', 3, {
+at_add_biome_pixel_scene('g_pixel_scene_01', 5, {
 		material_file 	= "mods/alchemy_tutor/files/biome_impl/coalmine_lab_tall.png",
 		visual_file		= "",--"mods/alchemy_tutor/files/biome_impl/coalmine_lab_visual.png",
 		background_file	= "",
