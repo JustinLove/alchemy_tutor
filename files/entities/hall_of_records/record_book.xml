@@ -28,6 +28,7 @@
     play_pick_sound="0" >
   </ItemComponent>
 
+  <!-- BookComponent disables custom_pickup_string, and preferred_inventory, or at least picking when full -->
   <BookComponent>
   </BookComponent>
 

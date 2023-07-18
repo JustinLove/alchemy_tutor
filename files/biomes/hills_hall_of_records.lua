@@ -142,9 +142,13 @@ function at_spawn_book2( x, y )
 end
 
 function at_spawn_book3( x, y )
-	record_book_changelog( x, y )
+	at_record_book_changelog( x - 20, y, 3 )
+	at_record_book_changelog( x, y, 2 )
+	at_record_book_changelog( x + 20, y, 1 )
+	at_record_physics_book( x, y + 40 )
 end
 
 function at_spawn_book4( x, y )
+	at_record_book_feedback( x, y )
 end
 

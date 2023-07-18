@@ -25,13 +25,15 @@
 - x embed mod save version
 - x version/change notes in hall of records
 - x recipie notes on pedistals
-- changelog next page broken - beta?? - inventory full
+- x changelog next page broken - beta?? - inventory full
+- x feedback book
 - check description - someone picked out portals as main thing
 - x a lot of purifing powder
 - x printing fish
 - xx default spawns: define init, append when biome has it???
 - x Apotheosis Alias 07-03 : mid right alchemist HoM block did not spawn
 - setting for logger prints
+- no freebies/survivalist mode
 - Alias, large mod list: HoM large cauldron drains missing
   - background priority - embed?
 - x cauldron backgrounds
