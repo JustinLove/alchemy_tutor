@@ -32,8 +32,15 @@
 - x printing fish
 - xx default spawns: define init, append when biome has it???
 - x Apotheosis Alias 07-03 : mid right alchemist HoM block did not spawn
+- some detectors not disappearing
 - setting for logger prints
 - no freebies/survivalist mode
+- run based progress
+- live record updates
+- old labs as easter eggs
+- note about teleporter safety
+- mud?
+- lava sand?
 - Alias, large mod list: HoM large cauldron drains missing
   - background priority - embed?
 - x cauldron backgrounds
@@ -55,8 +62,10 @@
 - nightmare
 - HoM understanding:
   - Alias first visit: negative
+  - GrahamBurgers: "once I realized"
   - steam/someone: initial no
   - steam/eight golden coins: initial no
+  - Abhorenz: initial no, maybe grand
 
 - translations - partly done
 - desert music backdown?
