@@ -59,6 +59,19 @@ mod_settings =
 		value_default = true,
 		scope = MOD_SETTING_SCOPE_RUNTIME,
 	},
+	{
+		category_id = "challenges",
+		ui_name = "Challenges",
+		settings = {
+			{
+				id = "no_freebies",
+				ui_name = "No Freebies",
+				ui_description = "No materials will be provided unless necessary.\nFind - or create - them yourself.\nDisables remote lab portals.",
+				value_default = false,
+				scope = MOD_SETTING_SCOPE_RUNTIME,
+			},
+		},
+	},
 }
 
 if ModIsEnabled('EnableLogger') then

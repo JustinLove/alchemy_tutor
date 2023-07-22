@@ -89,11 +89,13 @@ function at_mark_floor( x, y, floor )
 			end
 			local what = 'air'
 			if HasFlagPersistent( "at_formula_" .. set.name ) or _G['at_test_records'] then
-				if set.record_spawn then
-					at_log( 'record', tostring(set.name), 'spawn' )
-					set.record_spawn( x + 8, y - 48 )
-				else
-					what = at_pick_record_exemplar( set ) or 'air'
+				if not ModSettingGet("alchemy_tutor.no_freebies") then
+					if set.record_spawn then
+						at_log( 'record', tostring(set.name), 'spawn' )
+						set.record_spawn( x + 8, y - 48 )
+					else
+						what = at_pick_record_exemplar( set ) or 'air'
+					end
 				end
 				at_record_sign( x + 7, y, set )
 			end

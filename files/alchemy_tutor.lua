@@ -678,6 +678,13 @@ function at_material( material, default, first )
 		if #material == 0 then
 			return default
 		end
+		if ModSettingGet("alchemy_tutor.no_freebies") then
+			for i = 1,#material do
+				if material[i] == 'air' then
+					return 'air'
+				end
+			end
+		end
 		if first then
 			return material[1]
 		end
@@ -1023,6 +1030,8 @@ function at_decorate_scene( x, y, scene_description )
 	local other = scene_description.o
 	local reward = scene_description.r
 
+	local no_freebies = ModSettingGet("alchemy_tutor.no_freebies")
+
 	local set = at_pick_lab_set( x, y, scene_description )
 	SetRandomSeed( x, y )
 
@@ -1034,7 +1043,7 @@ function at_decorate_scene( x, y, scene_description )
 	local loc
 	local red_herrings = 0
 	local first = at_first_time( set )
-	if not first then
+	if not first and not no_freebies then
 		local max = #materials-#set.materials
 		local mean = 1
 		if ModSettingGet("alchemy_tutor.formula_progression") then
@@ -1068,6 +1077,8 @@ function at_decorate_scene( x, y, scene_description )
 		if loc then
 			if in_cauldron[what] then
 				at_container( what, 0.0, loc.x, loc.y )
+			elseif no_freebies then
+				at_container( what, 0.01, loc.x, loc.y )
 			else
 				at_container( what, set.amounts[i] or 1.0, loc.x, loc.y )
 			end
@@ -1204,8 +1215,12 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	local lab_level = at_get_lab_level( lab_pixel_x, lab_pixel_y )
 	local biome_bulk = at_get_lab_biome_bulk( lab_pixel_x, lab_pixel_y )
 	local local_materials = at_get_lab_local_materials( lab_pixel_x, lab_pixel_y )
+	local no_freebies = ModSettingGet("alchemy_tutor.no_freebies")
 
 	local facts = at_master_sets(lab_level)
+	if no_freebies then
+		facts.bulk_amounts = {}
+	end
 	local tests = facts.master_tests
 	local test = tests[ Random(1, #tests) ]
 
@@ -1492,7 +1507,10 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 		end
 	end
 
-	local others = at_all_others()
+	local others = {}
+	if not no_freebies then
+		others = at_all_others()
+	end
 	at_log('other', #others, #other)
 
 	for i,extra in ipairs( others ) do

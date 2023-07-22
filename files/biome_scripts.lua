@@ -4,6 +4,10 @@ at_remote_lab_chance = ModSettingGet("alchemy_tutor.remote_lab_chance")
 if at_remote_lab_chance == nil then
 	at_remote_lab_chance = 1
 end
+-- remote labs are isolated, couldn't do anything without materials
+if ModSettingGet("alchemy_tutor.no_freebies") then
+	at_remote_lab_chance = 0
+end
 
 at_chest_chance = at_remote_lab_chance / 2
 at_remote_lab_chest = "mods/alchemy_tutor/files/entities/remote_lab_chest.xml"

@@ -2,6 +2,7 @@
 
 ## 0.8.0?
 
+- New setting: No Freebies, for the alchemist who likes to do everything themselves.
 - Added a teleporter safety note to the arcane mysteries
 - Printing to log is now optional when Enable Logging is on.
 

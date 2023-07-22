@@ -1,6 +1,6 @@
 - x setting for logger prints
 - x note about teleporter safety
-- no freebies/survivalist mode
+- x no freebies/survivalist mode
 - run based progress
 - live record updates
 - mud?
