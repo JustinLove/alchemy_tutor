@@ -333,14 +333,17 @@ function at_master_sets(level)
 		end
 	end
 
-	for i,formula in ipairs(at_formula_list) do
-		if not formula.exclude_from_chains then
-			local test = copy_test( empty_test )
-			test.target = formula.output
-			test.formulas = {formula.name}
-			test.created_materials[formula.output] = true
-			add_ingredients( test, formula )
-			table.insert( master_tests, test )
+	local function initial_tests()
+		master_sets = {}
+		for i,formula in ipairs(at_formula_list) do
+			if not formula.exclude_from_chains then
+				local test = copy_test( empty_test )
+				test.target = formula.output
+				test.formulas = {formula.name}
+				test.created_materials[formula.output] = true
+				add_ingredients( test, formula )
+				table.insert( master_tests, test )
+			end
 		end
 	end
 
@@ -382,10 +385,19 @@ function at_master_sets(level)
 	end
 
 	---[[
-	local expansionSteps = level - 1
-	for i = 1,expansionSteps do
-		expand_tests(false)
-	end
+	level = level + 1
+	local expansionSteps = level
+	repeat
+		initial_tests()
+		level = level - 1
+		expansionSteps = level - 1
+		for i = 1,expansionSteps do
+			expand_tests(false)
+			if #master_tests < 1 then
+				break
+			end
+		end
+	until #master_tests > 0 or expansionSteps < 1
 	--]]
 
 	local bulk_amounts = {}
@@ -432,6 +444,7 @@ function at_master_sets(level)
 	--]]
 
 	return {
+		level = level,
 		master_tests = master_tests,
 		bulk_amounts = bulk_amounts,
 		placed_grand = placed_grand,
@@ -636,7 +649,7 @@ function at_setup()
 		if v.name == nil then
 			v.name = v.output
 		end
-		if HasFlagPersistent( "at_formula_" .. v.name ) then
+		if at_has_flag( v.name ) then
 			at_passed_count = at_passed_count + 1
 		end
 		at_formulas[v.name] = v
@@ -667,9 +680,17 @@ end
 
 function at_first_time( set )
 	if ModSettingGet("alchemy_tutor.formula_progression") then
-		return not HasFlagPersistent( "at_formula_" .. set.name )
+		return not at_has_flag( set.name )
 	else
 		return false
+	end
+end
+
+function at_has_flag( name )
+	if ModSettingGet("alchemy_tutor.progress_per_run") then
+		return GameHasFlagRun( "at_formula_" .. name )
+	else
+		return HasFlagPersistent( "at_formula_" .. name )
 	end
 end
 
@@ -1218,6 +1239,10 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	local no_freebies = ModSettingGet("alchemy_tutor.no_freebies")
 
 	local facts = at_master_sets(lab_level)
+	if facts.level > 0 then
+		lab_level = facts.level
+	end
+	at_log( 'effective challenge level', tostring(lab_level) )
 	if no_freebies then
 		facts.bulk_amounts = {}
 	end

@@ -1,7 +1,7 @@
 - x setting for logger prints
 - x note about teleporter safety
 - x no freebies/survivalist mode
-- run based progress
+- x run based progress
 - live record updates
 - mud?
 - lava sand?

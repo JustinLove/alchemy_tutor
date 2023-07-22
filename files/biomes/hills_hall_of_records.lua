@@ -88,7 +88,7 @@ function at_mark_floor( x, y, floor )
 				material = set.cauldron_material
 			end
 			local what = 'air'
-			if HasFlagPersistent( "at_formula_" .. set.name ) or _G['at_test_records'] then
+			if at_has_flag( set.name ) or _G['at_test_records'] then
 				if ModSettingGet("alchemy_tutor.no_freebies") then
 					EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/flame_blue.xml", x + 6, y - 45 )
 				else

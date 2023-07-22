@@ -70,6 +70,13 @@ mod_settings =
 				value_default = false,
 				scope = MOD_SETTING_SCOPE_RUNTIME,
 			},
+			{
+				id = "progress_per_run",
+				ui_name = "Progress Per Run",
+				ui_description = "Operate the progress system based only the current run.\nPersistent progress is still tracked and not erased.\nRequires restart.",
+				value_default = false,
+				scope = MOD_SETTING_SCOPE_RUNTIME_RESTART,
+			},
 		},
 	},
 }
