@@ -2,6 +2,7 @@
 
 ## 0.8.0?
 
+- Added a teleporter safety note to the arcane mysteries
 - Printing to log is now optional when Enable Logging is on.
 
 ## 0.7.0

@@ -1,14 +1,14 @@
 - x setting for logger prints
-- some detectors not disappearing
+- x note about teleporter safety
 - no freebies/survivalist mode
 - run based progress
 - live record updates
 - old labs as easter eggs
-- note about teleporter safety
 - mud?
 - lava sand?
 - Alias, large mod list: HoM large cauldron drains missing
   - background priority - embed?
+- some detectors not disappearing - not reproducable
 - x cauldron backgrounds
   - x sand pile
   - block eye position (ex ambrosia)
