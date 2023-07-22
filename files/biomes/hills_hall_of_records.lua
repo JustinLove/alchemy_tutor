@@ -89,7 +89,9 @@ function at_mark_floor( x, y, floor )
 			end
 			local what = 'air'
 			if HasFlagPersistent( "at_formula_" .. set.name ) or _G['at_test_records'] then
-				if not ModSettingGet("alchemy_tutor.no_freebies") then
+				if ModSettingGet("alchemy_tutor.no_freebies") then
+					EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/flame_blue.xml", x + 6, y - 45 )
+				else
 					if set.record_spawn then
 						at_log( 'record', tostring(set.name), 'spawn' )
 						set.record_spawn( x + 8, y - 48 )

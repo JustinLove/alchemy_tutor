@@ -1,0 +1,34 @@
+<Entity>
+  <LightComponent 
+    _tags="enabled_in_world,enabled_in_hand,fire"
+    radius="96"
+    fade_out_time="1.5" >
+  </LightComponent>
+
+  <Base file="data/entities/base_torch_particle.xml" >
+
+    <ParticleEmitterComponent 
+      x_pos_offset_min="-3"
+      x_pos_offset_max="2"
+      emitted_material_name="fire_blue" >
+    </ParticleEmitterComponent>
+
+    <ParticleEmitterComponent 
+      color="ff50e7f0"
+      x_pos_offset_min="-3"
+      x_pos_offset_max="2"
+      emitted_material_name="spark_blue"
+    >
+    </ParticleEmitterComponent>
+
+    <ParticleEmitterComponent 
+      x_pos_offset_min="-3"
+      x_pos_offset_max="2" 
+      emitted_material_name="spark_blue"
+    >
+    </ParticleEmitterComponent>
+
+  </Base>
+
+</Entity>
+
