@@ -63,14 +63,6 @@ mod_settings =
 
 if ModIsEnabled('EnableLogger') then
 	table.insert( mod_settings, {
-		id = "spawn_log_book",
-		ui_name = "Spawn Log Book",
-		ui_description = "Spawn a book with debug log of lab setup.",
-		value_default = false,
-		scope = MOD_SETTING_SCOPE_RUNTIME,
-	})
-
-	table.insert( mod_settings, {
 		category_id = "debugging",
 		ui_name = "Debugging",
 		settings = {

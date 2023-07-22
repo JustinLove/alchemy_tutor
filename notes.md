@@ -3,7 +3,6 @@
 - no freebies/survivalist mode
 - run based progress
 - live record updates
-- old labs as easter eggs
 - mud?
 - lava sand?
 - Alias, large mod list: HoM large cauldron drains missing
@@ -40,6 +39,7 @@
 - odd mana failed to detect - tough to detect since acid reacts with lots of things
 - is solidifying molten metal with [water] useful?
 - lower west desert missing frogs - not consistent, but does happen in testing
+- old labs as easter eggs
 
 ## Possible mod conflict
 - x master location dedicated file
