@@ -983,11 +983,13 @@ function at_print_table( t )
 end
 
 at_spawn_logs = {}
-local at_print_logs = ModIsEnabled('EnableLogger')
+local at_debugging = ModIsEnabled('EnableLogger')
 
 function at_log( ... )
-	if at_print_logs then
-		print( ... )
+	if at_debugging then
+		if ModSettingGet("alchemy_tutor.print_logs") then
+			print( ... )
+		end
 		if ModSettingGet("alchemy_tutor.spawn_log_book") then
 			table.insert( at_spawn_logs, table.concat( {...}, ' ' ) )
 		end
@@ -1107,7 +1109,6 @@ end
 at_base_SetRandomSeed = SetRandomSeed
 
 function at_SetRandomSeed( x, y )
-	print( '--------------------------------- SetRandomSeed', x, y )
 	at_base_SetRandomSeed( x, y )
 end
 

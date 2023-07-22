@@ -1,5 +1,9 @@
 # Alchemy Tutor Changelog
 
+## 0.8.0?
+
+- Printing to log is now optional when Enable Logging is on.
+
 ## 0.7.0
 
 - Art update for Hall of Records

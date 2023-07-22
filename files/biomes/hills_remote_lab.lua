@@ -198,7 +198,6 @@ end
 
 function at_px_spawn_fish(x, y)
 	local f = tonumber( GlobalsGetValue( "at_passed_count", 0 ) )
-	print('----------------------------------------', f, x, y)
 
 	for i=1,f do
 		local id = EntityLoad( "data/entities/animals/fish.xml", x, y )
