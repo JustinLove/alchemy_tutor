@@ -213,7 +213,9 @@ function at_spawn_output_2( x, y )
 end
 
 function at_spawn_eye( x, y )
-	EntityLoad( "data/entities/items/pickup/evil_eye.xml", x, y )
+	if not ModSettingGet("alchemy_tutor.no_freebies") then
+		EntityLoad( "data/entities/items/pickup/evil_eye.xml", x, y )
+	end
 end
 
 function at_spawn_enter_entrance( x, y )
