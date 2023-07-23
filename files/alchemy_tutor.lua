@@ -347,8 +347,7 @@ function at_master_sets(level)
 		end
 	end
 
-	local function expand_tests(preserve_lower)
-		local old = master_tests
+	local function expand_tests(old, preserve_lower)
 		local new = {}
 		local unique_set = {}
 		for t,original_test in ipairs(old) do
@@ -381,23 +380,21 @@ function at_master_sets(level)
 			end
 		end
 		--at_log( 'expanded', #old, #new )
-		master_tests = new
+		return new
 	end
 
+	initial_tests()
 	---[[
-	level = level + 1
-	local expansionSteps = level
-	repeat
-		initial_tests()
-		level = level - 1
-		expansionSteps = level - 1
-		for i = 1,expansionSteps do
-			expand_tests(false)
-			if #master_tests < 1 then
-				break
-			end
+	local expansionSteps = level - 1
+	expansionSteps = level - 1
+	for i = 1,expansionSteps do
+		local new = expand_tests(master_tests, false)
+		if #new < 1 then
+			break
+		else
+			master_tests = new
 		end
-	until #master_tests > 0 or expansionSteps < 1
+	end
 	--]]
 
 	local bulk_amounts = {}
@@ -444,7 +441,6 @@ function at_master_sets(level)
 	--]]
 
 	return {
-		level = level,
 		master_tests = master_tests,
 		bulk_amounts = bulk_amounts,
 		placed_grand = placed_grand,
@@ -1267,9 +1263,6 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	local no_freebies = ModSettingGet("alchemy_tutor.no_freebies")
 
 	local facts = at_master_sets(lab_level)
-	if facts.level > 0 then
-		lab_level = facts.level
-	end
 	at_log( 'effective challenge level', tostring(lab_level) )
 	if no_freebies then
 		facts.bulk_amounts = {}
@@ -1306,7 +1299,8 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 		test = trial
 	end
 	if test then
-		at_log( 'target', test.target, table.concat(test.formulas, ',') )
+		lab_level = #(test.formulas)
+		at_log( 'target', test.target, lab_level, table.concat(test.formulas, ',') )
 	end
 
 	-- reduce some materials so labs are less likely to have the same materials (e.g. ambrosia materials)

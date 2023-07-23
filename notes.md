@@ -3,6 +3,8 @@
 - x no freebies/survivalist mode
 - x run based progress
 - x live record updates
+- x expand can stop if new set is zero
+- x level can just be number of steps in any test?
 - mud?
 - lava sand?
 - Alias, large mod list: HoM large cauldron drains missing
