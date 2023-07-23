@@ -592,6 +592,23 @@ function at_record_sign( x, y, formula )
 	end
 end
 
+function at_spawn_record_completion( x, y, set )
+	at_record_sign( x + 7, y, set )
+	local what = 'air'
+	if ModSettingGet("alchemy_tutor.no_freebies") then
+		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/flame_blue.xml", x + 6, y - 45 )
+		return 'air'
+	else
+		if set.record_spawn then
+			at_log( 'record', tostring(set.name), 'spawn' )
+			set.record_spawn( x + 8, y - 48 )
+			return 'air'
+		else
+			return at_pick_record_exemplar( set ) or 'air'
+		end
+	end
+end
+
 function at_setup_grand_alchemy()
 	local lc_combo, ap_combo = at_grand_alchemy()
 	local grand = {}
@@ -830,6 +847,17 @@ function at_random_raw( x, y )
 		end
 
 		crazy = crazy + 1
+	end
+end
+
+function at_find_formula_by_name( name )
+	if at_formulas['toxicclean'] == nil then
+		at_setup()
+	end
+	for i,v in ipairs(at_formula_list) do
+		if v.name == name then
+			return v
+		end
 	end
 end
 

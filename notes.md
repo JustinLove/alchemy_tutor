@@ -2,7 +2,7 @@
 - x note about teleporter safety
 - x no freebies/survivalist mode
 - x run based progress
-- live record updates
+- x live record updates
 - mud?
 - lava sand?
 - Alias, large mod list: HoM large cauldron drains missing

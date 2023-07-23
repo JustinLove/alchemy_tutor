@@ -89,17 +89,10 @@ function at_mark_floor( x, y, floor )
 			end
 			local what = 'air'
 			if at_has_flag( set.name ) or _G['at_test_records'] then
-				if ModSettingGet("alchemy_tutor.no_freebies") then
-					EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/flame_blue.xml", x + 6, y - 45 )
-				else
-					if set.record_spawn then
-						at_log( 'record', tostring(set.name), 'spawn' )
-						set.record_spawn( x + 8, y - 48 )
-					else
-						what = at_pick_record_exemplar( set ) or 'air'
-					end
-				end
-				at_record_sign( x + 7, y, set )
+				what = at_spawn_record_completion( x, y, set )
+			else
+				local placeholder = EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/record_placeholder.xml", x, y )
+				at_remember_formula( placeholder, set.name )
 			end
 			at_record_pedestals( x, y, material, what )
 			if _G['at_test_records'] then

@@ -315,6 +315,20 @@ function at_record_pedestals( x, y, material, contents )
 	)
 end
 
+function at_record_pedestal_fill( x, y, contents )
+	LoadPixelScene(
+		at_mod_path .. "/props/record_basin_fill.png",
+		"",
+		x, y-39,
+		"",
+		true, -- skip_biome_checks
+		true, -- skip_edge_textures
+		{ ["fff0bbee"] = contents,
+		}, -- color_to_matieral_table
+		45 -- z index
+	)
+end
+
 function at_ghost_deflector_base( x, y )
 	LoadPixelScene(
 		at_mod_path .. "/props/ghost_deflector_base.png",
