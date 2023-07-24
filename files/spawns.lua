@@ -72,6 +72,8 @@ if at_lab_chance == nil then
 	at_lab_chance = 1
 end
 --at_lab_chance = 9999999
+local chancef = math.min(at_lab_chance / 10, 0.95)
+at_lab_chance_factor = chancef / (1 - chancef)
 
 function at_add_biome_pixel_scene(pixel_scene_name, vanilla_weight, scene)
 	if not _G[pixel_scene_name] then
@@ -80,7 +82,7 @@ function at_add_biome_pixel_scene(pixel_scene_name, vanilla_weight, scene)
 	end
 	local pixel_scenes = _G[pixel_scene_name]
 	--at_total_prob(pixel_scenes, pixel_scene_name)
-	scene.prob = vanilla_weight * (at_lab_chance / 5)
+	scene.prob = vanilla_weight * at_lab_chance_factor
 	scene.is_unique = 0
 	table.insert(pixel_scenes, scene)
 end

@@ -6,7 +6,6 @@
 - x expand can stop if new set is zero
 - x level can just be number of steps in any test?
 - x ng+
-- eyes not disappearing
 - mud?
 - lava sand?
 - Alias, large mod list: HoM large cauldron drains missing
