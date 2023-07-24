@@ -44,6 +44,44 @@ at_lab_locations = {
 	},
 }
 
+at_lab_locations_ngp = {
+	{ -- right side water
+		id = 'NG_EAST_WATER',
+		level = 3,
+		x = 13824,
+		y = 8704,
+		biome = 'water',
+	},
+	{ -- lake
+		id = 'LAKE',
+		level = 2,
+		x = -15872,
+		y = 4096,
+		biome = 'water',
+	},
+	{ -- above tree
+		id = 'TREE',
+		level = 1,
+		x = -2048,
+		y = -4608,
+		east_access = 'sky_access',
+	},
+	{ -- between dark chest and end
+		id = 'NG_EAST_LAVA',
+		level = 4,
+		x = 4096,
+		y = 14336,
+		biome = 'lava',
+	},
+	{ -- sw gold
+		id = 'SW_GOLD',
+		level = 4,
+		x = -15360,
+		y = 15872,
+		biome = 'gold',
+	},
+}
+
 at_special_lab_locations = {
 	{ -- hall of records, below alchemist
 		id = 'RECORDS',
@@ -68,15 +106,37 @@ at_hom_entrance_y = 213
 
 function at_get_lab( x, y )
 	local _,mx = at_check_parallel_pos( x )
-	for _,loc in ipairs(at_lab_locations) do
-		if loc.x == mx and loc.y == y then
-			return loc
+	local newgame_n = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) or 0
+	if newgame_n < 1 then
+		for _,loc in ipairs(at_lab_locations) do
+			if loc.x == mx and loc.y == y then
+				return loc
+			end
+		end
+		for _,loc in ipairs(at_special_lab_locations) do
+			if loc.x == mx and loc.y == y then
+				return loc
+			end
+		end
+	else
+		for _,loc in ipairs(at_lab_locations_ngp) do
+			if loc.x == mx and loc.y == y then
+				return loc
+			end
 		end
 	end
-	for _,loc in ipairs(at_special_lab_locations) do
-		if loc.x == mx and loc.y == y then
-			return loc
+end
+
+function at_hall_of_masters_locations()
+	if ModSettingGet("alchemy_tutor.fixed_pixel_scenes") then
+		local newgame_n = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) or 0
+		if newgame_n < 1 then
+			return at_lab_locations
+		else
+			return at_lab_locations_ngp
 		end
+	else
+		return {}
 	end
 end
 

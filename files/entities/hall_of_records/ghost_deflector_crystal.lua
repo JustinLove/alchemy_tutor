@@ -13,7 +13,6 @@ local function at_clear_ghosts( x, y )
 				-- attempt to remove disappear sound effect; doesn't seem to be working
 				local scripts = EntityGetComponent( enemy_id, "LuaComponent" )
 				if scripts then
-					print( #scripts )
 					for s = 1,#scripts do
 						EntityRemoveComponent( enemy_id, scripts[s] )
 					end

@@ -2,6 +2,7 @@
 
 ## 0.8.0?
 
+- Locations adjusted for NG+, but random overwrites can still occur
 - New setting: No Freebies, for the alchemist who likes to do everything themselves.
 - New setting: Run Based Progress, start the progress system from scratch with every run
 - Hall of Records can update after initial spawn

@@ -49,7 +49,7 @@ function OnModInit()
 
 	at_test_lab_spawns()
 
-	ModLuaFileAppend( "data/scripts/newgame_plus.lua", "mods/alchemy_tutor/files/newgame_plus.lua" )
+	ModLuaFileAppend( "data/scripts/newgame_plus.lua", "mods/alchemy_tutor/files/newgame_plus/newgame_plus.lua" )
 
 	ModLuaFileAppend( "data/scripts/biomes/coalmine.lua", "mods/alchemy_tutor/files/biomes/coalmine.lua" )
 	ModLuaFileAppend( "data/scripts/biomes/coalmine_alt.lua", "mods/alchemy_tutor/files/biomes/coalmine_alt.lua" )

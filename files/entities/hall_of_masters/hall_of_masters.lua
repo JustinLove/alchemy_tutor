@@ -2,14 +2,15 @@ dofile_once( 'mods/alchemy_tutor/files/entities/hall_of_masters/hall_of_masters_
 
 
 local function next_lab()
-	for _,loc in ipairs(at_lab_locations) do
+	local locations = at_hall_of_masters_locations()
+	for _,loc in ipairs(locations) do
 		if not GameHasFlagRun( 'AT_MASTER_VISITED_' .. loc.id ) then
 			return loc
 		end
 	end
 
-	local index = (tonumber( GlobalsGetValue( "AT_HALL_OF_MASTERS_COUNT", "0" ) ) % #at_lab_locations + 1)
-	return at_lab_locations[index]
+	local index = (tonumber( GlobalsGetValue( "AT_HALL_OF_MASTERS_COUNT", "0" ) ) % #locations + 1)
+	return locations[index]
 end
 
 function at_spawn_hall_of_masters_0( x, y )
@@ -123,7 +124,10 @@ function at_spawn_hall_of_masters( x, y )
 	at_spawn_hall_of_masters_5( x + width, y + height*2 )
 end
 
-at_biome_map = {}
+at_biome_map_ng_level = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) or 0
+at_biome_map = nil
+at_biome_map_init = {}
+at_biome_map_init_ngp = {}
 
 -- from noita utilities.lua
 function at_check_parallel_pos( x )
@@ -158,9 +162,32 @@ local function virtual_biome_place_labs( labs )
 	end
 end
 
+function virtual_biome_init()
+	at_biome_map = {}
+	at_biome_map_ng_level = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) or 0
+	if at_biome_map_ng_level < 1 then
+		for _,f in ipairs(at_biome_map_init) do
+			f()
+		end
+	else
+		for _,f in ipairs(at_biome_map_init_ngp) do
+			f()
+		end
+	end
+end
+
+function virtual_biome_add_setup( ng, ngp )
+	at_biome_map_init[#at_biome_map_init+1] = ng
+	at_biome_map_init_ngp[#at_biome_map_init_ngp+1] = ngp
+end
+
 if ModSettingGet("alchemy_tutor.fixed_pixel_scenes") then
-	virtual_biome_place_labs( at_lab_locations )
-	virtual_biome_place_labs( at_special_lab_locations )
+	virtual_biome_add_setup(function()
+		virtual_biome_place_labs( at_lab_locations )
+		virtual_biome_place_labs( at_special_lab_locations )
+	end, function()
+		virtual_biome_place_labs( at_lab_locations_ngp )
+	end)
 end
 
 function at_get_lab_location()

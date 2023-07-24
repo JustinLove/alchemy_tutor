@@ -54,6 +54,11 @@ function init( x, y, w, h )
 		at_base_init( x, y, w, h )
 	end
 
+	local ng_level = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) or 0
+	if not at_biome_map or (ng_level > 0 and at_biome_map_ng_level == 0) then
+		virtual_biome_init()
+	end
+
 	local _,mx = at_check_parallel_pos( x )
 	local bx = mx / 512
 	local by = y / 512

@@ -5,6 +5,8 @@
 - x live record updates
 - x expand can stop if new set is zero
 - x level can just be number of steps in any test?
+- x ng+
+- eyes not disappearing
 - mud?
 - lava sand?
 - Alias, large mod list: HoM large cauldron drains missing
@@ -25,7 +27,7 @@
     - beam holes etc.
 - check for blank translation and sub english
 - edges vs noedge?
-- ng+
+- x ng+
 - nightmare
 - HoM understanding:
   - Alias first visit: negative
@@ -66,7 +68,7 @@
 "the mod seems incompatible with fluid dynamics. doing the puzzle correctly doesnt spawn the chest. looking for a second perspective on this."
 
 ### Vanilla
-- ng+
+- x ng+
 - nightmare
 
 ### Mods with new biomes

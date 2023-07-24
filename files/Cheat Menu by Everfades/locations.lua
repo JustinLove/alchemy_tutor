@@ -40,3 +40,6 @@ end
 for _,loc in ipairs(at_special_lab_locations) do
 	add_loc(loc)
 end
+for _,loc in ipairs(at_lab_locations_ngp) do
+	add_loc(loc)
+end
