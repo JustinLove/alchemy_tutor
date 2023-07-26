@@ -1,14 +1,32 @@
-<PixelScenes>
-  <mBufferedPixelScenes>
-    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/0.plz" pos_x="-9215" pos_y="6144" skip_biome_checks="1" >
-    </PixelScene>
-    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/1.plz" pos_x="-9215" pos_y="6656" skip_biome_checks="1" >
-    </PixelScene>
-    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/2.plz" pos_x="-8703" pos_y="6144" skip_biome_checks="1" >
-    </PixelScene>
-    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/3.plz" pos_x="-8703" pos_y="6656" skip_biome_checks="1" >
-    </PixelScene>
-    <PixelScene DEBUG_RELOAD_ME="1" background_filename="" clean_area_before="0" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/4.plz" pos_x="-8191" pos_y="6299" skip_biome_checks="1" >
-    </PixelScene>
-  </mBufferedPixelScenes>
-</PixelScenes>
+<PixelScenes>
+
+  <mBufferedPixelScenes>
+
+    <PixelScene background_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/0_background.png" colors_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/0_visual.plz" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/0.plz" pos_x="-9186" pos_y="6263" skip_biome_checks="1" >
+
+    </PixelScene>
+
+    <PixelScene background_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/1_background.png" colors_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/1_visual.plz" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/1.plz" pos_x="-9215" pos_y="6656" skip_biome_checks="1" >
+
+    </PixelScene>
+
+    <PixelScene background_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/2_background.png" colors_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/2_visual.plz" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/2.plz" pos_x="-8703" pos_y="6144" skip_biome_checks="1" >
+
+    </PixelScene>
+
+    <PixelScene background_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/3_background.png" colors_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/3_visual.plz" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/3.plz" pos_x="-8703" pos_y="6656" skip_biome_checks="1" >
+
+    </PixelScene>
+
+    <PixelScene background_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/4_background.png" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/4.plz" pos_x="-8191" pos_y="6299" skip_biome_checks="1" >
+
+    </PixelScene>
+
+    <PixelScene background_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/5_background.png" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/5.plz" pos_x="-8115" pos_y="7168" skip_biome_checks="1" >
+
+    </PixelScene>
+
+  </mBufferedPixelScenes>
+
+</PixelScenes>
+

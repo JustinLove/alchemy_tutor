@@ -103,5 +103,7 @@ function OnModPostInit()
 	if ModSettingGet("alchemy_tutor.fixed_pixel_scenes") then
 		dofile( "mods/alchemy_tutor/files/entities/hall_of_records/hall_of_records_pixel_scene.lua" )
 		at_add_hall_of_records( "data/biome/_pixel_scenes.xml" )
+		at_add_hall_of_records_newgame_plus( "data/biome/_pixel_scenes_newgame_plus.xml" )
+		--at_add_hall_of_records( "data/biome/_pixel_scenes_newgame_plus.xml" )
 	end
 end

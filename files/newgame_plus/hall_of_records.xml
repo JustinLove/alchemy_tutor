@@ -1,0 +1,32 @@
+<PixelScenes>
+
+  <mBufferedPixelScenes>
+
+    <PixelScene background_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/0_background.png" colors_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/0_visual.plz" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/0.plz" pos_x="-6627" pos_y="16503" skip_biome_checks="1" >
+
+    </PixelScene>
+
+    <PixelScene background_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/1_background.png" colors_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/1_visual.plz" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/1.plz" pos_x="-6656" pos_y="16896" skip_biome_checks="1" >
+
+    </PixelScene>
+
+    <PixelScene background_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/2_background.png" colors_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/2_visual.plz" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/2.plz" pos_x="-6144" pos_y="16384" skip_biome_checks="1" >
+
+    </PixelScene>
+
+    <PixelScene background_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/3_background.png" colors_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/3_visual.plz" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/3.plz" pos_x="-6144" pos_y="16896" skip_biome_checks="1" >
+
+    </PixelScene>
+
+    <PixelScene background_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/4_background.png" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/4.plz" pos_x="-5632" pos_y="16539" skip_biome_checks="1" >
+
+    </PixelScene>
+
+    <PixelScene background_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/5_background.png" colors_filename="" material_filename="mods/alchemy_tutor/files/biome_impl/spliced/hall_of_records/5.plz" pos_x="-5556" pos_y="17408" skip_biome_checks="1" >
+
+    </PixelScene>
+
+  </mBufferedPixelScenes>
+
+</PixelScenes>
+
