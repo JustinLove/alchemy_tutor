@@ -80,6 +80,13 @@ at_lab_locations_ngp = {
 		y = 15872,
 		biome = 'gold',
 	},
+	{ -- hall of records
+		id = 'RECORDS_NGP',
+		level = 4,
+		x = -6144,
+		y = 16896,
+		west_access = 'records_access',
+	},
 }
 
 at_special_lab_locations = {

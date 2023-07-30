@@ -6,6 +6,9 @@
 - x expand can stop if new set is zero
 - x level can just be number of steps in any test?
 - x ng+
+- x hall of records, hall of masters off bottom
+- PhysicsKeepInWorldComponent?
+- tele + lava = cold blood?
 - mud?
 - lava sand?
 - Alias, large mod list: HoM large cauldron drains missing
