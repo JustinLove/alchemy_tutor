@@ -1,6 +1,6 @@
 # Alchemy Tutor Changelog
 
-## 0.8.0?
+## 0.8.0
 
 - Main path spawn rates reworked again - the max value proved insufficient for high intensity mod testing.
 - Locations adjusted for NG+, but random overwrites can still occur

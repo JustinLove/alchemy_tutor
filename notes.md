@@ -10,7 +10,7 @@
 - xx tele + lava = cold blood?
 - x ng+ records first
 - x evaluate distance dependent + progress
-- copy patch notes to records
+- x copy patch notes to records
 - PhysicsKeepInWorldComponent?
 - mud?
 - lava sand?
