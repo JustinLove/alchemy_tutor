@@ -9,7 +9,6 @@
 - x hall of records, hall of masters off bottom
 - xx tele + lava = cold blood?
 - x ng+ records first
-- teleportation note
 - copy patch notes to records
 - PhysicsKeepInWorldComponent?
 - mud?
