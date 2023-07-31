@@ -68,7 +68,7 @@ function at_pick_lab_set( x, y, scene_description )
 	local in_grade = {}
 	local rating_limit = #at_formula_list
 	local banned = false
-	if ModSettingGet("alchemy_tutor.formula_progression") then
+	if ModSettingGet("alchemy_tutor.formula_selection") == 'progression' then
 		rating_limit = at_passed_count + 3
 	end
 	local function mark_banned(mat)
@@ -112,7 +112,7 @@ function at_pick_lab_set( x, y, scene_description )
 	else
 		local i
 		local d = math.sqrt(x*x + y*y)
-		if d < 15000 and ModSettingGet("alchemy_tutor.formula_distance") then
+		if d < 15000 and ModSettingGet("alchemy_tutor.formula_selection") == 'distance' then
 			local target = math.floor(#in_grade * (d/12000))
 			i = RandomDistribution(1, #in_grade, target)
 			at_log( 'selection by distanace', i, in_grade[i].name, d )
@@ -692,7 +692,7 @@ function at_setup()
 end
 
 function at_first_time( set )
-	if ModSettingGet("alchemy_tutor.formula_progression") then
+	if ModSettingGet("alchemy_tutor.formula_selection") == 'progression' then
 		return not at_has_flag( set.name )
 	else
 		return false
@@ -1091,7 +1091,7 @@ function at_decorate_scene( x, y, scene_description )
 	if not first and not no_freebies then
 		local max = #materials-#set.materials
 		local mean = 1
-		if ModSettingGet("alchemy_tutor.formula_progression") then
+		if ModSettingGet("alchemy_tutor.formula_selection") == 'progression' then
 			max = math.min( at_passed_count, max )
 			mean = math.log10( at_passed_count )
 		end

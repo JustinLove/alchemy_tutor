@@ -4,6 +4,7 @@
 
 - Main path spawn rates reworked again - the max value proved insufficient for high intensity mod testing.
 - Locations adjusted for NG+, but random overwrites can still occur
+- The distance/progression settings have been combined, making them mutually exclusive - distance seemed to mainly do melt steel in low progress states.
 - New setting: No Freebies, for the alchemist who likes to do everything themselves.
 - New setting: Run Based Progress, start the progress system from scratch with every run
 - Hall of Records can update after initial spawn

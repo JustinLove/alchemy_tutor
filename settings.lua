@@ -13,7 +13,7 @@ dofile("data/scripts/lib/mod_settings.lua") -- see this file for documentation o
 -- ModSettingSetNextValue() will set the buffered value, that will later become visible via ModSettingGet(), unless the setting scope is MOD_SETTING_SCOPE_RUNTIME.
 
 local mod_id = "alchemy_tutor" -- This should match the name of your mod's folder.
-mod_settings_version = 1 -- This is a magic global that can be used to migrate settings to new mod versions. call mod_settings_get_version() before mod_settings_update() to get the old value. 
+mod_settings_version = 2 -- This is a magic global that can be used to migrate settings to new mod versions. call mod_settings_get_version() before mod_settings_update() to get the old value.
 mod_settings = 
 {
 	{
@@ -46,22 +46,18 @@ mod_settings =
 		scope = MOD_SETTING_SCOPE_NEW_GAME,
 	},
 	{
-		id = "formula_distance",
-		ui_name = "Distance Dependant",
-		ui_description = "Favor basic formulas near start, and obscure formula farther away",
-		value_default = true,
-		scope = MOD_SETTING_SCOPE_RUNTIME,
-	},
-	{
-		id = "formula_progression",
-		ui_name = "Progression Dependant",
-		ui_description = "Simply formulas the first time, and limit obscurity based on number solved.",
-		value_default = true,
+		id = "formula_selection",
+		ui_name = "Formula Selection",
+		ui_description = "Distance: Favor basic formulas near start, and obscure formula farther away\nProgression: Simplify formulas the first time, and limit obscurity based on number solved.",
+		value_default = "progression",
+		values = { {"random","Random"}, {"distance","Distance"}, {"progression","Progression"} },
 		scope = MOD_SETTING_SCOPE_RUNTIME,
 	},
 	{
 		category_id = "challenges",
 		ui_name = "Challenges",
+		foldable = true,
+		_folded = true,
 		settings = {
 			{
 				id = "no_freebies",
@@ -85,6 +81,8 @@ if ModIsEnabled('EnableLogger') then
 	table.insert( mod_settings, {
 		category_id = "debugging",
 		ui_name = "Debugging",
+		foldable = true,
+		_folded = true,
 		settings = {
 			{
 				id = "print_logs",
@@ -112,6 +110,18 @@ end
 --		- at the end of an update when mod settings have been changed via ModSettingsSetNextValue() and the game is unpaused (init_scope will be MOD_SETTINGS_SCOPE_RUNTIME)
 function ModSettingsUpdate( init_scope )
 	local old_version = mod_settings_get_version( mod_id ) -- This can be used to migrate some settings between mod versions.
+	if old_version == 1 then
+		if ModSettingGetNextValue("alchemy_tutor.formula_progression") then
+			ModSettingSet('alchemy_tutor.formula_selection', 'progression')
+			ModSettingSetNextValue('alchemy_tutor.formula_selection', 'progression', true)
+		elseif ModSettingGetNextValue("alchemy_tutor.formula_distance") then
+			ModSettingSet('alchemy_tutor.formula_selection', 'distance')
+			ModSettingSetNextValue('alchemy_tutor.formula_selection', 'distance', true)
+		else
+			ModSettingSet('alchemy_tutor.formula_selection', 'random')
+			ModSettingSetNextValue('alchemy_tutor.formula_selection', 'random', true)
+		end
+	end
 	mod_settings_update( mod_id, mod_settings, init_scope )
 end
 
