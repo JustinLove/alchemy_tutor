@@ -45,8 +45,15 @@ at_lab_locations = {
 }
 
 at_lab_locations_ngp = {
+	{ -- hall of records
+		id = 'RECORDS_NGP',
+		level = 4,
+		x = -6144,
+		y = 16896,
+		west_access = 'records_access',
+	},
 	{ -- right side water
-		id = 'NG_EAST_WATER',
+		id = 'NGP_EAST_WATER',
 		level = 3,
 		x = 13824,
 		y = 8704,
@@ -67,7 +74,7 @@ at_lab_locations_ngp = {
 		east_access = 'sky_access',
 	},
 	{ -- between dark chest and end
-		id = 'NG_EAST_LAVA',
+		id = 'NGP_EAST_LAVA',
 		level = 4,
 		x = 4096,
 		y = 14336,
@@ -79,13 +86,6 @@ at_lab_locations_ngp = {
 		x = -15360,
 		y = 15872,
 		biome = 'gold',
-	},
-	{ -- hall of records
-		id = 'RECORDS_NGP',
-		level = 4,
-		x = -6144,
-		y = 16896,
-		west_access = 'records_access',
 	},
 }
 

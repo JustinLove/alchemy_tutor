@@ -7,8 +7,11 @@
 - x level can just be number of steps in any test?
 - x ng+
 - x hall of records, hall of masters off bottom
+- xx tele + lava = cold blood?
+- x ng+ records first
+- teleportation note
+- copy patch notes to records
 - PhysicsKeepInWorldComponent?
-- tele + lava = cold blood?
 - mud?
 - lava sand?
 - Alias, large mod list: HoM large cauldron drains missing
