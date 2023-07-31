@@ -128,8 +128,11 @@ function at_spawn_record_enter( x, y )
 end
 
 function at_spawn_ghost_crystal_records( x, y )
-	EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/ghost_deflector_crystal.xml", x, y + 2 )
-	at_ghost_deflector_base( x, y + 5 )
+	local newgame_n = tonumber( SessionNumbersGetValue("NEW_GAME_PLUS_COUNT") ) or 0
+	if newgame_n < 1 then
+		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/ghost_deflector_crystal.xml", x, y + 2 )
+		at_ghost_deflector_base( x, y + 5 )
+	end
 end
 
 function at_spawn_book1( x, y )
