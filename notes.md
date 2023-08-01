@@ -11,6 +11,8 @@
 - x ng+ records first
 - x evaluate distance dependent + progress
 - x copy patch notes to records
+- x version update did not work
+- spawn rates could be realtime?
 - PhysicsKeepInWorldComponent?
 - mud?
 - lava sand?
