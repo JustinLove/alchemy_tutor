@@ -12,8 +12,10 @@
 - x evaluate distance dependent + progress
 - x copy patch notes to records
 - x version update did not work
+- x lava lab over background message
 - spawn rates could be realtime?
 - PhysicsKeepInWorldComponent?
+- beta: SE meat has blood
 - mud?
 - lava sand?
 - Alias, large mod list: HoM large cauldron drains missing

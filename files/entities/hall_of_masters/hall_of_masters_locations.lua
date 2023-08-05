@@ -73,19 +73,19 @@ at_lab_locations_ngp = {
 		y = -4608,
 		east_access = 'sky_access',
 	},
-	{ -- between dark chest and end
-		id = 'NGP_EAST_LAVA',
-		level = 4,
-		x = 4096,
-		y = 14336,
-		biome = 'lava',
-	},
 	{ -- sw gold
 		id = 'SW_GOLD',
 		level = 4,
 		x = -15360,
 		y = 15872,
 		biome = 'gold',
+	},
+	{ -- west of sky chest clouds
+		id = 'NGP_EAST_CLOUDS',
+		level = 2,
+		x = 7168,
+		y = -5120,
+		east_access = 'sky_access',
 	},
 }
 
