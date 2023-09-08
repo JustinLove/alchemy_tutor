@@ -5,9 +5,9 @@
     >
   </LuaComponent>
 
-  <SpriteComponent 
+  <!--SpriteComponent 
     image_file="mods/alchemy_tutor/files/entities/hall_of_masters/bottle_filler_stand.png" 
     offset_x="10"
     offset_y="10">
-  </SpriteComponent>
+  </SpriteComponent-->
 </Entity>

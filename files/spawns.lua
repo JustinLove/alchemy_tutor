@@ -261,12 +261,12 @@ function at_spawn_records_access( x, y )
 			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_records_access.png",
 			"", -- visual
 			x, y,
-			"", -- background
+			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_records_access_background.png",
 			true, -- skip_biome_checks
 			false, -- skip_edge_textures
 			{
 			}, -- color_to_matieral_table
-			50 -- z index
+			49 -- z index
 		)
 	end
 end
@@ -279,12 +279,12 @@ function at_spawn_east_access( x, y )
 			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_east_access.png",
 			"", -- visual
 			x, y-23,
-			"", -- background
+			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_east_access_background.png",
 			true, -- skip_biome_checks
 			false, -- skip_edge_textures
 			{
 			}, -- color_to_matieral_table
-			50 -- z index
+			49 -- z index
 		)
 	end
 	if loc and loc.east_access == 'sky_access' then
@@ -292,12 +292,12 @@ function at_spawn_east_access( x, y )
 			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_sky_access.png",
 			"", -- visual
 			x, y-23,
-			"", -- background
+			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_sky_access_background.png",
 			true, -- skip_biome_checks
 			false, -- skip_edge_textures
 			{
 			}, -- color_to_matieral_table
-			50 -- z index
+			49 -- z index
 		)
 	end
 end
@@ -310,12 +310,12 @@ function at_spawn_west_access( x, y )
 			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_west_access.png",
 			"", -- visual
 			x - 480, y - 200,
-			"", -- background
+			"mods/alchemy_tutor/files/biome_impl/hall_of_masters/hall_of_masters_west_access_background.png",
 			true, -- skip_biome_checks
 			false, -- skip_edge_textures
 			{
 			}, -- color_to_matieral_table
-			50 -- z index
+			49 -- z index
 		)
 	end
 end

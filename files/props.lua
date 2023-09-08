@@ -343,44 +343,50 @@ end
 
 function at_medium_bin( x, y, contents, amount )
 	amount = amount or 1.0
-	LoadPixelScene(
-		at_mod_path .. "/props/medium_tank.png",
-		"", -- visual
-		x-7, y,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{ ["ffdd00dd"] = (amount >= 0.95 and contents) or 'air',
-			["ffcc00cc"] = (amount >= 0.90 and contents) or 'air',
-			["ffbb00bb"] = (amount >= 0.85 and contents) or 'air',
-			["ffaa00aa"] = (amount >= 0.80 and contents) or 'air',
-			["ff990099"] = (amount >= 0.75 and contents) or 'air',
-			["ff880088"] = contents,
-			["ff786c42"] = "steel_static_strong",
-		} -- color_to_matieral_table
-	)
+	if contents ~= 'air' then
+		LoadPixelScene(
+			at_mod_path .. "/props/medium_tank.png",
+			"", -- visual
+			x-7, y,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{ ["ffdd00dd"] = (amount >= 0.95 and contents) or 'air',
+				["ffcc00cc"] = (amount >= 0.90 and contents) or 'air',
+				["ffbb00bb"] = (amount >= 0.85 and contents) or 'air',
+				["ffaa00aa"] = (amount >= 0.80 and contents) or 'air',
+				["ff990099"] = (amount >= 0.75 and contents) or 'air',
+				["ff880088"] = contents,
+				["ff786c42"] = "",
+				--["ff786c42"] = "steel_static_strong",
+			} -- color_to_matieral_table
+		)
+	end
 
 	EntityLoad( at_mod_path .. "/entities/hall_of_masters/bottle_filler_stand.xml", x + 25, y + 85 + 36 )
 end
 
 function at_large_bin( x, y, contents, amount )
 	amount = amount or 1.0
-	LoadPixelScene(
-		at_mod_path .. "/props/large_tank.png",
-		"", -- visual
-		x-12, y-31,
-		"", -- background
-		true, -- skip_biome_checks
-		false, -- skip_edge_textures
-		{ ["ffdd00dd"] = (amount >= 0.95 and contents) or 'air',
-			["ffcc00cc"] = (amount >= 0.90 and contents) or 'air',
-			["ffbb00bb"] = (amount >= 0.85 and contents) or 'air',
-			["ffaa00aa"] = (amount >= 0.80 and contents) or 'air',
-			["ff990099"] = (amount >= 0.75 and contents) or 'air',
-			["ff880088"] = contents,
-			["ff786c42"] = "steel_static_strong",
-		} -- color_to_matieral_table
-	)
+	if contents ~= 'air' then
+		LoadPixelScene(
+			at_mod_path .. "/props/large_tank.png",
+			"", -- visual
+			x-12, y-31,
+			"", -- background
+			true, -- skip_biome_checks
+			false, -- skip_edge_textures
+			{ ["ffdd00dd"] = (amount >= 0.95 and contents) or 'air',
+				["ffcc00cc"] = (amount >= 0.90 and contents) or 'air',
+				["ffbb00bb"] = (amount >= 0.85 and contents) or 'air',
+				["ffaa00aa"] = (amount >= 0.80 and contents) or 'air',
+				["ff990099"] = (amount >= 0.75 and contents) or 'air',
+				["ff880088"] = contents,
+				["ff786c42"] = "",
+				--["ff786c42"] = "steel_static_strong",
+			} -- color_to_matieral_table
+		)
+	end
 
 	EntityLoad( at_mod_path .. "/entities/hall_of_masters/bottle_filler_stand.xml", x + 45, y + 78 + 36 )
 end

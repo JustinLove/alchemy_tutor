@@ -1,21 +1,19 @@
-- x setting for logger prints
-- x note about teleporter safety
-- x no freebies/survivalist mode
-- x run based progress
-- x live record updates
-- x expand can stop if new set is zero
-- x level can just be number of steps in any test?
-- x ng+
-- x hall of records, hall of masters off bottom
-- xx tele + lava = cold blood?
-- x ng+ records first
-- x evaluate distance dependent + progress
-- x copy patch notes to records
-- x version update did not work
-- x lava lab over background message
-- spawn rates could be realtime?
+- x spawn rates could be realtime?
+- right emergency portal
+- addmaterialinventory failed - empty loop?
+- double spawn of magic spells reward?
 - PhysicsKeepInWorldComponent?
-- beta: SE meat has blood
+- beta
+  - SE meat has blood
+  - dimunitium
+  - pus
+  - midas gas
+  - worm gas
+  - yellow fungus
+  - copper broken
+  - see list below
+  - bottles
+  - bottles make water tele possible?
 - mud?
 - lava sand?
 - Alias, large mod list: HoM large cauldron drains missing
@@ -27,13 +25,27 @@
 - paintovers/backgrounds
   - x main labs
   - x remote lab
-  - field labs
   - x hall of records
   - masters
-    - level 1 effects - none
-    - slight change to nondetector pits
-    - electrically isolate altars
-    - beam holes etc.
+    - x slight change to nondetector pits
+    - x electrically isolate altars
+    - x beam holes etc.
+    - x entrance fixups before anything in other layers with holes
+    - x tank backgrounds builtin
+    - x tank edges builtin - material only?
+    - x large tanks no drain when empty
+    - x drains
+    - x altar backdrop
+     offer what is offered
+     apply what is learned
+     choose what is treasure
+    - x drip
+    - x gauge pipe
+    - x human size gauges
+    - entrances
+    - regular cauldron background
+  - field labs
+  - decorative picture frames
 - check for blank translation and sub english
 - edges vs noedge?
 - x ng+
@@ -46,6 +58,11 @@
   - Abhorenz: initial no, maybe grand
 
 - translations - partly done
+- no spoiler mode
+  - alternate decorate scene, random material fetch
+  - altar instead of cauldron?
+  - no remote lab
+  - records in ruin?
 - desert music backdown?
 - pillars??
 - check hanging with special detectors??
@@ -199,6 +216,53 @@ Theoretical extreme solution:
 - x wizardstone + fire = lava
 - x wizardstone + amb = steam
 - x cooking meat
+
+### Beta, unfiltered
+
+- cement + lava = grey rock + grey rock
+- hell slime + [magic_faster] = fire + steam (+ explosion)
+- lava + sima = rock + fire
+- lava + juhannussima = rock + fire
+- lava + gate opener = australium + steam
+- lava + pea soup = lava + liquid fire
+- lava + alchemic precursor = lava + midas gas
+- lava + slime = hell slime + hell slime
+- lava + greed-cursed liquid = greed-cursed rock + steam
+- lava + green slime = green fungus + fungal gas
+- lava + yellow slime = yellow fungus + fungal gas
+- lava + worm blood = lava + worm gas
+- worm gas + steam = worm blood + worm blood
+- lava + vomit = lava + acid
+- unstable teleportatium + hell slime = teleportatium + teleportatium
+- (unstable or stable) teleportatium + lava = freezing vapour + lava
+- NOTE: yellow and green slime no longer inherit slime's reactions (ie can't be used to make hellslime with lava)
+- Diminution + Teleportatium -> Diminution + Unstable Teleportatium
+- Diminution + Berserkium -> Diminution + Water
+- Diminution + Polymorphine -> Diminution + Chaotic Polymorphine
+- Diminution + Levitatium -> Toxic Sludge
+- Diminution + Concentrated Mana -> Steam
+- Diminution + Fungus -> Diminution + Sand
+- Diminution + Fungal Soil -> Diminution + Sand
+- Diminution + Gold (solid or molten) -> Diminution + Silver (solid or molten)
+- Diminution + Diamond -> Steam + Toxic Sludge
+- Diminution + Salt -> Diminution + Smoke
+- Diminution + Flammable Gas -> Diminution
+- Diminution + Ambrosia -> Smoke + Acid
+- Diminution + Draught of Midas -> Smoke + Liquid Fire
+- Diminution + Alchemic Precursor -> Smoke + Liquid Fire
+- Diminution + [slime] -> Blue Fire + Steam + 💥 
+- Pus + Water -> Pus
+- Pus + Toxic -> Pus
+- Pus + Water -> Pus (Duplicated?)
+- Pus + Fungi -> Fungi
+- Pus + Gold -> Pus + Smoke
+- Pus + Silver -> Pus + Smoke
+- Pus + Copper -> Pus + Smoke
+- Pus + Brass -> Pus + Smoke
+- Pus + Aluminum -> Pus + Smoke
+- Pus + Grass -> Pus + Smoke
+- Pus + Jungle Sandstone (incl. dark) -> Pus + Coal
+- Pus + Lush Soil (incl. dark) -> Pus + Smoke 
 
 ### Alchemical Reactions Extended
 Breaks void detection

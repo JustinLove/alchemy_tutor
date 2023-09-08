@@ -1408,6 +1408,12 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 		end
 	end
 
+	upfill = total_large - #large_list
+	at_log( 'air->large counts', upfill, total_large )
+	for i = 1,upfill do
+		large_list[#large_list+1] = "air"
+	end
+
 	upfill = total_medium - #medium_list - 5
 	upfill = math.min( Random(upfill/2, upfill), #container_list )
 	--upfill = math.min( total_medium - #medium_list, #container_list )
@@ -1444,10 +1450,10 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 	local what
 
 	shuffleTable( materials )
-	shuffleTable( medium_bins )
-	shuffleTable( large_bins )
+	--shuffleTable( medium_bins )
+	--shuffleTable( large_bins )
 	shuffleTable( other )
-	shuffleTable( reward )
+	--shuffleTable( reward )
 
 	local master_rewards = {
 		'treasure',
@@ -1463,6 +1469,7 @@ function at_decorate_hall_of_masters( x, y, scene_description )
 		if block_number == 2 then
 			--at_container( test.target, 0.91, loc.x, loc.y )
 			at_container( test.target, 0.01, loc.x, loc.y )
+			--EntityLoad("data/entities/items/pickup/thunderstone.xml", loc.x, loc.y)
 		end
 
 		local altar_reward = master_rewards[block_number]

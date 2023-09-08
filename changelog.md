@@ -1,5 +1,11 @@
 # Alchemy Tutor Changelog
 
+## 0.9.0? Hall of Masters art update
+
+- Altars have been reworked in stone to reduce risk of electrical shock.
+- Fix missing drains in empty large bins (and empty no longer has a right bias)
+- Some changes to random calls, material placements, and material layer may affect saves in progress.
+
 ## 0.8.0
 
 - Main path spawn rates reworked again - the max value proved insufficient for high intensity mod testing.

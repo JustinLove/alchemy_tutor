@@ -1,0 +1,80 @@
+Newly flaskable materials
+Lymm on discord. https://discord.com/channels/453998283174576133/627157732063182848/1143256402241015818
+
+solids:
+concrete - cement + water
+rock - lava + water
+dense rock - lava + freezing liquid
+glowing matter - lava + brine
+volcanic rock - lava + blood
+toxic rock - lava + toxic sludge
+poisonous rock - lava + poison
+ice - water + freezing liquid
+greed-cursed rock - greed-cursed liquid + lava
+hell slime - lava + slime
+
+if you start with mud or can get soil:
+mud - soil + water
+ground - mud + lava
+
+if you can get urine:
+fool's gold - lava + urine
+australium - lava + gate-opener
+
+powders:
+gold - molten gold + freezing liquid/water
+silver - molten silver + freezing liquid/water
+copper - molten copper + freezing liquid/water
+brass - molten brass + freezing liquid/water
+metal dust - molten metal + freezing liquid/water
+steel - molten metal (one specific kind) + freezing liquid/water
+fungus - lava + green/yellow slime
+shock powder - brass + fire (called fungal soil for some reason, quickly forms funky cloud)
+guiding powder - flummoxium + unstable teleportatium
+sand - fungus blood + diminution
+mystery fungus - toxic sludge + fungus blood + diminution (catalyst) + levitatium (neutralizer)
+diamond - molten silver + molten copper + blood + freezing liquid (catalyst)
+purifying powder - molten brass + diamond + freezing liquid (catalyst) (2 step) 
+purifying powder - diamond + silver + worm blood (alternative, 2 step)
+gunpowder (unstable) - purifying powder + healing or lava (3 step, much easier to just get this from alchemists!)
+
+unverified:
+salt - brine + fire (seems to just duplicate the fire)
+soil - excrement + lava (can't remove the nauseating gas which seems to form in excess)
+
+possible but very impractical:
+wax - molten wax + freezing liquid/water
+plastic - molten plastic + water (freezing liquid doesn't seem to work for some reason)
+
+if you get plant seed (rare potion):
+plant material - plant seed + water
+
+liquids (already technically flaskable, but some reactions make it easier):
+void liquid - diamond + chaotic polymorphine + toxic sludge (2 step)
+chilly water - water + freezing liquid (quickly converts to ice, hard to shift)
+slime mist - slime + fire + water (though you could collect this with the spell anyway)
+fire - lava + water, lava + oil, unstable teleportatium + flummoxium, etc etc
+
+if you can get urine:
+gate-opener - pus + urine + flummoxium
+
+gases:
+steam - water + lava
+smoke - lots of things...
+freezing vapour - freezing liquid + lava
+flammable gas - acid + water
+toxic gas - toxic sludge + lava
+poison gas - poison + lava (quickly becomes fire, hard to shift)
+whiskey fumes - whiskey + lava
+funky cloud - molten brass + fungus blood + freezing liquid (catalyst)
+nauseating gas - excrement + lava
+polymorphine cloud - polymorphine + lava
+teleportatium cloud - teleportatium + lava (hard to get this as the main material, since it forms freezing vapour as a side product. Seems to help if you jump into lava to add it quickly)
+diminution cloud - diminution + lava
+healium - healthium/LC + lava
+gas of midas - alchemic precursor + lava
+fungal gas - green/yellow slime + lava
+
+other
+[fire] - whiskey + lava
+(many different kinds: spark, flame, fire, electric spark, etc, but quickly reacts to form whiskey fumes)
