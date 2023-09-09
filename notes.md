@@ -1,7 +1,11 @@
 - x spawn rates could be realtime?
 - right emergency portal
 - addmaterialinventory failed - empty loop?
-- double spawn of magic spells reward?
+- beta doubles?
+  - double spawn of magic spells reward?
+  - double chest reward
+  - doubled shotguns
+  - remove fallback chest, only seen on doubled or simultaneous activation
 - PhysicsKeepInWorldComponent?
 - beta
   - SE meat has blood

@@ -1040,10 +1040,10 @@ local at_debugging = ModIsEnabled('EnableLogger')
 function at_log( ... )
 	if at_debugging then
 		if ModSettingGet("alchemy_tutor.print_logs") then
-			print( ... )
+			print( GameGetFrameNum(), ... )
 		end
 		if ModSettingGet("alchemy_tutor.spawn_log_book") then
-			table.insert( at_spawn_logs, table.concat( {...}, ' ' ) )
+			table.insert( at_spawn_logs, table.concat( {GameGetFrameNum(), ...}, ' ' ) )
 		end
 	end
 end
