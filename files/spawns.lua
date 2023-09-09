@@ -416,6 +416,7 @@ function at_spawn_med_bin_6( x, y )
 end
 
 function at_spawn_other( x, y )
+	at_log( 'other pixel', x, y )
 	table.insert( at_other, {x = x, y = y} )
 end
 
