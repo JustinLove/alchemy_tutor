@@ -4,7 +4,8 @@
 
 - Altars have been reworked in stone to reduce risk of electrical shock.
 - Fix missing drains in empty large bins (and empty no longer has a right bias)
-- Some changes to random calls, material placements, and material layer may affect saves in progress.
+- Some changes to random calls, material placements, and material layer in hall of masters may affect saves in progress.
+- Removed a regular fallback reward that I've seen double activate more often than be a proper fallback.
 
 ## 0.8.0
 

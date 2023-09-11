@@ -65,7 +65,7 @@ function material_area_checker_success( pos_x, pos_y )
 
 	local rewards = EntityGetInRadiusWithTag( x, y, 500, "at_reward" )
 	if #rewards == 0 then
-		spawn_reward( x, y - 40 )
+		-- I've only seen this double spawn, not get used properly spawn_reward( x, y - 40 )
 		return
 	end
 
