@@ -1,14 +1,15 @@
-- remove extra logging
+- x remove extra logging
 - cover image
 - patch notes
 - x spawn rates could be realtime?
 - right emergency portal
 - addmaterialinventory failed - empty loop?
+- remove fallback chest, only seen on doubled or simultaneous activation
 - beta doubles?
   - double spawn of magic spells reward?
   - double chest reward
   - doubled shotguns
-  - remove fallback chest, only seen on doubled or simultaneous activation
+  - did not recur - Inventory Bags conflict?
 - PhysicsKeepInWorldComponent?
 - beta
   - SE meat has blood

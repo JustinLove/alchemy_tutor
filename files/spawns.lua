@@ -378,12 +378,10 @@ function at_spawn_props(x, y)
 end
 
 function at_spawn_material( x, y )
-	at_log( 'material pixel', x, y )
 	table.insert( at_materials, {x = x, y = y} )
 end
 
 function at_spawn_cauldron( x, y )
-	at_log( 'cauldron pixel', x, y )
 	table.insert( at_cauldrons, {x = x, y = y} )
 end
 
@@ -416,12 +414,10 @@ function at_spawn_med_bin_6( x, y )
 end
 
 function at_spawn_other( x, y )
-	at_log( 'other pixel', x, y )
 	table.insert( at_other, {x = x, y = y} )
 end
 
 function at_spawn_reward( x, y )
-	at_log( 'reward pixel', x, y )
 	local id = EntityLoad( "mods/alchemy_tutor/files/entities/reward_marker.xml", x + 1, y - 6 )
 	table.insert( at_reward, {x = x, y = y} )
 end
