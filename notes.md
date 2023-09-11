@@ -1,3 +1,6 @@
+- remove extra logging
+- cover image
+- patch notes
 - x spawn rates could be realtime?
 - right emergency portal
 - addmaterialinventory failed - empty loop?
@@ -15,6 +18,7 @@
   - worm gas
   - yellow fungus
   - copper broken
+  - lava/metal regular? poly broken
   - see list below
   - bottles
   - bottles make water tele possible?
@@ -30,7 +34,7 @@
   - x main labs
   - x remote lab
   - x hall of records
-  - masters
+  - x masters
     - x slight change to nondetector pits
     - x electrically isolate altars
     - x beam holes etc.
@@ -46,7 +50,7 @@
     - x drip
     - x gauge pipe
     - x human size gauges
-    - entrances
+    - x entrances
     - regular cauldron background
   - field labs
   - decorative picture frames
