@@ -1,7 +1,8 @@
 # Alchemy Tutor Changelog
 
-## 0.9.0? Hall of Masters art update
+## 0.9.0 Hall of Masters art update
 
+- Art update for Hall of Masters
 - Altars have been reworked in stone to reduce risk of electrical shock.
 - Fix missing drains in empty large bins (and empty no longer has a right bias)
 - Some changes to random calls, material placements, and material layer in hall of masters may affect saves in progress.

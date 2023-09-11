@@ -1,4 +1,5 @@
 at_record_pages = {
+	'0_9_0',
 	'0_8_0',
 	'0_7_0',
 	'0_6_1',
@@ -9,7 +10,7 @@ at_record_pages = {
 	'0_3_0',
 	'0_2_0',
 	'0_1_0',
-	'0_7_0',
+	'0_9_0',
 }
 
 function at_record_book( x, y, title, desc )
