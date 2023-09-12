@@ -28,7 +28,6 @@ The goal at this point is primarly backgrounds, paintovers, and effects. Testing
 ### What is planned for final?
 
 - Paintovers and backgrounds for lab scenes.
-- Cauldron fires, perhaps other cosmetic effects.
 - Mod compatibility checking and adjustment where possible.
 
 ## Caveats
