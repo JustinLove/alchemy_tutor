@@ -16,7 +16,7 @@ Adds alchemy labs throughout the world. Each lab is set up the materials to perf
 
 ### What might change during beta?
 
-The goal at this point is primarly backgrounds, paintovers, and effects. Testing and feedback may still require other changes; I'll try to keep them save-in-progress compatible where possible.
+The main goals at this point are a few more graphical touchups, bug fixes, and addressing major mod compatibility issues. Testing and feedback may still require other changes; I'll try to keep them save-in-progress compatible where possible.
 
 ### What kind of feedback am I looking for?
 
@@ -24,11 +24,6 @@ The goal at this point is primarly backgrounds, paintovers, and effects. Testing
 - Is the material access in Hall of Masters too good?
 - Are there too many Halls of Masters?
 - Are the labs too common or not common enough? (this has a setting,but I want a good default)
-
-### What is planned for final?
-
-- Paintovers and backgrounds for lab scenes.
-- Mod compatibility checking and adjustment where possible.
 
 ## Caveats
 
