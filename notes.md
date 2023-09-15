@@ -19,10 +19,9 @@
 - paintovers/backgrounds
   - x field labs
   - decorative picture frames
-  - regular cauldron background
+  - x regular cauldron background
   - main path updates?
 - check for blank translation and sub english
-- x ng+
 - nightmare
 - HoM understanding:
   - Alias first visit: negative
@@ -56,6 +55,10 @@
 - long term: make safe for magic skin?
 - long term: support special chests
 
+### Apotheosis
+- release testing
+- pandora's chest
+
 ### Alternate biomes
 - long term: see if any pixel scenes fit
 - long term: see if mini labs fit
@@ -77,6 +80,7 @@
 - noitavania
 - new biomes and secrets
 - more stuff
+- apotheosis
 
 ### Having Spawns in Default
 

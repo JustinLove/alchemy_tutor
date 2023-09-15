@@ -3,6 +3,7 @@
 ## 0.10.0
 
 - Art pass for mini field labs
+- Main cauldron background rework in line with master tanks style
 
 ## 0.9.0 Hall of Masters art update
 
