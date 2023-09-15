@@ -1,5 +1,9 @@
 # Alchemy Tutor Changelog
 
+## 0.10.0
+
+- Art pass for mini field labs
+
 ## 0.9.0 Hall of Masters art update
 
 - Art update for Hall of Masters

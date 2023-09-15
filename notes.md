@@ -1,15 +1,6 @@
-- x remove extra logging
-- cover image
-- patch notes
-- x spawn rates could be realtime?
 - right emergency portal
 - addmaterialinventory failed - empty loop?
 - remove fallback chest, only seen on doubled or simultaneous activation
-- beta doubles?
-  - double spawn of magic spells reward?
-  - double chest reward
-  - doubled shotguns
-  - did not recur - Inventory Bags conflict?
 - PhysicsKeepInWorldComponent?
 - beta
   - SE meat has blood
@@ -25,38 +16,12 @@
   - bottles make water tele possible?
 - mud?
 - lava sand?
-- Alias, large mod list: HoM large cauldron drains missing
-  - background priority - embed?
-- some detectors not disappearing - not reproducable
-- x cauldron backgrounds
-  - x sand pile
-  - block eye position (ex ambrosia)
 - paintovers/backgrounds
-  - x main labs
-  - x remote lab
-  - x hall of records
-  - x masters
-    - x slight change to nondetector pits
-    - x electrically isolate altars
-    - x beam holes etc.
-    - x entrance fixups before anything in other layers with holes
-    - x tank backgrounds builtin
-    - x tank edges builtin - material only?
-    - x large tanks no drain when empty
-    - x drains
-    - x altar backdrop
-     offer what is offered
-     apply what is learned
-     choose what is treasure
-    - x drip
-    - x gauge pipe
-    - x human size gauges
-    - x entrances
-    - regular cauldron background
-  - field labs
+  - x field labs
   - decorative picture frames
+  - regular cauldron background
+  - main path updates?
 - check for blank translation and sub english
-- edges vs noedge?
 - x ng+
 - nightmare
 - HoM understanding:
@@ -139,6 +104,10 @@ Theoretical extreme solution:
   - gold is root of all solids
     - needs lots of poly??
 
+offer what is offered
+apply what is learned
+choose what is treasure
+
 - watchlist
   - steel cauldrons - `steel_static_strong`
   - double lab spawn - added logging
@@ -165,6 +134,12 @@ Theoretical extreme solution:
   - concentrated mana/wizardbrik didn't activate
   - green fungi did not activate for void1
   - double spawn of mystery fungus on level 1
+  - some detectors not disappearing - not reproducable
+  - beta doubles?
+    - double spawn of magic spells reward?
+    - double chest reward
+    - doubled shotguns
+    - did not recur - Inventory Bags conflict?
 
 
 ## Releases
