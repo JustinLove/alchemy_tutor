@@ -2,8 +2,8 @@
   <PixelSceneComponent
     pixel_scene="data/biome_impl/empty.png"
     pixel_scene_background="mods/alchemy_tutor/files/entities/reward_marker_frame.png"
-    offset_x="-14"
-    offset_y="-10"
+    offset_x="-15"
+    offset_y="-11"
     skip_biome_checks="1"
     background_z_index="35"
     >

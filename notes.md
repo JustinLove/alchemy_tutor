@@ -1,4 +1,5 @@
 - right emergency portal
+- meat needs worm crystal
 - addmaterialinventory failed - empty loop?
 - remove fallback chest, only seen on doubled or simultaneous activation
 - PhysicsKeepInWorldComponent?
@@ -18,7 +19,7 @@
 - lava sand?
 - paintovers/backgrounds
   - x field labs
-  - decorative picture frames
+  - x decorative picture frames
   - x regular cauldron background
   - main path updates?
 - check for blank translation and sub english
