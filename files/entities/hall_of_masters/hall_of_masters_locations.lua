@@ -20,10 +20,10 @@ at_lab_locations = {
 		y = 4096,
 		biome = 'water',
 	},
-	{ -- above tree
+	{ -- above tree, not really anymore
 		id = 'TREE',
 		level = 1,
-		x = -2048,
+		x = -512,
 		y = -4608,
 		east_access = 'sky_access',
 	},
@@ -66,10 +66,10 @@ at_lab_locations_ngp = {
 		y = 4096,
 		biome = 'water',
 	},
-	{ -- above tree
+	{ -- above tree, not really
 		id = 'TREE',
 		level = 1,
-		x = -2048,
+		x = -512,
 		y = -4608,
 		east_access = 'sky_access',
 	},
@@ -83,7 +83,7 @@ at_lab_locations_ngp = {
 	{ -- west of sky chest clouds
 		id = 'NGP_EAST_CLOUDS',
 		level = 2,
-		x = 7168,
+		x = 5120,
 		y = -5120,
 		east_access = 'sky_access',
 	},
