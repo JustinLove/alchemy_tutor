@@ -1,5 +1,5 @@
 - x move tree lab
-- exported pixel
+- x exported pixel
 - patch poly
 - music overlap
 - biome map?
