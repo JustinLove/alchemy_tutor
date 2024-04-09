@@ -223,12 +223,11 @@ at_formula_list = {
 		name = "lava_metal_evaporation",
 		materials = {
 			"lava",
-			{"copper", "brass", "metal_sand"},
+			{"silver", "copper", "brass", "metal_sand"},
 		},
 		amounts = {0.1, 0.1},
 		cauldron_contents = {
 			"magic_liquid_random_polymorph",
-			"magic_liquid_polymorph",
 			"magic_liquid_unstable_polymorph",
 		},
 		output = "air",
@@ -549,10 +548,12 @@ at_formula_list = {
 	},
 	{
 		materials = {
-			"silver",
+			{ "copper", "copper", "silver" },
 			"magic_liquid_polymorph",
 		},
-		output = "copper",
+		output = "magic_gas_polymorph",
+		check_for = at_material_presence,
+		cauldron_check_y = 35,
 		rating = 13,
 	},
 	{

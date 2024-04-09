@@ -1,6 +1,6 @@
 - x move tree lab
 - x exported pixel
-- patch poly
+- x patch poly
 - music overlap
 - biome map?
   - bottom light blockers?
@@ -17,8 +17,9 @@
   - midas gas
   - worm gas
   - yellow fungus
-  - copper broken
-  - lava/metal regular? poly broken
+  - x copper broken
+  - lava/metal regular?
+    - x poly broken
   - see list below
   - bottles
   - bottles make water tele possible?
