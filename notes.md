@@ -34,6 +34,7 @@
   - x decorative picture frames
   - x regular cauldron background
   - main path updates?
+- acheivement statues?
 - check for blank translation and sub english
 - nightmare
 - HoM understanding:
