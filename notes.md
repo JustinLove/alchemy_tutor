@@ -2,13 +2,7 @@
 - x exported pixel
 - x patch poly
 - x meat needs worm crystal
-- setrandomseed timing change
-- music overlap - unable to reproduce
-- biome map?
-  - bottom light blockers?
 - New api function to remove all materials with blank name
-- right emergency portal
-- addmaterialinventory failed - empty loop?
 - remove fallback chest, only seen on doubled or simultaneous activation
 - PhysicsKeepInWorldComponent?
 - beta
@@ -27,6 +21,11 @@
   - beer
   - milk
   - holy grass
+- biome map?
+  - bottom light blockers?
+- setrandomseed timing change - unable to reproduce
+- music overlap - unable to reproduce
+- addmaterialinventory failed - empty loop?
 - mud?
   - top with oil to reduce peat
 - lava sand?
@@ -57,6 +56,7 @@
 - is solidifying molten metal with [water] useful?
 - lower west desert missing frogs - not consistent, but does happen in testing
 - old labs as easter eggs
+- xx right emergency portal
 
 ## Possible mod conflict
 - x master location dedicated file
