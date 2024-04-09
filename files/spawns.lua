@@ -323,9 +323,14 @@ end
 function at_spawn_ghost_crystal_lab( x, y )
 	local lab_x, lab_y = at_lab_origin( x, y, 0, 1 )
 	local loc = at_get_lab( lab_x, lab_y )
-	if loc and loc.west_alcove == 'ghost_deflector_crystal' then
-		EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/ghost_deflector_crystal.xml", x, y + 2 )
-		at_ghost_deflector_base( x, y + 5 )
+	if loc then
+		if loc.west_alcove == 'ghost_deflector_crystal' then
+			EntityLoad( "mods/alchemy_tutor/files/entities/hall_of_records/ghost_deflector_crystal.xml", x, y + 2 )
+			at_ghost_deflector_base( x, y + 5 )
+		elseif loc.west_alcove == 'worm_deflector_crystal' then
+			EntityLoad( "data/entities/buildings/physics_worm_deflector_crystal.xml", x, y + 2 )
+			at_ghost_deflector_base( x, y + 5 )
+		end
 	end
 end
 

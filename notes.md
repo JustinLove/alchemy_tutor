@@ -1,12 +1,13 @@
 - x move tree lab
 - x exported pixel
 - x patch poly
+- x meat needs worm crystal
+- setrandomseed timing change
 - music overlap - unable to reproduce
 - biome map?
   - bottom light blockers?
 - New api function to remove all materials with blank name
 - right emergency portal
-- meat needs worm crystal
 - addmaterialinventory failed - empty loop?
 - remove fallback chest, only seen on doubled or simultaneous activation
 - PhysicsKeepInWorldComponent?

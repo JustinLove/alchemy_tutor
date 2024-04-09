@@ -41,6 +41,7 @@ at_lab_locations = {
 		y = 14336,
 		biome_modifier = 'hot',
 		west_access = 'west_access',
+		west_alcove = 'worm_deflector_crystal',
 	},
 }
 
