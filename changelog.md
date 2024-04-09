@@ -1,6 +1,6 @@
 # Alchemy Tutor Changelog
 
-## 0.10.0 Map Fix Update
+## 0.10.0 Epilogue 2 Map Fix Update
 
 - Move some locations that collided with new structures in Epilogue 2 update
 - Fixed some broken reactions. New Epilogue 2 alchemy is not yet included.
