@@ -554,7 +554,7 @@ at_formula_list = {
 		output = "magic_gas_polymorph",
 		check_for = at_material_presence,
 		cauldron_check_y = 35,
-		rating = 13,
+		rating = 14,
 	},
 	{
 		materials = { "copper" },
@@ -613,6 +613,44 @@ at_formula_list = {
 		},
 		output = "water_salt",
 		rating = 14,
+	},
+	{
+		name = "hellslimeboom",
+		materials = {{"magic_liquid_movement_faster", "magic_liquid_faster_levitation"}},
+		cauldron = at_block_rock,
+		cauldron_material = "endslime",
+		check_for = at_explosion,
+		cauldron_check_y = 25,
+		rating = 9,
+	},
+	{
+		materials = {
+			"magic_liquid",
+			"lava",
+		},
+		cauldron_contents = {
+			"lava",
+			"air",
+			"air",
+		},
+		output = "static_magic_material",
+		check_for = at_material_presence,
+		rating = 17,
+	},
+	{
+		materials = {
+			{"slime_green", "slime_yellow"},
+			"lava",
+		},
+		cauldron_contents = {
+			"lava",
+			"air",
+			"air",
+		},
+		output = "fungi_green",
+		output2 = "fungi_yellow",
+		check_for = at_material_presence,
+		rating = 13,
 	},
 }
 

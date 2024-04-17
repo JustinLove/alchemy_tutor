@@ -2,25 +2,27 @@
 - x exported pixel
 - x patch poly
 - x meat needs worm crystal
-- New api function to remove all materials with blank name
+- x rerate hotfix recepies
+- x hall of records for hotfix
+- dimunitium
+- pus
+- midas gas
+- worm gas
+- yellow fungus
+- x copper broken
+- lava/metal regular?
+  - x poly broken
+- see list below
+- beer
+- milk
+- holy grass
+- hall of records for new recepies
+- SE meat has blood
 - remove fallback chest, only seen on doubled or simultaneous activation
+- bottles
+- bottles make water tele possible?
+- New api function to remove all materials with blank name
 - PhysicsKeepInWorldComponent?
-- beta
-  - SE meat has blood
-  - dimunitium
-  - pus
-  - midas gas
-  - worm gas
-  - yellow fungus
-  - x copper broken
-  - lava/metal regular?
-    - x poly broken
-  - see list below
-  - bottles
-  - bottles make water tele possible?
-  - beer
-  - milk
-  - holy grass
 - biome map?
   - bottom light blockers?
 - setrandomseed timing change - unable to reproduce
@@ -222,20 +224,20 @@ choose what is treasure
 
 ### Beta, unfiltered
 
-- cement + lava = grey rock + grey rock
-- hell slime + [magic_faster] = fire + steam (+ explosion)
-- lava + sima = rock + fire
-- lava + juhannussima = rock + fire
-- lava + gate opener = australium + steam
-- lava + pea soup = lava + liquid fire
-- lava + alchemic precursor = lava + midas gas
-- lava + slime = hell slime + hell slime
-- lava + greed-cursed liquid = greed-cursed rock + steam
-- lava + green slime = green fungus + fungal gas
-- lava + yellow slime = yellow fungus + fungal gas
+- xx cement + lava = grey rock + grey rock
+- x hell slime + [magic_faster] = fire + steam (+ explosion)
+- xx lava + sima = rock + fire
+- xx lava + juhannussima = rock + fire
+- x lava + gate opener = australium + steam
+- xx lava + pea soup = lava + liquid fire
+- xx lava + alchemic precursor = lava + midas gas -- not for free
+- xx lava + greed-cursed liquid = greed-cursed rock + steam
+- x lava + green slime = green fungus + fungal gas
+- x lava + yellow slime = yellow fungus + fungal gas
 - lava + worm blood = lava + worm gas
 - worm gas + steam = worm blood + worm blood
 - lava + vomit = lava + acid
+- lava + slime = hell slime + hell slime
 - unstable teleportatium + hell slime = teleportatium + teleportatium
 - (unstable or stable) teleportatium + lava = freezing vapour + lava
 - NOTE: yellow and green slime no longer inherit slime's reactions (ie can't be used to make hellslime with lava)
