@@ -16,6 +16,7 @@
 - beer
 - milk
 - holy grass
+- can endslime be an intermediate without being a container material?
 - hall of records for new recepies
 - SE meat has blood
 - remove fallback chest, only seen on doubled or simultaneous activation
@@ -234,21 +235,21 @@ choose what is treasure
 - xx lava + greed-cursed liquid = greed-cursed rock + steam
 - x lava + green slime = green fungus + fungal gas
 - x lava + yellow slime = yellow fungus + fungal gas
-- lava + worm blood = lava + worm gas
-- worm gas + steam = worm blood + worm blood
-- lava + vomit = lava + acid
-- lava + slime = hell slime + hell slime
-- unstable teleportatium + hell slime = teleportatium + teleportatium
-- (unstable or stable) teleportatium + lava = freezing vapour + lava
+- x lava + worm blood = lava + worm gas
+- x worm gas + steam = worm blood + worm blood
+- x lava + vomit = lava + acid
+- x lava + slime = hell slime + hell slime
+- x unstable teleportatium + hell slime = teleportatium + teleportatium
+- x (unstable or stable) teleportatium + lava = freezing vapour + lava
 - NOTE: yellow and green slime no longer inherit slime's reactions (ie can't be used to make hellslime with lava)
-- Diminution + Teleportatium -> Diminution + Unstable Teleportatium
-- Diminution + Berserkium -> Diminution + Water
-- Diminution + Polymorphine -> Diminution + Chaotic Polymorphine
-- Diminution + Levitatium -> Toxic Sludge
-- Diminution + Concentrated Mana -> Steam
-- Diminution + Fungus -> Diminution + Sand
-- Diminution + Fungal Soil -> Diminution + Sand
-- Diminution + Gold (solid or molten) -> Diminution + Silver (solid or molten)
+- x Diminution + Teleportatium -> Diminution + Unstable Teleportatium
+- x Diminution + Berserkium -> Diminution + Water
+- x Diminution + Polymorphine -> Diminution + Chaotic Polymorphine
+- x Diminution + Levitatium -> Toxic Sludge
+- x Diminution + Concentrated Mana -> Steam
+- x Diminution + Fungus -> Diminution + Sand
+- xx Diminution + Fungal Soil -> Diminution + Sand
+- x Diminution + Gold (solid or molten) -> Diminution + Silver (solid or molten)
 - Diminution + Diamond -> Steam + Toxic Sludge
 - Diminution + Salt -> Diminution + Smoke
 - Diminution + Flammable Gas -> Diminution

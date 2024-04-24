@@ -32,7 +32,7 @@
 1 - mana/environemental reactions
 2 - practical alchemy (charm)
 3 - undesirable reactions / precursor to practical alchemy
-4 - practical transmustation of metals
+4 - practical transmutation of metals
 5 - impractial
 
 ## phyics objects
@@ -650,6 +650,192 @@ at_formula_list = {
 		output = "fungi_green",
 		output2 = "fungi_yellow",
 		check_for = at_material_presence,
+		rating = 13,
+	},
+	{
+		materials = {
+			"lava",
+			"blood_worm",
+		},
+		amounts = {0.1},
+		cauldron_contents = {
+			"lava",
+			"blood_worm",
+			"air",
+		},
+		output = "magic_gas_worm_blood",
+		check_for = at_material_presence,
+		cauldron_check_y = 35,
+		rating = 11,
+	},
+	{
+		name = "wormsteam",
+		materials = {
+			"magic_gas_worm_blood",
+			"steam",
+		},
+		output = "blood_worm",
+		cauldron_check_y = 12,
+		rating = 13,
+	},
+	{
+		materials = {
+			"lava",
+			"vomit",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"vomit",
+		},
+		output = "acid",
+		rating = 12,
+	},
+	{
+		materials = {
+			"lava",
+			"slime",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"slime",
+		},
+		output = "endslime",
+		rating = 8,
+	},
+	{
+		name = "endslimetele",
+		materials = {
+			"magic_liquid_unstable_teleportation",
+		},
+		cauldron = at_block_rock,
+		cauldron_material = "endslime",
+		output = "magic_liquid_teleportation",
+		rating = 9,
+	},
+	{
+		materials = {
+			"lava",
+			"magic_liquid_unstable_teleportation", -- also stable, but don't want to give it out
+		},
+		amounts = {0.1},
+		cauldron_contents = {
+			"air",
+			"air",
+			"lava",
+			"magic_liquid_unstable_teleportation",
+		},
+		output = "blood_cold_vapour",
+		check_for = at_material_presence,
+		cauldron_check_y = 35,
+		rating = 9,
+	},
+	{
+		name = "weaktele",
+		materials = {
+			"magic_liquid_weakness",
+		},
+		cauldron_contents = "magic_liquid_teleportation",
+		output = "magic_liquid_unstable_teleportation",
+		rating = 10,
+	},
+	{
+		name = "weakbers",
+		materials = {
+			"magic_liquid_weakness",
+			"magic_liquid_berserk",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"air",
+			"magic_liquid_weakness",
+			"magic_liquid_weakness",
+			"magic_liquid_berserk",
+		},
+		output = "water",
+		rating = 9,
+	},
+	{
+		name = "weakpoly",
+		materials = {
+			"magic_liquid_weakness",
+			"magic_liquid_polymorph",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"air",
+			"magic_liquid_weakness",
+			"magic_liquid_weakness",
+			"magic_liquid_polymorph",
+		},
+		output = "magic_liquid_random_polymorph",
+		rating = 10,
+	},
+	{
+		name = "weaklevi",
+		materials = {
+			"magic_liquid_weakness",
+			"magic_liquid_faster_levitation",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"air",
+			"magic_liquid_weakness",
+			"magic_liquid_weakness",
+			"magic_liquid_faster_levitation",
+		},
+		output = "radioactive_liquid",
+		rating = 9,
+	},
+	{
+		name = "weakmana",
+		materials = {
+			"magic_liquid_weakness",
+			"magic_liquid_mana_regeneration",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"air",
+			"magic_liquid_weakness",
+			"magic_liquid_weakness",
+			"magic_liquid_mana_regeneration",
+		},
+		output = "steam",
+		check_for = at_material_presence,
+		cauldron_check_y = 35,
+		rating = 9,
+	},
+	{
+		name = "weakfungi",
+		materials = {
+			"magic_liquid_weakness",
+		},
+		cauldron = at_fungus,
+		cauldron_contents = {"fungi", "fungi", "fungi", "fungi_creeping", "fungi_green"},
+		output = "sand",
+		check_for = at_material_presence,
+		record_spawn = at_potion_void,
+		rating = 10,
+	},
+	{
+		name = "weakgold",
+		materials = {
+			"magic_liquid_weakness",
+			{ "gold", "gold_molten" }
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"magic_liquid_weakness",
+		},
+		output = "silver",
+		output2 = "silver_molten",
+		check_for = at_majority,
 		rating = 13,
 	},
 }
