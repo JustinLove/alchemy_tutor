@@ -838,6 +838,135 @@ at_formula_list = {
 		check_for = at_majority,
 		rating = 13,
 	},
+	{
+		name = "weakdiamond",
+		materials = {
+			"magic_liquid_weakness",
+			"diamond",
+		},
+		cauldron_contents = {
+			"air",
+			"air",
+			"magic_liquid_weakness",
+		},
+		output = "radioactive_liquid",
+		output2 = "water",
+		rating = 12,
+	},
+	{
+		name = "weaksalt",
+		materials = {
+			"magic_liquid_weakness",
+			"salt",
+		},
+		amounts = {0.1},
+		cauldron_contents = {"salt","air","air"},
+		output = "smoke",
+		check_for = at_material_presence,
+		record_material = "salt",
+		rating = 11,
+	},
+	{
+		name = "weakgas",
+		materials = {
+			"magic_liquid_weakness",
+			"acid_gas_static",
+		},
+		amounts = {0.1},
+		cauldron_contents = "acid_gas_static",
+		output = "magic_liquid_weakness",
+		record_material = "acid_gas_static",
+		rating = 8,
+	},
+	{
+		name = "weakamb",
+		materials = {
+			"magic_liquid_weakness",
+			"magic_liquid_protection_all",
+		},
+		output = "acid",
+		output2 = "smoke",
+		rating = 10,
+	},
+	{
+		name = "weakslime",
+		materials = {
+			"magic_liquid_weakness",
+			"slime",
+		},
+		cauldron = at_block_brick,
+		cauldron_material = "templerock_soft",
+		check_for = at_explosion,
+		cauldron_check_y = 25,
+		record_material = "gunpowder",
+		rating = 7,
+	},
+	{
+		name = "puswater",
+		materials = {
+			"pus",
+			"water",
+		},
+		amounts = {0.1},
+		cauldron_contents = {"air","air","water"},
+		output = "pus",
+		rating = 6,
+	},
+	{
+		name = "pustoxic",
+		materials = {
+			"pus",
+			"radioactive_liquid",
+		},
+		amounts = {0.1},
+		cauldron_contents = {"air","air","radioactive_liquid"},
+		output = "pus",
+		rating = 8,
+	},
+	{
+		name = "pusfungi",
+		materials = {
+			{"fungi", "fungi", "fungi_creeping"},
+			"pus",
+		},
+		amounts = {0.1},
+		cauldron_contents = {"air","air","pus"},
+		output = "fungi",
+		output2 = "fungi_creeping",
+		rating = 9,
+	},
+	{
+		name = "pusmetal",
+		materials = {
+			"pus",
+			{"silver", "copper", "brass"},
+		},
+		output = "smoke",
+		cauldron_contents = {"air","air","pus"},
+		check_for = at_material_presence,
+		cauldron_check_y = 35,
+		record_material = "silver",
+		rating = 12,
+	},
+	{
+		materials = {
+			"pus",
+			"soil_lush",
+		},
+		cauldron_contents = {"air","air","pus"},
+		output = "coal",
+		rating = 15,
+	},
+	{
+		materials = {
+			"beer",
+			"milk",
+		},
+		cauldron_contents = {"air","beer","milk"},
+		output = "molut",
+		check_for = at_majority,
+		rating = 19,
+	},
 }
 
 function at_formula_list_append( new_formulas )

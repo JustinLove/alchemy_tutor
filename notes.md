@@ -4,18 +4,18 @@
 - x meat needs worm crystal
 - x rerate hotfix recepies
 - x hall of records for hotfix
-- dimunitium
-- pus
-- midas gas
-- worm gas
-- yellow fungus
+- x dimunitium
+- x pus
+- x midas gas
+- x worm gas
+- x yellow fungus
 - x copper broken
 - lava/metal regular?
   - x poly broken
-- see list below
-- beer
-- milk
-- holy grass
+- x see list below
+- x beer
+- x milk
+- xx holy grass
 - can endslime be an intermediate without being a container material?
 - hall of records for new recepies
 - SE meat has blood
@@ -250,25 +250,25 @@ choose what is treasure
 - x Diminution + Fungus -> Diminution + Sand
 - xx Diminution + Fungal Soil -> Diminution + Sand
 - x Diminution + Gold (solid or molten) -> Diminution + Silver (solid or molten)
-- Diminution + Diamond -> Steam + Toxic Sludge
-- Diminution + Salt -> Diminution + Smoke
-- Diminution + Flammable Gas -> Diminution
-- Diminution + Ambrosia -> Smoke + Acid
-- Diminution + Draught of Midas -> Smoke + Liquid Fire
-- Diminution + Alchemic Precursor -> Smoke + Liquid Fire
-- Diminution + [slime] -> Blue Fire + Steam + 💥 
-- Pus + Water -> Pus
-- Pus + Toxic -> Pus
-- Pus + Water -> Pus (Duplicated?)
-- Pus + Fungi -> Fungi
-- Pus + Gold -> Pus + Smoke
-- Pus + Silver -> Pus + Smoke
-- Pus + Copper -> Pus + Smoke
-- Pus + Brass -> Pus + Smoke
-- Pus + Aluminum -> Pus + Smoke
-- Pus + Grass -> Pus + Smoke
-- Pus + Jungle Sandstone (incl. dark) -> Pus + Coal
-- Pus + Lush Soil (incl. dark) -> Pus + Smoke 
+- x Diminution + Diamond -> Steam + Toxic Sludge
+- x Diminution + Salt -> Diminution + Smoke
+- x Diminution + Flammable Gas -> Diminution
+- x Diminution + Ambrosia -> Smoke + Acid
+- xx Diminution + Draught of Midas -> Smoke + Liquid Fire
+- xx Diminution + Alchemic Precursor -> Smoke + Liquid Fire
+- x Diminution + [slime] -> Blue Fire + Steam + 💥 
+- x Pus + Water -> Pus
+- x Pus + Toxic -> Pus
+- xx Pus + Water -> Pus (Duplicated?)
+- x Pus + Fungi -> Fungi
+- xx Pus + Gold -> Pus + Smoke
+- x Pus + Silver -> Pus + Smoke
+- x Pus + Copper -> Pus + Smoke
+- x Pus + Brass -> Pus + Smoke
+- xx Pus + Aluminum -> Pus + Smoke
+- xx Pus + Grass -> Pus + Smoke
+- xx Pus + Jungle Sandstone (incl. dark) -> Pus + Coal -- barely noticable
+- x Pus + Lush Soil (incl. dark) -> Pus + Smoke 
 
 ### Alchemical Reactions Extended
 Breaks void detection
