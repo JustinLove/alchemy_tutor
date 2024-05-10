@@ -45,7 +45,7 @@ at_formula_list = {
 	{
 		name = "toxicclean",
 		materials = {
-			{"water", "water", "water", "water", "water", "water_salt", "water_swamp", "swamp"},
+			{"water", "water", "water", "water", "water", "water_salt", "water_swamp", "swamp", "mud"},
 		},
 		cauldron_contents = "radioactive_liquid",
 		output = "water",
@@ -959,6 +959,17 @@ at_formula_list = {
 	},
 	{
 		materials = {
+			"pus",
+			"urine",
+			"material_confusion",
+		},
+		cauldron_contents = { "pus", "urine", "material_confusion", "air", "air" },
+		output = "magic_liquid",
+		check_for = at_material_presence,
+		rating = 20,
+	},
+	{
+		materials = {
 			"beer",
 			"milk",
 		},
@@ -966,6 +977,25 @@ at_formula_list = {
 		output = "molut",
 		check_for = at_majority,
 		rating = 19,
+	},
+	{
+		materials = {
+			"vomit",
+			"bone",
+		},
+		cauldron_contents = {"air","vomit","bone"},
+		output = "magic_liquid_weakness",
+		rating = 12,
+	},
+	{
+		materials = {
+			"silver",
+		},
+		cauldron_contents = "magic_liquid_teleportation",
+		output = "magic_gas_teleport",
+		check_for = at_material_presence,
+		cauldron_check_y = 35,
+		rating = 15,
 	},
 }
 
